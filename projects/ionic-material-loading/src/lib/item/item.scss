@@ -1,0 +1,23 @@
+
+:host{
+  position: relative;
+  display: block;
+  margin: 0px;
+  width: calc(100%);
+}
+
+ion-item{
+  background: white;
+}
+
+
+.loading{
+  margin: 4px 4px;
+  width: calc(100% - 8px);
+  transition: all ease 200ms;
+  border-radius: 8px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+
+}

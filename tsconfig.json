@@ -8,9 +8,18 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+    "baseUrl": "./",
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ionic-material-loading": [
+        "dist/ionic-material-loading"
+      ],
+      "ionic-material-loading/*": [
+        "dist/ionic-material-loading/*"
+      ]
+    }
   }
 }

@@ -29,7 +29,8 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/@ionic/angular/dist/ionic/svg",
                 "output": "./svg"
-              }
+              },
+              "src/manifest.json"
             ],
             "styles": [
               {
@@ -57,7 +58,8 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "serviceWorker": true
             }
           }
         },
@@ -99,7 +101,8 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
-              }
+              },
+              "src/manifest.json"
             ]
           }
         },
@@ -156,6 +159,46 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ionic-material-loading": {
+      "root": "projects/ionic-material-loading",
+      "sourceRoot": "projects/ionic-material-loading/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ionic-material-loading/tsconfig.lib.json",
+            "project": "projects/ionic-material-loading/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ionic-material-loading/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ionic-material-loading/src/test.ts",
+            "tsConfig": "projects/ionic-material-loading/tsconfig.spec.json",
+            "karmaConfig": "projects/ionic-material-loading/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ionic-material-loading/tsconfig.lib.json",
+              "projects/ionic-material-loading/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

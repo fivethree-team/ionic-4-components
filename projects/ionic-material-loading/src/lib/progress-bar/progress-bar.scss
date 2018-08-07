@@ -1,0 +1,41 @@
+.slider{
+  position:absolute;
+  width:100%;
+  height:5px;
+  overflow-x: hidden;
+  z-index: 5000;
+}
+
+.line{
+  position:absolute;
+  opacity: 0.4;
+  background: var(--ion-color-primary);
+  width:150%;
+  height:5px;
+}
+
+.subline{
+  position:absolute;
+  background:var(--ion-color-primary);
+  height:5px; 
+}
+.inc{
+  animation: increase 1.6s infinite;
+}
+.dec{
+  animation: decrease 1.6s 0.4s infinite;
+}
+
+.fill{
+  left: 0%; width: 100%;
+
+}
+
+@keyframes increase {
+   from { left: -5%; width: 5%; }
+   to { left: 130%; width: 100%;}
+}
+@keyframes decrease {
+   from { left: -80%; width: 80%; }
+   to { left: 110%; width: 10%;}
+}

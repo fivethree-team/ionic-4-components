@@ -1,0 +1,23 @@
+{
+  "name": "ionic-material-loading",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@ionic/angular": "^4.0.0-beta.0",
+    "@angular/animations": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "main": "bundles/ionic-material-loading.umd.js",
+  "module": "fesm5/ionic-material-loading.js",
+  "es2015": "fesm2015/ionic-material-loading.js",
+  "esm5": "esm5/ionic-material-loading.js",
+  "esm2015": "esm2015/ionic-material-loading.js",
+  "fesm5": "fesm5/ionic-material-loading.js",
+  "fesm2015": "fesm2015/ionic-material-loading.js",
+  "typings": "ionic-material-loading.d.ts",
+  "metadata": "ionic-material-loading.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

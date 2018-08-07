@@ -1,3 +1,20 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<gg-loading-progressbar global="true" ></gg-loading-progressbar>
+
+<!--  our side menu  -->
+<ion-menu>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="goTo('home')">
+        Loading
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- the main content -->
+<ion-router-outlet main></ion-router-outlet>
