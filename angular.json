@@ -205,6 +205,46 @@
           }
         }
       }
+    },
+    "ionic-material-dialog": {
+      "root": "projects/ionic-material-dialog",
+      "sourceRoot": "ionic-material-dialog/ionic-material-dialog/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ionic-material-dialog/tsconfig.lib.json",
+            "project": "projects/ionic-material-dialog/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ionic-material-dialog/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ionic-material-dialog/src/test.ts",
+            "tsConfig": "projects/ionic-material-dialog/tsconfig.spec.json",
+            "karmaConfig": "projects/ionic-material-dialog/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ionic-material-dialog/tsconfig.lib.json",
+              "projects/ionic-material-dialog/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { LoadingService } from 'dist/ionic-material-loading';
+import { DialogComponent } from 'dist/dialog';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,8 @@ export class HomePage {
   constructor(public loading: LoadingService) {
 
   }
+
+  @ViewChild('dialog') dialog: DialogComponent;
 
   fabComplete() {
     console.log('fab complete');

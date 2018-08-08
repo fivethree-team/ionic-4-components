@@ -19,6 +19,12 @@
       ],
       "ionic-material-loading/*": [
         "dist/ionic-material-loading/*"
+      ],
+      "ionic-material-dialog": [
+        "dist/ionic-material-dialog"
+      ],
+      "ionic-material-dialog/*": [
+        "dist/ionic-material-dialog/*"
       ]
     }
   }

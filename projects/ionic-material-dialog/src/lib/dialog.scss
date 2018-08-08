@@ -1,0 +1,33 @@
+.gg-dialog{
+    position: absolute;
+    z-index: 5002;
+    background: #fff;
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+}
+
+.top{
+    top:0;
+}
+
+.bottom{
+    bottom: 0;
+}
+
+.floating{
+    margin: 16px 20px;
+    border-radius: 8px;
+    width: calc(100% - 40px);
+    box-shadow: 0 4px 16px rgba(0,0,0,.12);
+}
+
+.gg-backdrop{
+    background: rgba(0,0,0,.22);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5001;
+}
