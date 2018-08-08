@@ -1,5 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Renderer2, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { animate, style, transition, trigger, state } from "@angular/animations";
+import Hammer from 'hammerjs';
+import { fromEvent } from 'rxjs';
+import { throttleTime, reduce } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 
 export type animation = "slideIn" | "fadeIn"
@@ -8,9 +12,9 @@ export type verticalAlign = "top" | "bottom" | "center"
 @Component({
   selector: 'gg-dialog',
   template: `
-  <div class="gg-backdrop" [@backdropAnim] (click)="hideDialog()" *ngIf="animationState !== 'hidden' && backdrop">
+  <div #backdrop class="gg-backdrop" [@backdropAnim] (@backdropAnim.done)="backdropAnimDone($event)" (click)="backdropClose? hideDialog() : false" *ngIf="animationState !== 'hidden' && backdrop">
   </div>
-  <ion-card [@dialogAnim]="animationState" mode="md" class="gg-dialog" [ngClass]="{'floating': floating}">
+  <ion-card #card [@dialogAnim]="animationState" (@dialogAnim.done)="onDialogAnimationDone($event)" mode="md" class="gg-dialog" [ngClass]="{'floating': isFloating(),'fullscreen':fullscreen,'rounded-top': roundedTop(),'rounded-bottom':roundedBottom()}">
   <ng-content></ng-content>
   </ion-card>
   `,
@@ -53,14 +57,16 @@ export type verticalAlign = "top" | "bottom" | "center"
         style({
           top: '50%',
           transform: 'translateY(-25%)',
-           opacity: 0
+          opacity: 0
         }),
         animate('275ms 100ms cubic-bezier(0.32,1,0.23,1)')
       ]),
       transition('slideIn-center => hidden', [
-        animate('240ms ease-out',style({top: '50%',
-        transform: 'translateY(-25%)',
-         opacity: 0 }))
+        animate('120ms ease-out', style({
+          // top: '50%',
+          // transform: 'translateY(+50%)',
+          opacity: 0
+        }))
       ]),
       transition('* => hidden', [
         animate('240ms ease-out')
@@ -89,11 +95,13 @@ export type verticalAlign = "top" | "bottom" | "center"
       state('fadeIn-center', style({
         top: '50%',
         transform: 'translateY(-50%)',
+        'margin-top': 0
       })
       ),
       state('slideIn-center', style({
         top: '50%',
         transform: 'translateY(-50%)',
+        'margin-top': 0
       })
       ),
     ]), trigger('backdropAnim', [
@@ -118,13 +126,61 @@ export class DialogComponent implements OnInit {
   @Input() verticalAlign: verticalAlign = 'bottom';
   @Input() floating: boolean = false;
   @Input() backdrop: boolean = false;
+  @Input() fullscreen: boolean = false;
+  @Input() rounded: boolean = false;
+  @Input() backdropClose: boolean = true;
+  @Input() swipeEnabled: boolean = true;
 
-  constructor() {
+  @ViewChild('card') card: ElementRef;
+  @ViewChild('backdrop') backdropElem: ElementRef;
+
+  private panSubs: Subscription[] = [];
+
+  constructor(private renderer: Renderer2, public change: ChangeDetectorRef) {
+
+  }
+
+  setupPan(elem: ElementRef, threshold: number) {
+
+    if (!this.swipeEnabled) {
+      return;
+    }
+
+    const hammer = new Hammer(elem);
+    hammer.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+    const panup = fromEvent(hammer, 'panup')
+      .pipe(
+        throttleTime(2)
+      )
+      .subscribe(res => {
+        console.log("panup", res);
+        this.onSwipeUp(res, threshold);
+      })
+
+    const pandown = fromEvent(hammer, 'pandown')
+      .pipe(
+        throttleTime(2)
+      )
+      .subscribe(res => {
+        console.log("pandown sub", res);
+        this.onSwipeDown(res, threshold);
+      })
+
+    const panend = fromEvent(hammer, 'panend pancancel')
+      .subscribe((res: any) => {
+        if (res.distance < threshold) {
+          this.renderer.setStyle(this.card.nativeElement, 'transform', `translateY(0px)`)
+        }
+      })
+
+    this.panSubs.push(pandown, panup, panend);
+
 
   }
 
   ngOnInit() {
-
+    console.log(this.card);
   }
 
   showDialog() {
@@ -133,6 +189,65 @@ export class DialogComponent implements OnInit {
 
   hideDialog() {
     this.animationState = 'hidden';
+    this.panSubs.forEach(sub => {
+      sub.unsubscribe();
+    })
+  }
+
+  isFloating(): boolean {
+    return this.floating || (this.rounded && this.verticalAlign === 'center')
+  }
+
+  roundedTop(): boolean {
+    return this.rounded && this.verticalAlign === 'top' && !this.floating
+  }
+
+  roundedBottom(): boolean {
+    return this.rounded && this.verticalAlign === 'bottom' && !this.floating
+  }
+
+  onSwipeUp(event, threshold) {
+    console.log(Math.exp(event.distance / 50));
+    const velocity = 1 + Math.exp(event.distance / 50) / 50;
+
+    if (this.verticalAlign === 'top') {
+      this.renderer.setStyle(this.card.nativeElement, 'transform', `translateY(-${event.distance * velocity}px)`)
+      if (event.distance > threshold) {
+        console.log('swipe down happened');
+        this.hideDialog();
+      }
+    }
+  }
+
+  onSwipeDown(event, threshold) {
+    const velocity = 1 + Math.exp(event.distance / 50) / 50;
+    console.log(velocity);
+    if (this.verticalAlign === 'bottom' || this.verticalAlign === 'center') {
+      this.renderer.setStyle(this.card.nativeElement, 'transform', `translateY(${event.distance * velocity}px)`)
+      if (event.distance > threshold) {
+        console.log('swipe down happened');
+        this.hideDialog();
+      }
+    }
+
+  }
+
+  onDialogAnimationDone(event) {
+    if (event.toState === 'hidden') {
+      this.renderer.setStyle(this.card.nativeElement, 'transform', `translateY(0px)`)
+    }
+    if (event.fromState === 'hidden') {
+      this.setupPan(this.card.nativeElement,58);
+    }
+  }
+
+  backdropAnimDone(event) {
+    console.log(this.backdropElem, event);
+    if (event.fromState === 'void') {
+      // this.change.detectChanges();
+      console.log(this.backdropElem.nativeElement);
+      this.setupPan(this.backdropElem.nativeElement, 112);
+    }
   }
 
 }

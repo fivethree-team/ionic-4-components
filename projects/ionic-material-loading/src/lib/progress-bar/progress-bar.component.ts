@@ -7,9 +7,9 @@ import { LoadingService } from '../loading.service';
     selector: 'gg-loading-progressbar',
     template: `
 <div [@progressAnim] *ngIf="(!global && loading) || (global && loadingService.loading)" class="slider">
-  <div *ngIf="!isComplete" class="line"></div>
+  <div class="line"></div>
   <div *ngIf="!isComplete" class="subline inc"></div>
-  <div [@fillAnim] (@fillAnim.done)="fillAnimationComplete(isComplete)" *ngIf="isComplete" class="subline fill"></div>
+  <div *ngIf="isComplete" [@fillAnim] (@fillAnim.done)="fillAnimationComplete(isComplete)" class="subline fill"></div>
   <div *ngIf="!isComplete" class="subline dec"></div>
 </div>
     `,

@@ -1,14 +1,31 @@
-import { OnInit } from '@angular/core';
+import { OnInit, Renderer2, ElementRef, ChangeDetectorRef } from '@angular/core';
 export declare type animation = "slideIn" | "fadeIn";
 export declare type verticalAlign = "top" | "bottom" | "center";
 export declare class DialogComponent implements OnInit {
+    private renderer;
+    change: ChangeDetectorRef;
     animationState: string;
     animation: animation;
     verticalAlign: verticalAlign;
     floating: boolean;
     backdrop: boolean;
-    constructor();
+    fullscreen: boolean;
+    rounded: boolean;
+    backdropClose: boolean;
+    swipeEnabled: boolean;
+    card: ElementRef;
+    backdropElem: ElementRef;
+    private panSubs;
+    constructor(renderer: Renderer2, change: ChangeDetectorRef);
+    setupPan(elem: ElementRef, threshold: number): void;
     ngOnInit(): void;
     showDialog(): void;
     hideDialog(): void;
+    isFloating(): boolean;
+    roundedTop(): boolean;
+    roundedBottom(): boolean;
+    onSwipeUp(event: any, threshold: any): void;
+    onSwipeDown(event: any, threshold: any): void;
+    onDialogAnimationDone(event: any): void;
+    backdropAnimDone(event: any): void;
 }

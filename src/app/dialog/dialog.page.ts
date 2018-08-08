@@ -14,7 +14,11 @@ export class DialogPage implements OnInit {
   backdrop: boolean = true;
   verticalAlign = 'top';
   animation = 'slideIn';
-  floating: boolean = true;
+  floating: boolean = false;
+  fullscreen: boolean = false;
+  rounded: boolean = true;
+  backdropClose: boolean = false;
+  swipeEnabled: boolean = true;
 
 
   constructor() { }
