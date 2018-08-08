@@ -1,6 +1,11 @@
 # component-library
 Material Design component libraries to use in an ionic 4 project
 
+![Alt text](/loading_1.gif?raw=true)
+![Alt text](/loading_2.gif?raw=true)
+![Alt text](/loading_3.gif?raw=true)
+
+
 <a href="https://garygrossgarten.de/components">Demo App</a>
 
 ## Development
