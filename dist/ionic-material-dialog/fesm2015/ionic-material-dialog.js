@@ -1,4 +1,4 @@
-import { Injectable, Component, Input, Renderer2, ViewChild, ChangeDetectorRef, NgModule, defineInjectable } from '@angular/core';
+import { Injectable, NgModule, Component, Input, Renderer2, ViewChild, ChangeDetectorRef, defineInjectable } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
 import Hammer, { Hammer as Hammer$1 } from 'hammerjs';
 import { fromEvent } from 'rxjs';

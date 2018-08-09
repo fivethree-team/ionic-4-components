@@ -19,12 +19,8 @@ import { fromEvent } from 'rxjs';
             <circle [@fillAnim]="isComplete ? 'fill' : 'spinning'" (@fillAnim.done)="fillAnimationDone($event)" [ngClass]="{'path': !isComplete}" fill="none" stroke-width="4" stroke-linecap="round" cx="36" cy="36" r="32"></circle>
         </svg>
     </div>
-    <ion-content #content fullscreen>
         <ion-refresher (ionStart)="onStart()" [snapbackDuration]="280" [closeDuration]="280" [pullMax]="168" [pullMin]="112" [disabled]="false" slot="fixed" (ionRefresh)="doRefresh($event)" (ionPull)="onPull($event)">
         </ion-refresher>
-
-        <ng-content></ng-content>
-    </ion-content>
     `,
     styleUrls: ['content.scss'],
     animations: [
@@ -95,7 +91,7 @@ export class ContentRefresh implements OnInit {
     }
 
     spinRefresher() {
-        this.spinner.nativeElement.style.setProperty('transform', `translateY(112px)`);
+        this.spinner.nativeElement.style.setProperty('transform', `translateY(168px)`);
         this.refreshing = true;
         this.pulling = false;
     }

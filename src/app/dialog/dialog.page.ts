@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DialogComponent } from 'dist/dialog';
+import { DialogComponent } from 'dist/ionic-material-dialog';
 
 @Component({
   selector: 'app-dialog',

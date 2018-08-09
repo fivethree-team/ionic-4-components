@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { DialogPage } from './dialog.page';
-import { DialogModule } from 'dist/dialog';
+import { DialogModule } from 'dist/ionic-material-dialog';
 import { LoadingModule } from 'dist/ionic-material-loading';
 
 const routes: Routes = [

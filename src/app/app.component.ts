@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
@@ -14,7 +14,8 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private router: Router
+    private router: Router,
+    public navCtrl: NavController,
   ) {
     this.initializeApp();
   }
@@ -27,7 +28,6 @@ export class AppComponent {
   }
 
   goTo(page: string) {
-    console.log(`go to ${page}`);
-    this.router.navigate([page]);
+    this.navCtrl.goRoot(page);
   }
 }
