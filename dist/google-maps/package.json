@@ -1,0 +1,21 @@
+{
+  "name": "google-maps",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "main": "bundles/google-maps.umd.js",
+  "module": "fesm5/google-maps.js",
+  "es2015": "fesm2015/google-maps.js",
+  "esm5": "esm5/google-maps.js",
+  "esm2015": "esm2015/google-maps.js",
+  "fesm5": "fesm5/google-maps.js",
+  "fesm2015": "fesm2015/google-maps.js",
+  "typings": "google-maps.d.ts",
+  "metadata": "google-maps.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

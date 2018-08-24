@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title (click)="showHint(refresher)">
       Loading
@@ -9,9 +9,9 @@
   </ion-toolbar>
 </ion-header>
 
-  <ion-content fullscreen>
-      <gg-loading-content #refresher (onRefresh)="onRefresh($event)"></gg-loading-content>
+<ion-content fullscreen>
 
+  <gg-loading-content #refresher (onRefresh)="onRefresh($event)"></gg-loading-content>
 
   <ion-card mode="ios" (click)="bar.loading ? bar.complete() : bar.toggleSpinner()">
     <gg-loading-progressbar #bar [global]="false"></gg-loading-progressbar>
@@ -83,11 +83,10 @@
     </gg-loading-item>
 
     <ion-infinite-scroll>
-        <gg-loading-infinite-scroll></gg-loading-infinite-scroll>
-      </ion-infinite-scroll>
+      <gg-loading-infinite-scroll></gg-loading-infinite-scroll>
+    </ion-infinite-scroll>
 
   </ion-list>
 </ion-content>
 <gg-loading-fab checkmark="true" (onComplete)="fabComplete()" loading="true" #fab (click)="fab.loading ? fab.complete() : fab.toggleSpinner()"
   horizontal="end" vertical="bottom" icon="md-add" spinColor="dark" fabColor="light"></gg-loading-fab>
-

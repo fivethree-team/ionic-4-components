@@ -25,6 +25,12 @@
       ],
       "ionic-material-dialog/*": [
         "dist/ionic-material-dialog/*"
+      ],
+      "google-maps": [
+        "dist/google-maps"
+      ],
+      "google-maps/*": [
+        "dist/google-maps/*"
       ]
     }
   }
