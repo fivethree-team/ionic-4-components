@@ -1,27 +1,23 @@
-import { GoogleMap } from './google-map';
+import { IGoogleMap } from './google-map';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'fiv-google-maps',
   template: `
-    <fiv-google-map-web *ngIf="!isCordova" [apiKey]="apiKey" (onInit)="onInit($event)"></fiv-google-map-web>
+    <fiv-google-map-web *ngIf="!isCordova" [apiKey]="apiKey"></fiv-google-map-web>
     <fiv-google-map-native *ngIf="isCordova"></fiv-google-map-native>
   `,
   styles: []
 })
-export class GoogleMapsComponent implements OnInit {
+export class GoogleMapsComponent implements OnInit, IGoogleMap {
 
   @Input() isCordova: boolean;
   @Input('apiKey') apiKey: string;
-  googleMap: GoogleMap;
+  @Input() zoom: number;
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  onInit(googleMap: GoogleMap) {
-    this.googleMap = googleMap;
   }
 
   addMarker(lat: number, lng: number) {

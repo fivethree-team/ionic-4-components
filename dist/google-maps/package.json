@@ -1,19 +1,24 @@
 {
-  "name": "google-maps",
+  "name": "@fivethree/google-maps",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+    "@angular/common": "^6.1.4",
+    "@angular/core": "^6.1.4",
+    "@ionic-native/core": "5.0.0-beta.14",
+    "@ionic-native/google-maps": "5.0.0-beta.14",
+    "cordova-plugin-googlemaps": "^2.3.11",
+    "rxjs": "6.2.2",
+    "rxjs-compat": "6.2.2"
   },
-  "main": "bundles/google-maps.umd.js",
-  "module": "fesm5/google-maps.js",
-  "es2015": "fesm2015/google-maps.js",
-  "esm5": "esm5/google-maps.js",
-  "esm2015": "esm2015/google-maps.js",
-  "fesm5": "fesm5/google-maps.js",
-  "fesm2015": "fesm2015/google-maps.js",
-  "typings": "google-maps.d.ts",
-  "metadata": "google-maps.metadata.json",
+  "main": "bundles/fivethree-google-maps.umd.js",
+  "module": "fesm5/fivethree-google-maps.js",
+  "es2015": "fesm2015/fivethree-google-maps.js",
+  "esm5": "esm5/fivethree-google-maps.js",
+  "esm2015": "esm2015/fivethree-google-maps.js",
+  "fesm5": "fesm5/fivethree-google-maps.js",
+  "fesm2015": "fesm2015/fivethree-google-maps.js",
+  "typings": "fivethree-google-maps.d.ts",
+  "metadata": "fivethree-google-maps.metadata.json",
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.9.0"

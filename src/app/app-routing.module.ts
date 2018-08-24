@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'dialog', loadChildren: './dialog/dialog.module#DialogPageModule' },
   { path: 'map', loadChildren: './map/map.module#MapPageModule' },
+  { path: 'map-native', loadChildren: './map-native/map-native.module#MapNativePageModule' },
 ];
 
 @NgModule({

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MyApp</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+<widget id="io.fivethree.examples" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Fivethree</name>
+    <description>Fivethree Web Component Example</description>
+    <author email="info@fivethree.io" href="http://fivethree.io/">Fivethree Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -85,4 +85,5 @@
         <variable name="API_KEY_FOR_ANDROID" value="YOUR_ANDROID_A_KEY_IS_HERE" />
         <variable name="API_KEY_FOR_IOS" value="YOUR_IOS_API_KEY_IS_HERE" />
     </plugin>
+    <engine name="android" spec="7.0.0" />
 </widget>

@@ -31,10 +31,17 @@
     "@ionic/angular": "4.0.0-beta.3",
     "@ionic/ng-toolkit": "1.0.7",
     "@ionic/schematics-angular": "1.0.5",
+    "cordova-android": "7.0.0",
+    "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-googlemaps": "^2.3.11",
+    "cordova-plugin-ionic-keyboard": "^2.1.2",
+    "cordova-plugin-ionic-webview": "^2.1.0",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-whitelist": "^1.3.3",
     "core-js": "^2.5.7",
     "hammerjs": "^2.0.8",
     "rxjs": "6.2.2",
+    "rxjs-compat": "6.2.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
@@ -75,5 +82,14 @@
         "API_KEY_FOR_IOS": "YOUR_IOS_API_KEY_IS_HERE"
       }
     }
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {}
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }

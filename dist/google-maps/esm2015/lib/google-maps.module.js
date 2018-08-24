@@ -2,17 +2,21 @@
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
+import { CommonModule } from '@angular/common';
 import { GoogleMapWebComponent } from './web/google-map-web';
 import { NgModule } from '@angular/core';
 import { GoogleMapsComponent } from './google-maps.component';
+import { GoogleMapNativeComponent } from './native/google-map-native';
 export class GoogleMapsModule {
 }
 GoogleMapsModule.decorators = [
     { type: NgModule, args: [{
-                imports: [],
-                declarations: [GoogleMapsComponent, GoogleMapWebComponent],
-                exports: [GoogleMapsComponent, GoogleMapWebComponent]
-            },] },
+                imports: [
+                    CommonModule
+                ],
+                declarations: [GoogleMapsComponent, GoogleMapWebComponent, GoogleMapNativeComponent],
+                exports: [GoogleMapsComponent, GoogleMapWebComponent, GoogleMapNativeComponent]
+            },] }
 ];
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ29vZ2xlLW1hcHMubW9kdWxlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vZ29vZ2xlLW1hcHMvIiwic291cmNlcyI6WyJsaWIvZ29vZ2xlLW1hcHMubW9kdWxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUscUJBQXFCLEVBQUUsTUFBTSxzQkFBc0IsQ0FBQztBQUM3RCxPQUFPLEVBQUUsUUFBUSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQ3pDLE9BQU8sRUFBRSxtQkFBbUIsRUFBRSxNQUFNLHlCQUF5QixDQUFDO0FBUTlELE1BQU07OztZQU5MLFFBQVEsU0FBQztnQkFDUixPQUFPLEVBQUUsRUFDUjtnQkFDRCxZQUFZLEVBQUUsQ0FBQyxtQkFBbUIsRUFBRSxxQkFBcUIsQ0FBQztnQkFDMUQsT0FBTyxFQUFFLENBQUMsbUJBQW1CLEVBQUUscUJBQXFCLENBQUM7YUFDdEQiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBHb29nbGVNYXBXZWJDb21wb25lbnQgfSBmcm9tICcuL3dlYi9nb29nbGUtbWFwLXdlYic7XG5pbXBvcnQgeyBOZ01vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgR29vZ2xlTWFwc0NvbXBvbmVudCB9IGZyb20gJy4vZ29vZ2xlLW1hcHMuY29tcG9uZW50JztcblxuQE5nTW9kdWxlKHtcbiAgaW1wb3J0czogW1xuICBdLFxuICBkZWNsYXJhdGlvbnM6IFtHb29nbGVNYXBzQ29tcG9uZW50LCBHb29nbGVNYXBXZWJDb21wb25lbnRdLFxuICBleHBvcnRzOiBbR29vZ2xlTWFwc0NvbXBvbmVudCwgR29vZ2xlTWFwV2ViQ29tcG9uZW50XVxufSlcbmV4cG9ydCBjbGFzcyBHb29nbGVNYXBzTW9kdWxlIHsgfVxuIl19
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ29vZ2xlLW1hcHMubW9kdWxlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQGZpdmV0aHJlZS9nb29nbGUtbWFwcy8iLCJzb3VyY2VzIjpbImxpYi9nb29nbGUtbWFwcy5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSxpQkFBaUIsQ0FBQztBQUMvQyxPQUFPLEVBQUUscUJBQXFCLEVBQUUsTUFBTSxzQkFBc0IsQ0FBQztBQUM3RCxPQUFPLEVBQUUsUUFBUSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQ3pDLE9BQU8sRUFBRSxtQkFBbUIsRUFBRSxNQUFNLHlCQUF5QixDQUFDO0FBQzlELE9BQU8sRUFBRSx3QkFBd0IsRUFBRSxNQUFNLDRCQUE0QixDQUFDO0FBU3RFLE1BQU07OztZQVBMLFFBQVEsU0FBQztnQkFDUixPQUFPLEVBQUU7b0JBQ1AsWUFBWTtpQkFDYjtnQkFDRCxZQUFZLEVBQUUsQ0FBQyxtQkFBbUIsRUFBRSxxQkFBcUIsRUFBRSx3QkFBd0IsQ0FBQztnQkFDcEYsT0FBTyxFQUFFLENBQUMsbUJBQW1CLEVBQUUscUJBQXFCLEVBQUUsd0JBQXdCLENBQUM7YUFDaEYiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21tb25Nb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb21tb24nO1xuaW1wb3J0IHsgR29vZ2xlTWFwV2ViQ29tcG9uZW50IH0gZnJvbSAnLi93ZWIvZ29vZ2xlLW1hcC13ZWInO1xuaW1wb3J0IHsgTmdNb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEdvb2dsZU1hcHNDb21wb25lbnQgfSBmcm9tICcuL2dvb2dsZS1tYXBzLmNvbXBvbmVudCc7XG5pbXBvcnQgeyBHb29nbGVNYXBOYXRpdmVDb21wb25lbnQgfSBmcm9tICcuL25hdGl2ZS9nb29nbGUtbWFwLW5hdGl2ZSc7XG5cbkBOZ01vZHVsZSh7XG4gIGltcG9ydHM6IFtcbiAgICBDb21tb25Nb2R1bGVcbiAgXSxcbiAgZGVjbGFyYXRpb25zOiBbR29vZ2xlTWFwc0NvbXBvbmVudCwgR29vZ2xlTWFwV2ViQ29tcG9uZW50LCBHb29nbGVNYXBOYXRpdmVDb21wb25lbnRdLFxuICBleHBvcnRzOiBbR29vZ2xlTWFwc0NvbXBvbmVudCwgR29vZ2xlTWFwV2ViQ29tcG9uZW50LCBHb29nbGVNYXBOYXRpdmVDb21wb25lbnRdXG59KVxuZXhwb3J0IGNsYXNzIEdvb2dsZU1hcHNNb2R1bGUgeyB9XG4iXX0=

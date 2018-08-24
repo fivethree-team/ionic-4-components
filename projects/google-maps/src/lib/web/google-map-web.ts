@@ -1,4 +1,4 @@
-import { GoogleMap } from './../google-map';
+import { IGoogleMap } from './../google-map';
 import { Component, OnInit, ElementRef, Renderer2, Inject, Input, Output, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { } from '@types/googlemaps';
@@ -8,12 +8,11 @@ import { } from '@types/googlemaps';
     template: ``,
     styleUrls: ['google-map-web.scss'],
 })
-export class GoogleMapWebComponent implements OnInit, GoogleMap {
+export class GoogleMapWebComponent implements OnInit, IGoogleMap {
 
     @Input('apiKey') apiKey: string;
     @Input() zoom: number = 15;
     @Input() mapOptions: google.maps.MapOptions; // TODO enable mapoptions
-    @Output() onInit: EventEmitter<GoogleMap> = new EventEmitter();
 
     public lat: number = 50.9576191;
     public lng: number = 6.8272408;
@@ -24,7 +23,6 @@ export class GoogleMapWebComponent implements OnInit, GoogleMap {
     constructor(private renderer: Renderer2,
         private element: ElementRef,
         @Inject(DOCUMENT) private _document) {
-        this.onInit.emit(this);
     }
 
     ngOnInit() {

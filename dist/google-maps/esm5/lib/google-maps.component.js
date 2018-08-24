@@ -14,17 +14,30 @@ var GoogleMapsComponent = /** @class */ (function () {
      */
     function () {
     };
+    /**
+     * @param {?} lat
+     * @param {?} lng
+     * @return {?}
+     */
+    GoogleMapsComponent.prototype.addMarker = /**
+     * @param {?} lat
+     * @param {?} lng
+     * @return {?}
+     */
+    function (lat, lng) {
+    };
     GoogleMapsComponent.decorators = [
         { type: Component, args: [{
                     selector: 'fiv-google-maps',
-                    template: "\n    <p>\n      google-maps works!\n    </p>\n  ",
-                    styles: []
-                },] },
+                    template: "\n    <fiv-google-map-web *ngIf=\"!isCordova\" [apiKey]=\"apiKey\"></fiv-google-map-web>\n    <fiv-google-map-native *ngIf=\"isCordova\"></fiv-google-map-native>\n  "
+                }] }
     ];
     /** @nocollapse */
     GoogleMapsComponent.ctorParameters = function () { return []; };
     GoogleMapsComponent.propDecorators = {
-        isCordova: [{ type: Input }]
+        isCordova: [{ type: Input }],
+        apiKey: [{ type: Input, args: ['apiKey',] }],
+        zoom: [{ type: Input }]
     };
     return GoogleMapsComponent;
 }());
@@ -32,6 +45,10 @@ export { GoogleMapsComponent };
 if (false) {
     /** @type {?} */
     GoogleMapsComponent.prototype.isCordova;
+    /** @type {?} */
+    GoogleMapsComponent.prototype.apiKey;
+    /** @type {?} */
+    GoogleMapsComponent.prototype.zoom;
 }
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ29vZ2xlLW1hcHMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6Im5nOi8vZ29vZ2xlLW1hcHMvIiwic291cmNlcyI6WyJsaWIvZ29vZ2xlLW1hcHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFVLEtBQUssRUFBRSxNQUFNLGVBQWUsQ0FBQzs7SUFldkQ7S0FBaUI7Ozs7SUFFakIsc0NBQVE7OztJQUFSO0tBQ0M7O2dCQWhCRixTQUFTLFNBQUM7b0JBQ1QsUUFBUSxFQUFFLGlCQUFpQjtvQkFDM0IsUUFBUSxFQUFFLG1EQUlUO29CQUNELE1BQU0sRUFBRSxFQUFFO2lCQUNYOzs7Ozs0QkFHRSxLQUFLOzs4QkFiUjs7U0FXYSxtQkFBbUIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCwgSW5wdXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnZml2LWdvb2dsZS1tYXBzJyxcbiAgdGVtcGxhdGU6IGBcbiAgICA8cD5cbiAgICAgIGdvb2dsZS1tYXBzIHdvcmtzIVxuICAgIDwvcD5cbiAgYCxcbiAgc3R5bGVzOiBbXVxufSlcbmV4cG9ydCBjbGFzcyBHb29nbGVNYXBzQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcblxuICBASW5wdXQoKSBpc0NvcmRvdmE6IGJvb2xlYW47XG5cbiAgY29uc3RydWN0b3IoKSB7IH1cblxuICBuZ09uSW5pdCgpIHtcbiAgfVxuXG59XG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ29vZ2xlLW1hcHMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6Im5nOi8vQGZpdmV0aHJlZS9nb29nbGUtbWFwcy8iLCJzb3VyY2VzIjpbImxpYi9nb29nbGUtbWFwcy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUNBLE9BQU8sRUFBRSxTQUFTLEVBQVUsS0FBSyxFQUFFLE1BQU0sZUFBZSxDQUFDOztJQWdCdkQ7S0FBaUI7Ozs7SUFFakIsc0NBQVE7OztJQUFSO0tBQ0M7Ozs7OztJQUVELHVDQUFTOzs7OztJQUFULFVBQVUsR0FBVyxFQUFFLEdBQVc7S0FDakM7O2dCQXBCRixTQUFTLFNBQUM7b0JBQ1QsUUFBUSxFQUFFLGlCQUFpQjtvQkFDM0IsUUFBUSxFQUFFLHVLQUdUO2lCQUVGOzs7Ozs0QkFHRSxLQUFLO3lCQUNMLEtBQUssU0FBQyxRQUFRO3VCQUNkLEtBQUs7OzhCQWZSOztTQVdhLG1CQUFtQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IElHb29nbGVNYXAgfSBmcm9tICcuL2dvb2dsZS1tYXAnO1xuaW1wb3J0IHsgQ29tcG9uZW50LCBPbkluaXQsIElucHV0IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ2Zpdi1nb29nbGUtbWFwcycsXG4gIHRlbXBsYXRlOiBgXG4gICAgPGZpdi1nb29nbGUtbWFwLXdlYiAqbmdJZj1cIiFpc0NvcmRvdmFcIiBbYXBpS2V5XT1cImFwaUtleVwiPjwvZml2LWdvb2dsZS1tYXAtd2ViPlxuICAgIDxmaXYtZ29vZ2xlLW1hcC1uYXRpdmUgKm5nSWY9XCJpc0NvcmRvdmFcIj48L2Zpdi1nb29nbGUtbWFwLW5hdGl2ZT5cbiAgYCxcbiAgc3R5bGVzOiBbXVxufSlcbmV4cG9ydCBjbGFzcyBHb29nbGVNYXBzQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0LCBJR29vZ2xlTWFwIHtcblxuICBASW5wdXQoKSBpc0NvcmRvdmE6IGJvb2xlYW47XG4gIEBJbnB1dCgnYXBpS2V5JykgYXBpS2V5OiBzdHJpbmc7XG4gIEBJbnB1dCgpIHpvb206IG51bWJlcjtcblxuICBjb25zdHJ1Y3RvcigpIHsgfVxuXG4gIG5nT25Jbml0KCkge1xuICB9XG5cbiAgYWRkTWFya2VyKGxhdDogbnVtYmVyLCBsbmc6IG51bWJlcikge1xuICB9XG5cbn1cbiJdfQ==

@@ -1,5 +1,6 @@
+import { IGoogleMap } from './../google-map';
 import { OnInit, ElementRef, Renderer2 } from '@angular/core';
-export declare class GoogleMapWebComponent implements OnInit {
+export declare class GoogleMapWebComponent implements OnInit, IGoogleMap {
     private renderer;
     private element;
     private _document;
@@ -8,10 +9,9 @@ export declare class GoogleMapWebComponent implements OnInit {
     mapOptions: google.maps.MapOptions;
     lat: number;
     lng: number;
-    map: any;
-    markers: any[];
+    map: google.maps.Map;
+    markers: google.maps.Marker[];
     private mapsLoaded;
-    private networkHandler;
     constructor(renderer: Renderer2, element: ElementRef, _document: any);
     ngOnInit(): void;
     private init();

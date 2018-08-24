@@ -1,0 +1,12 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+export { GoogleMapsService, GoogleMapsComponent, GoogleMapsModule } from './public_api';
+export { GoogleMapNativeComponent as ɵb } from './lib/native/google-map-native';
+export { GoogleMapWebComponent as ɵa } from './lib/web/google-map-web';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZml2ZXRocmVlLWdvb2dsZS1tYXBzLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQGZpdmV0aHJlZS9nb29nbGUtbWFwcy8iLCJzb3VyY2VzIjpbImZpdmV0aHJlZS1nb29nbGUtbWFwcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBSUEseUVBQWMsY0FBYyxDQUFDO0FBRTdCLE9BQU8sRUFBQyx3QkFBd0IsSUFBSSxFQUFFLEVBQUMsTUFBTSxnQ0FBZ0MsQ0FBQztBQUM5RSxPQUFPLEVBQUMscUJBQXFCLElBQUksRUFBRSxFQUFDLE1BQU0sMEJBQTBCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEdlbmVyYXRlZCBidW5kbGUgaW5kZXguIERvIG5vdCBlZGl0LlxuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vcHVibGljX2FwaSc7XG5cbmV4cG9ydCB7R29vZ2xlTWFwTmF0aXZlQ29tcG9uZW50IGFzIMm1Yn0gZnJvbSAnLi9saWIvbmF0aXZlL2dvb2dsZS1tYXAtbmF0aXZlJztcbmV4cG9ydCB7R29vZ2xlTWFwV2ViQ29tcG9uZW50IGFzIMm1YX0gZnJvbSAnLi9saWIvd2ViL2dvb2dsZS1tYXAtd2ViJzsiXX0=
