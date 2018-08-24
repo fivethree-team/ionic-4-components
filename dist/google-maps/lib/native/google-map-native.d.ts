@@ -1,6 +1,6 @@
 import { IGoogleMap } from './../google-map';
 import { OnInit } from '@angular/core';
-import { GoogleMap, GoogleMapOptions, Marker } from '@ionic-native/google-maps';
+import { GoogleMap, GoogleMapOptions, LatLng, Marker } from '@ionic-native/google-maps';
 export declare class GoogleMapNativeComponent implements OnInit, IGoogleMap {
     zoom: number;
     mapOptions: GoogleMapOptions;
@@ -9,5 +9,7 @@ export declare class GoogleMapNativeComponent implements OnInit, IGoogleMap {
     constructor();
     ngOnInit(): void;
     loadMap(): any;
+    zoomToMyLocation(): Promise<void>;
+    moveCenterTo(latLng: LatLng): void;
     addMarker(lat: number, lng: number): void;
 }

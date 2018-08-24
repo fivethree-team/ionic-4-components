@@ -12,7 +12,7 @@ import {
 })
 export class GoogleMapNativeComponent implements OnInit, IGoogleMap {
 
-    @Input() zoom: number = 15;
+    @Input() zoom: number = 14;
     @Input() mapOptions: GoogleMapOptions;
 
     public map: GoogleMap;
@@ -27,7 +27,6 @@ export class GoogleMapNativeComponent implements OnInit, IGoogleMap {
 
     loadMap(): any {
         console.log("loading Map");
-
         this.map = GoogleMaps.create('map', {
             controls: {
                 myLocation: true,
@@ -36,14 +35,16 @@ export class GoogleMapNativeComponent implements OnInit, IGoogleMap {
                 compass: true,
             }
         });
+        this.map.one(GoogleMapsEvent.MAP_READY).then(() => this.zoomToMyLocation());
+    }
 
-        this.map.one(GoogleMapsEvent.MAP_READY).then(() => console.log("map is ready"));
+    async zoomToMyLocation() {
+        const location: MyLocation = await this.map.getMyLocation({ enableHighAccuracy: true });
+        this.moveCenterTo(location.latLng);
+    }
 
-        console.log("loaded Map");
-
-        this.map.getMyLocation({ enableHighAccuracy: true }).then((location: MyLocation) => {
-            this.map.animateCamera({ zoom: this.zoom, target: location.latLng, duration: 350 });
-        });
+    moveCenterTo(latLng: LatLng) {
+        this.map.animateCamera({ zoom: this.zoom, target: latLng, duration: 350 });
     }
 
     addMarker(lat: number, lng: number) {
