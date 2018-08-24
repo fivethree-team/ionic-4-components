@@ -41,9 +41,9 @@ export class GoogleMapNativeComponent implements OnInit, IGoogleMap {
 
         console.log("loaded Map");
 
-        // this.map.getMyLocation({ enableHighAccuracy: true }).then((location: MyLocation) => {
-        //     this.map.animateCamera({ zoom: this.zoom, target: location.latLng, duration: 350 });
-        // });
+        this.map.getMyLocation({ enableHighAccuracy: true }).then((location: MyLocation) => {
+            this.map.animateCamera({ zoom: this.zoom, target: location.latLng, duration: 350 });
+        });
     }
 
     addMarker(lat: number, lng: number) {
