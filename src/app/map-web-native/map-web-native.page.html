@@ -3,10 +3,10 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Map Native</ion-title>
+    <ion-title>Map Web or Native</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <fiv-google-map-native></fiv-google-map-native>
+  <fiv-google-maps apiKey="YOUR_API_KEY" [isCordova]="isCordova"></fiv-google-maps>
 </ion-content>

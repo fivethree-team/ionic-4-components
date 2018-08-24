@@ -13,7 +13,7 @@ export class GoogleMapsComponent implements OnInit, IGoogleMap {
 
   @Input() isCordova: boolean;
   @Input('apiKey') apiKey: string;
-  @Input() zoom: number;
+  @Input() zoom: number = 15;
 
   constructor() { }
 
