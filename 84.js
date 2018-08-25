@@ -1,0 +1,87 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[84],{
+
+/***/ "./node_modules/@ionic/core/dist/esm/es5/chunk-76b36062.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/es5/chunk-76b36062.js ***!
+  \*****************************************************************/
+/*! exports provided: a, b, c, d, e, f, g, h, i, j */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return now; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return hasShadowDom; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return deferEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return renderHiddenInput; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return debounceEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return isEndSide; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return assert; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return clamp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return debounce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return pointerCoord; });
+function hasShadowDom(e) { return !!e.shadowRoot && !!e.attachShadow; }
+function renderHiddenInput(e, n, t, o) { if (hasShadowDom(e)) {
+    var r = e.querySelector("input.aux-input");
+    r || ((r = e.ownerDocument.createElement("input")).type = "hidden", r.classList.add("aux-input"), e.appendChild(r)), r.disabled = o, r.name = n, r.value = t;
+} }
+function clamp(e, n, t) { return Math.max(e, Math.min(n, t)); }
+function assert(e, n) { if (!e) {
+    var e_1 = "ASSERT: " + n;
+    throw console.error(e_1), new Error(e_1);
+} }
+function now(e) { return e.timeStamp || Date.now(); }
+function pointerCoord(e) { if (e) {
+    var n = e.changedTouches;
+    if (n && n.length > 0) {
+        var e_2 = n[0];
+        return { x: e_2.clientX, y: e_2.clientY };
+    }
+    if (void 0 !== e.pageX)
+        return { x: e.pageX, y: e.pageY };
+} return { x: 0, y: 0 }; }
+function isEndSide(e, n) { var t = "rtl" === e.document.dir; switch (n) {
+    case "start": return t;
+    case "end": return !t;
+    default: throw new Error("\"" + n + "\" is not a valid value for [side]. Use \"start\" or \"end\" instead.");
+} }
+function deferEvent(e) { return debounceEvent(e, 0); }
+function debounceEvent(e, n) { var t = e._original || e; return { _original: e, emit: debounce(t.emit.bind(t), n) }; }
+function debounce(e, n) {
+    if (n === void 0) { n = 0; }
+    var t;
+    return function () {
+        var o = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            o[_i] = arguments[_i];
+        }
+        clearTimeout(t), t = setTimeout.apply(void 0, [e, n].concat(o));
+    };
+}
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm/es5/ntr59svh.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/es5/ntr59svh.js ***!
+  \***********************************************************/
+/*! exports provided: IonRoute, IonRouteRedirect, IonRouter */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IonRoute", function() { return Route; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IonRouteRedirect", function() { return RouteRedirect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IonRouter", function() { return Router; });
+/* harmony import */ var _chunk_76b36062_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-76b36062.js */ "./node_modules/@ionic/core/dist/esm/es5/chunk-76b36062.js");
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ * Built with http://stenciljs.com
+ */
+var __awaiter=undefined&&undefined.__awaiter||function(t,e,n,r){return new(n||(n=Promise))(function(o,i){function a(t){try{s(r.next(t))}catch(t){i(t)}}function u(t){try{s(r.throw(t))}catch(t){i(t)}}function s(t){t.done?o(t.value):new n(function(e){e(t.value)}).then(a,u)}s((r=r.apply(t,e||[])).next())})},__generator=undefined&&undefined.__generator||function(t,e){var n,r,o,i,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return i={next:u(0),throw:u(1),return:u(2)},"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function u(i){return function(u){return function(i){if(n)throw new TypeError("Generator is already executing.");for(;a;)try{if(n=1,r&&(o=2&i[0]?r.return:i[0]?r.throw||((o=r.return)&&o.call(r),0):r.next)&&!(o=o.call(r,i[1])).done)return o;switch(r=0,o&&(i=[2&i[0],o.value]),i[0]){case 0:case 1:o=i;break;case 4:return a.label++,{value:i[1],done:!1};case 5:a.label++,r=i[1],i=[0];continue;case 7:i=a.ops.pop(),a.trys.pop();continue;default:if(!(o=(o=a.trys).length>0&&o[o.length-1])&&(6===i[0]||2===i[0])){a=0;continue}if(3===i[0]&&(!o||i[1]>o[0]&&i[1]<o[3])){a.label=i[1];break}if(6===i[0]&&a.label<o[1]){a.label=o[1],o=i;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(i);break}o[2]&&a.ops.pop(),a.trys.pop();continue}i=e.call(t,a)}catch(t){i=[6,t],r=0}finally{n=o=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,u])}}};var Route=function(){function t(){this.url=""}return t.prototype.onUpdate=function(t){this.ionRouteDataChanged.emit(t)},t.prototype.onComponentProps=function(t,e){if(t!==e){var n=t?Object.keys(t):[],r=e?Object.keys(e):[];if(n.length===r.length)for(var o=0,i=n;o<i.length;o++){var a=i[o];if(t[a]!==e[a])return void this.onUpdate(t)}else this.onUpdate(t)}},t.prototype.componentDidLoad=function(){this.ionRouteDataChanged.emit()},t.prototype.componentDidUnload=function(){this.ionRouteDataChanged.emit()},Object.defineProperty(t,"is",{get:function(){return"ion-route"},enumerable:!0,configurable:!0}),Object.defineProperty(t,"properties",{get:function(){return{component:{type:String,attr:"component",watchCallbacks:["onUpdate"]},componentProps:{type:"Any",attr:"component-props",watchCallbacks:["onComponentProps"]},url:{type:String,attr:"url",watchCallbacks:["onUpdate"]}}},enumerable:!0,configurable:!0}),Object.defineProperty(t,"events",{get:function(){return[{name:"ionRouteDataChanged",method:"ionRouteDataChanged",bubbles:!0,cancelable:!0,composed:!0}]},enumerable:!0,configurable:!0}),t}(),RouteRedirect=function(){function t(){this.from=""}return t.prototype.componentDidLoad=function(){this.ionRouteRedirectChanged.emit()},t.prototype.componentDidUnload=function(){this.ionRouteRedirectChanged.emit()},t.prototype.componentDidUpdate=function(){this.ionRouteRedirectChanged.emit()},Object.defineProperty(t,"is",{get:function(){return"ion-route-redirect"},enumerable:!0,configurable:!0}),Object.defineProperty(t,"properties",{get:function(){return{from:{type:String,attr:"from"},to:{type:String,attr:"to"}}},enumerable:!0,configurable:!0}),Object.defineProperty(t,"events",{get:function(){return[{name:"ionRouteRedirectChanged",method:"ionRouteRedirectChanged",bubbles:!0,cancelable:!0,composed:!0}]},enumerable:!0,configurable:!0}),t}();function generatePath(t){return"/"+t.filter(function(t){return t.length>0}).join("/")}function chainToPath(t){for(var e=[],n=0,r=t;n<r.length;n++)for(var o=r[n],i=0,a=o.path;i<a.length;i++){var u=a[i];if(":"===u[0]){var s=o.params&&o.params[u.slice(1)];if(!s)return null;e.push(s)}else""!==u&&e.push(u)}return e}function writePath(t,e,n,r,o,i){var a=generatePath(parsePath(e).concat(r));n&&(a="#"+a),1===o?t.pushState(i,"",a):t.replaceState(i,"",a)}function removePrefix(t,e){if(t.length>e.length)return null;if(t.length<=1&&""===t[0])return e;for(var n=0;n<t.length;n++)if(t[n].length>0&&t[n]!==e[n])return null;return e.length===t.length?[""]:e.slice(t.length)}function readPath(t,e,n){var r=t.pathname;if(n){var o=t.hash;r="#"===o[0]?o.slice(1):""}return removePrefix(parsePath(e),parsePath(r))}function parsePath(t){if(null==t)return[""];var e=t.split("/").map(function(t){return t.trim()}).filter(function(t){return t.length>0});return 0===e.length?[""]:e}function printRoutes(t){console.group("[ion-core] ROUTES["+t.length+"]");for(var e=function(t){var e=[];t.forEach(function(t){return e.push.apply(e,t.path)});var n=t.map(function(t){return t.id});generatePath(e),n.join(", ")},n=0,r=t;n<r.length;n++)e(r[n]);console.groupEnd()}function printRedirects(t){console.group("[ion-core] REDIRECTS["+t.length+"]");for(var e=0,n=t;e<n.length;e++){var r=n[e];r.to&&(generatePath(r.from),generatePath(r.to))}console.groupEnd()}function writeNavState(t,e,n,r,o){return void 0===o&&(o=!1),__awaiter(this,void 0,void 0,function(){var i,a,u,s;return __generator(this,function(h){switch(h.label){case 0:return h.trys.push([0,6,,7]),i=searchNavNode(t),r>=e.length||!i?[2,o]:[4,i.componentOnReady()];case 1:return h.sent(),a=e[r],[4,i.setRouteId(a.id,a.params,n)];case 2:return(u=h.sent()).changed&&(n=0,o=!0),[4,writeNavState(u.element,e,n,r+1,o)];case 3:return o=h.sent(),u.markVisible?[4,u.markVisible()]:[3,5];case 4:h.sent(),h.label=5;case 5:return[2,o];case 6:return s=h.sent(),console.error(s),[2,!1];case 7:return[2]}})})}function readNavState(t){for(var e,n=[],r=t;e=searchNavNode(r);){var o=e.getRouteId();if(!o)break;r=o.element,o.element=void 0,n.push(o)}return{ids:n,outlet:e}}function waitUntilNavNode(t){return searchNavNode(t.document.body)?Promise.resolve():new Promise(function(e){t.addEventListener("ionNavWillLoad",e,{once:!0})})}var QUERY=":not([no-router]) ion-nav, :not([no-router]) ion-tabs, :not([no-router]) ion-router-outlet";function searchNavNode(t){if(t)return t.matches(QUERY)?t:t.querySelector(QUERY)||void 0}function matchesRedirect(t,e){var n=e.from;if(void 0===e.to)return!1;if(n.length>t.length)return!1;for(var r=0;r<n.length;r++){var o=n[r];if("*"===o)return!0;if(o!==t[r])return!1}return n.length===t.length}function routeRedirect(t,e){return e.find(function(e){return matchesRedirect(t,e)})}function matchesIDs(t,e){for(var n=Math.min(t.length,e.length),r=0;r<n&&t[r].toLowerCase()===e[r].id;r++);return r}function matchesPath(t,e){for(var n,r=new RouterSegments(t),o=!1,i=0;i<e.length;i++){var a=e[i].path;if(""===a[0])o=!0;else{for(var u=0,s=a;u<s.length;u++){var h=s[u],c=r.next();if(":"===h[0]){if(""===c)return null;((n=n||[])[i]||(n[i]={}))[h.slice(1)]=c}else if(c!==h)return null}o=!1}}return o&&o!==(""===r.next())?null:n?e.map(function(t,e){return{id:t.id,path:t.path,params:mergeParams(t.params,n[e])}}):e}function mergeParams(t,e){return!t&&e?e:t&&!e?t:t&&e?Object.assign({},t,e):void 0}function routerIDsToChain(t,e){for(var n=null,r=0,o=t.map(function(t){return t.id}),i=0,a=e;i<a.length;i++){var u=a[i],s=matchesIDs(o,u);s>r&&(n=u,r=s)}return n?n.map(function(e,n){return{id:e.id,path:e.path,params:mergeParams(e.params,t[n]&&t[n].params)}}):null}function routerPathToChain(t,e){for(var n=null,r=0,o=0,i=e;o<i.length;o++){var a=matchesPath(t,i[o]);if(null!==a){var u=computePriority(a);u>r&&(r=u,n=a)}}return n}function computePriority(t){for(var e=1,n=1,r=0,o=t;r<o.length;r++)for(var i=0,a=o[r].path;i<a.length;i++){var u=a[i];":"===u[0]?e+=Math.pow(1,n):""!==u&&(e+=Math.pow(2,n)),n++}return e}var RouterSegments=function(){function t(t){this.path=t.slice()}return t.prototype.next=function(){return this.path.length>0?this.path.shift():""},t}();function readRedirects(t){return Array.from(t.children).filter(function(t){return"ION-ROUTE-REDIRECT"===t.tagName}).map(function(t){var e=readProp(t,"to");return{from:parsePath(readProp(t,"from")),to:null==e?void 0:parsePath(e)}})}function readRoutes(t){return flattenRouterTree(readRouteNodes(t))}function readRouteNodes(t,e){return void 0===e&&(e=t),Array.from(e.children).filter(function(t){return"ION-ROUTE"===t.tagName&&t.component}).map(function(e){var n=readProp(e,"component");if(!n)throw new Error("component missing in ion-route");return{path:parsePath(readProp(e,"url")),id:n.toLowerCase(),params:e.componentProps,children:readRouteNodes(t,e)}})}function readProp(t,e){return e in t?t[e]:t.hasAttribute(e)?t.getAttribute(e):null}function flattenRouterTree(t){for(var e=[],n=0,r=t;n<r.length;n++)flattenNode([],e,r[n]);return e}function flattenNode(t,e,n){var r=t.slice();if(r.push({id:n.id,path:n.path,params:n.params}),0!==n.children.length)for(var o=0,i=n.children;o<i.length;o++)flattenNode(r,e,i[o]);else e.push(r)}var Router=function(){function t(){this.previousPath=null,this.busy=!1,this.state=0,this.lastState=0,this.root="/",this.useHash=!0}return t.prototype.componentWillLoad=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return[4,waitUntilNavNode(this.win)];case 1:return t.sent(),[4,this.onRoutesChanged()];case 2:return t.sent(),this.win.addEventListener("ionRouteRedirectChanged",Object(_chunk_76b36062_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this.onRedirectChanged.bind(this),10)),this.win.addEventListener("ionRouteDataChanged",Object(_chunk_76b36062_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this.onRoutesChanged.bind(this),100)),this.onRedirectChanged(),[2]}})})},t.prototype.onPopState=function(){var t=this.historyDirection(),e=this.getPath();return this.writeNavStateRoot(e,t)},t.prototype.push=function(t,e){void 0===e&&(e="forward");var n=parsePath(t),r=DIRECTION_TO_INTENT[e];return this.setPath(n,r),this.writeNavStateRoot(n,r)},t.prototype.printDebug=function(){this.getPath(),this.previousPath,printRoutes(readRoutes(this.el)),printRedirects(readRedirects(this.el))},t.prototype.navChanged=function(t){return __awaiter(this,void 0,void 0,function(){var e,n,r,o,i,a;return __generator(this,function(u){switch(u.label){case 0:return this.busy?[2,!1]:(e=readNavState(this.win.document.body),n=e.ids,r=e.outlet,o=readRoutes(this.el),(i=routerIDsToChain(n,o))?(a=chainToPath(i))?(this.setPath(a,t),[4,this.writeNavState(r,i,0,a,null,n.length)]):(console.warn("[ion-router] router could not match path because some required param is missing"),[2,!1]):(console.warn("[ion-router] no matching URL for ",n.map(function(t){return t.id})),[2,!1]));case 1:return u.sent(),[2,!0]}})})},t.prototype.onRedirectChanged=function(){var t=this.getPath();t&&routeRedirect(t,readRedirects(this.el))&&this.writeNavStateRoot(t,0)},t.prototype.onRoutesChanged=function(){return this.writeNavStateRoot(this.getPath(),0)},t.prototype.historyDirection=function(){null===this.win.history.state&&(this.state++,this.win.history.replaceState(this.state,this.win.document.title,this.win.document.location.href));var t=this.win.history.state,e=this.lastState;return this.lastState=t,t>e?1:t<e?-1:0},t.prototype.writeNavStateRoot=function(t,e){return __awaiter(this,void 0,void 0,function(){var n,r,o,i,a;return __generator(this,function(u){return this.busy?[2,!1]:t?(n=readRedirects(this.el),r=routeRedirect(t,n),o=null,r&&(this.setPath(r.to,e),o=r.from,t=r.to),i=readRoutes(this.el),(a=routerPathToChain(t,i))?[2,this.writeNavState(this.win.document.body,a,e,t,o)]:(console.error("[ion-router] the path does not match any route"),[2,!1])):(console.error("[ion-router] URL is not part of the routing set"),[2,!1])})})},t.prototype.writeNavState=function(t,e,n,r,o,i){return void 0===i&&(i=0),__awaiter(this,void 0,void 0,function(){var a,u;return __generator(this,function(s){switch(s.label){case 0:return this.busy?[2,!1]:(this.busy=!0,(a=this.routeChangeEvent(r,o))&&this.ionRouteWillChange.emit(a),[4,writeNavState(t,e,n,i)]);case 1:return u=s.sent(),this.busy=!1,a&&this.ionRouteDidChange.emit(a),[2,u]}})})},t.prototype.setPath=function(t,e){this.state++,writePath(this.win.history,this.root,this.useHash,t,e,this.state)},t.prototype.getPath=function(){return readPath(this.win.location,this.root,this.useHash)},t.prototype.routeChangeEvent=function(t,e){var n=this.previousPath,r=generatePath(t);return this.previousPath=r,r===n?null:{from:n,redirectedFrom:e?generatePath(e):null,to:r}},Object.defineProperty(t,"is",{get:function(){return"ion-router"},enumerable:!0,configurable:!0}),Object.defineProperty(t,"properties",{get:function(){return{config:{context:"config"},el:{elementRef:!0},navChanged:{method:!0},printDebug:{method:!0},push:{method:!0},queue:{context:"queue"},root:{type:String,attr:"root"},useHash:{type:Boolean,attr:"use-hash"},win:{context:"window"}}},enumerable:!0,configurable:!0}),Object.defineProperty(t,"events",{get:function(){return[{name:"ionRouteWillChange",method:"ionRouteWillChange",bubbles:!0,cancelable:!0,composed:!0},{name:"ionRouteDidChange",method:"ionRouteDidChange",bubbles:!0,cancelable:!0,composed:!0}]},enumerable:!0,configurable:!0}),Object.defineProperty(t,"listeners",{get:function(){return[{name:"window:popstate",method:"onPopState"}]},enumerable:!0,configurable:!0}),t}(),DIRECTION_TO_INTENT={back:-1,root:0,forward:1};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=84.js.map
