@@ -1,6 +1,18 @@
 {
   "name": "@fivethree/google-maps",
   "version": "0.0.1",
+  "description": "Google Map Web Component for Ionic and Cordova",
+  "keywords": [
+    "google map",
+    "ionic",
+    "angular",
+    "cordova",
+    "web",
+    "native",
+    "hybrid",
+    "web-components",
+    "typescript"
+  ],
   "peerDependencies": {
     "@angular/common": "^6.1.4",
     "@angular/core": "^6.1.4",
@@ -9,5 +21,14 @@
     "cordova-plugin-googlemaps": "^2.3.11",
     "rxjs": "6.2.2",
     "rxjs-compat": "6.2.2"
-  }
+  },
+  "author": "Fivethree Team",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fivethree-team/fivethree.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fivethree-team/fivethree/issues"
+  },
+  "homepage": "https://github.com/fivethree-team/fivethree#readme"
 }
