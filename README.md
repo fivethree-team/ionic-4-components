@@ -17,7 +17,7 @@ This package is under active construction.
 
 `ng build $LIBRARY_NAME` to build the library for publishing
 
-`cd dist/$LIBRARY_NAME && npm publish` to publish to npm
+`cd dist/$LIBRARY_NAME && npm publish --access public` to publish to npm
 
 
 ## Components
