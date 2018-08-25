@@ -1,5 +1,5 @@
-<fiv-dialog #dialogTop [backdropClose]="backdropClose" [swipeEnabled]="swipeEnabled" [fullscreen]="fullscreen" [animation]="animation" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
-  <ion-card>
+<fiv-dialog #dialogTop [backdropClose]="backdropClose" [swipeEnabled]="swipeEnabled" [animation]="animation" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
+  <ion-card class="card">
       <ion-card-content>
           <ion-card-title>Hello World</ion-card-title>
       
@@ -54,15 +54,15 @@
           </ion-select>
         </ion-item>
 
-        <gg-loading-button (click)="openDialog()">
+        <fiv-loading-button (click)="openDialog()">
           Zeige Dialog
-        </gg-loading-button>
+        </fiv-loading-button>
 
   </ion-list>
 
 </ion-content>
 <fiv-dialog #dialogBottom [backdropClose]="backdropClose" [swipeEnabled]="swipeEnabled" [animation]="animation" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
-  <ion-card>
+  <ion-card class="card">
       <ion-card-content>
           <ion-card-title>Hello World</ion-card-title>
       
