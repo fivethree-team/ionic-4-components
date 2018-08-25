@@ -65,7 +65,7 @@ var MapWebNativePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Map Web or Native</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <fiv-google-maps apiKey=\"YOUR_API_KEY\" [isCordova]=\"isCordova\"></fiv-google-maps>\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Map Web or Native</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <fiv-google-maps apiKey=\"AIzaSyDayeVB9R64ksX6GrMBFoR2edyYFrzJ8ug\" [isCordova]=\"isCordova\"></fiv-google-maps>\n</ion-content>"
 
 /***/ }),
 
