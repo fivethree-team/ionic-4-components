@@ -580,8 +580,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mj/Dev/fivethree/web-components/component-library/src/theme/variables.scss */"./src/theme/variables.scss");
-module.exports = __webpack_require__(/*! /Users/mj/Dev/fivethree/web-components/component-library/src/global.scss */"./src/global.scss");
+__webpack_require__(/*! /Users/garygrossgarten/Dev/things/fivethree-lib/src/theme/variables.scss */"./src/theme/variables.scss");
+module.exports = __webpack_require__(/*! /Users/garygrossgarten/Dev/things/fivethree-lib/src/global.scss */"./src/global.scss");
 
 
 /***/ })
