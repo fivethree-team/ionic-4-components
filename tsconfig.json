@@ -14,17 +14,18 @@
       "dom"
     ],
     "paths": {
-      "ionic-material-loading": [
-        "dist/ionic-material-loading"
+      "@environments/*": ["src/environments/*"],
+      "loading": [
+        "dist/loading"
       ],
-      "ionic-material-loading/*": [
-        "dist/ionic-material-loading/*"
+      "loading/*": [
+        "dist/loading/*"
       ],
-      "ionic-material-dialog": [
-        "dist/ionic-material-dialog"
+      "dialog": [
+        "dist/dialog"
       ],
-      "ionic-material-dialog/*": [
-        "dist/ionic-material-dialog/*"
+      "dialog/*": [
+        "dist/dialog/*"
       ],
       "google-maps": [
         "dist/google-maps"

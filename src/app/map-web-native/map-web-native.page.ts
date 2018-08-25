@@ -1,5 +1,6 @@
 import { Platform } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'app-map-web-native',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapWebNativePage implements OnInit {
   
+  apiKey = environment.mapApiKey
   isCordova: boolean;
 
   constructor(private platform: Platform) { }

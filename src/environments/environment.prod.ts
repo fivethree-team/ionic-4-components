@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  mapApiKey: 'YOUR_API_KEY'
 };
