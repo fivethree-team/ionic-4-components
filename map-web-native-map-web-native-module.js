@@ -65,7 +65,7 @@ var MapWebNativePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Map Web or Native</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <fiv-google-maps apiKey=\"AIzaSyDayeVB9R64ksX6GrMBFoR2edyYFrzJ8ug\" [isCordova]=\"isCordova\"></fiv-google-maps>\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Map Web or Native</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <fiv-google-maps [apiKey]=\"apiKey\" [isCordova]=\"isCordova\"></fiv-google-maps>\n</ion-content>"
 
 /***/ }),
 
@@ -92,6 +92,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapWebNativePage", function() { return MapWebNativePage; });
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @environments/environment */ "./src/environments/environment.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -103,9 +104,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var MapWebNativePage = /** @class */ (function () {
     function MapWebNativePage(platform) {
         this.platform = platform;
+        this.apiKey = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].mapApiKey;
     }
     MapWebNativePage.prototype.ngOnInit = function () {
         this.isCordova = this.platform.is('cordova');

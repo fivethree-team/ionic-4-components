@@ -1364,7 +1364,8 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: false
+    production: false,
+    mapApiKey: 'AIzaSyDayeVB9R64ksX6GrMBFoR2edyYFrzJ8ug'
 };
 /*
  * In development mode, to ignore zone related error stack frames such as
@@ -1413,7 +1414,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/garygrossgarten/Dev/things/fivethree-lib/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/mj/Dev/fivethree/web-components/component-library/src/main.ts */"./src/main.ts");
 
 
 /***/ })

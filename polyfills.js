@@ -5469,7 +5469,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/garygrossgarten/Dev/things/fivethree-lib/src/polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! /Users/mj/Dev/fivethree/web-components/component-library/src/polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })
