@@ -1,12 +1,14 @@
 import { Component, Input, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { ProgressBar } from '../progress-bar/progress-bar.component';
 
+export type verticalAlign = "top" | "bottom";
+
 
 @Component({
     selector: 'gg-loading-button',
     template: `
-    <gg-loading-progressbar (onComplete)="onComplete($event)" #progress [global]="false"></gg-loading-progressbar>
-    <ion-button [expand]="expand" [color]="color">
+    <ion-button class="buttonfull" [disabled]="disabled" [expand]="expand" [color]="color">
+    <gg-loading-progressbar [verticalAlign]="verticalAlign" (onComplete)="onComplete($event)" #progress [global]="false"></gg-loading-progressbar>
     <ng-content></ng-content>
   </ion-button>
     `,
@@ -20,6 +22,8 @@ export class ButtonFull implements OnInit {
     @ViewChild('progress') progress: ProgressBar;
     @Input() color: string = 'light';
     @Input() expand: string = 'block';
+    @Input() disabled: boolean = false;
+    @Input() verticalAlign: verticalAlign = 'top';
     @Output() onRefresh: EventEmitter<ButtonFull> = new EventEmitter();
     @Output() onRefreshComplete: EventEmitter<ButtonFull> = new EventEmitter();
 

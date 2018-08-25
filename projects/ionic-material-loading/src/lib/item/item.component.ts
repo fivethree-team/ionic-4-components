@@ -2,6 +2,8 @@ import { Component, Input, OnInit, ViewChild, Output, EventEmitter } from '@angu
 import { animate, style, transition, trigger } from "@angular/animations";
 import { ProgressBar } from '../progress-bar/progress-bar.component';
 
+export type verticalAlign = "top" | "bottom";
+
 
 @Component({
     selector: 'gg-loading-item',
@@ -9,7 +11,7 @@ import { ProgressBar } from '../progress-bar/progress-bar.component';
     <ion-item [ngClass]="{'loading': loading}">
     <ng-content></ng-content>
   </ion-item>
-  <gg-loading-progressbar (onComplete)="onComplete($event)" #progress [global]="false"></gg-loading-progressbar>
+  <gg-loading-progressbar [verticalAlign]="verticalAlign" (onComplete)="onComplete($event)" #progress [global]="false"></gg-loading-progressbar>
 
     `,
     styleUrls: ['item.scss'],
@@ -18,6 +20,7 @@ import { ProgressBar } from '../progress-bar/progress-bar.component';
 export class ItemProgress implements OnInit {
 
     loading: boolean = false;
+    @Input() verticalAlign: verticalAlign = 'bottom';
 
     @ViewChild('progress') progress: ProgressBar;
     @Output() onRefreshComplete: EventEmitter<ItemProgress> = new EventEmitter<ItemProgress>();

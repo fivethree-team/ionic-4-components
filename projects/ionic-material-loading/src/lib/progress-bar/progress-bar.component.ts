@@ -2,11 +2,13 @@ import { Component, Input, OnInit, ViewChild, ElementRef, EventEmitter, Output, 
 import { animate, style, transition, trigger } from "@angular/animations";
 import { LoadingService } from '../loading.service';
 
+export type verticalAlign = "top" | "bottom";
+
 
 @Component({
     selector: 'gg-loading-progressbar',
     template: `
-<div [@progressAnim] *ngIf="(!global && loading) || (global && loadingService.loading)" class="slider">
+<div [@progressAnim] *ngIf="(!global && loading) || (global && loadingService.loading)" class="slider" [ngClass]="{'top':verticalAlign == 'top','bottom': verticalAlign == 'bottom'}" >
   <div class="line"></div>
   <div *ngIf="!isComplete" class="subline inc"></div>
   <div *ngIf="isComplete" [@fillAnim] (@fillAnim.done)="fillAnimationComplete(isComplete)" class="subline fill"></div>
@@ -37,6 +39,7 @@ export class ProgressBar implements OnInit, OnDestroy {
     loading: boolean = false;
     @Input() global: boolean = false;
     @Input() isComplete: boolean = false;
+    @Input() verticalAlign: verticalAlign = 'top';
     @Output() onComplete: EventEmitter<boolean> = new EventEmitter<boolean>();
     @Output() onRefresh: EventEmitter<ProgressBar> = new EventEmitter<ProgressBar>();
 

@@ -1,6 +1,16 @@
 $offset: 187;
 $duration: 1.4s;
 
+:host{
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
 .spinner {
   position: absolute;
   width: 24px;
@@ -8,6 +18,7 @@ $duration: 1.4s;
     left: 8px;
     top: 8px;
 }
+
 
 .rotate{
   animation: rotator $duration linear infinite;
@@ -113,4 +124,8 @@ $duration: 1.4s;
   top: 112px;
   z-index: 8;
   text-align: center;
+}
+
+.gg-content{
+  margin-top: 56px;
 }

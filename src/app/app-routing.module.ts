@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'map', loadChildren: './map/map.module#MapPageModule' },
   { path: 'map-native', loadChildren: './map-native/map-native.module#MapNativePageModule' },
   { path: 'map-web-native', loadChildren: './map-web-native/map-web-native.module#MapWebNativePageModule' },
+  { path: 'layout', loadChildren: './layout/layout.module#LayoutPageModule' },
 ];
 
 @NgModule({

@@ -31,6 +31,12 @@
       ],
       "google-maps/*": [
         "dist/google-maps/*"
+      ],
+      "layout": [
+        "dist/layout"
+      ],
+      "layout/*": [
+        "dist/layout/*"
       ]
     }
   }

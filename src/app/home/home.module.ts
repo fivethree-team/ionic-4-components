@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import { LoadingModule } from 'dist/ionic-material-loading';
 
-
 @NgModule({
   imports: [
     CommonModule,

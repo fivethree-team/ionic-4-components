@@ -14,9 +14,9 @@ export type verticalAlign = "top" | "bottom" | "center"
   template: `
   <div #backdrop class="gg-backdrop" [@backdropAnim] (@backdropAnim.done)="backdropAnimDone($event)" (click)="backdropClose? hideDialog() : false" *ngIf="animationState !== 'hidden' && backdrop">
   </div>
-  <ion-card #card [@dialogAnim]="animationState" (@dialogAnim.done)="onDialogAnimationDone($event)" mode="md" class="gg-dialog" [ngClass]="{'floating': isFloating(),'fullscreen':fullscreen,'rounded-top': roundedTop(),'rounded-bottom':roundedBottom()}">
+  <div #card [@dialogAnim]="animationState" (@dialogAnim.done)="onDialogAnimationDone($event)" mode="md" class="gg-dialog" [ngClass]="{'floating': isFloating(),'fullscreen':fullscreen,'rounded-top': roundedTop(),'rounded-bottom':roundedBottom()}">
   <ng-content></ng-content>
-  </ion-card>
+  </div>
   `,
   styleUrls: ['dialog.scss'],
   animations: [

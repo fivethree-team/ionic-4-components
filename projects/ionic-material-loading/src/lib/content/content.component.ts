@@ -1,12 +1,14 @@
 import { Component, Input, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { animate, style, transition, trigger, state } from "@angular/animations";
 import { fromEvent } from 'rxjs';
+import { Refresher } from '@ionic/angular';
 
 
 
 @Component({
     selector: 'gg-loading-content',
     template: `
+    <ion-content fullscreen>
     <div class="gg-hint-wrapper">
     <ion-chip *ngIf="hintVisible" (click)="onHintClicked()" [@hintAnim] (@hintAnim.done)="postHint($event)" #hint class="gg-hint-container">
   <ion-icon class="icon" name="md-arrow-up"></ion-icon>
@@ -19,8 +21,12 @@ import { fromEvent } from 'rxjs';
             <circle [@fillAnim]="isComplete ? 'fill' : 'spinning'" (@fillAnim.done)="fillAnimationDone($event)" [ngClass]="{'path': !isComplete}" fill="none" stroke-width="4" stroke-linecap="round" cx="36" cy="36" r="32"></circle>
         </svg>
     </div>
-        <ion-refresher (ionStart)="onStart()" [snapbackDuration]="280" [closeDuration]="280" [pullMax]="168" [pullMin]="112" [disabled]="false" slot="fixed" (ionRefresh)="doRefresh($event)" (ionPull)="onPull($event)">
+    <ion-refresher slot="fixed" #refresher class="refresher" (ionStart)="onStart()" snapbackDuration="400ms" closeDuration="800ms" [pullMax]="168" [pullMin]="56" [disabled]="false" slot="fixed" (ionRefresh)="doRefresh($event)" (ionPull)="onPull($event)">
         </ion-refresher>
+        <div class="gg-content">
+        <ng-content></ng-content>
+        </div>
+        </ion-content>
     `,
     styleUrls: ['content.scss'],
     animations: [
@@ -67,6 +73,7 @@ export class ContentRefresh implements OnInit {
     @Output() onRefresh: EventEmitter<ContentRefresh> = new EventEmitter();
     @ViewChild('spinner') spinner: ElementRef;
     @ViewChild('content') content: ElementRef;
+    refresher: Refresher;
     isComplete = false;
     pulling: boolean = false;
     refreshing: boolean = false;
@@ -97,12 +104,15 @@ export class ContentRefresh implements OnInit {
     }
 
     doRefresh(event) {
+        this.spinner.nativeElement.style.setProperty('transition', `all 400ms ease`);
         this.spinRefresher();
         console.log('refresh here');
-        setTimeout(() => {
-            event.target.complete();
-        }, 140);
-        this.refresh();
+        setTimeout(()=>{
+            this.refresh();
+            event.target.closeDuration = "400ms";
+            this.refresher = event.target.complete();
+
+        },400)
 
     }
 
@@ -111,6 +121,7 @@ export class ContentRefresh implements OnInit {
     }
 
     completeRefresh() {
+        this.spinner.nativeElement.style.setProperty('transition', `0`);
         this.refreshing = false;
         this.isComplete = true;
     }
