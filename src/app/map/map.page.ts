@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'app-map',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapPage implements OnInit {
 
+  apiKey = environment.mapApiKey;
+  
   constructor() { }
 
   ngOnInit() {
