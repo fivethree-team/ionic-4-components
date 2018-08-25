@@ -12,6 +12,6 @@
   </ion-buttons>
 </div>
 
-<ion-fab-button [@fabScrollAnim]="hidden ? 'scroll' : 'normal'" [@fabAnim]="fabLeft && fabVisible ? 'left' : fabRight && fabVisible ? 'right' : fabVisible? 'middle' : ''" *ngIf="fabVisible" (@fabAnim.start)="onFabAnimStart($event)" (@fabAnim.done)="onFabAnimDone($event)" (click)="onFabClick()" id="fab">
+<ion-fab-button color="light" [@fabScrollAnim]="hidden ? 'scroll' : 'normal'" [@fabAnim]="fabLeft && fabVisible ? 'left' : fabRight && fabVisible ? 'right' : fabVisible? 'middle' : ''" *ngIf="fabVisible" (@fabAnim.start)="onFabAnimStart($event)" (@fabAnim.done)="onFabAnimDone($event)" (click)="onFabClick()" id="fab">
   <ion-icon [name]="fabIcon"></ion-icon>
 </ion-fab-button>
