@@ -5,14 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DialogPage } from './dialog.page';
-import { DialogModule } from 'dist/dialog';
-import { LoadingModule } from 'dist/loading';
+import { LayoutPage } from './layout.page';
+import { LayoutModule } from 'dist/layout';
 
 const routes: Routes = [
   {
     path: '',
-    component: DialogPage
+    component: LayoutPage
   }
 ];
 
@@ -21,10 +20,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    DialogModule,
-    LoadingModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    LayoutModule
   ],
-  declarations: [DialogPage]
+  declarations: [LayoutPage]
 })
-export class DialogPageModule {}
+export class LayoutPageModule {}

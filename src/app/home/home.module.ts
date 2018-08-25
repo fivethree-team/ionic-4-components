@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
-import { LoadingModule } from 'dist/ionic-material-loading';
+import { LoadingModule } from 'dist/loading';
 
 @NgModule({
   imports: [

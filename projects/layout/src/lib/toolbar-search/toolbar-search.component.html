@@ -1,0 +1,21 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ng-content select="[start]"></ng-content>
+
+  </ion-buttons>
+  <ion-title [@titleAnim] *ngIf="titleVisible">{{title}}</ion-title>
+  <ion-input (ionChange)="inputChange.emit($event)" [placeholder]="!titleVisible ? placeholder : ''" autofocus #input class="toolbar-searchbar"
+    [@searchbarAnim] (@searchbarAnim.done)="seachbarAnimDone($event)" *ngIf="searching">
+  </ion-input>
+
+  <ion-buttons slot="end">
+    <ion-button [@rotateAnim] (@rotateAnim.done)="searchAnimDone($event)" *ngIf="!searching" (click)="openSearchbar()">
+      <ion-icon name="md-search"></ion-icon>
+    </ion-button>
+    <ion-button [@rotateAnim] (@rotateAnim.done)="closeAnimDone($event)" *ngIf="closeButtonVisible" (click)="closeSearchbar()">
+      <ion-icon name="md-close"></ion-icon>
+    </ion-button>
+    <ng-content select="[end]"></ng-content>
+
+  </ion-buttons>
+</ion-toolbar>

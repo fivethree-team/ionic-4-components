@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { LoadingService } from 'dist/ionic-material-loading';
+import { LoadingService } from 'dist/loading';
 
 @Component({
   selector: 'app-home',

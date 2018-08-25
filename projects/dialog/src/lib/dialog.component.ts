@@ -14,7 +14,7 @@ export type verticalAlign = "top" | "bottom" | "center"
   template: `
   <div #backdrop class="gg-backdrop" [@backdropAnim] (@backdropAnim.done)="backdropAnimDone($event)" (click)="backdropClose? hideDialog() : false" *ngIf="animationState !== 'hidden' && backdrop">
   </div>
-  <div #card [@dialogAnim]="animationState" (@dialogAnim.done)="onDialogAnimationDone($event)" mode="md" class="gg-dialog" [ngClass]="{'floating': isFloating(),'fullscreen':fullscreen,'rounded-top': roundedTop(),'rounded-bottom':roundedBottom()}">
+  <div #card [@dialogAnim]="animationState" (@dialogAnim.done)="onDialogAnimationDone($event)" mode="md" class="gg-dialog">
   <ng-content></ng-content>
   </div>
   `,
@@ -124,10 +124,7 @@ export class DialogComponent implements OnInit {
 
   @Input() animation: animation = 'slideIn';
   @Input() verticalAlign: verticalAlign = 'bottom';
-  @Input() floating: boolean = false;
   @Input() backdrop: boolean = false;
-  @Input() fullscreen: boolean = false;
-  @Input() rounded: boolean = false;
   @Input() backdropClose: boolean = true;
   @Input() swipeEnabled: boolean = true;
 
@@ -192,18 +189,6 @@ export class DialogComponent implements OnInit {
     this.panSubs.forEach(sub => {
       sub.unsubscribe();
     })
-  }
-
-  isFloating(): boolean {
-    return this.floating || (this.rounded && this.verticalAlign === 'center')
-  }
-
-  roundedTop(): boolean {
-    return this.rounded && this.verticalAlign === 'top' && !this.floating
-  }
-
-  roundedBottom(): boolean {
-    return this.rounded && this.verticalAlign === 'bottom' && !this.floating
   }
 
   onSwipeUp(event, threshold) {

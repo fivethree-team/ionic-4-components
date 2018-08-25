@@ -1,11 +1,14 @@
-<gg-dialog #dialogTop [backdropClose]="backdropClose" [swipeEnabled]="swipeEnabled" [rounded]="rounded" [fullscreen]="fullscreen" [animation]="animation" [verticalAlign]="verticalAlign" [floating]="floating" [backdrop]="backdrop">
-  <ion-card-content>
-    <ion-card-title>Hello World</ion-card-title>
-
-    <p>The content for this card</p>
-
-    <ion-button (click)="dialogTop.hideDialog()">schließen</ion-button>
-  </ion-card-content>
+<gg-dialog #dialogTop [backdropClose]="backdropClose" [swipeEnabled]="swipeEnabled" [fullscreen]="fullscreen" [animation]="animation" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
+  <ion-card>
+      <ion-card-content>
+          <ion-card-title>Hello World</ion-card-title>
+      
+          <p>The content for this card</p>
+      
+          <ion-button (click)="dialogTop.hideDialog()">schließen</ion-button>
+        </ion-card-content>
+  </ion-card>
+  
 </gg-dialog>
 
 <ion-header>
@@ -21,10 +24,6 @@
 
   <ion-list>
     <ion-item>
-      <ion-label>Floating</ion-label>
-      <ion-toggle slot="end" [(ngModel)]="floating"></ion-toggle>
-    </ion-item>
-    <ion-item>
       <ion-label>Backdrop</ion-label>
       <ion-toggle slot="end" [(ngModel)]="backdrop"></ion-toggle>
     </ion-item>
@@ -32,14 +31,7 @@
       <ion-label>Backdrop click closes dialog</ion-label>
       <ion-toggle slot="end" [(ngModel)]="backdropClose"></ion-toggle>
     </ion-item>
-    <ion-item>
-      <ion-label>Fullscreen</ion-label>
-      <ion-toggle slot="end" [(ngModel)]="fullscreen"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label>Rounded</ion-label>
-      <ion-toggle slot="end" [(ngModel)]="rounded"></ion-toggle>
-    </ion-item>
+  
     <ion-item>
       <ion-label>Swipe to close</ion-label>
       <ion-toggle slot="end" [(ngModel)]="swipeEnabled"></ion-toggle>
@@ -69,12 +61,15 @@
   </ion-list>
 
 </ion-content>
-<gg-dialog #dialogBottom [backdropClose]="backdropClose" [swipeEnabled]="swipeEnabled" [rounded]="rounded" [fullscreen]="fullscreen" [animation]="animation" [verticalAlign]="verticalAlign" [floating]="floating" [backdrop]="backdrop">
-  <ion-card-content>
-    <ion-card-title>Hello World</ion-card-title>
-
-    <p>The content for this card</p>
-
-    <ion-button (click)="dialogBottom.hideDialog()">schließen</ion-button>
-  </ion-card-content>
+<gg-dialog #dialogBottom [backdropClose]="backdropClose" [swipeEnabled]="swipeEnabled" [animation]="animation" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
+  <ion-card>
+      <ion-card-content>
+          <ion-card-title>Hello World</ion-card-title>
+      
+          <p>The content for this card</p>
+      
+          <ion-button (click)="dialogBottom.hideDialog()">schließen</ion-button>
+        </ion-card-content>
+  </ion-card>
+  
 </gg-dialog>
