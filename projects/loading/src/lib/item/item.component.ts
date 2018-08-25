@@ -6,12 +6,12 @@ export type verticalAlign = "top" | "bottom";
 
 
 @Component({
-    selector: 'gg-loading-item',
+    selector: 'fiv-loading-item',
     template: `
     <ion-item [ngClass]="{'loading': loading}">
     <ng-content></ng-content>
   </ion-item>
-  <gg-loading-progressbar [verticalAlign]="verticalAlign" (onComplete)="onComplete($event)" #progress [global]="false"></gg-loading-progressbar>
+  <fiv-loading-progressbar [verticalAlign]="verticalAlign" (onComplete)="onComplete($event)" #progress [global]="false"></fiv-loading-progressbar>
 
     `,
     styleUrls: ['item.scss'],

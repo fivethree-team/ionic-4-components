@@ -9,10 +9,10 @@
   </ion-toolbar>
 </ion-header>
 
-      <gg-loading-content #refresher (onRefresh)="onRefresh($event)">
+      <fiv-loading-content #refresher (onRefresh)="onRefresh($event)">
 
   <ion-card mode="ios" (click)="bar.loading ? bar.complete() : bar.toggleSpinner()">
-    <gg-loading-progressbar #bar [global]="false"></gg-loading-progressbar>
+    <fiv-loading-progressbar #bar [global]="false"></fiv-loading-progressbar>
     <ion-img src="https://beta.ionicframework.com/docs/content/component-preview-app/docs-www/assets/madison.jpg"></ion-img>
 
     <ion-card-content>
@@ -22,10 +22,10 @@
     </ion-card-content>
   </ion-card>
 
-  <gg-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()">Formular absenden</gg-loading-button>
+  <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()">Formular absenden</fiv-loading-button>
 
   <ion-list>
-    <gg-loading-item [verticalAlign]="'top'" #item (click)="item.loading ? item.complete() : item.toggleSpinner()">
+    <fiv-loading-item [verticalAlign]="'top'" #item (click)="item.loading ? item.complete() : item.toggleSpinner()">
       <ion-avatar slot="start">
       </ion-avatar>
       <ion-label>
@@ -33,8 +33,8 @@
         <h3>I'm a big deal</h3>
         <p>Listen, I've had a pretty messed up day...</p>
       </ion-label>
-    </gg-loading-item>
-    <gg-loading-item #item2 (click)="item2.loading ? item2.complete() : item2.toggleSpinner()">
+    </fiv-loading-item>
+    <fiv-loading-item #item2 (click)="item2.loading ? item2.complete() : item2.toggleSpinner()">
       <ion-avatar slot="start">
       </ion-avatar>
       <ion-label>
@@ -42,8 +42,8 @@
         <h3>Look, kid</h3>
         <p>I've got enough on my plate as it is, and I..</p>
       </ion-label>
-    </gg-loading-item>
-    <gg-loading-item #item3 (click)="item3.loading ? item3.complete() : item3.toggleSpinner()">
+    </fiv-loading-item>
+    <fiv-loading-item #item3 (click)="item3.loading ? item3.complete() : item3.toggleSpinner()">
       <ion-avatar slot="start">
       </ion-avatar>
       <ion-label>
@@ -51,8 +51,8 @@
         <h3>I'm a big deal</h3>
         <p>Listen, I've had a pretty messed up day...</p>
       </ion-label>
-    </gg-loading-item>
-    <gg-loading-item #item4 (click)="item4.loading ? item4.complete() : item4.toggleSpinner()">
+    </fiv-loading-item>
+    <fiv-loading-item #item4 (click)="item4.loading ? item4.complete() : item4.toggleSpinner()">
       <ion-avatar slot="start">
       </ion-avatar>
       <ion-label>
@@ -60,8 +60,8 @@
         <h3>Look, kid</h3>
         <p>I've got enough on my plate as it is, and I..</p>
       </ion-label>
-    </gg-loading-item>
-    <gg-loading-item #item5 (click)="item5.loading ? item5.complete() : item5.toggleSpinner()">
+    </fiv-loading-item>
+    <fiv-loading-item #item5 (click)="item5.loading ? item5.complete() : item5.toggleSpinner()">
       <ion-avatar slot="start">
       </ion-avatar>
       <ion-label>
@@ -69,8 +69,8 @@
         <h3>I'm a big deal</h3>
         <p>Listen, I've had a pretty messed up day...</p>
       </ion-label>
-    </gg-loading-item>
-    <gg-loading-item #item6 (click)="item6.loading ? item6.complete() : item6.toggleSpinner()">
+    </fiv-loading-item>
+    <fiv-loading-item #item6 (click)="item6.loading ? item6.complete() : item6.toggleSpinner()">
       <ion-avatar slot="start">
       </ion-avatar>
       <ion-label>
@@ -78,14 +78,14 @@
         <h3>Look, kid</h3>
         <p>I've got enough on my plate as it is, and I..</p>
       </ion-label>
-    </gg-loading-item>
+    </fiv-loading-item>
 
     <ion-infinite-scroll>
-        <gg-loading-infinite-scroll></gg-loading-infinite-scroll>
+        <fiv-loading-infinite-scroll></fiv-loading-infinite-scroll>
       </ion-infinite-scroll>
 
   </ion-list>
-</gg-loading-content>
-<gg-loading-fab checkmark="true" (onComplete)="fabComplete()" loading="true" #fab (click)="fab.loading ? fab.complete() : fab.toggleSpinner()"
-  horizontal="end" vertical="bottom" icon="md-add" spinColor="dark" fabColor="light"></gg-loading-fab>
+</fiv-loading-content>
+<fiv-loading-fab checkmark="true" (onComplete)="fabComplete()" loading="true" #fab (click)="fab.loading ? fab.complete() : fab.toggleSpinner()"
+  horizontal="end" vertical="bottom" icon="md-add" spinColor="dark" fabColor="light"></fiv-loading-fab>
 

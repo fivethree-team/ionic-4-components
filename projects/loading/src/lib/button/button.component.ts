@@ -5,10 +5,10 @@ export type verticalAlign = "top" | "bottom";
 
 
 @Component({
-    selector: 'gg-loading-button',
+    selector: 'fiv-loading-button',
     template: `
     <ion-button class="buttonfull" [disabled]="disabled" [expand]="expand" [color]="color">
-    <gg-loading-progressbar [verticalAlign]="verticalAlign" (onComplete)="onComplete($event)" #progress [global]="false"></gg-loading-progressbar>
+    <fiv-loading-progressbar [verticalAlign]="verticalAlign" (onComplete)="onComplete($event)" #progress [global]="false"></fiv-loading-progressbar>
     <ng-content></ng-content>
   </ion-button>
     `,

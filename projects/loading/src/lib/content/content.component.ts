@@ -6,7 +6,7 @@ import { Refresher } from '@ionic/angular';
 
 
 @Component({
-    selector: 'gg-loading-content',
+    selector: 'fiv-loading-content',
     template: `
     <ion-content fullscreen>
     <div class="gg-hint-wrapper">

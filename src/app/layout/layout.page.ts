@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppBarComponent } from 'dist/layout/lib/app-bar/app-bar.component';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-layout',
@@ -17,11 +18,13 @@ export class LayoutPage implements OnInit {
     await appBar.hideFab()
     await appBar.transitionRight()
     await appBar.showFab()
-    await appBar.hideFab()
-    await appBar.transitionMiddle();
-    await appBar.showFab()
+    await timer(450).toPromise();
     await appBar.hideFab()
     await appBar.transitionLeft();
+    await appBar.showFab()
+    await timer(450).toPromise();
+    await appBar.hideFab()
+    await appBar.transitionMiddle();
     await appBar.showFab()
 
 

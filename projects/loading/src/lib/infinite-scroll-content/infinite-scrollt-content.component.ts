@@ -4,7 +4,7 @@ import { fromEvent } from 'rxjs';
 
 
 @Component({
-    selector: 'gg-loading-infinite-scroll',
+    selector: 'fiv-loading-infinite-scroll',
     template: `
     <div class="gg-refresher">
 

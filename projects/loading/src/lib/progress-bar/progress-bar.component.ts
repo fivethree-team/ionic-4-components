@@ -6,7 +6,7 @@ export type verticalAlign = "top" | "bottom";
 
 
 @Component({
-    selector: 'gg-loading-progressbar',
+    selector: 'fiv-loading-progressbar',
     template: `
 <div [@progressAnim] *ngIf="(!global && loading) || (global && loadingService.loading)" class="slider" [ngClass]="{'top':verticalAlign == 'top','bottom': verticalAlign == 'bottom'}" >
   <div class="line"></div>

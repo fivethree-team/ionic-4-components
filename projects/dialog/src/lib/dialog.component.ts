@@ -10,7 +10,7 @@ export type animation = "slideIn" | "fadeIn"
 export type verticalAlign = "top" | "bottom" | "center"
 
 @Component({
-  selector: 'gg-dialog',
+  selector: 'fiv-dialog',
   template: `
   <div #backdrop class="gg-backdrop" [@backdropAnim] (@backdropAnim.done)="backdropAnimDone($event)" (click)="backdropClose? hideDialog() : false" *ngIf="animationState !== 'hidden' && backdrop">
   </div>

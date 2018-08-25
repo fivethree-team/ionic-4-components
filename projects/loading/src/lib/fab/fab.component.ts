@@ -4,7 +4,7 @@ import { fromEvent } from 'rxjs';
 
 
 @Component({
-    selector: 'gg-loading-fab',
+    selector: 'fiv-loading-fab',
     template: `
         <ion-fab [@fabAnim] [vertical]="vertical" [horizontal]="horizontal" [edge]="edge">
         <svg *ngIf="loading" #spinner class="spinner rotate" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
