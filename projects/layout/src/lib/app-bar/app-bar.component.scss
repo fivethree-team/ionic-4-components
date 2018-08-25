@@ -56,12 +56,19 @@
     border-radius:50%;
     z-index: 5000;
     transition: all 300ms ease;
+    color: white;
 }
 
 
 #buttons-right{
     position: absolute;
     right: 0;
+    color: white;
+    height: 56px;
+}
+#buttons-left{
+    position: absolute;
+    left: 0;
     color: white;
     height: 56px;
 }

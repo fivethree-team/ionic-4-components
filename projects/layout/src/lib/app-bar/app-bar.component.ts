@@ -120,6 +120,7 @@ export class AppBarComponent implements OnInit {
   @Input() fabRight = false;
   @Input() fabVisible = true;
   @Input() hideOnScroll = true;
+  @Input() fabIcon: string = 'md-add';
   currentDeltaY = 0;
   @ViewChild('shape') toolbar: ElementRef;
 
