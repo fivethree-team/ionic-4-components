@@ -11,7 +11,6 @@ Material Design component libraries to use in an ionic 4 project
 
 - [Dialog](projects/dialog/README.md)
 - [Google-Maps](projects/google-maps/README.md)
-- [Google-Maps](projects/google-maps/README.md)
 - [Layout](projects/google-maps/README.md)
 - [Loading](projects/google-maps/README.md)
 
