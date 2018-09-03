@@ -10,14 +10,15 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gh-pages": "ng build --base-href 'https://fivethree-team.github.io/fivethree/' && npx ngh --dir=www"
+    "gh-pages": "ng build --base-href 'https://fivethree-team.github.io/fivethree/' && npx ngh --dir=www",
+    "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s"
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "6.1.4",
-    "@angular/core": "6.1.4",
-    "@angular/compiler": "6.1.4",
     "@angular/animations": "6.1.4",
+    "@angular/common": "6.1.4",
+    "@angular/compiler": "6.1.4",
+    "@angular/core": "6.1.4",
     "@angular/forms": "6.1.4",
     "@angular/http": "6.1.4",
     "@angular/platform-browser": "6.1.4",
@@ -61,6 +62,7 @@
     "@types/node": "~10.9.1",
     "angular-cli-ghpages": "^0.5.3",
     "codelyzer": "~4.4.4",
+    "conventional-changelog-cli": "^2.0.5",
     "jasmine-core": "~3.2.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
