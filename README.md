@@ -9,10 +9,10 @@ Material Design component libraries to use in an ionic 4 project
 
 # Packages
 
-- [Dialog](projects/dialog/readme.md)
+- [Dialog](projects/dialog/README.md)
 - [Google-Maps](projects/google-maps/readme.md)
-- [Layout](projects/layout/readme.md)
-- [Loading](projects/loading/readme.md)
+- [Layout](projects/layout/README.md)
+- [Loading](projects/loading/README.md)
 
 ## Development
 This package is under active construction.
