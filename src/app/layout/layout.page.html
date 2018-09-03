@@ -1,12 +1,14 @@
 <ion-header>
-  <app-toolbar-search  placeholder="Text eingeben" title="Titel">
+  <fiv-toolbar-search  placeholder="Text eingeben" title="Titel">
     <ion-back-button defaultHref="/home" start></ion-back-button>
-</app-toolbar-search>
+</fiv-toolbar-search>
 </ion-header>
 
 <ion-content [scrollEvents]="true" >
     <ion-item class="iiii">
-        test
+      <ion-label>
+        wow
+      </ion-label>
       </ion-item>
       <ion-item class="iiii">
         test
@@ -125,28 +127,29 @@
       <ion-item class="iiii">
         test
       </ion-item>
-    <app-bar [fabIcon]="appBar.fabLeft? 'md-help' : appBar.fabRight ? 'md-share-alt' : 'md-add'" [fabLeft]="false" [fabRight]="false" #appBar (fabClick)="fabClicked($event)">
+    <fiv-app-bar [fabIcon]="appBar.fabLeft? 'md-help' : appBar.fabRight ? 'md-share-alt' : 'md-add'" [fabLeft]="false" [fabRight]="false" #appBar (fabClick)="fabClicked($event)">
         <ion-menu-button *ngIf="!appBar.fabLeft && !appBar.fabRight" start></ion-menu-button>
         <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight"  end icon-only>
-            <ion-icon name="md-profile"></ion-icon>
+            <ion-icon slot="icon-only" name="md-profile"></ion-icon>
           </ion-button>
       <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight"  end icon-only>
-        <ion-icon name="md-search"></ion-icon>
+        <ion-icon slot="icon-only" name="md-search"></ion-icon>
       </ion-button>
       <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight"  end icon-only>
-        <ion-icon name="md-more"></ion-icon>
+        <ion-icon slot="icon-only" name="md-more"></ion-icon>
       </ion-button>
       <ion-button *ngIf="appBar.fabRight"  start icon-only>
-        <ion-icon name="md-mail"></ion-icon>
+        <ion-icon slot="icon-only"name="md-mail"></ion-icon>
       </ion-button>
       <ion-button *ngIf="appBar.fabRight"  start icon-only>
-        <ion-icon name="md-trash"></ion-icon>
+        <ion-icon slot="icon-only" name="md-trash"></ion-icon>
       </ion-button>
       <ion-button *ngIf="appBar.fabRight"  start icon-only>
-        <ion-icon name="md-archive"></ion-icon>
+        <ion-icon slot="icon-only" name="md-archive"></ion-icon>
       </ion-button>
       
-    </app-bar>
+    </fiv-app-bar>
+
 
 
 </ion-content>

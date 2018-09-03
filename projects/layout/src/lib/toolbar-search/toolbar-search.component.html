@@ -5,7 +5,7 @@
   </ion-buttons>
   <ion-title [@titleAnim] *ngIf="titleVisible">{{title}}</ion-title>
   <ion-input (ionChange)="inputChange.emit($event)" [placeholder]="!titleVisible ? placeholder : ''" autofocus #input class="toolbar-searchbar"
-    [@searchbarAnim] (@searchbarAnim.done)="seachbarAnimDone($event)" *ngIf="searching">
+    [@searchbarAnim] (@searchbarAnim.done)="seachbarAnimDone($event,input)" *ngIf="searching">
   </ion-input>
 
   <ion-buttons slot="end">

@@ -28,6 +28,6 @@ export class AppComponent {
   }
 
   goTo(page: string) {
-    this.navCtrl.goRoot(page);
+    this.navCtrl.navigateRoot(page);
   }
 }

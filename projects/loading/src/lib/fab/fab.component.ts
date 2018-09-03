@@ -6,12 +6,12 @@ import { fromEvent } from 'rxjs';
 @Component({
     selector: 'fiv-loading-fab',
     template: `
-        <ion-fab [@fabAnim] [vertical]="vertical" [horizontal]="horizontal" [edge]="edge">
+        <ion-fab [@fabAnim]>
         <svg *ngIf="loading" #spinner class="spinner rotate" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
     <circle [@fillAnim]="isComplete ? 'fill' : 'spinning'" (@fillAnim.done)="fillAnimationDone($event)" [ngClass]="{'path': !isComplete}" fill="none" stroke-width="4" stroke-linecap="round" cx="36" cy="36" r="32"></circle>
  </svg>
             <ion-fab-button [color]="fabColor">
-                <ion-icon [@rotateAnim]="iconState" (@rotateAnim.done)="changeIconAndReveal($event,'md-checkmark')" [name]="icon"></ion-icon>
+                <ion-icon [color]="iconColor" [@rotateAnim]="iconState" (@rotateAnim.done)="changeIconAndReveal($event,'md-checkmark')" [name]="icon"></ion-icon>
             </ion-fab-button>
 
         </ion-fab>
@@ -71,9 +71,7 @@ export class FabSpinner implements OnInit {
     @Input() icon: string;
     @Input() spinColor: string;
     @Input() fabColor: string;
-    @Input() vertical: string = "bottom";
-    @Input() horizontal: string = "end";
-    @Input() edge: boolean = false;
+    @Input() iconColor: string = '#000';
     @Input() checkmark: boolean = false;
     loading: boolean = false;
     isComplete: boolean = false;

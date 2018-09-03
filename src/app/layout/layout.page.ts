@@ -27,6 +27,8 @@ export class LayoutPage implements OnInit {
     await appBar.transitionMiddle();
     await appBar.showFab()
 
+  
+    
 
   }
 
