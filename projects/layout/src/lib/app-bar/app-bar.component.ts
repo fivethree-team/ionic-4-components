@@ -4,7 +4,7 @@ import { first, filter, tap } from 'rxjs/operators';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 
 @Component({
-  selector: 'app-bar',
+  selector: 'fiv-app-bar',
   templateUrl: './app-bar.component.html',
   styleUrls: ['./app-bar.component.scss'],
   animations: [
