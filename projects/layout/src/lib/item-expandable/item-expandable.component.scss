@@ -1,0 +1,13 @@
+:host {
+    background-color: var(--ion-color-light-shade);
+
+    .item-button {
+        color: var(--ion-color-primary);
+    }
+
+    #expandable-content {
+        overflow: hidden;
+        background-color: var(--ion-color-light-shade);
+    }
+
+ }

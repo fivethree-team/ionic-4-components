@@ -1,152 +1,165 @@
 <ion-header>
-  <app-toolbar-search  placeholder="Text eingeben" title="Titel">
+  <fiv-toolbar-search placeholder="Text eingeben" title="Titel">
     <ion-back-button defaultHref="/home" start></ion-back-button>
-</app-toolbar-search>
+  </fiv-toolbar-search>
 </ion-header>
 
-<ion-content [scrollEvents]="true" >
-    <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-      <ion-item class="iiii">
-        test
-      </ion-item>
-    <app-bar [fabIcon]="appBar.fabLeft? 'md-help' : appBar.fabRight ? 'md-share-alt' : 'md-add'" [fabLeft]="false" [fabRight]="false" #appBar (fabClick)="fabClicked($event)">
-        <ion-menu-button *ngIf="!appBar.fabLeft && !appBar.fabRight" start></ion-menu-button>
-        <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight"  end icon-only>
-            <ion-icon name="md-profile"></ion-icon>
-          </ion-button>
-      <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight"  end icon-only>
-        <ion-icon name="md-search"></ion-icon>
-      </ion-button>
-      <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight"  end icon-only>
-        <ion-icon name="md-more"></ion-icon>
-      </ion-button>
-      <ion-button *ngIf="appBar.fabRight"  start icon-only>
-        <ion-icon name="md-mail"></ion-icon>
-      </ion-button>
-      <ion-button *ngIf="appBar.fabRight"  start icon-only>
-        <ion-icon name="md-trash"></ion-icon>
-      </ion-button>
-      <ion-button *ngIf="appBar.fabRight"  start icon-only>
-        <ion-icon name="md-archive"></ion-icon>
-      </ion-button>
-      
-    </app-bar>
+<ion-content [scrollEvents]="true">
+  <fiv-item-expandable text="Ducks" icon="search" [expanded]="true">
+    <ion-item>Tick</ion-item>
+    <ion-item>Trick</ion-item>
+    <ion-item>Track</ion-item>
+  </fiv-item-expandable>
+
+  <fiv-item-expandable text="Fruits" icon="basket" iconAnimated="home">
+    <ion-item>Apple</ion-item>
+    <ion-item>Banana</ion-item>
+    <ion-item>Pineapple</ion-item>
+  </fiv-item-expandable>
+
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <ion-item class="iiii">
+    test
+  </ion-item>
+  <fiv-app-bar [fabIcon]="appBar.fabLeft? 'md-help' : appBar.fabRight ? 'md-share-alt' : 'md-add'" [fabLeft]="false" [fabRight]="false"
+    #appBar (fabClick)="fabClicked($event)">
+    <ion-menu-button *ngIf="!appBar.fabLeft && !appBar.fabRight" start></ion-menu-button>
+    <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight" end icon-only>
+      <ion-icon name="md-profile"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight" end icon-only>
+      <ion-icon name="md-search"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight" end icon-only>
+      <ion-icon name="md-more"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="appBar.fabRight" start icon-only>
+      <ion-icon name="md-mail"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="appBar.fabRight" start icon-only>
+      <ion-icon name="md-trash"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="appBar.fabRight" start icon-only>
+      <ion-icon name="md-archive"></ion-icon>
+    </ion-button>
+
+  </fiv-app-bar>
 
 
 </ion-content>
