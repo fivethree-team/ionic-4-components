@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output,EventEmitter,ElementRef, Renderer2 } f
 import { trigger, transition, style, animate, state } from '@angular/animations';
 
 @Component({
-  selector: 'app-toolbar-search',
+  selector: 'fiv-toolbar-search',
   templateUrl: './toolbar-search.component.html',
   styleUrls: ['./toolbar-search.component.scss'],
   animations: [
