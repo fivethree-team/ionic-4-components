@@ -40,6 +40,7 @@ export class ToolbarSearchComponent implements OnInit {
   closeButtonVisible = false;
   @Input() title:string;
   @Input() placeholder:string;
+  @Input() color:string;
   @Output() inputChange: EventEmitter<any> = new EventEmitter();
   @Output() close: EventEmitter<any> = new EventEmitter();
 
