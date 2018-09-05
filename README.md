@@ -1,12 +1,18 @@
-# component-library
+# fivethree web components
 Material Design component libraries to use in an ionic 4 project
 
 ![Alt text](/loading_1.gif?raw=true)
 ![Alt text](/loading_2.gif?raw=true)
 ![Alt text](/loading_3.gif?raw=true)
 
+[Demo App](https://fivethree-team.github.io/fivethree/)
 
-<a href="https://garygrossgarten.de/components">Demo App</a>
+# Packages
+
+- [Dialog](projects/dialog/README.md)
+- [Google-Maps](projects/google-maps/README.md)
+- [Layout](projects/google-maps/README.md)
+- [Loading](projects/google-maps/README.md)
 
 ## Development
 This package is under active construction.
