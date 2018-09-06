@@ -1,7 +1,48 @@
+$fab-size: 72px !default;
+
 :host{
   position: absolute;
-  width: 72px;
-  height: 72px;
+  width: $fab-size;
+  height: $fab-size;
+}
+
+// FAB Vertical Positioning
+// --------------------------------------------------
+
+:host(.fab-vertical-top) {
+  top: 0;
+}
+
+:host(.fab-vertical-top.fab-edge) {
+  top: -$fab-size / 2;
+}
+
+:host(.fab-vertical-bottom.fab-edge) {
+  bottom: -$fab-size / 2;
+}
+
+:host(.fab-vertical-bottom) {
+  bottom: 0;
+}
+
+:host(.fab-vertical-center) {
+  
+  top: 50%;
+}
+
+// FAB Horizontal Positioning
+// --------------------------------------------------
+
+:host(.fab-horizontal-center) {
+  
+}
+
+:host(.fab-horizontal-start) {
+  left: 0;
+}
+
+:host(.fab-horizontal-end) {
+  right: 0;
 }
 
 ion-spinner {
