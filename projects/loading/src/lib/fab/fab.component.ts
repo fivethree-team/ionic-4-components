@@ -1,19 +1,16 @@
-import { Component, Input, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ElementRef, Output, EventEmitter, HostBinding } from '@angular/core';
 import { animate, style, transition, trigger, state } from "@angular/animations";
-import { fromEvent } from 'rxjs';
-
 
 @Component({
     selector: 'fiv-loading-fab',
     template: `
-        <ion-fab [@fabAnim]>
+        <ion-fab [@fabAnim] [vertical]="vertical" [horizontal]="horizontal" [slot]="slot" [edge]="edge">
         <svg *ngIf="loading" #spinner class="spinner rotate" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
-    <circle [@fillAnim]="isComplete ? 'fill' : 'spinning'" (@fillAnim.done)="fillAnimationDone($event)" [ngClass]="{'path': !isComplete}" fill="none" stroke-width="4" stroke-linecap="round" cx="36" cy="36" r="32"></circle>
- </svg>
-            <ion-fab-button [color]="fabColor">
-                <ion-icon [color]="iconColor" [@rotateAnim]="iconState" (@rotateAnim.done)="changeIconAndReveal($event,'md-checkmark')" [name]="icon"></ion-icon>
-            </ion-fab-button>
-
+            <circle [@fillAnim]="isComplete ? 'fill' : 'spinning'" (@fillAnim.done)="fillAnimationDone($event)" [ngClass]="{'path': !isComplete}" fill="none" stroke-width="4" stroke-linecap="round" cx="36" cy="36" r="32"></circle>
+        </svg>
+        <ion-fab-button [color]="fabColor" [disabled]="disabled">
+            <ion-icon [color]="iconColor" [@rotateAnim]="iconState" (@rotateAnim.done)="changeIconAndReveal($event,'md-checkmark')" [name]="icon"></ion-icon>
+        </ion-fab-button>
         </ion-fab>
     `,
     styleUrls: ['fab.scss'],
@@ -64,18 +61,33 @@ import { fromEvent } from 'rxjs';
         })
         )]
     )],
-
+    host: {}
 })
 export class FabSpinner implements OnInit {
 
+
+    @Input() vertical?: 'top' | 'center' | 'bottom';
+    @Input() horizontal?: 'center' | 'start' | 'end';
+    @Input() edge: boolean;
+    @Input() slot: string;
     @Input() icon: string;
     @Input() spinColor: string;
     @Input() fabColor: string;
-    @Input() iconColor: string = '#000';
-    @Input() checkmark: boolean = false;
+    @Input() iconColor = '#000';
+    @Input() checkmark = false;
+    @Input() disabled = false;
     loading: boolean = false;
     isComplete: boolean = false;
     iconState: string = 'normal';
+
+    @HostBinding('class') get classes(): string {
+        const verticalClass = !!this.vertical ? `fab-vertical-${this.vertical}` : '';
+        const horizontalClass = !!this.horizontal ? `fab-horizontal-${this.horizontal}` : '';
+        const edgeClass = this.edge ? `fab-edge-` : '';
+
+        return `${verticalClass} ${horizontalClass} ${edgeClass}`;
+    }
+
 
     @ViewChild('spinner') spinner: ElementRef;
 
@@ -89,7 +101,7 @@ export class FabSpinner implements OnInit {
     }
 
     toggleSpinner() {
-        if(this.icon != 'md-checkmark'){
+        if (this.icon != 'md-checkmark') {
             this.loading = !this.loading;
         }
     }
@@ -104,7 +116,7 @@ export class FabSpinner implements OnInit {
     }
 
     complete() {
-        if(this.loading){
+        if (this.loading) {
             this.isComplete = true;
 
         }
