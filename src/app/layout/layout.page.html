@@ -12,9 +12,18 @@
   </fiv-item-expandable>
 
   <fiv-item-expandable text="Fruits" icon="basket" iconAnimated="home">
-    <ion-item>Apple</ion-item>
-    <ion-item>Banana</ion-item>
-    <ion-item>Pineapple</ion-item>
+
+    <ion-item header>
+      <ion-icon slot="start" name="basket"></ion-icon>
+      <ion-label>Awesome Label</ion-label>
+    </ion-item>
+
+    <ion-list content>
+        <ion-item>Apple</ion-item>
+        <ion-item>Banana</ion-item>
+        <ion-item>Pineapple</ion-item>
+    </ion-list>
+   
   </fiv-item-expandable>
   <ion-item class="iiii">
     <ion-label>

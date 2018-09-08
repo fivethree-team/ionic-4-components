@@ -1,9 +1,12 @@
-<ion-item [color]="color" [disabled]="disabled" (click)="toggleExpand()" [lines]="lines">
-    <ion-icon [slot]="iconSlot" [name]="icon"></ion-icon>
-    <ion-label>{{text}}</ion-label>
-    <ion-icon [@arrowAnim]="state" [slot]="iconAnimatedSlot" [name]="iconAnimated"></ion-icon>
-</ion-item>
+<div>
 
-<div [@listAnim]="state" id="expandable-content">
-    <ng-content></ng-content>
-</div>
+
+    <ng-content select="[header]"></ng-content>
+  
+    <div [@listAnim]="state" style="overflow: hidden">
+    
+      <ng-content select="[content]"></ng-content>
+    </div>
+  </div>
+  
+  
