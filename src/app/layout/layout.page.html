@@ -5,15 +5,10 @@
 </ion-header>
 
 <ion-content [scrollEvents]="true">
-  <fiv-item-expandable text="Ducks" icon="search" [expanded]="true">
-    <ion-item>Tick</ion-item>
-    <ion-item>Trick</ion-item>
-    <ion-item>Track</ion-item>
-  </fiv-item-expandable>
 
-  <fiv-item-expandable text="Fruits" icon="basket" iconAnimated="home">
+  <fiv-item-expandable #ex>
 
-    <ion-item header>
+    <ion-item header (click)="ex.open()">
       <ion-icon slot="start" name="basket"></ion-icon>
       <ion-label>Awesome Label</ion-label>
     </ion-item>

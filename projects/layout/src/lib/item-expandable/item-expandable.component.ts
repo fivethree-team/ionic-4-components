@@ -33,19 +33,19 @@ export class ItemExpandableComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    public listOpen: boolean = false;
+    public isOpen: boolean = false;
   state: string = 'closed';
 
     constructor(){
 
     }
 
-    openList() {
-        if (this.listOpen == false) {
-            this.listOpen = true;
+    open() {
+        if (this.isOpen == false) {
+            this.isOpen = true;
             this.state = 'open';
         } else {
-            this.listOpen = false;
+            this.isOpen = false;
             this.state = 'closed';
   
         }
@@ -53,7 +53,7 @@ export class ItemExpandableComponent implements OnInit {
   
     close() {
         console.log('close');
-        this.listOpen = false;
+        this.isOpen = false;
         this.state = 'closed';
     }
 

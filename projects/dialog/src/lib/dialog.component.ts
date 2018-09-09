@@ -1,3 +1,4 @@
+import { EventEmitter, Output } from '@angular/core';
 import { Component, OnInit, Input, Renderer2, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { animate, style, transition, trigger, state } from "@angular/animations";
 import Hammer from 'hammerjs';
@@ -128,6 +129,9 @@ export class DialogComponent implements OnInit {
   @Input() backdropClose: boolean = true;
   @Input() swipeEnabled: boolean = true;
 
+  @Output() close: EventEmitter<DialogComponent> = new EventEmitter();
+  @Output() open: EventEmitter<DialogComponent> = new EventEmitter();
+
   @ViewChild('card') card: ElementRef;
   @ViewChild('backdrop') backdropElem: ElementRef;
 
@@ -182,10 +186,12 @@ export class DialogComponent implements OnInit {
 
   showDialog() {
     this.animationState = `${this.animation}-${this.verticalAlign}`;
+
   }
 
   hideDialog() {
     this.animationState = 'hidden';
+    this.close.emit(this);
     this.panSubs.forEach(sub => {
       sub.unsubscribe();
     })
@@ -222,7 +228,9 @@ export class DialogComponent implements OnInit {
       this.renderer.setStyle(this.card.nativeElement, 'transform', `translateY(0px)`)
     }
     if (event.fromState === 'hidden') {
-      this.setupPan(this.card.nativeElement,58);
+      this.setupPan(this.card.nativeElement, 58);
+      this.open.emit(this);
+
     }
   }
 
