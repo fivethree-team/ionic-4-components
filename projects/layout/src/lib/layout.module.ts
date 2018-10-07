@@ -4,21 +4,30 @@ import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { ToolbarSearchComponent } from './toolbar-search/toolbar-search.component';
 import { ItemExpandableComponent } from './item-expandable/item-expandable.component';
+import { FivStepComponent } from './fiv-stepper/fiv-step/fiv-step.component';
+import { FivStepHeaderComponent } from './fiv-stepper/fiv-step-header/fiv-step-header.component';
+import { FivStepperComponent } from './fiv-stepper/fiv-stepper.component';
 
 @NgModule({
   imports: [
     IonicModule,
-    CommonModule
+    CommonModule,
   ],
   declarations: [
     AppBarComponent,
     ToolbarSearchComponent,
-    ItemExpandableComponent
+    ItemExpandableComponent,
+    FivStepComponent,
+    FivStepperComponent,
+    FivStepHeaderComponent
   ],
   exports: [
     AppBarComponent,
     ToolbarSearchComponent,
-    ItemExpandableComponent
+    ItemExpandableComponent,
+    FivStepComponent,
+    FivStepperComponent,
+    FivStepHeaderComponent
   ]
 })
 export class LayoutModule { }

@@ -20,6 +20,86 @@
     </ion-list>
    
   </fiv-item-expandable>
+
+  <ion-item-divider>Stepper</ion-item-divider>
+
+  <fiv-stepper #stepper>
+    <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'" [icon]="'md-trash'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-footer>
+            <ion-toolbar>
+              <ion-buttons slot="end">
+                <ion-button color="dark" (click)="stepper.closeAll()">
+                  Close
+                </ion-button>
+                <ion-button color="dark" (click)="stepper.reset(0)">
+                  reset
+                </ion-button>
+                <ion-button color="secondary" (click)="stepper.completeStep(0)">
+                  Complete
+                </ion-button>
+                <ion-button color="primary" (click)="stepper.select(1)">
+                  NEXT
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-footer>
+        </ion-card-content>
+      </ion-card>
+    </fiv-step>
+    <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'" [index]="2">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-footer>
+            <ion-toolbar>
+              <ion-buttons slot="end">
+                <ion-button color="dark" (click)="stepper.select(0)">
+                  Previous
+                </ion-button>
+                <ion-button color="primary" (click)="stepper.select(2)">
+                  NEXT
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-footer>
+        </ion-card-content>
+      </ion-card>
+    </fiv-step>
+    <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'" [index]="3" [isLast]="true">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-footer>
+            <ion-toolbar>
+              <ion-buttons slot="end">
+                <ion-button color="dark" (click)="stepper.select(1)">
+                  Previous
+                </ion-button>
+                <ion-button color="primary" (click)="stepper.select(0)">
+                  NEXT
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-footer>
+        </ion-card-content>
+      </ion-card>
+    </fiv-step>
+
+  </fiv-stepper>
+
+
   <ion-item class="iiii">
     <ion-label>
       wow
@@ -142,6 +222,8 @@
   <ion-item class="iiii">
     test
   </ion-item>
+
+
   <fiv-app-bar [fabIcon]="appBar.fabLeft? 'md-help' : appBar.fabRight ? 'md-share-alt' : 'md-add'" [fabLeft]="false" [fabRight]="false"
     #appBar (fabClick)="fabClicked($event)">
     <ion-menu-button *ngIf="!appBar.fabLeft && !appBar.fabRight" start></ion-menu-button>

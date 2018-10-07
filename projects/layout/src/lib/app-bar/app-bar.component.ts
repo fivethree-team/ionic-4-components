@@ -127,6 +127,8 @@ export class AppBarComponent implements OnInit {
   @Output() fabClick: EventEmitter<AppBarComponent> = new EventEmitter();
   @Output() fabHide: EventEmitter<any> = new EventEmitter();
   @Output() fabShow: EventEmitter<any> = new EventEmitter();
+  @Output() appBarShow: EventEmitter<any> = new EventEmitter();
+  @Output() appBarHide: EventEmitter<any> = new EventEmitter();
 
   constructor(public el: ElementRef) {
 
@@ -192,6 +194,33 @@ export class AppBarComponent implements OnInit {
 
     })
   }
+  hideBar(): Promise<AppBarComponent> {
+    this.hidden = true;
+    return new Promise<AppBarComponent>(resolve => {
+      this.appBarHide.pipe(
+        tap((res => {console.log(res)})),
+        filter((event: any) => event.toState === 'void'),
+        first()
+      ).subscribe(() => {
+        console.log('hide fab done',this);
+        resolve(this);
+      })
+
+    })
+  }
+
+  showBar(): Promise<AppBarComponent> {
+    this.hidden = false;
+    return new Promise<AppBarComponent>(resolve => {
+      this.appBarShow.pipe(
+        filter((event: any) => event.fromState === 'void'),
+        first()
+      ).subscribe(() => {
+        resolve(this);
+      })
+
+    })
+  }
 
   onFabAnimStart(event) {
     console.log(event);
@@ -226,6 +255,15 @@ export class AppBarComponent implements OnInit {
 
   cutOutTransitionDone() {
     this.fabVisible = true;
+  }
+
+  onAppBarAnimDone(event){
+    console.log(event.fromState + ' to ' + event.toState);
+    if (event.fromState === 'void') {
+      this.appBarShow.emit(event);
+    } else {
+      this.appBarHide.emit(event);
+    }
   }
 
 }

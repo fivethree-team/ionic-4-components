@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, Input, OnInit, Output, EventEmitter, ViewChild } from "@angular/core";
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Color } from "@ionic/core";
 
@@ -34,27 +34,43 @@ export class ItemExpandableComponent implements OnInit {
     }
 
     public isOpen: boolean = false;
-  state: string = 'closed';
+    state: string = 'closed';
+    @Output() onWillOpen: EventEmitter<ItemExpandableComponent> = new EventEmitter();
+    @Output() onDidOpen: EventEmitter<ItemExpandableComponent> = new EventEmitter();
+    @Output() onWillClose: EventEmitter<ItemExpandableComponent> = new EventEmitter();
+    @Output() onDidClose: EventEmitter<ItemExpandableComponent> = new EventEmitter();
 
-    constructor(){
+    constructor() {
 
     }
 
     open() {
+        this.onWillOpen.emit(this);
+        this.isOpen = true;
+        this.state = 'open';
+    }
+
+    toggle() {
         if (this.isOpen == false) {
-            this.isOpen = true;
-            this.state = 'open';
+            this.open();
         } else {
-            this.isOpen = false;
-            this.state = 'closed';
-  
+            this.close();
         }
     }
-  
+
     close() {
+        this.onWillClose.emit(this);
         console.log('close');
         this.isOpen = false;
         this.state = 'closed';
+    }
+
+    onAnimationEnd(event) {
+        if (event.fromState === 'closed') {
+            this.onDidOpen.emit(this);
+        } else if (event.fromState === 'open') {
+            this.onDidClose.emit(this);
+        }
     }
 
 }

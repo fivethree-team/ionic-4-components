@@ -7,7 +7,7 @@ export type verticalAlign = "top" | "bottom";
 @Component({
     selector: 'fiv-loading-button',
     template: `
-    <ion-button class="buttonfull" [disabled]="disabled" [expand]="expand" [color]="color">
+    <ion-button (click)="onClick()" class="buttonfull" [disabled]="disabled" [expand]="expand" [color]="color">
     <fiv-loading-progressbar [verticalAlign]="verticalAlign" (onComplete)="onComplete($event)" #progress [global]="false"></fiv-loading-progressbar>
     <ng-content></ng-content>
   </ion-button>
@@ -26,6 +26,7 @@ export class ButtonFull implements OnInit {
     @Input() verticalAlign: verticalAlign = 'top';
     @Output() onRefresh: EventEmitter<ButtonFull> = new EventEmitter();
     @Output() onRefreshComplete: EventEmitter<ButtonFull> = new EventEmitter();
+    @Output() onButtonClick: EventEmitter<ButtonFull> = new EventEmitter();
 
 
     constructor() {
@@ -60,5 +61,9 @@ export class ButtonFull implements OnInit {
         console.log('on complete', isComplete);
         this.loading = false;
         this.onRefreshComplete.emit(this);
+    }
+
+    onClick(){
+        this.onButtonClick.emit(this);
     }
 }

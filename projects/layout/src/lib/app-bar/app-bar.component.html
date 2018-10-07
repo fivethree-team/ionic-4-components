@@ -1,5 +1,5 @@
 
-<div #shape id="shape" [@appBarAnim] *ngIf="!hidden" [ngClass]="{'fab-left': fabLeft , 'fab-right':fabRight, 'no-cut': !fabVisible}">
+<div #shape id="shape" [@appBarAnim] (@appBarAnim.done)="onAppBarAnimDone($event)" *ngIf="!hidden" [ngClass]="{'fab-left': fabLeft , 'fab-right':fabRight, 'no-cut': !fabVisible}">
     <div [@delayAnim] *ngIf="fabVisible" class="box left"></div>
     <div [@delayAnim] *ngIf="fabVisible" class="box right"></div>
     <div [@fullBarAnim] *ngIf="!fabVisible" class="box full"></div>
