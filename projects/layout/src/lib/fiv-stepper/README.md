@@ -91,8 +91,39 @@ export class Page {
 
 ### API
 
+#### Stepper
 
+## Methods
 
+| Method          | Parameters       | Description       | 
+|------------------| ------------------| ------------------|
+| `open`      |  index: number   | open the step at index  |
+| `close`      |  index: number   | close the step at index  |
+| `closeAll`      |  -  | close all open steps  |
+| `select`      |   index: number   | closes all open steps and opens step at index |
+| `next`      |  -  | opens the next step (if available)  |
+| `previous`      |  -  | opens the previous step (if available)  |
+| `completeStep`      |  index: number  | complete the step at index (if you are using icons in your steps, it will transition to a checkmark)  |
+| `reset`      |  index: number  | reset a completed step |
+
+#### Step
+
+## Input
+
+| Input          | Type       | Description       | 
+|------------------| ------------------| ------------------|
+| `index`      | number   | displays the index number in step header |
+| `icon`      |  string  | displays an ionicon instead of an index |
+| `isLast`       |  boolean  | defaults to false  |
+| `title`      |  string  | title of step header  |
+| `subtitle`      |   string   |  subtitle of step header |
+
+## Output
+
+| Output          | Event Data       | Description       | 
+|------------------| ------------------| ------------------|
+| `onDidOpen`      | FivStepComponent   | will be emitted when a step has been opened.  |
+| `onDidClose`      | FivStepComponent   | will be emitted when a step has been closed.  |
   
 
 ### Theming

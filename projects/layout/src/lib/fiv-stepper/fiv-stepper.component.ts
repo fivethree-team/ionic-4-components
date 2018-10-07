@@ -50,7 +50,9 @@ export class FivStepperComponent implements OnInit, AfterContentInit {
   }
 
   previous() {
-
+    const next = this.currentIndex > 0 ? this.currentIndex + -1 : -1;
+    console.log('next index', next);
+    this.select(next);
   }
 
   completeStep(index: number) {
