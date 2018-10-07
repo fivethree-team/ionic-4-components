@@ -2,7 +2,7 @@
 
 A layout component to build steppers (e.g. for forms) in your ionic 4 project (currently in beta)
 
-![Fiv Stepper Demo GIF](/demo.gif?raw=true)
+![Fiv Stepper Demo GIF](https://github.com/fivethree-team/fivethree/blob/develop/projects/layout/src/lib/fiv-stepper/demo.gif?raw=true)
 
 ## Getting Started
 
