@@ -2,6 +2,8 @@
 
 A layout component to build steppers (e.g. for forms) in your ionic 4 project (currently in beta)
 
+![Fiv Stepper Demo GIF](/demo.gif?raw=true)
+
 ## Getting Started
 
 The stepper component is part of @fivethree/layout package.
