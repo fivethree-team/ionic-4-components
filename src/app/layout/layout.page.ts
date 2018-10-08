@@ -34,9 +34,7 @@ export class LayoutPage implements OnInit {
   }
   
   doStuff(stepper: FivStepperComponent){
-    ...
     stepper.next();
-    ...
   }
 
 }
