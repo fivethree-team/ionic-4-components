@@ -24,7 +24,7 @@
   <ion-item-divider>Stepper</ion-item-divider>
 
   <fiv-stepper #stepper>
-    <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'" [icon]="'contact'">
+    <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'">
       <ion-card>
         <ion-card-header>
           <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
@@ -52,7 +52,7 @@
         </ion-card-content>
       </ion-card>
     </fiv-step>
-    <fiv-step [title]="'Address'" [subtitle]="'Please enter your adress'" [icon]="'compass'">
+    <fiv-step [title]="'Address'" [subtitle]="'Please enter your adress'">
       <ion-card>
         <ion-card-header>
           <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
@@ -74,7 +74,7 @@
         </ion-card-content>
       </ion-card>
     </fiv-step>
-    <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'" [icon]="'attach'" [isLast]="true">
+    <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'">
       <ion-card>
         <ion-card-header>
           <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
@@ -224,7 +224,7 @@
   </ion-item>
 
 
-  <fiv-app-bar [fabIcon]="appBar.fabLeft? 'md-help' : appBar.fabRight ? 'md-share-alt' : 'md-add'" [fabLeft]="false" [fabRight]="false"
+  <fiv-app-bar [fabIcon]="'md-add'" [fabLeft]="false" [fabRight]="false"
     #appBar (fabClick)="fabClicked($event)">
     <ion-menu-button *ngIf="!appBar.fabLeft && !appBar.fabRight" start></ion-menu-button>
     <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight" end icon-only>

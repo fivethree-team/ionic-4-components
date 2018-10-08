@@ -1,6 +1,4 @@
-import { FivStepHeaderComponent } from './../fiv-step-header/fiv-step-header.component';
-import { Component, OnInit, AfterContentInit, Host, Self, ElementRef, Input, ViewChild, EventEmitter, Output } from '@angular/core';
-import { ItemExpandableComponent } from '../../item-expandable/item-expandable.component';
+import { Component, OnInit, AfterContentInit,Input, ViewChild, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'fiv-step',
@@ -14,11 +12,9 @@ export class FivStepComponent implements OnInit, AfterContentInit {
   @Input() isLast = false;
   @Input() title = '';
   @Input() subtitle = '';
-  @Output() onDidOpen: EventEmitter<FivStepComponent> = new EventEmitter();
-  @Output() onDidClose: EventEmitter<FivStepComponent> = new EventEmitter();
 
-  @ViewChild('self') step: ItemExpandableComponent;
-  @ViewChild('header') header: FivStepHeaderComponent;
+  @ViewChild(TemplateRef) content: TemplateRef<any>;
+
 
 
   constructor() {
@@ -28,32 +24,6 @@ export class FivStepComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
 
-
   }
-
-  open() {
-    this.step.open();
-  }
-
-  close() {
-    this.step.close();
-  }
-
-  complete() {
-    this.header.complete();
-  }
-
-  reset() {
-    this.header.reset();
-  }
-
-  afterClose() {
-    this.onDidClose.emit(this);
-  }
-
-  afterOpen() {
-    this.onDidOpen.emit(this);
-  }
-
 
 }

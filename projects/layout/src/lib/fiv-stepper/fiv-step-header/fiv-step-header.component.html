@@ -1,5 +1,5 @@
 <div class="number-container">
-  <span *ngIf="index && !icon">{{index}}</span>
+  <span *ngIf="index && !icon" [@rotateAnim]="iconState" (@rotateAnim.done)="changeIconAndReveal($event,'md-checkmark')">{{index}}</span>
   <ion-icon *ngIf="icon" [@rotateAnim]="iconState" (@rotateAnim.done)="changeIconAndReveal($event,'md-checkmark')" [name]="icon"></ion-icon>
 </div>
 <div class="step-content">

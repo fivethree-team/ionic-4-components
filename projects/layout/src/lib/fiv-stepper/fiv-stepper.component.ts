@@ -1,5 +1,6 @@
-import { Component, OnInit, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import { Component, OnInit, ContentChildren, QueryList, AfterContentInit, ViewChildren } from '@angular/core';
 import { FivStepComponent } from './fiv-step/fiv-step.component';
+import { FivStepContentComponent } from './fiv-step-content/fiv-step-content.component';
 
 @Component({
   selector: 'fiv-stepper',
@@ -8,7 +9,8 @@ import { FivStepComponent } from './fiv-step/fiv-step.component';
 })
 export class FivStepperComponent implements OnInit, AfterContentInit {
 
-  @ContentChildren(FivStepComponent) steps: QueryList<FivStepComponent>;
+  @ContentChildren(FivStepComponent) contents: QueryList<FivStepComponent>;
+  @ViewChildren(FivStepContentComponent) steps: QueryList<FivStepContentComponent>;
   currentIndex = 0;
 
   constructor() { }

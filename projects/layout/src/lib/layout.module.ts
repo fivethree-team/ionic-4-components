@@ -7,6 +7,7 @@ import { ItemExpandableComponent } from './item-expandable/item-expandable.compo
 import { FivStepComponent } from './fiv-stepper/fiv-step/fiv-step.component';
 import { FivStepHeaderComponent } from './fiv-stepper/fiv-step-header/fiv-step-header.component';
 import { FivStepperComponent } from './fiv-stepper/fiv-stepper.component';
+import { FivStepContentComponent } from './fiv-stepper/fiv-step-content/fiv-step-content.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { FivStepperComponent } from './fiv-stepper/fiv-stepper.component';
     ItemExpandableComponent,
     FivStepComponent,
     FivStepperComponent,
-    FivStepHeaderComponent
+    FivStepHeaderComponent,
+    FivStepContentComponent
   ],
   exports: [
     AppBarComponent,
@@ -27,7 +29,8 @@ import { FivStepperComponent } from './fiv-stepper/fiv-stepper.component';
     ItemExpandableComponent,
     FivStepComponent,
     FivStepperComponent,
-    FivStepHeaderComponent
+    FivStepHeaderComponent,
+    FivStepContentComponent
   ]
 })
 export class LayoutModule { }

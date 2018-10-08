@@ -48,7 +48,7 @@ export class FivStepHeaderComponent implements OnInit, AfterContentInit {
   }
 
   reset() {
-    this.icon = this.tempIcon || 'md-add';
+    this.icon = this.tempIcon;
   }
 
 

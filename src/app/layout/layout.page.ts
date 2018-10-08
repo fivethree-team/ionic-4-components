@@ -1,4 +1,3 @@
-import { FivStepperComponent } from './../../../projects/layout/src/lib/fiv-stepper/fiv-stepper.component';
 import { Component, OnInit } from '@angular/core';
 import { AppBarComponent } from 'dist/layout/lib/app-bar/app-bar.component';
 import { timer } from 'rxjs';
@@ -31,12 +30,6 @@ export class LayoutPage implements OnInit {
   
     
 
-  }
-  
-  doStuff(stepper: FivStepperComponent){
-    ...
-    stepper.next();
-    ...
   }
 
 }
