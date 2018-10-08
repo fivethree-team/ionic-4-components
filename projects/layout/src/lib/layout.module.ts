@@ -8,6 +8,7 @@ import { FivStepComponent } from './fiv-stepper/fiv-step/fiv-step.component';
 import { FivStepHeaderComponent } from './fiv-stepper/fiv-step-header/fiv-step-header.component';
 import { FivStepperComponent } from './fiv-stepper/fiv-stepper.component';
 import { FivStepContentComponent } from './fiv-stepper/fiv-step-content/fiv-step-content.component';
+import { PasswordComponent } from './password/password.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { FivStepContentComponent } from './fiv-stepper/fiv-step-content/fiv-step
     FivStepComponent,
     FivStepperComponent,
     FivStepHeaderComponent,
-    FivStepContentComponent
+    FivStepContentComponent,
+    PasswordComponent
   ],
   exports: [
     AppBarComponent,
@@ -30,7 +32,8 @@ import { FivStepContentComponent } from './fiv-stepper/fiv-step-content/fiv-step
     FivStepComponent,
     FivStepperComponent,
     FivStepHeaderComponent,
-    FivStepContentComponent
+    FivStepContentComponent,
+    PasswordComponent
   ]
 })
 export class LayoutModule { }

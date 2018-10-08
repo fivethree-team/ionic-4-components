@@ -31,5 +31,4 @@ export class LayoutPage implements OnInit {
     
 
   }
-
 }
