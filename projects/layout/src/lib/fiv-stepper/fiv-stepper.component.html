@@ -1,5 +1,0 @@
-<ion-list>
-  <fiv-step-content *ngFor="let content of contents; let i = index; let l = last;" [icon]="content.icon" [index]="i + 1" [isLast]="l" [title]="content.title" [subtitle]="content.subtitle">
-    <ng-container [ngTemplateOutlet]="content.content"></ng-container>
-  </fiv-step-content>
-</ion-list>

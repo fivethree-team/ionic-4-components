@@ -8,37 +8,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "baseUrl": "./",
     "lib": [
       "es2017",
       "dom"
-    ],
-    "paths": {
-      "@environments/*": ["src/environments/*"],
-      "loading": [
-        "dist/loading"
-      ],
-      "loading/*": [
-        "dist/loading/*"
-      ],
-      "dialog": [
-        "dist/dialog"
-      ],
-      "dialog/*": [
-        "dist/dialog/*"
-      ],
-      "google-maps": [
-        "dist/google-maps"
-      ],
-      "google-maps/*": [
-        "dist/google-maps/*"
-      ],
-      "layout": [
-        "dist/layout"
-      ],
-      "layout/*": [
-        "dist/layout/*"
-      ]
-    }
+    ]
   }
 }

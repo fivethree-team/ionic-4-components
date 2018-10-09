@@ -1,91 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title (click)="showHint(refresher)">
-      Loading
+    <ion-title>
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-      <fiv-loading-content #refresher (onRefresh)="onRefresh($event)">
-
-  <ion-card mode="ios" (click)="bar.loading ? bar.complete() : bar.toggleSpinner()">
-    <fiv-loading-progressbar #bar [global]="false"></fiv-loading-progressbar>
-    <ion-img src="https://beta.ionicframework.com/docs/content/component-preview-app/docs-www/assets/madison.jpg"></ion-img>
-
-    <ion-card-content>
-      <ion-card-title>Hello World</ion-card-title>
-
-      <p>The content for this card</p>
-    </ion-card-content>
-  </ion-card>
-
-  <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()">Formular absenden</fiv-loading-button>
-
-  <ion-list>
-    <fiv-loading-item [verticalAlign]="'top'" #item (click)="item.loading ? item.complete() : item.toggleSpinner()">
-      <ion-avatar slot="start">
-      </ion-avatar>
-      <ion-label>
-        <h2>Gary</h2>
-        <h3>I'm a big deal</h3>
-        <p>Listen, I've had a pretty messed up day...</p>
-      </ion-label>
-    </fiv-loading-item>
-    <fiv-loading-item #item2 (click)="item2.loading ? item2.complete() : item2.toggleSpinner()">
-      <ion-avatar slot="start">
-      </ion-avatar>
-      <ion-label>
-        <h2>Marc</h2>
-        <h3>Look, kid</h3>
-        <p>I've got enough on my plate as it is, and I..</p>
-      </ion-label>
-    </fiv-loading-item>
-    <fiv-loading-item #item3 (click)="item3.loading ? item3.complete() : item3.toggleSpinner()">
-      <ion-avatar slot="start">
-      </ion-avatar>
-      <ion-label>
-        <h2>Gary</h2>
-        <h3>I'm a big deal</h3>
-        <p>Listen, I've had a pretty messed up day...</p>
-      </ion-label>
-    </fiv-loading-item>
-    <fiv-loading-item #item4 (click)="item4.loading ? item4.complete() : item4.toggleSpinner()">
-      <ion-avatar slot="start">
-      </ion-avatar>
-      <ion-label>
-        <h2>Marc</h2>
-        <h3>Look, kid</h3>
-        <p>I've got enough on my plate as it is, and I..</p>
-      </ion-label>
-    </fiv-loading-item>
-    <fiv-loading-item #item5 (click)="item5.loading ? item5.complete() : item5.toggleSpinner()">
-      <ion-avatar slot="start">
-      </ion-avatar>
-      <ion-label>
-        <h2>Gary</h2>
-        <h3>I'm a big deal</h3>
-        <p>Listen, I've had a pretty messed up day...</p>
-      </ion-label>
-    </fiv-loading-item>
-    <fiv-loading-item #item6 (click)="item6.loading ? item6.complete() : item6.toggleSpinner()">
-      <ion-avatar slot="start">
-      </ion-avatar>
-      <ion-label>
-        <h2>Marc</h2>
-        <h3>Look, kid</h3>
-        <p>I've got enough on my plate as it is, and I..</p>
-      </ion-label>
-    </fiv-loading-item>
-
-    <ion-infinite-scroll>
-        <fiv-loading-infinite-scroll></fiv-loading-infinite-scroll>
-      </ion-infinite-scroll>
-
-  </ion-list>
-</fiv-loading-content>
-<fiv-loading-fab checkmark="true" slot="fixed" (onComplete)="fabComplete()" loading="true" #fab (click)="fab.loading ? fab.complete() : fab.toggleSpinner()"
-  horizontal="end" vertical="bottom" icon="md-add" spinColor="dark" fabColor="light" iconColor="primary"></fiv-loading-fab>
-
+<ion-content padding>
+  The world is your oyster.
+  <p>If you get lost, the
+    <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+</ion-content>

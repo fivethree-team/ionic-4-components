@@ -6,9 +6,14 @@ describe('new App', () => {
   beforeEach(() => {
     page = new AppPage();
   });
-
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toContain('The world is your oyster.');
+  describe('default screen', () => {
+    beforeEach(() => {
+      page.navigateTo('/home');
+    });
+    it('should have a title saying Home', () => {
+      page.getPageOneTitleText().then(title => {
+        expect(title).toEqual('Home');
+      });
+    });
   });
 });

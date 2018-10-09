@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { LoadingService } from 'dist/loading';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,22 +6,5 @@ import { LoadingService } from 'dist/loading';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(public loading: LoadingService) {
-
-  }
-
-  fabComplete() {
-    console.log('fab complete');
-  }
-
-  showHint(refresher) {
-    refresher.showHint();
-  }
-
-  onRefresh(refresher) {
-    setTimeout(()=>{
-      refresher.completeRefresh();
-    },2000)
-  }
 
 }
