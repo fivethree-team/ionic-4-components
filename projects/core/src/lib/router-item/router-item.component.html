@@ -1,0 +1,3 @@
+<ng-content></ng-content>
+<span *ngIf="hasShape()" [ngClass]="getClasses()" class="indicator"></span>
+<ion-icon *ngIf="!hasShape()" [ngClass]="position" [name]="shape" class="indicator"></ion-icon>

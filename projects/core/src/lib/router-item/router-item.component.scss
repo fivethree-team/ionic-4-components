@@ -1,0 +1,89 @@
+:host {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+:host.active .dot { 
+    display: block;
+}
+
+:host.active .line{
+    background-color: var(--fiv-dot-color, var(--ion-color-primary));
+    display: block;
+}
+
+:host.active.left .line {
+    width: 2px;
+    height: 100%;
+}
+
+:host.active.right .line {
+    width: 2px;
+    height: 100%;}
+
+:host.active.top .line {
+    width: calc(100% - 16px);
+    left: 8px;
+    height: 2px
+}
+
+:host.active.bottom .line{
+    width: calc(100% - 16px);
+    height: 2px;
+    left: 8px;
+}
+
+:host.active.dot.left {
+    padding-left: 24px;
+}
+
+:host.active.dot.right {
+    padding-right: 24px;
+}
+
+.indicator {
+    position: absolute;
+}
+
+// dot
+.dot {
+    width: var(--fiv-dot-width, 8px);
+    height: var(--fiv-dot-heigt, 8px);
+    background-color: var(--fiv-dot-color, var(--ion-color-primary));
+    top: 50%;
+    border-radius: 100%;
+    transform: translateY(-50%);
+    right: 8px;
+    display: none;
+}
+
+.dot.left {
+    left: 8px;
+    right: unset;
+}
+
+.dot.right {
+    right: 8px;
+}
+
+// position
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.outline {
+}
