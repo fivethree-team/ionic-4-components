@@ -21,6 +21,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "~6.1.9",
     "@angular/common": "~6.1.9",
     "@angular/core": "~6.1.9",
     "@angular/forms": "~6.1.9",
