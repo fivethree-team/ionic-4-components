@@ -1,0 +1,9 @@
+{
+  "name": "core",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^6.1.9",
+    "@angular/core": "^6.1.9",
+    "@ionic/angular": "4.0.0-beta.12"
+  }
+}

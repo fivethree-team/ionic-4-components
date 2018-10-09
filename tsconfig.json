@@ -8,9 +8,18 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+    "baseUrl": "./",
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "core": [
+        "dist/core"
+      ],
+      "core/*": [
+        "dist/core/*"
+      ]
+    }
   }
 }
