@@ -16,6 +16,11 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Password Item',
+      url: '/password',
+      icon: 'key'
+    },
+    {
       title: 'Loading',
       url: '/loading',
       icon: 'home'
