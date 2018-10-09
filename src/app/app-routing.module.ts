@@ -4,21 +4,18 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'components',
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    path: 'components',
+    loadChildren: './components/components.module#ComponentsPageModule'
   },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+  { path: 'loading', loadChildren: './loading/loading.module#LoadingPageModule' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

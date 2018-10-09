@@ -8,14 +8,16 @@
       </ion-header>
       <ion-content>
         <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
-                {{p.title}}
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
+          <fiv-router-item position="top" [pageUrl]="p.url" *ngFor="let p of appPages">
+              <ion-menu-toggle auto-hide="false">
+                  <ion-item>
+                    <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                    <ion-label>
+                      {{p.title}}
+                    </ion-label>
+                  </ion-item>
+                </ion-menu-toggle>
+          </fiv-router-item>
         </ion-list>
       </ion-content>
     </ion-menu>
