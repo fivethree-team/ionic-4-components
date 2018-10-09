@@ -1,0 +1,6 @@
+<div>
+  <ng-content select="[header]"></ng-content>
+  <div [@listAnim]="state" (@listAnim.done)="onAnimationEnd($event)" style="overflow: hidden">
+    <ng-content select="[content]"></ng-content>
+  </div>
+</div>
