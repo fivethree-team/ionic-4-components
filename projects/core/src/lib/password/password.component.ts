@@ -69,6 +69,7 @@ export class PasswordComponent implements ControlValueAccessor, OnInit, Validato
     this.onTouchedCallback = fn;
   }
 
+  // TODO validate password input
   validate(control: AbstractControl): ValidationErrors {
     return null;
   }

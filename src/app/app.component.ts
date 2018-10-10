@@ -21,6 +21,11 @@ export class AppComponent {
       icon: 'key'
     },
     {
+      title: 'Toolbar Search',
+      url: '/toolbar-search',
+      icon: 'search'
+    },
+    {
       title: 'Loading',
       url: '/loading',
       icon: 'home'

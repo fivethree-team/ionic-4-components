@@ -12,7 +12,8 @@ const routes: Routes = [
     loadChildren: './components/components.module#ComponentsPageModule'
   },
   { path: 'loading', loadChildren: './loading/loading.module#LoadingPageModule' },
-  { path: 'password', loadChildren: './password/password.module#PasswordPageModule' }
+  { path: 'password', loadChildren: './password/password.module#PasswordPageModule' },
+  { path: 'toolbar-search', loadChildren: './toolbar-search/toolbar-search.module#ToolbarSearchPageModule' }
 ];
 
 @NgModule({
