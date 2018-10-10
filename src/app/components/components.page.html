@@ -101,4 +101,12 @@
     </fiv-step>
   </fiv-stepper>
 
+
+  container
+  <div style="width: 100%; height: 340px; outline: 1px solid black; position: relative">
+    <div fivCenter>center</div>
+    <div [fivCenter]="{vertical: false, horizontal: true}">only horizontally centered</div>
+    <div [fivCenter]="{vertical: true, horizontal: false}">only vertically centered</div>
+  </div>
+
 </ion-content>

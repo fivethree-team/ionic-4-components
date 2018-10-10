@@ -7,6 +7,9 @@ import { StepHeaderComponent } from './step-header/step-header.component';
 import { StepContentComponent } from './step-content/step-content.component';
 import { ExpandableComponent } from './expandable/expandable.component';
 import { RouterItemComponent } from './router-item/router-item.component';
+import { CenterDirective } from './center/center.directive';
+import { CollapsableMenuDirective } from './collapsable-menu/collapsable-menu.directive';
+import { CollapsableMenuButtonComponent } from './collapsable-menu/collapsable-menu-button/collapsable-menu-button.component';
 
 @NgModule({
   imports: [
@@ -20,6 +23,9 @@ import { RouterItemComponent } from './router-item/router-item.component';
     StepHeaderComponent,
     StepContentComponent,
     RouterItemComponent,
+    CenterDirective,
+    CollapsableMenuButtonComponent,
+    CollapsableMenuDirective
   ],
   exports: [
     ExpandableComponent,
@@ -28,6 +34,9 @@ import { RouterItemComponent } from './router-item/router-item.component';
     StepHeaderComponent,
     StepContentComponent,
     RouterItemComponent,
+    CollapsableMenuDirective,
+    CenterDirective,
+    CollapsableMenuButtonComponent
   ]
 })
 export class FivethreeCoreModule { }
