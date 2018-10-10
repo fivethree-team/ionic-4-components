@@ -1,0 +1,22 @@
+<ion-content fullscreen>
+  <div class="gg-hint-wrapper">
+    <ion-chip *ngIf="hintVisible" (click)="onHintClicked()" [@hintAnim] (@hintAnim.done)="postHint($event)" #hint class="gg-hint-container">
+      <ion-icon class="icon" name="md-arrow-up"></ion-icon>
+      <ion-label class="text">{{hintText}}</ion-label>
+    </ion-chip>
+  </div>
+
+  <div [@spinnerAnim] (@spinnerAnim.done)="onSpinnerHidden($event)" *ngIf="spinnerVisible" #spinner class="gg-spinner-container">
+    <svg class="spinner rotate" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <circle [@fillAnim]="isComplete ? 'fill' : 'spinning'" (@fillAnim.done)="fillAnimationDone($event)" [ngClass]="{'path': !isComplete}"
+        fill="none" stroke-width="4" stroke-linecap="round" cx="36" cy="36" r="32"></circle>
+    </svg>
+  </div>
+  <ion-refresher slot="fixed" #refresher class="refresher" (ionStart)="onStart()" snapbackDuration="400ms"
+    closeDuration="800ms" [pullMax]="168" [pullMin]="56" [disabled]="false" slot="fixed" (ionRefresh)="doRefresh($event)"
+    (ionPull)="onPull($event)">
+  </ion-refresher>
+  <div class="gg-content">
+    <ng-content></ng-content>
+  </div>
+</ion-content>

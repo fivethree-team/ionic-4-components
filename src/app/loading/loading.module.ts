@@ -1,3 +1,4 @@
+import { FivethreeCoreModule } from 'core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    FivethreeCoreModule,
     RouterModule.forChild(routes)
   ],
   declarations: [LoadingPage]

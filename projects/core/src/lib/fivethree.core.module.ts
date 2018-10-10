@@ -13,6 +13,9 @@ import { CollapsableMenuDirective } from './collapsable-menu/collapsable-menu.di
 import { CollapsableMenuButtonComponent } from './collapsable-menu/collapsable-menu-button/collapsable-menu-button.component';
 import { PasswordComponent } from './password/password.component';
 import { ToolbarSearchComponent } from './toolbar-search/toolbar-search.component';
+import { LoadingButtonComponent } from './loading-button/loading-button.component';
+import { LoadingProgressBarComponent } from './loading-progress-bar/loading-progress-bar.component';
+import { LoadingContentComponent } from './loading-content/loading-content.component';
 
 @NgModule({
   imports: [
@@ -31,7 +34,10 @@ import { ToolbarSearchComponent } from './toolbar-search/toolbar-search.componen
     CenterDirective,
     CollapsableMenuButtonComponent,
     CollapsableMenuDirective,
-    ToolbarSearchComponent
+    ToolbarSearchComponent,
+    LoadingButtonComponent,
+    LoadingProgressBarComponent,
+    LoadingContentComponent,
   ],
   exports: [
     ExpandableComponent,
@@ -44,7 +50,10 @@ import { ToolbarSearchComponent } from './toolbar-search/toolbar-search.componen
     CollapsableMenuDirective,
     CenterDirective,
     CollapsableMenuButtonComponent,
-    ToolbarSearchComponent
+    ToolbarSearchComponent,
+    LoadingButtonComponent,
+    LoadingProgressBarComponent,
+    LoadingContentComponent
   ]
 })
 export class FivethreeCoreModule { }
