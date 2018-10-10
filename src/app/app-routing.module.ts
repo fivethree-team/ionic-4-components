@@ -11,7 +11,8 @@ const routes: Routes = [
     path: 'components',
     loadChildren: './components/components.module#ComponentsPageModule'
   },
-  { path: 'loading', loadChildren: './loading/loading.module#LoadingPageModule' }
+  { path: 'loading', loadChildren: './loading/loading.module#LoadingPageModule' },
+  { path: 'password', loadChildren: './password/password.module#PasswordPageModule' }
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -10,14 +11,17 @@ import { RouterItemComponent } from './router-item/router-item.component';
 import { CenterDirective } from './center/center.directive';
 import { CollapsableMenuDirective } from './collapsable-menu/collapsable-menu.directive';
 import { CollapsableMenuButtonComponent } from './collapsable-menu/collapsable-menu-button/collapsable-menu-button.component';
+import { PasswordComponent } from './password/password.component';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     IonicModule
   ],
   declarations: [
     ExpandableComponent,
+    PasswordComponent,
     StepperComponent,
     StepComponent,
     StepHeaderComponent,
@@ -29,6 +33,7 @@ import { CollapsableMenuButtonComponent } from './collapsable-menu/collapsable-m
   ],
   exports: [
     ExpandableComponent,
+    PasswordComponent,
     StepperComponent,
     StepComponent,
     StepHeaderComponent,

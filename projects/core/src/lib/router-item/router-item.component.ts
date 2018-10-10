@@ -42,7 +42,6 @@ export class RouterItemComponent implements OnInit {
   @HostBinding('class.active') get activeClass() {
     const isActive = (this.routeActive && this.router.url.startsWith(this.pageUrl))
       || this.active;
-    console.log(isActive, this.active, this.router, this.pageUrl);
     return isActive;
   }
 
@@ -52,7 +51,6 @@ export class RouterItemComponent implements OnInit {
   }
 
   hasShape(): boolean {
-    console.log(this.shape);
     return this.shape === 'line'
       || this.shape === 'dot';
   }
