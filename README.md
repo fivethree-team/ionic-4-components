@@ -1,4 +1,7 @@
 # fivethree web components
+
+[![npm version](https://badge.fury.io/js/%40fivethree%2Fcore.svg)](https://www.npmjs.com/@fivethree/core)
+
 Material Design component libraries to use in an ionic 4 project
 
 [Demo App](https://fivethree-team.github.io/fivethree/)
