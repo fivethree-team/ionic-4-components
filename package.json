@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "build": "ng build core",
+    "build:prod": "ng build core --prod",
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s"
   },
   "private": true,
