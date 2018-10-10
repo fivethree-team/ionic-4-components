@@ -13,7 +13,8 @@
     "ux",
     "mobile",
     "app",
-    "webapp"
+    "webapp",
+    "pwa"
   ],
   "scripts": {
     "build": "ng build core",
