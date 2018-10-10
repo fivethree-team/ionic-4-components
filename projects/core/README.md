@@ -23,3 +23,11 @@ import { FivethreeModule } from '@fivethree/core';
 })
 export class AppModule {}
 ```
+
+## Components
+
+| Selector       | Description    |
+|------------------| ------------------|
+| `fiv-app-bar`  | App Bar   |
+| `fiv-item-expandable`  | [Expandable Item](src/lib/item-expandable/readme.md) expanding content on click |
+| `fiv-toolbar-search`  | Search toolbar |
