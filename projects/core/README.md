@@ -10,15 +10,15 @@ npm install @fivethree/core --save
 yarn add @fivethree/core
 ```
 
-then in `app.module.ts`, import the `FivethreeModule`:
+then in `app.module.ts`, import the `FivethreeCoreModule`:
 
 ```TS
 import { NgModule } from '@angular/core';
-import { FivethreeModule } from '@fivethree/core';
+import { FivethreeCoreModule } from '@fivethree/core';
 
 @NgModule({
   imports: [
-    FivethreeModule
+    FivethreeCoreModule
   ]
 })
 export class AppModule {}
