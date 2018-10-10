@@ -7,22 +7,15 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   multi: true
 };
 
-export const CUSTOM_INPUT_VALIDATOR = {
-  provide: NG_VALIDATORS,
-  useExisting: forwardRef(() => PasswordComponent),
-  multi: true,
-};
-
 @Component({
   selector: 'fiv-password',
   templateUrl: './password.component.html',
   styleUrls: ['./password.component.scss'],
   providers: [
-    CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR,
-    CUSTOM_INPUT_VALIDATOR
+    CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR
   ],
 })
-export class PasswordComponent implements ControlValueAccessor, OnInit, Validator {
+export class PasswordComponent implements ControlValueAccessor, OnInit {
 
   @Input() hideIcon = 'eye-off';
   @Input() placeholder: string;
@@ -31,7 +24,7 @@ export class PasswordComponent implements ControlValueAccessor, OnInit, Validato
   @Input() showIcon = 'eye';
   @Input() clearOnEdit = false;
 
-  private innerValue: any = '';
+  private _passwordValue = '';
   private onTouchedCallback: () => {};
   private onChangeCallback: (_: any) => {};
 
@@ -44,20 +37,20 @@ export class PasswordComponent implements ControlValueAccessor, OnInit, Validato
     this.show = !this.show;
   }
 
-  get value(): any {
-    return this.innerValue;
+  get passwordValue(): any {
+    return this._passwordValue;
   }
 
-  set value(v: any) {
-    if (v !== this.innerValue) {
-      this.innerValue = v;
-      this.onChangeCallback(v);
+  set passwordValue(v: any) {
+    if (v !== this._passwordValue) {
+      this._passwordValue = v;
+      this.onChangeCallback(this._passwordValue);
     }
   }
 
   writeValue(value: any) {
-    if (value !== this.innerValue) {
-      this.innerValue = value;
+    if (value !== undefined && value !== this._passwordValue) {
+      this._passwordValue = value;
     }
   }
 
@@ -67,11 +60,6 @@ export class PasswordComponent implements ControlValueAccessor, OnInit, Validato
 
   registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
-  }
-
-  // TODO validate password input
-  validate(control: AbstractControl): ValidationErrors {
-    return null;
   }
 
 }
