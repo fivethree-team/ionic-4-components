@@ -11,11 +11,10 @@ export class ExpandableComponent implements OnInit {
 
   public isOpen = false;
   state = 'closed';
-  @Output() willOpen: EventEmitter<ExpandableComponent> = new EventEmitter();
-  @Output() didOpen: EventEmitter<ExpandableComponent> = new EventEmitter();
-  @Output() willClose: EventEmitter<ExpandableComponent> = new EventEmitter();
-  @Output() didClose: EventEmitter<ExpandableComponent> = new EventEmitter();
-
+  @Output() fivWillOpen: EventEmitter<ExpandableComponent> = new EventEmitter();
+  @Output() fivDidOpen: EventEmitter<ExpandableComponent> = new EventEmitter();
+  @Output() fivWillClose: EventEmitter<ExpandableComponent> = new EventEmitter();
+  @Output() fivDidClose: EventEmitter<ExpandableComponent> = new EventEmitter();
 
   constructor() { }
 
@@ -23,7 +22,7 @@ export class ExpandableComponent implements OnInit {
   }
 
   open() {
-    this.willOpen.emit(this);
+    this.fivWillOpen.emit(this);
     this.isOpen = true;
     this.state = 'open';
   }
@@ -37,7 +36,7 @@ export class ExpandableComponent implements OnInit {
   }
 
   close() {
-    this.willClose.emit(this);
+    this.fivWillClose.emit(this);
     console.log('close');
     this.isOpen = false;
     this.state = 'closed';
@@ -45,9 +44,9 @@ export class ExpandableComponent implements OnInit {
 
   onAnimationEnd(event) {
     if (event.fromState === 'closed') {
-      this.didOpen.emit(this);
+      this.fivDidOpen.emit(this);
     } else if (event.fromState === 'open') {
-      this.didClose.emit(this);
+      this.fivDidClose.emit(this);
     }
   }
 

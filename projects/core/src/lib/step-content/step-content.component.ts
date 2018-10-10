@@ -14,8 +14,8 @@ export class StepContentComponent implements OnInit {
   @Input() isLast = false;
   @Input() title = '';
   @Input() subtitle = '';
-  @Output() didOpen: EventEmitter<StepContentComponent> = new EventEmitter();
-  @Output() didClose: EventEmitter<StepContentComponent> = new EventEmitter();
+  @Output() fivDidOpen: EventEmitter<StepContentComponent> = new EventEmitter();
+  @Output() fivDidClose: EventEmitter<StepContentComponent> = new EventEmitter();
 
   @ViewChild('self') step: ExpandableComponent;
   @ViewChild('header') header: StepHeaderComponent;
@@ -42,11 +42,11 @@ export class StepContentComponent implements OnInit {
   }
 
   afterClose() {
-    this.didClose.emit(this);
+    this.fivDidClose.emit(this);
   }
 
   afterOpen() {
-    this.didOpen.emit(this);
+    this.fivDidOpen.emit(this);
   }
 
 }

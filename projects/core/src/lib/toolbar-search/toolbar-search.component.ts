@@ -41,8 +41,8 @@ export class ToolbarSearchComponent implements OnInit {
   @Input() title: string;
   @Input() placeholder: string;
   @Input() color: string;
-  @Output() inputChange: EventEmitter<any> = new EventEmitter();
-  @Output() close: EventEmitter<any> = new EventEmitter();
+  @Output() fivInputChange: EventEmitter<any> = new EventEmitter();
+  @Output() fivClose: EventEmitter<any> = new EventEmitter();
 
   constructor(public renderer: Renderer2) { }
 
@@ -56,7 +56,7 @@ export class ToolbarSearchComponent implements OnInit {
 
   closeSearchbar() {
     this.closeButtonVisible = false;
-    this.close.emit();
+    this.fivClose.emit();
 
   }
 
