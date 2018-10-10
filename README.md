@@ -1,10 +1,6 @@
 # fivethree web components
 Material Design component libraries to use in an ionic 4 project
 
-![Alt text](/loading_1.gif?raw=true)
-![Alt text](/loading_2.gif?raw=true)
-![Alt text](/loading_3.gif?raw=true)
-
 [Demo App](https://fivethree-team.github.io/fivethree/)
 
 # Packages
