@@ -1,0 +1,156 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>app-bar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding [scrollEvents]="true">
+
+  <ion-list>
+    <ion-item class="iiii">
+      <ion-label>
+        wow
+      </ion-label>
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+    <ion-item class="iiii">
+      test
+    </ion-item>
+  </ion-list>
+
+  <fiv-app-bar [fabIcon]="'md-add'" [fabLeft]="false" [fabRight]="false" #appBar (fivFabClick)="fabClicked($event)">
+    <ion-menu-button *ngIf="!appBar.fabLeft && !appBar.fabRight" start></ion-menu-button>
+    <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight" end icon-only>
+      <ion-icon slot="icon-only" name="md-profile"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight" end icon-only>
+      <ion-icon slot="icon-only" name="md-search"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight" end icon-only>
+      <ion-icon slot="icon-only" name="md-more"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="appBar.fabRight" start icon-only>
+      <ion-icon slot="icon-only" name="md-mail"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="appBar.fabRight" start icon-only>
+      <ion-icon slot="icon-only" name="md-trash"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="appBar.fabRight" start icon-only>
+      <ion-icon slot="icon-only" name="md-archive"></ion-icon>
+    </ion-button>
+
+  </fiv-app-bar>
+</ion-content>

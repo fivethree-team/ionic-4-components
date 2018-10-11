@@ -12,4 +12,22 @@ export class LoadingPage implements OnInit {
   ngOnInit() {
   }
 
+  fabComplete() {
+    console.log('fab complete');
+  }
+
+  buttonComplete() {
+    console.log('button complete');
+  }
+
+  showHint(refresher) {
+    refresher.showHint();
+  }
+
+  onRefresh(refresher) {
+    setTimeout(() => {
+      refresher.completeRefresh();
+    }, 2000);
+  }
+
 }

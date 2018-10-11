@@ -1,4 +1,3 @@
-import { FivethreeCoreModule } from 'core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,12 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoadingPage } from './loading.page';
+import { AppBarPage } from './app-bar.page';
+import { FivethreeCoreModule } from 'core';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoadingPage
+    component: AppBarPage
   }
 ];
 
@@ -23,6 +23,6 @@ const routes: Routes = [
     FivethreeCoreModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [LoadingPage]
+  declarations: [AppBarPage]
 })
-export class LoadingPageModule {}
+export class AppBarPageModule {}

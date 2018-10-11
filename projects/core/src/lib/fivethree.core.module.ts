@@ -14,6 +14,12 @@ import { CollapsableMenuButtonComponent } from './collapsable-menu/collapsable-m
 import { PasswordComponent } from './password/password.component';
 import { BottomSheetComponent, DrawerState } from './bottom-sheet/bottom-sheet.component';
 import { BottomSheetContentComponent } from './bottom-sheet/bottom-sheet-content/bottom-sheet-content.component';
+import { ToolbarSearchComponent } from './toolbar-search/toolbar-search.component';
+import { LoadingButtonComponent } from './loading-button/loading-button.component';
+import { LoadingProgressBarComponent } from './loading-progress-bar/loading-progress-bar.component';
+import { LoadingContentComponent } from './loading-content/loading-content.component';
+import { LoadingFabComponent } from './loading-fab/loading-fab.component';
+import { AppBarComponent } from './app-bar/app-bar.component';
 
 @NgModule({
   imports: [
@@ -33,7 +39,13 @@ import { BottomSheetContentComponent } from './bottom-sheet/bottom-sheet-content
     CollapsableMenuButtonComponent,
     CollapsableMenuDirective,
     BottomSheetComponent,
-    BottomSheetContentComponent
+    BottomSheetContentComponent,
+    ToolbarSearchComponent,
+    LoadingButtonComponent,
+    LoadingProgressBarComponent,
+    LoadingContentComponent,
+    LoadingFabComponent,
+    AppBarComponent,
   ],
   exports: [
     ExpandableComponent,
@@ -47,7 +59,13 @@ import { BottomSheetContentComponent } from './bottom-sheet/bottom-sheet-content
     CenterDirective,
     CollapsableMenuButtonComponent,
     BottomSheetComponent,
-    BottomSheetContentComponent
+    BottomSheetContentComponent,
+    ToolbarSearchComponent,
+    LoadingButtonComponent,
+    LoadingProgressBarComponent,
+    LoadingContentComponent,
+    LoadingFabComponent,
+    AppBarComponent,
   ]
 })
 export class FivethreeCoreModule { }

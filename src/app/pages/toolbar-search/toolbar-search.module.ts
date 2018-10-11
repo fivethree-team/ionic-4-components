@@ -6,12 +6,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoadingPage } from './loading.page';
+import { ToolbarSearchPage } from './toolbar-search.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoadingPage
+    component: ToolbarSearchPage
   }
 ];
 
@@ -23,6 +23,6 @@ const routes: Routes = [
     FivethreeCoreModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [LoadingPage]
+  declarations: [ToolbarSearchPage]
 })
-export class LoadingPageModule {}
+export class ToolbarSearchPageModule {}

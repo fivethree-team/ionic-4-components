@@ -1,18 +1,14 @@
 # fivethree web components
-Material Design component libraries to use in an ionic 4 project
 
-![Alt text](/loading_1.gif?raw=true)
-![Alt text](/loading_2.gif?raw=true)
-![Alt text](/loading_3.gif?raw=true)
+[![npm version](https://badge.fury.io/js/%40fivethree%2Fcore.svg)](https://www.npmjs.com/@fivethree/core)
+
+Material Design component libraries to use in an ionic 4 project
 
 [Demo App](https://fivethree-team.github.io/fivethree/)
 
 # Packages
 
-- [Dialog](projects/dialog/README.md)
-- [Google-Maps](projects/google-maps/README.md)
-- [Layout](projects/google-maps/README.md)
-- [Loading](projects/google-maps/README.md)
+- [Core](projects/core/README.md)
 
 ## Development
 This package is under active construction.

@@ -21,6 +21,11 @@ export class AppComponent {
       icon: 'key'
     },
     {
+      title: 'Toolbar Search',
+      url: '/toolbar-search',
+      icon: 'search'
+    },
+    {
       title: 'Loading',
       url: '/loading',
       icon: 'home'
@@ -28,6 +33,12 @@ export class AppComponent {
     {
       title: 'Bottom Sheet',
       url: '/bottom-sheet',
+      icon: 'home'
+
+    },
+    {
+      title: 'App Bar',
+      url: '/app-bar',
       icon: 'home'
     }
   ];

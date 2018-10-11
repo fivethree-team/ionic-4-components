@@ -1,0 +1,143 @@
+:host {
+    z-index: 5003;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 56px;
+}
+
+#shape {
+    width: 100%;
+    height: 56px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+#shape:before,
+#shape:after {
+    content: '';
+    position: absolute;
+}
+
+#shape:before {
+    top: -36px;
+    left: 50%;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 9999px var(--ion-color-primary);
+    z-index: -1;
+    transform: translateX(-50%);
+    transition: all 220ms ease;
+}
+
+#shape:after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#shape.fab-left:before {
+    left: 16px;
+    transform: unset;
+}
+
+#shape.fab-right:before {
+    left: calc(100% - 72px - 16px);
+    ;
+    transform: unset;
+}
+
+#shape.no-cut:before {
+    height: 0;
+    transition: all 220ms 120ms ease;
+}
+
+#fab {
+    position: absolute;
+    top: -50%;
+    border-radius: 50%;
+    z-index: 5000;
+    transition: all 300ms ease;
+    color: var(--ion-color-primary);
+}
+
+#buttons-right {
+    position: absolute;
+    right: 0;
+    color: var(--ion-color-primary-contrast);
+    height: 56px;
+}
+
+#buttons-left {
+    position: absolute;
+    left: 0;
+    color: var(--ion-color-primary-contrast);
+    height: 56px;
+}
+
+.box {
+    width: calc(50% - 36px);
+    height: 1px;
+    position: absolute;
+    top: 0;
+    box-shadow: 0 0 5px #333;
+    transition: all 300ms ease;
+}
+
+.box.left {
+    left: 0;
+}
+
+.box.right {
+    right: 0;
+}
+
+.box.full {
+    left: 0;
+    width: 100%;
+}
+
+.half {
+    top: 0px;
+    left: 50%;
+    width: 72px;
+    height: 36px;
+    border-bottom-left-radius: 72px;
+    border-bottom-right-radius: 72px;
+    z-index: -1;
+    transform: translateX(-50%);
+    position: absolute;
+    box-shadow: inset 0px -4px 6px -4px #333;
+    transition: all 300ms ease;
+}
+
+.fab-left .half {
+    left: 16px;
+    transform: unset;
+}
+
+.fab-right .half {
+    left: calc(100% - 72px - 16px);
+    transform: unset;
+}
+
+.fab-right .box.left {
+    width: calc(100% - 72px - 16px);
+}
+
+.fab-right .box.right {
+    width: 16px;
+}
+
+.fab-left .box.left {
+    width: 16px;
+}
+
+.fab-left .box.right {
+    width: calc(100% - 72px - 16px);
+}

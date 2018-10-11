@@ -18,6 +18,7 @@ export class CollapsableMenuDirective {
   @HostBinding('style')
   get myStyle(): SafeStyle {
     if (this.collapsed) {
+
       return this.sanitizer
         .bypassSecurityTrustStyle('min-width: 64px; max-width: 64px; --border: 0; transition: all cubic-bezier(.55,0,.1,1) 200ms;');
     } else {

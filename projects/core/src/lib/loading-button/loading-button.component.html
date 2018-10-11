@@ -1,0 +1,4 @@
+<ion-button (click)="onClick()" class="buttonfull" [disabled]="disabled" [expand]="expand" [color]="color">
+  <fiv-loading-progress-bar [verticalAlign]="verticalAlign" (fivComplete)="onComplete($event)" #progress [global]="false"></fiv-loading-progress-bar>
+  <ng-content></ng-content>
+</ion-button>
