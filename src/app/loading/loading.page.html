@@ -16,7 +16,7 @@
         </ion-card-content>
       </ion-card>
 
-    <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()">Formular absenden</fiv-loading-button>
+    <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()" (fivRefreshComplete)="buttonComplete()">Formular absenden</fiv-loading-button>
 
 </fiv-loading-content>
 

@@ -16,6 +16,10 @@ export class LoadingPage implements OnInit {
     console.log('fab complete');
   }
 
+  buttonComplete() {
+    console.log('button complete');
+  }
+
   showHint(refresher) {
     refresher.showHint();
   }
