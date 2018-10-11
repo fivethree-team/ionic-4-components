@@ -1,0 +1,125 @@
+$fab-size: 72px !default;
+
+:host{
+  position: absolute;
+  width: $fab-size;
+  height: $fab-size;
+}
+
+// FAB Vertical Positioning
+// --------------------------------------------------
+
+:host(.fab-vertical-top) {
+  top: 0;
+}
+
+:host(.fab-vertical-top.fab-edge) {
+  top: -$fab-size / 2;
+}
+
+:host(.fab-vertical-bottom.fab-edge) {
+  bottom: -$fab-size / 2;
+}
+
+:host(.fab-vertical-bottom) {
+  bottom: 0;
+}
+
+:host(.fab-vertical-center) {
+  
+  top: 50%;
+}
+
+// FAB Horizontal Positioning
+// --------------------------------------------------
+
+:host(.fab-horizontal-center) {
+  
+}
+
+:host(.fab-horizontal-start) {
+  left: 0;
+}
+
+:host(.fab-horizontal-end) {
+  right: 0;
+}
+
+ion-spinner {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 72px;
+  height: 72px;
+}
+
+$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+  position: absolute;
+  width:72px;  
+  height:72px; 
+  left:-8px; 
+  top:-8px;
+}
+
+.rotate{
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash $duration ease-in-out infinite, 
+    colors ($duration*4) ease-in-out infinite;
+}
+
+.fill{
+  stroke-dasharray: 360;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: 
+  fill $duration ease-out;
+  stroke: #1B9A59;
+
+}
+
+@keyframes colors {
+	0% { stroke: #4285F4; }
+	25% { stroke: #DE3E35; }
+	50% { stroke: #F7C223; }
+	75% { stroke: #1B9A59; }
+  100% { stroke: #4285F4; }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: $offset; }
+ 50% {
+   stroke-dashoffset: $offset/4;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: $offset;
+   transform:rotate(450deg);
+ }
+}
+
+@keyframes fill {
+  0% { stroke-dashoffset: 360; }
+  80% {
+    stroke-dashoffset: 180;
+    transform:rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    transform:rotate(450deg);
+  }
+ }

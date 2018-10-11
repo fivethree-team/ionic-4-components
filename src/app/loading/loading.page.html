@@ -19,3 +19,6 @@
     <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()">Formular absenden</fiv-loading-button>
 
 </fiv-loading-content>
+
+<fiv-loading-fab checkmark="true" slot="fixed" (fivComplete)="fabComplete()" loading="true" #fab (click)="fab.loading ? fab.complete() : fab.toggleSpinner()"
+  horizontal="end" vertical="bottom" icon="md-add" spinColor="dark" fabColor="light" iconColor="primary"></fiv-loading-fab>
