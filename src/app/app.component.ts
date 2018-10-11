@@ -29,6 +29,11 @@ export class AppComponent {
       title: 'Loading',
       url: '/loading',
       icon: 'home'
+    },
+    {
+      title: 'App Bar',
+      url: '/app-bar',
+      icon: 'home'
     }
   ];
 

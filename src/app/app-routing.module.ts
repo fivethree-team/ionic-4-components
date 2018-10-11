@@ -13,7 +13,8 @@ const routes: Routes = [
   },
   { path: 'loading', loadChildren: './loading/loading.module#LoadingPageModule' },
   { path: 'password', loadChildren: './password/password.module#PasswordPageModule' },
-  { path: 'toolbar-search', loadChildren: './toolbar-search/toolbar-search.module#ToolbarSearchPageModule' }
+  { path: 'toolbar-search', loadChildren: './toolbar-search/toolbar-search.module#ToolbarSearchPageModule' },
+  { path: 'app-bar', loadChildren: './app-bar/app-bar.module#AppBarPageModule' }
 ];
 
 @NgModule({

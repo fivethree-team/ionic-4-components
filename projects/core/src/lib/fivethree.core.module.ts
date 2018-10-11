@@ -17,6 +17,7 @@ import { LoadingButtonComponent } from './loading-button/loading-button.componen
 import { LoadingProgressBarComponent } from './loading-progress-bar/loading-progress-bar.component';
 import { LoadingContentComponent } from './loading-content/loading-content.component';
 import { LoadingFabComponent } from './loading-fab/loading-fab.component';
+import { AppBarComponent } from './app-bar/app-bar.component';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { LoadingFabComponent } from './loading-fab/loading-fab.component';
     LoadingProgressBarComponent,
     LoadingContentComponent,
     LoadingFabComponent,
+    AppBarComponent,
   ],
   exports: [
     ExpandableComponent,
@@ -57,6 +59,7 @@ import { LoadingFabComponent } from './loading-fab/loading-fab.component';
     LoadingProgressBarComponent,
     LoadingContentComponent,
     LoadingFabComponent,
+    AppBarComponent,
   ]
 })
 export class FivethreeCoreModule { }
