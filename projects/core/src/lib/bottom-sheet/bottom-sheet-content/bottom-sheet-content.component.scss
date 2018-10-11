@@ -1,0 +1,30 @@
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+:host.rounded {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.handle {
+    display: block;
+    background: var(--ion-color-light);
+    border-radius: 12px;
+    top: 8px;
+    width: 32px;
+    height: 8px;
+    position: absolute;
+}
+
+.content {
+    margin-top: 24px;
+}

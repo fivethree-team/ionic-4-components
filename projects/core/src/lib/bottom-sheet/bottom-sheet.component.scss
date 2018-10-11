@@ -1,0 +1,14 @@
+:host {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 11 !important;
+    background-color: white;
+    transform: translateY(100vh);
+}
+
+.fiv-bottom-drawer-scrollable-content {
+    width: 100%;
+    height: 100%;
+}

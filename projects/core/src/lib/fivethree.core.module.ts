@@ -12,6 +12,8 @@ import { CenterDirective } from './center/center.directive';
 import { CollapsableMenuDirective } from './collapsable-menu/collapsable-menu.directive';
 import { CollapsableMenuButtonComponent } from './collapsable-menu/collapsable-menu-button/collapsable-menu-button.component';
 import { PasswordComponent } from './password/password.component';
+import { BottomSheetComponent, DrawerState } from './bottom-sheet/bottom-sheet.component';
+import { BottomSheetContentComponent } from './bottom-sheet/bottom-sheet-content/bottom-sheet-content.component';
 
 @NgModule({
   imports: [
@@ -29,7 +31,9 @@ import { PasswordComponent } from './password/password.component';
     RouterItemComponent,
     CenterDirective,
     CollapsableMenuButtonComponent,
-    CollapsableMenuDirective
+    CollapsableMenuDirective,
+    BottomSheetComponent,
+    BottomSheetContentComponent
   ],
   exports: [
     ExpandableComponent,
@@ -41,7 +45,9 @@ import { PasswordComponent } from './password/password.component';
     RouterItemComponent,
     CollapsableMenuDirective,
     CenterDirective,
-    CollapsableMenuButtonComponent
+    CollapsableMenuButtonComponent,
+    BottomSheetComponent,
+    BottomSheetContentComponent
   ]
 })
 export class FivethreeCoreModule { }

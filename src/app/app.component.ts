@@ -24,6 +24,11 @@ export class AppComponent {
       title: 'Loading',
       url: '/loading',
       icon: 'home'
+    },
+    {
+      title: 'Bottom Sheet',
+      url: '/bottom-sheet',
+      icon: 'home'
     }
   ];
 

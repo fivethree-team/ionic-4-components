@@ -13,7 +13,7 @@ export class CenterDirective implements OnInit {
   @HostBinding('style')
   get myStyle(): SafeStyle {
     // tslint:disable-next-line:max-line-length
-    const style = `position: absolute; ${this.vertical && this.horizontal ? 'top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%);' : this.vertical ? 'top: 50%; transform: translateY(-50%);' : 'left: 50%; transform: translateX(-50%);'}`
+    const style = `position: absolute; ${this.vertical && this.horizontal ? 'top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%);' : this.vertical ? 'top: 50%; transform: translateY(-50%);' : 'left: 50%; transform: translateX(-50%);'}`;
     return this.sanitizer.bypassSecurityTrustStyle(style);
   }
 

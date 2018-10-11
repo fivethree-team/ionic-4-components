@@ -1,6 +1,5 @@
 import { Directive, HostBinding, Input, HostListener } from '@angular/core';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
-import { AnimationPlayer } from '@angular/animations';
 
 @Directive({
   selector: '[fivCollapseMenu]',
@@ -18,9 +17,7 @@ export class CollapsableMenuDirective {
 
   @HostBinding('style')
   get myStyle(): SafeStyle {
-    console.log('get style', this.collapsed);
     if (this.collapsed) {
-      console.log('style', 'min-width: 64px; max-width: 64px;');
       return this.sanitizer
         .bypassSecurityTrustStyle('min-width: 64px; max-width: 64px; --border: 0; transition: all cubic-bezier(.55,0,.1,1) 200ms;');
     } else {
@@ -44,7 +41,6 @@ export class CollapsableMenuDirective {
   }
 
   @Input() set fivCollapseMenu(collapse: boolean) {
-    console.log('set collapse', collapse);
     this.collapsed = collapse;
   }
 
@@ -56,7 +52,6 @@ export class CollapsableMenuDirective {
       return;
     }
     this.collapsed = !this.collapsed;
-    console.log('collapsed', this.collapsed);
   }
 
   open() {

@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Bottom Drawer Demo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding no-bounce>
+  <ion-list>
+    <ion-item>
+      <ion-label>Top</ion-label>
+      <ion-radio [checked]="drawerState===states.Top" (click)="drawerState = states.Top"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Docked</ion-label>
+      <ion-radio [checked]="drawerState===states.Docked" (click)="drawerState = states.Docked"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Bottom</ion-label>
+      <ion-radio [checked]="drawerState===states.Bottom" (click)="drawerState = states.Bottom"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Bounce</ion-label>
+      <ion-checkbox [(ngModel)]="shouldBounce"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Docked height</ion-label>
+      <ion-input type="number" [(ngModel)]="dockedHeight" value="150"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Top Distance</ion-label>
+      <ion-input type="number" [(ngModel)]="distanceTop" value="56"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Minimum Height</ion-label>
+      <ion-input type="number" [(ngModel)]="minimumHeight" value="0"></ion-input>
+    </ion-item>
+
+    <ion-item-divider>
+      <ion-label>Bottom Sheet Content</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label>Rounded</ion-label>
+      <ion-checkbox [(ngModel)]="rounded"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Handle</ion-label>
+      <ion-checkbox [(ngModel)]="handle"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Float</ion-label>
+      <ion-checkbox [(ngModel)]="float"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<fiv-bottom-sheet [(state)]="drawerState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight" [shouldBounce]="shouldBounce"
+  [distanceTop]="distanceTop">
+
+  <fiv-bottom-sheet-content [float]="float" [rounded]="rounded" [handle]="handle">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+        <ion-card-title>Awesome Title</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Awesome content
+      </ion-card-content>
+    </ion-card>
+  </fiv-bottom-sheet-content>
+  
+</fiv-bottom-sheet>

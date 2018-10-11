@@ -9,10 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'components',
-    loadChildren: './components/components.module#ComponentsPageModule'
+    loadChildren: './pages/components/components.module#ComponentsPageModule'
   },
-  { path: 'loading', loadChildren: './loading/loading.module#LoadingPageModule' },
-  { path: 'password', loadChildren: './password/password.module#PasswordPageModule' }
+  { path: 'loading', loadChildren: './pages/loading/loading.module#LoadingPageModule' },
+  { path: 'password', loadChildren: './pages/password/password.module#PasswordPageModule' },
+  { path: 'bottom-sheet', loadChildren: './pages/bottom-sheet/bottom-sheet.module#BottomSheetPageModule' }
 ];
 
 @NgModule({
