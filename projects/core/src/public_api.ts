@@ -8,6 +8,8 @@ export { DrawerState } from './lib/bottom-sheet/bottom-sheet.component';
 
 // export components
 export * from './lib/app-bar/app-bar.component';
+export * from './lib/bottom-sheet/bottom-sheet.component';
+export * from './lib/bottom-sheet/bottom-sheet-content/bottom-sheet-content.component';
 export * from './lib/expandable/expandable.component';
 export * from './lib/loading-button/loading-button.component';
 export * from './lib/loading-content/loading-content.component';
