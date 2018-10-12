@@ -17,15 +17,21 @@ export class BottomSheetComponent implements AfterViewInit, OnChanges {
 
   @Input() shouldBounce = true;
 
-  @Input() distanceTop = 0;
+  @Input() distanceTop = 56;
 
   @Input() transition = '0.25s ease-in-out';
 
   @Input() state: DrawerState = DrawerState.Bottom;
 
-  @Input() minimumHeight = 0;
+  @Input() minimumHeight = 24;
 
   @Output() stateChange: EventEmitter<DrawerState> = new EventEmitter<DrawerState>();
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output() onOpen: EventEmitter<BottomSheetComponent> = new EventEmitter<BottomSheetComponent>();
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output() onDocked: EventEmitter<BottomSheetComponent> = new EventEmitter<BottomSheetComponent>();
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output() onClose: EventEmitter<BottomSheetComponent> = new EventEmitter<BottomSheetComponent>();
 
   @ContentChild(BottomSheetContentComponent) content: BottomSheetContentComponent;
 
@@ -132,7 +138,18 @@ export class BottomSheetComponent implements AfterViewInit, OnChanges {
 
   private _handleTopPanEnd(ev) {
     if (ev.deltaY > this._BOUNCE_DELTA) {
-      this.state = DrawerState.Docked;
+      if (this.minimumHeight === this.dockedHeight) {
+        if (this.state !== DrawerState.Bottom) {
+          this.state = DrawerState.Bottom;
+          this.onClose.emit(this);
+        }
+      } else {
+        if (this.state !== DrawerState.Docked) {
+          this.state = DrawerState.Docked;
+          this.onDocked.emit(this);
+        }
+
+      }
     } else {
       this._setTranslateY(this.distanceTop + 'px');
     }
@@ -141,9 +158,16 @@ export class BottomSheetComponent implements AfterViewInit, OnChanges {
   private _handleDockedPanEnd(ev) {
     const absDeltaY = Math.abs(ev.deltaY);
     if (absDeltaY > this._BOUNCE_DELTA && ev.deltaY < 0) {
-      this.state = DrawerState.Top;
+      if (this.state !== DrawerState.Top) {
+
+        this.state = DrawerState.Top;
+        this.onOpen.emit();
+      }
     } else if (absDeltaY > this._BOUNCE_DELTA && ev.deltaY > 0) {
-      this.state = DrawerState.Bottom;
+      if (this.state !== DrawerState.Bottom) {
+        this.state = DrawerState.Bottom;
+        this.onClose.emit();
+      }
     } else {
       this._setTranslateY((this._platform.height() - this.dockedHeight) + 'px');
     }
@@ -151,7 +175,10 @@ export class BottomSheetComponent implements AfterViewInit, OnChanges {
 
   private _handleBottomPanEnd(ev) {
     if (-ev.deltaY > this._BOUNCE_DELTA) {
-      this.state = DrawerState.Docked;
+      if (this.state !== DrawerState.Docked) {
+        this.state = DrawerState.Docked;
+        this.onDocked.emit();
+      }
     } else {
       this._setTranslateY('calc(100vh - ' + this.minimumHeight + 'px)');
     }

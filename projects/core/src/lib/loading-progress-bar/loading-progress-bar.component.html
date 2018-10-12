@@ -4,3 +4,4 @@
   <div *ngIf="isComplete" [@fillAnim] (@fillAnim.done)="fillAnimationComplete(isComplete)" class="subline fill"></div>
   <div *ngIf="!isComplete" class="subline dec"></div>
 </div>
+<div #linear [@progressAnimLinear] [style.width]="progress + '%'" class="progress"  [ngClass]="{'top':verticalAlign == 'top','bottom': verticalAlign == 'bottom'}" ></div>

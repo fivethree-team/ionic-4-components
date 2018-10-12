@@ -5,6 +5,15 @@
     overflow-x: hidden;
     z-index: 5000;
 }
+.progress {
+    position: absolute;
+    height: 5px;
+    width: 0px;
+    overflow-x: hidden;
+    z-index: 5000;
+    background: var(--ion-color-primary);
+    transition: ease 240ms;
+}
 
 .line {
     position: absolute;

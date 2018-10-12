@@ -1,3 +1,4 @@
+import { Platform } from '@ionic/angular';
 import { Directive, HostBinding, Input, HostListener } from '@angular/core';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 
@@ -12,12 +13,12 @@ export class CollapsableMenuDirective {
   @Input() hoverMenu = true;
 
 
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer, private platform: Platform) { }
 
 
   @HostBinding('style')
   get myStyle(): SafeStyle {
-    if (this.collapsed) {
+    if (this.collapsed && (this.platform.is('tablet') || this.platform.is('electron') || this.platform.is('desktop'))) {
 
       return this.sanitizer
         .bypassSecurityTrustStyle('min-width: 64px; max-width: 64px; --border: 0; transition: all cubic-bezier(.55,0,.1,1) 200ms;');

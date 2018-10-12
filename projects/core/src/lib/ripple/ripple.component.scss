@@ -1,0 +1,52 @@
+:host {
+    display: block;
+    position: relative;
+}
+
+:host.round {
+    border-radius: 100%;
+}
+
+.rippleWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.rippleWrapper::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    // background-color: rgba(0, 0, 0, .1);
+    transform: scale(0);
+}
+
+.rippleWrapper.show::before {
+    transition: opacity 1.5s;
+    transform: scale(2);
+    opacity: 0;
+}
+
+.ripple {
+    position: absolute;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 100%;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+.ripple.show {
+    animation: ripple .75s ease-out;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}

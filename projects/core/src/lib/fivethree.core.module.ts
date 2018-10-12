@@ -8,7 +8,6 @@ import { StepHeaderComponent } from './step-header/step-header.component';
 import { StepContentComponent } from './step-content/step-content.component';
 import { ExpandableComponent } from './expandable/expandable.component';
 import { RouterItemComponent } from './router-item/router-item.component';
-import { CenterDirective } from './center/center.directive';
 import { CollapsableMenuDirective } from './collapsable-menu/collapsable-menu.directive';
 import { CollapsableMenuButtonComponent } from './collapsable-menu/collapsable-menu-button/collapsable-menu-button.component';
 import { PasswordComponent } from './password/password.component';
@@ -20,6 +19,10 @@ import { LoadingProgressBarComponent } from './loading-progress-bar/loading-prog
 import { LoadingContentComponent } from './loading-content/loading-content.component';
 import { LoadingFabComponent } from './loading-fab/loading-fab.component';
 import { AppBarComponent } from './app-bar/app-bar.component';
+import { IfPlatformDirective } from './directives/if-platform.directive';
+import { CenterDirective } from './directives/center.directive';
+import { PermissionsDirective } from './directives/permissions.directive';
+import { RippleComponent } from './ripple/ripple.component';
 
 @NgModule({
   imports: [
@@ -46,6 +49,9 @@ import { AppBarComponent } from './app-bar/app-bar.component';
     LoadingContentComponent,
     LoadingFabComponent,
     AppBarComponent,
+    IfPlatformDirective,
+    PermissionsDirective,
+    RippleComponent
   ],
   exports: [
     ExpandableComponent,
@@ -66,6 +72,9 @@ import { AppBarComponent } from './app-bar/app-bar.component';
     LoadingContentComponent,
     LoadingFabComponent,
     AppBarComponent,
+    IfPlatformDirective,
+    PermissionsDirective,
+    RippleComponent
   ]
 })
 export class FivethreeCoreModule { }

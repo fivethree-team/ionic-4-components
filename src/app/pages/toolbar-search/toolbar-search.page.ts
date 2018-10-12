@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { DrawerState } from './../../../../projects/core/src/lib/bottom-sheet/bottom-sheet.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToolbarSearchComponent } from 'projects/core/src/lib/toolbar-search/toolbar-search.component';
 
 @Component({
   selector: 'app-toolbar-search',
@@ -8,6 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class ToolbarSearchPage implements OnInit {
 
   searchInput: string;
+  small = true;
+  states = DrawerState;
+  state: DrawerState = DrawerState.Bottom;
+  @ViewChild('search') search: ToolbarSearchComponent;
 
   constructor() { }
 
@@ -21,6 +27,36 @@ export class ToolbarSearchPage implements OnInit {
 
   closeSearch() {
     this.searchInput = '';
+  }
+
+  smallChange() {
+    if (this.small) {
+      this.open();
+    } else {
+      this.close();
+    }
+  }
+
+  open() {
+    if (this.small) {
+      this.search.grow();
+    }
+    console.log('open !!!!');
+    this.state = DrawerState.Top;
+  }
+
+  close() {
+    console.log('open !!!!');
+    if (this.small) {
+      this.search.shrink();
+    }
+    this.state = DrawerState.Bottom;
+  }
+
+  bottomSheetClose(search: ToolbarSearchComponent) {
+    console.log('bottomSheetClose !!!!');
+
+    search.closeSearchbar();
   }
 
 }

@@ -1,9 +1,11 @@
 <div *ngIf="!isLast" class="timeline"></div>
 <fiv-expandable (fivDidClose)="afterClose()" (fivDidOpen)="afterOpen()" #self>
-  <fiv-step-header #header header [index]="index" [icon]="icon" (click)="self.open()">
-    <div class="header-title">{{title}}</div>
-    <div class="header-subtitle">{{subtitle}}</div>
-  </fiv-step-header>
+  <fiv-ripple header (click)="self.open()">
+      <fiv-step-header #header [index]="index" [icon]="icon">
+          <div class="header-title">{{title}}</div>
+          <div class="header-subtitle">{{subtitle}}</div>
+      </fiv-step-header>
+  </fiv-ripple>
   <ng-container content>
     <div class="step-content">
       <ng-content></ng-content>

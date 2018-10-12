@@ -1,22 +1,50 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="menuId"></ion-menu-button>
+    </ion-buttons>
     <ion-title>loading</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <fiv-loading-content #refresher (fivRefresh)="onRefresh($event)">
-    <ion-card mode="ios" (click)="bar.loading ? bar.complete() : bar.toggleSpinner()">
-        <fiv-loading-progress-bar #bar [global]="false"></fiv-loading-progress-bar>
-        <ion-img src="https://beta.ionicframework.com/docs/content/component-preview-app/docs-www/assets/madison.jpg"></ion-img>
-    
-        <ion-card-content>
-          <ion-card-title>Hello World</ion-card-title>
-    
-          <p>The content for this card</p>
-        </ion-card-content>
-      </ion-card>
+  <ion-card mode="ios" (click)="bar.loading ? bar.complete() : bar.toggleSpinner()">
+    <fiv-loading-progress-bar #bar [global]="false"></fiv-loading-progress-bar>
+    <ion-img src="https://beta.ionicframework.com/docs/content/component-preview-app/docs-www/assets/madison.jpg"></ion-img>
+    <fiv-ripple>
+      <ion-card-content>
+        <ion-card-title>Hello World</ion-card-title>
 
-    <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()" (fivRefreshComplete)="buttonComplete()">Formular absenden</fiv-loading-button>
+        <p>The content for this card</p>
+      </ion-card-content>
+    </fiv-ripple>
+
+  </ion-card>
+
+  <ion-button (click)="bar.incrementBy(10)" >
+    +10
+  </ion-button>
+
+  <ion-button (click)="bar.incrementBy(20)">
+    +20
+  </ion-button>
+
+  <ion-button (click)="bar.decrementBy(-30)">
+    -30
+  </ion-button>
+
+  <ion-button (click)="bar.fillIn(4000)">
+    <ion-icon slot="start" name="add"></ion-icon>
+    Fill in 4 sec
+  </ion-button>
+
+  <ion-button (click)="bar.shrinkIn(2000)">
+    <ion-icon slot="start" name="remove"></ion-icon>
+    Shrink in 2 sec
+  </ion-button>
+
+  <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()" (fivRefreshComplete)="buttonComplete()">Formular
+    absenden</fiv-loading-button>
 
 </fiv-loading-content>
 
