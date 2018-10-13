@@ -1,6 +1,7 @@
 import { Directive, OnInit, ElementRef, Input, Output, EventEmitter, Host } from '@angular/core';
-import * as Hammer from 'hammerjs';
 import { Content } from '@ionic/angular';
+import { fromEvent, merge } from 'rxjs';
+import { filter, map, skipWhile, takeUntil, last } from 'rxjs/operators';
 
 
 
@@ -8,8 +9,6 @@ import { Content } from '@ionic/angular';
   selector: '[fivPull]'
 })
 export class PullDirective implements OnInit {
-
-  startPositionTop: number;
 
   @Input() minPullHeight = 112;
   @Input() maxPullHeight = 168;
@@ -19,58 +18,85 @@ export class PullDirective implements OnInit {
   @Output() fivCancel = new EventEmitter<any>();
   @Output() fivPull = new EventEmitter<number>();
 
+  scrollY: HTMLElement;
 
+  constructor(private element: ElementRef, @Host() private content: Content) {
+  }
 
   ngOnInit(): void {
 
-    const hammer = new Hammer(this.element.nativeElement);
-    hammer.get('pan').set({ enable: true, direction: Hammer.DIRECTION_VERTICAL });
-    hammer.on('pandown panup panstart panend', (ev: any) => {
-      switch (ev.type) {
-        case 'panstart':
-          this._handlePanStart(ev);
-          break;
-        case 'panend':
-          this._handlePanEnd(ev);
-          break;
-        default:
-          this._handlePan(ev);
-      }
+    this.content.scrollEvents = true;
+    this.content.getScrollElement().then(s => {
+      this.scrollY = s; // needed for scrollTop
+      this.setupPanListener();
     });
 
 
   }
 
-  constructor(private element: ElementRef, @Host() private content: Content) {
-    console.log(content);
-    content.scrollY = false;
-  }
+  private setupPanListener() {
+    const touchstart$ = fromEvent(this.element.nativeElement, 'touchstart');
+    const touchmove$ = fromEvent(this.element.nativeElement, 'touchmove');
+    const touchend$ = fromEvent(this.element.nativeElement, 'touchend');
+    const touchcancel$ = fromEvent(this.element.nativeElement, 'touchcancel');
+    const end$ = merge(touchend$, touchcancel$);
 
-  private _handlePanStart(ev) {
-    this.startPositionTop = ev.center.y;
-    console.log('pan start', this.startPositionTop);
-  }
+    const dragAtTop = touchstart$
+      .pipe(
+        filter(e => this.scrollY.scrollTop === 0 && this.enabled)
+      );
 
-  private _handlePanEnd(ev) {
-    if (ev.isFinal) {
-      console.log('pan end', ev);
-      const pointerY = ev.center.y;
-      const distance = pointerY - this.startPositionTop;
-      if (distance >= 112) {
-        console.log('refresh');
-        this.fivRefresh.emit();
-      } else {
-        console.log('no refresh');
-        this.fivCancel.emit();
-      }
-    }
-  }
+    const dragTopDown = dragAtTop
+      .pipe(
+        map((start: any) => {
+          const startY = start.touches[0].pageY;
+          return touchmove$
+            .pipe(
+              map((move: any) => {
+                const currentY = move.touches[0].pageY;
+                return {
+                  startEvent: start,
+                  moveEvent: move,
+                  startY: startY,
+                  currentY: currentY,
+                  offset: currentY - startY
+                };
+              }),
+              skipWhile(drag => drag.offset < 0),
+              takeUntil(end$)
+            );
+        }));
 
-  private _handlePan(ev) {
-    const pointerY = ev.center.y;
-    const distance = pointerY - this.startPositionTop;
-    if (distance >= 0 && distance <= this.maxPullHeight) {
-      this.fivPull.emit(distance / this.maxPullHeight);
-    }
+
+    dragTopDown.forEach(drags => {
+      drags.forEach(drag => {
+        drag.moveEvent.preventDefault();
+        const offset = drag.offset / 2;
+        if (offset < 0 || offset > this.maxPullHeight) {
+          return;
+        }
+        if (offset <= this.maxPullHeight) {
+
+        }
+        console.log('progress', offset / this.maxPullHeight);
+        this.fivPull.emit(offset / this.maxPullHeight);
+      });
+
+      drags
+        .pipe(
+          last()
+        )
+        .subscribe(drag => {
+          const offset = drag.offset / 2;
+          const refresh = offset >= this.minPullHeight;
+          if (refresh) {
+            console.log('refresh', refresh, offset);
+            this.fivRefresh.emit();
+          } else {
+            console.log('no refresh', refresh, offset);
+            this.fivCancel.emit();
+          }
+        });
+    });
   }
 }

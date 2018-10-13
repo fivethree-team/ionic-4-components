@@ -7,98 +7,98 @@
   </ion-toolbar>
 </ion-header>
 
-<fiv-loading-content #refresher (fivRefresh)="onRefresh($event)" [hintText]="'new posts'" *fivIf="['mobile']">
-  <ion-card mode="ios" (click)="bar.loading ? bar.complete() : bar.toggleSpinner()">
-    <fiv-loading-progress-bar #bar [global]="false"></fiv-loading-progress-bar>
-    <ion-img src="https://beta.ionicframework.com/docs/content/component-preview-app/docs-www/assets/madison.jpg"></ion-img>
-    <fiv-ripple>
-      <ion-card-content>
-        <ion-card-title>Hello World</ion-card-title>
+<fiv-loading-content #refresher (fivRefresh)="onRefresh($event)" [hintText]="'new posts'">
 
-        <p>The content for this card</p>
-      </ion-card-content>
-    </fiv-ripple>
-
-  </ion-card>
-
-  <ion-button (click)="bar.incrementBy(10)">
-    +10
-  </ion-button>
-
-  <ion-button (click)="bar.incrementBy(20)">
-    +20
-  </ion-button>
-
-  <ion-button (click)="bar.decrementBy(-30)">
-    -30
-  </ion-button>
-
-  <ion-button (click)="bar.fillIn(4000)">
-    <ion-icon slot="start" name="add"></ion-icon>
-    Fill in 4 sec
-  </ion-button>
-
-  <ion-button (click)="bar.shrinkIn(2000)">
-    <ion-icon slot="start" name="remove"></ion-icon>
-    Shrink in 2 sec
-  </ion-button>
-
-  <ion-button (click)="refresher.showHint()">
-    show hint
-  </ion-button>
-
-  <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()" (fivRefreshComplete)="buttonComplete()">Formular
-    absenden</fiv-loading-button>
-
-    <ion-item-group>
-      <ion-item-divider>
-        <ion-label>Label</ion-label>
-      </ion-item-divider>
+    <ion-card mode="ios" (click)="bar.loading ? bar.complete() : bar.toggleSpinner()">
+        <fiv-loading-progress-bar #bar [global]="false"></fiv-loading-progress-bar>
+        <ion-img src="https://beta.ionicframework.com/docs/content/component-preview-app/docs-www/assets/madison.jpg"></ion-img>
+        <fiv-ripple>
+          <ion-card-content>
+            <ion-card-title>Hello World</ion-card-title>
     
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-    </ion-item-group>
-    <ion-item-group>
-      <ion-item-divider>
-        <ion-label>Label</ion-label>
-      </ion-item-divider>
+            <p>The content for this card</p>
+          </ion-card-content>
+        </fiv-ripple>
     
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-    </ion-item-group>
-    <ion-item-group>
-      <ion-item-divider>
-        <ion-label>Label</ion-label>
-      </ion-item-divider>
+      </ion-card>
     
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-    </ion-item-group>
-    <ion-item-group>
-      <ion-item-divider>
-        <ion-label>Label</ion-label>
-      </ion-item-divider>
+      <ion-button (click)="bar.incrementBy(10)">
+        +10
+      </ion-button>
     
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-    </ion-item-group>
-
+      <ion-button (click)="bar.incrementBy(20)">
+        +20
+      </ion-button>
+    
+      <ion-button (click)="bar.decrementBy(-30)">
+        -30
+      </ion-button>
+    
+      <ion-button (click)="bar.fillIn(4000)">
+        <ion-icon slot="start" name="add"></ion-icon>
+        Fill in 4 sec
+      </ion-button>
+    
+      <ion-button (click)="bar.shrinkIn(2000)">
+        <ion-icon slot="start" name="remove"></ion-icon>
+        Shrink in 2 sec
+      </ion-button>
+    
+      <ion-button (click)="refresher.showHint()">
+        show hint
+      </ion-button>
+    
+      <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()" (fivRefreshComplete)="buttonComplete()">Formular
+        absenden</fiv-loading-button>
+    
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-label>Label</ion-label>
+        </ion-item-divider>
+    
+        <ion-item>
+          <ion-label>Label</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Label</ion-label>
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-label>Label</ion-label>
+        </ion-item-divider>
+    
+        <ion-item>
+          <ion-label>Label</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Label</ion-label>
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-label>Label</ion-label>
+        </ion-item-divider>
+    
+        <ion-item>
+          <ion-label>Label</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Label</ion-label>
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-label>Label</ion-label>
+        </ion-item-divider>
+    
+        <ion-item>
+          <ion-label>Label</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Label</ion-label>
+        </ion-item>
+      </ion-item-group>
 </fiv-loading-content>
 
 <fiv-loading-fab checkmark="true" slot="fixed" (fivComplete)="fabComplete()" loading="true" #fab (click)="fab.loading ? fab.complete() : fab.toggleSpinner()"
