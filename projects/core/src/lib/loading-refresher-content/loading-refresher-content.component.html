@@ -1,0 +1,7 @@
+<div class="spinner">
+  <svg *ngIf="loading" class="spinner rotate" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+    <circle [@fillAnim]="isComplete ? 'fill' : 'spinning'" (@fillAnim.done)="fillAnimationDone($event)" [ngClass]="{'path': !isComplete}"
+      fill="none" stroke-width="4" stroke-linecap="round" cx="28" cy="28" r="24"></circle>
+  </svg>
+</div>
+<div #spinner class="spinner-background"></div>

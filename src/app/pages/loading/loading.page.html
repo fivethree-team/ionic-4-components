@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<fiv-loading-content #refresher (fivRefresh)="onRefresh($event)">
+<fiv-loading-content #refresher (fivRefresh)="onRefresh($event)" [hintText]="'new posts'" *fivIf="['mobile']">
   <ion-card mode="ios" (click)="bar.loading ? bar.complete() : bar.toggleSpinner()">
     <fiv-loading-progress-bar #bar [global]="false"></fiv-loading-progress-bar>
     <ion-img src="https://beta.ionicframework.com/docs/content/component-preview-app/docs-www/assets/madison.jpg"></ion-img>
@@ -21,7 +21,7 @@
 
   </ion-card>
 
-  <ion-button (click)="bar.incrementBy(10)" >
+  <ion-button (click)="bar.incrementBy(10)">
     +10
   </ion-button>
 
@@ -43,8 +43,61 @@
     Shrink in 2 sec
   </ion-button>
 
+  <ion-button (click)="refresher.showHint()">
+    show hint
+  </ion-button>
+
   <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()" (fivRefreshComplete)="buttonComplete()">Formular
     absenden</fiv-loading-button>
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Label</ion-label>
+      </ion-item-divider>
+    
+      <ion-item>
+        <ion-label>Label</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Label</ion-label>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Label</ion-label>
+      </ion-item-divider>
+    
+      <ion-item>
+        <ion-label>Label</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Label</ion-label>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Label</ion-label>
+      </ion-item-divider>
+    
+      <ion-item>
+        <ion-label>Label</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Label</ion-label>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Label</ion-label>
+      </ion-item-divider>
+    
+      <ion-item>
+        <ion-label>Label</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Label</ion-label>
+      </ion-item>
+    </ion-item-group>
 
 </fiv-loading-content>
 

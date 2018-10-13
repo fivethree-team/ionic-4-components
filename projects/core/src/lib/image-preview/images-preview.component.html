@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div
+        *ngFor="let image of imagesToShow"
+        class="imagePreviewWrapper"
+        [ngClass]="enableLightBox === true ? 'pointer' : ''"
+        (click)="openLightBox(image)"
+        matTooltip="{{image.filename}}">
+        <img class="imagePreview" [src]="image.thumbnail">
+        <div *ngIf="showImageTitles === true"
+              class="imageText trimText">
+          {{image.filename}}
+        </div>
+        <div *ngIf="showImageSizes === true"
+              class="imageSize">
+          <span *ngIf="image.filesize > 1000000">
+            {{(image.filesize / 1000) / 1000 | number}} MB
+          </span>
+          <span *ngIf="image.filesize <= 1000000">
+            {{(image.filesize / 1000) | number}} KB
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="_images && _images.length > 0 && enablePagination === true" class="row">
+    <div class="col-md-12">
+      <mat-paginator [length]="_images.length"
+                     [pageSize]="imagesOnPage"
+                     [pageSizeOptions]="[imagesOnPage]"
+                     (page)="pageChanged($event)">
+      </mat-paginator>
+    </div>
+  </div>
+</div>

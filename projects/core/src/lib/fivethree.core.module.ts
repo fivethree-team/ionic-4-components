@@ -1,3 +1,4 @@
+import { LoadingRefresherContentComponent } from './loading-refresher-content/loading-refresher-content.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -23,6 +24,8 @@ import { IfPlatformDirective } from './directives/if-platform.directive';
 import { CenterDirective } from './directives/center.directive';
 import { PermissionsDirective } from './directives/permissions.directive';
 import { RippleComponent } from './ripple/ripple.component';
+import { ViewportDirective } from './directives/viewport.directive';
+import { PullDirective } from './directives/pull.directive';
 
 @NgModule({
   imports: [
@@ -51,7 +54,10 @@ import { RippleComponent } from './ripple/ripple.component';
     AppBarComponent,
     IfPlatformDirective,
     PermissionsDirective,
-    RippleComponent
+    RippleComponent,
+    ViewportDirective,
+    PullDirective,
+    LoadingRefresherContentComponent
   ],
   exports: [
     ExpandableComponent,
@@ -74,7 +80,10 @@ import { RippleComponent } from './ripple/ripple.component';
     AppBarComponent,
     IfPlatformDirective,
     PermissionsDirective,
-    RippleComponent
+    RippleComponent,
+    ViewportDirective,
+    PullDirective,
+    LoadingRefresherContentComponent
   ]
 })
 export class FivethreeCoreModule { }

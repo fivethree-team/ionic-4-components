@@ -40,6 +40,11 @@ export class AppComponent {
       title: 'App Bar',
       url: '/app-bar',
       icon: 'home'
+    },
+    {
+      title: 'Viewport Directive',
+      url: '/viewport',
+      icon: 'home'
     }
   ];
 

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{button.isVisible() ? 'Button is in Viewport' : 'Not in Viewport'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="container">
+    <ion-button #button=viewport fivViewport (fivAppear)="appear($event)" (fivDisappear)="disappear($event)">
+      Click me
+    </ion-button>
+
+  </div>
+
+
+</ion-content>

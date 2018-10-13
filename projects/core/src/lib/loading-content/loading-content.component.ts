@@ -1,7 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Input } from '@angular/core';
-import { animate, style, transition, trigger, state } from '@angular/animations';
-import { fromEvent } from 'rxjs';
-import { Refresher } from '@ionic/angular';
+import { element } from 'protractor';
+import { LoadingRefresherContentComponent } from './../loading-refresher-content/loading-refresher-content.component';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Input, Renderer2 } from '@angular/core';
+import { animate, style, transition, trigger, state, AnimationBuilder, AnimationPlayer } from '@angular/animations';
 
 @Component({
   selector: 'fiv-loading-content',
@@ -33,12 +33,12 @@ import { Refresher } from '@ionic/angular';
     ]),
     trigger('hintAnim', [
       transition('void => *', [
-        style({ opacity: 0, transform: 'translateY(-80px)' }),
-        animate('150ms ease-in', style({ opacity: 1, transform: 'translateY(0)' }))
+        style({ transform: 'translateY(0px) translateX(-50%)' }),
+        animate('150ms ease-in', style({ opacity: 1, transform: 'translateY(112px) translateX(-50%)' }))
       ]),
       transition('* => void', [
-        style({ width: '112px' }),
-        animate('125ms ease-out', style({ width: '40px' }))
+        style({ width: '112px', opacity: 1, transform: 'translateY(112px) translateX(-50%)' }),
+        animate('125ms ease-out', style({ width: '40px', transform: 'translateY(112px) translateX(-50%)' }))
       ]),
     ]
     ),
@@ -49,99 +49,37 @@ export class LoadingContentComponent implements OnInit {
   @Input() hintText = 'new posts';
   @Output() fivProgressChanged: EventEmitter<number> = new EventEmitter();
   @Output() fivRefresh: EventEmitter<LoadingContentComponent> = new EventEmitter();
-  @ViewChild('spinner') spinner: ElementRef;
   @ViewChild('content') content: ElementRef;
-  refresher: Refresher;
-  isComplete = false;
-  pulling = false;
-  refreshing = false;
-  spinnerVisible = true;
-  translateY = 0;
+  @ViewChild('spinner') spinner: LoadingRefresherContentComponent;
   hintVisible = false;
+  currentProgress = 0;
+
+  refreshing = false;
 
   ngOnInit() {
 
-    fromEvent(document, 'touchend').subscribe(res => {
-      console.log('touchend', res);
-      if (this.pulling && !this.refreshing) {
-        this.changeProgress(0);
-      }
-    });
-
   }
 
-  constructor() {
+  constructor(private builder: AnimationBuilder, private renderer: Renderer2) {
   }
 
-  spinRefresher() {
-    this.spinner.nativeElement.style.setProperty('transform', `translateY(168px)`);
-    this.refreshing = true;
-    this.pulling = false;
-  }
-
-  doRefresh(event) {
-    this.spinner.nativeElement.style.setProperty('transition', `all 400ms ease`);
-    this.spinRefresher();
-    console.log('refresh here');
-    setTimeout(() => {
-      this.refresh();
-      event.target.closeDuration = '400ms';
-      this.refresher = event.target.complete();
-
-    }, 400);
-  }
 
   refresh() {
+    this.refreshing = true;
+    this.changeAnimationToProgress(112 / 168);
     this.fivRefresh.emit(this);
   }
 
   completeRefresh() {
-    this.spinner.nativeElement.style.setProperty('transition', `0`);
-    this.refreshing = false;
-    this.isComplete = true;
+    this.spinner.complete();
   }
 
-  onPull(event) {
-    this.pulling = true;
-    console.log(event);
-    const progress = event.target.getProgress();
-    if (progress <= 1) {
-      this.fivProgressChanged.emit(progress);
-      this.changeProgress(progress);
-
-    }
+  fillAnimationDone() {
+    console.log('fillAnimDone');
+    this.spinner.unload();
+    this.spinner.hide();
   }
 
-  onStart() {
-    // this.changeProgress(0);
-  }
-
-  public changeProgress(progress: number) {
-    this.translateY = 112 * progress;
-    const translateY = this.translateY;
-    console.log(`translateY(${translateY}px)`);
-    // this.renderer.setStyle(this.spinner.nativeElement, 'transform', `translateY(${translateY})`)
-    this.spinner.nativeElement.style.setProperty('transform', `translateY(${translateY}px)`);
-    // this.change.detectChanges();
-  }
-
-  fillAnimationDone(event) {
-
-    if (event.toState === 'fill' && event.fromState === 'spinning') {
-      console.log('fillAnim complete', event);
-
-      this.spinnerVisible = false;
-      this.isComplete = false;
-    }
-  }
-
-  onSpinnerHidden(event) {
-    if (event.fromState !== 'void') {
-      console.log('refresh complete', event);
-      this.spinnerVisible = true;
-    }
-
-  }
 
   showHint() {
     this.hintVisible = true;
@@ -150,15 +88,82 @@ export class LoadingContentComponent implements OnInit {
   onHintClicked() {
     console.log('on hint clicked');
     this.hintVisible = false;
+
   }
 
   postHint(event) {
     console.log(event);
     if (!event.fromState && event.toState === 'void') {
-      this.refresh();
-      this.spinRefresher();
-
+      this.setPullAnimationProgress(112 / 168);
+      this.spinner.load();
+      this.refreshing = true;
+      this.fivRefresh.emit(this);
     }
   }
+
+  setPullAnimationProgress(progress: number) {
+    console.log('set animation progress', progress);
+    this.currentProgress = progress;
+
+
+    if (progress < 1) {
+      console.log('set translate', `${168 * progress}px`);
+      this.renderer.setStyle(this.spinner.element.nativeElement, 'transform', `translateY(${168 * progress}px)`);
+    }
+  }
+
+  changeAnimationToProgress(progress: number): Promise<any> {
+    console.log(`set progress from ${this.currentProgress * 168} to ${progress * 168}`);
+    return new Promise(resolve => {
+      const animation = this.builder.build([
+        style({ transform: `translateY(${this.currentProgress * 168}px)` }),
+        animate('85ms ease-in', style({ transform: `translateY(${progress * 168}px)` }))
+      ]);
+
+      const player = animation.create(this.spinner.element.nativeElement);
+      player.play();
+      player.onDone(() => {
+        this.setPullAnimationProgress(progress);
+        player.destroy();
+        resolve();
+      });
+    });
+  }
+
+  fivPull(progress: number) {
+    this.setPullAnimationProgress(progress);
+    this.spinner.show();
+  }
+
+  onRefresh() {
+    this.refresh();
+    this.spinner.load();
+  }
+
+  fivCancel() {
+    this.moveBack();
+  }
+
+  afterSpinnerHide() {
+    this.setPullAnimationProgress(0);
+    this.refreshing = false;
+  }
+
+  moveBack() {
+    const animation = this.builder.build([
+      style({ transform: `translateY(${this.currentProgress * 168}px)` }),
+      animate('85ms ease-in', style({ transform: 'translateY(0)' }))
+    ]);
+
+    const player = animation.create(this.spinner.element.nativeElement);
+    player.play();
+    player.onDone(() => {
+      this.setPullAnimationProgress(0);
+      this.spinner.visible = false;
+      player.destroy();
+    });
+
+  }
+
 
 }
