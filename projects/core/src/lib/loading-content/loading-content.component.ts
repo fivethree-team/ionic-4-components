@@ -47,6 +47,8 @@ import { animate, style, transition, trigger, state, AnimationBuilder, Animation
 export class LoadingContentComponent implements OnInit {
 
   @Input() hintText = 'new posts';
+  @Input() maxPullHeight = 168;
+  @Input() minPullHeight = 112;
   @Output() fivProgressChanged: EventEmitter<number> = new EventEmitter();
   @Output() fivRefresh: EventEmitter<LoadingContentComponent> = new EventEmitter();
   @ViewChild('content') content: ElementRef;
@@ -76,7 +78,6 @@ export class LoadingContentComponent implements OnInit {
 
   fillAnimationDone() {
     console.log('fillAnimDone');
-    this.spinner.unload();
     this.spinner.hide();
   }
 
@@ -102,22 +103,19 @@ export class LoadingContentComponent implements OnInit {
   }
 
   setPullAnimationProgress(progress: number) {
-    console.log('set animation progress', progress);
     this.currentProgress = progress;
 
-
     if (progress < 1) {
-      console.log('set translate', `${168 * progress}px`);
-      this.renderer.setStyle(this.spinner.element.nativeElement, 'transform', `translateY(${168 * progress}px)`);
+      this.renderer.
+        setStyle(this.spinner.element.nativeElement, 'transform', `translateY(${168 * progress}px) rotateZ(${360 * progress}deg)`);
     }
   }
 
   changeAnimationToProgress(progress: number): Promise<any> {
-    console.log(`set progress from ${this.currentProgress * 168} to ${progress * 168}`);
     return new Promise(resolve => {
       const animation = this.builder.build([
-        style({ transform: `translateY(${this.currentProgress * 168}px)` }),
-        animate('85ms ease-in', style({ transform: `translateY(${progress * 168}px)` }))
+        style({ transform: `translateY(${this.currentProgress * 168}px) rotateZ(${360 * this.currentProgress}deg)` }),
+        animate('85ms ease-in', style({ transform: `translateY(${progress * 168}px) rotateZ(${360 * progress}deg)` }))
       ]);
 
       const player = animation.create(this.spinner.element.nativeElement);
@@ -133,6 +131,8 @@ export class LoadingContentComponent implements OnInit {
   fivPull(progress: number) {
     this.setPullAnimationProgress(progress);
     this.spinner.show();
+    const value = Math.max(0, Math.min(100, progress * 100 * this.maxPullHeight / this.minPullHeight));
+    this.spinner.setValue(value);
   }
 
   onRefresh() {
@@ -147,12 +147,13 @@ export class LoadingContentComponent implements OnInit {
   afterSpinnerHide() {
     this.setPullAnimationProgress(0);
     this.refreshing = false;
+    this.spinner.reset();
   }
 
   moveBack() {
     const animation = this.builder.build([
-      style({ transform: `translateY(${this.currentProgress * 168}px)` }),
-      animate('85ms ease-in', style({ transform: 'translateY(0)' }))
+      style({ transform: `translateY(${this.currentProgress * 168}px) rotateZ(${360 * this.currentProgress}deg)` }),
+      animate('145ms ease-in', style({ transform: 'translateY(0) rotateZ(0)' }))
     ]);
 
     const player = animation.create(this.spinner.element.nativeElement);
@@ -163,6 +164,12 @@ export class LoadingContentComponent implements OnInit {
       player.destroy();
     });
 
+  }
+
+  onSpinnerProgress(progress: number) {
+    this.renderer.
+      // tslint:disable-next-line:max-line-length
+      setStyle(this.spinner.element.nativeElement, 'transform', `translateY(${168 * this.currentProgress}px) rotateZ(${360 * progress / 200}deg)`);
   }
 
 

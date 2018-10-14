@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, HostBinding, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { animate, style, transition, trigger, state, AnimationBuilder } from '@angular/animations';
+import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'fiv-loading-refresher-content',
@@ -66,11 +67,11 @@ export class LoadingRefresherContentComponent implements OnInit {
   @Output() fivRefresh: EventEmitter<LoadingRefresherContentComponent> = new EventEmitter<LoadingRefresherContentComponent>();
   @Output() fivHidden: EventEmitter<LoadingRefresherContentComponent> = new EventEmitter<LoadingRefresherContentComponent>();
   @Output() fivShowed: EventEmitter<LoadingRefresherContentComponent> = new EventEmitter<LoadingRefresherContentComponent>();
+  @Output() fivProgress: EventEmitter<number> = new EventEmitter<number>();
 
-  @ViewChild('spinner') spinner: ElementRef;
+  @ViewChild('spinner') spinner: LoadingSpinnerComponent;
+  @ViewChild('background') background: ElementRef;
 
-  loading = false;
-  isComplete = false;
   visible = false;
   iconState = 'normal';
 
@@ -80,27 +81,18 @@ export class LoadingRefresherContentComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleSpinner() {
-    if (this.icon !== 'md-checkmark') {
-      this.loading = !this.loading;
-    }
-  }
-
   load() {
     this.visible = true;
-    this.loading = true;
+    this.spinner.spin();
     this.fivRefresh.emit(this);
   }
 
   unload() {
-    this.loading = false;
+    this.spinner.stopSpinning();
   }
 
   complete() {
-    if (this.loading) {
-      this.isComplete = true;
-
-    }
+    this.spinner.completeIn(500);
   }
 
   show() {
@@ -112,7 +104,7 @@ export class LoadingRefresherContentComponent implements OnInit {
         animate('0ms ease-out', style({ transform: 'scale(1)' }))
       ]);
 
-      const player = animation.create(this.spinner.nativeElement);
+      const player = animation.create(this.background.nativeElement);
       player.play();
       player.onDone(() => {
         this.fivShowed.emit(this);
@@ -129,7 +121,7 @@ export class LoadingRefresherContentComponent implements OnInit {
         animate('175ms ease-in', style({ transform: 'scale(0)' }))
       ]);
 
-      const player = animation.create(this.spinner.nativeElement);
+      const player = animation.create(this.background.nativeElement);
       player.play();
       player.onDone(() => {
         this.fivHidden.emit(this);
@@ -140,14 +132,12 @@ export class LoadingRefresherContentComponent implements OnInit {
     }
   }
 
-  fillAnimationDone(event) {
-    if (event.fromState === 'spinning') {
-      if (this.checkmark) {
-        console.log('fill animation done', event);
-        this.iconState = 'rotate';
-      } else {
-        this.postComplete();
-      }
+  fillAnimationDone() {
+    if (this.checkmark) {
+      console.log('fill animation done', event);
+      this.iconState = 'rotate';
+    } else {
+      this.postComplete();
     }
   }
 
@@ -166,7 +156,15 @@ export class LoadingRefresherContentComponent implements OnInit {
 
   postComplete() {
     this.unload();
-    this.isComplete = false;
     this.fivComplete.emit(this);
   }
+
+  setValue(progress: number) {
+    this.spinner.setValue(progress);
+  }
+
+  reset() {
+    this.spinner.setMode('indeterminate');
+  }
+
 }

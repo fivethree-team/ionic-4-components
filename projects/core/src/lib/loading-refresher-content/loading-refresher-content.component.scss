@@ -9,14 +9,6 @@ $size: 40px !default;
 
 $offset: 187;
 $duration: 1.4s;
-.spinner {
-    position: absolute;
-    width: 56px;
-    height: 56px;
-    left: -4px;
-    top: -4px;
-}
-
 .spinner-background {
     position: absolute;
     width: 40px;
@@ -24,6 +16,12 @@ $duration: 1.4s;
     background: var(--ion-color-light);
     border-radius: 50%;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+
+    fiv-loading-spinner{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
 }
 
 .rotate {

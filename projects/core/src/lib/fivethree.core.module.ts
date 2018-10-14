@@ -26,6 +26,7 @@ import { PermissionsDirective } from './directives/permissions.directive';
 import { RippleComponent } from './ripple/ripple.component';
 import { ViewportDirective } from './directives/viewport.directive';
 import { PullDirective } from './directives/pull.directive';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   imports: [
@@ -57,7 +58,8 @@ import { PullDirective } from './directives/pull.directive';
     RippleComponent,
     ViewportDirective,
     PullDirective,
-    LoadingRefresherContentComponent
+    LoadingRefresherContentComponent,
+    LoadingSpinnerComponent
   ],
   exports: [
     ExpandableComponent,
@@ -83,7 +85,8 @@ import { PullDirective } from './directives/pull.directive';
     RippleComponent,
     ViewportDirective,
     PullDirective,
-    LoadingRefresherContentComponent
+    LoadingRefresherContentComponent,
+    LoadingSpinnerComponent
   ]
 })
 export class FivethreeCoreModule { }

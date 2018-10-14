@@ -78,7 +78,6 @@ export class PullDirective implements OnInit {
         if (offset <= this.maxPullHeight) {
 
         }
-        console.log('progress', offset / this.maxPullHeight);
         this.fivPull.emit(offset / this.maxPullHeight);
       });
 
@@ -90,10 +89,8 @@ export class PullDirective implements OnInit {
           const offset = drag.offset / 2;
           const refresh = offset >= this.minPullHeight;
           if (refresh) {
-            console.log('refresh', refresh, offset);
             this.fivRefresh.emit();
           } else {
-            console.log('no refresh', refresh, offset);
             this.fivCancel.emit();
           }
         });

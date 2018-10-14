@@ -56,10 +56,8 @@ ion-spinner {
 $offset: 187;
 $duration: 1.4s;
 
-.spinner {
+fiv-loading-spinner {
   position: absolute;
-  width:72px;  
-  height:72px; 
   left:-8px; 
   top:-8px;
 }

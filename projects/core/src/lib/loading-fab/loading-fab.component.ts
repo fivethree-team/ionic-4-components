@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, HostBinding, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, ViewChild, ElementRef, Output, EventEmitter, Renderer2 } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
+import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'fiv-loading-fab',
@@ -69,10 +70,9 @@ export class LoadingFabComponent implements OnInit {
   @Output() fivComplete: EventEmitter<LoadingFabComponent> = new EventEmitter<LoadingFabComponent>();
   @Output() fivRefresh: EventEmitter<LoadingFabComponent> = new EventEmitter<LoadingFabComponent>();
 
-  @ViewChild('spinner') spinner: ElementRef;
+  @ViewChild('spinner') spinner: LoadingSpinnerComponent;
 
   loading = false;
-  isComplete = false;
   iconState = 'normal';
 
   @HostBinding('class') get classes(): string {
@@ -83,7 +83,7 @@ export class LoadingFabComponent implements OnInit {
     return `${verticalClass} ${horizontalClass} ${edgeClass}`;
   }
 
-  constructor() {
+  constructor(private renderer: Renderer2) {
   }
 
   ngOnInit() {
@@ -106,19 +106,16 @@ export class LoadingFabComponent implements OnInit {
 
   complete() {
     if (this.loading) {
-      this.isComplete = true;
-
+      this.spinner.completeIn(500);
     }
   }
 
-  fillAnimationDone(event) {
-    if (event.fromState === 'spinning') {
-      if (this.checkmark) {
-        console.log('fill animation done', event);
-        this.iconState = 'rotate';
-      } else {
-        this.postComplete();
-      }
+  fillAnimationDone() {
+    if (this.checkmark) {
+      console.log('fill animation done', event);
+      this.iconState = 'rotate';
+    } else {
+      this.postComplete();
     }
   }
 
@@ -137,8 +134,11 @@ export class LoadingFabComponent implements OnInit {
 
   postComplete() {
     this.unload();
-    this.isComplete = false;
     this.fivComplete.emit(this);
+  }
+
+  rotate(progress: number) {
+    this.renderer.setStyle(this.spinner._elementRef.nativeElement, 'transform', `rotateZ(${progress / 200 * 360}deg)`);
   }
 
 }

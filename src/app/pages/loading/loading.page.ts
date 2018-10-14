@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadingPage implements OnInit {
 
+  mode = 'determinate';
+  value = 0;
+
   constructor() { }
 
   ngOnInit() {
@@ -30,4 +33,8 @@ export class LoadingPage implements OnInit {
     }, 2000);
   }
 
+
+  complete() {
+
+  }
 }
