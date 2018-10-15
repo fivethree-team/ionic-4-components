@@ -157,23 +157,37 @@ export class LoadingSpinnerComponent implements OnInit {
     console.log('timer length', duration + duration / 50);
     console.log('loop count', (duration + duration / 50) / (duration / 100));
 
+    const animation = this.builder.build([
+      style({
+        'stroke-dasharray': 180,
+        'stroke-dashoffset': 90,
+        'transformOrigin': 'center',
+        'stroke': '#DE3E35'
+      }),
+      animate(`${duration}ms ease-out`, style({
+        'stroke-dasharray': 315,
+        'stroke-dashoffset': 0,
+        'transformOrigin': 'center',
+        'stroke': '#1B9A59',
+        'opacity': 0
+      }))
+    ]);
+
+    const player = animation.create(this.determinateCircle.nativeElement);
+    player.play();
+    player.onDone(() => {
+      this.fivComplete.emit(this);
+      this._value = 0;
+    });
+
 
     const i = interval(duration / 100);
     const t = timer(duration + duration / 50);
     const progress = i.pipe(takeUntil(t));
 
     progress.subscribe(p => {
-      console.log('progress', p);
       this.fivProgress.emit(p);
-      this.setValue(p);
     });
-
-    progress
-      .pipe(last())
-      .subscribe(() => {
-        this.fivComplete.emit(this);
-        this._value = 0;
-      });
 
   }
   setValue(progress: number): any {
