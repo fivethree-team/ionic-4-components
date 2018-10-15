@@ -1,0 +1,48 @@
+.number-container {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--fiv-color-circle, var(--ion-color-primary));
+    color: var(--fiv-color-circle-color, var(--ion-color-light));
+    * {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+}
+
+ion-col {
+    text-align: center;
+    padding: 0;
+}
+
+.line {
+    width:  calc(50% - 20px);
+    height: 1px;
+    position: absolute;
+    background: var(--fiv-color-timeline, var(--ion-color-medium));
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left {
+    left: 0;
+}
+
+
+.right {
+    right: 0;
+}
+
+.header-title{
+    color: var(--fiv-color-title, var(--ion-color-dark));
+}
+
+.header-subtitle{
+    color: var(--fiv-color-subtitle, var(--ion-color-medium));
+    font-size: 0.8em;
+}

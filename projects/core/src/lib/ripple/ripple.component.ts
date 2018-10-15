@@ -16,21 +16,11 @@ export class RippleComponent {
   @HostBinding('style.position') position;
   @HostListener('click', ['$event'])
   clickEvent(event: MouseEvent) {
-    const ripple = this.el.nativeElement.querySelector('.ripple');
-    if (!ripple) {
-      this.rippleFactory();
-    }
-    this.rippleAnimation({ pageX: event.pageX, pageY: event.pageY });
-    return;
+    this.ripple(event);
   }
   @HostListener('press', ['$event'])
   PressEvent(event) {
-    const ripple = this.el.nativeElement.querySelector('.ripple');
-    if (!ripple) {
-      this.rippleFactory();
-    }
-    this.rippleAnimation({ pageX: event.center.x, pageY: event.center.y });
-    return;
+    this.ripple(event);
   }
 
   @HostBinding('class.round') get isRound() {
@@ -50,6 +40,15 @@ export class RippleComponent {
         renderer.removeClass(el.nativeElement.querySelector('.ripple'), 'show');
         renderer.removeClass(el.nativeElement.querySelector('.rippleWrapper'), 'show');
       });
+  }
+
+  ripple(event) {
+    const ripple = this.el.nativeElement.querySelector('.ripple');
+    if (!ripple) {
+      this.rippleFactory();
+    }
+    this.rippleAnimation({ pageX: event.pageX, pageY: event.pageY });
+    return;
   }
   rippleFactory() {
     const target = this.el.nativeElement;

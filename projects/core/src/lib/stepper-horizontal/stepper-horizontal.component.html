@@ -1,0 +1,31 @@
+<ion-grid fixed>
+  <ion-row>
+    <ion-col *ngFor="let content of contents.toArray(); let i = index; let f = first; let l = last;" [size]="12 / contents.length">
+      <fiv-ripple (click)="fivSelect.emit(i)">
+        <span *ngIf="!f" class="line left"></span>
+        <div class="number-container">
+          <span *ngIf="!content.icon">{{i +  1}}</span>
+          <ion-icon *ngIf="content.icon"
+            [name]="content.icon"></ion-icon>
+        </div>
+        <span *ngIf="!l" class="line right"></span>
+      </fiv-ripple>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col *ngFor="let content of contents.toArray(); let i = index; let f = first; let l = last;" [size]="12 / contents.length">
+      <fiv-ripple (click)="fivSelect.emit(i)">
+          <div class="horizontal-content">
+          <div class="header-title">{{content.title}}</div>
+          <div class="header-subtitle">{{content.subtitle}}</div>
+        </div>
+      </fiv-ripple>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-slides pager="false">
+  <ion-slide *ngFor="let content of contents; let i = index">
+    <ng-container [ngTemplateOutlet]="content.content"></ng-container>
+  </ion-slide>
+</ion-slides>
