@@ -92,7 +92,13 @@ export class LoadingRefresherContentComponent implements OnInit {
   }
 
   complete() {
-    this.spinner.completeIn(500);
+    // this.spinner.completeIn(500);
+    if (this.checkmark) {
+      console.log('fill animation done', event);
+      this.iconState = 'rotate';
+    } else {
+      this.postComplete();
+    }
   }
 
   show() {

@@ -132,7 +132,7 @@ export class LoadingContentComponent implements OnInit {
     this.setPullAnimationProgress(progress);
     this.spinner.show();
     const value = Math.max(0, Math.min(100, progress * 100 * this.maxPullHeight / this.minPullHeight));
-    this.spinner.setValue(value);
+    this.spinner.setValue(value * 0.84);
   }
 
   onRefresh() {
