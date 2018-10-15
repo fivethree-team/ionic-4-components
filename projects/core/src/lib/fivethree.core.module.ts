@@ -12,7 +12,7 @@ import { RouterItemComponent } from './router-item/router-item.component';
 import { CollapsableMenuDirective } from './collapsable-menu/collapsable-menu.directive';
 import { CollapsableMenuButtonComponent } from './collapsable-menu/collapsable-menu-button/collapsable-menu-button.component';
 import { PasswordComponent } from './password/password.component';
-import { BottomSheetComponent, DrawerState } from './bottom-sheet/bottom-sheet.component';
+import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { BottomSheetContentComponent } from './bottom-sheet/bottom-sheet-content/bottom-sheet-content.component';
 import { ToolbarSearchComponent } from './toolbar-search/toolbar-search.component';
 import { LoadingButtonComponent } from './loading-button/loading-button.component';

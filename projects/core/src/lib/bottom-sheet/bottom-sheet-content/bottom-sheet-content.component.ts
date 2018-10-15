@@ -1,6 +1,6 @@
 import { DomSanitizer } from '@angular/platform-browser';
 import { Component, OnInit, Input, HostBinding, EventEmitter, Output } from '@angular/core';
-import { DrawerState } from '../bottom-sheet.component';
+import { DrawerState } from '../drawer-state';
 
 @Component({
   selector: 'fiv-bottom-sheet-content',
@@ -13,9 +13,7 @@ export class BottomSheetContentComponent implements OnInit {
   @Input() handle = true;
   @Input() float = true;
 
-  @Output() handleClick: EventEmitter<any> = new EventEmitter();
-
-
+  @Output() fivHandleClick: EventEmitter<any> = new EventEmitter();
 
   currentState: DrawerState;
   states = DrawerState;
@@ -49,7 +47,7 @@ export class BottomSheetContentComponent implements OnInit {
   }
 
   click() {
-    this.handleClick.emit();
+    this.fivHandleClick.emit();
   }
 
 }

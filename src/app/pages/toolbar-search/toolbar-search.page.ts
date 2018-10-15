@@ -1,4 +1,4 @@
-import { DrawerState } from './../../../../projects/core/src/lib/bottom-sheet/bottom-sheet.component';
+import { DrawerState } from 'core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToolbarSearchComponent } from 'projects/core/src/lib/toolbar-search/toolbar-search.component';
 

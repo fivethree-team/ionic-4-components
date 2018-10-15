@@ -1,3 +1,20 @@
+<a name="0.0.5"></a>
+## [0.0.5](https://github.com/fivethree-team/fivethree/compare/v0.0.4...v0.0.5) (2018-10-15)
+
+
+### Bug Fixes
+
+* **bottom sheet:** remove circle dependency ([622aed9](https://github.com/fivethree-team/fivethree/commit/622aed9))
+* **loading:** resolve vertical pan and scroll conflict in loading-content ([e57b792](https://github.com/fivethree-team/fivethree/commit/e57b792))
+
+
+### Features
+
+* **loading-content:** add arrow draw animation ([6faa30c](https://github.com/fivethree-team/fivethree/commit/6faa30c))
+* **toolbar-search:** added small toolbar, changed animations, ([59e802b](https://github.com/fivethree-team/fivethree/commit/59e802b))
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/fivethree-team/fivethree/compare/v0.0.2...v0.0.4) (2018-10-11)
 
