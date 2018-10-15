@@ -13,9 +13,7 @@ export class BottomSheetContentComponent implements OnInit {
   @Input() handle = true;
   @Input() float = true;
 
-  @Output() handleClick: EventEmitter<any> = new EventEmitter();
-
-
+  @Output() fivHandleClick: EventEmitter<any> = new EventEmitter();
 
   currentState: DrawerState;
   states = DrawerState;
@@ -49,7 +47,7 @@ export class BottomSheetContentComponent implements OnInit {
   }
 
   click() {
-    this.handleClick.emit();
+    this.fivHandleClick.emit();
   }
 
 }
