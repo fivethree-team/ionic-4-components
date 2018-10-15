@@ -1,6 +1,6 @@
 import { DomSanitizer } from '@angular/platform-browser';
 import { Component, OnInit, Input, HostBinding, EventEmitter, Output } from '@angular/core';
-import { DrawerState } from '../bottom-sheet.component';
+import { DrawerState } from '../drawer-state';
 
 @Component({
   selector: 'fiv-bottom-sheet-content',

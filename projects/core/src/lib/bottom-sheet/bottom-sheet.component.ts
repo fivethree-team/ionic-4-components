@@ -6,6 +6,7 @@ import {
 import { DomController, Platform } from '@ionic/angular';
 import * as Hammer from 'hammerjs';
 import { DomSanitizer } from '@angular/platform-browser';
+import { DrawerState } from './drawer-state';
 
 @Component({
   selector: 'fiv-bottom-sheet',
@@ -225,10 +226,4 @@ export class BottomSheetComponent implements AfterViewInit, OnChanges {
     this._setDrawerState(this.state);
     this.updateContent(this.state);
   }
-}
-
-export enum DrawerState {
-  Bottom,
-  Docked,
-  Top
 }

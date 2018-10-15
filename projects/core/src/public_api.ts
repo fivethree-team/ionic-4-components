@@ -4,7 +4,7 @@
  */
 
 export * from './lib/fivethree.core.module';
-export { DrawerState } from './lib/bottom-sheet/bottom-sheet.component';
+export * from './lib/bottom-sheet/drawer-state';
 
 // export components
 export * from './lib/app-bar/app-bar.component';
