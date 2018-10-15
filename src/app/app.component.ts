@@ -45,6 +45,11 @@ export class AppComponent {
       title: 'Viewport Directive',
       url: '/viewport',
       icon: 'home'
+    },
+    {
+      title: 'Icon',
+      url: '/icon',
+      icon: 'home'
     }
   ];
 

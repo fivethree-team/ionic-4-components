@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentsPage implements OnInit {
 
+  iconState = true;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleIcon() {
+    console.log('toggle icon');
+    this.iconState = !this.iconState;
   }
 
 }

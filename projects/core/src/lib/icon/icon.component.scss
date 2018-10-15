@@ -1,0 +1,46 @@
+ion-icon {
+    padding: 0;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.indicator {
+    position: absolute;
+    width: var(--fiv-dot-width, 8px);
+    height: var(--fiv-dot-heigt, 8px);
+    background-color: var(--fiv-dot-color, var(--ion-color-primary));
+    top: 4px;
+    border-radius: 100%;
+    right: 8px;
+    z-index: 12;
+}
+
+.indicator-value {
+    position: absolute;
+    min-width: var(--fiv-dot-width, 14px);
+    height: var(--fiv-dot-heigt, 14px);
+    background-color: var(--fiv-dot-color, var(--ion-color-primary));
+    color: var(--fiv-dot-color-background, var(--ion-color-light));
+    top: 0px;
+    border-radius: 14px;
+    right: 4px;
+    z-index: 13;
+    * {
+        position: absolute;
+        transform: translateX(-50%) translateY(-50%);
+        left: 50%;
+        top: 50%;
+        font-size: 0.6em;
+    }
+}
+
+.indicator-background {
+    position: absolute;
+    width: var(--fiv-dot-width, 10px);
+    height: var(--fiv-dot-heigt, 10px);
+    background-color: var(--fiv-dot-color-background, transparent);
+    top: 3px;
+    border-radius: 100%;
+    right: 7px;
+    z-index: 11;
+}

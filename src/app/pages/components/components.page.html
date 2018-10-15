@@ -103,70 +103,70 @@
 
 
   <fiv-stepper #stepper [mode]="'horizontal'">
-      <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-            <ion-card-title>Awesome Title</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-footer>
-              <ion-toolbar>
-                <ion-buttons slot="end">
-                  <ion-button color="primary" (click)="stepper.select(1)">
-                    NEXT
-                  </ion-button>
-                </ion-buttons>
-              </ion-toolbar>
-            </ion-footer>
-          </ion-card-content>
-        </ion-card>
-      </fiv-step>
-      <fiv-step [title]="'Address'" [subtitle]="'Please enter your adress'">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-            <ion-card-title>Awesome Title</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-footer>
-              <ion-toolbar>
-                <ion-buttons slot="end">
-                  <ion-button color="dark" (click)="stepper.select(0)">
-                    Previous
-                  </ion-button>
-                  <ion-button color="primary" (click)="stepper.select(2)">
-                    NEXT
-                  </ion-button>
-                </ion-buttons>
-              </ion-toolbar>
-            </ion-footer>
-          </ion-card-content>
-        </ion-card>
-      </fiv-step>
-      <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-            <ion-card-title>Awesome Title</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-footer>
-              <ion-toolbar>
-                <ion-buttons slot="end">
-                  <ion-button color="dark" (click)="stepper.select(1)">
-                    Previous
-                  </ion-button>
-                  <ion-button color="primary" (click)="stepper.select(0)">
-                    NEXT
-                  </ion-button>
-                </ion-buttons>
-              </ion-toolbar>
-            </ion-footer>
-          </ion-card-content>
-        </ion-card>
-      </fiv-step>
-    </fiv-stepper>
+    <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-footer>
+            <ion-toolbar>
+              <ion-buttons slot="end">
+                <ion-button color="primary" (click)="stepper.select(1)">
+                  NEXT
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-footer>
+        </ion-card-content>
+      </ion-card>
+    </fiv-step>
+    <fiv-step [title]="'Address'" [subtitle]="'Please enter your adress'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-footer>
+            <ion-toolbar>
+              <ion-buttons slot="end">
+                <ion-button color="dark" (click)="stepper.select(0)">
+                  Previous
+                </ion-button>
+                <ion-button color="primary" (click)="stepper.select(2)">
+                  NEXT
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-footer>
+        </ion-card-content>
+      </ion-card>
+    </fiv-step>
+    <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-footer>
+            <ion-toolbar>
+              <ion-buttons slot="end">
+                <ion-button color="dark" (click)="stepper.select(1)">
+                  Previous
+                </ion-button>
+                <ion-button color="primary" (click)="stepper.select(0)">
+                  NEXT
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-footer>
+        </ion-card-content>
+      </ion-card>
+    </fiv-step>
+  </fiv-stepper>
 
 
   container

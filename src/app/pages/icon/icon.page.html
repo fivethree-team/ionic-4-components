@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <fiv-icon [name]="iconState ? 'md-menu' : 'md-arrow-back'" [indicatorValue]="indicatorValue"></fiv-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <fiv-icon [name]="iconState ? 'md-add' : 'md-trash'"></fiv-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Icon</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+
+  <ion-button (click)="iconState = !iconState">
+    Toggle icons
+  </ion-button>
+
+  <ion-button (click)="increment()">
+    <ion-icon slot="icon-only" name="add"></ion-icon>
+  </ion-button>
+  <ion-button (click)="decrement()">
+    <ion-icon slot="icon-only" name="remove"></ion-icon>
+  </ion-button>
+
+</ion-content>

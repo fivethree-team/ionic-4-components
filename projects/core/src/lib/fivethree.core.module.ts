@@ -28,6 +28,7 @@ import { ViewportDirective } from './directives/viewport.directive';
 import { PullDirective } from './directives/pull.directive';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { StepperHorizontalComponent } from './stepper-horizontal/stepper-horizontal.component';
+import { IconComponent } from './icon/icon.component';
 
 @NgModule({
   imports: [
@@ -61,7 +62,8 @@ import { StepperHorizontalComponent } from './stepper-horizontal/stepper-horizon
     PullDirective,
     LoadingRefresherContentComponent,
     LoadingSpinnerComponent,
-    StepperHorizontalComponent
+    StepperHorizontalComponent,
+    IconComponent
   ],
   exports: [
     ExpandableComponent,
@@ -89,7 +91,8 @@ import { StepperHorizontalComponent } from './stepper-horizontal/stepper-horizon
     PullDirective,
     LoadingRefresherContentComponent,
     LoadingSpinnerComponent,
-    StepperHorizontalComponent
+    StepperHorizontalComponent,
+    IconComponent
   ]
 })
 export class FivethreeCoreModule { }
