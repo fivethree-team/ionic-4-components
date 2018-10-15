@@ -82,9 +82,9 @@ export class IconComponent implements OnInit {
       this.indicatorState = 'scale';
       this.indicatorValueState = 'scale';
     } else if (value === 0) {
+      this.tempValue = value;
       this.indicatorState = 'normal';
       this.indicatorValueState = 'scale';
-      this._indicatorValue = value;
     } else {
       this.indicatorState = 'scale';
       if (this.indicatorValueState === 'scale') {
@@ -115,6 +115,8 @@ export class IconComponent implements OnInit {
     if (event.fromState === 'normal' && event.toState === 'scale') {
       if (this.tempValue > 0) {
         this.indicatorValueState = 'normal';
+        this._indicatorValue = this.tempValue;
+      } else {
         this._indicatorValue = this.tempValue;
       }
     }
