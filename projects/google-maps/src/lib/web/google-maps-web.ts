@@ -116,11 +116,30 @@ export class GoogleMapsWebComponent implements OnInit, FivGoogleMaps {
     }
 
     hideMarkers() {
+        this.setMapOnAllMarkers(null);
     }
+
     showMarkers() {
+        this.setMapOnAllMarkers(this.map);
     }
+
     deleteMarker(lat: number, lng: number) {
+        const index = this.markers.findIndex(m =>
+            m.getPosition().lat() === lat
+            && m.getPosition().lng() === lng);
+        if (index > -1) {
+            this.markers[index].setMap(null);
+            this.markers = this.markers.splice(index, 1);
+        }
     }
+
     deleteMarkers() {
+        this.hideMarkers();
+        this.markers = [];
     }
+
+    private setMapOnAllMarkers(map: google.maps.Map) {
+        this.markers.forEach(marker => marker.setMap(map));
+    }
+
 }

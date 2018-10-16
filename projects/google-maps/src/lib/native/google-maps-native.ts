@@ -15,8 +15,8 @@ export class GoogleMapsNativeComponent implements OnInit, FivGoogleMaps {
     @Input() zoom = 14;
     @Input() mapOptions: GoogleMapOptions;
 
-    public map: GoogleMap;
-    public marker: Marker[] = [];
+    map: GoogleMap;
+    markers: Marker[] = [];
 
     constructor() { }
 
@@ -49,13 +49,27 @@ export class GoogleMapsNativeComponent implements OnInit, FivGoogleMaps {
     }
 
     addMarker(lat: number, lng: number) {
+        const marker = this.map.addMarkerSync({
+            animation: 'DROP',
+            position: {
+                lat: lat,
+                lng: lng
+            }
+        });
+        this.markers.push(marker);
     }
+
     hideMarkers() {
     }
+
     showMarkers() {
     }
+
     deleteMarker(lat: number, lng: number) {
     }
+
     deleteMarkers() {
+        this.markers.forEach(marker => marker.remove());
+        this.markers = [];
     }
 }

@@ -55,6 +55,11 @@ export class AppComponent {
       title: 'Native Map',
       url: '/native-map',
       icon: 'map'
+    },
+    {
+      title: 'Native Map with Bottom Sheet',
+      url: '/native-map-bottom-sheet',
+      icon: 'map'
     }
   ];
 
