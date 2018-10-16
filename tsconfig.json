@@ -19,6 +19,12 @@
       ],
       "core/*": [
         "dist/core/*"
+      ],
+      "google-maps": [
+        "dist/google-maps"
+      ],
+      "google-maps/*": [
+        "dist/google-maps/*"
       ]
     }
   }

@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'toolbar-search', loadChildren: './pages/toolbar-search/toolbar-search.module#ToolbarSearchPageModule' },
   { path: 'app-bar', loadChildren: './pages/app-bar/app-bar.module#AppBarPageModule' },
   { path: 'viewport', loadChildren: './pages/viewport/viewport.module#ViewportPageModule' },
-  { path: 'icon', loadChildren: './pages/icon/icon.module#IconPageModule' }
+  { path: 'icon', loadChildren: './pages/icon/icon.module#IconPageModule' },
+  { path: 'native-map', loadChildren: './pages/native-map/native-map.module#NativeMapPageModule' }
 ];
 
 @NgModule({

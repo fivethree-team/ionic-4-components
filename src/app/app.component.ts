@@ -50,6 +50,11 @@ export class AppComponent {
       title: 'Icon',
       url: '/icon',
       icon: 'home'
+    },
+    {
+      title: 'Native Map',
+      url: '/native-map',
+      icon: 'map'
     }
   ];
 
