@@ -7,6 +7,7 @@ import {
   OnInit,
   Output,
   AfterContentInit,
+  AfterViewInit,
 } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, merge } from 'rxjs/operators';
@@ -21,7 +22,7 @@ export interface InViewportEvent {
   selector: '[fivViewport]',
   exportAs: 'viewport'
 })
-export class ViewportDirective implements OnInit, OnDestroy, AfterContentInit {
+export class ViewportDirective implements OnInit, OnDestroy, AfterViewInit {
 
   @Input() offset = 0;
   @Output() fivAppear = new EventEmitter<InViewportEvent>();
@@ -33,7 +34,7 @@ export class ViewportDirective implements OnInit, OnDestroy, AfterContentInit {
     private readonly elementRef: ElementRef
   ) { }
 
-  ngAfterContentInit(): void {
+  ngAfterViewInit(): void {
     const content: Content = this.elementRef.nativeElement.closest('ion-content');
     this.check();
     content.scrollEvents = true;
