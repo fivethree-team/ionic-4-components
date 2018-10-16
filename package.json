@@ -90,8 +90,8 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-googlemaps": {
-        "API_KEY_FOR_ANDROID": "AIzaSyDayeVB9R64ksX6GrMBFoR2edyYFrzJ8ug",
-        "API_KEY_FOR_IOS": "AIzaSyDayeVB9R64ksX6GrMBFoR2edyYFrzJ8ug",
+        "API_KEY_FOR_ANDROID": "MAPS_API_KEY_FOR_ANDROID",
+        "API_KEY_FOR_IOS": "MAPS_API_KEY_FOR_IOS",
         "PLAY_SERVICES_VERSION": "15.0.1",
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
