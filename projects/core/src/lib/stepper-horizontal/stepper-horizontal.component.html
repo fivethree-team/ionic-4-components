@@ -24,7 +24,7 @@
   </ion-row>
 </ion-grid>
 
-<ion-slides pager="false">
+<ion-slides #slides pager="false">
   <ion-slide *ngFor="let content of contents; let i = index">
     <ng-container [ngTemplateOutlet]="content.content"></ng-container>
   </ion-slide>

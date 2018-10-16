@@ -1,4 +1,4 @@
-import { Component, OnInit, QueryList, Input, ViewChild, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, QueryList, Input, ViewChild, EventEmitter, Output, AfterViewInit, AfterContentInit } from '@angular/core';
 import { StepComponent } from '../step/step.component';
 import { Slides } from '@ionic/angular';
 import { rotateAnimation } from '../animations/animations';
@@ -13,13 +13,12 @@ import { rotateAnimation } from '../animations/animations';
 export class StepperHorizontalComponent implements OnInit {
 
   @Input() contents: QueryList<StepComponent>;
-  @ViewChild(Slides) slides: Slides;
+  @ViewChild('slides') slides: Slides;
   @Output() fivSelect = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit() {
-    this.slides.stopAutoplay();
     this.slides.lockSwipes(true);
   }
 
