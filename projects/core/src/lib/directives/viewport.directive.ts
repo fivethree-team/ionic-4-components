@@ -6,6 +6,7 @@ import {
   OnDestroy,
   OnInit,
   Output,
+  AfterContentInit,
 } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, merge } from 'rxjs/operators';
@@ -20,7 +21,8 @@ export interface InViewportEvent {
   selector: '[fivViewport]',
   exportAs: 'viewport'
 })
-export class ViewportDirective implements OnInit, OnDestroy {
+export class ViewportDirective implements OnInit, OnDestroy, AfterContentInit {
+
   @Input() offset = 0;
   @Output() fivAppear = new EventEmitter<InViewportEvent>();
   @Output() fivDisappear = new EventEmitter<InViewportEvent>();
@@ -31,13 +33,21 @@ export class ViewportDirective implements OnInit, OnDestroy {
     private readonly elementRef: ElementRef
   ) { }
 
-  ngOnInit() {
+  ngAfterContentInit(): void {
     const content: Content = this.elementRef.nativeElement.closest('ion-content');
     this.check();
     content.scrollEvents = true;
     this.subscription = fromEvent(this.elementRef.nativeElement.closest('ion-content'), 'ionScroll')
       .pipe(merge(fromEvent(window, 'resize')), debounceTime(50))
       .subscribe(() => this.check());
+
+    console.log('visible', this.visible, document.body.contains(this.elementRef.nativeElement),
+      this.elementRef.nativeElement.getBoundingClientRect(), this.elementRef.nativeElement,
+      window.innerHeight + this.offset);
+  }
+
+  ngOnInit() {
+
 
   }
 
