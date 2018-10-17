@@ -16,6 +16,11 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Dialog',
+      url: '/dialog',
+      icon: 'home'
+    },
+    {
       title: 'Password Item',
       url: '/password',
       icon: 'key'

@@ -1,8 +1,9 @@
-import { LoadingRefresherContentComponent } from './loading-refresher-content/loading-refresher-content.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { Hammer } from 'hammerjs';
 import { StepperComponent } from './stepper/stepper.component';
 import { StepComponent } from './step/step.component';
 import { StepHeaderComponent } from './step-header/step-header.component';
@@ -29,6 +30,15 @@ import { PullDirective } from './directives/pull.directive';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { StepperHorizontalComponent } from './stepper-horizontal/stepper-horizontal.component';
 import { IconComponent } from './icon/icon.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { LoadingRefresherContentComponent } from './loading-refresher-content/loading-refresher-content.component';
+
+
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = <any>{
+    pan: { direction: Hammer.DIRECTION_VERTICAL, threshold: 3 },
+  };
+}
 
 @NgModule({
   imports: [
@@ -63,7 +73,8 @@ import { IconComponent } from './icon/icon.component';
     LoadingRefresherContentComponent,
     LoadingSpinnerComponent,
     StepperHorizontalComponent,
-    IconComponent
+    IconComponent,
+    DialogComponent
   ],
   exports: [
     ExpandableComponent,
@@ -92,7 +103,8 @@ import { IconComponent } from './icon/icon.component';
     LoadingRefresherContentComponent,
     LoadingSpinnerComponent,
     StepperHorizontalComponent,
-    IconComponent
+    IconComponent,
+    DialogComponent
   ]
 })
 export class FivethreeCoreModule { }

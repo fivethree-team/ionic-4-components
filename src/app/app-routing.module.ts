@@ -22,7 +22,8 @@ const routes: Routes = [
   {
     path: 'map-bottom-sheet',
     loadChildren: './pages/native-map-bottom-sheet/native-map-bottom-sheet.module#NativeMapBottomSheetPageModule'
-  }
+  },
+  { path: 'dialog', loadChildren: './pages/dialog/dialog.module#DialogPageModule' }
 ];
 
 @NgModule({
