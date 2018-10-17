@@ -26,6 +26,11 @@
     "@types/googlemaps": "3.30.15"
   },
   "author": "Fivethree Team",
+  "license": "MIT",
+  "contributors": [
+    "Gary Großgarten",
+    "Marc Stammerjohann"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fivethree-team/fivethree.git"

@@ -1,6 +1,19 @@
 {
   "name": "@fivethree/core",
   "version": "0.0.6",
+  "description": "Fivethree Core Components",
+  "keywords": [
+    "fivethree",
+    "angular",
+    "ionic",
+    "framework",
+    "components",
+    "ux",
+    "mobile",
+    "app",
+    "webapp",
+    "pwa"
+  ],
   "peerDependencies": {
     "@angular/animations": "^6.1.10",
     "@angular/common": "^6.1.10",
@@ -8,5 +21,19 @@
     "@angular/forms": "^6.1.10",
     "@angular/router": "^6.1.10",
     "@ionic/angular": "4.0.0-beta.13"
-  }
+  },
+  "author": "Fivethree Team",
+  "license": "MIT",
+  "contributors": [
+    "Gary Großgarten",
+    "Marc Stammerjohann"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fivethree-team/fivethree.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fivethree-team/fivethree/issues"
+  },
+  "homepage": "https://github.com/fivethree-team/fivethree#readme"
 }
