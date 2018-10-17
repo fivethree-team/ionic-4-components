@@ -17,6 +17,7 @@ export class GoogleMapsNativeComponent implements OnInit, FivGoogleMaps {
 
     map: GoogleMap;
     markers: Marker[] = [];
+    mapReady = false;
 
     constructor() { }
 
@@ -25,7 +26,7 @@ export class GoogleMapsNativeComponent implements OnInit, FivGoogleMaps {
         this.loadMap();
     }
 
-    loadMap(): any {
+    private loadMap(): any {
         console.log('loading Map');
         this.map = GoogleMaps.create('map', {
             controls: {
@@ -35,7 +36,10 @@ export class GoogleMapsNativeComponent implements OnInit, FivGoogleMaps {
                 compass: true,
             }
         });
-        this.map.one(GoogleMapsEvent.MAP_READY).then(() => this.zoomToMyLocation());
+        this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
+            this.mapReady = true;
+            this.zoomToMyLocation();
+        });
     }
 
     async zoomToMyLocation() {

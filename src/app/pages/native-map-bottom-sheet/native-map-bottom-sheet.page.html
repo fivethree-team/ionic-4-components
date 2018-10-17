@@ -1,11 +1,14 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="menuId"></ion-menu-button>
+    </ion-buttons>
     <ion-title>native-map-bottom-sheet</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <fiv-google-maps-native></fiv-google-maps-native>
+  <fiv-google-maps-native #map></fiv-google-maps-native>
 </ion-content>
 
 <fiv-bottom-sheet [(state)]="drawerState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight" [shouldBounce]="shouldBounce"

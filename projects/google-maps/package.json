@@ -18,7 +18,7 @@
     "@angular/core": "^6.1.4",
     "@ionic-native/core": "5.0.0-beta.14",
     "@ionic-native/google-maps": "5.0.0-beta.14",
-    "cordova-plugin-googlemaps": "^2.3.11",
+    "cordova-plugin-googlemaps": "^2.4.6",
     "rxjs": "6.2.2",
     "rxjs-compat": "6.2.2"
   },

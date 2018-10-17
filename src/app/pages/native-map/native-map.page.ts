@@ -16,6 +16,7 @@ export class NativeMapPage implements OnInit, AfterViewInit {
   ngOnInit() {
 
   }
+
   ngAfterViewInit() {
     this.map.addMarker(50.9576191, 6.8272408);
 
