@@ -1,6 +1,6 @@
 {
   "name": "@fivethree/core",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/animations": "^6.1.10",
     "@angular/common": "^6.1.10",
