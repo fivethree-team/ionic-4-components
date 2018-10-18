@@ -1,3 +1,20 @@
+<a name="0.0.6"></a>
+## [0.0.6](https://github.com/fivethree-team/fivethree/compare/v0.0.5...v0.0.6) (2018-10-17)
+
+
+### Bug Fixes
+
+* **spinner:** fix complete animation ([1ff2693](https://github.com/fivethree-team/fivethree/commit/1ff2693))
+* **viewport:** fix viewport not getting right boundingclientrect data ([e0cc6e8](https://github.com/fivethree-team/fivethree/commit/e0cc6e8))
+
+
+### Features
+
+* **icon:** wip ([2942701](https://github.com/fivethree-team/fivethree/commit/2942701))
+* **stepper:** add horizontal stepper ([8b7d1b3](https://github.com/fivethree-team/fivethree/commit/8b7d1b3))
+
+
+
 <a name="0.0.5"></a>
 ## [0.0.5](https://github.com/fivethree-team/fivethree/compare/v0.0.4...v0.0.5) (2018-10-15)
 

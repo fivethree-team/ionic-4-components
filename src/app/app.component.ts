@@ -16,6 +16,11 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Dialog',
+      url: '/dialog',
+      icon: 'home'
+    },
+    {
       title: 'Password Item',
       url: '/password',
       icon: 'key'
@@ -58,7 +63,7 @@ export class AppComponent {
     },
     {
       title: 'Native Map with Bottom Sheet',
-      url: '/native-map-bottom-sheet',
+      url: '/map-bottom-sheet',
       icon: 'map'
     }
   ];

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DrawerState } from 'core';
+import { GoogleMapsNativeComponent } from 'google-maps';
 
 @Component({
   selector: 'app-native-map-bottom-sheet',
@@ -18,6 +19,8 @@ export class NativeMapBottomSheetPage implements OnInit {
   handle = true;
   float = true;
   rounded = true;
+
+  @ViewChild('map') map: GoogleMapsNativeComponent;
 
   constructor() { }
 
