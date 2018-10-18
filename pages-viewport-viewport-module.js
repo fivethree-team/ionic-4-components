@@ -76,7 +76,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>{{button.isVisib
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  min-height: 150vh;\n  position: relative; }\n  .container ion-button {\n    bottom: 50px;\n    position: absolute; }\n"
+module.exports = ".container {\n  min-height: 150vh;\n  position: relative; }\n  .container ion-button {\n    bottom: 50px;\n    position: absolute; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvdmlld3BvcnQvdmlld3BvcnQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQWlCO0VBQ2pCLG1CQUFrQixFQU1yQjtFQVJEO0lBS1EsYUFBWTtJQUNaLG1CQUFrQixFQUNyQiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3ZpZXdwb3J0L3ZpZXdwb3J0LnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXIge1xuICAgIG1pbi1oZWlnaHQ6IDE1MHZoO1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcblxuICAgIGlvbi1idXR0b257XG4gICAgICAgIGJvdHRvbTogNTBweDtcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIH1cbn0iXX0= */"
 
 /***/ }),
 

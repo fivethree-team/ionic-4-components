@@ -18,7 +18,7 @@ module.exports = "<ion-toolbar [@searchbarAnim]=\"small ? state : 'normal'\" (@s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: relative;\n  display: block;\n  width: 100%; }\n\nion-toolbar {\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);\n  transition: border-bottom-right-radius ease 85ms; }\n\nion-toolbar.small {\n  border-bottom-right-radius: 12px; }\n\n.toolbar-searchbar {\n  float: right; }\n"
+module.exports = ":host {\n  position: relative;\n  display: block;\n  width: 100%; }\n\nion-toolbar {\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);\n  transition: border-bottom-right-radius ease 85ms; }\n\nion-toolbar.small {\n  border-bottom-right-radius: 12px; }\n\n.toolbar-searchbar {\n  float: right; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3Byb2plY3RzL2NvcmUvc3JjL2xpYi90b29sYmFyLXNlYXJjaC90b29sYmFyLXNlYXJjaC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFrQjtFQUNsQixlQUFjO0VBQ2QsWUFBVyxFQUNkOztBQUVEO0VBQ0ksMENBQXFDO0VBQ3JDLGlEQUFnRCxFQUNuRDs7QUFFRDtFQUNJLGlDQUFnQyxFQUNuQzs7QUFFRDtFQUNJLGFBQVksRUFDZiIsImZpbGUiOiJwcm9qZWN0cy9jb3JlL3NyYy9saWIvdG9vbGJhci1zZWFyY2gvdG9vbGJhci1zZWFyY2guY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbmlvbi10b29sYmFye1xuICAgIGJveC1zaGFkb3c6IDAgMXB4IDRweCByZ2JhKDAsMCwwLC4yNSk7XG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXMgZWFzZSA4NW1zO1xufVxuXG5pb24tdG9vbGJhci5zbWFsbHtcbiAgICBib3JkZXItYm90dG9tLXJpZ2h0LXJhZGl1czogMTJweDtcbn1cblxuLnRvb2xiYXItc2VhcmNoYmFye1xuICAgIGZsb2F0OiByaWdodDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -271,7 +271,7 @@ module.exports = "<fiv-toolbar-search #search title=\"Toolbar Search\" placehold
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Rvb2xiYXItc2VhcmNoL3Rvb2xiYXItc2VhcmNoLnBhZ2Uuc2NzcyJ9 */"
 
 /***/ }),
 

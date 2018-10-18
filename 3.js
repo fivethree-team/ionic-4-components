@@ -1,27 +1,20 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/polyfills/string.js":
+/***/ "./node_modules/@ionic/core/dist/esm/es5/build/status-tap.js":
 /*!*******************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/polyfills/string.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/es5/build/status-tap.js ***!
   \*******************************************************************/
-/*! exports provided: applyPolyfill */
+/*! exports provided: startStatusTap */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "applyPolyfill", function() { return applyPolyfill; });
-function applyPolyfill(window, document) {/*!
-String.prototype.endsWith
-*/
-String.prototype.endsWith||Object.defineProperty(String.prototype,"endsWith",{writable:!0,configurable:!0,value:function(b,a){if(void 0===a||a>this.length)a=this.length;return this.substring(a-b.length,a)===b}});
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "startStatusTap", function() { return startStatusTap; });
 /*!
-String.prototype.includes
-*/
-String.prototype.includes||(String.prototype.includes=function(b,a){"number"!==typeof a&&(a=0);return a+b.length>this.length?!1:-1!==this.indexOf(b,a)});
-/*!
-String.prototype.startsWith
-*/
-String.prototype.startsWith||Object.defineProperty(String.prototype,"startsWith",{writable:!0,configurable:!0,value:function(b,a){return this.substr(!a||0>a?0:+a,b.length)===b}});}
+ * (C) Ionic http://ionicframework.com - MIT License
+ * Built with http://stenciljs.com
+ */
+function startStatusTap(t,n){t.addEventListener("statusTap",function(){n.read(function(){var e=t.document.elementFromPoint(t.innerWidth/2,t.innerHeight/2);if(e){var o=e.closest("ion-content");o&&o.componentOnReady().then(function(){n.write(function(){return o.scrollToTop(300)})})}})})}
 
 /***/ })
 

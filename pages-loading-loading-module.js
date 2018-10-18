@@ -76,7 +76,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-card {\n  top: 16px; }\n\nion-list {\n  padding-bottom: 8px; }\n"
+module.exports = "ion-card {\n  top: 16px; }\n\nion-list {\n  padding-bottom: 8px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvbG9hZGluZy9sb2FkaW5nLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFVBQVMsRUFDWjs7QUFHRDtFQUNJLG9CQUFtQixFQUN0QiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2xvYWRpbmcvbG9hZGluZy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY2FyZHtcbiAgICB0b3A6IDE2cHg7IFxufVxuXG5cbmlvbi1saXN0e1xuICAgIHBhZGRpbmctYm90dG9tOiA4cHg7XG59Il19 */"
 
 /***/ }),
 

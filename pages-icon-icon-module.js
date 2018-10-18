@@ -76,7 +76,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  --fiv-dot-color-background: var(--ion-color-light); }\n"
+module.exports = ":host {\n  --fiv-dot-color-background: var(--ion-color-light); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvaWNvbi9pY29uLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1EQUEyQixFQUM5QiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2ljb24vaWNvbi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gICAgLS1maXYtZG90LWNvbG9yLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XG59Il19 */"
 
 /***/ }),
 
