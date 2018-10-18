@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'icon', loadChildren: './pages/icon/icon.module#IconPageModule' },
   { path: 'native-map', loadChildren: './pages/native-map/native-map.module#NativeMapPageModule' },
   {
-    path: 'map-bottom-sheet',
+    path: 'native-map-bottom-sheet',
     loadChildren: './pages/native-map-bottom-sheet/native-map-bottom-sheet.module#NativeMapBottomSheetPageModule'
   },
   { path: 'dialog', loadChildren: './pages/dialog/dialog.module#DialogPageModule' }
