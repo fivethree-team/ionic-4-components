@@ -9,7 +9,7 @@ Material Design component libraries to use in an ionic 4 project
 # Packages
 
 - [Core](projects/core/README.md)
-- [Core](projects/google-maps/README.md)
+- [Google Maps](projects/google-maps/README.md)
 
 ## Development
 This package is under active construction.
