@@ -9,22 +9,13 @@ import { timer } from 'rxjs';
 })
 export class AppBarPage implements OnInit {
 
+  position = 'center';
+  fabVisible = true;
+  icon = 'checkmark';
+
   constructor() { }
 
   ngOnInit() {
-  }
-  async fabClicked(appBar: AppBarComponent) {
-    await appBar.hideFab();
-    await appBar.transitionRight();
-    await appBar.showFab();
-    await timer(450).toPromise();
-    await appBar.hideFab();
-    await appBar.transitionLeft();
-    await appBar.showFab();
-    await timer(450).toPromise();
-    await appBar.hideFab();
-    await appBar.transitionMiddle();
-    await appBar.showFab();
   }
 
 }

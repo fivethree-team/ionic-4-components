@@ -1,8 +1,8 @@
-<ion-fab [@fabAnim] [vertical]="vertical" [horizontal]="horizontal" [slot]="slot" [edge]="edge">
-  <fiv-loading-spinner (fivProgress)="rotate($event)" #spinner (fivComplete)="fillAnimationDone()" *ngIf="loading" class="spinner" [circleRadius]="32" [diameter]="72" [strokeWidth]="4" [mode]="'indeterminate'"></fiv-loading-spinner>
+<ion-fab *ngIf="visible" (@fabAnim.done)="fabAnimDone($event)" [@fabAnim] [vertical]="vertical" [horizontal]="horizontal" [slot]="slot" [edge]="edge">
+  <!-- <fiv-loading-spinner (fivProgress)="rotate($event)" #spinner (fivComplete)="fillAnimationDone()" *ngIf="loading" class="spinner" [circleRadius]="32" [diameter]="72" [strokeWidth]="4" [mode]="'indeterminate'"></fiv-loading-spinner> -->
+  <fiv-loading-spinner (fivProgress)="rotate($event)" #spinner (fivComplete)="fillAnimationDone()" *ngIf="loading" class="spinner" [circleRadius]="30" [diameter]="68" [strokeWidth]="4" [mode]="'indeterminate'"></fiv-loading-spinner>
 
   <ion-fab-button [color]="fabColor" [disabled]="disabled">
-    <ion-icon [color]="iconColor" [@rotateAnim]="iconState" (@rotateAnim.done)="changeIconAndReveal($event,'md-checkmark')"
-      [name]="icon"></ion-icon>
+    <fiv-icon [name]="icon"></fiv-icon>
   </ion-fab-button>
 </ion-fab>

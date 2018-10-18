@@ -40,6 +40,7 @@ export class IconComponent implements OnInit {
   tempValue: number;
   state: 'normal' | 'rotate' = 'normal';
   temp: string;
+  @Input() color: string;
 
   indicatorState: 'normal' | 'scale' = 'scale';
   indicatorValueState: 'normal' | 'scale' = 'scale';

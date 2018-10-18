@@ -1,3 +1,4 @@
+import { IconComponent } from './../icon/icon.component';
 import { Component, OnInit, Input, HostBinding, ViewChild, ElementRef, Output, EventEmitter, Renderer2 } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
 import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
@@ -66,9 +67,12 @@ export class LoadingFabComponent implements OnInit {
   @Input() iconColor = '#000';
   @Input() checkmark = false;
   @Input() disabled = false;
+  @Input() visible = true;
 
   @Output() fivComplete: EventEmitter<LoadingFabComponent> = new EventEmitter<LoadingFabComponent>();
   @Output() fivRefresh: EventEmitter<LoadingFabComponent> = new EventEmitter<LoadingFabComponent>();
+  @Output() fivHidden: EventEmitter<LoadingFabComponent> = new EventEmitter<LoadingFabComponent>();
+  @Output() fivShow: EventEmitter<LoadingFabComponent> = new EventEmitter<LoadingFabComponent>();
 
   @ViewChild('spinner') spinner: LoadingSpinnerComponent;
 
@@ -106,7 +110,7 @@ export class LoadingFabComponent implements OnInit {
 
   complete() {
     if (this.loading) {
-      this.spinner.completeIn(500);
+      this.spinner.completeIn(1000);
     }
   }
 
@@ -139,6 +143,17 @@ export class LoadingFabComponent implements OnInit {
 
   rotate(progress: number) {
     this.renderer.setStyle(this.spinner._elementRef.nativeElement, 'transform', `rotateZ(${progress / 200 * 360}deg)`);
+  }
+
+  fabAnimDone(event) {
+    console.log('fab anim done', event);
+    if (event.fromState === 'void') {
+      this.fivShow.emit(this);
+    }
+
+    if (event.toState === 'void') {
+      this.fivHidden.emit(this);
+    }
   }
 
 }

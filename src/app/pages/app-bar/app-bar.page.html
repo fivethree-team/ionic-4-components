@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="start">
-            <ion-menu-button menu="menuId"></ion-menu-button>
-        </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="menuId"></ion-menu-button>
+    </ion-buttons>
     <ion-title>app-bar</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,150 +10,51 @@
 <ion-content padding [scrollEvents]="true">
 
   <ion-list>
-    <ion-item class="iiii">
-      <ion-label>
-        wow
-      </ion-label>
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
-    <ion-item class="iiii">
-      test
-    </ion-item>
+    <ion-list>
+      <ion-radio-group name="position">
+        <ion-list-header>FAB position</ion-list-header>
+        <ion-item>
+          <ion-label>left</ion-label>
+          <ion-radio [checked]="position === 'left'" (click)="position = 'left'"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>center</ion-label>
+          <ion-radio [checked]="position === 'center'" (click)="position = 'center'"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>right</ion-label>
+          <ion-radio [checked]="position === 'right'" (click)="position = 'right'"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+
+      <ion-item>
+        <ion-label>FAB visible</ion-label>
+        <ion-checkbox slot="start" [(ngModel)]="fabVisible"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-button (click)="bar.fab.load()">
+      start loading
+    </ion-button>
+    <ion-button (click)="bar.fab.complete()">
+      complete loading
+    </ion-button>
+
+    <ion-select placeholder="select FAB icon" [(ngModel)]="icon">
+      <ion-select-option value="add">
+        add
+      </ion-select-option>
+      <ion-select-option value="checkmark">
+        checkmark
+      </ion-select-option>
+      <ion-select-option value="create">
+        create
+      </ion-select-option>
+    </ion-select>
+
   </ion-list>
 
-  <fiv-app-bar [fabIcon]="'md-add'" [fabLeft]="false" [fabRight]="false" #appBar (fivFabClick)="fabClicked($event)">
-    <ion-menu-button *ngIf="!appBar.fabLeft && !appBar.fabRight" start></ion-menu-button>
-    <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight" end icon-only>
-      <ion-icon slot="icon-only" name="md-profile"></ion-icon>
-    </ion-button>
-    <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight" end icon-only>
-      <ion-icon slot="icon-only" name="md-search"></ion-icon>
-    </ion-button>
-    <ion-button *ngIf="!appBar.fabLeft && !appBar.fabRight" end icon-only>
-      <ion-icon slot="icon-only" name="md-more"></ion-icon>
-    </ion-button>
-    <ion-button *ngIf="appBar.fabRight" start icon-only>
-      <ion-icon slot="icon-only" name="md-mail"></ion-icon>
-    </ion-button>
-    <ion-button *ngIf="appBar.fabRight" start icon-only>
-      <ion-icon slot="icon-only" name="md-trash"></ion-icon>
-    </ion-button>
-    <ion-button *ngIf="appBar.fabRight" start icon-only>
-      <ion-icon slot="icon-only" name="md-archive"></ion-icon>
-    </ion-button>
+  <fiv-app-bar #bar [position]="position" [fabVisible]="fabVisible" [icon]="icon">
 
   </fiv-app-bar>
 </ion-content>
