@@ -8,29 +8,16 @@ import { DialogComponent } from 'core';
 })
 export class DialogPage implements OnInit {
 
-  @ViewChild('dialogTop') dialogTop: DialogComponent;
-  @ViewChild('dialogBottom') dialogBottom: DialogComponent;
+  @ViewChild('dialog') dialog: DialogComponent;
 
   backdrop = true;
   verticalAlign = 'top';
-  animation = 'slideIn';
+  animation = 'slide';
   floating = false;
-  fullscreen = false;
-  rounded = true;
-  backdropClose = false;
-  swipeEnabled = true;
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  openDialog() {
-    if (this.verticalAlign === 'top') {
-      this.dialogTop.showDialog();
-    } else {
-      this.dialogBottom.showDialog();
-    }
   }
 
 }

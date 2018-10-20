@@ -1,16 +1,3 @@
-<fiv-dialog #dialogTop [backdropClose]="backdropClose" [swipeEnabled]="swipeEnabled" [animation]="animation" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
-  <ion-card>
-      <ion-card-content class="card">
-          <ion-card-title>Hello World</ion-card-title>
-      
-          <p>The content for this card</p>
-      
-          <ion-button (click)="dialogTop.hideDialog()">schließen</ion-button>
-        </ion-card-content>
-  </ion-card>
-  
-</fiv-dialog>
-
 <ion-header>
   <ion-toolbar>
       <ion-buttons slot="start">
@@ -27,21 +14,12 @@
       <ion-label>Backdrop</ion-label>
       <ion-toggle slot="end" [(ngModel)]="backdrop"></ion-toggle>
     </ion-item>
-    <ion-item>
-      <ion-label>Backdrop click closes dialog</ion-label>
-      <ion-toggle slot="end" [(ngModel)]="backdropClose"></ion-toggle>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label>Swipe to close</ion-label>
-      <ion-toggle slot="end" [(ngModel)]="swipeEnabled"></ion-toggle>
-    </ion-item>
     
     <ion-item>
         <ion-label>Animation</ion-label>
         <ion-select slot="end"  [(ngModel)]="animation">
-          <ion-select-option value="fadeIn">fade in</ion-select-option>
-          <ion-select-option value="slideIn">slide in</ion-select-option>
+          <ion-select-option value="fade">fade</ion-select-option>
+          <ion-select-option value="slide">slide</ion-select-option>
         </ion-select>
       </ion-item>
 
@@ -54,22 +32,23 @@
           </ion-select>
         </ion-item>
 
-        <fiv-loading-button (click)="openDialog()">
+        <fiv-loading-button (click)="dialog.open()">
           Zeige Dialog
         </fiv-loading-button>
 
   </ion-list>
 
 </ion-content>
-<fiv-dialog #dialogBottom [backdropClose]="backdropClose" [swipeEnabled]="swipeEnabled" [animation]="animation" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
-  <ion-card>
-      <ion-card-content class="card">
-          <ion-card-title>Hello World</ion-card-title>
-      
-          <p>The content for this card</p>
-      
-          <ion-button (click)="dialogBottom.hideDialog()">schließen</ion-button>
-        </ion-card-content>
-  </ion-card>
+<fiv-dialog #dialog [animation]="animation" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
+      <ion-card>
+          <ion-card-content>
+              <ion-card-title>Hello World</ion-card-title>
+          
+              <p>The content for this card</p>
+          
+              <ion-button (click)="dialog.close()">schließen</ion-button>
+            </ion-card-content>
+      </ion-card>
+  
   
 </fiv-dialog>

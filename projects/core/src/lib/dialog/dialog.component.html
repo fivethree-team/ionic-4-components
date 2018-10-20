@@ -1,6 +1,6 @@
-<div #backdrop class="backdrop" [@backdropAnim] (@backdropAnim.done)="backdropAnimDone($event)" (click)="backdropClose? hideDialog() : false"
-  *ngIf="animationState !== 'hidden' && backdrop">
-</div>
-<div #card [@dialogAnim]="animationState" (@dialogAnim.done)="onDialogAnimationDone($event)" mode="md" class="gg-dialog">
-  <ng-content></ng-content>
-</div>
+<div class="host" [ngClass]="{'bottom': verticalAlign === 'bottom','center': verticalAlign === 'center', 'top': verticalAlign === 'top'}">
+    <div *ngIf="visible && backdrop" class="backdrop"></div>
+  </div>
+  <div [@dialogAnim]="visible ? verticalAlign : verticalAlign + '-' + animation" class="dialog">
+    <ng-content></ng-content>
+  </div>
