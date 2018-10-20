@@ -27,7 +27,7 @@ export class RouterItemComponent implements OnInit {
    */
   @Input() shape: 'line' | 'dot' | string = 'line';
 
-  @Input() routeActive = true;
+  @Input() matchChildUrl = false;
 
   @HostListener('click') onclick() {
     if (this.navigate && this.pageUrl) {
@@ -40,9 +40,7 @@ export class RouterItemComponent implements OnInit {
   }
 
   @HostBinding('class.active') get activeClass() {
-    const isActive = (this.routeActive && this.router.url.startsWith(this.pageUrl))
-      || this.active;
-    return isActive;
+    return this.matchActiveUrl() || this.active;
   }
 
   constructor(public router: Router) { }
@@ -57,6 +55,18 @@ export class RouterItemComponent implements OnInit {
 
   getClasses(): string[] {
     return this.hasShape() ? [this.position, this.shape] : [this.position];
+  }
+
+  matchActiveUrl(): boolean {
+    return this.matchChildUrl ? this.isChildUrl() : this.isCurrentUrl();
+  }
+
+  isCurrentUrl(): boolean {
+    return this.router.url === this.pageUrl;
+  }
+
+  isChildUrl(): boolean {
+    return this.router.url.startsWith(this.pageUrl);
   }
 
 }

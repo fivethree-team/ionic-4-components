@@ -1,28 +1,27 @@
 <ion-app>
   <ion-split-pane>
-    <ion-menu menuId="menuId" [fivCollapseMenu]="true" [hoverMenu]="true" #menu=menuCollapse >
+    <ion-menu menuId="menuId" [fivCollapseMenu]="true" [hoverMenu]="true" #menu=menuCollapse>
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
-                <fiv-collapsable-menu-button #mb *fivIf="['desktop']" [menu]="menu"></fiv-collapsable-menu-button>
+            <fiv-collapsable-menu-button #mb *fivIf="['desktop']" [menu]="menu"></fiv-collapsable-menu-button>
           </ion-buttons>
           <ion-title>Logo</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
         <ion-list>
-          <fiv-router-item position="right" shape="dot" [pageUrl]="p.url" *ngFor="let p of appPages">
-              <ion-menu-toggle auto-hide="false">
-                <fiv-ripple>
-                    <ion-item>
-                        <ion-icon slot="start" [name]="p.icon"></ion-icon>
-                        <ion-label>
-                          {{p.title}}
-                        </ion-label>
-                      </ion-item>
-                </fiv-ripple>
-                  
-                </ion-menu-toggle>
+          <fiv-router-item position="right" shape="dot" [matchChildUrl]="false" [pageUrl]="p.url" *ngFor="let p of appPages">
+            <ion-menu-toggle auto-hide="false">
+              <fiv-ripple>
+                <ion-item>
+                  <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                  <ion-label>
+                    {{p.title}}
+                  </ion-label>
+                </ion-item>
+              </fiv-ripple>
+            </ion-menu-toggle>
           </fiv-router-item>
         </ion-list>
       </ion-content>
