@@ -1,3 +1,19 @@
+<a name="0.0.8"></a>
+## [0.0.8](https://github.com/fivethree-team/fivethree/compare/v0.0.6...v0.0.8) (2018-10-21)
+
+
+### Bug Fixes
+
+* **imports:** animation and styles where not bundled correctly ([0172918](https://github.com/fivethree-team/fivethree/commit/0172918))
+
+
+### Features
+
+* **dialog:** add dialog component ([bc0c443](https://github.com/fivethree-team/fivethree/commit/bc0c443))
+* **router-item:** add matchChildUrl input ([87cd895](https://github.com/fivethree-team/fivethree/commit/87cd895))
+
+
+
 <a name="0.0.6"></a>
 ## [0.0.6](https://github.com/fivethree-team/fivethree/compare/v0.0.5...v0.0.6) (2018-10-17)
 
