@@ -1,11 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { rotateAnimation } from '../animations/animations';
+import { trigger, transition, animate, state, style } from '@angular/animations';
 
 @Component({
   selector: 'fiv-step-header',
   templateUrl: './step-header.component.html',
   styleUrls: ['./step-header.component.scss'],
-  animations: [rotateAnimation]
+  animations: [
+    trigger('rotateAnim', [
+      transition('normal => rotate', [
+          animate('125ms ease-out')
+      ]),
+      transition('rotate => normal', [
+          animate('125ms ease-in')
+      ]),
+      state('rotate', style({ opacity: '0', transform: 'translate(-50%, -50%) rotateZ(45deg)' })),
+      state('normal', style({ opacity: '1', transform: 'translate(-50%, -50%) rotateZ(0deg)' }))
+  ])
+  ]
 })
 export class StepHeaderComponent implements OnInit {
 

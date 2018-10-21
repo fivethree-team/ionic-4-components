@@ -19,6 +19,7 @@
     "@angular/common": "^6.1.10",
     "@angular/core": "^6.1.10",
     "@angular/forms": "^6.1.10",
+    "@angular/platform-browser": "^6.1.10",
     "@angular/router": "^6.1.10",
     "@ionic/angular": "4.0.0-beta.13"
   },

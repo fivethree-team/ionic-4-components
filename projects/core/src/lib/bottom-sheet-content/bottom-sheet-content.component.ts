@@ -1,6 +1,6 @@
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { Component, OnInit, Input, HostBinding, EventEmitter, Output } from '@angular/core';
-import { DrawerState } from '../drawer-state';
+import { DrawerState } from '../bottom-sheet/drawer-state';
 
 @Component({
   selector: 'fiv-bottom-sheet-content',
@@ -18,8 +18,7 @@ export class BottomSheetContentComponent implements OnInit {
   currentState: DrawerState;
   states = DrawerState;
 
-
-  @HostBinding('class.rounded') get isRounded() {
+  @HostBinding('class.rounded') get isRounded(): boolean {
     switch (this.currentState) {
       case DrawerState.Top: return false;
       case DrawerState.Docked: return this.rounded;
@@ -28,13 +27,12 @@ export class BottomSheetContentComponent implements OnInit {
     return true;
   }
 
-  @HostBinding('style') get styles() {
+  @HostBinding('style') get styles(): SafeStyle {
     if (!(this.float && this.currentState === DrawerState.Bottom)) {
       return this.sanitizer.bypassSecurityTrustStyle(`box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
                                                       border-top: 1px solid var(--ion-color-light);`);
     }
   }
-
 
   constructor(private sanitizer: DomSanitizer) { }
 

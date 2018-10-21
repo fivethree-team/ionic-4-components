@@ -1,11 +1,22 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { listAnimation } from '../animations/animations';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'fiv-expandable',
   templateUrl: './expandable.component.html',
   styleUrls: ['./expandable.component.scss'],
-  animations: [listAnimation]
+  animations: [
+    trigger('listAnim', [
+      state('open', style({ height: '*' })),
+      state('closed', style({ height: '0' })),
+      transition('closed => open', [
+          animate('350ms ease-out')
+      ]),
+      transition('open => closed', [
+          animate('200ms ease-in')
+      ])
+  ])
+  ]
 })
 export class ExpandableComponent implements OnInit {
 
