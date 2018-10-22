@@ -17,6 +17,7 @@ export class StepContentComponent implements OnInit {
   @Input() subtitle = '';
   @Output() fivDidOpen: EventEmitter<StepContentComponent> = new EventEmitter();
   @Output() fivDidClose: EventEmitter<StepContentComponent> = new EventEmitter();
+  @Output() fivClick: EventEmitter<StepContentComponent> = new EventEmitter();
 
   @ViewChild('self') step: ExpandableComponent;
   @ViewChild('header') header: StepHeaderComponent;
@@ -48,6 +49,10 @@ export class StepContentComponent implements OnInit {
 
   afterOpen() {
     this.fivDidOpen.emit(this);
+  }
+
+  click() {
+    this.fivClick.emit(this);
   }
 
 }

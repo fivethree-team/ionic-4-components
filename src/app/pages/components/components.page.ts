@@ -19,4 +19,8 @@ export class ComponentsPage implements OnInit {
     this.iconState = !this.iconState;
   }
 
+  stepperClick(event){
+    console.log(event);
+  }
+
 }

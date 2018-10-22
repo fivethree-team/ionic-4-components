@@ -1,5 +1,5 @@
 import { StepComponent } from './../step/step.component';
-import { Component, OnInit, ViewChildren, ContentChildren, QueryList, Input, ViewChild } from '@angular/core';
+import { EventEmitter, Component, OnInit, ViewChildren, ContentChildren, QueryList, Input, ViewChild, Output } from '@angular/core';
 import { StepContentComponent } from '../step-content/step-content.component';
 import { StepperHorizontalComponent } from '../stepper-horizontal/stepper-horizontal.component';
 
@@ -14,6 +14,7 @@ export class StepperComponent implements OnInit {
   @ViewChildren(StepContentComponent) steps: QueryList<StepContentComponent>;
   @ViewChild(StepperHorizontalComponent) horizontal: StepperHorizontalComponent;
   @Input() mode: 'horizontal' | 'vertical' = 'vertical';
+  @Output() fivClick = new EventEmitter<number>();
 
   currentIndex = 0;
 

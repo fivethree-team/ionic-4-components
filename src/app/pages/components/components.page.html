@@ -26,7 +26,7 @@
 
   <ion-item-divider>Stepper</ion-item-divider>
 
-  <fiv-stepper #stepperV [mode]="'vertical'">
+  <fiv-stepper #stepperV [mode]="'vertical'" (fivClick)="stepperClick($event)">
     <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'">
       <ion-card>
         <ion-card-header>
