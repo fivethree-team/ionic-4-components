@@ -6,8 +6,14 @@ import { debounceTime } from 'rxjs/operators';
   selector: 'fiv-ripple',
   templateUrl: './ripple.component.html',
   styleUrls: ['./ripple.component.scss'],
+  // tslint:disable-next-line:use-host-property-decorator
+  host: {
+    '[style.touch-action]': 'auto',
+  },
 })
 export class RippleComponent {
+
+  auto = 'auto';
 
   private rippleAnimationEvent = new EventEmitter();
   @Input() round = false;
@@ -26,8 +32,6 @@ export class RippleComponent {
   @HostBinding('class.round') get isRound() {
     return !!this.round;
   }
-
-
 
   constructor(private el: ElementRef,
     public renderer: Renderer2) {
