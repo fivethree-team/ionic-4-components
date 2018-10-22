@@ -17,6 +17,7 @@ export class RippleComponent {
 
   private rippleAnimationEvent = new EventEmitter();
   @Input() round = false;
+  @Input() hover = false;
 
 
   @HostBinding('style.position') position;
@@ -31,6 +32,9 @@ export class RippleComponent {
 
   @HostBinding('class.round') get isRound() {
     return !!this.round;
+  }
+  @HostBinding('class.hover') get canHover() {
+    return !!this.hover;
   }
 
   constructor(private el: ElementRef,

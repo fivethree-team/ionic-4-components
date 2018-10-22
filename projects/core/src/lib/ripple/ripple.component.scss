@@ -3,6 +3,10 @@
     position: relative;
 }
 
+:host.hover:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
 :host.round {
     border-radius: 100%;
 }
@@ -21,8 +25,7 @@
     content: '';
     display: block;
     height: 100%;
-    width: 100%;
-    // background-color: rgba(0, 0, 0, .1);
+    width: 100%; // background-color: rgba(0, 0, 0, .1);
     transform: scale(0);
 }
 
