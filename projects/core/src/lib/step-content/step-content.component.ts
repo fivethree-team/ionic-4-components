@@ -28,11 +28,11 @@ export class StepContentComponent implements OnInit {
   ngOnInit() { }
 
   open() {
-    this.step.open();
+    this.isOpen = true;
   }
 
   close() {
-    this.step.close();
+    this.isOpen = false;
   }
 
   complete() {
