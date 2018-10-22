@@ -10,6 +10,7 @@ export class StepComponent implements OnInit {
   @Input() index: number;
   @Input() icon: string;
   @Input() isLast = false;
+  @Input() open = false;
   @Input() title = '';
   @Input() subtitle = '';
 

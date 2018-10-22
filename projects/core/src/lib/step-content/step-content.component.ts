@@ -12,6 +12,7 @@ export class StepContentComponent implements OnInit {
   @Input() index: number;
   @Input() icon: string;
   @Input() isLast = false;
+  @Input() isOpen = false;
   @Input() title = '';
   @Input() subtitle = '';
   @Output() fivDidOpen: EventEmitter<StepContentComponent> = new EventEmitter();

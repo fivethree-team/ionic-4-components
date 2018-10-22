@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { listAnimation } from '../animations/animations';
 
 @Component({
@@ -9,12 +9,13 @@ import { listAnimation } from '../animations/animations';
 })
 export class ExpandableComponent implements OnInit {
 
-  public isOpen = false;
-  state = 'closed';
+  @Input() isOpen = false;
   @Output() fivWillOpen: EventEmitter<ExpandableComponent> = new EventEmitter();
   @Output() fivDidOpen: EventEmitter<ExpandableComponent> = new EventEmitter();
   @Output() fivWillClose: EventEmitter<ExpandableComponent> = new EventEmitter();
   @Output() fivDidClose: EventEmitter<ExpandableComponent> = new EventEmitter();
+
+
 
   constructor() { }
 
@@ -24,7 +25,6 @@ export class ExpandableComponent implements OnInit {
   open() {
     this.fivWillOpen.emit(this);
     this.isOpen = true;
-    this.state = 'open';
   }
 
   toggle() {
@@ -39,7 +39,6 @@ export class ExpandableComponent implements OnInit {
     this.fivWillClose.emit(this);
     console.log('close');
     this.isOpen = false;
-    this.state = 'closed';
   }
 
   onAnimationEnd(event) {
