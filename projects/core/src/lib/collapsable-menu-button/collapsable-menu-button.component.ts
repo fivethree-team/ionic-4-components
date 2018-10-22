@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CollapsableMenuDirective } from '../collapsable-menu.directive';
+import { CollapsableMenuDirective } from '../collapsable-menu/collapsable-menu.directive';
 
 @Component({
   selector: 'fiv-collapsable-menu-button',

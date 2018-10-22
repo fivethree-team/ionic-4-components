@@ -1,14 +1,23 @@
-import { Component, OnInit, QueryList, Input, ViewChild, EventEmitter, Output, AfterViewInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit, QueryList, Input, ViewChild, EventEmitter, Output } from '@angular/core';
 import { StepComponent } from '../step/step.component';
 import { Slides } from '@ionic/angular';
-import { rotateAnimation } from '../animations/animations';
+import { trigger, transition, animate, state, style } from '@angular/animations';
 
 @Component({
   selector: 'fiv-stepper-horizontal',
   templateUrl: './stepper-horizontal.component.html',
   styleUrls: ['./stepper-horizontal.component.scss'],
-  animations: [rotateAnimation]
-
+  animations: [
+    trigger('rotateAnim', [
+      transition('normal => rotate', [
+        animate('125ms ease-out')
+      ]),
+      transition('rotate => normal', [
+        animate('125ms ease-in')
+      ]),
+      state('rotate', style({ opacity: '0', transform: 'translate(-50%, -50%) rotateZ(45deg)' })),
+      state('normal', style({ opacity: '1', transform: 'translate(-50%, -50%) rotateZ(0deg)' }))
+    ])]
 })
 export class StepperHorizontalComponent implements OnInit {
 

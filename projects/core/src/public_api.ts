@@ -9,8 +9,8 @@ export * from './lib/bottom-sheet/drawer-state';
 // export components
 export * from './lib/app-bar/app-bar.component';
 export * from './lib/bottom-sheet/bottom-sheet.component';
-export * from './lib/bottom-sheet/bottom-sheet-content/bottom-sheet-content.component';
-export * from './lib/collapsable-menu/collapsable-menu-button/collapsable-menu-button.component';
+export * from './lib/bottom-sheet-content/bottom-sheet-content.component';
+export * from './lib/collapsable-menu-button/collapsable-menu-button.component';
 export * from './lib/dialog/dialog.component';
 export * from './lib/expandable/expandable.component';
 export * from './lib/loading-button/loading-button.component';

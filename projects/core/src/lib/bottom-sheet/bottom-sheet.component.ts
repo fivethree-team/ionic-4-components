@@ -1,4 +1,4 @@
-import { BottomSheetContentComponent } from './bottom-sheet-content/bottom-sheet-content.component';
+import { BottomSheetContentComponent } from '../bottom-sheet-content/bottom-sheet-content.component';
 import {
   Component, AfterViewInit, OnChanges, Input, Output, EventEmitter,
   ElementRef, Renderer2, SimpleChanges, ContentChild
