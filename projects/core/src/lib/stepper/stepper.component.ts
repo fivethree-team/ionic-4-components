@@ -29,8 +29,13 @@ export class StepperComponent implements OnInit {
       console.log('+#+#+');
       this.horizontal.open(index);
     } else {
-      this.currentIndex = index;
-      this.steps.toArray()[index].open();
+      if (this.steps.toArray()[index].isOpen) {
+        this.close(index);
+      } else {
+        this.currentIndex = index;
+        this.steps.toArray()[index].open();
+
+      }
     }
   }
 
