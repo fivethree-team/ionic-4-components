@@ -63,11 +63,11 @@ export class ToolbarSearchComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('on changes', changes);
-    if (changes.small.previousValue === true && changes.small.currentValue === false) {
+    if (changes && changes.small && changes.small.previousValue === true && changes.small.currentValue === false) {
       this.state = 'normal';
       return;
     }
-    if (changes.small.previousValue === false && changes.small.currentValue === true) {
+    if (changes && changes.small && changes.small.previousValue === false && changes.small.currentValue === true) {
       this.state = 'small';
       return;
     }

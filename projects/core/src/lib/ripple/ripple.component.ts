@@ -1,4 +1,4 @@
-import { HostListener, ElementRef, Renderer2, HostBinding, EventEmitter, Component, ViewEncapsulation, Input } from '@angular/core';
+import { HostListener, ElementRef, Renderer2, HostBinding, EventEmitter, Component, ViewEncapsulation, Input, Output } from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -18,12 +18,14 @@ export class RippleComponent {
   private rippleAnimationEvent = new EventEmitter();
   @Input() round = false;
   @Input() hover = false;
+  @Output() click = new EventEmitter<any>();
 
 
   @HostBinding('style.position') position;
   @HostListener('click', ['$event'])
   clickEvent(event: MouseEvent) {
     this.ripple(event);
+    this.click.emit(event);
   }
   @HostListener('press', ['$event'])
   PressEvent(event) {
@@ -36,6 +38,7 @@ export class RippleComponent {
   @HostBinding('class.hover') get canHover() {
     return !!this.hover;
   }
+
 
   constructor(private el: ElementRef,
     public renderer: Renderer2) {

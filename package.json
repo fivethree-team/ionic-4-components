@@ -20,7 +20,9 @@
     "build": "ng build core && ng build google-maps",
     "build:prod": "ng build core --prod && ng build google-maps --prod",
     "gh-pages": "ng build --base-href 'https://fivethree-team.github.io/fivethree/' && npx ngh --dir=www",
-    "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s",
+    "publish": "npm publish dist/core",
+    "rocket": "npm run build:prod && npm run publish"
   },
   "private": true,
   "dependencies": {
