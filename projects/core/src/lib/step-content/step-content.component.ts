@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { StepHeaderComponent } from '../step-header/step-header.component';
 import { ExpandableComponent } from '../expandable/expandable.component';
 
@@ -22,17 +22,20 @@ export class StepContentComponent implements OnInit {
   @ViewChild('self') step: ExpandableComponent;
   @ViewChild('header') header: StepHeaderComponent;
 
-  constructor() {
+  constructor(private change: ChangeDetectorRef) {
   }
 
   ngOnInit() { }
 
   open() {
     this.isOpen = true;
+    this.change.detectChanges();
   }
 
   close() {
     this.isOpen = false;
+    this.change.detectChanges();
+
   }
 
   complete() {

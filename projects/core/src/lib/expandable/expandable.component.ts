@@ -1,5 +1,5 @@
 
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectorRef } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -11,12 +11,12 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       state('open', style({ height: '*' })),
       state('closed', style({ height: '0' })),
       transition('closed => open', [
-          animate('350ms ease-out')
+        animate('350ms ease-out')
       ]),
       transition('open => closed', [
-          animate('200ms ease-in')
+        animate('200ms ease-in')
       ])
-  ])
+    ])
   ]
 })
 export class ExpandableComponent implements OnInit {
@@ -29,7 +29,7 @@ export class ExpandableComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private change: ChangeDetectorRef) { }
 
   ngOnInit() {
   }
@@ -37,6 +37,7 @@ export class ExpandableComponent implements OnInit {
   open() {
     this.fivWillOpen.emit(this);
     this.isOpen = true;
+    this.change.detectChanges();
   }
 
   toggle() {
@@ -51,6 +52,7 @@ export class ExpandableComponent implements OnInit {
     this.fivWillClose.emit(this);
     console.log('close');
     this.isOpen = false;
+    this.change.detectChanges();
   }
 
   onAnimationEnd(event) {

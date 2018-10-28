@@ -18,14 +18,14 @@ export class RippleComponent {
   private rippleAnimationEvent = new EventEmitter();
   @Input() round = false;
   @Input() hover = false;
-  @Output() click = new EventEmitter<any>();
+  @Output() fivClick = new EventEmitter<any>();
 
 
   @HostBinding('style.position') position;
   @HostListener('click', ['$event'])
   clickEvent(event: MouseEvent) {
     this.ripple(event);
-    this.click.emit(event);
+    this.fivClick.emit(event);
   }
   @HostListener('press', ['$event'])
   PressEvent(event) {
