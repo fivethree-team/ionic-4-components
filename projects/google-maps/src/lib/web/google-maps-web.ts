@@ -1,4 +1,4 @@
-import { FivGoogleMaps } from '../google-maps';
+import { FivGoogleMaps, LatLng } from '../google-maps';
 import { Component, OnInit, ElementRef, Renderer2, Inject, Input, Output, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
@@ -123,13 +123,13 @@ export class GoogleMapsWebComponent implements OnInit, FivGoogleMaps {
         this.setMapOnAllMarkers(this.map);
     }
 
-    deleteMarker(lat: number, lng: number) {
+    deleteMarker(position: LatLng) {
         const index = this.markers.findIndex(m =>
-            m.getPosition().lat() === lat
-            && m.getPosition().lng() === lng);
+            m.getPosition().lat() === position.lat
+            && m.getPosition().lng() === position.lng);
         if (index > -1) {
             this.markers[index].setMap(null);
-            this.markers = this.markers.splice(index, 1);
+            this.markers.splice(index, 1);
         }
     }
 

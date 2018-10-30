@@ -3,6 +3,11 @@ export interface FivGoogleMaps {
     addMarker(lat: number, lng: number);
     hideMarkers();
     showMarkers();
-    deleteMarker(lat: number, lng: number);
+    deleteMarker(position: LatLng);
     deleteMarkers();
+}
+
+export interface LatLng {
+    lat: number;
+    lng: number;
 }
