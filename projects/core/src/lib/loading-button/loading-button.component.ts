@@ -19,6 +19,9 @@ export class LoadingButtonComponent implements OnInit {
   disabled = false;
 
   @Input() verticalAlign: 'top' | 'bottom' = 'top';
+
+  @Input() type: 'submit' | 'reset' | 'button' = 'button';
+
   @Output() fivRefresh: EventEmitter<LoadingButtonComponent> = new EventEmitter();
   @Output() fivRefreshComplete: EventEmitter<LoadingButtonComponent> = new EventEmitter();
   @Output() fivButtonClick: EventEmitter<LoadingButtonComponent> = new EventEmitter();
