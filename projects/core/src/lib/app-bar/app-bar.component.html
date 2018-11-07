@@ -1,6 +1,10 @@
 <div class="appbar" [ngClass]="{'cutout': cutoutVisible, 'left': left, 'right': right}">
-    <div class="appbar-rect left"></div>
+    <div class="appbar-rect left">
+      <ng-content select="[left]"></ng-content>
+    </div>
     <fiv-loading-fab (fivHidden)="onFabHidden()" [icon]="icon" [visible]="_fabVisible" #fab (click)="fabClick()"></fiv-loading-fab>
     <div class="rect"></div>
-    <div class="appbar-rect right"></div>
+    <div class="appbar-rect right">
+      <ng-content select="[right]"></ng-content>
+    </div>
   </div>

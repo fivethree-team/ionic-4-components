@@ -1,7 +1,12 @@
+:host{
+    display: contents;
+}
+
 ion-icon {
     padding: 0;
     margin: 0;
     font-size: 1.8em;
+    color: var(--fiv-color-icon);
 }
 
 .indicator {

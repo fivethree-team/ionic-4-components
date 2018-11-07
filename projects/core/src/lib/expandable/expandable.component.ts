@@ -8,8 +8,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrls: ['./expandable.component.scss'],
   animations: [
     trigger('listAnim', [
-      state('open', style({ height: '*' })),
-      state('closed', style({ height: '0' })),
+      state('open', style({ height: '*', opacity: 1 })),
+      state('closed', style({ height: '0', opacity: 0  })),
       transition('closed => open', [
         animate('350ms ease-out')
       ]),
@@ -25,8 +25,9 @@ export class ExpandableComponent implements OnInit {
   @Output() fivWillOpen: EventEmitter<ExpandableComponent> = new EventEmitter();
   @Output() fivDidOpen: EventEmitter<ExpandableComponent> = new EventEmitter();
   @Output() fivWillClose: EventEmitter<ExpandableComponent> = new EventEmitter();
-  @Output() fivDidClose: EventEmitter<ExpandableComponent> = new EventEmitter();
+  @Output() fivDidClose: EventEmitter<{ expandable: ExpandableComponent, param: any }> = new EventEmitter();
 
+  param: any;
 
 
   constructor(private change: ChangeDetectorRef) { }
@@ -48,7 +49,8 @@ export class ExpandableComponent implements OnInit {
     }
   }
 
-  close() {
+  close(param?: any) {
+    this.param = param;
     this.fivWillClose.emit(this);
     console.log('close');
     this.isOpen = false;
@@ -59,7 +61,8 @@ export class ExpandableComponent implements OnInit {
     if (event.fromState === 'closed') {
       this.fivDidOpen.emit(this);
     } else if (event.fromState === 'open') {
-      this.fivDidClose.emit(this);
+      this.fivDidClose.emit({ expandable: this, param: this.param });
+      this.param = null;
     }
   }
 

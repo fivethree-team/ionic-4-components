@@ -1,4 +1,4 @@
-<ion-icon [color]="color" [@rotateAnim]="state" (@rotateAnim.done)="rotateAnimDone($event)" [name]="_name"></ion-icon>
+<ion-icon [@rotateAnim]="state" (@rotateAnim.done)="rotateAnimDone($event)" [name]="_name"></ion-icon>
 <span [@scaleAnim]="indicatorState" class="indicator"></span>
 <span *ngIf="_indicatorValue > -1" class="indicator-background">
 </span>

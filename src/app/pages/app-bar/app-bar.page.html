@@ -55,6 +55,27 @@
   </ion-list>
 
   <fiv-app-bar #bar [position]="position" [fabVisible]="fabVisible" [icon]="icon">
-
+    <ion-grid left>
+      <ion-row>
+        <ion-col col-6>
+          <div fiv-ripple>
+            <ion-icon [fivCenter] slot="icon-only" name="add"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col col-6>
+          <div fiv-ripple>
+            <ion-icon [fivCenter] slot="icon-only" name="add"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-buttons right>
+      <ion-button>
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="contact"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </fiv-app-bar>
 </ion-content>

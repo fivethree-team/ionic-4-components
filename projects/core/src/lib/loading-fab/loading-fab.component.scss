@@ -128,3 +128,7 @@ fiv-loading-spinner {
         transform: rotate(450deg);
     }
 }
+
+ion-fab-button {
+    --background: var(--fiv-color-fab);
+}

@@ -15,8 +15,11 @@ export class StepperComponent implements OnInit {
   @ViewChild(StepperHorizontalComponent) horizontal: StepperHorizontalComponent;
   @Input() mode: 'horizontal' | 'vertical' = 'vertical';
   @Output() fivClick = new EventEmitter<number>();
+  @Output() fivClose = new EventEmitter<{index: number, param: any}>();
 
   currentIndex = 0;
+
+  param: any;
 
   constructor() { }
 
@@ -46,7 +49,8 @@ export class StepperComponent implements OnInit {
     }
   }
 
-  close(index: number) {
+  close(index: number,param?:any) {
+    this.param = param;
     if (this.mode === 'horizontal') {
       this.currentIndex = 0;
       this.horizontal.close();

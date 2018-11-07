@@ -43,7 +43,7 @@ export class LoadingButtonComponent implements OnInit {
 
   complete() {
     if (this.loading) {
-      this.progress.complete();
+      this.progress.complete({});
     }
   }
 

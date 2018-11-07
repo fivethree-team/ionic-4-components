@@ -2,7 +2,7 @@
   <!-- <fiv-loading-spinner (fivProgress)="rotate($event)" #spinner (fivComplete)="fillAnimationDone()" *ngIf="loading" class="spinner" [circleRadius]="32" [diameter]="72" [strokeWidth]="4" [mode]="'indeterminate'"></fiv-loading-spinner> -->
   <fiv-loading-spinner (fivProgress)="rotate($event)" #spinner (fivComplete)="fillAnimationDone()" *ngIf="loading" class="spinner" [circleRadius]="30" [diameter]="68" [strokeWidth]="4" [mode]="'indeterminate'"></fiv-loading-spinner>
 
-  <ion-fab-button [color]="fabColor" [disabled]="disabled">
-    <fiv-icon [name]="icon"></fiv-icon>
+  <ion-fab-button [disabled]="disabled">
+    <fiv-icon [fivCenter]="{horizontal: true, vertical: true}" [name]="icon"></fiv-icon>
   </ion-fab-button>
 </ion-fab>

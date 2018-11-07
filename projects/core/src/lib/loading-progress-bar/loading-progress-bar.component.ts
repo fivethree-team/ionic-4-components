@@ -42,12 +42,14 @@ export class LoadingProgressBarComponent implements OnInit, OnDestroy {
   @Input() isComplete = false;
   progress = 0;
   @Input() verticalAlign: 'top' | 'bottom' = 'top';
-  @Output() fivComplete: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() fivComplete: EventEmitter<any> = new EventEmitter<any>();
   @Output() fivDoneShrinking: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() fivRefresh: EventEmitter<LoadingProgressBarComponent> = new EventEmitter<LoadingProgressBarComponent>();
 
   @ViewChild('bar') bar: ElementRef;
   @ViewChild('linear') linear: ElementRef;
+
+  param: any;
 
   constructor(public loadingService: LoadingService, private builder: AnimationBuilder) {
   }
@@ -56,7 +58,7 @@ export class LoadingProgressBarComponent implements OnInit, OnDestroy {
     if (this.global) {
       this.loadingService.completeChange.subscribe(isComplete => {
         if (isComplete) {
-          this.complete();
+          this.complete(null);
         }
       });
     }
@@ -84,8 +86,9 @@ export class LoadingProgressBarComponent implements OnInit, OnDestroy {
     }
   }
 
-  complete() {
+  complete(param: any) {
     console.log('set complete');
+    this.param = param;
     this.isComplete = true;
     console.log(this.isComplete);
   }
@@ -93,8 +96,9 @@ export class LoadingProgressBarComponent implements OnInit, OnDestroy {
   fillAnimationComplete(isComplete: boolean) {
     if (isComplete) {
       console.log('fill animation complete', isComplete);
-      this.fivComplete.emit(isComplete);
+      this.fivComplete.emit(this.param);
       this.isComplete = false;
+      this.param = null;
       if (this.global) {
         this.loadingService.unload();
       } else {
