@@ -33,7 +33,7 @@ export class AppComponent {
     {
       title: 'Loading',
       url: '/loading',
-      icon: 'home'
+      icon: 'time'
     },
     {
       title: 'Bottom Sheet',

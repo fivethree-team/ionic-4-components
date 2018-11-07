@@ -1,6 +1,10 @@
-:host{
+:host {
     position: relative;
     display: block;
     margin: 0px 20px;
-  }  
+} 
+
+:host(.button-disabled) {
+  pointer-events: none;
+}
   

@@ -19,7 +19,7 @@ export class PasswordPage implements OnInit {
   setupForm() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
-      password: ['hallo', [Validators.minLength(6), Validators.required]],
+      password: ['', [Validators.minLength(6), Validators.required]],
     });
   }
 
@@ -29,6 +29,10 @@ export class PasswordPage implements OnInit {
 
   onSubmit() {
     console.log(this.loginForm.value);
+  }
+
+  get password(): AbstractControl {
+    return this.loginForm.get('password');
   }
 
 }

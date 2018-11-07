@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, EventEmitter, Output, HostBinding } from '@angular/core';
 import { LoadingProgressBarComponent } from '../loading-progress-bar/loading-progress-bar.component';
 
 @Component({
@@ -13,7 +13,11 @@ export class LoadingButtonComponent implements OnInit {
   @ViewChild('progress') progress: LoadingProgressBarComponent;
   @Input() color = 'light';
   @Input() expand = 'block';
-  @Input() disabled = false;
+
+  @HostBinding('class.button-disabled')
+  @Input()
+  disabled = false;
+
   @Input() verticalAlign: 'top' | 'bottom' = 'top';
   @Output() fivRefresh: EventEmitter<LoadingButtonComponent> = new EventEmitter();
   @Output() fivRefreshComplete: EventEmitter<LoadingButtonComponent> = new EventEmitter();

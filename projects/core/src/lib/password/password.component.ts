@@ -54,6 +54,10 @@ export class PasswordComponent implements ControlValueAccessor, OnInit {
     }
   }
 
+  blur() {
+    this.onTouchedCallback();
+  }
+
   registerOnChange(fn: any) {
     this.onChangeCallback = fn;
   }
