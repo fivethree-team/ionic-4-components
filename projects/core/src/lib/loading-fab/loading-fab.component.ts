@@ -1,5 +1,4 @@
-import { IconComponent } from './../icon/icon.component';
-import { Component, OnInit, Input, HostBinding, ViewChild, ElementRef, Output, EventEmitter, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Renderer2, HostBinding } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
 import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
 
@@ -83,8 +82,9 @@ export class LoadingFabComponent implements OnInit {
     const verticalClass = !!this.vertical ? `fab-vertical-${this.vertical}` : '';
     const horizontalClass = !!this.horizontal ? `fab-horizontal-${this.horizontal}` : '';
     const edgeClass = this.edge ? `fab-edge-` : '';
+    const disabledClass = this.disabled ? `button-disabled` : '';
 
-    return `${verticalClass} ${horizontalClass} ${edgeClass}`;
+    return `${verticalClass} ${horizontalClass} ${edgeClass} ${disabledClass}`;
   }
 
   constructor(private renderer: Renderer2) {

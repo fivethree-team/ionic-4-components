@@ -5,6 +5,10 @@
     height: var(--fiv-spinner-size);
 }
 
+:host(.button-disabled) {
+    pointer-events: none;
+}
+
 // FAB Vertical Positioning
 // --------------------------------------------------
 :host(.fab-vertical-top) {
