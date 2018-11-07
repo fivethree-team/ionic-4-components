@@ -1,3 +1,12 @@
+<a name="0.0.31"></a>
+## [0.0.31](https://github.com/fivethree-team/fivethree/compare/v0.0.30...v0.0.31) (2018-11-07)
+
+### Features
+
+* **loading-button:** add button type ([5638552](https://github.com/fivethree-team/fivethree/commit/5638552))
+
+
+
 <a name="0.0.30"></a>
 ## [0.0.30](https://github.com/fivethree-team/fivethree/compare/v0.0.6...v0.0.30) (2018-11-07)
 
