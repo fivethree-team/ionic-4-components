@@ -5,9 +5,7 @@
   <ion-label class="text">{{hintText}}</ion-label>
 </ion-chip>
 
-<ion-content fullscreen no-bounce fivPull [maxPullHeight]="maxPullHeight" [minPullHeight]="minPullHeight" (fivPull)="fivPull($event)" (fivRefresh)="onRefresh()" (fivCancel)="fivCancel()" [enabled]="!refreshing && !hintVisible">
+<ion-content no-bounce fivPull [maxPullHeight]="maxPullHeight" [minPullHeight]="minPullHeight" (fivPull)="fivPull($event)" (fivRefresh)="onRefresh()" (fivCancel)="fivCancel()" [enabled]="!refreshing && !hintVisible">
 
-  <div class="gg-content">
     <ng-content></ng-content>
-  </div>
 </ion-content>
