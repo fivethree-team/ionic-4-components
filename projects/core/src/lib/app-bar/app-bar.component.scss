@@ -34,7 +34,12 @@
         left: 50%;
         position: absolute;
         z-index: 14;
+        
+        fiv-icon{
+            --fiv-color-icon: var(--fiv-color-fab-icon);
+        }
     }
+
     .rect {
         display: inline-block;
         width: 68px;
