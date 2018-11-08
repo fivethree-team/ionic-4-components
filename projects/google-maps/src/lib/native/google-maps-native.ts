@@ -89,7 +89,7 @@ export class GoogleMapsNativeComponent implements OnInit, FivGoogleMaps {
                 ...this.markers.map(marker => marker.getPosition())];
             this.moveCenterToPositions(positions);
         } catch (error) {
-            console.log('current Location not available', error)
+            console.log('current Location not available', error);
         }
     }
 

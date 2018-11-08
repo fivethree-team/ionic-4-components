@@ -1,4 +1,4 @@
-import { FivGoogleMaps } from './google-maps';
+import { FivGoogleMaps, LatLng } from './google-maps';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -25,10 +25,13 @@ export class GoogleMapsComponent implements OnInit, FivGoogleMaps {
 
   hideMarkers() {
   }
+
   showMarkers() {
   }
-  deleteMarker(lat: number, lng: number) {
+
+  deleteMarker(position: LatLng) {
   }
+
   deleteMarkers() {
   }
 
