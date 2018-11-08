@@ -167,6 +167,7 @@ export class LoadingContentComponent implements OnInit {
   }
 
   onSpinnerProgress(progress: number) {
+    this.fivProgressChanged.emit(progress);
     this.renderer.
       // tslint:disable-next-line:max-line-length
       setStyle(this.spinner.element.nativeElement, 'transform', `translateY(${168 * this.currentProgress}px) rotateZ(${360 * progress / 200}deg)`);
