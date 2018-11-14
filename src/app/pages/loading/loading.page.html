@@ -56,5 +56,5 @@
 
 </fiv-loading-content>
 
-<fiv-loading-fab checkmark="true" slot="fixed" [disabled]="true" (fivComplete)="fabComplete()" loading="true" #fab (click)="fab.loading ? fab.complete() : fab.toggleSpinner()"
+<fiv-loading-fab checkmark="true" slot="fixed" [disabled]="false" (fivComplete)="fabComplete()" loading="true" #fab (click)="fab.loading ? fab.complete() : fab.toggleSpinner()"
   horizontal="end" vertical="bottom" icon="md-add" spinColor="dark" fabColor="light" iconColor="primary"></fiv-loading-fab>

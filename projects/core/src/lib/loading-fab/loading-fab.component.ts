@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Renderer2, HostBinding } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
 import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'fiv-loading-fab',
@@ -115,12 +116,8 @@ export class LoadingFabComponent implements OnInit {
   }
 
   fillAnimationDone() {
-    if (this.checkmark) {
-      console.log('fill animation done', event);
-      this.iconState = 'rotate';
-    } else {
-      this.postComplete();
-    }
+    this.icon = 'md-checkmark';
+    timer(200).subscribe(() => this.postComplete());
   }
 
   changeIconAndReveal(event, icon: string) {
