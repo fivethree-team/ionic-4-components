@@ -117,7 +117,6 @@ export class LoadingFabComponent implements OnInit {
 
   fillAnimationDone() {
     this.icon = 'md-checkmark';
-    timer(200).subscribe(() => this.postComplete());
   }
 
   changeIconAndReveal(event, icon: string) {

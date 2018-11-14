@@ -3,6 +3,6 @@
   <fiv-loading-spinner (fivProgress)="rotate($event)" #spinner (fivComplete)="fillAnimationDone()" *ngIf="loading" class="spinner" [circleRadius]="30" [diameter]="68" [strokeWidth]="4" [mode]="'indeterminate'"></fiv-loading-spinner>
 
   <ion-fab-button [disabled]="disabled">
-    <fiv-icon [fivCenter]="{horizontal: true, vertical: true}" [name]="icon" [color]="iconColor"></fiv-icon>
+    <fiv-icon (transitionDone)="postComplete()" [fivCenter]="{horizontal: true, vertical: true}" [name]="icon" [color]="iconColor"></fiv-icon>
   </ion-fab-button>
 </ion-fab>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { trigger, transition, animate, state, style } from '@angular/animations';
 
 @Component({
@@ -41,6 +41,7 @@ export class IconComponent implements OnInit {
   state: 'normal' | 'rotate' = 'normal';
   temp: string;
   @Input() color: string;
+  @Output() transitionDone = new EventEmitter<string>();
 
   indicatorState: 'normal' | 'scale' = 'scale';
   indicatorValueState: 'normal' | 'scale' = 'scale';
@@ -108,6 +109,7 @@ export class IconComponent implements OnInit {
 
     if (event.fromState === 'rotate' && event.toState === 'normal') {
       console.log('icon transition done');
+      this.transitionDone.emit(this._name);
     }
   }
 
