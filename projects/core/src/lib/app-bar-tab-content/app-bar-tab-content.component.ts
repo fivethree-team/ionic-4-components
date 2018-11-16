@@ -7,8 +7,8 @@ import { Component, OnInit, Input, TemplateRef, Output, EventEmitter, ContentChi
 })
 export class AppBarTabContentComponent implements OnInit {
 
-  @Input() currentPage: TemplateRef<any>;
   @Input() icon: string;
+  @Input() active = false;
   @Input() template: TemplateRef<any>;
 
   @Output() fivClick = new EventEmitter<TemplateRef<any>>();

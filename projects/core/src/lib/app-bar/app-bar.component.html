@@ -3,14 +3,14 @@
 <div class="appbar" [ngClass]="{'cutout': cutoutVisible, 'left': left, 'right': right}">
   <div class="appbar-rect left">
     <div class="tabs">
-      <fiv-app-bar-tab-content [template]="tab.ref" (fivClick)="tabClick($event)" [icon]="tab.icon" *ngFor="let tab of tabs?.toArray() | slice : 0 : 2"></fiv-app-bar-tab-content>
+      <fiv-app-bar-tab-content [active]="currentPage === tab.ref" [template]="tab.ref" (fivClick)="tabClick($event)" [icon]="tab.icon" *ngFor="let tab of tabs?.toArray() | slice : 0 : 2"></fiv-app-bar-tab-content>
     </div>
   </div>
   <fiv-loading-fab (fivHidden)="onFabHidden()" [icon]="icon" [visible]="_fabVisible" #fab (click)="fabClick()"></fiv-loading-fab>
   <div class="rect"></div>
   <div class="appbar-rect right">
     <div class="tabs">
-      <fiv-app-bar-tab-content [template]="tab.ref" (fivClick)="tabClick($event)" [icon]="tab.icon" *ngFor="let tab of tabs?.toArray() | slice : 2 : 4"></fiv-app-bar-tab-content>
+      <fiv-app-bar-tab-content [active]="currentPage === tab.ref" [template]="tab.ref" (fivClick)="tabClick($event)" [icon]="tab.icon" *ngFor="let tab of tabs?.toArray() | slice : 2 : 4"></fiv-app-bar-tab-content>
     </div>
   </div>
 </div>
