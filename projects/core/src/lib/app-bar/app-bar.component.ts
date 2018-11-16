@@ -1,5 +1,5 @@
 import { LoadingFabComponent } from './../loading-fab/loading-fab.component';
-import { Component, OnInit, Input, ViewChild, Output, EventEmitter, ContentChildren, QueryList, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter, ContentChildren, QueryList, TemplateRef, AfterViewInit } from '@angular/core';
 import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
 
 @Component({
@@ -7,8 +7,7 @@ import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
   templateUrl: './app-bar.component.html',
   styleUrls: ['./app-bar.component.scss']
 })
-export class AppBarComponent implements OnInit {
-
+export class AppBarComponent implements OnInit, AfterViewInit {
 
   _fabVisible = true;
   cutoutVisible = true;
@@ -71,6 +70,12 @@ export class AppBarComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => { this.currentPage = this.tabs.first.ref; }, 0);
+  }
+
+
 
   onFabHidden() {
     console.log('fab hidden');
