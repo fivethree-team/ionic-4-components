@@ -1,81 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="menuId"></ion-menu-button>
-    </ion-buttons>
-    <ion-title>app-bar</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content padding [scrollEvents]="true">
-
-  <ion-list>
-    <ion-list>
-      <ion-radio-group name="position">
-        <ion-list-header>FAB position</ion-list-header>
-        <ion-item>
-          <ion-label>left</ion-label>
-          <ion-radio [checked]="position === 'left'" (click)="position = 'left'"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>center</ion-label>
-          <ion-radio [checked]="position === 'center'" (click)="position = 'center'"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>right</ion-label>
-          <ion-radio [checked]="position === 'right'" (click)="position = 'right'"></ion-radio>
-        </ion-item>
-      </ion-radio-group>
-
-      <ion-item>
-        <ion-label>FAB visible</ion-label>
-        <ion-checkbox slot="start" [(ngModel)]="fabVisible"></ion-checkbox>
-      </ion-item>
-    </ion-list>
-
-    <ion-button (click)="bar.fab.load()">
-      start loading
-    </ion-button>
-    <ion-button (click)="bar.fab.complete()">
-      complete loading
-    </ion-button>
-
-    <ion-select placeholder="select FAB icon" [(ngModel)]="icon">
-      <ion-select-option value="add">
-        add
-      </ion-select-option>
-      <ion-select-option value="checkmark">
-        checkmark
-      </ion-select-option>
-      <ion-select-option value="create">
-        create
-      </ion-select-option>
-    </ion-select>
-
-  </ion-list>
 
   <fiv-app-bar #bar [position]="position" [fabVisible]="fabVisible" [icon]="icon">
-    <ion-grid left>
-      <ion-row>
-        <ion-col col-6>
-          <div fiv-ripple>
-            <ion-icon [fivCenter] slot="icon-only" name="add"></ion-icon>
-          </div>
-        </ion-col>
-        <ion-col col-6>
-          <div fiv-ripple>
-            <ion-icon [fivCenter] slot="icon-only" name="add"></ion-icon>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    <ion-buttons right>
-      <ion-button>
-        <ion-icon slot="icon-only" name="trash"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon slot="icon-only" name="contact"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    <fiv-app-bar-tab left [icon]="'md-add'">
+      <ion-content>
+        <p>test 1</p>
+      </ion-content>
+    </fiv-app-bar-tab>
+    <fiv-app-bar-tab left [icon]="'md-add'">
+        <ion-content>
+            <p>test 2</p>
+          </ion-content>
+    </fiv-app-bar-tab>
+    <fiv-app-bar-tab right [icon]="'md-add'">
+        <ion-content>
+            <p>test 3</p>
+          </ion-content>
+    </fiv-app-bar-tab>
+    <fiv-app-bar-tab right [icon]="'md-add'">
+        <ion-content>
+            <p>test 4</p>
+          </ion-content>
+    </fiv-app-bar-tab>
   </fiv-app-bar>
-</ion-content>

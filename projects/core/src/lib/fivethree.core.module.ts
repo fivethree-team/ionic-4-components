@@ -32,6 +32,8 @@ import { StepperHorizontalComponent } from './stepper-horizontal/stepper-horizon
 import { IconComponent } from './icon/icon.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { LoadingRefresherContentComponent } from './loading-refresher-content/loading-refresher-content.component';
+import { AppBarTabComponent } from './app-bar-tab/app-bar-tab.component';
+import { AppBarTabContentComponent } from './app-bar-tab-content/app-bar-tab-content.component';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -74,7 +76,9 @@ export class MyHammerConfig extends HammerGestureConfig {
     LoadingSpinnerComponent,
     StepperHorizontalComponent,
     IconComponent,
-    DialogComponent
+    DialogComponent,
+    AppBarTabComponent,
+    AppBarTabContentComponent
   ],
   exports: [
     ExpandableComponent,
@@ -104,7 +108,9 @@ export class MyHammerConfig extends HammerGestureConfig {
     LoadingSpinnerComponent,
     StepperHorizontalComponent,
     IconComponent,
-    DialogComponent
+    DialogComponent,
+    AppBarTabComponent,
+    AppBarTabContentComponent
   ]
 })
 export class FivethreeCoreModule { }

@@ -1,5 +1,6 @@
 import { LoadingFabComponent } from './../loading-fab/loading-fab.component';
-import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter, ContentChildren, QueryList, TemplateRef } from '@angular/core';
+import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
 
 @Component({
   selector: 'fiv-app-bar',
@@ -18,6 +19,10 @@ export class AppBarComponent implements OnInit {
   @ViewChild('fab') fab: LoadingFabComponent;
   @Input() icon = 'md-add';
   @Output() fivFabClick = new EventEmitter<AppBarComponent>();
+
+  currentPage: TemplateRef<any>;
+
+  @ContentChildren(AppBarTabComponent) tabs: QueryList<AppBarTabComponent>;
 
   @Input()
   set position(position: 'right' | 'left' | 'center') {
@@ -105,6 +110,12 @@ export class AppBarComponent implements OnInit {
 
   fabClick() {
     this.fivFabClick.emit(this);
+  }
+
+  tabClick(event) {
+    console.log('tab click', event);
+    this.currentPage = event;
+    console.log('current page', this.currentPage);
   }
 
 

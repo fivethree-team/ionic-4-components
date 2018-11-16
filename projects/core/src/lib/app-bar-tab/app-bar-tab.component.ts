@@ -1,0 +1,20 @@
+import { Component, OnInit, Input, TemplateRef, Output, EventEmitter, ContentChild, ViewChild } from '@angular/core';
+
+@Component({
+  selector: 'fiv-app-bar-tab',
+  templateUrl: './app-bar-tab.component.html',
+  styleUrls: ['./app-bar-tab.component.scss']
+})
+export class AppBarTabComponent implements OnInit {
+
+  @Input() icon: string;
+
+  @ViewChild(TemplateRef) ref: TemplateRef<any>;
+
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

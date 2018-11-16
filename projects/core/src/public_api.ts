@@ -25,6 +25,8 @@ export * from './lib/step-header/step-header.component';
 export * from './lib/stepper/stepper.component';
 export * from './lib/stepper-horizontal/stepper-horizontal.component';
 export * from './lib/toolbar-search/toolbar-search.component';
+export * from './lib/app-bar-tab/app-bar-tab.component';
+export * from './lib/app-bar-tab-content/app-bar-tab-content.component';
 
 // export services
 export * from './lib/loading/loading.service';

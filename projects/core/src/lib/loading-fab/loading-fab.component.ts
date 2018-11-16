@@ -133,6 +133,7 @@ export class LoadingFabComponent implements OnInit {
   }
 
   postComplete() {
+    console.log('post complete');
     this.unload();
     this.fivComplete.emit(this);
   }
