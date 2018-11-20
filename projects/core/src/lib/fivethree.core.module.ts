@@ -15,7 +15,6 @@ import { CollapsableMenuButtonComponent } from './collapsable-menu-button/collap
 import { PasswordComponent } from './password/password.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { BottomSheetContentComponent } from './bottom-sheet-content/bottom-sheet-content.component';
-import { ToolbarSearchComponent } from './toolbar-search/toolbar-search.component';
 import { LoadingButtonComponent } from './loading-button/loading-button.component';
 import { LoadingProgressBarComponent } from './loading-progress-bar/loading-progress-bar.component';
 import { LoadingContentComponent } from './loading-content/loading-content.component';
@@ -35,6 +34,7 @@ import { LoadingRefresherContentComponent } from './loading-refresher-content/lo
 import { AppBarTabComponent } from './app-bar-tab/app-bar-tab.component';
 import { AppBarTabContentComponent } from './app-bar-tab-content/app-bar-tab-content.component';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+import { ToolbarSearchComponent } from './toolbar-search/toolbar-search.component';
 
 
 export class MyHammerConfig extends HammerGestureConfig {

@@ -1,4 +1,4 @@
-import { SafeUrl } from '@angular/platform-browser';
+import { SafeUrl, SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import {
   Component, OnInit, Input, ViewEncapsulation,
   Injector,
@@ -9,13 +9,16 @@ import {
   ViewChild,
   ElementRef,
   Renderer2,
-  ChangeDetectorRef
+  ChangeDetectorRef,
+  Output,
+  EventEmitter,
+  HostBinding
 } from '@angular/core';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { trigger, transition, style, animate, AnimationBuilder } from '@angular/animations';
 import { Subscription, merge, fromEvent } from 'rxjs';
 import * as Hammer from 'hammerjs';
 import { DomController, Platform } from '@ionic/angular';
-import { flatMap, tap, takeWhile, filter, map } from 'rxjs/operators';
+import { flatMap, tap, takeWhile, filter, map, debounce, debounceTime, takeUntil, race, take } from 'rxjs/operators';
 
 @Component({
   selector: 'fiv-image-viewer',
@@ -35,19 +38,29 @@ import { flatMap, tap, takeWhile, filter, map } from 'rxjs/operators';
         animate('100ms ease-in', style({ opacity: 0 }))
       ])
     ]),
+    trigger('fade', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('125ms ease-out', style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('150ms ease-in', style({ opacity: 0 }))
+      ])
+    ]),
     trigger('imageEnter', [
       transition(':enter', [
         // tslint:disable-next-line:max-line-length
         style({ position: 'absolute', top: '{{top}}px', left: '{{left}}px', transform: 'translate(0,0)', height: '{{height}}px', width: '{{width}}px' }),
         // tslint:disable-next-line:max-line-length
-        animate('150ms ease-out', style({ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', height: 'auto', width: '100%' }))
+        animate('150ms', style({ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', height: 'auto', width: '100%' }))
       ], { params: { top: '0px', left: '0px', height: '*', width: '*' } })
     ]),
     trigger('imageLeave', [
       transition(':leave', [
         style({ position: 'absolute', top: '{{panTop}}', left: '50%', transform: 'translate(-50%,-50%)', height: 'auto', width: '100%' }),
         // tslint:disable-next-line:max-line-length
-        animate('225ms ease-in', style({ position: 'absolute', top: '{{top}}px', left: '{{left}}px', transform: 'translate(0,0)', height: '{{height}}px', width: '{{width}}px' })
+        animate('225ms', style({ position: 'absolute', top: '{{top}}px', left: '{{left}}px', transform: 'translate(0,0)', height: '{{height}}px', width: '{{width}}px' })
         )
       ], { params: { top: '0px', left: '0px', height: '*', width: '*', panTop: '50%' } })
     ])
@@ -55,16 +68,43 @@ import { flatMap, tap, takeWhile, filter, map } from 'rxjs/operators';
 })
 export class ImageViewerComponent implements OnInit {
 
+  @HostBinding('style')
+  get myStyle(): SafeStyle {
+    if (this._isOpen) {
+      return this.sanitizer.bypassSecurityTrustStyle(`height: 100%; width: 100%; display: block;`);
+    }
+    return this.sanitizer.bypassSecurityTrustStyle(`height: ${this.height}px; width: ${this.width}px; display: block;`);
+  }
+
   @ViewChild('thumbnail') thumbnail: ElementRef;
   @ViewChild('imageView') imageView: ElementRef;
+  @ViewChild('footer') footer: ElementRef;
   @Input() src: SafeUrl;
+  @Input() height = 100;
+  @Input() width = 100;
+  @Input() actions: ImageViewerAction[] = [];
+  @Output() fivClose = new EventEmitter();
   componentRef: ComponentRef<ImageViewerComponent>;
   _isOpen = false;
+  _controlsVisible = true;
+  thumbnailVisible = true;
 
   thumbnailPosition: { offsetTop: number, offsetLeft: number, height: number, width: number, panTop?: string };
-  pinchSubscription: Subscription;
   scale = 1;
   top: number;
+  pinchend: Subscription;
+  pinch: Subscription;
+  verticalPan: Subscription;
+  panRemove: Subscription;
+  panReset: Subscription;
+  doubletap: Subscription;
+  singletap: Subscription;
+  closeSub: Subscription;
+
+  singletapHammer;
+  doubleTapHammer;
+  pinchHammer;
+  panHammer;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
@@ -72,6 +112,8 @@ export class ImageViewerComponent implements OnInit {
     private platform: Platform,
     private renderer: Renderer2,
     private change: ChangeDetectorRef,
+    private animation: AnimationBuilder,
+    private sanitizer: DomSanitizer,
     private injector: Injector) {
     this.top = this.platform.height() / 2;
   }
@@ -80,8 +122,6 @@ export class ImageViewerComponent implements OnInit {
   }
 
   open(event) {
-    console.log(event);
-
     this.appendComponentToBody(event);
   }
 
@@ -104,10 +144,21 @@ export class ImageViewerComponent implements OnInit {
       .resolveComponentFactory(ImageViewerComponent)
       .create(this.injector);
 
+    this.thumbnailVisible = false;
     this.componentRef.instance._isOpen = true;
     this.componentRef.instance.src = this.src;
     this.componentRef.instance.componentRef = this.componentRef;
     this.componentRef.instance.thumbnailPosition = this.getPosition(event);
+    this.componentRef.instance.actions = this.actions;
+
+    this.closeSub = this.componentRef.instance.fivClose
+      .pipe(
+        take(1)
+      )
+      .subscribe(() => {
+        this.closeSub.unsubscribe();
+        this.thumbnailVisible = true;
+      });
 
     this.appRef.attachView(this.componentRef.hostView);
 
@@ -123,54 +174,91 @@ export class ImageViewerComponent implements OnInit {
       this.thumbnailPosition.panTop = this.top + 'px';
       this.change.detectChanges();
     }
-    console.log('removing from', this.thumbnailPosition.panTop);
     this._isOpen = false;
+  }
+  clearSubscriptions(): any {
+    this.panRemove.unsubscribe();
+    this.panReset.unsubscribe();
+    this.verticalPan.unsubscribe();
+    this.pinch.unsubscribe();
+    this.pinchend.unsubscribe();
+    this.singletap.unsubscribe();
+    this.doubletap.unsubscribe();
+  }
+
+  removeHammerManager(): any {
+    this.singletapHammer.destroy();
+    this.doubleTapHammer.destroy();
+    this.pinchHammer.destroy();
+    this.panHammer.destroy();
   }
 
   detach(event) {
     if (event.toState === 'void') {
       this.appRef.detachView(this.componentRef.hostView);
+      this.clearSubscriptions();
+      this.removeHammerManager();
+      this.fivClose.emit();
       this.componentRef.destroy();
     }
   }
 
   onEnter(event) {
     if (event.fromState === 'void') {
+      this.setupClicks();
       this.setupPan();
       this.setupPinch();
     }
   }
+  setupClicks(): any {
+    this.doubleTapHammer = new Hammer(this.imageView.nativeElement);
+    this.doubleTapHammer.get('tap').set({ enable: true, taps: 2 });
+
+    this.singletapHammer = new Hammer(this.imageView.nativeElement);
+    this.singletapHammer.get('tap').set({ enable: true, taps: 1 });
+
+    const doubletap$ = fromEvent(this.doubleTapHammer, 'tap');
+    const singletap$ = fromEvent(this.singletapHammer, 'tap')
+      .pipe(
+        debounceTime(300),
+        race(doubletap$),
+        filter((event: any) => event.tapCount === 1)
+      );
+
+    this.doubletap = doubletap$.subscribe(res => this.handleDoubleTap());
+    this.singletap = singletap$.subscribe(res => this.handleSingleTap());
+  }
 
   setupPinch() {
-    const hammer = new Hammer(this.imageView.nativeElement);
-    hammer.get('pinch').set({ enable: true });
+    this.pinchHammer = new Hammer(this.imageView.nativeElement);
+    this.pinchHammer.get('pinch').set({ enable: true });
 
-    fromEvent(hammer, 'pinchend')
-      .subscribe((event: any) => {
-        this.scale = Math.max(0, Math.min(this.scale * event.scale, 8));
-        if (this.scale < 1) {
-          this.setScale(1);
-          this.scale = 1;
-        }
-      });
+    const pinchend$ = fromEvent(this.pinchHammer, 'pinchend');
+    this.pinchend = pinchend$.subscribe((event: any) => {
+      this.scale = Math.max(0, Math.min(this.scale * event.scale, 8));
+      if (this.scale < 1) {
+        this.setScale(1);
+        this.scale = 1;
+      }
+    });
 
-    fromEvent(hammer, 'pinch')
-      .subscribe((event: any) => {
-        this.transform(event.scale);
-      });
+    const pinch$ = fromEvent(this.pinchHammer, 'pinch');
+    this.pinch = pinch$.subscribe((event: any) => {
+      this.transform(event.scale);
+    });
   }
 
   setupPan() {
     // close pans
     const max_distance = 120;
-    const hammer = new Hammer(this.imageView.nativeElement);
-    hammer.get('pan').set({ enable: true, direction: Hammer.DIRECTION_ALL });
-    const panstart = fromEvent(hammer, 'panstart');
+    this.panHammer = new Hammer(this.imageView.nativeElement);
+    this.panHammer.get('pan').set({ enable: true, direction: Hammer.DIRECTION_ALL });
+    const panstart = fromEvent(this.panHammer, 'panstart');
 
-    const panend = fromEvent(hammer, 'panend');
+    const panend = fromEvent(this.panHammer, 'panend');
 
-    const pandown = fromEvent(hammer, 'pandown');
-    const panup = fromEvent(hammer, 'panup');
+    const pandown = fromEvent(this.panHammer, 'pandown');
+    const panup = fromEvent(this.panHammer, 'panup');
 
     const down = panstart
       .pipe(
@@ -184,30 +272,51 @@ export class ImageViewerComponent implements OnInit {
           filter(() => this.scale === 1)))
       );
 
-    merge(up, down)
-      .subscribe((res: any) => {
-        this.setTop(this.calculateTop(res));
-      });
+    const verticalPan$ = merge(up, down);
+
+    this.verticalPan = verticalPan$.subscribe((res: any) => {
+      this.setBottom(this.calculateBottom(res));
+      this.setTop(this.calculateTop(res));
+    });
 
 
-    panend
+    this.panRemove = panend
       .pipe(
-        tap(console.log),
         filter((event: any) => this.scale === 1 && event.distance > max_distance),
       )
       .subscribe(() => { this.remove(); });
 
-    panend
+    this.panReset = panend
       .pipe(
         filter((event: any) => this.scale === 1 && event.distance <= max_distance)
       )
-      .subscribe(() => this.setTop(this.platform.height() / 2));
+      .subscribe((event) => {
+        this.resetPan();
+        this.resetFooter(this.calculateBottom(event));
+      });
+  }
+
+  setBottom(bottom: number) {
+    if (this._controlsVisible) {
+      this.domCtrl.write(() => {
+        this.renderer.setStyle(this.footer.nativeElement, 'bottom', `-${bottom}px`);
+      });
+    }
+  }
+
+  calculatePanProgress(event: any): number {
+    const max_distance = 120;
+    return Math.abs(100 * event.distance / max_distance);
   }
 
   transform(scale) {
     const s = Math.max(0, Math.min(this.scale * scale, 8));
     this.setScale(s);
+  }
 
+  calculateBottom(event) {
+    const progress = this.calculatePanProgress(event);
+    return event.distance * progress / 100;
   }
 
   setScale(scale) {
@@ -225,11 +334,81 @@ export class ImageViewerComponent implements OnInit {
   }
 
   calculateTop(event: any) {
-    const max_distance = 120;
     const distance = event.distance;
-    const progress = Math.abs(100 * distance / max_distance);
-    // tslint:disable-next-line:max-line-length
-    console.log(`[calculateTop]: {top: ${this.platform.height() / 2 + distance}, distance: ${distance}, progress: ${progress}}, type: ${event.type}`);
+    // const progress = Math.abs(100 * distance / max_distance);
     return this.platform.height() / 2 + distance;
   }
+
+  resetPan() {
+    const reset = this.animation.build([
+      style({ top: `${this.top}px` }),
+      animate('150ms ease', style({ top: `${this.platform.height() / 2}px` }))
+    ]);
+
+    const animation = reset.create(this.imageView.nativeElement);
+    animation.play();
+    animation.onDone(() => {
+      animation.destroy();
+      this.setTop(this.platform.height() / 2);
+    });
+  }
+
+  resetFooter(start) {
+    const reset = this.animation.build([
+      style({ bottom: `-${start}px` }),
+      animate('150ms ease', style({ bottom: `0px` }))
+    ]);
+
+    const animation = reset.create(this.footer.nativeElement);
+    animation.play();
+    animation.onDone(() => {
+      animation.destroy();
+      this.setBottom(0);
+    });
+  }
+
+  animateScale(toScale: number) {
+    const scale = this.animation.build([
+      style({ transform: `translateY(-50%) scale(${this.scale})` }),
+      animate('150ms ease', style({ transform: `translateY(-50%) scale(${toScale})` }))
+    ]);
+
+    const animation = scale.create(this.imageView.nativeElement);
+    animation.play();
+    animation.onDone(() => {
+      animation.destroy();
+      this.scale = toScale;
+      this.setScale(toScale);
+    });
+  }
+
+  handleSingleTap() {
+    this._controlsVisible = !this._controlsVisible;
+  }
+
+  handleDoubleTap() {
+    if (this.scale === 1) {
+      this.animateScale(2);
+      return;
+    }
+    if (this.scale === 2) {
+      this.animateScale(1);
+      return;
+    }
+
+    if (this.scale > 1.5) {
+      this.animateScale(1);
+      return;
+    }
+
+    if (this.scale < 1.5) {
+      this.animateScale(2);
+      return;
+    }
+  }
+}
+
+export interface ImageViewerAction {
+  name?: string;
+  icon?: string;
 }

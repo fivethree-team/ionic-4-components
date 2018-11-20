@@ -1,5 +1,5 @@
 <div class="host" [ngClass]="{'bottom': verticalAlign === 'bottom','center': verticalAlign === 'center', 'top': verticalAlign === 'top'}">
-    <div *ngIf="visible && backdrop" class="backdrop"></div>
+    <div (click)="close()" *ngIf="visible && backdrop" class="backdrop"></div>
   </div>
   <div [@dialogAnim]="visible ? verticalAlign : verticalAlign + '-' + animation" class="dialog">
     <ng-content></ng-content>
