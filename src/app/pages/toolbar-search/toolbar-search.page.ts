@@ -10,7 +10,7 @@ import { ToolbarSearchComponent } from 'projects/core/src/lib/toolbar-search/too
 export class ToolbarSearchPage implements OnInit {
 
   searchInput: string;
-  small = true;
+  small = false;
   states = DrawerState;
   state: DrawerState = DrawerState.Bottom;
   @ViewChild('search') search: ToolbarSearchComponent;

@@ -34,6 +34,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { LoadingRefresherContentComponent } from './loading-refresher-content/loading-refresher-content.component';
 import { AppBarTabComponent } from './app-bar-tab/app-bar-tab.component';
 import { AppBarTabContentComponent } from './app-bar-tab-content/app-bar-tab-content.component';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -78,8 +79,10 @@ export class MyHammerConfig extends HammerGestureConfig {
     IconComponent,
     DialogComponent,
     AppBarTabComponent,
-    AppBarTabContentComponent
+    AppBarTabContentComponent,
+    ImageViewerComponent,
   ],
+  entryComponents: [ImageViewerComponent],
   exports: [
     ExpandableComponent,
     PasswordComponent,
@@ -110,7 +113,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     IconComponent,
     DialogComponent,
     AppBarTabComponent,
-    AppBarTabContentComponent
+    AppBarTabContentComponent,
+    ImageViewerComponent
   ]
 })
 export class FivethreeCoreModule { }

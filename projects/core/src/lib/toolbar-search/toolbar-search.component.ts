@@ -81,6 +81,13 @@ export class ToolbarSearchComponent implements OnInit, OnChanges {
     this._open();
   }
 
+  toggleSearchbar() {
+    if (this.searching) {
+      this.closeSearchbar();
+    } else {
+      this.openSearchbar();
+    }
+  }
 
 
   searchBarStateChange(event) {
@@ -105,7 +112,7 @@ export class ToolbarSearchComponent implements OnInit, OnChanges {
     if (this.small) {
       this.state = 'small';
     }
-    this.closeButtonVisible = false;
+    this.searching = false;
     this.fivClose.emit();
 
   }

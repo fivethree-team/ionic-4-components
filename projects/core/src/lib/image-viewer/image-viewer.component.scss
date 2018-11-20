@@ -1,0 +1,22 @@
+.backdrop {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+
+    ion-icon{
+        color: var(--ion-color-light);
+    }
+}
+
+.image-view{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+    }
+

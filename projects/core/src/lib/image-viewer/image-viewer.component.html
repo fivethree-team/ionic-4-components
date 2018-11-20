@@ -1,0 +1,12 @@
+<img #thumbnail *ngIf="!_isOpen" (click)="open($event)" [src]="src">
+<div [@backdrop] (@backdrop.done)="onEnter($event)" *ngIf="_isOpen" class="backdrop">
+  <ion-toolbar color="translucent">
+    <ion-title>{{scale}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="remove()">
+        <ion-icon slot="icon-only" name="md-arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</div>
+<img #imageView (@imageLeave.done)="detach($event)" class="image-view" [@imageLeave]="{value: ':leave', params : {top: thumbnailPosition.offsetTop, left: thumbnailPosition.offsetLeft, height: thumbnailPosition.height, width: thumbnailPosition.width, panTop: thumbnailPosition.panTop}}"  [@imageEnter]="{value: ':enter', params : {top: thumbnailPosition.offsetTop, left: thumbnailPosition.offsetLeft, height: thumbnailPosition.height, width: thumbnailPosition.width}}" *ngIf="thumbnailPosition && _isOpen" [src]="src">

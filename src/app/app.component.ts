@@ -70,6 +70,11 @@ export class AppComponent {
       title: 'Dialog test',
       url: '/test',
       icon: 'bug'
+    },
+    {
+      title: 'Image View',
+      url: '/image',
+      icon: 'image'
     }
   ];
 

@@ -9,12 +9,15 @@
   </ion-input>
 
   <ion-buttons slot="end">
-    <ion-button [@rotateAnim] (@rotateAnim.done)="searchAnimDone($event)" *ngIf="!searching" (click)="openSearchbar()">
+    <ion-button (click)="toggleSearchbar()">
+      <fiv-icon [name]="searching ? 'md-close' : 'md-search'"></fiv-icon>
+    </ion-button>
+    <!-- <ion-button [@rotateAnim] (@rotateAnim.done)="searchAnimDone($event)" *ngIf="!searching" (click)="toggleSearchbar()">
       <ion-icon style="transform: matrix(-1, 0, 0, 1, 0, 0);" name="md-search"></ion-icon>
     </ion-button>
     <ion-button [@rotateAnim] (@rotateAnim.done)="closeAnimDone($event)" *ngIf="closeButtonVisible" (click)="closeSearchbar()">
       <ion-icon name="md-close"></ion-icon>
-    </ion-button>
+    </ion-button> -->
     <ng-content select="[end]"></ng-content>
 
   </ion-buttons>

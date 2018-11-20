@@ -24,7 +24,8 @@ const routes: Routes = [
     loadChildren: './pages/native-map-bottom-sheet/native-map-bottom-sheet.module#NativeMapBottomSheetPageModule'
   },
   { path: 'dialog', loadChildren: './pages/dialog/dialog.module#DialogPageModule' },
-  { path: 'test', loadChildren: './test/test.module#TestPageModule' }
+  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
+  { path: 'image', loadChildren: './pages/image/image.module#ImagePageModule' }
 ];
 
 @NgModule({
