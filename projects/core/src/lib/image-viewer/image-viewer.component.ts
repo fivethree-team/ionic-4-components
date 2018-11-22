@@ -18,7 +18,7 @@ import { trigger, transition, style, animate, AnimationBuilder } from '@angular/
 import { Subscription, merge, fromEvent } from 'rxjs';
 import * as Hammer from 'hammerjs';
 import { DomController, Platform } from '@ionic/angular';
-import { flatMap, tap, takeWhile, filter, map, debounce, debounceTime, takeUntil, race, take } from 'rxjs/operators';
+import { flatMap, tap, takeWhile, filter, map, debounce, debounceTime, takeUntil, race, take, skipWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'fiv-image-viewer',
@@ -92,6 +92,7 @@ export class ImageViewerComponent implements OnInit {
   thumbnailPosition: { offsetTop: number, offsetLeft: number, height: number, width: number, panTop?: string };
   scale = 1;
   top: number;
+  left: number;
   pinchend: Subscription;
   pinch: Subscription;
   verticalPan: Subscription;
@@ -100,11 +101,15 @@ export class ImageViewerComponent implements OnInit {
   doubletap: Subscription;
   singletap: Subscription;
   closeSub: Subscription;
+  pinchPan: Subscription;
 
   singletapHammer;
   doubleTapHammer;
   pinchHammer;
   panHammer;
+
+
+  pinchCenter: { x: number, y: number };
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
@@ -115,7 +120,6 @@ export class ImageViewerComponent implements OnInit {
     private animation: AnimationBuilder,
     private sanitizer: DomSanitizer,
     private injector: Injector) {
-    this.top = this.platform.height() / 2;
   }
 
   ngOnInit() {
@@ -184,6 +188,7 @@ export class ImageViewerComponent implements OnInit {
     this.pinchend.unsubscribe();
     this.singletap.unsubscribe();
     this.doubletap.unsubscribe();
+    this.pinchPan.unsubscribe();
   }
 
   removeHammerManager(): any {
@@ -205,6 +210,10 @@ export class ImageViewerComponent implements OnInit {
 
   onEnter(event) {
     if (event.fromState === 'void') {
+      // setup variables in fullscreen
+      this.top = this.platform.height() / 2;
+      this.left = 0;
+      this.pinchCenter = { x: this.platform.width() / 2, y: this.platform.height() / 2 };
       this.setupClicks();
       this.setupPan();
       this.setupPinch();
@@ -225,7 +234,7 @@ export class ImageViewerComponent implements OnInit {
         filter((event: any) => event.tapCount === 1)
       );
 
-    this.doubletap = doubletap$.subscribe(res => this.handleDoubleTap());
+    this.doubletap = doubletap$.subscribe(res => this.handleDoubleTap(res));
     this.singletap = singletap$.subscribe(res => this.handleSingleTap());
   }
 
@@ -235,6 +244,7 @@ export class ImageViewerComponent implements OnInit {
 
     const pinchend$ = fromEvent(this.pinchHammer, 'pinchend');
     this.pinchend = pinchend$.subscribe((event: any) => {
+
       this.scale = Math.max(0, Math.min(this.scale * event.scale, 8));
       if (this.scale < 1) {
         this.setScale(1);
@@ -244,6 +254,7 @@ export class ImageViewerComponent implements OnInit {
 
     const pinch$ = fromEvent(this.pinchHammer, 'pinch');
     this.pinch = pinch$.subscribe((event: any) => {
+      console.log('pinch', event.scale);
       this.transform(event.scale);
     });
   }
@@ -256,6 +267,7 @@ export class ImageViewerComponent implements OnInit {
     const panstart = fromEvent(this.panHammer, 'panstart');
 
     const panend = fromEvent(this.panHammer, 'panend');
+    const panmove = fromEvent(this.panHammer, 'panmove');
 
     const pandown = fromEvent(this.panHammer, 'pandown');
     const panup = fromEvent(this.panHammer, 'panup');
@@ -279,6 +291,22 @@ export class ImageViewerComponent implements OnInit {
       this.setTop(this.calculateTop(res));
     });
 
+    const pinchPanMove = panmove
+      .pipe(
+        filter(() => this.scale > 1)
+      );
+
+    const pinchPan$ = panstart
+      .pipe(
+        tap((event: any) => this.pinchCenter = event.center),
+        flatMap(() => pinchPanMove
+      ));
+
+    this.pinchPan = pinchPan$
+      .subscribe((res: any) => {
+        this.move(res);
+      });
+
 
     this.panRemove = panend
       .pipe(
@@ -296,6 +324,22 @@ export class ImageViewerComponent implements OnInit {
       });
   }
 
+  move(event: any) {
+    if (!this.pinchCenter) {
+      this.pinchCenter = event.center;
+    }
+    const moveV = event.center.y - this.pinchCenter.y;
+    const moveH = event.center.x - this.pinchCenter.x;
+    const newTop = this.top + moveV;
+    const newLeft = this.left + moveH;
+    console.log(`
+    lastTop: ${this.top}, lastLeft: ${this.left}, moveV: ${moveV}, moveH: ${moveH}, newTop: ${newTop}, newLeft: ${newLeft}
+    `);
+    this.pinchCenter = event.center;
+    this.setTop(newTop);
+    this.setLeft(newLeft);
+  }
+
   setBottom(bottom: number) {
     if (this._controlsVisible) {
       this.domCtrl.write(() => {
@@ -311,7 +355,7 @@ export class ImageViewerComponent implements OnInit {
 
   transform(scale) {
     const s = Math.max(0, Math.min(this.scale * scale, 8));
-    this.setScale(s);
+    this.setScale(s, true);
   }
 
   calculateBottom(event) {
@@ -319,7 +363,10 @@ export class ImageViewerComponent implements OnInit {
     return event.distance * progress / 100;
   }
 
-  setScale(scale) {
+  setScale(scale, skip?) {
+    if (!skip) {
+      this.scale = scale;
+    }
     this.domCtrl.write(() => {
       this.renderer.setStyle(this.imageView.nativeElement, 'transform', `translateY(-50%) scale(${scale})`);
     });
@@ -330,6 +377,13 @@ export class ImageViewerComponent implements OnInit {
     this.thumbnailPosition.panTop = this.top + 'px';
     this.domCtrl.write(() => {
       this.renderer.setStyle(this.imageView.nativeElement, 'top', `${top}px`);
+    });
+  }
+
+  setLeft(left) {
+    this.left = left;
+    this.domCtrl.write(() => {
+      this.renderer.setStyle(this.imageView.nativeElement, 'left', `${left}px`);
     });
   }
 
@@ -367,18 +421,42 @@ export class ImageViewerComponent implements OnInit {
     });
   }
 
-  animateScale(toScale: number) {
+  animateScale(toScale: number, toPosition: { x: number, y: number }) {
+    // const deltaX = this.pinchCenter.x - toPosition.x;
+    // const deltaY = this.pinchCenter.y - toPosition.y;
+    const deltaX = (this.pinchCenter.x - toPosition.x) * toScale;
+    const deltaY = (this.pinchCenter.y - toPosition.y) * toScale;
+    const newLeft = this.left + deltaX / toScale;
+    const newTop = this.top + deltaY / toScale;
     const scale = this.animation.build([
-      style({ transform: `translateY(-50%) scale(${this.scale})` }),
-      animate('150ms ease', style({ transform: `translateY(-50%) scale(${toScale})` }))
+      style({ transform: `translateY(-50%) scale(${this.scale})`, top: `${this.top}px`, left: `${this.left}px` }),
+      animate('200ms ease', style({ transform: `translateY(-50%) scale(${toScale})`, top: `${newTop}px`, left: `${newLeft}px` }))
     ]);
-
     const animation = scale.create(this.imageView.nativeElement);
     animation.play();
     animation.onDone(() => {
       animation.destroy();
-      this.scale = toScale;
       this.setScale(toScale);
+      this.setTop(newTop);
+      this.setLeft(newLeft);
+      this.pinchCenter = toPosition;
+    });
+  }
+
+  resetScale() {
+    const t = this.platform.height() / 2;
+    const scale = this.animation.build([
+      style({ transform: `translateY(-50%) scale(${this.scale})`, top: `${this.top}px`, left: `${this.left}px` }),
+      animate('200ms ease', style({ transform: `translateY(-50%) scale(${1})`, top: `${t}px`, left: `${0}px` }))
+    ]);
+    const animation = scale.create(this.imageView.nativeElement);
+    animation.play();
+    animation.onDone(() => {
+      animation.destroy();
+      this.setScale(1);
+      this.setTop(t);
+      this.setLeft(0);
+      this.pinchCenter = this.getAbsoluteCenter();
     });
   }
 
@@ -386,27 +464,28 @@ export class ImageViewerComponent implements OnInit {
     this._controlsVisible = !this._controlsVisible;
   }
 
-  handleDoubleTap() {
+  handleDoubleTap(event) {
     if (this.scale === 1) {
-      this.animateScale(2);
-      return;
-    }
-    if (this.scale === 2) {
-      this.animateScale(1);
-      return;
+      this.animateScale(2, event.center);
+    } else {
+      this.resetScale();
     }
 
-    if (this.scale > 1.5) {
-      this.animateScale(1);
-      return;
-    }
+  }
 
-    if (this.scale < 1.5) {
-      this.animateScale(2);
-      return;
-    }
+  getCurrentImageHeight() {
+    return this.imageView.nativeElement.clientHeight * this.scale;
+  }
+  getCurrentImageWidth() {
+    return this.imageView.nativeElement.clientWidth * this.scale;
+  }
+
+  getAbsoluteCenter() {
+    return { x: this.platform.width() / 2, y: this.platform.height() / 2 };
   }
 }
+
+
 
 export interface ImageViewerAction {
   name?: string;
