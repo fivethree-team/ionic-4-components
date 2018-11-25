@@ -14,7 +14,7 @@
           <fiv-router-item position="right" shape="dot" [matchChildUrl]="false" [pageUrl]="p.url" *ngFor="let p of appPages">
             <ion-menu-toggle auto-hide="false">
               <fiv-ripple>
-                <ion-item>
+                <ion-item line="inset">
                   <ion-icon slot="start" [name]="p.icon"></ion-icon>
                   <ion-label>
                     {{p.title}}
