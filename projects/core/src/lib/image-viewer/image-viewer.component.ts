@@ -18,7 +18,7 @@ import { trigger, transition, style, animate, AnimationBuilder } from '@angular/
 import { Subscription, merge, fromEvent } from 'rxjs';
 import * as Hammer from 'hammerjs';
 import { DomController, Platform } from '@ionic/angular';
-import { flatMap, tap, takeWhile, filter, map, debounce, debounceTime, takeUntil, race, take, skipWhile, repeat } from 'rxjs/operators';
+import { flatMap, tap, filter, debounceTime, takeUntil, take, repeat } from 'rxjs/operators';
 
 @Component({
   selector: 'fiv-image-viewer',
@@ -82,6 +82,7 @@ export class ImageViewerComponent implements OnInit {
   @Input() src: SafeUrl;
   @Input() height = 100;
   @Input() width = 100;
+  @Input() pullDistance = 150;
   @Input() actions: ImageViewerAction[] = [];
   @Output() fivClose = new EventEmitter();
   componentRef: ComponentRef<ImageViewerComponent>;
@@ -156,9 +157,7 @@ export class ImageViewerComponent implements OnInit {
     this.componentRef.instance.actions = this.actions;
 
     this.closeSub = this.componentRef.instance.fivClose
-      .pipe(
-        take(1)
-      )
+      .pipe(take(1))
       .subscribe(() => {
         this.closeSub.unsubscribe();
         this.thumbnailVisible = true;
@@ -208,12 +207,16 @@ export class ImageViewerComponent implements OnInit {
     }
   }
 
+  resetPosition() {
+    this.top = this.platform.height() / 2;
+    this.left = 0;
+    this.pinchCenter = { x: this.platform.width() / 2, y: this.platform.height() / 2 };
+  }
+
   onEnter(event) {
     if (event.fromState === 'void') {
       // setup variables in fullscreen
-      this.top = this.platform.height() / 2;
-      this.left = 0;
-      this.pinchCenter = { x: this.platform.width() / 2, y: this.platform.height() / 2 };
+      this.resetPosition();
       this.setupClicks();
       this.setupPan();
       this.setupPinch();
@@ -248,21 +251,22 @@ export class ImageViewerComponent implements OnInit {
 
       this.scale = Math.max(0, Math.min(this.scale * event.scale, 8));
       if (this.scale < 1) {
-        this.setScale(1);
-        this.scale = 1;
+        this.resetScale();
       }
     });
 
     const pinch$ = fromEvent(this.pinchHammer, 'pinch');
-    this.pinch = pinch$.subscribe((event: any) => {
-      console.log('pinch', event.scale);
-      this.transform(event.scale);
-    });
+    this.pinch = pinch$
+      .subscribe((event: any) => {
+        this.pinchCenter = event.center;
+        this.transform(event.scale);
+        this.move(event);
+      });
   }
 
   setupPan() {
     // close pans
-    const max_distance = 120;
+    const pullDistance = 120;
     this.panHammer = new Hammer(this.imageView.nativeElement);
     this.panHammer.get('pan').set({ enable: true, direction: Hammer.DIRECTION_ALL });
     const panstart = fromEvent(this.panHammer, 'panstart');
@@ -311,13 +315,14 @@ export class ImageViewerComponent implements OnInit {
 
     this.panRemove = panend
       .pipe(
-        filter((event: any) => this.scale === 1 && event.distance > max_distance),
+        filter((event: any) => this.scale === 1 && event.distance > pullDistance && event.maxPointers === 1),
       )
       .subscribe(() => { this.remove(); });
 
     this.panReset = panend
       .pipe(
-        filter((event: any) => this.scale === 1 && event.distance <= max_distance)
+        // tslint:disable-next-line:max-line-length
+        filter((event: any) => this.scale === 1 && event.distance <= pullDistance || this.scale === 1 && event.distance > pullDistance && event.maxPointers > 1)
       )
       .subscribe((event) => {
         this.resetPan();
@@ -378,8 +383,8 @@ export class ImageViewerComponent implements OnInit {
   }
 
   calculatePanProgress(event: any): number {
-    const max_distance = 120;
-    return Math.abs(100 * event.distance / max_distance);
+    const pullDistance = 120;
+    return Math.abs(100 * event.distance / pullDistance);
   }
 
   transform(scale) {
@@ -418,7 +423,7 @@ export class ImageViewerComponent implements OnInit {
 
   calculateTop(event: any) {
     const distance = event.distance;
-    // const progress = Math.abs(100 * distance / max_distance);
+    const progress = Math.abs(100 * distance / this.pullDistance);
     return this.platform.height() / 2 + distance;
   }
 
@@ -437,6 +442,10 @@ export class ImageViewerComponent implements OnInit {
   }
 
   resetFooter(start) {
+    if (!this._controlsVisible) {
+      this.setBottom(0);
+      return;
+    }
     const reset = this.animation.build([
       style({ bottom: `-${start}px` }),
       animate('150ms ease', style({ bottom: `0px` }))
