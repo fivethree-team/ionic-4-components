@@ -18,7 +18,7 @@ import { trigger, transition, style, animate, AnimationBuilder } from '@angular/
 import { Subscription, merge, fromEvent } from 'rxjs';
 import * as Hammer from 'hammerjs';
 import { DomController, Platform } from '@ionic/angular';
-import { flatMap, tap, takeWhile, filter, map, debounce, debounceTime, takeUntil, race, take, skipWhile } from 'rxjs/operators';
+import { flatMap, tap, takeWhile, filter, map, debounce, debounceTime, takeUntil, race, take, skipWhile, repeat } from 'rxjs/operators';
 
 @Component({
   selector: 'fiv-image-viewer',
@@ -230,8 +230,9 @@ export class ImageViewerComponent implements OnInit {
     const singletap$ = fromEvent(this.singletapHammer, 'tap')
       .pipe(
         debounceTime(300),
-        race(doubletap$),
-        filter((event: any) => event.tapCount === 1)
+        takeUntil(doubletap$),
+        filter((event: any) => event.tapCount === 1),
+        repeat()
       );
 
     this.doubletap = doubletap$.subscribe(res => this.handleDoubleTap(res));
