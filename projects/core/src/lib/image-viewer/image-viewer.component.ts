@@ -300,7 +300,7 @@ export class ImageViewerComponent implements OnInit {
       .pipe(
         tap((event: any) => this.pinchCenter = event.center),
         flatMap(() => pinchPanMove
-      ));
+        ));
 
     this.pinchPan = pinchPan$
       .subscribe((res: any) => {
@@ -330,14 +330,42 @@ export class ImageViewerComponent implements OnInit {
     }
     const moveV = event.center.y - this.pinchCenter.y;
     const moveH = event.center.x - this.pinchCenter.x;
-    const newTop = this.top + moveV;
-    const newLeft = this.left + moveH;
-    console.log(`
-    lastTop: ${this.top}, lastLeft: ${this.left}, moveV: ${moveV}, moveH: ${moveH}, newTop: ${newTop}, newLeft: ${newLeft}
-    `);
     this.pinchCenter = event.center;
-    this.setTop(newTop);
-    this.setLeft(newLeft);
+    const newX = this.restrictRawPosX(this.left + moveH);
+    const newY = this.restrictRawPosY(this.top + moveV);
+
+    this.setTop(newY);
+    this.setLeft(newX);
+  }
+
+  restrictRawPosX(pos) {
+    const viewportDim = this.platform.width();
+    const imageWidth = this.getCurrentImageWidth() / this.scale;
+    const borderPos = (this.getCurrentImageWidth() - Math.min(viewportDim, imageWidth)) / 2;
+    if (pos < borderPos * -1) {
+      return borderPos * -1;
+    } else if (pos > borderPos) {
+      return borderPos;
+    }
+    return pos;
+  }
+
+  restrictRawPosY(pos) {
+    const viewportDim = this.platform.height();
+    const imageHeight = this.getCurrentImageHeight() / this.scale;
+    const offset = this.platform.height() / 2;
+    let borderPos = pos;
+    if (this.getCurrentImageHeight() > this.platform.height()) {
+      borderPos = (this.getCurrentImageHeight() - Math.max(viewportDim, imageHeight)) / 2;
+    } else {
+      borderPos = (this.getCurrentImageHeight() - Math.min(viewportDim, imageHeight)) / 2;
+    }
+    if (pos < borderPos * -1 + offset) {
+      return borderPos * -1 + offset;
+    } else if (pos > borderPos + offset) {
+      return borderPos + offset;
+    }
+    return pos;
   }
 
   setBottom(bottom: number) {
