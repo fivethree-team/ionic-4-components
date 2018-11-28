@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding, Host, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
