@@ -131,17 +131,8 @@ export class ImageViewerComponent implements OnInit {
   }
 
   getPosition(event) {
-    let offsetLeft = 0;
-    let offsetTop = 0;
-
-    let el = event.srcElement.parentElement;
-
-    while (el) {
-      offsetLeft += el.offsetLeft;
-      offsetTop += el.offsetTop;
-      el = el.parentElement;
-    }
-    return { offsetTop: offsetTop, offsetLeft: offsetLeft, height: event.srcElement.clientHeight, width: event.srcElement.clientWidth };
+    const bounds = this.thumbnail.nativeElement.getBoundingClientRect();
+    return { offsetTop: bounds.top, offsetLeft: bounds.left, height: event.srcElement.clientHeight, width: event.srcElement.clientWidth };
   }
 
   appendComponentToBody(event) {
