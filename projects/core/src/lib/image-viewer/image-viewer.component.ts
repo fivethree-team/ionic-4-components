@@ -75,16 +75,17 @@ export class ImageViewerComponent implements OnInit {
   get myStyle(): SafeStyle {
     if (this._isOpen) {
       return this.sanitizer.bypassSecurityTrustStyle(`height: 100%; width: 100%; display: block;`);
+    } else {
+      return this.sanitizer.bypassSecurityTrustStyle(`height: ${this.height}px; width: ${this.width}px; display: block;`);
     }
-    return this.sanitizer.bypassSecurityTrustStyle(`height: ${this.height}px; width: ${this.width}px; display: block;`);
   }
 
   @ViewChild('thumbnail') thumbnail: ElementRef;
   @ViewChild('imageView') imageView: ElementRef;
   @ViewChild('footer') footer: ElementRef;
   @Input() src: SafeUrl;
-  @Input() height = 100;
-  @Input() width = 100;
+  @Input() height;
+  @Input() width;
   @Input() pullDistance = 150;
   @Input() actions: ImageViewerAction[] = [];
   @Output() fivClose = new EventEmitter();
@@ -148,6 +149,8 @@ export class ImageViewerComponent implements OnInit {
     this.componentRef.instance.src = this.src;
     this.componentRef.instance.componentRef = this.componentRef;
     this.componentRef.instance.thumbnailPosition = this.getPosition(event);
+    this.width = this.componentRef.instance.thumbnailPosition.width;
+    this.height = this.componentRef.instance.thumbnailPosition.height;
     this.componentRef.instance.actions = this.actions;
 
     this.closeSub = this.componentRef.instance.fivClose
