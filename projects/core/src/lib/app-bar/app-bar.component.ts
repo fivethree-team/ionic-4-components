@@ -1,5 +1,14 @@
 import { LoadingFabComponent } from './../loading-fab/loading-fab.component';
-import { Component, OnInit, Input, ViewChild, Output, EventEmitter, ContentChildren, QueryList, TemplateRef, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit, Input,
+  ViewChild, Output,
+  EventEmitter,
+  ContentChildren,
+  QueryList,
+  TemplateRef,
+  AfterViewInit
+} from '@angular/core';
 import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
 
 @Component({

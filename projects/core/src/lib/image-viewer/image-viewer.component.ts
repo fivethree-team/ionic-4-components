@@ -1,6 +1,9 @@
 import { SafeUrl, SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import {
-  Component, OnInit, Input, ViewEncapsulation,
+  Component,
+  OnInit,
+  Input,
+  ViewEncapsulation,
   Injector,
   ComponentFactoryResolver,
   EmbeddedViewRef,
