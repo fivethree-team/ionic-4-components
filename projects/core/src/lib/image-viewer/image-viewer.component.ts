@@ -424,7 +424,14 @@ export class ImageViewerComponent implements OnInit {
   calculateTop(event: any) {
     const distance = event.distance;
     const progress = Math.abs(100 * distance / this.pullDistance);
-    return this.platform.height() / 2 + distance;
+
+    if (progress <= 100) {
+      return this.platform.height() / 2 + distance;
+    } else if (progress >= 100 && progress < 200) {
+      return this.platform.height() / 2 + this.pullDistance + this.pullDistance / 2 * (progress - 100) / 100;
+    } else {
+      return this.platform.height() / 2 + this.pullDistance + this.pullDistance / 2;
+    }
   }
 
   resetPan() {
