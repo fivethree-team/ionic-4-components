@@ -1,8 +1,36 @@
-ion-card{
-    top: 16px; 
+ion-card {
+    top: 16px;
 }
 
-
-ion-list{
+ion-list {
     padding-bottom: 8px;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 180px;
+    padding: 16px;
+    position: relative;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 5px;
+    background: var(--ion-color-light);
+}
+
+:host {
+    --fiv-color-fab: var(--ion-color-light);
+}
+
+fiv-loading-button {
+    width: 240px;
+}
+
+ion-item-divider {
+    border-bottom: 0;
+}
+
+ion-item{
+    --border-style: none;
 }

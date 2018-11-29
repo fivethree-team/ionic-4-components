@@ -13,6 +13,9 @@ export class LoadingButtonComponent implements OnInit {
   @ViewChild('progress') progress: LoadingProgressBarComponent;
   @Input() color = 'light';
   @Input() expand = 'block';
+  @Input() fill = 'solid';
+  @Input() size = 'default';
+  @Input() shape;
 
   @HostBinding('class.button-disabled')
   @Input()

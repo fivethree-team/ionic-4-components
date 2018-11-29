@@ -3,58 +3,115 @@
     <ion-buttons slot="start">
       <ion-menu-button menu="menuId"></ion-menu-button>
     </ion-buttons>
-    <ion-title>loading</ion-title>
+    <ion-title>Loading Indicators</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<fiv-loading-content #refresher (fivRefresh)="onRefresh($event)" [hintText]="'new posts'">
+<ion-content>
 
-  <ion-card mode="ios" (click)="bar.loading ? bar.complete() : bar.toggleSpinner()">
-    <fiv-loading-progress-bar #bar [global]="false"></fiv-loading-progress-bar>
-    <ion-img src="https://beta.ionicframework.com/docs/content/component-preview-app/docs-www/assets/madison.jpg"></ion-img>
-    <fiv-ripple>
+  <ion-list>
+    <ion-card>
+      <ion-toolbar color="translucent">
+        <ion-title>Bar</ion-title>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon slot="start" name="md-code"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <ion-card-header>
+        <ion-card-subtitle>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
+          labore et dolore magna aliqua. </ion-card-subtitle>
+      </ion-card-header>
+
       <ion-card-content>
-        <ion-card-title>Hello World</ion-card-title>
+        <ion-button [disabled]="bar.loading" (click)="bar.incrementBy(10)">
+          increment
+        </ion-button>
 
-        <p>The content for this card</p>
+        <ion-button [disabled]="bar.loading" (click)="bar.decrementBy(-10)">
+          decrement
+        </ion-button>
+
+        <ion-button [disabled]="bar.loading" (click)="bar.fillIn(700)">
+          fill
+        </ion-button>
+
+        <ion-button [disabled]="bar.loading" (click)="bar.shrinkIn(2000)">
+          shrink
+        </ion-button>
+        <ion-button [disabled]="bar.loading" (click)="bar.load()">
+          load
+        </ion-button>
+        <ion-button [disabled]="!bar.loading" (click)="bar.unload()">
+          unload
+        </ion-button>
+        <ion-button [disabled]="!bar.loading" (click)="bar.complete()">
+          complete
+        </ion-button>
+        <div class="wrapper">
+          <div [fivCenter] class="progress-bar">
+            <fiv-loading-progress-bar #bar></fiv-loading-progress-bar>
+          </div>
+        </div>
       </ion-card-content>
-    </fiv-ripple>
+    </ion-card>
+    <ion-card>
+      <ion-toolbar color="translucent">
+        <ion-title>Buttons</ion-title>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon slot="start" name="md-code"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <ion-card-header>
+        <ion-card-subtitle>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
+          labore et dolore magna aliqua. </ion-card-subtitle>
+      </ion-card-header>
 
-  </ion-card>
+      <ion-card-content>
+        <ion-item-divider>
+          <ion-label>Button</ion-label>
+        </ion-item-divider>
+        <ion-item line="none">
+          Lorem ipsum dolor sit amet, consectetur adipisici elit.
+        </ion-item>
+        <ion-button [disabled]="button.loading" (click)="button.load()">
+          load
+        </ion-button>
+        <ion-button [disabled]="!button.loading" (click)="button.unload()">
+          unload
+        </ion-button>
+        <ion-button [disabled]="!button.loading" (click)="button.complete()">
+          complete
+        </ion-button>
+        <div class="wrapper">
+          <fiv-loading-button [disabled]="button.loading" [fivCenter] #button>send</fiv-loading-button>
+        </div>
+        <ion-item-divider>
+            <ion-label>Floating Action Button</ion-label>
+          </ion-item-divider>
+          <ion-item line="none">
+              Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor.
+          </ion-item>
+          <ion-button [disabled]="fab.loading || fab.icon === 'md-checkmark'" (click)="fab.load()">
+            load
+          </ion-button>
+          <ion-button [disabled]="!fab.loading" (click)="fab.unload()">
+            unload
+          </ion-button>
+          <ion-button [disabled]="!fab.loading" (click)="fab.complete()">
+            complete
+          </ion-button>
+          <ion-button [disabled]="fab.icon !== 'md-checkmark'" (click)="fab.icon = 'md-add'">
+            reset
+          </ion-button>
+          <div class="wrapper">
+            <fiv-loading-fab [disabled]="fab.loading" [icon]="'md-add'" [iconColor]="'dark'" [fivCenter] #fab></fiv-loading-fab>
+          </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 
-  <ion-button (click)="bar.incrementBy(10)">
-    +10
-  </ion-button>
-
-  <ion-button (click)="bar.incrementBy(20)">
-    +20
-  </ion-button>
-
-  <ion-button (click)="bar.decrementBy(-30)">
-    -30
-  </ion-button>
-
-  <ion-button (click)="bar.fillIn(4000)">
-    <ion-icon slot="start" name="add"></ion-icon>
-    Fill in 4 sec
-  </ion-button>
-
-  <ion-button (click)="bar.shrinkIn(2000)">
-    <ion-icon slot="start" name="remove"></ion-icon>
-    Shrink in 2 sec
-  </ion-button>
-
-  <ion-button (click)="refresher.showHint()">
-    show hint
-  </ion-button>
-
-  <fiv-loading-button #bb (click)="bb.loading ? bb.complete() : bb.toggleSpinner()" (fivRefreshComplete)="buttonComplete()">Formular
-    absenden</fiv-loading-button>
-
-  <fiv-loading-button #bb1 (click)="bb1.loading ? bb1.complete() : bb1.toggleSpinner()" [disabled]="true" (fivRefreshComplete)="buttonComplete()">Formular
-    absenden</fiv-loading-button>
-
-</fiv-loading-content>
-
-<fiv-loading-fab checkmark="true" slot="fixed" [disabled]="false" (fivComplete)="fabComplete()" loading="true" #fab (click)="fab.loading ? fab.complete() : fab.toggleSpinner()"
-  horizontal="end" vertical="bottom" icon="md-add" spinColor="dark" fabColor="light" iconColor="primary"></fiv-loading-fab>
+</ion-content>
