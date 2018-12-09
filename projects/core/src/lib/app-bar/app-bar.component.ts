@@ -10,6 +10,8 @@ import {
   AfterViewInit
 } from '@angular/core';
 import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
+import { Router } from '@angular/router';
+import { AppBarTabContentComponent } from '../app-bar-tab-content/app-bar-tab-content.component';
 
 @Component({
   selector: 'fiv-app-bar',
@@ -27,8 +29,6 @@ export class AppBarComponent implements OnInit, AfterViewInit {
   @ViewChild('fab') fab: LoadingFabComponent;
   @Input() icon = 'md-add';
   @Output() fivFabClick = new EventEmitter<AppBarComponent>();
-
-  currentPage: TemplateRef<any>;
 
   @ContentChildren(AppBarTabComponent) tabs: QueryList<AppBarTabComponent>;
 
@@ -75,13 +75,12 @@ export class AppBarComponent implements OnInit, AfterViewInit {
 
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => { this.currentPage = this.tabs.first.ref; }, 0);
   }
 
 
@@ -126,11 +125,7 @@ export class AppBarComponent implements OnInit, AfterViewInit {
     this.fivFabClick.emit(this);
   }
 
-  tabClick(event) {
-    console.log('tab click', event);
-    this.currentPage = event;
-    console.log('current page', this.currentPage);
+  tabClick(tab: AppBarTabContentComponent) {
+    this.router.navigate([tab.href]);
   }
-
-
 }

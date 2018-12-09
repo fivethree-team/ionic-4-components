@@ -1,5 +1,4 @@
 import { ComponentsModule } from './../../components/components.module';
-import { FivethreeCoreModule } from 'core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -7,12 +6,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoadingPage } from './loading.page';
+import { StepperPage } from './stepper.page';
+import { FivethreeCoreModule } from 'core';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoadingPage
+    component: StepperPage
   }
 ];
 
@@ -21,10 +21,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    FivethreeCoreModule,
     RouterModule.forChild(routes),
-    ComponentsModule
+    ComponentsModule,
+    FivethreeCoreModule
   ],
-  declarations: [LoadingPage]
+  declarations: [StepperPage]
 })
-export class LoadingPageModule {}
+export class StepperPageModule {}

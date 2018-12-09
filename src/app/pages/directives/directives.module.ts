@@ -1,5 +1,3 @@
-import { ComponentsModule } from './../../components/components.module';
-import { FivethreeCoreModule } from 'core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -7,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoadingPage } from './loading.page';
+import { DirectivesPage } from './directives.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoadingPage
+    component: DirectivesPage
   }
 ];
 
@@ -21,10 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    FivethreeCoreModule,
-    RouterModule.forChild(routes),
-    ComponentsModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [LoadingPage]
+  declarations: [DirectivesPage]
 })
-export class LoadingPageModule {}
+export class DirectivesPageModule {}

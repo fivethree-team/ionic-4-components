@@ -9,7 +9,7 @@ export class AppBarTabComponent implements OnInit {
 
   @Input() icon: string;
 
-  @ViewChild(TemplateRef) ref: TemplateRef<any>;
+  @Input() href: string;
 
 
   constructor() { }

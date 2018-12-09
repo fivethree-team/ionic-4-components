@@ -1,0 +1,17 @@
+<ion-card>
+  <ion-toolbar color="translucent">
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="start" name="md-code"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-card-header>
+    <ion-card-subtitle>{{subtitle}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ng-content></ng-content>
+  </ion-card-content>
+</ion-card>

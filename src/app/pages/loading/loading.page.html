@@ -10,22 +10,9 @@
 <ion-content>
 
   <ion-list>
-    <ion-card>
-      <ion-toolbar color="translucent">
-        <ion-title>Bar</ion-title>
-        <ion-buttons slot="end">
-          <ion-button>
-            <ion-icon slot="start" name="md-code"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-      <ion-card-header>
-        <ion-card-subtitle>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
-          labore et dolore magna aliqua. </ion-card-subtitle>
-      </ion-card-header>
-
-      <ion-card-content>
-        <ion-button [disabled]="bar.loading" (click)="bar.incrementBy(10)">
+      <app-example [title]="'Bar'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
+      labore et dolore magna aliqua.'">
+      <ion-button [disabled]="bar.loading" (click)="bar.incrementBy(10)">
           increment
         </ion-button>
 
@@ -54,8 +41,7 @@
             <fiv-loading-progress-bar #bar></fiv-loading-progress-bar>
           </div>
         </div>
-      </ion-card-content>
-    </ion-card>
+    </app-example>
     <ion-card>
       <ion-toolbar color="translucent">
         <ion-title>Buttons</ion-title>

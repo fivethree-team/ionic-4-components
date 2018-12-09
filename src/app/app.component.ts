@@ -11,14 +11,44 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Components',
-      url: '/components',
-      icon: 'home'
+      title: 'App Bar',
+      url: '/app-bar',
+      icon: 'git-commit'
+    },
+    {
+      title: 'Bottom Sheet',
+      url: '/bottom-sheet',
+      icon: 'ios-arrow-up'
     },
     {
       title: 'Dialog',
       url: '/dialog',
-      icon: 'home'
+      icon: 'notifications'
+    },
+    {
+      title: 'Expandable',
+      url: '/expandable',
+      icon: 'resize'
+    },
+    {
+      title: 'Icon',
+      url: '/icon',
+      icon: 'mail-unread'
+    },
+    {
+      title: 'Image View',
+      url: '/image',
+      icon: 'image'
+    },
+    {
+      title: 'Loading Indicators',
+      url: '/loading',
+      icon: 'time'
+    },
+    {
+      title: 'Map',
+      url: '/map',
+      icon: 'map'
     },
     {
       title: 'Password Item',
@@ -26,56 +56,25 @@ export class AppComponent {
       icon: 'key'
     },
     {
-      title: 'Toolbar Search',
+      title: 'Refresher',
+      url: '/refresh',
+      icon: 'refresh'
+    },
+    {
+      title: 'Searchbar',
       url: '/toolbar-search',
       icon: 'search'
     },
     {
-      title: 'Loading',
-      url: '/loading',
-      icon: 'time'
+      title: 'Stepper',
+      url: '/stepper',
+      icon: 'share'
     },
     {
-      title: 'Bottom Sheet',
-      url: '/bottom-sheet',
-      icon: 'home'
-
+      title: 'Directives',
+      url: '/directives',
+      icon: 'rocket'
     },
-    {
-      title: 'App Bar',
-      url: '/app-bar',
-      icon: 'home'
-    },
-    {
-      title: 'Viewport Directive',
-      url: '/viewport',
-      icon: 'home'
-    },
-    {
-      title: 'Icon',
-      url: '/icon',
-      icon: 'home'
-    },
-    {
-      title: 'Native Map',
-      url: '/native-map',
-      icon: 'map'
-    },
-    {
-      title: 'Native Map with Bottom Sheet',
-      url: '/native-map-bottom-sheet',
-      icon: 'map'
-    },
-    {
-      title: 'Dialog test',
-      url: '/test',
-      icon: 'bug'
-    },
-    {
-      title: 'Image View',
-      url: '/image',
-      icon: 'image'
-    }
   ];
 
   constructor(

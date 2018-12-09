@@ -6,13 +6,6 @@ ion-list {
     padding-bottom: 8px;
 }
 
-.wrapper {
-    width: 100%;
-    min-height: 180px;
-    padding: 16px;
-    position: relative;
-}
-
 .progress-bar {
     width: 80%;
     height: 5px;
@@ -30,7 +23,6 @@ fiv-loading-button {
 ion-item-divider {
     border-bottom: 0;
 }
-
-ion-item{
+ion-item {
     --border-style: none;
 }

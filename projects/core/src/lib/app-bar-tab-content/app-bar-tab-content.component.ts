@@ -8,10 +8,10 @@ import { Component, OnInit, Input, TemplateRef, Output, EventEmitter, ContentChi
 export class AppBarTabContentComponent implements OnInit {
 
   @Input() icon: string;
+  @Input() href: string;
   @Input() active = false;
-  @Input() template: TemplateRef<any>;
 
-  @Output() fivClick = new EventEmitter<TemplateRef<any>>();
+  @Output() fivClick = new EventEmitter();
 
 
   constructor() { }
@@ -20,8 +20,8 @@ export class AppBarTabContentComponent implements OnInit {
   }
 
 
-  emitPage() {
-    this.fivClick.emit(this.template);
+  onClick() {
+    this.fivClick.emit();
   }
 
 }

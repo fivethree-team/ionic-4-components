@@ -24,8 +24,11 @@ const routes: Routes = [
     loadChildren: './pages/native-map-bottom-sheet/native-map-bottom-sheet.module#NativeMapBottomSheetPageModule'
   },
   { path: 'dialog', loadChildren: './pages/dialog/dialog.module#DialogPageModule' },
-  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
-  { path: 'image', loadChildren: './pages/image/image.module#ImagePageModule' }
+  { path: 'image', loadChildren: './pages/image/image.module#ImagePageModule' },
+  { path: 'refresh', loadChildren: './pages/refresh/refresh.module#RefreshPageModule' },
+  { path: 'expandable', loadChildren: './pages/expandable/expandable.module#ExpandablePageModule' },
+  { path: 'stepper', loadChildren: './pages/stepper/stepper.module#StepperPageModule' },
+  { path: 'directives', loadChildren: './pages/directives/directives.module#DirectivesPageModule' }
 ];
 
 @NgModule({

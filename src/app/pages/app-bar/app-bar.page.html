@@ -1,23 +1,14 @@
 
   <fiv-app-bar #bar [position]="position" [fabVisible]="fabVisible" [icon]="icon">
-    <fiv-app-bar-tab left [icon]="'md-add'">
-      <ion-content>
-        <p>test 1</p>
-      </ion-content>
+    <fiv-app-bar-tab left [href]="'dialog'" [icon]="'md-add'">
     </fiv-app-bar-tab>
-    <fiv-app-bar-tab left [icon]="'md-add'">
+    <fiv-app-bar-tab left [href]="'directives'" [icon]="'md-add'">
         <ion-content>
             <p>test 2</p>
           </ion-content>
     </fiv-app-bar-tab>
-    <fiv-app-bar-tab right [icon]="'md-add'">
-        <ion-content>
-            <p>test 3</p>
-          </ion-content>
+    <fiv-app-bar-tab right [href]="'loading'" [icon]="'md-add'">
     </fiv-app-bar-tab>
-    <fiv-app-bar-tab right [icon]="'md-add'">
-        <ion-content>
-            <p>test 4</p>
-          </ion-content>
+    <fiv-app-bar-tab [href]="'stepper'"  right [icon]="'md-add'">
     </fiv-app-bar-tab>
   </fiv-app-bar>
