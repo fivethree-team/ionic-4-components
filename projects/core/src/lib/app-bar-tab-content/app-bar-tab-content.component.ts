@@ -1,4 +1,5 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'fiv-app-bar-tab-content',
@@ -12,8 +13,12 @@ export class AppBarTabContentComponent implements OnInit {
   @Input() active = false;
 
 
-  constructor() { }
+  constructor(private nav: NavController) { }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    this.nav.navigateRoot(this.href);
   }
 }

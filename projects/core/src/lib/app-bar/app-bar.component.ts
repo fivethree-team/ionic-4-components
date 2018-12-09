@@ -12,6 +12,7 @@ import {
 import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
 import { Router } from '@angular/router';
 import { AppBarTabContentComponent } from '../app-bar-tab-content/app-bar-tab-content.component';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'fiv-app-bar',
@@ -75,7 +76,7 @@ export class AppBarComponent implements OnInit, AfterViewInit {
 
 
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
