@@ -10,7 +10,7 @@ import {
   AfterViewInit
 } from '@angular/core';
 import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AppBarTabContentComponent } from '../app-bar-tab-content/app-bar-tab-content.component';
 import { NavController } from '@ionic/angular';
 
@@ -76,7 +76,7 @@ export class AppBarComponent implements OnInit, AfterViewInit {
 
 
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
