@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef, Output, EventEmitter, ContentChild, ViewChild } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'fiv-app-bar-tab-content',
@@ -11,17 +11,9 @@ export class AppBarTabContentComponent implements OnInit {
   @Input() href: string;
   @Input() active = false;
 
-  @Output() fivClick = new EventEmitter();
-
 
   constructor() { }
 
   ngOnInit() {
   }
-
-
-  onClick() {
-    this.fivClick.emit();
-  }
-
 }

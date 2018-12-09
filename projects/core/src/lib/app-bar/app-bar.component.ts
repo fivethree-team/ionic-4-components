@@ -124,8 +124,4 @@ export class AppBarComponent implements OnInit, AfterViewInit {
   fabClick() {
     this.fivFabClick.emit(this);
   }
-
-  tabClick(tab: AppBarTabContentComponent) {
-    this.router.navigate([tab.href]);
-  }
 }
