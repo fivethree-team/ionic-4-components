@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'refresh', loadChildren: './pages/refresh/refresh.module#RefreshPageModule' },
   { path: 'expandable', loadChildren: './pages/expandable/expandable.module#ExpandablePageModule' },
   { path: 'stepper', loadChildren: './pages/stepper/stepper.module#StepperPageModule' },
-  { path: 'directives', loadChildren: './pages/directives/directives.module#DirectivesPageModule' }
+  { path: 'directives', loadChildren: './pages/directives/directives.module#DirectivesPageModule' },
+  { path: 'buttons', loadChildren: './pages/buttons/buttons.module#ButtonsPageModule' }
 ];
 
 @NgModule({

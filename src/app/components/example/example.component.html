@@ -2,8 +2,8 @@
   <ion-toolbar color="translucent">
     <ion-title>{{title}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon slot="start" name="md-code"></ion-icon>
+      <ion-button *ngIf="snippet" (click)="showApi = !showApi">
+        <fiv-icon slot="start" [name]="!showApi ? 'md-code' : 'md-close'"></fiv-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -12,6 +12,11 @@
   </ion-card-header>
 
   <ion-card-content>
-    <ng-content></ng-content>
+    <div *ngIf="!showApi" class="content-container">
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="showApi" class="content-container">
+      <markdown [src]="snippet"></markdown>
+    </div>
   </ion-card-content>
 </ion-card>

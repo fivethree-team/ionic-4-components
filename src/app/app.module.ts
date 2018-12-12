@@ -9,16 +9,21 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MarkdownModule } from 'ngx-markdown';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FivethreeCoreModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
   providers: [
     StatusBar,
@@ -27,4 +32,4 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

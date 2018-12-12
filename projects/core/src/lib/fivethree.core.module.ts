@@ -35,6 +35,9 @@ import { AppBarTabComponent } from './app-bar-tab/app-bar-tab.component';
 import { AppBarTabContentComponent } from './app-bar-tab-content/app-bar-tab-content.component';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { ToolbarSearchComponent } from './toolbar-search/toolbar-search.component';
+import { FivButtonsComponent } from './fiv-buttons/fiv-buttons.component';
+import { ButtonComponent } from './button/button.component';
+import { PopoverComponent } from './popover/popover.component';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -81,8 +84,11 @@ export class MyHammerConfig extends HammerGestureConfig {
     AppBarTabComponent,
     AppBarTabContentComponent,
     ImageViewerComponent,
+    FivButtonsComponent,
+    ButtonComponent,
+    PopoverComponent,
   ],
-  entryComponents: [ImageViewerComponent],
+  entryComponents: [ImageViewerComponent, PopoverComponent],
   exports: [
     ExpandableComponent,
     PasswordComponent,
@@ -114,7 +120,9 @@ export class MyHammerConfig extends HammerGestureConfig {
     DialogComponent,
     AppBarTabComponent,
     AppBarTabContentComponent,
-    ImageViewerComponent
+    ImageViewerComponent,
+    FivButtonsComponent,
+    ButtonComponent
   ]
 })
 export class FivethreeCoreModule { }

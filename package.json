@@ -50,6 +50,7 @@
     "cordova-plugin-whitelist": "^1.3.3",
     "core-js": "^2.5.7",
     "hammerjs": "^2.0.8",
+    "ngx-markdown": "^7.0.2",
     "rxjs": "6.3.3",
     "rxjs-compat": "6.2.2",
     "zone.js": "^0.8.26"

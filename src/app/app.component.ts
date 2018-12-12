@@ -75,6 +75,11 @@ export class AppComponent {
       url: '/directives',
       icon: 'rocket'
     },
+    {
+      title: 'Buttons',
+      url: '/buttons',
+      icon: 'more'
+    },
   ];
 
   constructor(

@@ -1,0 +1,6 @@
+<ion-content>
+  <ion-item (click)="onItemClicked(i)" class="popover-item" *ngFor="let button of buttons; let i = index">
+    <ion-icon slot="start" [name]="button.icon"></ion-icon>
+    <ion-label>{{button.text}}</ion-label>
+  </ion-item>
+</ion-content>

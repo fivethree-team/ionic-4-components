@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Slides } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
@@ -10,6 +11,8 @@ export class ExampleComponent implements OnInit {
 
   @Input() title: string;
   @Input() subtitle: string;
+  @Input() snippet: string;
+  showApi = false;
 
   constructor() { }
 
