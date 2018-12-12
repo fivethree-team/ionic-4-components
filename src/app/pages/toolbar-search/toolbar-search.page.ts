@@ -1,6 +1,5 @@
-import { DrawerState } from 'core';
+import { DrawerState, ToolbarSearchComponent } from 'core';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ToolbarSearchComponent } from 'projects/core/src/lib/toolbar-search/toolbar-search.component';
 
 @Component({
   selector: 'app-toolbar-search',
