@@ -12,7 +12,7 @@
   </ion-card-header>
 
   <ion-card-content>
-    <div *ngIf="showApi" class="content-container">
+    <div [@listAnim]="showApi ? 'open' : 'closed'" class="content-container">
       <markdown [src]="snippet"></markdown>
     </div>
     <div class="content-container">

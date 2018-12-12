@@ -3,5 +3,6 @@
 }
 
 .popover-item:hover {
-    background: rgb(240, 240, 240);
+    --background: rgb(240, 240, 240);
+    cursor: pointer;
 }

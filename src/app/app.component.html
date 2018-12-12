@@ -6,22 +6,13 @@
           <ion-buttons slot="start">
             <fiv-collapsable-menu-button #mb *fivIf="['desktop']" [menu]="menu"></fiv-collapsable-menu-button>
           </ion-buttons>
-          <ion-title>Logo</ion-title>
+          <ion-title>Fivethree Components</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
         <ion-list>
-          <fiv-router-item position="right" shape="dot" [matchChildUrl]="false" [pageUrl]="p.url" *ngFor="let p of appPages">
-            <ion-menu-toggle auto-hide="false">
-              <fiv-ripple>
-                <ion-item line="inset">
-                  <ion-icon slot="start" [name]="p.icon"></ion-icon>
-                  <ion-label>
-                    {{p.title}}
-                  </ion-label>
-                </ion-item>
-              </fiv-ripple>
-            </ion-menu-toggle>
+          <fiv-router-item [icon]="p.icon" [text]="p.title" [matchChildUrl]="false"
+            [pageUrl]="p.url" *ngFor="let p of appPages">
           </fiv-router-item>
         </ion-list>
       </ion-content>
