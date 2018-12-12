@@ -19,7 +19,7 @@
   "scripts": {
     "build": "ng build core && ng build google-maps",
     "build:prod": "ng build core --prod && ng build google-maps --prod",
-    "gh-pages": "ng build core --prod && ionic build --base-href 'https://fivethree-team.github.io/fivethree/' && npx ngh --dir=www",
+    "gh-pages": "ng build core && ng build --base-href 'https://fivethree-team.github.io/fivethree/' && npx ngh --dir=www",
     "publish": "npm publish dist/core",
     "rocket": "npm run build:prod && npm run publish",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"

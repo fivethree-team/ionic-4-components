@@ -31,7 +31,6 @@ import { LottieAnimationViewModule } from 'ng-lottie';
     FooterComponent,
     FivethreeCoreModule,
     LottieAnimationViewModule,
-    TranslateModule,
     MarkdownModule
   ]
 })
