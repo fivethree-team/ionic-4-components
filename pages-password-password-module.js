@@ -66,7 +66,7 @@ var PasswordPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n      <ion-buttons slot=\"start\">\n          <ion-menu-button menu=\"menuId\"></ion-menu-button>\n        </ion-buttons>\n    <ion-title>password</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-item-divider>Default Password</ion-item-divider>\n  <fiv-password></fiv-password>\n\n  <ion-item-divider>Password with placeholder</ion-item-divider>\n  <fiv-password placeholder=\"Password\"></fiv-password>\n\n  <ion-item-divider>Password with placeholder and inline position</ion-item-divider>\n  <fiv-password placeholder=\"Password\" position=\"inline\"></fiv-password>\n\n  <ion-item-divider>Show password</ion-item-divider>\n  <fiv-password [show]=\"true\"></fiv-password>\n\n  <ion-item-divider>Password with any show and hide icons</ion-item-divider>\n  <fiv-password showIcon=\"ice-cream\" hideIcon=\"leaf\"></fiv-password>\n\n  <ion-item-divider>Password in form</ion-item-divider>\n  <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n    <ion-item>\n      <ion-label position=\"floating\">E-Mail</ion-label>\n      <ion-input formControlName=\"email\" type=\"text\"></ion-input>\n    </ion-item>\n    <fiv-password placeholder=\"Password\" formControlName=\"password\"></fiv-password>\n    <ion-button block color=\"primary\" type=\"submit\" [disabled]=\"loginForm.invalid\">\n      Login\n    </ion-button>\n  </form>\n\n  <p>{{loginForm.valid | json}}</p>\n  <pre>{{loginForm.value | json}}</pre>\n\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n      <ion-buttons slot=\"start\">\n          <ion-menu-button menu=\"menuId\"></ion-menu-button>\n        </ion-buttons>\n    <ion-title>password</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-item-divider>Default Password</ion-item-divider>\n  <fiv-password></fiv-password>\n\n  <ion-item-divider>Password with placeholder</ion-item-divider>\n  <fiv-password placeholder=\"Password\"></fiv-password>\n\n  <ion-item-divider>Password with placeholder and inline position</ion-item-divider>\n  <fiv-password placeholder=\"Password\" position=\"inline\"></fiv-password>\n\n  <ion-item-divider>Show password</ion-item-divider>\n  <fiv-password [show]=\"true\"></fiv-password>\n\n  <ion-item-divider>Password with any show and hide icons</ion-item-divider>\n  <fiv-password showIcon=\"ice-cream\" hideIcon=\"leaf\"></fiv-password>\n\n  <ion-item-divider>Password in form</ion-item-divider>\n  <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n    <ion-item>\n      <ion-label position=\"floating\">E-Mail</ion-label>\n      <ion-input formControlName=\"email\" type=\"text\"></ion-input>\n    </ion-item>\n\n    <ion-item *ngIf=\"email.invalid && email.touched\" lines=\"none\">\n      <ion-text color=\"danger\" class=\"form-error\">\n        Bitte geben Sie ein gültiges Email ein.\n      </ion-text>\n    </ion-item>\n\n    <fiv-password placeholder=\"Password\" formControlName=\"password\"></fiv-password>\n\n    <ion-item *ngIf=\"password.invalid && password.touched\" lines=\"none\">\n      <ion-text color=\"danger\" class=\"form-error\">\n        Bitte geben Sie ein gültiges Password ein.\n      </ion-text>\n    </ion-item>\n\n    <ion-button block color=\"primary\" type=\"submit\" [disabled]=\"loginForm.invalid\">\n      Login\n    </ion-button>\n  </form>\n\n  <p>Form valid: {{loginForm.valid | json}}</p>\n  <p>Password Errors: {{password.errors | json}}</p>\n  <p>Password invalid: {{password.invalid | json}}</p>\n  <p>Password touched: {{password.touched | json}}</p>\n  <pre>{{loginForm.value | json}}</pre>\n\n</ion-content>"
 
 /***/ }),
 
@@ -114,7 +114,7 @@ var PasswordPage = /** @class */ (function () {
     PasswordPage.prototype.setupForm = function () {
         this.loginForm = this.formBuilder.group({
             email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].email, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-            password: ['hallo', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
         });
     };
     Object.defineProperty(PasswordPage.prototype, "email", {
@@ -127,6 +127,13 @@ var PasswordPage = /** @class */ (function () {
     PasswordPage.prototype.onSubmit = function () {
         console.log(this.loginForm.value);
     };
+    Object.defineProperty(PasswordPage.prototype, "password", {
+        get: function () {
+            return this.loginForm.get('password');
+        },
+        enumerable: true,
+        configurable: true
+    });
     PasswordPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-password',

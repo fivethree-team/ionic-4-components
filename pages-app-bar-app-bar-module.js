@@ -65,7 +65,7 @@ var AppBarPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button menu=\"menuId\"></ion-menu-button>\n    </ion-buttons>\n    <ion-title>app-bar</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding [scrollEvents]=\"true\">\n\n  <ion-list>\n    <ion-list>\n      <ion-radio-group name=\"position\">\n        <ion-list-header>FAB position</ion-list-header>\n        <ion-item>\n          <ion-label>left</ion-label>\n          <ion-radio [checked]=\"position === 'left'\" (click)=\"position = 'left'\"></ion-radio>\n        </ion-item>\n        <ion-item>\n          <ion-label>center</ion-label>\n          <ion-radio [checked]=\"position === 'center'\" (click)=\"position = 'center'\"></ion-radio>\n        </ion-item>\n        <ion-item>\n          <ion-label>right</ion-label>\n          <ion-radio [checked]=\"position === 'right'\" (click)=\"position = 'right'\"></ion-radio>\n        </ion-item>\n      </ion-radio-group>\n\n      <ion-item>\n        <ion-label>FAB visible</ion-label>\n        <ion-checkbox slot=\"start\" [(ngModel)]=\"fabVisible\"></ion-checkbox>\n      </ion-item>\n    </ion-list>\n\n    <ion-button (click)=\"bar.fab.load()\">\n      start loading\n    </ion-button>\n    <ion-button (click)=\"bar.fab.complete()\">\n      complete loading\n    </ion-button>\n\n    <ion-select placeholder=\"select FAB icon\" [(ngModel)]=\"icon\">\n      <ion-select-option value=\"add\">\n        add\n      </ion-select-option>\n      <ion-select-option value=\"checkmark\">\n        checkmark\n      </ion-select-option>\n      <ion-select-option value=\"create\">\n        create\n      </ion-select-option>\n    </ion-select>\n\n  </ion-list>\n\n  <fiv-app-bar #bar [position]=\"position\" [fabVisible]=\"fabVisible\" [icon]=\"icon\">\n\n  </fiv-app-bar>\n</ion-content>"
+module.exports = "\n  <fiv-app-bar #bar [position]=\"position\" [fabVisible]=\"fabVisible\" [icon]=\"icon\">\n    <fiv-app-bar-tab left [href]=\"'dialog'\" [icon]=\"'md-add'\">\n    </fiv-app-bar-tab>\n    <fiv-app-bar-tab left [href]=\"'directives'\" [icon]=\"'md-add'\">\n        <ion-content>\n            <p>test 2</p>\n          </ion-content>\n    </fiv-app-bar-tab>\n    <fiv-app-bar-tab right [href]=\"'loading'\" [icon]=\"'md-add'\">\n    </fiv-app-bar-tab>\n    <fiv-app-bar-tab [href]=\"'stepper'\"  right [icon]=\"'md-add'\">\n    </fiv-app-bar-tab>\n  </fiv-app-bar>"
 
 /***/ }),
 
@@ -76,7 +76,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FwcC1iYXIvYXBwLWJhci5wYWdlLnNjc3MifQ== */"
+module.exports = "ion-grid,\nion-row,\nion-col {\n  height: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvYXBwLWJhci9hcHAtYmFyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0VBR0ksYUFBWSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYXBwLWJhci9hcHAtYmFyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1ncmlkLFxuaW9uLXJvdyxcbmlvbi1jb2wge1xuICAgIGhlaWdodDogMTAwJTtcbn0iXX0= */"
 
 /***/ }),
 

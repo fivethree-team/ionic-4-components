@@ -65,7 +65,7 @@ var DialogPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<fiv-dialog #dialogTop [backdropClose]=\"backdropClose\" [swipeEnabled]=\"swipeEnabled\" [animation]=\"animation\" [verticalAlign]=\"verticalAlign\" [backdrop]=\"backdrop\">\n  <ion-card>\n      <ion-card-content class=\"card\">\n          <ion-card-title>Hello World</ion-card-title>\n      \n          <p>The content for this card</p>\n      \n          <ion-button (click)=\"dialogTop.hideDialog()\">schließen</ion-button>\n        </ion-card-content>\n  </ion-card>\n  \n</fiv-dialog>\n\n<ion-header>\n  <ion-toolbar>\n      <ion-buttons slot=\"start\">\n          <ion-menu-button></ion-menu-button>\n      </ion-buttons>\n    <ion-title>dialog</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item>\n      <ion-label>Backdrop</ion-label>\n      <ion-toggle slot=\"end\" [(ngModel)]=\"backdrop\"></ion-toggle>\n    </ion-item>\n    <ion-item>\n      <ion-label>Backdrop click closes dialog</ion-label>\n      <ion-toggle slot=\"end\" [(ngModel)]=\"backdropClose\"></ion-toggle>\n    </ion-item>\n  \n    <ion-item>\n      <ion-label>Swipe to close</ion-label>\n      <ion-toggle slot=\"end\" [(ngModel)]=\"swipeEnabled\"></ion-toggle>\n    </ion-item>\n    \n    <ion-item>\n        <ion-label>Animation</ion-label>\n        <ion-select slot=\"end\"  [(ngModel)]=\"animation\">\n          <ion-select-option value=\"fadeIn\">fade in</ion-select-option>\n          <ion-select-option value=\"slideIn\">slide in</ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item>\n          <ion-label>Vertical Alignment</ion-label>\n          <ion-select slot=\"end\"  [(ngModel)]=\"verticalAlign\">\n            <ion-select-option value=\"top\">top</ion-select-option>\n            <ion-select-option value=\"center\">center</ion-select-option>\n            <ion-select-option value=\"bottom\">bottom</ion-select-option>\n          </ion-select>\n        </ion-item>\n\n        <fiv-loading-button (click)=\"openDialog()\">\n          Zeige Dialog\n        </fiv-loading-button>\n\n  </ion-list>\n\n</ion-content>\n<fiv-dialog #dialogBottom [backdropClose]=\"backdropClose\" [swipeEnabled]=\"swipeEnabled\" [animation]=\"animation\" [verticalAlign]=\"verticalAlign\" [backdrop]=\"backdrop\">\n  <ion-card>\n      <ion-card-content class=\"card\">\n          <ion-card-title>Hello World</ion-card-title>\n      \n          <p>The content for this card</p>\n      \n          <ion-button (click)=\"dialogBottom.hideDialog()\">schließen</ion-button>\n        </ion-card-content>\n  </ion-card>\n  \n</fiv-dialog>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n      <ion-buttons slot=\"start\">\n          <ion-menu-button></ion-menu-button>\n      </ion-buttons>\n    <ion-title>dialog</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item>\n      <ion-label>Backdrop</ion-label>\n      <ion-toggle slot=\"end\" [(ngModel)]=\"backdrop\"></ion-toggle>\n    </ion-item>\n    \n    <ion-item>\n        <ion-label>Animation</ion-label>\n        <ion-select slot=\"end\"  [(ngModel)]=\"animation\">\n          <ion-select-option value=\"fade\">fade</ion-select-option>\n          <ion-select-option value=\"slide\">slide</ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item>\n          <ion-label>Vertical Alignment</ion-label>\n          <ion-select slot=\"end\"  [(ngModel)]=\"verticalAlign\">\n            <ion-select-option value=\"top\">top</ion-select-option>\n            <ion-select-option value=\"center\">center</ion-select-option>\n            <ion-select-option value=\"bottom\">bottom</ion-select-option>\n          </ion-select>\n        </ion-item>\n\n        <fiv-loading-button (click)=\"dialog.open()\">\n          Zeige Dialog\n        </fiv-loading-button>\n\n  </ion-list>\n\n</ion-content>\n<fiv-dialog #dialog [animation]=\"animation\" [verticalAlign]=\"verticalAlign\" [backdrop]=\"backdrop\">\n      <ion-card>\n          <ion-card-content>\n              <ion-card-title>Hello World</ion-card-title>\n          \n              <p>The content for this card</p>\n          \n              <ion-button (click)=\"dialog.close()\">schließen</ion-button>\n            </ion-card-content>\n      </ion-card>\n  \n  \n</fiv-dialog>"
 
 /***/ }),
 
@@ -76,7 +76,7 @@ module.exports = "<fiv-dialog #dialogTop [backdropClose]=\"backdropClose\" [swip
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2RpYWxvZy9kaWFsb2cucGFnZS5zY3NzIn0= */"
+module.exports = "ion-card {\n  --ion-item-background-color: #fff; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvZGlhbG9nL2RpYWxvZy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQ0FBNEIsRUFDL0IiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9kaWFsb2cvZGlhbG9nLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1jYXJke1xuICAgIC0taW9uLWl0ZW0tYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbn0iXX0= */"
 
 /***/ }),
 
@@ -107,31 +107,15 @@ var DialogPage = /** @class */ (function () {
     function DialogPage() {
         this.backdrop = true;
         this.verticalAlign = 'top';
-        this.animation = 'slideIn';
+        this.animation = 'slide';
         this.floating = false;
-        this.fullscreen = false;
-        this.rounded = true;
-        this.backdropClose = false;
-        this.swipeEnabled = true;
     }
     DialogPage.prototype.ngOnInit = function () {
     };
-    DialogPage.prototype.openDialog = function () {
-        if (this.verticalAlign === 'top') {
-            this.dialogTop.showDialog();
-        }
-        else {
-            this.dialogBottom.showDialog();
-        }
-    };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('dialogTop'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('dialog'),
         __metadata("design:type", core__WEBPACK_IMPORTED_MODULE_1__["DialogComponent"])
-    ], DialogPage.prototype, "dialogTop", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('dialogBottom'),
-        __metadata("design:type", core__WEBPACK_IMPORTED_MODULE_1__["DialogComponent"])
-    ], DialogPage.prototype, "dialogBottom", void 0);
+    ], DialogPage.prototype, "dialog", void 0);
     DialogPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-dialog',

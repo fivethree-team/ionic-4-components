@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-toolbar [@searchbarAnim]=\"small ? state : 'normal'\" (@searchbarAnim.done)=\"searchBarStateChange($event)\" [color]=\"color\" [ngClass]=\"{'small': state === 'small'}\">\n  <ion-buttons slot=\"start\">\n    <ng-content select=\"[start]\"></ng-content>\n\n  </ion-buttons>\n  <ion-title [@titleAnim] *ngIf=\"titleVisible\">{{title}}</ion-title>\n  <ion-input (ionChange)=\"fivInputChange.emit($event)\" [placeholder]=\"!titleVisible ? placeholder : ''\" autofocus #input class=\"toolbar-searchbar\"\n    [@titleAnim] (@titleAnim.done)=\"seachbarAnimDone($event,input)\" *ngIf=\"searching\">\n  </ion-input>\n\n  <ion-buttons slot=\"end\">\n    <ion-button [@rotateAnim] (@rotateAnim.done)=\"searchAnimDone($event)\" *ngIf=\"!searching\" (click)=\"openSearchbar()\">\n      <ion-icon style=\"transform: matrix(-1, 0, 0, 1, 0, 0);\" name=\"md-search\"></ion-icon>\n    </ion-button>\n    <ion-button [@rotateAnim] (@rotateAnim.done)=\"closeAnimDone($event)\" *ngIf=\"closeButtonVisible\" (click)=\"closeSearchbar()\">\n      <ion-icon name=\"md-close\"></ion-icon>\n    </ion-button>\n    <ng-content select=\"[end]\"></ng-content>\n\n  </ion-buttons>\n</ion-toolbar>"
+module.exports = "<ion-toolbar [@searchbarAnim]=\"small ? state : 'normal'\" (@searchbarAnim.done)=\"searchBarStateChange($event)\" [color]=\"color\" [ngClass]=\"{'small': state === 'small'}\">\n  <ion-buttons slot=\"start\">\n    <ng-content select=\"[start]\"></ng-content>\n\n  </ion-buttons>\n  <ion-title [@titleAnim] *ngIf=\"titleVisible\">{{title}}</ion-title>\n  <ion-input (ionChange)=\"fivInputChange.emit($event)\" [placeholder]=\"!titleVisible ? placeholder : ''\" autofocus #input class=\"toolbar-searchbar\"\n    [@titleAnim] (@titleAnim.done)=\"seachbarAnimDone($event,input)\" *ngIf=\"searching\">\n  </ion-input>\n\n  <ion-buttons slot=\"end\">\n    <ion-button (click)=\"toggleSearchbar()\">\n      <fiv-icon [name]=\"searching ? 'md-close' : 'md-search'\"></fiv-icon>\n    </ion-button>\n    <!-- <ion-button [@rotateAnim] (@rotateAnim.done)=\"searchAnimDone($event)\" *ngIf=\"!searching\" (click)=\"toggleSearchbar()\">\n      <ion-icon style=\"transform: matrix(-1, 0, 0, 1, 0, 0);\" name=\"md-search\"></ion-icon>\n    </ion-button>\n    <ion-button [@rotateAnim] (@rotateAnim.done)=\"closeAnimDone($event)\" *ngIf=\"closeButtonVisible\" (click)=\"closeSearchbar()\">\n      <ion-icon name=\"md-close\"></ion-icon>\n    </ion-button> -->\n    <ng-content select=\"[end]\"></ng-content>\n\n  </ion-buttons>\n</ion-toolbar>"
 
 /***/ }),
 
@@ -68,11 +68,11 @@ var ToolbarSearchComponent = /** @class */ (function () {
     };
     ToolbarSearchComponent.prototype.ngOnChanges = function (changes) {
         console.log('on changes', changes);
-        if (changes.small.previousValue === true && changes.small.currentValue === false) {
+        if (changes && changes.small && changes.small.previousValue === true && changes.small.currentValue === false) {
             this.state = 'normal';
             return;
         }
-        if (changes.small.previousValue === false && changes.small.currentValue === true) {
+        if (changes && changes.small && changes.small.previousValue === false && changes.small.currentValue === true) {
             this.state = 'small';
             return;
         }
@@ -83,6 +83,14 @@ var ToolbarSearchComponent = /** @class */ (function () {
             return;
         }
         this._open();
+    };
+    ToolbarSearchComponent.prototype.toggleSearchbar = function () {
+        if (this.searching) {
+            this.closeSearchbar();
+        }
+        else {
+            this.openSearchbar();
+        }
     };
     ToolbarSearchComponent.prototype.searchBarStateChange = function (event) {
         console.log('searchbarState', event);
@@ -101,7 +109,7 @@ var ToolbarSearchComponent = /** @class */ (function () {
         if (this.small) {
             this.state = 'small';
         }
-        this.closeButtonVisible = false;
+        this.searching = false;
         this.fivClose.emit();
     };
     ToolbarSearchComponent.prototype.searchAnimDone = function (event) {
@@ -302,7 +310,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var ToolbarSearchPage = /** @class */ (function () {
     function ToolbarSearchPage() {
-        this.small = true;
+        this.small = false;
         this.states = core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"];
         this.state = core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"].Bottom;
     }
