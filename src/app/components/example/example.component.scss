@@ -10,3 +10,9 @@
 .content-container {
     width: 100%;
 }
+
+@media(max-width: 411px) {
+    .example {
+        margin: 0px;
+    }
+}
