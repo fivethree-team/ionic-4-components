@@ -4,9 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'components',
+    redirectTo: 'buttons',
     pathMatch: 'full'
   },
+  { path: 'buttons', loadChildren: './pages/buttons/buttons.module#ButtonsPageModule' },
   {
     path: 'components',
     loadChildren: './pages/components/components.module#ComponentsPageModule'
@@ -29,7 +30,7 @@ const routes: Routes = [
   { path: 'expandable', loadChildren: './pages/expandable/expandable.module#ExpandablePageModule' },
   { path: 'stepper', loadChildren: './pages/stepper/stepper.module#StepperPageModule' },
   { path: 'directives', loadChildren: './pages/directives/directives.module#DirectivesPageModule' },
-  { path: 'buttons', loadChildren: './pages/buttons/buttons.module#ButtonsPageModule' }
+ 
 ];
 
 @NgModule({

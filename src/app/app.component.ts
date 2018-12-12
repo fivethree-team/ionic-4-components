@@ -15,6 +15,11 @@ export class AppComponent {
     //   url: '/app-bar',
     //   icon: 'git-commit'
     // },
+    {
+      title: 'Buttons',
+      url: '/buttons',
+      icon: 'more'
+    },
     // {
     //   title: 'Bottom Sheet',
     //   url: '/bottom-sheet',
@@ -51,7 +56,7 @@ export class AppComponent {
     //   icon: 'map'
     // },
     {
-      title: 'Password Item',
+      title: 'Reveal Password Input',
       url: '/password',
       icon: 'key'
     },
@@ -75,11 +80,6 @@ export class AppComponent {
     //   url: '/directives',
     //   icon: 'rocket'
     // },
-    {
-      title: 'Buttons',
-      url: '/buttons',
-      icon: 'more'
-    },
   ];
 
   constructor(
