@@ -9,95 +9,85 @@
 
 <ion-content>
 
-  <ion-list>
-      <app-example [title]="'Bar'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
-      labore et dolore magna aliqua.'">
-      <ion-button [disabled]="bar.loading" (click)="bar.incrementBy(10)">
-          increment
-        </ion-button>
-
-        <ion-button [disabled]="bar.loading" (click)="bar.decrementBy(-10)">
-          decrement
-        </ion-button>
-
-        <ion-button [disabled]="bar.loading" (click)="bar.fillIn(700)">
-          fill
-        </ion-button>
-
-        <ion-button [disabled]="bar.loading" (click)="bar.shrinkIn(2000)">
-          shrink
-        </ion-button>
-        <ion-button [disabled]="bar.loading" (click)="bar.load()">
-          load
-        </ion-button>
-        <ion-button [disabled]="!bar.loading" (click)="bar.unload()">
-          unload
-        </ion-button>
-        <ion-button [disabled]="!bar.loading" (click)="bar.complete()">
-          complete
-        </ion-button>
-        <div class="wrapper">
-          <div [fivCenter] class="progress-bar">
-            <fiv-loading-progress-bar #bar></fiv-loading-progress-bar>
-          </div>
-        </div>
-    </app-example>
-    <ion-card>
-      <ion-toolbar color="translucent">
-        <ion-title>Buttons</ion-title>
-        <ion-buttons slot="end">
-          <ion-button>
-            <ion-icon slot="start" name="md-code"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-      <ion-card-header>
-        <ion-card-subtitle>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
-          labore et dolore magna aliqua. </ion-card-subtitle>
-      </ion-card-header>
-
-      <ion-card-content>
-        <ion-item-divider>
-          <ion-label>Button</ion-label>
-        </ion-item-divider>
-        <ion-item line="none">
-          Lorem ipsum dolor sit amet, consectetur adipisici elit.
-        </ion-item>
-        <ion-button [disabled]="button.loading" (click)="button.load()">
-          load
-        </ion-button>
-        <ion-button [disabled]="!button.loading" (click)="button.unload()">
-          unload
-        </ion-button>
-        <ion-button [disabled]="!button.loading" (click)="button.complete()">
-          complete
-        </ion-button>
-        <div class="wrapper">
-          <fiv-loading-button [disabled]="button.loading" [fivCenter] #button>send</fiv-loading-button>
-        </div>
-        <ion-item-divider>
-            <ion-label>Floating Action Button</ion-label>
-          </ion-item-divider>
-          <ion-item line="none">
-              Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor.
-          </ion-item>
-          <ion-button [disabled]="fab.loading || fab.icon === 'md-checkmark'" (click)="fab.load()">
-            load
-          </ion-button>
-          <ion-button [disabled]="!fab.loading" (click)="fab.unload()">
-            unload
-          </ion-button>
-          <ion-button [disabled]="!fab.loading" (click)="fab.complete()">
-            complete
-          </ion-button>
-          <ion-button [disabled]="fab.icon !== 'md-checkmark'" (click)="fab.icon = 'md-add'">
-            reset
-          </ion-button>
-          <div class="wrapper">
-            <fiv-loading-fab [disabled]="fab.loading" [icon]="'md-add'" [iconColor]="'dark'" [fivCenter] #fab></fiv-loading-fab>
-          </div>
-      </ion-card-content>
-    </ion-card>
-  </ion-list>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+          <app-example [snippet]="'assets/snippets/loading.bar.md'" [title]="'Bar'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
+          labore et dolore magna aliqua.'">
+          <ion-button [disabled]="bar.loading" (click)="bar.incrementBy(10)">
+              increment
+            </ion-button>
+    
+            <ion-button [disabled]="bar.loading" (click)="bar.decrementBy(-10)">
+              decrement
+            </ion-button>
+    
+            <ion-button [disabled]="bar.loading" (click)="bar.fillIn(700)">
+              fill
+            </ion-button>
+    
+            <ion-button [disabled]="bar.loading" (click)="bar.shrinkIn(2000)">
+              shrink
+            </ion-button>
+            <ion-button [disabled]="bar.loading" (click)="bar.load()">
+              load
+            </ion-button>
+            <ion-button [disabled]="!bar.loading" (click)="bar.unload()">
+              unload
+            </ion-button>
+            <ion-button [disabled]="!bar.loading" (click)="bar.complete()">
+              complete
+            </ion-button>
+            <div class="wrapper">
+              <div [fivCenter] class="progress-bar">
+                <fiv-loading-progress-bar #bar></fiv-loading-progress-bar>
+              </div>
+            </div>
+        </app-example>
+       <app-example [snippet]="'assets/snippets/loading.buttons.md'" [title]="'Buttons'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
+       labore et dolore magna aliqua.'">
+          <ion-item-divider>
+              <ion-label>Button</ion-label>
+            </ion-item-divider>
+            <ion-item line="none">
+              Lorem ipsum dolor sit amet, consectetur adipisici elit.
+            </ion-item>
+            <ion-button [disabled]="button.loading" (click)="button.load()">
+              load
+            </ion-button>
+            <ion-button [disabled]="!button.loading" (click)="button.unload()">
+              unload
+            </ion-button>
+            <ion-button [disabled]="!button.loading" (click)="button.complete()">
+              complete
+            </ion-button>
+            <div class="wrapper">
+              <fiv-loading-button [disabled]="button.loading" [fivCenter] #button>send</fiv-loading-button>
+            </div>
+            <ion-item-divider>
+                <ion-label>Floating Action Button</ion-label>
+              </ion-item-divider>
+              <ion-item line="none">
+                  Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor.
+              </ion-item>
+              <ion-button [disabled]="fab.loading || fab.icon === 'md-checkmark'" (click)="fab.load()">
+                load
+              </ion-button>
+              <ion-button [disabled]="!fab.loading" (click)="fab.unload()">
+                unload
+              </ion-button>
+              <ion-button [disabled]="!fab.loading" (click)="fab.complete()">
+                complete
+              </ion-button>
+              <ion-button [disabled]="fab.icon !== 'md-checkmark'" (click)="fab.icon = 'md-add'">
+                reset
+              </ion-button>
+              <div class="wrapper">
+                <fiv-loading-fab [disabled]="fab.loading" [icon]="'md-add'" [iconColor]="'dark'" [fivCenter] #fab></fiv-loading-fab>
+              </div>
+       </app-example>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
