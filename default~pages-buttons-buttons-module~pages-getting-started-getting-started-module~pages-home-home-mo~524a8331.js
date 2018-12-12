@@ -58738,7 +58738,6 @@ var ComponentsModule = /** @class */ (function () {
                 _footer_footer_component__WEBPACK_IMPORTED_MODULE_8__["FooterComponent"],
                 core__WEBPACK_IMPORTED_MODULE_5__["FivethreeCoreModule"],
                 ng_lottie__WEBPACK_IMPORTED_MODULE_10__["LottieAnimationViewModule"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateModule"],
                 ngx_markdown__WEBPACK_IMPORTED_MODULE_4__["MarkdownModule"]
             ]
         })
