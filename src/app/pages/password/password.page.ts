@@ -8,6 +8,8 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 })
 export class PasswordPage implements OnInit {
 
+  show = true;
+
   loginForm: FormGroup;
 
   constructor(public formBuilder: FormBuilder) { }
@@ -19,7 +21,7 @@ export class PasswordPage implements OnInit {
   setupForm() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
-      password: ['', [Validators.minLength(6), Validators.required]],
+      password: ['', [Validators.minLength(4), Validators.required]],
     });
   }
 

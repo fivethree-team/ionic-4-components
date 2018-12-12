@@ -50,11 +50,11 @@ export class AppComponent {
     //   url: '/map',
     //   icon: 'map'
     // },
-    // {
-    //   title: 'Password Item',
-    //   url: '/password',
-    //   icon: 'key'
-    // },
+    {
+      title: 'Password Item',
+      url: '/password',
+      icon: 'key'
+    },
     // {
     //   title: 'Refresher',
     //   url: '/refresh',

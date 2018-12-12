@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../../components/components.module';
 import { FivethreeCoreModule } from 'core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -22,7 +23,8 @@ const routes: Routes = [
     IonicModule,
     FivethreeCoreModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ComponentsModule
   ],
   declarations: [PasswordPage]
 })
