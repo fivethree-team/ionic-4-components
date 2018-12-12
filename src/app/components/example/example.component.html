@@ -12,11 +12,11 @@
   </ion-card-header>
 
   <ion-card-content>
-    <div *ngIf="!showApi" class="content-container">
-      <ng-content></ng-content>
-    </div>
     <div *ngIf="showApi" class="content-container">
       <markdown [src]="snippet"></markdown>
+    </div>
+    <div class="content-container">
+      <ng-content></ng-content>
     </div>
   </ion-card-content>
 </ion-card>
