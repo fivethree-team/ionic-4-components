@@ -2,8 +2,8 @@
   <ion-toolbar color="translucent">
     <ion-title>{{title}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button *ngIf="snippet" (click)="showApi = !showApi">
-        <fiv-icon slot="start" [name]="!showApi ? 'md-code' : 'md-close'"></fiv-icon>
+      <ion-button *ngIf="snippet" (click)="showApi = !showApi" [matTooltip]="showApi ? 'Close source' : 'View source'">
+        <fiv-icon slot="start" [name]="showApi ? 'md-close' : 'md-code'"></fiv-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

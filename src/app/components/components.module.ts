@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { MarkdownModule } from 'ngx-markdown';
 import { FivethreeCoreModule } from 'core';
+import { MatTooltipModule } from '@angular/material';
 
 @NgModule({
   declarations: [ExampleComponent],
@@ -11,7 +12,8 @@ import { FivethreeCoreModule } from 'core';
     CommonModule,
     IonicModule,
     MarkdownModule.forChild(),
-    FivethreeCoreModule
+    FivethreeCoreModule,
+    MatTooltipModule
   ],
   exports: [ExampleComponent]
 })
