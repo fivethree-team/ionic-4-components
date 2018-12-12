@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{title}}</ion-title>
+    <ion-title (click)="onTitleClicked()">{{title}}</ion-title>
     <ion-buttons slot="end">
       <a id="github" href="https://www.github.com/fivethree-team/fivethree" target="blank">
         <ion-icon slot="icon-only" name="logo-github"></ion-icon>

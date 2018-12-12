@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -9,9 +10,13 @@ export class HeaderComponent implements OnInit {
 
   @Input() title = 'Fivethree';
 
-  constructor() { }
+  constructor(private navController: NavController) { }
 
   ngOnInit() {
+  }
+
+  onTitleClicked() {
+    this.navController.navigateRoot('/');
   }
 
 }
