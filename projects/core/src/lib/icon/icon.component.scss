@@ -1,12 +1,15 @@
-:host{
+:host {
     display: contents;
+    --fiv-padding-end: 0;
+    --fiv-padding-start: 0;
 }
 
 ion-icon {
-    padding: 0;
     margin: 0;
     font-size: 1.8em;
     color: var(--fiv-color-icon);
+    padding-right: var(--fiv-padding-end);
+    padding-left: var(--fiv-padding-start);
 }
 
 .indicator {

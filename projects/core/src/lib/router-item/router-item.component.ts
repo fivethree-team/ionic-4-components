@@ -14,6 +14,10 @@ export class RouterItemComponent implements OnInit {
 
   @Input() pageUrl: string;
 
+  @Input() icon: string;
+
+  @Input() text: string;
+
   /**
    * The position of the active state.
    * Default value is: `"left"`
