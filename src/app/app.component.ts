@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +16,6 @@ export class AppComponent {
     //   url: '/app-bar',
     //   icon: 'git-commit'
     // },
-    {
-      title: 'Buttons',
-      url: '/buttons',
-      icon: 'more'
-    },
     // {
     //   title: 'Bottom Sheet',
     //   url: '/bottom-sheet',
@@ -56,7 +52,12 @@ export class AppComponent {
     //   icon: 'map'
     // },
     {
-      title: 'Reveal Password Input',
+      title: 'Overflow Buttons',
+      url: '/buttons',
+      icon: 'more'
+    },
+    {
+      title: 'Password Reveal Input',
       url: '/password',
       icon: 'key'
     },
@@ -85,8 +86,10 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private language: LanguageService
   ) {
+    this.language.initializeLanguage();
     this.initializeApp();
   }
 

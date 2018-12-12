@@ -18,6 +18,21 @@
       "dom"
     ],
     "paths": {
+      "@configs/*": [
+        "src/configs/*"
+      ],
+      "@environments/*": [
+        "src/environments/*"
+      ],
+      "@services/*": [
+        "src/app/services/*"
+      ],
+      "@pipes/*": [
+        "src/app/pipes/*"
+      ],
+      "@components/*": [
+        "src/app/components/*"
+      ],
       "core": [
         "dist/core"
       ],

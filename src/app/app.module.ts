@@ -11,19 +11,33 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LottieAnimationViewModule } from 'ng-lottie';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     FivethreeCoreModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    MarkdownModule.forRoot({ loader: HttpClient })
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    MarkdownModule.forRoot({ loader: HttpClient }),
+    LottieAnimationViewModule.forRoot(),
   ],
   providers: [
     StatusBar,

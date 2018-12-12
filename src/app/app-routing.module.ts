@@ -4,9 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'buttons',
-    pathMatch: 'full'
+    loadChildren: './pages/home/home.module#HomePageModule'
   },
+  { path: 'getting-started', loadChildren: './pages/getting-started/getting-started.module#GettingStartedPageModule' },
   { path: 'buttons', loadChildren: './pages/buttons/buttons.module#ButtonsPageModule' },
   {
     path: 'components',
@@ -30,7 +30,8 @@ const routes: Routes = [
   { path: 'expandable', loadChildren: './pages/expandable/expandable.module#ExpandablePageModule' },
   { path: 'stepper', loadChildren: './pages/stepper/stepper.module#StepperPageModule' },
   { path: 'directives', loadChildren: './pages/directives/directives.module#DirectivesPageModule' },
- 
+  { path: '**', loadChildren: './pages/page-not-found/page-not-found.module#PageNotFoundPageModule' },
+
 ];
 
 @NgModule({

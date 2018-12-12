@@ -5,16 +5,34 @@ import { IonicModule } from '@ionic/angular';
 import { MarkdownModule } from 'ngx-markdown';
 import { FivethreeCoreModule } from 'core';
 import { MatTooltipModule } from '@angular/material';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { LottieAnimationViewModule } from 'ng-lottie';
 
 @NgModule({
-  declarations: [ExampleComponent],
+  declarations: [
+    ExampleComponent,
+    HeaderComponent,
+    FooterComponent
+  ],
   imports: [
     CommonModule,
     IonicModule,
     MarkdownModule.forChild(),
+    TranslateModule.forChild(),
     FivethreeCoreModule,
-    MatTooltipModule
+    MatTooltipModule,
+    LottieAnimationViewModule
   ],
-  exports: [ExampleComponent]
+  exports: [
+    ExampleComponent,
+    HeaderComponent,
+    FooterComponent,
+    FivethreeCoreModule,
+    LottieAnimationViewModule,
+    TranslateModule,
+    MarkdownModule
+  ]
 })
 export class ComponentsModule { }

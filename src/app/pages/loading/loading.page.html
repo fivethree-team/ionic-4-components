@@ -1,18 +1,11 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="menuId"></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Loading Indicators</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="Loading Indicators"></app-header>
 
 <ion-content>
 
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12">
-          <app-example [snippet]="'assets/snippets/loading.bar.md'" [title]="'Bar'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
+          <app-example [snippet]="'assets/docs/snippets/loading.bar.md'" [title]="'Bar'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
           labore et dolore magna aliqua.'">
           <ion-button [disabled]="bar.loading" (click)="bar.incrementBy(10)">
               increment
@@ -90,4 +83,5 @@
     </ion-row>
   </ion-grid>
 
+  <app-footer></app-footer>
 </ion-content>
