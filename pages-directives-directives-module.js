@@ -107,7 +107,7 @@ var DirectivesPage = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-directives',
             template: __webpack_require__(/*! ./directives.page.html */ "./src/app/pages/directives/directives.page.html"),
-            styles: [__webpack_require__(/*! ./directives.page.scss */ "./src/app/pages/directives/directives.page.scss")],
+            styles: [__webpack_require__(/*! ./directives.page.scss */ "./src/app/pages/directives/directives.page.scss")]
         }),
         __metadata("design:paramtypes", [])
     ], DirectivesPage);

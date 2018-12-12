@@ -10,13 +10,14 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordPageModule", function() { return PasswordPageModule; });
-/* harmony import */ var core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core */ "./dist/core/fesm5/fivethree-core.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
-/* harmony import */ var _password_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./password.page */ "./src/app/pages/password/password.page.ts");
+/* harmony import */ var _components_components_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../components/components.module */ "./src/app/components/components.module.ts");
+/* harmony import */ var core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core */ "./dist/core/fesm5/fivethree-core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
+/* harmony import */ var _password_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./password.page */ "./src/app/pages/password/password.page.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -30,26 +31,28 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     {
         path: '',
-        component: _password_page__WEBPACK_IMPORTED_MODULE_6__["PasswordPage"]
+        component: _password_page__WEBPACK_IMPORTED_MODULE_7__["PasswordPage"]
     }
 ];
 var PasswordPageModule = /** @class */ (function () {
     function PasswordPageModule() {
     }
     PasswordPageModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
-                core__WEBPACK_IMPORTED_MODULE_0__["FivethreeCoreModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes)
+                _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"],
+                core__WEBPACK_IMPORTED_MODULE_1__["FivethreeCoreModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forChild(routes),
+                _components_components_module__WEBPACK_IMPORTED_MODULE_0__["ComponentsModule"]
             ],
-            declarations: [_password_page__WEBPACK_IMPORTED_MODULE_6__["PasswordPage"]]
+            declarations: [_password_page__WEBPACK_IMPORTED_MODULE_7__["PasswordPage"]]
         })
     ], PasswordPageModule);
     return PasswordPageModule;
@@ -66,7 +69,7 @@ var PasswordPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n      <ion-buttons slot=\"start\">\n          <ion-menu-button menu=\"menuId\"></ion-menu-button>\n        </ion-buttons>\n    <ion-title>password</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-item-divider>Default Password</ion-item-divider>\n  <fiv-password></fiv-password>\n\n  <ion-item-divider>Password with placeholder</ion-item-divider>\n  <fiv-password placeholder=\"Password\"></fiv-password>\n\n  <ion-item-divider>Password with placeholder and inline position</ion-item-divider>\n  <fiv-password placeholder=\"Password\" position=\"inline\"></fiv-password>\n\n  <ion-item-divider>Show password</ion-item-divider>\n  <fiv-password [show]=\"true\"></fiv-password>\n\n  <ion-item-divider>Password with any show and hide icons</ion-item-divider>\n  <fiv-password showIcon=\"ice-cream\" hideIcon=\"leaf\"></fiv-password>\n\n  <ion-item-divider>Password in form</ion-item-divider>\n  <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n    <ion-item>\n      <ion-label position=\"floating\">E-Mail</ion-label>\n      <ion-input formControlName=\"email\" type=\"text\"></ion-input>\n    </ion-item>\n\n    <ion-item *ngIf=\"email.invalid && email.touched\" lines=\"none\">\n      <ion-text color=\"danger\" class=\"form-error\">\n        Bitte geben Sie ein gültiges Email ein.\n      </ion-text>\n    </ion-item>\n\n    <fiv-password placeholder=\"Password\" formControlName=\"password\"></fiv-password>\n\n    <ion-item *ngIf=\"password.invalid && password.touched\" lines=\"none\">\n      <ion-text color=\"danger\" class=\"form-error\">\n        Bitte geben Sie ein gültiges Password ein.\n      </ion-text>\n    </ion-item>\n\n    <ion-button block color=\"primary\" type=\"submit\" [disabled]=\"loginForm.invalid\">\n      Login\n    </ion-button>\n  </form>\n\n  <p>Form valid: {{loginForm.valid | json}}</p>\n  <p>Password Errors: {{password.errors | json}}</p>\n  <p>Password invalid: {{password.invalid | json}}</p>\n  <p>Password touched: {{password.touched | json}}</p>\n  <pre>{{loginForm.value | json}}</pre>\n\n</ion-content>"
+module.exports = "<app-header title=\"Password Reveal Input\"></app-header>\n\n<ion-content>\n  <ion-grid fixed>\n    <ion-row>\n      <ion-col size=\"12\">\n        <app-example [snippet]=\"'assets/docs/snippets/password/password.basic.md'\" [title]=\"'Basic password reveal input'\">\n          <fiv-password></fiv-password>\n        </app-example>\n\n        <app-example [snippet]=\"'assets/snippets/password/password.placeholder.md'\" [title]=\"'Placeholder text for password reveal input'\">\n          <fiv-password placeholder=\"Password\"></fiv-password>\n        </app-example>\n\n        <app-example [snippet]=\"'assets/snippets/password/password.form.md'\" [title]=\"'Form with password reveal input'\">\n          <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n            <ion-item>\n              <ion-label position=\"floating\">Email</ion-label>\n              <ion-input formControlName=\"email\" type=\"text\"></ion-input>\n            </ion-item>\n\n            <ion-item *ngIf=\"email.invalid && email.touched\" lines=\"none\">\n              <ion-text color=\"danger\" class=\"form-error\">\n                  Please enter a valid email.\n              </ion-text>\n            </ion-item>\n\n            <fiv-password placeholder=\"Password\" formControlName=\"password\"></fiv-password>\n\n            <ion-item *ngIf=\"password.invalid && password.touched\" lines=\"none\">\n              <ion-text color=\"danger\" class=\"form-error\">\n                  Please enter a valid password with atleast 4 characters.\n              </ion-text>\n            </ion-item>\n            <ion-button block shape=\"round\" color=\"primary\" type=\"submit\" [disabled]=\"loginForm.invalid\">\n              Login\n            </ion-button>\n          </form>\n        </app-example>\n\n        <app-example [snippet]=\"'assets/snippets/password/password.position.md'\" [title]=\"'Style placeholder position of reveal password input'\">\n          <ion-item-divider>Floating placeholder</ion-item-divider>\n          <fiv-password placeholder=\"Password\" position=\"floating\"></fiv-password>\n\n          <ion-item-divider>Inline placeholder</ion-item-divider>\n          <fiv-password placeholder=\"Password\" position=\"inline\"></fiv-password>\n\n          <ion-item-divider>Fixed placeholder</ion-item-divider>\n          <fiv-password placeholder=\"Password\" position=\"fixed\"></fiv-password>\n\n          <ion-item-divider>Stacked placeholder</ion-item-divider>\n          <fiv-password placeholder=\"Password\" position=\"stacked\"></fiv-password>\n        </app-example>\n\n        <app-example [snippet]=\"'assets/snippets/password/password.show.md'\" [title]=\"'Show password'\">\n          <ion-item lines=\"none\">\n            <ion-label>Show Password</ion-label>\n            <ion-checkbox slot=\"start\" [(ngModel)]=\"show\"></ion-checkbox>\n          </ion-item>\n          <fiv-password placeholder=\"Password\" [show]=\"show\"></fiv-password>\n        </app-example>\n\n        <app-example [snippet]=\"'assets/snippets/password/password.custom-icon.md'\" [title]=\"'Custom show/hide password icon'\">\n          <fiv-password placeholder=\"Password\" showIcon=\"ice-cream\" hideIcon=\"leaf\"></fiv-password>\n        </app-example>\n\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <app-footer></app-footer>\n</ion-content>\n"
 
 /***/ }),
 
@@ -107,6 +110,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var PasswordPage = /** @class */ (function () {
     function PasswordPage(formBuilder) {
         this.formBuilder = formBuilder;
+        this.show = true;
     }
     PasswordPage.prototype.ngOnInit = function () {
         this.setupForm();
@@ -114,7 +118,7 @@ var PasswordPage = /** @class */ (function () {
     PasswordPage.prototype.setupForm = function () {
         this.loginForm = this.formBuilder.group({
             email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].email, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
-            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(4), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
         });
     };
     Object.defineProperty(PasswordPage.prototype, "email", {
@@ -138,7 +142,7 @@ var PasswordPage = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-password',
             template: __webpack_require__(/*! ./password.page.html */ "./src/app/pages/password/password.page.html"),
-            styles: [__webpack_require__(/*! ./password.page.scss */ "./src/app/pages/password/password.page.scss")],
+            styles: [__webpack_require__(/*! ./password.page.scss */ "./src/app/pages/password/password.page.scss")]
         }),
         __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
     ], PasswordPage);

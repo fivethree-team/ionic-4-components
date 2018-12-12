@@ -18,7 +18,7 @@ module.exports = "<ion-toolbar [@searchbarAnim]=\"small ? state : 'normal'\" (@s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: relative;\n  display: block;\n  width: 100%; }\n\nion-toolbar {\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);\n  transition: border-bottom-right-radius ease 85ms; }\n\nion-toolbar.small {\n  border-bottom-right-radius: 12px; }\n\n.toolbar-searchbar {\n  float: right; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3Byb2plY3RzL2NvcmUvc3JjL2xpYi90b29sYmFyLXNlYXJjaC90b29sYmFyLXNlYXJjaC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFrQjtFQUNsQixlQUFjO0VBQ2QsWUFBVyxFQUNkOztBQUVEO0VBQ0ksMENBQXFDO0VBQ3JDLGlEQUFnRCxFQUNuRDs7QUFFRDtFQUNJLGlDQUFnQyxFQUNuQzs7QUFFRDtFQUNJLGFBQVksRUFDZiIsImZpbGUiOiJwcm9qZWN0cy9jb3JlL3NyYy9saWIvdG9vbGJhci1zZWFyY2gvdG9vbGJhci1zZWFyY2guY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbmlvbi10b29sYmFye1xuICAgIGJveC1zaGFkb3c6IDAgMXB4IDRweCByZ2JhKDAsMCwwLC4yNSk7XG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXMgZWFzZSA4NW1zO1xufVxuXG5pb24tdG9vbGJhci5zbWFsbHtcbiAgICBib3JkZXItYm90dG9tLXJpZ2h0LXJhZGl1czogMTJweDtcbn1cblxuLnRvb2xiYXItc2VhcmNoYmFye1xuICAgIGZsb2F0OiByaWdodDtcbn0iXX0= */"
+module.exports = ":host {\n  position: relative;\n  display: block;\n  width: 100%; }\n\nion-toolbar {\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);\n  transition: border-bottom-right-radius ease 85ms; }\n\nion-toolbar.small {\n  border-bottom-right-radius: 12px; }\n\n.toolbar-searchbar {\n  float: right; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9wcm9qZWN0cy9jb3JlL3NyYy9saWIvdG9vbGJhci1zZWFyY2gvdG9vbGJhci1zZWFyY2guY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxtQkFBa0I7RUFDbEIsZUFBYztFQUNkLFlBQVcsRUFDZDs7QUFFRDtFQUNJLDBDQUFxQztFQUNyQyxpREFBZ0QsRUFDbkQ7O0FBRUQ7RUFDSSxpQ0FBZ0MsRUFDbkM7O0FBRUQ7RUFDSSxhQUFZLEVBQ2YiLCJmaWxlIjoicHJvamVjdHMvY29yZS9zcmMvbGliL3Rvb2xiYXItc2VhcmNoL3Rvb2xiYXItc2VhcmNoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3R7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG5pb24tdG9vbGJhcntcbiAgICBib3gtc2hhZG93OiAwIDFweCA0cHggcmdiYSgwLDAsMCwuMjUpO1xuICAgIHRyYW5zaXRpb246IGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzIGVhc2UgODVtcztcbn1cblxuaW9uLXRvb2xiYXIuc21hbGx7XG4gICAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IDEycHg7XG59XG5cbi50b29sYmFyLXNlYXJjaGJhcntcbiAgICBmbG9hdDogcmlnaHQ7XG59Il19 */"
 
 /***/ }),
 
@@ -165,7 +165,6 @@ var ToolbarSearchComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'fiv-toolbar-search',
             template: __webpack_require__(/*! ./toolbar-search.component.html */ "./projects/core/src/lib/toolbar-search/toolbar-search.component.html"),
-            styles: [__webpack_require__(/*! ./toolbar-search.component.scss */ "./projects/core/src/lib/toolbar-search/toolbar-search.component.scss")],
             animations: [
                 Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('searchbarAnim', [
                     Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('small => normal', [
@@ -192,7 +191,8 @@ var ToolbarSearchComponent = /** @class */ (function () {
                         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('175ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1', transform: 'translateY(0)' }))
                     ]),
                 ]),
-            ]
+            ],
+            styles: [__webpack_require__(/*! ./toolbar-search.component.scss */ "./projects/core/src/lib/toolbar-search/toolbar-search.component.scss")]
         }),
         __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]])
     ], ToolbarSearchComponent);
@@ -357,7 +357,7 @@ var ToolbarSearchPage = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-toolbar-search',
             template: __webpack_require__(/*! ./toolbar-search.page.html */ "./src/app/pages/toolbar-search/toolbar-search.page.html"),
-            styles: [__webpack_require__(/*! ./toolbar-search.page.scss */ "./src/app/pages/toolbar-search/toolbar-search.page.scss")],
+            styles: [__webpack_require__(/*! ./toolbar-search.page.scss */ "./src/app/pages/toolbar-search/toolbar-search.page.scss")]
         }),
         __metadata("design:paramtypes", [])
     ], ToolbarSearchPage);

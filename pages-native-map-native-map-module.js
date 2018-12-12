@@ -119,7 +119,7 @@ var NativeMapPage = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-native-map',
             template: __webpack_require__(/*! ./native-map.page.html */ "./src/app/pages/native-map/native-map.page.html"),
-            styles: [__webpack_require__(/*! ./native-map.page.scss */ "./src/app/pages/native-map/native-map.page.scss")],
+            styles: [__webpack_require__(/*! ./native-map.page.scss */ "./src/app/pages/native-map/native-map.page.scss")]
         }),
         __metadata("design:paramtypes", [])
     ], NativeMapPage);

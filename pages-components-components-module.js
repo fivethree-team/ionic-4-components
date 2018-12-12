@@ -118,7 +118,7 @@ var ComponentsPage = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-components',
             template: __webpack_require__(/*! ./components.page.html */ "./src/app/pages/components/components.page.html"),
-            styles: [__webpack_require__(/*! ./components.page.scss */ "./src/app/pages/components/components.page.scss")],
+            styles: [__webpack_require__(/*! ./components.page.scss */ "./src/app/pages/components/components.page.scss")]
         }),
         __metadata("design:paramtypes", [])
     ], ComponentsPage);

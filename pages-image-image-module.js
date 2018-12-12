@@ -110,7 +110,7 @@ var ImagePage = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-image',
             template: __webpack_require__(/*! ./image.page.html */ "./src/app/pages/image/image.page.html"),
-            styles: [__webpack_require__(/*! ./image.page.scss */ "./src/app/pages/image/image.page.scss")],
+            styles: [__webpack_require__(/*! ./image.page.scss */ "./src/app/pages/image/image.page.scss")]
         }),
         __metadata("design:paramtypes", [])
     ], ImagePage);

@@ -76,7 +76,7 @@ module.exports = "\n  <fiv-app-bar #bar [position]=\"position\" [fabVisible]=\"f
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-grid,\nion-row,\nion-col {\n  height: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvYXBwLWJhci9hcHAtYmFyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0VBR0ksYUFBWSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYXBwLWJhci9hcHAtYmFyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1ncmlkLFxuaW9uLXJvdyxcbmlvbi1jb2wge1xuICAgIGhlaWdodDogMTAwJTtcbn0iXX0= */"
+module.exports = "ion-grid,\nion-row,\nion-col {\n  height: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2FwcC1iYXIvYXBwLWJhci5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztFQUdJLGFBQVksRUFDZiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FwcC1iYXIvYXBwLWJhci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tZ3JpZCxcbmlvbi1yb3csXG5pb24tY29sIHtcbiAgICBoZWlnaHQ6IDEwMCU7XG59Il19 */"
 
 /***/ }),
 
@@ -113,7 +113,7 @@ var AppBarPage = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-app-bar',
             template: __webpack_require__(/*! ./app-bar.page.html */ "./src/app/pages/app-bar/app-bar.page.html"),
-            styles: [__webpack_require__(/*! ./app-bar.page.scss */ "./src/app/pages/app-bar/app-bar.page.scss")],
+            styles: [__webpack_require__(/*! ./app-bar.page.scss */ "./src/app/pages/app-bar/app-bar.page.scss")]
         }),
         __metadata("design:paramtypes", [])
     ], AppBarPage);
