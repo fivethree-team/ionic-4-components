@@ -1,6 +1,6 @@
 import { PopoverComponent } from './../popover/popover.component';
-import { Platform, PopoverController, AlertController, ActionSheetController } from '@ionic/angular';
-import { Component, OnInit, Input, ContentChildren, QueryList, AfterContentInit, ViewChild, TemplateRef } from '@angular/core';
+import { Platform, PopoverController, ActionSheetController } from '@ionic/angular';
+import { Component, OnInit, Input, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({

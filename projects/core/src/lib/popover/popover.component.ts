@@ -1,5 +1,5 @@
 import { ButtonComponent } from './../button/button.component';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavParams, PopoverController } from '@ionic/angular';
 
 @Component({
