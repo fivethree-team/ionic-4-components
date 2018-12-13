@@ -17,12 +17,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
 /* harmony import */ var _icon_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./icon.page */ "./src/app/pages/icon/icon.page.ts");
 /* harmony import */ var core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core */ "./dist/core/fesm5/fivethree-core.js");
+/* harmony import */ var _components_components_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @components/components.module */ "./src/app/components/components.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -46,7 +48,8 @@ var IconPageModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes),
-                core__WEBPACK_IMPORTED_MODULE_6__["FivethreeCoreModule"]
+                core__WEBPACK_IMPORTED_MODULE_6__["FivethreeCoreModule"],
+                _components_components_module__WEBPACK_IMPORTED_MODULE_7__["ComponentsModule"]
             ],
             declarations: [_icon_page__WEBPACK_IMPORTED_MODULE_5__["IconPage"]]
         })
@@ -65,7 +68,7 @@ var IconPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-button>\n        <fiv-icon [name]=\"iconState ? 'md-menu' : 'md-arrow-back'\" [indicatorValue]=\"indicatorValue\"></fiv-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-buttons slot=\"end\">\n      <ion-button>\n        <fiv-icon [name]=\"iconState ? 'md-add' : 'md-trash'\"></fiv-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-title>Icon</ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content padding>\n\n\n  <ion-button (click)=\"iconState = !iconState\">\n    Toggle icons\n  </ion-button>\n\n  <ion-button (click)=\"increment()\">\n    <ion-icon slot=\"icon-only\" name=\"add\"></ion-icon>\n  </ion-button>\n  <ion-button (click)=\"decrement()\">\n    <ion-icon slot=\"icon-only\" name=\"remove\"></ion-icon>\n  </ion-button>\n\n</ion-content>"
+module.exports = "<app-header title=\"Icon\"></app-header>\n\n<ion-content>\n  <ion-grid fixed>\n    <ion-row>\n      <ion-col size=\"12\">\n        <app-example [api]=\"'assets/docs/snippets/icon/api.md'\" [typescript]=\"'assets/docs/snippets/icon/ts.md'\" [css]=\"'assets/docs/snippets/icon/css.md'\"\n          [html]=\"'assets/docs/snippets/icon/html.md'\" [title]=\"'Icon Component'\" [subtitle]=\"'This is basically an ion-icon but it can also display badge notifications and has smooth icon change transitions.'\">\n          <ion-item-divider>\n            <ion-label>Basic Example</ion-label>\n          </ion-item-divider>\n\n          <ion-button (click)=\"getNewIcon()\">\n            change icon\n          </ion-button>\n          <ion-button (click)=\"increment()\">\n            <ion-icon slot=\"icon-only\" name=\"add\"></ion-icon>\n          </ion-button>\n          <ion-button (click)=\"decrement()\">\n            <ion-icon slot=\"icon-only\" name=\"remove\"></ion-icon>\n          </ion-button>\n\n          <div class=\"example\">\n            <ion-button [fivCenter] fill=\"clear\">\n              <fiv-icon slot=\"icon-only\" [indicatorValue]=\"indicatorValue\" [name]=\"icon\"></fiv-icon>\n            </ion-button>\n          </div>\n\n\n        </app-example>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <app-footer></app-footer>\n</ion-content>"
 
 /***/ }),
 
@@ -76,7 +79,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  --fiv-dot-color-background: var(--ion-color-light); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2ljb24vaWNvbi5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxtREFBMkIsRUFDOUIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9pY29uL2ljb24ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICAgIC0tZml2LWRvdC1jb2xvci1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItbGlnaHQpO1xufSJdfQ== */"
+module.exports = ":host {\n  --fiv-dot-color-background: var(--ion-color-light); }\n\n.example {\n  --fiv-color-icon: var(--ion-color-dark);\n  position: relative;\n  height: 120px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvaWNvbi9pY29uLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1EQUEyQixFQUM5Qjs7QUFFRDtFQUNJLHdDQUFpQjtFQUNqQixtQkFBa0I7RUFDbEIsY0FBYSxFQUNoQiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2ljb24vaWNvbi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gICAgLS1maXYtZG90LWNvbG9yLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XG59XG5cbi5leGFtcGxlIHtcbiAgICAtLWZpdi1jb2xvci1pY29uOiB2YXIoLS1pb24tY29sb3ItZGFyayk7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGhlaWdodDogMTIwcHg7XG59Il19 */"
 
 /***/ }),
 
@@ -90,7 +93,8 @@ module.exports = ":host {\n  --fiv-dot-color-background: var(--ion-color-light);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IconPage", function() { return IconPage; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../services/util.service */ "./src/app/services/util.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -101,30 +105,34 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var IconPage = /** @class */ (function () {
-    function IconPage() {
-        this.iconState = true;
+    function IconPage(util) {
+        this.util = util;
+        this.icon = 'md-notifications';
         this.indicatorValue = -1;
     }
     IconPage.prototype.ngOnInit = function () {
     };
     IconPage.prototype.decrement = function () {
         if (this.indicatorValue >= 0) {
-            console.log('decrement value', this.indicatorValue - 1);
             this.indicatorValue--;
         }
     };
     IconPage.prototype.increment = function () {
-        console.log('increment value', this.indicatorValue + 1);
         this.indicatorValue++;
     };
+    IconPage.prototype.getNewIcon = function () {
+        var icon = this.util.getRandomIcon();
+        this.icon = icon.icons[1] || icon.icons[0];
+    };
     IconPage = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-icon',
             template: __webpack_require__(/*! ./icon.page.html */ "./src/app/pages/icon/icon.page.html"),
             styles: [__webpack_require__(/*! ./icon.page.scss */ "./src/app/pages/icon/icon.page.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_util_service__WEBPACK_IMPORTED_MODULE_0__["UtilService"]])
     ], IconPage);
     return IconPage;
 }());
