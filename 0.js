@@ -1,5 +1,24 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],{
 
+/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-0f8926dc.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-0f8926dc.js ***!
+  \***********************************************************************/
+/*! exports provided: a, b, c, d, e */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getClassMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return createColorClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return openURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hostContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return createThemedClasses; });
+/* harmony import */ var _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../polyfills/tslib.js */ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js");
+function hostContext(t,e){return null!==e.closest(t)}function createColorClasses(t){var e;return"string"==typeof t&&t.length>0?((e={"ion-color":!0})["ion-color-"+t]=!0,e):void 0}function createThemedClasses(t,e){var r;return(r={})[e]=!0,r[e+"-"+t]=void 0!==t,r}function getClassList(t){return void 0!==t?(Array.isArray(t)?t:t.split(" ")).filter(function(t){return null!=t}).map(function(t){return t.trim()}).filter(function(t){return""!==t}):[]}function getClassMap(t){var e={};return getClassList(t).forEach(function(t){return e[t]=!0}),e}var SCHEME=/^[a-z][a-z0-9+\-.]*:/;function openURL(t,e,r,n){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var s;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(o){switch(o.label){case 0:return null==e||"#"===e[0]||SCHEME.test(e)?[3,2]:(s=t.document.querySelector("ion-router"))?(null!=r&&r.preventDefault(),[4,s.componentOnReady()]):[3,2];case 1:return o.sent(),[2,s.push(e,n)];case 2:return[2,!1]}})})}
+
+/***/ }),
+
 /***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-2994e275.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-2994e275.js ***!
@@ -19,31 +38,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return getOverlay; });
 /* harmony import */ var _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../polyfills/tslib.js */ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js");
 var lastId=0;function createOverlay(e,t){var n=e.ownerDocument;connectListeners(n),Object.assign(e,t),e.classList.add("ion-page-invisible");var i=lastId++;return e.overlayIndex=i,e.hasAttribute("id")||(e.id="ion-overlay-"+i),getAppRoot(n).appendChild(e),e.componentOnReady()}function connectListeners(e){0===lastId&&(lastId=1,e.addEventListener("ionBackButton",function(t){var n=getOverlay(e);n&&n.backdropDismiss&&t.detail.register(100,function(){return n.dismiss(void 0,BACKDROP)})}),e.addEventListener("keyup",function(t){if("Escape"===t.key){var n=getOverlay(e);n&&n.backdropDismiss&&n.dismiss(void 0,BACKDROP)}}))}function dismissOverlay(e,t,n,i,r){var a=getOverlay(e,i,r);return a?a.dismiss(t,n):Promise.reject("overlay does not exist")}function getOverlays(e,t){var n=Array.from(getAppRoot(e).children).filter(function(e){return e.overlayIndex>0});return void 0===t?n:(t=t.toUpperCase(),n.filter(function(e){return e.tagName===t}))}function getOverlay(e,t,n){var i=getOverlays(e,t);return void 0===n?i[i.length-1]:i.find(function(e){return e.id===n})}function present(e,t,n,i,r){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var a;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(s){switch(s.label){case 0:return e.presented?[2]:(e.presented=!0,e.willPresent.emit(),a=e.enterAnimation?e.enterAnimation:e.config.get(t,"ios"===e.mode?n:i),[4,overlayAnimation(e,a,e.el,r)]);case 1:return s.sent()&&e.didPresent.emit(),[2]}})})}function dismiss(e,t,n,i,r,a,s){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var o,c;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(l){switch(l.label){case 0:if(!e.presented)return[2,!1];e.presented=!1,l.label=1;case 1:return l.trys.push([1,3,,4]),e.willDismiss.emit({data:t,role:n}),o=e.leaveAnimation?e.leaveAnimation:e.config.get(i,"ios"===e.mode?r:a),[4,overlayAnimation(e,o,e.el,s)];case 2:return l.sent(),e.didDismiss.emit({data:t,role:n}),[3,4];case 3:return c=l.sent(),console.error(c),[3,4];case 4:return e.el.remove(),[2,!0]}})})}function getAppRoot(e){return e.querySelector("ion-app")||e.body}function overlayAnimation(e,t,n,i){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var r,a,s;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(o){switch(o.label){case 0:return e.animation?(e.animation.destroy(),e.animation=void 0,[2,!1]):[3,1];case 1:return n.classList.remove("ion-page-invisible"),a=e,[4,e.animationCtrl.create(t,n.shadowRoot||e.el,i)];case 2:return r=a.animation=o.sent(),e.animation=r,e.animated||r.duration(0),e.keyboardClose&&r.beforeAddWrite(function(){var e=n.ownerDocument.activeElement;e&&e.matches("input, ion-input, ion-textarea")&&e.blur()}),[4,r.playAsync()];case 3:return o.sent(),s=r.hasCompleted,r.destroy(),e.animation=void 0,[2,s]}})})}function eventMethod(e,t){var n,i=new Promise(function(e){return n=e});return onceEvent(e,t,function(e){n(e.detail)}),i}function onceEvent(e,t,n){var i=function(r){e.removeEventListener(t,i),n(r)};e.addEventListener(t,i)}function isCancel(e){return"cancel"===e||e===BACKDROP}var BACKDROP="backdrop";
-
-/***/ }),
-
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-8eb011dc.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-8eb011dc.js ***!
-  \***********************************************************************/
-/*! exports provided: a, b, c, d, e, f, g, h, i, j, k */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return attachComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return detachComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return hapticSelectionChanged; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hapticSelectionEnd; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return hapticSelectionStart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return hapticSelection; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getClassMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return createColorClasses; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return openURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return hostContext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return createThemedClasses; });
-/* harmony import */ var _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../polyfills/tslib.js */ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js");
-function attachComponent(e,t,n,r,o){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var i;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(a){switch(a.label){case 0:if(e)return[2,e.attachViewToDom(t,n,o,r)];if("string"!=typeof n&&!(n instanceof HTMLElement))throw new Error("framework delegate is missing");return i="string"==typeof n?t.ownerDocument&&t.ownerDocument.createElement(n):n,r&&r.forEach(function(e){return i.classList.add(e)}),o&&Object.assign(i,o),t.appendChild(i),i.componentOnReady?[4,i.componentOnReady()]:[3,2];case 1:a.sent(),a.label=2;case 2:return[2,i]}})})}function detachComponent(e,t){if(t){if(e)return e.removeViewFromDom(t.parentElement,t);t.remove()}return Promise.resolve()}function hapticSelection(){var e=window.TapticEngine;e&&e.selection()}function hapticSelectionStart(){var e=window.TapticEngine;e&&e.gestureSelectionStart()}function hapticSelectionChanged(){var e=window.TapticEngine;e&&e.gestureSelectionChanged()}function hapticSelectionEnd(){var e=window.TapticEngine;e&&e.gestureSelectionEnd()}function hostContext(e,t){return null!==t.closest(e)}function createColorClasses(e){var t;return"string"==typeof e&&e.length>0?((t={"ion-color":!0})["ion-color-"+e]=!0,t):void 0}function createThemedClasses(e,t){var n;return(n={})[t]=!0,n[t+"-"+e]=void 0!==e,n}function getClassList(e){return void 0!==e?(Array.isArray(e)?e:e.split(" ")).filter(function(e){return null!=e}).map(function(e){return e.trim()}).filter(function(e){return""!==e}):[]}function getClassMap(e){var t={};return getClassList(e).forEach(function(e){return t[e]=!0}),t}var SCHEME=/^[a-z][a-z0-9+\-.]*:/;function openURL(e,t,n,r){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var o;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(i){switch(i.label){case 0:return null==t||"#"===t[0]||SCHEME.test(t)?[3,2]:(o=e.document.querySelector("ion-router"))?(null!=n&&n.preventDefault(),[4,o.componentOnReady()]):[3,2];case 1:return i.sent(),[2,o.push(t,r)];case 2:return[2,!1]}})})}
 
 /***/ }),
 
