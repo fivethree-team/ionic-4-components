@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppBarComponent } from 'core';
-import { timer } from 'rxjs';
 import { ToastController } from '@ionic/angular';
 
 @Component({
@@ -12,7 +10,7 @@ export class AppBarPage implements OnInit {
 
   titleLayout = 'hide';
   position = 'center';
-  fabVisible = true;
+  fabVisible = false;
   icon = 'checkmark';
 
   customTitleLayoutOptions: any = {
@@ -31,8 +29,6 @@ export class AppBarPage implements OnInit {
   ngOnInit() {
   }
 
-
-
   async presentToast(text: string) {
     const toast = await this.toastController.create({
       message: text,
@@ -40,5 +36,6 @@ export class AppBarPage implements OnInit {
     });
     toast.present();
   }
+
 
 }

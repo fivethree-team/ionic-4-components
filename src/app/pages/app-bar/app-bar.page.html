@@ -4,7 +4,8 @@
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12">
-        <app-example [title]="'App Bar'" [subtitle]="''">
+        <app-example [title]="'App Bar'" [subtitle]="''" html="assets/docs/snippets/app-bar/html.md"
+        typescript="assets/docs/snippets/app-bar/typescript.md"  css="assets/docs/snippets/app-bar/css.md">
           <div class="container">
             <ion-item>
               <ion-label>Title Layout</ion-label>
@@ -24,6 +25,11 @@
               </ion-select>
             </ion-item>
 
+            <ion-item>
+              <ion-label >Fab Visible</ion-label>
+              <ion-checkbox [(ngModel)]="fabVisible" slot="end"></ion-checkbox>
+            </ion-item>
+
           </div>
 
           <ion-tabs>
@@ -41,7 +47,7 @@
             </ion-tab>
 
             <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom" [titleLayout]="titleLayout"
-              #bar [position]="position" [fabVisible]="true" [icon]="'md-camera'">
+              #bar [position]="position" [fabVisible]="fabVisible" [icon]="icon">
               <fiv-app-bar-tab left href="/app-bar" icon="md-home" name="App Bar">
               </fiv-app-bar-tab>
               <fiv-app-bar-tab left href="/expandable" icon="md-resize" name="Expandable">
