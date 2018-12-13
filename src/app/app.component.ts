@@ -61,11 +61,11 @@ export class AppComponent {
       url: '/password',
       icon: 'key'
     },
-    // {
-    //   title: 'Refresher',
-    //   url: '/refresh',
-    //   icon: 'refresh'
-    // },
+    {
+      title: 'Refresher',
+      url: '/refresh',
+      icon: 'refresh'
+    },
     // {
     //   title: 'Searchbar',
     //   url: '/toolbar-search',

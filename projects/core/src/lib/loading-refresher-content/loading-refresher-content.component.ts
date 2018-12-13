@@ -94,7 +94,6 @@ export class LoadingRefresherContentComponent implements OnInit {
   complete() {
     // this.spinner.completeIn(500);
     if (this.checkmark) {
-      console.log('fill animation done', event);
       this.iconState = 'rotate';
     } else {
       this.postComplete();
@@ -103,7 +102,6 @@ export class LoadingRefresherContentComponent implements OnInit {
 
   show() {
     if (!this.visible) {
-      console.log('&show');
       this.visible = true;
       const animation = this.builder.build([
         style({ transform: 'scale(0)' }),
@@ -140,7 +138,6 @@ export class LoadingRefresherContentComponent implements OnInit {
 
   fillAnimationDone() {
     if (this.checkmark) {
-      console.log('fill animation done', event);
       this.iconState = 'rotate';
     } else {
       this.postComplete();
@@ -148,7 +145,6 @@ export class LoadingRefresherContentComponent implements OnInit {
   }
 
   changeIconAndReveal(event, icon: string) {
-    console.log(event, icon);
     if (event.fromState === 'normal') {
       this.icon = icon;
       this.iconState = 'normal';

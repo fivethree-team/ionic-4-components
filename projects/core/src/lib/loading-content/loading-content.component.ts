@@ -1,4 +1,3 @@
-import { element } from 'protractor';
 import { LoadingRefresherContentComponent } from './../loading-refresher-content/loading-refresher-content.component';
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Input, Renderer2 } from '@angular/core';
 import { animate, style, transition, trigger, state, AnimationBuilder, AnimationPlayer } from '@angular/animations';
@@ -69,6 +68,7 @@ export class LoadingContentComponent implements OnInit {
   refresh() {
     this.refreshing = true;
     this.changeAnimationToProgress(112 / 168);
+    this.spinner.load();
     this.fivRefresh.emit(this);
   }
 
@@ -77,7 +77,6 @@ export class LoadingContentComponent implements OnInit {
   }
 
   fillAnimationDone() {
-    console.log('fillAnimDone');
     this.spinner.hide();
   }
 
@@ -87,13 +86,10 @@ export class LoadingContentComponent implements OnInit {
   }
 
   onHintClicked() {
-    console.log('on hint clicked');
     this.hintVisible = false;
-
   }
 
   postHint(event) {
-    console.log(event);
     if (!event.fromState && event.toState === 'void') {
       this.setPullAnimationProgress(112 / 168);
       this.spinner.load();
