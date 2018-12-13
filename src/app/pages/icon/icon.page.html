@@ -1,30 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button>
-        <fiv-icon [name]="iconState ? 'md-menu' : 'md-arrow-back'" [indicatorValue]="indicatorValue"></fiv-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button>
-        <fiv-icon [name]="iconState ? 'md-add' : 'md-trash'"></fiv-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Icon</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content padding>
+<app-header title="Icon"></app-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <app-example [api]="'assets/docs/snippets/icon/api.md'" [typescript]="'assets/docs/snippets/icon/ts.md'" [css]="'assets/docs/snippets/icon/css.md'"
+          [html]="'assets/docs/snippets/icon/html.md'" [title]="'Icon Component'" [subtitle]="'This is basically an ion-icon but it can also display badge notifications and has smooth icon change transitions.'">
+          <ion-item-divider>
+            <ion-label>Basic Example</ion-label>
+          </ion-item-divider>
+
+          <ion-button (click)="getNewIcon()">
+            change icon
+          </ion-button>
+          <ion-button (click)="increment()">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-button>
+          <ion-button (click)="decrement()">
+            <ion-icon slot="icon-only" name="remove"></ion-icon>
+          </ion-button>
+
+          <div class="example">
+            <ion-button [fivCenter] fill="clear">
+              <fiv-icon slot="icon-only" [indicatorValue]="indicatorValue" [name]="icon"></fiv-icon>
+            </ion-button>
+          </div>
 
 
-  <ion-button (click)="iconState = !iconState">
-    Toggle icons
-  </ion-button>
-
-  <ion-button (click)="increment()">
-    <ion-icon slot="icon-only" name="add"></ion-icon>
-  </ion-button>
-  <ion-button (click)="decrement()">
-    <ion-icon slot="icon-only" name="remove"></ion-icon>
-  </ion-button>
-
+        </app-example>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-footer></app-footer>
 </ion-content>

@@ -1,3 +1,4 @@
+import { UtilService } from './../../services/util.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,23 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IconPage implements OnInit {
 
-  iconState = true;
+  icon = 'md-notifications';
   indicatorValue = -1;
 
-  constructor() { }
+  constructor(private util: UtilService) { }
 
   ngOnInit() {
   }
 
   decrement() {
     if (this.indicatorValue >= 0) {
-      console.log('decrement value', this.indicatorValue - 1);
       this.indicatorValue--;
     }
   }
   increment() {
-    console.log('increment value', this.indicatorValue + 1);
     this.indicatorValue++;
   }
 
+  getNewIcon() {
+    const icon = this.util.getRandomIcon();
+    this.icon = icon.icons[1] || icon.icons[0];
+  }
 }

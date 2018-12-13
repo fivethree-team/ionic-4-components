@@ -51,7 +51,6 @@ export class IconComponent implements OnInit {
     return this._name;
   }
   set name(name: string) {
-    console.log('set name');
     if (this._name) {
       this.transform(name);
     } else {
@@ -78,7 +77,6 @@ export class IconComponent implements OnInit {
   }
 
   transformIndicator(value: number) {
-    console.log('transform indicator', value);
     if (value === -1) {
       this._indicatorValue = value;
       this.indicatorState = 'scale';
@@ -108,13 +106,11 @@ export class IconComponent implements OnInit {
     }
 
     if (event.fromState === 'rotate' && event.toState === 'normal') {
-      console.log('icon transition done');
       this.transitionDone.emit(this._name);
     }
   }
 
   incrementDone(event) {
-    console.log('increment done', event);
     if (event.fromState === 'normal' && event.toState === 'scale') {
       if (this.tempValue > 0) {
         this.indicatorValueState = 'normal';

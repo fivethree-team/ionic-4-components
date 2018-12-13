@@ -1,3 +1,9 @@
 :host {
     --fiv-dot-color-background: var(--ion-color-light);
 }
+
+.example {
+    --fiv-color-icon: var(--ion-color-dark);
+    position: relative;
+    height: 120px;
+}

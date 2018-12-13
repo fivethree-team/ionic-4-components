@@ -2,7 +2,9 @@
     display: contents;
     --fiv-padding-end: 0;
     --fiv-padding-start: 0;
+    --fiv-color-icon: inherit;
 }
+
 
 ion-icon {
     margin: 0;
@@ -16,7 +18,7 @@ ion-icon {
     position: absolute;
     width: var(--fiv-dot-width, 8px);
     height: var(--fiv-dot-heigt, 8px);
-    background-color: var(--fiv-dot-color, var(--ion-color-primary));
+    background-color: var(--fiv-dot-color, var(--fiv-color-indicator,--ion-color-primary));
     top: 4px;
     border-radius: 100%;
     right: 8px;

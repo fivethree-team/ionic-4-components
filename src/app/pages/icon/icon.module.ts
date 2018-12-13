@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { IconPage } from './icon.page';
 import { FivethreeCoreModule } from 'core';
+import { ComponentsModule } from '@components/components.module';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    FivethreeCoreModule
+    FivethreeCoreModule,
+    ComponentsModule
   ],
   declarations: [IconPage]
 })

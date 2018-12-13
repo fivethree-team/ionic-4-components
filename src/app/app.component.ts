@@ -31,11 +31,11 @@ export class AppComponent {
       url: '/expandable',
       icon: 'resize'
     },
-    // {
-    //   title: 'Icon',
-    //   url: '/icon',
-    //   icon: 'mail-unread'
-    // },
+    {
+      title: 'Icon',
+      url: '/icon',
+      icon: 'mail-unread'
+    },
     // {
     //   title: 'Image View',
     //   url: '/image',
