@@ -15,9 +15,14 @@ export class AppBarPage implements OnInit {
   fabVisible = true;
   icon = 'checkmark';
 
-  customPopoverOptions: any = {
+  customTitleLayoutOptions: any = {
     header: 'Title Layout',
     subHeader: 'Select a title layout',
+  };
+
+  customFabPositionOptions: any = {
+    header: 'Fab Position',
+    subHeader: 'Select a floating action button position.',
   };
 
 

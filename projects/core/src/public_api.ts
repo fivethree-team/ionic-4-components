@@ -5,6 +5,7 @@
 
 export * from './lib/fivethree.core.module';
 export * from './lib/bottom-sheet/drawer-state';
+export * from './lib/interfaces';
 
 // export components
 export * from './lib/app-bar/app-bar.component';

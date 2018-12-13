@@ -8,10 +8,19 @@
           <div class="container">
             <ion-item>
               <ion-label>Title Layout</ion-label>
-              <ion-select [(ngModel)]="titleLayout" [interfaceOptions]="customPopoverOptions" interface="popover">
+              <ion-select [(ngModel)]="titleLayout" [interfaceOptions]="customTitleLayoutOptions" interface="popover">
                 <ion-select-option value="hide">Hide Title</ion-select-option>
                 <ion-select-option value="show">Show Title</ion-select-option>
                 <ion-select-option value="active-only">Show Title for active only</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Floating Action Bottom Position</ion-label>
+              <ion-select [(ngModel)]="position" [interfaceOptions]="customFabPositionOptions" interface="popover">
+                <ion-select-option value="center">Center</ion-select-option>
+                <ion-select-option value="right">Right</ion-select-option>
+                <ion-select-option value="left">Left</ion-select-option>
               </ion-select>
             </ion-item>
 
@@ -32,7 +41,7 @@
             </ion-tab>
 
             <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom" [titleLayout]="titleLayout"
-              #bar [position]="'center'" [fabVisible]="true" [icon]="'md-camera'">
+              #bar [position]="position" [fabVisible]="true" [icon]="'md-camera'">
               <fiv-app-bar-tab left href="/app-bar" icon="md-home" name="App Bar">
               </fiv-app-bar-tab>
               <fiv-app-bar-tab left href="/expandable" icon="md-resize" name="Expandable">

@@ -6,25 +6,29 @@ import {
   EventEmitter,
   ContentChildren,
   QueryList,
-  AfterViewInit
+  AfterViewInit,
+  AfterContentInit
 } from '@angular/core';
 import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
 import { Router } from '@angular/router';
-import { AppBarTitleLayout } from '../interfaces';
+import { AppBarTitleLayout, AppBarFabPosition } from '../interfaces';
 
 @Component({
   selector: 'fiv-app-bar',
   templateUrl: './app-bar.component.html',
   styleUrls: ['./app-bar.component.scss']
 })
-export class AppBarComponent implements OnInit, AfterViewInit {
+export class AppBarComponent implements OnInit, AfterViewInit, AfterContentInit {
 
   _fabVisible = true;
   cutoutVisible = true;
-  _position: 'right' | 'left' | 'center';
+  _position: AppBarFabPosition;
   left = false;
   right = false;
   transitioning = false;
+  tabsRight: AppBarTabComponent[];
+  tabsLeft: AppBarTabComponent[];
+
   @ViewChild('fab') fab: LoadingFabComponent;
   @Input() icon = 'md-add';
   @Input() titleLayout: AppBarTitleLayout = 'hide';
@@ -33,11 +37,12 @@ export class AppBarComponent implements OnInit, AfterViewInit {
   @ContentChildren(AppBarTabComponent) tabs: QueryList<AppBarTabComponent>;
 
   @Input()
-  set position(position: 'right' | 'left' | 'center') {
+  set position(position: AppBarFabPosition) {
     console.log('set position', position, !position, this._position);
     if (!position) {
       return;
     }
+
     if (!this.fabVisible) {
       this._position = position;
       this.setPosition();
@@ -51,6 +56,7 @@ export class AppBarComponent implements OnInit, AfterViewInit {
       this.onFabHidden();
       return;
     }
+    this.prepareTabs(position);
     this._position = position;
   }
   get position() {
@@ -83,7 +89,9 @@ export class AppBarComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
   }
 
-
+  ngAfterContentInit() {
+    this.prepareTabs(this.position);
+  }
 
   onFabHidden() {
     console.log('fab hidden');
@@ -105,6 +113,19 @@ export class AppBarComponent implements OnInit, AfterViewInit {
       }, 225);
     } else {
       this.cutoutVisible = false;
+    }
+  }
+
+  private prepareTabs(position: AppBarFabPosition) {
+    if (position === 'center') {
+      this.tabsLeft = this.tabs.toArray().slice(0, 2);
+      this.tabsRight = this.tabs.toArray().slice(2, 4);
+    } else if (position === 'right') {
+      this.tabsLeft = this.tabs.toArray();
+      this.tabsRight = [];
+    } else if (position === 'left') {
+      this.tabsLeft = [];
+      this.tabsRight = this.tabs.toArray();
     }
   }
 
