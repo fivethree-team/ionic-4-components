@@ -21,7 +21,7 @@ export class ButtonsPage implements OnInit {
   }
 
 
-  async presentToast(text:string) {
+  async presentToast(text: string) {
     const toast = await this.toastController.create({
       message: text,
       duration: 2000

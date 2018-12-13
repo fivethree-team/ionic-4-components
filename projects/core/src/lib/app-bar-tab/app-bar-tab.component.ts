@@ -7,10 +7,9 @@ import { Component, OnInit, Input, TemplateRef, Output, EventEmitter, ContentChi
 })
 export class AppBarTabComponent implements OnInit {
 
+  @Input() name: string;
   @Input() icon: string;
-
   @Input() href: string;
-
 
   constructor() { }
 

@@ -1,14 +1,53 @@
+<app-header title="App Bar"></app-header>
 
-  <fiv-app-bar #bar [position]="position" [fabVisible]="fabVisible" [icon]="icon">
-    <fiv-app-bar-tab left [href]="'dialog'" [icon]="'md-add'">
-    </fiv-app-bar-tab>
-    <fiv-app-bar-tab left [href]="'directives'" [icon]="'md-add'">
-        <ion-content>
-            <p>test 2</p>
-          </ion-content>
-    </fiv-app-bar-tab>
-    <fiv-app-bar-tab right [href]="'loading'" [icon]="'md-add'">
-    </fiv-app-bar-tab>
-    <fiv-app-bar-tab [href]="'stepper'"  right [icon]="'md-add'">
-    </fiv-app-bar-tab>
-  </fiv-app-bar>
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <app-example [title]="'App Bar'" [subtitle]="''">
+          <div class="container">
+            <ion-item>
+              <ion-label>Title Layout</ion-label>
+              <ion-select [(ngModel)]="titleLayout" [interfaceOptions]="customPopoverOptions" interface="popover">
+                <ion-select-option value="hide">Hide Title</ion-select-option>
+                <ion-select-option value="show">Show Title</ion-select-option>
+                <ion-select-option value="active-only">Show Title for active only</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+          </div>
+
+          <ion-tabs>
+            <ion-tab tab="tab1">
+              <ion-router-outlet name="tab1"></ion-router-outlet>
+            </ion-tab>
+            <ion-tab tab="tab2">
+              <ion-router-outlet name="tab2"></ion-router-outlet>
+            </ion-tab>
+            <ion-tab tab="tab3">
+              <ion-router-outlet name="tab3"></ion-router-outlet>
+            </ion-tab>
+            <ion-tab tab="tab4">
+              <ion-router-outlet name="tab4"></ion-router-outlet>
+            </ion-tab>
+
+            <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom" [titleLayout]="titleLayout"
+              #bar [position]="'center'" [fabVisible]="true" [icon]="'md-camera'">
+              <fiv-app-bar-tab left href="/app-bar" icon="md-home" name="App Bar">
+              </fiv-app-bar-tab>
+              <fiv-app-bar-tab left href="/expandable" icon="md-resize" name="Expandable">
+              </fiv-app-bar-tab>
+              <fiv-app-bar-tab right href="/password" icon="md-eye" name="Password">
+              </fiv-app-bar-tab>
+              <fiv-app-bar-tab right href="/buttons" icon="md-more" name="Buttons">
+              </fiv-app-bar-tab>
+            </fiv-app-bar>
+
+          </ion-tabs>
+        </app-example>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-footer></app-footer>
+</ion-content>

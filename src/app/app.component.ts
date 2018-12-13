@@ -11,11 +11,11 @@ import { LanguageService } from './services/language.service';
 })
 export class AppComponent {
   public appPages = [
-    // {
-    //   title: 'App Bar',
-    //   url: '/app-bar',
-    //   icon: 'git-commit'
-    // },
+    {
+      title: 'App Bar',
+      url: '/app-bar',
+      icon: 'git-commit'
+    },
     // {
     //   title: 'Bottom Sheet',
     //   url: '/bottom-sheet',

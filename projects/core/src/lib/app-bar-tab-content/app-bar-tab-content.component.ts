@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { AppBarTitleLayout } from '../interfaces';
 
 @Component({
   selector: 'fiv-app-bar-tab-content',
@@ -8,10 +9,15 @@ import { NavController } from '@ionic/angular';
 })
 export class AppBarTabContentComponent implements OnInit {
 
+  @Input() name: string;
   @Input() icon: string;
   @Input() href: string;
   @Input() active = false;
+  @Input() titleLayout: AppBarTitleLayout = 'hide';
 
+  @HostBinding('class') get classes(): string {
+    return `label-${this.titleLayout}`;
+  }
 
   constructor(private nav: NavController) { }
 

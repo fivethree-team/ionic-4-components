@@ -1,17 +1,46 @@
 :host {
-    width: 50%;
-    height: 100%;
-    display: inline-block;
-    position: relative;
-    fiv-ripple{
-        width: 100%;
-        height: 100%;
-    }
-    fiv-icon {
-        display: block;
-    }
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
 
-    .tab.active{
-        --fiv-color-icon: var(--ion-color-primary);
+  fiv-ripple {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  fiv-icon {
+    display: block;
+    order: -1;
+  }
+
+  ion-label {
+    order: 0;
+  }
+
+  .tab.active {
+    --fiv-color-icon: var(--ion-color-primary);
+    ion-label {
+      color: var(--ion-color-primary);
     }
+  }
+}
+
+:host(.label-hide) {
+  ion-label {
+    display: none;
+  }
+}
+
+:host(.label-active-only) {
+  fiv-ripple:not(.active) {
+    ion-label {
+      display: none;
+    }
+  }
 }

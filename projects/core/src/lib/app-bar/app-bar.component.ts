@@ -6,13 +6,11 @@ import {
   EventEmitter,
   ContentChildren,
   QueryList,
-  TemplateRef,
   AfterViewInit
 } from '@angular/core';
 import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
-import { Router, ActivatedRoute } from '@angular/router';
-import { AppBarTabContentComponent } from '../app-bar-tab-content/app-bar-tab-content.component';
-import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { AppBarTitleLayout } from '../interfaces';
 
 @Component({
   selector: 'fiv-app-bar',
@@ -29,6 +27,7 @@ export class AppBarComponent implements OnInit, AfterViewInit {
   transitioning = false;
   @ViewChild('fab') fab: LoadingFabComponent;
   @Input() icon = 'md-add';
+  @Input() titleLayout: AppBarTitleLayout = 'hide';
   @Output() fivFabClick = new EventEmitter<AppBarComponent>();
 
   @ContentChildren(AppBarTabComponent) tabs: QueryList<AppBarTabComponent>;
