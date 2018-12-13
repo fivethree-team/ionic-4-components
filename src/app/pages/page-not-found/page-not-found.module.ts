@@ -23,6 +23,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     ComponentsModule,
+    TranslateModule.forChild()
   ],
   declarations: [PageNotFoundPage]
 })
