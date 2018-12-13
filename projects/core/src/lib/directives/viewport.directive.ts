@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, merge } from 'rxjs/operators';
-import { Content } from '@ionic/angular';
+import { IonContent } from '@ionic/angular';
 
 export interface InViewportEvent {
   target: HTMLElement;
@@ -34,7 +34,7 @@ export class ViewportDirective implements OnInit, OnDestroy, AfterContentInit {
   ) { }
 
   ngAfterContentInit(): void {
-    const content: Content = this.elementRef.nativeElement.closest('ion-content');
+    const content: IonContent = this.elementRef.nativeElement.closest('ion-content');
     this.check();
     content.scrollEvents = true;
     this.subscription = fromEvent(this.elementRef.nativeElement.closest('ion-content'), 'ionScroll')

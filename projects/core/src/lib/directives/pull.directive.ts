@@ -1,9 +1,7 @@
 import { Directive, OnInit, ElementRef, Input, Output, EventEmitter, Host } from '@angular/core';
-import { Content } from '@ionic/angular';
+import { IonContent } from '@ionic/angular';
 import { fromEvent, merge } from 'rxjs';
 import { filter, map, skipWhile, takeUntil, last } from 'rxjs/operators';
-
-
 
 @Directive({
   selector: '[fivPull]'
@@ -20,7 +18,8 @@ export class PullDirective implements OnInit {
 
   scrollY: HTMLElement;
 
-  constructor(private element: ElementRef, @Host() private content: Content) {
+  constructor(private element: ElementRef,
+    @Host() private content: IonContent) {
   }
 
   ngOnInit(): void {

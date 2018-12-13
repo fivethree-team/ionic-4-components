@@ -1,6 +1,6 @@
 import { Component, OnInit, QueryList, Input, ViewChild, EventEmitter, Output } from '@angular/core';
 import { StepComponent } from '../step/step.component';
-import { Slides } from '@ionic/angular';
+import { IonSlides } from '@ionic/angular';
 import { trigger, transition, animate, state, style } from '@angular/animations';
 
 @Component({
@@ -22,7 +22,7 @@ import { trigger, transition, animate, state, style } from '@angular/animations'
 export class StepperHorizontalComponent implements OnInit {
 
   @Input() contents: QueryList<StepComponent>;
-  @ViewChild('slides') slides: Slides;
+  @ViewChild('slides') slides: IonSlides;
   @Output() fivSelect = new EventEmitter<number>();
 
   constructor() { }
