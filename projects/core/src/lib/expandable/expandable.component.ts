@@ -1,6 +1,6 @@
 
 import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectorRef } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'fiv-expandable',
@@ -9,12 +9,20 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
     trigger('listAnim', [
       state('open', style({ height: '*', opacity: 1 })),
-      state('closed', style({ height: '0', opacity: 0  })),
+      state('closed', style({ height: '0', opacity: 0 })),
       transition('closed => open', [
-        animate('350ms ease-out')
+        animate('275ms ease-out', keyframes([
+          style({ height: '0', opacity: 0, offset: 0 }),
+          style({ height: '*', opacity: 0.1, offset: 0.8 }),
+          style({ height: '*', opacity: 1, offset: 1 }),
+        ]))
       ]),
       transition('open => closed', [
-        animate('200ms ease-in')
+        animate('220ms ease-out', keyframes([
+          style({ height: '*', opacity: 1, offset: 0 }),
+          style({ height: '*', opacity: 0.1, offset: 0.2 }),
+          style({ height: '0', opacity: 0, offset: 1 }),
+        ]))
       ])
     ])
   ]

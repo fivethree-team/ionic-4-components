@@ -2,7 +2,7 @@
   <ion-toolbar color="translucent">
     <ion-title>{{title}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button *ngIf="snippet" (click)="showApi = !showApi" [matTooltip]="showApi ? 'Close source' : 'View source'">
+      <ion-button *ngIf="html || api || typescript || css" (click)="showApi = !showApi" [matTooltip]="showApi ? 'Close source' : 'View source'">
         <fiv-icon slot="start" [name]="showApi ? 'md-close' : 'md-code'"></fiv-icon>
       </ion-button>
     </ion-buttons>
@@ -13,7 +13,20 @@
 
   <ion-card-content>
     <div [@listAnim]="showApi ? 'open' : 'closed'" class="content-container">
-      <markdown [src]="snippet"></markdown>
+      <mat-tab-group>
+        <mat-tab *ngIf="html" label="HTML">
+          <markdown [src]="html"></markdown>
+        </mat-tab>
+        <mat-tab *ngIf="css" label="CSS">
+          <markdown [src]="css"></markdown>
+        </mat-tab>
+        <mat-tab *ngIf="typescript" label="TS">
+          <markdown [src]="typescript"></markdown>
+        </mat-tab>
+        <mat-tab *ngIf="api" label="API">
+          <markdown [src]="api"></markdown>
+        </mat-tab>
+      </mat-tab-group>
     </div>
     <div class="content-container">
       <ng-content></ng-content>

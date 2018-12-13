@@ -26,11 +26,11 @@ export class AppComponent {
     //   url: '/dialog',
     //   icon: 'notifications'
     // },
-    // {
-    //   title: 'Expandable',
-    //   url: '/expandable',
-    //   icon: 'resize'
-    // },
+    {
+      title: 'Expandable',
+      url: '/expandable',
+      icon: 'resize'
+    },
     // {
     //   title: 'Icon',
     //   url: '/icon',

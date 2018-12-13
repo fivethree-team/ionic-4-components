@@ -24,7 +24,10 @@ export class ExampleComponent implements OnInit {
 
   @Input() title: string;
   @Input() subtitle: string;
-  @Input() snippet: string;
+  @Input() html: string;
+  @Input() css: string;
+  @Input() typescript: string;
+  @Input() api: string;
   showApi = false;
 
   constructor() { }

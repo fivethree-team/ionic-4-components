@@ -38,6 +38,7 @@ import { ToolbarSearchComponent } from './toolbar-search/toolbar-search.componen
 import { FivButtonsComponent } from './fiv-buttons/fiv-buttons.component';
 import { ButtonComponent } from './button/button.component';
 import { PopoverComponent } from './popover/popover.component';
+import { ExpandableIndicatorComponent } from './expandable-indicator/expandable-indicator.component';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -87,6 +88,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivButtonsComponent,
     ButtonComponent,
     PopoverComponent,
+    ExpandableIndicatorComponent,
   ],
   entryComponents: [ImageViewerComponent, PopoverComponent],
   exports: [
@@ -122,7 +124,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     AppBarTabContentComponent,
     ImageViewerComponent,
     FivButtonsComponent,
-    ButtonComponent
+    ButtonComponent,
+    ExpandableIndicatorComponent
   ]
 })
 export class FivethreeCoreModule { }

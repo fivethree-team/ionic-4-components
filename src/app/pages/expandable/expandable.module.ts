@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ExpandablePage } from './expandable.page';
+import { FivethreeCoreModule } from 'core';
+import { ComponentsModule } from '@components/components.module';
 
 const routes: Routes = [
   {
@@ -19,7 +21,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FivethreeCoreModule,
+    ComponentsModule
   ],
   declarations: [ExpandablePage]
 })

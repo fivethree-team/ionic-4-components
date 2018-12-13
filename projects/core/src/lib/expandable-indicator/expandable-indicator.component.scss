@@ -1,0 +1,11 @@
+:host {
+    display: contents;
+}
+
+.indicator {
+    transition: 125ms ease;
+}
+
+.indicator.rotate {
+    transform: rotateZ(180deg);
+}

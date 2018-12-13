@@ -1,0 +1,22 @@
+div[content] {
+    min-height: 200px;
+    background: var(--ion-color-light);
+    position: relative;
+}
+
+ion-item {
+    border: 1px solid var(--ion-color-light);
+    --inner-border-width: 0px;
+}
+
+ion-grid {
+    --min-height: 100vh;
+}
+
+fiv-ripple {
+    margin-top: 16px;
+}
+
+.content {
+    color: var(--ion-color-primary);
+}
