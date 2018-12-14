@@ -12,4 +12,8 @@ export class ImagePage implements OnInit {
   ngOnInit() {
   }
 
+  onActionClick(index) {
+    console.log('test', index);
+  }
+
 }

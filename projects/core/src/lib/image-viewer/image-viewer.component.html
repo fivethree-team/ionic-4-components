@@ -1,4 +1,5 @@
-<img class="thumbnail" [width]="width" [height]="height" #thumbnail *ngIf="thumbnailVisible" (click)="open($event)" [src]="src">
+<img class="thumbnail" [width]="width" [height]="height" #thumbnail *ngIf="thumbnailVisible" (click)="open($event)"
+  [src]="src">
 <div #backdrop [@backdrop] (@backdrop.done)="onEnter($event)" *ngIf="_isOpen" class="backdrop">
   <ion-toolbar [@fade] *ngIf="_controlsVisible" color="translucent">
     <ion-buttons slot="start">
@@ -10,12 +11,12 @@
   <div #footer class="actions" [@fade] *ngIf="_controlsVisible">
     <ion-grid fixed>
       <ion-row>
-        <ion-col style="text-align: center;" *ngFor="let action of actions; let c = count" [size]="12 / c">
-          <ion-button color="light" *ngIf="action.name" [fill]="'clear'">
+        <ion-col style="text-align: center;" *ngFor="let action of actions; let c = count; let i = index" [size]="12 / c">
+          <ion-button (click)="onActionClicked(i)" color="light" *ngIf="action.name" [fill]="'clear'">
             <ion-icon *ngIf="action.icon" slot="start" [name]="action.icon"></ion-icon>
             {{action.name}}
           </ion-button>
-          <fiv-ripple *ngIf="!action.name">
+          <fiv-ripple (fivClick)="onActionClicked(i)" *ngIf="!action.name">
             <ion-icon *ngIf="action.icon" [fivCenter] [name]="action.icon"></ion-icon>
           </fiv-ripple>
         </ion-col>

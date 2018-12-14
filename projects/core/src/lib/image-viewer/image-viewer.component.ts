@@ -89,6 +89,7 @@ export class ImageViewerComponent implements OnInit {
   @Input() pullDistance = 150;
   @Input() actions: ImageViewerAction[] = [];
   @Output() fivClose = new EventEmitter();
+  @Output() fivActionClick = new EventEmitter<number>();
   componentRef: ComponentRef<ImageViewerComponent>;
   _isOpen = false;
   _controlsVisible = true;
@@ -107,6 +108,7 @@ export class ImageViewerComponent implements OnInit {
   singletap: Subscription;
   closeSub: Subscription;
   pinchPan: Subscription;
+  actionSub: Subscription;
 
   singletapHammer;
   doubleTapHammer;
@@ -160,6 +162,11 @@ export class ImageViewerComponent implements OnInit {
         this.thumbnailVisible = true;
       });
 
+    this.actionSub = this.componentRef.instance.fivActionClick
+      .subscribe((ev) => {
+        this.fivActionClick.emit(ev);
+      });
+
     this.appRef.attachView(this.componentRef.hostView);
 
     const domElem = (this.componentRef.hostView as EmbeddedViewRef<any>)
@@ -185,6 +192,7 @@ export class ImageViewerComponent implements OnInit {
     this.singletap.unsubscribe();
     this.doubletap.unsubscribe();
     this.pinchPan.unsubscribe();
+    this.actionSub.unsubscribe();
   }
 
   removeHammerManager(): any {
@@ -531,6 +539,10 @@ export class ImageViewerComponent implements OnInit {
 
   getAbsoluteCenter() {
     return { x: this.platform.width() / 2, y: this.platform.height() / 2 };
+  }
+
+  onActionClicked(index: number) {
+    this.fivActionClick.emit(index);
   }
 }
 
