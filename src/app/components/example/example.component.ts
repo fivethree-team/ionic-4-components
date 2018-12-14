@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Host } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -33,6 +33,7 @@ export class ExampleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -18,3 +18,7 @@
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
     background: var(--ion-color-primary);
   } 
+
+  .page-content{
+      min-height: var(--example-min-height);
+  }
