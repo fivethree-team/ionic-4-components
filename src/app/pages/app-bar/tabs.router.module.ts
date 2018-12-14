@@ -31,7 +31,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../bottom-sheet/bottom-sheet.module#BottomSheetPageModule'
+            loadChildren: '../expandable/expandable.module#ExpandablePageModule'
           }
         ]
       },
@@ -40,7 +40,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../bottom-sheet/bottom-sheet.module#BottomSheetPageModule'
+            loadChildren: '../refresh/refresh.module#RefreshPageModule'
           }
         ]
       },

@@ -7,7 +7,8 @@ import {
   ContentChildren,
   QueryList,
   AfterViewInit,
-  AfterContentInit
+  AfterContentInit,
+  Host
 } from '@angular/core';
 import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
 import { Router } from '@angular/router';
@@ -33,7 +34,6 @@ export class AppBarComponent implements OnInit, AfterViewInit, AfterContentInit 
 
   @ViewChild('fab') fab: LoadingFabComponent;
   @Input() icon = 'md-add';
-  @Input() tabs: IonTabs;
   @Input() titleLayout: AppBarTitleLayout = 'hide';
   @Output() fivFabClick = new EventEmitter<AppBarComponent>();
 
@@ -84,7 +84,7 @@ export class AppBarComponent implements OnInit, AfterViewInit, AfterContentInit 
 
 
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, @Host() public tabs: IonTabs) { }
 
   ngOnInit() {
   }
