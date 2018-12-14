@@ -372,7 +372,7 @@ export class ImageViewerComponent implements OnInit {
   }
 
   setBottom(bottom: number) {
-    if (this._controlsVisible) {
+    if (this._controlsVisible && this.footer) {
       this.domCtrl.write(() => {
         this.renderer.setStyle(this.footer.nativeElement, 'bottom', `-${bottom}px`);
       });
