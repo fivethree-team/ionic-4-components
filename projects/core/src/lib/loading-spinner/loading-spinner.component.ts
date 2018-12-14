@@ -1,6 +1,6 @@
 import { DomSanitizer } from '@angular/platform-browser';
 import { AnimationBuilder, style, animate } from '@angular/animations';
-import { take, takeUntil, last } from 'rxjs/operators';
+import { takeUntil} from 'rxjs/operators';
 import {
   Component, OnInit, Input, Optional,
   Inject, ChangeDetectionStrategy, ViewEncapsulation, ElementRef, ChangeDetectorRef, EventEmitter, Output, ViewChild, HostBinding, Renderer2
@@ -45,7 +45,6 @@ export class LoadingSpinnerComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.mode);
   }
 
   get viewBox() {
@@ -152,10 +151,10 @@ export class LoadingSpinnerComponent implements OnInit {
   completeIn(duration: number) {
     this.mode = 'determinate';
     this.change.detectChanges();
-    console.log('complete in', duration);
-    console.log('interval', duration / 100);
-    console.log('timer length', duration + duration / 50);
-    console.log('loop count', (duration + duration / 50) / (duration / 100));
+    // console.log('complete in', duration);
+    // console.log('interval', duration / 100);
+    // console.log('timer length', duration + duration / 50);
+    // console.log('loop count', (duration + duration / 50) / (duration / 100));
 
     const animation = this.builder.build([
       style({
@@ -194,7 +193,6 @@ export class LoadingSpinnerComponent implements OnInit {
     this.mode = 'determinate';
     this._value = progress;
     this.change.detectChanges();
-    console.log('set value', this._value, this.mode);
   }
 
   spin() {

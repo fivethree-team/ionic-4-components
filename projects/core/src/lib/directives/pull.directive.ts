@@ -1,7 +1,7 @@
 import { Directive, OnInit, ElementRef, Input, Output, EventEmitter, Host } from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { fromEvent, merge } from 'rxjs';
-import { filter, map, skipWhile, takeUntil, last } from 'rxjs/operators';
+import { filter, map, skipWhile, takeUntil, takeLast } from 'rxjs/operators';
 
 @Directive({
   selector: '[fivPull]'
@@ -82,7 +82,7 @@ export class PullDirective implements OnInit {
 
       drags
         .pipe(
-          last()
+          takeLast(1)
         )
         .subscribe(drag => {
           const offset = drag.offset / 2;

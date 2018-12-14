@@ -1,6 +1,10 @@
-<ion-item [color]="color" [detail]="detail" [detailIcon]="detailIcon" [disabled]="disabled" [lines]="lines">
-    <fiv-icon [name]="icon"></fiv-icon>
-    <ion-label>{{text}}</ion-label>
-</ion-item>
+<ion-menu-toggle auto-hide="false">
+    <fiv-ripple>
+        <ion-item [color]="color" [detail]="detail" [detailIcon]="detailIcon" [disabled]="disabled" [lines]="lines">
+            <fiv-icon [name]="icon"></fiv-icon>
+            <ion-label>{{text}}</ion-label>
+        </ion-item>
+    </fiv-ripple>
+</ion-menu-toggle>
 <span *ngIf="hasShape()" [ngClass]="getClasses()" class="indicator"></span>
 <ion-icon *ngIf="!hasShape()" [ngClass]="position" [name]="shape" class="indicator"></ion-icon>

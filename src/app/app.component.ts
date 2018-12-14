@@ -16,11 +16,11 @@ export class AppComponent {
       url: '/app-bar',
       icon: 'git-commit'
     },
-    // {
-    //   title: 'Bottom Sheet',
-    //   url: '/bottom-sheet',
-    //   icon: 'ios-arrow-up'
-    // },
+    {
+      title: 'Bottom Sheet',
+      url: '/bottom-sheet',
+      icon: 'ios-arrow-up'
+    },
     // {
     //   title: 'Dialog',
     //   url: '/dialog',
@@ -61,11 +61,11 @@ export class AppComponent {
       url: '/password',
       icon: 'key'
     },
-    // {
-    //   title: 'Refresher',
-    //   url: '/refresh',
-    //   icon: 'refresh'
-    // },
+    {
+      title: 'Refresher',
+      url: '/refresh',
+      icon: 'refresh'
+    },
     // {
     //   title: 'Searchbar',
     //   url: '/toolbar-search',
