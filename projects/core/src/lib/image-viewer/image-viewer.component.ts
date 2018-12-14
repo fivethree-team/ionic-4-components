@@ -372,11 +372,12 @@ export class ImageViewerComponent implements OnInit {
   }
 
   setBottom(bottom: number) {
-    if (this._controlsVisible && this.footer) {
-      this.domCtrl.write(() => {
+    this.domCtrl.write(() => {
+      if (this._controlsVisible && this.footer) {
         this.renderer.setStyle(this.footer.nativeElement, 'bottom', `-${bottom}px`);
-      });
-    }
+      }
+    });
+
   }
 
   calculatePanProgress(event: any): number {
@@ -399,7 +400,9 @@ export class ImageViewerComponent implements OnInit {
       this.scale = scale;
     }
     this.domCtrl.write(() => {
-      this.renderer.setStyle(this.imageView.nativeElement, 'transform', `translateY(-50%) scale(${scale})`);
+      if (this.imageView) {
+        this.renderer.setStyle(this.imageView.nativeElement, 'transform', `translateY(-50%) scale(${scale})`);
+      }
     });
   }
 
@@ -407,14 +410,18 @@ export class ImageViewerComponent implements OnInit {
     this.top = top;
     this.thumbnailPosition.panTop = this.top + 'px';
     this.domCtrl.write(() => {
-      this.renderer.setStyle(this.imageView.nativeElement, 'top', `${top}px`);
+      if (this.imageView) {
+        this.renderer.setStyle(this.imageView.nativeElement, 'top', `${top}px`);
+      }
     });
   }
 
   setLeft(left) {
     this.left = left;
     this.domCtrl.write(() => {
-      this.renderer.setStyle(this.imageView.nativeElement, 'left', `${left}px`);
+      if (this.imageView) {
+        this.renderer.setStyle(this.imageView.nativeElement, 'left', `${left}px`);
+      }
     });
   }
 

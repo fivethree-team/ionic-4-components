@@ -36,11 +36,11 @@ export class AppComponent {
       url: '/icon',
       icon: 'mail-unread'
     },
-    // {
-    //   title: 'Image View',
-    //   url: '/image',
-    //   icon: 'image'
-    // },
+    {
+      title: 'Image View',
+      url: '/image',
+      icon: 'image'
+    },
     {
       title: 'Loading Indicators',
       url: '/loading',
