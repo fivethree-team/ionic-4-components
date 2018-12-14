@@ -32,23 +32,25 @@
 
           </div>
 
-          <ion-tabs>
-            <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom" [titleLayout]="titleLayout"
+          <ion-tabs #tabs>
+            <fiv-app-bar [tabs]="tabs" (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom" [titleLayout]="titleLayout"
               #bar [position]="position" [fabVisible]="fabVisible" [icon]="icon">
-              <fiv-app-bar-tab left href="/app-bar" icon="md-home" name="App Bar">
+              <fiv-app-bar-tab left tab="tab1" href="/tab1" icon="md-home" name="App Bar">
               </fiv-app-bar-tab>
-              <fiv-app-bar-tab left href="/expandable" icon="md-resize" name="Expandable">
+              <fiv-app-bar-tab left tab="tab2" href="/tab2" icon="md-resize" name="Expandable">
               </fiv-app-bar-tab>
-              <fiv-app-bar-tab right href="/password" icon="md-eye" name="Password">
+              <fiv-app-bar-tab right tab="tab3" href="/tab3" icon="md-eye" name="Password">
               </fiv-app-bar-tab>
-              <fiv-app-bar-tab right href="/buttons" icon="md-more" name="Buttons">
+              <fiv-app-bar-tab right tab="tab4" href="/tab4" icon="md-more" name="Buttons">
               </fiv-app-bar-tab>
             </fiv-app-bar>
           </ion-tabs>
+
+        
         </app-example>
       </ion-col>
     </ion-row>
   </ion-grid>
 
   <app-footer></app-footer>
-</ion-content>
+</ion-content>  

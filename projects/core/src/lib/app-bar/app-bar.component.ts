@@ -12,6 +12,8 @@ import {
 import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
 import { Router } from '@angular/router';
 import { AppBarTitleLayout, AppBarFabPosition } from '../interfaces';
+import { IonTabs } from '@ionic/angular';
+import { TabButtonClickDetail } from '@ionic/core';
 
 @Component({
   selector: 'fiv-app-bar',
@@ -31,10 +33,11 @@ export class AppBarComponent implements OnInit, AfterViewInit, AfterContentInit 
 
   @ViewChild('fab') fab: LoadingFabComponent;
   @Input() icon = 'md-add';
+  @Input() tabs: IonTabs;
   @Input() titleLayout: AppBarTitleLayout = 'hide';
   @Output() fivFabClick = new EventEmitter<AppBarComponent>();
 
-  @ContentChildren(AppBarTabComponent) tabs: QueryList<AppBarTabComponent>;
+  @ContentChildren(AppBarTabComponent) tabComponents: QueryList<AppBarTabComponent>;
 
   @Input()
   set position(position: AppBarFabPosition) {
@@ -118,14 +121,14 @@ export class AppBarComponent implements OnInit, AfterViewInit, AfterContentInit 
 
   private prepareTabs(position: AppBarFabPosition) {
     if (position === 'center') {
-      this.tabsLeft = this.tabs.toArray().slice(0, 2);
-      this.tabsRight = this.tabs.toArray().slice(2, 4);
+      this.tabsLeft = this.tabComponents.toArray().slice(0, 2);
+      this.tabsRight = this.tabComponents.toArray().slice(2, 4);
     } else if (position === 'right') {
-      this.tabsLeft = this.tabs.toArray();
+      this.tabsLeft = this.tabComponents.toArray();
       this.tabsRight = [];
     } else if (position === 'left') {
       this.tabsLeft = [];
-      this.tabsRight = this.tabs.toArray();
+      this.tabsRight = this.tabComponents.toArray();
     }
   }
 
@@ -144,5 +147,9 @@ export class AppBarComponent implements OnInit, AfterViewInit, AfterContentInit 
 
   fabClick() {
     this.fivFabClick.emit(this);
+  }
+
+  ionTabButtonClick(event: TabButtonClickDetail) {
+    this.tabs.onTabButtonClick(event);
   }
 }

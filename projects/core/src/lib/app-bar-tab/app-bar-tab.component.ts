@@ -9,6 +9,7 @@ export class AppBarTabComponent implements OnInit {
 
   @Input() name: string;
   @Input() icon: string;
+  @Input() tab: string;
   @Input() href: string;
 
   constructor() { }

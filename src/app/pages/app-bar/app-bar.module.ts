@@ -2,19 +2,12 @@ import { ComponentsModule } from '@components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
 import { AppBarPage } from './app-bar.page';
 import { FivethreeCoreModule } from 'core';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: AppBarPage
-  }
-];
+import { TabsPageRoutingModule } from './tabs.router.module';
 
 @NgModule({
   imports: [
@@ -22,9 +15,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     FivethreeCoreModule,
-    RouterModule.forChild(routes),
+    TabsPageRoutingModule,
     ComponentsModule
   ],
   declarations: [AppBarPage]
 })
-export class AppBarPageModule {}
+export class AppBarPageModule { }
