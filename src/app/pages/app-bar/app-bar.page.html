@@ -32,8 +32,8 @@
 
           </div>
         </app-example>
-        <app-example>
-          <div class="container">
+        <app-example [title]="'App Bar Example'" [subtitle]="'This is a simple example of how to use the app-bar in an ion-tabs layout.'">
+          <div class="container min">
             <ion-tabs #tabs>
               <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom"
                 [titleLayout]="titleLayout" #bar [position]="position" [fabVisible]="fabVisible" [icon]="icon">

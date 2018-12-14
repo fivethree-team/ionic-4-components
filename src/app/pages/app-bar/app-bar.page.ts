@@ -10,7 +10,7 @@ export class AppBarPage implements OnInit {
 
   titleLayout = 'hide';
   position = 'center';
-  fabVisible = false;
+  fabVisible = true;
   icon = 'checkmark';
 
   customTitleLayoutOptions: any = {
