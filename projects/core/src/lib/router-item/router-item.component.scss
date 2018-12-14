@@ -1,106 +1,111 @@
 :host {
-    display: block;
-    position: relative;
-    width: 100%;
+  display: block;
+  position: relative;
+  width: 100%;
 }
 
 :host.active {
-    --fiv-color-icon: var(--ion-color-primary);
-    ion-item{
-        --color: var(--ion-color-primary);
-    }
+  --fiv-color-icon: var(--ion-color-primary);
+  ion-item {
+    --color: var(--ion-color-primary);
+  }
 }
 
 :host.active .dot {
-    display: block;
+  display: block;
 }
 
 :host.active .line {
-    background-color: var(--fiv-dot-color, var(--ion-color-primary));
-    display: block;
+  background-color: var(--fiv-dot-color, var(--ion-color-primary));
+  display: block;
 }
 
 :host.active.left .line {
-    width: 2px;
-    height: 100%;
-    top: 0;
+  width: 2px;
+  height: 100%;
+  top: 0;
 }
 
 :host.active.right .line {
-    width: 2px;
-    height: 100%;
-    top: 0;
+  width: 2px;
+  height: 100%;
+  top: 0;
 }
 
 :host.active.top .line {
-    width: calc(100% - 16px);
-    left: 8px;
-    height: 2px
+  width: calc(100% - 16px);
+  left: 8px;
+  height: 2px;
 }
 
 :host.active.bottom .line {
-    width: calc(100% - 16px);
-    height: 2px;
-    left: 8px;
+  width: calc(100% - 16px);
+  height: 2px;
+  left: 8px;
 }
 
 :host.active.dot.left {
-    padding-left: 24px;
+  padding-left: 24px;
 }
 
 .indicator {
-    position: absolute;
+  position: absolute;
 }
 
 // dot
 .dot {
-    width: var(--fiv-dot-width, 8px);
-    height: var(--fiv-dot-heigt, 8px);
-    background-color: var(--fiv-dot-color, var(--ion-color-primary));
-    top: 50%;
-    border-radius: 100%;
-    transform: translateY(-50%);
-    right: 8px;
-    display: none;
+  width: var(--fiv-dot-width, 8px);
+  height: var(--fiv-dot-heigt, 8px);
+  background-color: var(--fiv-dot-color, var(--ion-color-primary));
+  top: 50%;
+  border-radius: 100%;
+  transform: translateY(-50%);
+  right: 8px;
+  display: none;
 }
 
 .dot.left {
-    left: 8px;
-    right: unset;
+  left: 8px;
+  right: unset;
 }
 
 .dot.right {
-    right: 8px;
+  right: 8px;
 }
 
 // position
 .left {
-    left: 0;
+  left: 0;
 }
 
 .right {
-    right: 0;
+  right: 0;
 }
 
 .top {
-    top: 0;
+  top: 0;
 }
 
 .bottom {
-    bottom: 0;
+  bottom: 0;
 }
 
-.outline {}
+.outline {
+}
 
 ion-item {
-    --border-style: none;
+  --border-style: none;
 }
 
 fiv-icon {
-    --fiv-padding-end: 8px;
+  --fiv-padding-end: 8px;
 }
 
 ion-item:hover {
-    cursor: pointer;
-    --background: rgb(240, 240, 240);
+  cursor: pointer;
+  --background: rgb(240, 240, 240);
+}
+
+:host(.router-item-disabled) {
+  pointer-events: none;
 }

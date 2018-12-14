@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, HostBinding, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { Color, Mode } from '@ionic/core';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'fiv-router-item',
@@ -10,13 +12,23 @@ export class RouterItemComponent implements OnInit {
 
   @Input() active = false;
 
+  @Input() color?: Color;
+
+  @Input() detail?: boolean;
+
+  @Input() detailIcon = 'ios-arrow-forward';
+
+  @Input() disabled = false;
+
+  @Input() icon?: string;
+
+  @Input() lines?: 'full' | 'inset' | 'none';
+
+  @Input() matchChildUrl = false;
+
   @Input() navigate = true;
 
   @Input() pageUrl: string;
-
-  @Input() icon: string;
-
-  @Input() text: string;
 
   /**
    * The position of the active state.
@@ -31,7 +43,7 @@ export class RouterItemComponent implements OnInit {
    */
   @Input() shape: 'line' | 'dot' | string = 'line';
 
-  @Input() matchChildUrl = false;
+  @Input() text: string;
 
   @HostListener('click') onclick() {
     if (this.navigate && this.pageUrl) {
@@ -45,6 +57,10 @@ export class RouterItemComponent implements OnInit {
 
   @HostBinding('class.active') get activeClass() {
     return this.matchActiveUrl() || this.active;
+  }
+
+  @HostBinding('class.router-item-disabled') get disabledClass() {
+    return this.disabled;
   }
 
   constructor(public router: Router) { }

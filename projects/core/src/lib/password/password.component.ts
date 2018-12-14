@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, forwardRef } from '@angular/core';
+import { Component, OnInit, Input, forwardRef, HostBinding } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { Color, Mode } from '@ionic/core';
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -17,12 +18,24 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 })
 export class PasswordComponent implements ControlValueAccessor, OnInit {
 
-  @Input() hideIcon = 'eye-off';
-  @Input() placeholder: string;
-  @Input() position: 'floating' | 'inline' | 'fixed' | 'stacked' = 'floating';
-  @Input() show: boolean;
-  @Input() showIcon = 'eye';
   @Input() clearOnEdit = false;
+
+  @Input() color: Color;
+
+  @HostBinding('class.password-disabled')
+  @Input() disabled = false;
+
+  @Input() hideIcon = 'eye-off';
+
+  @Input() lines?: 'full' | 'inset' | 'none';
+
+  @Input() placeholder: string;
+
+  @Input() position: 'floating' | 'inline' | 'fixed' | 'stacked' = 'floating';
+
+  @Input() show: boolean;
+
+  @Input() showIcon = 'eye';
 
   private _passwordValue = '';
   private onTouchedCallback: () => {};
