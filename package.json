@@ -1,6 +1,6 @@
 {
   "name": "fivethree",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Fivethree Team",
   "homepage": "http://fivethree.io/",
   "description": "Fivethree Web Components",
@@ -22,7 +22,7 @@
     "gh-pages": "ng build core && ng build --base-href 'https://fivethree-team.github.io/fivethree/' && npx ngh --dir=www",
     "publish": "npm publish dist/core",
     "rocket": "npm run build:prod && npm run publish",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i ./CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "private": true,
   "dependencies": {

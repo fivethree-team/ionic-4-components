@@ -1,3 +1,33 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/fivethree-team/fivethree/compare/v0.1.0...v0.2.1) (2018-12-14)
+
+
+### Bug Fixes
+
+* import ([0cfaeef](https://github.com/fivethree-team/fivethree/commit/0cfaeef))
+* **app-bar:** fill tabs based on position of the fab ([b8fb31b](https://github.com/fivethree-team/fivethree/commit/b8fb31b))
+* **app-bar:** fix routing, now using NavController ([ba8c46e](https://github.com/fivethree-team/fivethree/commit/ba8c46e))
+* **core:** remove interfaces ([2c59607](https://github.com/fivethree-team/fivethree/commit/2c59607))
+* **footer:** link to getting started ([b904bce](https://github.com/fivethree-team/fivethree/commit/b904bce))
+* **i18n:** typo ([c63d899](https://github.com/fivethree-team/fivethree/commit/c63d899))
+* **image-viewer:** fix retrieving of thumbnails absolute positioning ([1d7d167](https://github.com/fivethree-team/fivethree/commit/1d7d167))
+* **image-viewer:** make width and height for thumbnail optional, defaults to width 100%, height auto ([6b99ac8](https://github.com/fivethree-team/fivethree/commit/6b99ac8))
+* **loading-content:** fix error message caused by using last() in pull directive, added loading content demo ([8d8ae03](https://github.com/fivethree-team/fivethree/commit/8d8ae03))
+* **router-item:** collapse menu on click, added ripple, bottom sheet example page, fix fiv-buttons positioning ([e486626](https://github.com/fivethree-team/fivethree/commit/e486626))
+
+
+### Features
+
+* **app-bar:** add title to app bar and title layout option to hide, show and show active only ([c2ed79b](https://github.com/fivethree-team/fivethree/commit/c2ed79b))
+* **buttons:** added overflow buttons feature ([71e20b2](https://github.com/fivethree-team/fivethree/commit/71e20b2))
+* **docs:** add tooltip for show and close source ([bf90052](https://github.com/fivethree-team/fivethree/commit/bf90052))
+* **expandable-indicator:** improve expandable animation, add expandable indicator component, expandable example ([c6fe7ed](https://github.com/fivethree-team/fivethree/commit/c6fe7ed))
+* **router-item:** fix router items, ([768359b](https://github.com/fivethree-team/fivethree/commit/768359b))
+* **router-item, password:** add input variables for ion-item including color disabled ([621656f](https://github.com/fivethree-team/fivethree/commit/621656f))
+* **title:** navigate root on title click ([986c4ba](https://github.com/fivethree-team/fivethree/commit/986c4ba))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/fivethree-team/fivethree/compare/v0.1.0...v0.2.0) (2018-12-13)
 
