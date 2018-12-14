@@ -16,11 +16,11 @@ export class AppComponent {
       url: '/app-bar',
       icon: 'git-commit'
     },
-    // {
-    //   title: 'Bottom Sheet',
-    //   url: '/bottom-sheet',
-    //   icon: 'ios-arrow-up'
-    // },
+    {
+      title: 'Bottom Sheet',
+      url: '/bottom-sheet',
+      icon: 'ios-arrow-up'
+    },
     // {
     //   title: 'Dialog',
     //   url: '/dialog',
