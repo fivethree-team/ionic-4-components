@@ -159,6 +159,7 @@ export class ImageViewerComponent implements OnInit {
       .pipe(take(1))
       .subscribe(() => {
         this.closeSub.unsubscribe();
+        this.actionSub.unsubscribe();
         this.thumbnailVisible = true;
       });
 
@@ -192,7 +193,6 @@ export class ImageViewerComponent implements OnInit {
     this.singletap.unsubscribe();
     this.doubletap.unsubscribe();
     this.pinchPan.unsubscribe();
-    this.actionSub.unsubscribe();
   }
 
   removeHammerManager(): any {
