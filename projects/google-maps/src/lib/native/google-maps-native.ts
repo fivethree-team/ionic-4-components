@@ -14,7 +14,10 @@ import {
 
 @Component({
     selector: 'fiv-google-maps-native',
-    template: `<div id="map"></div>`,
+    template:
+        `<div id="map">
+            <ng-content></ng-content>
+        </div>`,
     styleUrls: ['google-maps-native.scss'],
 })
 export class GoogleMapsNativeComponent implements OnInit, FivGoogleMaps {
