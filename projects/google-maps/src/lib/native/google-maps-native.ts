@@ -1,4 +1,4 @@
-import { FivGoogleMaps, LatLng } from './../google-maps';
+import { IFivGoogleMaps, LatLng } from './../google-maps';
 import { Component, OnInit, Input } from '@angular/core';
 import {
     GoogleMap,
@@ -14,13 +14,10 @@ import {
 
 @Component({
     selector: 'fiv-google-maps-native',
-    template:
-        `<div id="map">
-            <ng-content></ng-content>
-        </div>`,
+    templateUrl: './google-maps-native.html',
     styleUrls: ['google-maps-native.scss'],
 })
-export class GoogleMapsNativeComponent implements OnInit, FivGoogleMaps {
+export class FivGoogleMapsNative implements OnInit, IFivGoogleMaps {
 
     @Input() zoom = 14;
     @Input() zoomToLocationOnMapReady = true;

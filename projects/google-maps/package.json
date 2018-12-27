@@ -14,8 +14,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@angular/common": "^6.1.10",
-    "@angular/core": "^6.1.10",
+    "@angular/common": "^7.0.0",
+    "@angular/core": "^7.0.0",
     "@ionic-native/core": "5.0.0-beta.21",
     "@ionic-native/google-maps": "5.0.0-beta.21",
     "cordova-plugin-googlemaps": "^2.4.6",
@@ -23,7 +23,7 @@
     "rxjs-compat": "6.3.3"
   },
   "devDependencies": {
-    "@types/googlemaps": "3.30.15"
+    "@types/googlemaps": "3.30.16"
   },
   "author": "Fivethree Team",
   "license": "MIT",

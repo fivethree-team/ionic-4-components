@@ -1,4 +1,4 @@
-export interface FivGoogleMaps {
+export interface IFivGoogleMaps {
     zoom: number;
     addMarker(lat: number, lng: number);
     hideMarkers();

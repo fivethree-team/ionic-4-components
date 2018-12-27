@@ -1,5 +1,5 @@
-import { FivGoogleMaps, LatLng } from '../google-maps';
-import { Component, OnInit, ElementRef, Renderer2, Inject, Input, Output, EventEmitter } from '@angular/core';
+import { IFivGoogleMaps, LatLng } from '../google-maps';
+import { Component, OnInit, ElementRef, Renderer2, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
@@ -7,7 +7,7 @@ import { DOCUMENT } from '@angular/platform-browser';
     template: ``,
     styleUrls: ['google-maps-web.scss'],
 })
-export class GoogleMapsWebComponent implements OnInit, FivGoogleMaps {
+export class FivGoogleMapsWeb implements OnInit, IFivGoogleMaps {
 
     @Input() apiKey: string;
     @Input() zoom = 15;
