@@ -65,7 +65,7 @@ var ImagePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>image</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card>\n    <fiv-image-viewer [actions]=\"[{icon: 'md-trash', name: 'remove'},{icon: 'md-send', name: 'send'}]\" [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n    <ion-card-header>\n      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>\n      <ion-card-title>Awesome Title</ion-card-title>\n    </ion-card-header>\n    <ion-card-content>\n      Awesome content\n    </ion-card-content>\n  </ion-card>\n\n  <fiv-image-viewer [width]=\"103.5\" [height]=\"122\" [actions]=\"[{icon: 'md-trash'},{icon: 'md-send'},{icon: 'md-image'},{icon: 'md-share'}]\"\n    [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n  <fiv-image-viewer [width]=\"207\" [height]=\"244\" [actions]=\"[{name: 'Ablesung abschließen'}]\" [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n \n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>image</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card>\n    <fiv-image-viewer (fivActionClick)=\"onActionClick($event)\" [actions]=\"[{icon: 'md-trash', name: 'remove'},{icon: 'md-send', name: 'send'}]\" [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n    <ion-card-header>\n      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>\n      <ion-card-title>Awesome Title</ion-card-title>\n    </ion-card-header>\n    <ion-card-content>\n      Awesome content\n    </ion-card-content>\n  </ion-card>\n\n  <fiv-image-viewer (fivActionClick)=\"onActionClick($event)\" [width]=\"103.5\" [height]=\"122\" [actions]=\"[{icon: 'md-trash'},{icon: 'md-send'},{icon: 'md-image'},{icon: 'md-share'}]\"\n    [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n  <fiv-image-viewer (fivActionClick)=\"onActionClick($event)\" [width]=\"207\" [height]=\"244\" [actions]=\"[{name: 'Ablesung abschließen'}]\" [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n \n</ion-content>"
 
 /***/ }),
 
@@ -105,6 +105,9 @@ var ImagePage = /** @class */ (function () {
     function ImagePage() {
     }
     ImagePage.prototype.ngOnInit = function () {
+    };
+    ImagePage.prototype.onActionClick = function (index) {
+        console.log('test', index);
     };
     ImagePage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

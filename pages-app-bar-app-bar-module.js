@@ -14,10 +14,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
-/* harmony import */ var _app_bar_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-bar.page */ "./src/app/pages/app-bar/app-bar.page.ts");
-/* harmony import */ var core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core */ "./dist/core/fesm5/fivethree-core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
+/* harmony import */ var _app_bar_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-bar.page */ "./src/app/pages/app-bar/app-bar.page.ts");
+/* harmony import */ var core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core */ "./dist/core/fesm5/fivethree-core.js");
+/* harmony import */ var _tabs_router_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tabs.router.module */ "./src/app/pages/app-bar/tabs.router.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -32,12 +32,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-var routes = [
-    {
-        path: '',
-        component: _app_bar_page__WEBPACK_IMPORTED_MODULE_6__["AppBarPage"]
-    }
-];
 var AppBarPageModule = /** @class */ (function () {
     function AppBarPageModule() {
     }
@@ -46,12 +40,12 @@ var AppBarPageModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
-                core__WEBPACK_IMPORTED_MODULE_7__["FivethreeCoreModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes),
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+                core__WEBPACK_IMPORTED_MODULE_6__["FivethreeCoreModule"],
+                _tabs_router_module__WEBPACK_IMPORTED_MODULE_7__["TabsPageRoutingModule"],
                 _components_components_module__WEBPACK_IMPORTED_MODULE_0__["ComponentsModule"]
             ],
-            declarations: [_app_bar_page__WEBPACK_IMPORTED_MODULE_6__["AppBarPage"]]
+            declarations: [_app_bar_page__WEBPACK_IMPORTED_MODULE_5__["AppBarPage"]]
         })
     ], AppBarPageModule);
     return AppBarPageModule;
@@ -68,7 +62,7 @@ var AppBarPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header title=\"App Bar\"></app-header>\n\n<ion-content>\n  <ion-grid class=\"page-content\" fixed>\n    <ion-row>\n      <ion-col size=\"12\">\n        <app-example [title]=\"'App Bar'\" [subtitle]=\"''\" html=\"assets/docs/snippets/app-bar/html.md\" typescript=\"assets/docs/snippets/app-bar/typescript.md\"\n          css=\"assets/docs/snippets/app-bar/css.md\">\n          <div class=\"container\">\n            <ion-item>\n              <ion-label>Title Layout</ion-label>\n              <ion-select [(ngModel)]=\"titleLayout\" [interfaceOptions]=\"customTitleLayoutOptions\" interface=\"popover\">\n                <ion-select-option value=\"hide\">Hide Title</ion-select-option>\n                <ion-select-option value=\"show\">Show Title</ion-select-option>\n                <ion-select-option value=\"active-only\">Show Title for active only</ion-select-option>\n              </ion-select>\n            </ion-item>\n\n            <ion-item>\n              <ion-label>Floating Action Bottom Position</ion-label>\n              <ion-select [(ngModel)]=\"position\" [interfaceOptions]=\"customFabPositionOptions\" interface=\"popover\">\n                <ion-select-option value=\"center\">Center</ion-select-option>\n                <ion-select-option value=\"right\">Right</ion-select-option>\n                <ion-select-option value=\"left\">Left</ion-select-option>\n              </ion-select>\n            </ion-item>\n\n            <ion-item>\n              <ion-label>Fab Visible</ion-label>\n              <ion-checkbox [(ngModel)]=\"fabVisible\" slot=\"end\"></ion-checkbox>\n            </ion-item>\n\n          </div>\n\n          <ion-tabs>\n            <fiv-app-bar (fivFabClick)=\"presentToast('Floating action button clicked')\" slot=\"bottom\" [titleLayout]=\"titleLayout\"\n              #bar [position]=\"position\" [fabVisible]=\"fabVisible\" [icon]=\"icon\">\n              <fiv-app-bar-tab left href=\"/app-bar\" icon=\"md-home\" name=\"App Bar\">\n              </fiv-app-bar-tab>\n              <fiv-app-bar-tab left href=\"/expandable\" icon=\"md-resize\" name=\"Expandable\">\n              </fiv-app-bar-tab>\n              <fiv-app-bar-tab right href=\"/password\" icon=\"md-eye\" name=\"Password\">\n              </fiv-app-bar-tab>\n              <fiv-app-bar-tab right href=\"/buttons\" icon=\"md-more\" name=\"Buttons\">\n              </fiv-app-bar-tab>\n            </fiv-app-bar>\n          </ion-tabs>\n        </app-example>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <app-footer></app-footer>\n</ion-content>"
+module.exports = "<app-header title=\"App Bar\"></app-header>\n\n<ion-content>\n  <ion-grid class=\"page-content\" fixed>\n    <ion-row>\n      <ion-col size=\"12\">\n        <app-example [title]=\"'App Bar'\" [subtitle]=\"''\" html=\"assets/docs/snippets/app-bar/html.md\" typescript=\"assets/docs/snippets/app-bar/typescript.md\"\n          css=\"assets/docs/snippets/app-bar/css.md\">\n          <div class=\"container\">\n            <ion-item>\n              <ion-label>Title Layout</ion-label>\n              <ion-select [(ngModel)]=\"titleLayout\" [interfaceOptions]=\"customTitleLayoutOptions\" interface=\"popover\">\n                <ion-select-option value=\"hide\">Hide Title</ion-select-option>\n                <ion-select-option value=\"show\">Show Title</ion-select-option>\n                <ion-select-option value=\"active-only\">Show Title for active only</ion-select-option>\n              </ion-select>\n            </ion-item>\n\n            <ion-item>\n              <ion-label>Floating Action Bottom Position</ion-label>\n              <ion-select [(ngModel)]=\"position\" [interfaceOptions]=\"customFabPositionOptions\" interface=\"popover\">\n                <ion-select-option value=\"center\">Center</ion-select-option>\n                <ion-select-option value=\"right\">Right</ion-select-option>\n                <ion-select-option value=\"left\">Left</ion-select-option>\n              </ion-select>\n            </ion-item>\n\n            <ion-item>\n              <ion-label>Fab Visible</ion-label>\n              <ion-checkbox [(ngModel)]=\"fabVisible\" slot=\"end\"></ion-checkbox>\n            </ion-item>\n\n          </div>\n        </app-example>\n        <app-example [title]=\"'App Bar Example'\" [subtitle]=\"'This is a simple example of how to use the app-bar in an ion-tabs layout.'\">\n          <div class=\"container min\">\n            <ion-tabs #tabs>\n              <fiv-app-bar (fivFabClick)=\"presentToast('Floating action button clicked')\" slot=\"bottom\"\n                [titleLayout]=\"titleLayout\" #bar [position]=\"position\" [fabVisible]=\"fabVisible\" [icon]=\"icon\">\n                <fiv-app-bar-tab left tab=\"tab1\" href=\"/tab1\" icon=\"md-home\" name=\"App Bar\">\n                </fiv-app-bar-tab>\n                <fiv-app-bar-tab left tab=\"tab2\" href=\"/tab2\" icon=\"md-resize\" name=\"Expandable\">\n                </fiv-app-bar-tab>\n                <fiv-app-bar-tab right tab=\"tab3\" href=\"/tab3\" icon=\"md-eye\" name=\"Password\">\n                </fiv-app-bar-tab>\n                <fiv-app-bar-tab right tab=\"tab4\" href=\"/tab4\" icon=\"md-more\" name=\"Buttons\">\n                </fiv-app-bar-tab>\n              </fiv-app-bar>\n            </ion-tabs>\n          </div>\n        </app-example>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <app-footer></app-footer>\n</ion-content>"
 
 /***/ }),
 
@@ -79,7 +73,7 @@ module.exports = "<app-header title=\"App Bar\"></app-header>\n\n<ion-content>\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  min-height: 50vh; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvYXBwLWJhci9hcHAtYmFyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGlCQUFnQixFQUNqQiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FwcC1iYXIvYXBwLWJhci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyIHtcbiAgbWluLWhlaWdodDogNTB2aDtcbn1cbiJdfQ== */"
+module.exports = ".container.min {\n  min-height: 50vh; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2FwcC1iYXIvYXBwLWJhci5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBZ0IsRUFDakIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9hcHAtYmFyL2FwcC1iYXIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lci5taW4ge1xuICBtaW4taGVpZ2h0OiA1MHZoO1xufVxuIl19 */"
 
 /***/ }),
 
@@ -146,7 +140,7 @@ var AppBarPage = /** @class */ (function () {
         this.toastController = toastController;
         this.titleLayout = 'hide';
         this.position = 'center';
-        this.fabVisible = false;
+        this.fabVisible = true;
         this.icon = 'checkmark';
         this.customTitleLayoutOptions = {
             header: 'Title Layout',
@@ -185,6 +179,98 @@ var AppBarPage = /** @class */ (function () {
         __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ToastController"]])
     ], AppBarPage);
     return AppBarPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/app-bar/tabs.router.module.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/pages/app-bar/tabs.router.module.ts ***!
+  \*****************************************************/
+/*! exports provided: TabsPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsPageRoutingModule", function() { return TabsPageRoutingModule; });
+/* harmony import */ var _app_bar_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-bar.page */ "./src/app/pages/app-bar/app-bar.page.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var routes = [
+    {
+        path: 'tabs',
+        component: _app_bar_page__WEBPACK_IMPORTED_MODULE_0__["AppBarPage"],
+        children: [
+            {
+                path: 'tab1',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: '../bottom-sheet/bottom-sheet.module#BottomSheetPageModule'
+                    }
+                ]
+            },
+            {
+                path: 'tab2',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: '../buttons/buttons.module#ButtonsPageModule'
+                    }
+                ]
+            },
+            {
+                path: 'tab3',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: '../expandable/expandable.module#ExpandablePageModule'
+                    }
+                ]
+            },
+            {
+                path: 'tab4',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: '../refresh/refresh.module#RefreshPageModule'
+                    }
+                ]
+            },
+            {
+                path: '',
+                redirectTo: '/app-bar/tabs/tab1',
+                pathMatch: 'full',
+            },
+        ]
+    },
+    {
+        path: '',
+        redirectTo: '/app-bar/tabs/tab1',
+        pathMatch: 'full'
+    }
+];
+var TabsPageRoutingModule = /** @class */ (function () {
+    function TabsPageRoutingModule() {
+    }
+    TabsPageRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        })
+    ], TabsPageRoutingModule);
+    return TabsPageRoutingModule;
 }());
 
 

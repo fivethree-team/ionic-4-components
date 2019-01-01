@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pages-buttons-buttons-module"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["buttons-buttons-module"],{
 
 /***/ "./src/app/pages/buttons/buttons.module.ts":
 /*!*************************************************!*\
@@ -186,4 +186,4 @@ var ButtonsPage = /** @class */ (function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=pages-buttons-buttons-module.js.map
+//# sourceMappingURL=buttons-buttons-module.js.map
