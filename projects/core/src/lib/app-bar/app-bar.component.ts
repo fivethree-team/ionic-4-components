@@ -150,6 +150,6 @@ export class AppBarComponent implements OnInit, AfterViewInit, AfterContentInit 
   }
 
   ionTabButtonClick(event: TabButtonClickDetail) {
-    this.tabs.onTabButtonClick(event);
+    this.tabs.select(event.tab);
   }
 }
