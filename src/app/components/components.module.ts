@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { LottieAnimationViewModule } from 'ng-lottie';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LottieAnimationViewModule } from 'ng-lottie';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     IonicModule,
     MarkdownModule.forChild(),
     TranslateModule.forChild(),
