@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { AppBarPage } from './app-bar.page';
-import { FivethreeCoreModule } from 'core';
+import { FivethreeCoreModule } from '@fivethree/core';
 import { TabsPageRoutingModule } from './tabs.router.module';
 
 @NgModule({

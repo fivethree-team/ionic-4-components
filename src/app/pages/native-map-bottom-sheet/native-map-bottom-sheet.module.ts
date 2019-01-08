@@ -1,5 +1,5 @@
-import { FivethreeCoreModule } from 'core';
-import { GoogleMapsModule } from 'google-maps';
+import { FivethreeCoreModule } from '@fivethree/core';
+import { GoogleMapsModule } from '@fivethree/google-maps';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

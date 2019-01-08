@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { MarkdownModule } from 'ngx-markdown';
-import { FivethreeCoreModule } from 'core';
+import { FivethreeCoreModule } from '@fivethree/core';
 import { MatTooltipModule, MatTabsModule } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';

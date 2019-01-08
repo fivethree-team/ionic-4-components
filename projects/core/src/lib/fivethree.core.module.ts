@@ -2,7 +2,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { HammerGestureConfig } from '@angular/platform-browser';
 import { Hammer } from 'hammerjs';
 import { StepperComponent } from './stepper/stepper.component';
 import { StepComponent } from './step/step.component';

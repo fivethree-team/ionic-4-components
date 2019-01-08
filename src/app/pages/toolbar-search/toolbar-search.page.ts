@@ -1,4 +1,4 @@
-import { DrawerState, ToolbarSearchComponent } from 'core';
+import { DrawerState, ToolbarSearchComponent } from '@fivethree/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({

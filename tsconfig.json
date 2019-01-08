@@ -33,17 +33,11 @@
       "@components/*": [
         "src/app/components/*"
       ],
-      "core": [
-        "dist/core"
+      "@fivethree/core": [
+        "dist/@fivethree/core"
       ],
-      "core/*": [
-        "dist/core/*"
-      ],
-      "google-maps": [
-        "dist/google-maps"
-      ],
-      "google-maps/*": [
-        "dist/google-maps/*"
+      "@fivethree/google-maps": [
+        "dist/@fivethree/google-maps"
       ]
     }
   }

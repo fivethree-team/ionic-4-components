@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ExpandablePage } from './expandable.page';
-import { FivethreeCoreModule } from 'core';
+import { FivethreeCoreModule } from '@fivethree/core';
 import { ComponentsModule } from '@components/components.module';
 
 const routes: Routes = [

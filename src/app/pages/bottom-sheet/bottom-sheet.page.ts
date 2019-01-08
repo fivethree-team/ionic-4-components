@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DrawerState } from 'core';
+import { DrawerState } from '@fivethree/core';
 
 @Component({
   selector: 'app-bottom-sheet',

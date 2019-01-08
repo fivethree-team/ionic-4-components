@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ViewportPage } from './viewport.page';
-import { FivethreeCoreModule } from 'core';
+import { FivethreeCoreModule } from '@fivethree/core';
 
 const routes: Routes = [
   {
