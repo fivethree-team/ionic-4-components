@@ -10,6 +10,7 @@
         "resources": "Resources"
     },
     "404": {
-        "text": "Oops, we couldn't find the page you are looking for."
+        "text": "Oops, we couldn't find the page you are looking for.",
+        "go.back": "Go to homepage"
     }
 }
