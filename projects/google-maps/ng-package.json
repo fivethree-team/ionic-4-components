@@ -4,6 +4,9 @@
   "deleteDestPath": false,
   "lib": {
     "flatModuleFile": "fivethree-google-maps",
-    "entryFile": "src/public_api.ts"
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "@ionic-native/google-maps": "ionic-native-google-maps"
+    }
   }
 }

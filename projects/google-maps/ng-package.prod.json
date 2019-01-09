@@ -2,6 +2,10 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/@fivethree/google-maps",
   "lib": {
-    "entryFile": "src/public_api.ts"
+    "flatModuleFile": "fivethree-google-maps",
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "@ionic-native/google-maps": "ionic-native-google-maps"
+    }
   }
 }
