@@ -16,7 +16,7 @@
   "peerDependencies": {
     "@angular/common": "^6.1.10",
     "@angular/core": "^6.1.10",
-    "@ionic-native/core": "5.0.0-beta.21",
+    "@ionic-native/core": "5.0.0-beta.23",
     "@ionic-native/google-maps": "5.0.0-beta.21",
     "cordova-plugin-googlemaps": "^2.4.6",
     "rxjs": "6.3.3",
