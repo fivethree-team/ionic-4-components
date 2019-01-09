@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DialogComponent } from 'core';
+import { DialogComponent } from '@fivethree/core';
 
 @Component({
   selector: 'app-dialog',

@@ -1,15 +1,16 @@
 <app-header></app-header>
 
 <ion-content>
-    
-    <div id="page-not-found-container">
-      <div [fivCenter]>
-          <lottie-animation-view [options]="lottieConfig"
-          [width]="200" [height]="200" (animCreated)="handleAnimation($event)">
-        </lottie-animation-view>
-        <h3 text-center translate>404.text</h3>
-        <!-- <a text-center href="/">Go back to homepage</a> -->
-      </div>
+
+  <div id="page-not-found-container">
+    <div [fivCenter] text-center>
+      <lottie-animation-view [options]="lottieConfig" [width]="200" [height]="200" (animCreated)="handleAnimation($event)">
+      </lottie-animation-view>
+      <h3 text-center translate>404.text</h3>
+      <ion-button routerLink="/" shape="round" translate>
+        404.go.back
+      </ion-button>
     </div>
-    <app-footer></app-footer>
-  </ion-content>
+  </div>
+  <app-footer></app-footer>
+</ion-content>

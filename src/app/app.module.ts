@@ -1,5 +1,5 @@
 import { ComponentsModule } from 'src/app/components/components.module';
-import { FivethreeCoreModule } from 'core';
+import { FivethreeCoreModule } from '@fivethree/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

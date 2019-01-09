@@ -2,7 +2,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { HammerGestureConfig } from '@angular/platform-browser';
 import { Hammer } from 'hammerjs';
 import { StepperComponent } from './stepper/stepper.component';
 import { StepComponent } from './step/step.component';
@@ -12,7 +12,7 @@ import { ExpandableComponent } from './expandable/expandable.component';
 import { RouterItemComponent } from './router-item/router-item.component';
 import { CollapsableMenuDirective } from './collapsable-menu/collapsable-menu.directive';
 import { CollapsableMenuButtonComponent } from './collapsable-menu-button/collapsable-menu-button.component';
-import { PasswordComponent } from './password/password.component';
+import { FivPasswordInput } from './password-input/password-input.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { BottomSheetContentComponent } from './bottom-sheet-content/bottom-sheet-content.component';
 import { LoadingButtonComponent } from './loading-button/loading-button.component';
@@ -55,7 +55,7 @@ export class MyHammerConfig extends HammerGestureConfig {
   ],
   declarations: [
     ExpandableComponent,
-    PasswordComponent,
+    FivPasswordInput,
     StepperComponent,
     StepComponent,
     StepHeaderComponent,
@@ -93,7 +93,7 @@ export class MyHammerConfig extends HammerGestureConfig {
   entryComponents: [ImageViewerComponent, PopoverComponent],
   exports: [
     ExpandableComponent,
-    PasswordComponent,
+    FivPasswordInput,
     StepperComponent,
     StepComponent,
     StepHeaderComponent,

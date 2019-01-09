@@ -1,22 +1,22 @@
 import { Component, OnInit, Input, forwardRef, HostBinding } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { Color, Mode } from '@ionic/core';
+import { Color } from '@ionic/core';
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => PasswordComponent),
+  useExisting: forwardRef(() => FivPasswordInput),
   multi: true
 };
 
 @Component({
-  selector: 'fiv-password',
-  templateUrl: './password.component.html',
-  styleUrls: ['./password.component.scss'],
+  selector: 'fiv-password-input',
+  templateUrl: './password-input.component.html',
+  styleUrls: ['./password-input.component.scss'],
   providers: [
     CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR
   ],
 })
-export class PasswordComponent implements ControlValueAccessor, OnInit {
+export class FivPasswordInput implements ControlValueAccessor, OnInit {
 
   @Input() clearOnEdit = false;
 

@@ -1,4 +1,4 @@
-import { FivGoogleMaps, LatLng } from './google-maps';
+import { IFivGoogleMaps, LatLng } from './google-maps';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
   `,
   styles: []
 })
-export class GoogleMapsComponent implements OnInit, FivGoogleMaps {
+export class FivGoogleMaps implements OnInit, IFivGoogleMaps {
 
   @Input() isCordova: boolean;
   @Input() apiKey: string;

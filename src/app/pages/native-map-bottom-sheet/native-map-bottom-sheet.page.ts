@@ -1,6 +1,6 @@
+import { FivGoogleMapsNative} from '@fivethree/google-maps';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DrawerState } from 'core';
-import { GoogleMapsNativeComponent } from 'google-maps';
+import { DrawerState } from '@fivethree/core';
 
 @Component({
   selector: 'app-native-map-bottom-sheet',
@@ -20,7 +20,7 @@ export class NativeMapBottomSheetPage implements OnInit {
   float = true;
   rounded = true;
 
-  @ViewChild('map') map: GoogleMapsNativeComponent;
+  @ViewChild('map') map: FivGoogleMapsNative;
 
   constructor() { }
 

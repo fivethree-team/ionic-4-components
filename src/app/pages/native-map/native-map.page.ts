@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { GoogleMapsNativeComponent } from 'google-maps';
+import { FivGoogleMapsNative } from '@fivethree/google-maps';
 
 @Component({
   selector: 'app-native-map',
@@ -8,8 +8,7 @@ import { GoogleMapsNativeComponent } from 'google-maps';
 })
 export class NativeMapPage implements OnInit, AfterViewInit {
 
-
-  @ViewChild('map') map: GoogleMapsNativeComponent;
+  @ViewChild('map') map: FivGoogleMapsNative;
 
   constructor() { }
 

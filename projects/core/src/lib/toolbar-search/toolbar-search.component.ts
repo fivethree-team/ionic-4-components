@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output, Renderer2, OnChanges, SimpleChanges } from '@angular/core';
 import { trigger, transition, style, animate, state } from '@angular/animations';
+import { IonInput } from '@ionic/angular';
 
 @Component({
   selector: 'fiv-toolbar-search',
@@ -132,14 +133,12 @@ export class ToolbarSearchComponent implements OnInit, OnChanges {
     }
   }
 
-  seachbarAnimDone(event, input) {
-    console.log('!!!', event);
+  seachbarAnimDone(event, input: IonInput) {
     if (event.fromState !== 'void') {
       this.titleVisible = true;
     } else {
-      input.focus();
+      input.setFocus();
     }
   }
-
 
 }

@@ -18,7 +18,7 @@ export * from './lib/loading-button/loading-button.component';
 export * from './lib/loading-content/loading-content.component';
 export * from './lib/loading-fab/loading-fab.component';
 export * from './lib/loading-progress-bar/loading-progress-bar.component';
-export * from './lib/password/password.component';
+export * from './lib/password-input/password-input.component';
 export * from './lib/router-item/router-item.component';
 export * from './lib/step/step.component';
 export * from './lib/step-content/step-content.component';

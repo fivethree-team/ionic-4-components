@@ -21,7 +21,7 @@
     "@angular/forms": "^7.0.0",
     "@angular/platform-browser": "^7.0.0",
     "@angular/router": "^7.0.0",
-    "@ionic/angular": "^4.0.0-beta.18"
+    "@ionic/angular": "^4.0.0-rc.0"
   },
   "author": "Fivethree Team",
   "license": "MIT",
