@@ -77,7 +77,7 @@
     "@types/node": "10.9.4",
     "angular-cli-ghpages": "0.5.3",
     "codelyzer": "4.5.0",
-    "conventional-changelog-cli": "2.0.5",
+    "conventional-changelog-cli": "2.0.11",
     "jasmine-core": "3.2.1",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "3.0.0",
