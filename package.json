@@ -1,6 +1,6 @@
 {
   "name": "fivethree",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": "Fivethree Team",
   "homepage": "http://fivethree.io/",
   "description": "Fivethree Web Components",
@@ -20,7 +20,7 @@
     "build": "ng build core && ng build google-maps",
     "build:prod": "ng build core --prod && ng build google-maps --prod",
     "gh-pages": "ng build core && ng build --base-href 'https://fivethree-team.github.io/fivethree/' && npx ngh --dir=www",
-    "publish": "npm publish dist/core",
+    "publish": "npm publish dist/@fivethree/core",
     "rocket": "npm run build:prod && npm run publish",
     "version": "conventional-changelog -p angular -i ./CHANGELOG.md -s && git add CHANGELOG.md"
   },
