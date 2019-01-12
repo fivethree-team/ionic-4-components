@@ -2,7 +2,7 @@ import { AppBarComponent } from './../app-bar/app-bar.component';
 import { Component, OnInit, Input, HostBinding, Output, EventEmitter, Host } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AppBarTitleLayout } from '../interfaces';
-import { TabButtonClickDetail } from '@ionic/core';
+import { TabButtonClickEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'fiv-app-bar-tab-content',
@@ -24,7 +24,7 @@ export class AppBarTabContentComponent implements OnInit {
     return `label-${this.titleLayout}`;
   }
 
-  @Output() ionTabButtonClick = new EventEmitter<TabButtonClickDetail>();
+  @Output() ionTabButtonClick = new EventEmitter<TabButtonClickEventDetail>();
 
   constructor(private nav: NavController, @Host() private appbar: AppBarComponent) { }
 

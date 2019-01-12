@@ -18,8 +18,7 @@ export class PullDirective implements OnInit {
 
   scrollY: HTMLElement;
 
-  constructor(private element: ElementRef,
-    @Host() private content: IonContent) {
+  constructor(private element: ElementRef, private content: IonContent) {
   }
 
   ngOnInit(): void {

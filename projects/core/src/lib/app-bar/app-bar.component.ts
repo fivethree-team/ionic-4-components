@@ -14,7 +14,7 @@ import { AppBarTabComponent } from '../app-bar-tab/app-bar-tab.component';
 import { Router } from '@angular/router';
 import { AppBarTitleLayout, AppBarFabPosition } from '../interfaces';
 import { IonTabs } from '@ionic/angular';
-import { TabButtonClickDetail } from '@ionic/core';
+import { TabButtonClickEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'fiv-app-bar',
@@ -149,7 +149,7 @@ export class AppBarComponent implements OnInit, AfterViewInit, AfterContentInit 
     this.fivFabClick.emit(this);
   }
 
-  ionTabButtonClick(event: TabButtonClickDetail) {
+  ionTabButtonClick(event: TabButtonClickEventDetail) {
     this.tabs.select(event.tab);
   }
 }

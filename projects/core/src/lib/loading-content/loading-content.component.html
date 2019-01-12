@@ -1,11 +1,13 @@
-<fiv-loading-refresher-content (fivProgress)="onSpinnerProgress($event)" (fivHidden)="afterSpinnerHide()" (fivComplete)="fillAnimationDone()" #spinner></fiv-loading-refresher-content>
+<fiv-loading-refresher-content (fivProgress)="onSpinnerProgress($event)" (fivHidden)="afterSpinnerHide()" (fivComplete)="fillAnimationDone()"
+  #spinner></fiv-loading-refresher-content>
 <ion-chip class="gg-hint-wrapper" *ngIf="hintVisible" [@hintAnim] (@hintAnim.done)="postHint($event)" (click)="onHintClicked()"
   #hint>
   <ion-icon class="icon" name="md-arrow-up"></ion-icon>
   <ion-label class="text">{{hintText}}</ion-label>
 </ion-chip>
 
-<ion-content no-bounce fivPull [maxPullHeight]="maxPullHeight" [minPullHeight]="minPullHeight" (fivPull)="fivPull($event)" (fivRefresh)="onRefresh()" (fivCancel)="fivCancel()" [enabled]="!refreshing && !hintVisible">
+<ion-content no-bounce fivPull [maxPullHeight]="maxPullHeight" [minPullHeight]="minPullHeight" (fivPull)="fivPull($event)"
+  (fivRefresh)="onRefresh()" (fivCancel)="fivCancel()" [enabled]="!refreshing && !hintVisible">
 
-    <ng-content></ng-content>
+  <ng-content></ng-content>
 </ion-content>
