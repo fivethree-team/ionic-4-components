@@ -1,3 +1,46 @@
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/fivethree-team/component-library/compare/v0.1.0...v0.3.1) (2019-01-12)
+
+
+### Bug Fixes
+
+* **app-bar:** fill tabs based on position of the fab ([b8fb31b](https://github.com/fivethree-team/component-library/commit/b8fb31b))
+* **app-bar:** fix appbar to work with new ion-tabs layout ([f30ee98](https://github.com/fivethree-team/component-library/commit/f30ee98))
+* **app-bar:** fix routing, now using NavController ([ba8c46e](https://github.com/fivethree-team/component-library/commit/ba8c46e))
+* **app-bar:** only works in ion-tabs now ([8737f1a](https://github.com/fivethree-team/component-library/commit/8737f1a))
+* **core:** remove interfaces ([2c59607](https://github.com/fivethree-team/component-library/commit/2c59607))
+* **expandable-indicator:** autoprefixer warning during build ([6c34fd0](https://github.com/fivethree-team/component-library/commit/6c34fd0))
+* **footer:** link to getting started ([b904bce](https://github.com/fivethree-team/component-library/commit/b904bce))
+* **home:** getting started link ([e3f1e42](https://github.com/fivethree-team/component-library/commit/e3f1e42))
+* **i18n:** typo ([c63d899](https://github.com/fivethree-team/component-library/commit/c63d899))
+* **icon:** autoprefixer warning during build ([a25068b](https://github.com/fivethree-team/component-library/commit/a25068b))
+* **image-viewer:** fix retrieving of thumbnails absolute positioning ([1d7d167](https://github.com/fivethree-team/component-library/commit/1d7d167))
+* **image-viewer:** make width and height for thumbnail optional, defaults to width 100%, height auto ([6b99ac8](https://github.com/fivethree-team/component-library/commit/6b99ac8))
+* import ([0cfaeef](https://github.com/fivethree-team/component-library/commit/0cfaeef))
+* **image-viewer:** unsubscribe from action click event ([45d21b3](https://github.com/fivethree-team/component-library/commit/45d21b3))
+* **loading-content:** fix error message caused by using last() in pull directive, added loading content demo ([8d8ae03](https://github.com/fivethree-team/component-library/commit/8d8ae03))
+* **router-item:** collapse menu on click, added ripple, bottom sheet example page, fix fiv-buttons positioning ([e486626](https://github.com/fivethree-team/component-library/commit/e486626))
+* **routing:** to getting-started page ([d7f8488](https://github.com/fivethree-team/component-library/commit/d7f8488))
+* **toolbar-search:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/component-library/commit/4175cc7))
+
+
+### Features
+
+* **404:** add button to go to homepage ([6e39a7b](https://github.com/fivethree-team/component-library/commit/6e39a7b))
+* **app-bar:** add title to app bar and title layout option to hide, show and show active only ([c2ed79b](https://github.com/fivethree-team/component-library/commit/c2ed79b))
+* **buttons:** added overflow buttons feature ([71e20b2](https://github.com/fivethree-team/component-library/commit/71e20b2))
+* **docs:** add tooltip for show and close source ([bf90052](https://github.com/fivethree-team/component-library/commit/bf90052))
+* **expandable-indicator:** improve expandable animation, add expandable indicator component, expandable example ([c6fe7ed](https://github.com/fivethree-team/component-library/commit/c6fe7ed))
+* **google-maps:** add fiv prefix to google maps components , update peer dependencies ([519e6a8](https://github.com/fivethree-team/component-library/commit/519e6a8))
+* **google-maps-native:** add ng-content inside google-maps ([a54ac13](https://github.com/fivethree-team/component-library/commit/a54ac13))
+* **image-viewer:** added action click output event ([9dd170a](https://github.com/fivethree-team/component-library/commit/9dd170a))
+* **ionic:** update to 4.0.0-rc.0 ([769a3f4](https://github.com/fivethree-team/component-library/commit/769a3f4))
+* **router-item:** fix router items, ([768359b](https://github.com/fivethree-team/component-library/commit/768359b))
+* **router-item, password:** add input variables for ion-item including color disabled ([621656f](https://github.com/fivethree-team/component-library/commit/621656f))
+* **title:** navigate root on title click ([986c4ba](https://github.com/fivethree-team/component-library/commit/986c4ba))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/fivethree-team/component-library/compare/v0.1.0...v0.3.0) (2019-01-12)
 
