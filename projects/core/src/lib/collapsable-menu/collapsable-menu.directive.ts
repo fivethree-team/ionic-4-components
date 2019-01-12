@@ -6,7 +6,7 @@ import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
   selector: '[fivCollapseMenu]',
   exportAs: 'menuCollapse'
 })
-export class CollapsableMenuDirective {
+export class FivCollapsableMenu {
 
   collapsed = false;
   hovering = false;

@@ -21,7 +21,7 @@ export interface InViewportEvent {
   selector: '[fivViewport]',
   exportAs: 'viewport'
 })
-export class ViewportDirective implements OnInit, OnDestroy, AfterContentInit {
+export class FivViewport implements OnInit, OnDestroy, AfterContentInit {
 
   @Input() offset = 0;
   @Output() fivAppear = new EventEmitter<InViewportEvent>();

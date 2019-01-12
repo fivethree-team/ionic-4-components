@@ -1,14 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CollapsableMenuDirective } from '../collapsable-menu/collapsable-menu.directive';
+import { FivCollapsableMenu } from '../collapsable-menu/collapsable-menu.directive';
 
 @Component({
   selector: 'fiv-collapsable-menu-button',
   templateUrl: './collapsable-menu-button.component.html',
   styleUrls: ['./collapsable-menu-button.component.scss']
 })
-export class CollapsableMenuButtonComponent implements OnInit {
+export class FivCollapsableMenuButton implements OnInit {
 
-  @Input() menu: CollapsableMenuDirective;
+  @Input() menu: FivCollapsableMenu;
 
   constructor() { }
 

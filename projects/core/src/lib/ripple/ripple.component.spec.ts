@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RippleComponent } from './ripple.component';
+import { FivRipple } from './ripple.component';
 
 describe('RippleComponent', () => {
-  let component: RippleComponent;
-  let fixture: ComponentFixture<RippleComponent>;
+  let component: FivRipple;
+  let fixture: ComponentFixture<FivRipple>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RippleComponent ]
+      declarations: [ FivRipple ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RippleComponent);
+    fixture = TestBed.createComponent(FivRipple);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

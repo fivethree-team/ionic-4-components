@@ -133,6 +133,6 @@
     "no-output-rename": true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
-    "directive-class-suffix": true
+    "directive-class-suffix": false
   }
 }

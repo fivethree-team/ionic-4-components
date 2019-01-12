@@ -1,4 +1,4 @@
-import { BottomSheetContentComponent } from '../bottom-sheet-content/bottom-sheet-content.component';
+import { FivBottomSheetContent } from '../bottom-sheet-content/bottom-sheet-content.component';
 import {
   Component, AfterViewInit, OnChanges, Input, Output, EventEmitter,
   ElementRef, Renderer2, SimpleChanges, ContentChild
@@ -13,7 +13,7 @@ import { DrawerState } from './drawer-state';
   templateUrl: './bottom-sheet.component.html',
   styleUrls: ['./bottom-sheet.component.scss']
 })
-export class BottomSheetComponent implements AfterViewInit, OnChanges {
+export class FivBottomSheet implements AfterViewInit, OnChanges {
   @Input() dockedHeight = 80;
 
   @Input() shouldBounce = true;
@@ -27,11 +27,11 @@ export class BottomSheetComponent implements AfterViewInit, OnChanges {
   @Input() minimumHeight = 24;
 
   @Output() stateChange: EventEmitter<DrawerState> = new EventEmitter<DrawerState>();
-  @Output() fivOpen: EventEmitter<BottomSheetComponent> = new EventEmitter<BottomSheetComponent>();
-  @Output() fivDocked: EventEmitter<BottomSheetComponent> = new EventEmitter<BottomSheetComponent>();
-  @Output() fivClose: EventEmitter<BottomSheetComponent> = new EventEmitter<BottomSheetComponent>();
+  @Output() fivOpen: EventEmitter<FivBottomSheet> = new EventEmitter<FivBottomSheet>();
+  @Output() fivDocked: EventEmitter<FivBottomSheet> = new EventEmitter<FivBottomSheet>();
+  @Output() fivClose: EventEmitter<FivBottomSheet> = new EventEmitter<FivBottomSheet>();
 
-  @ContentChild(BottomSheetContentComponent) content: BottomSheetContentComponent;
+  @ContentChild(FivBottomSheetContent) content: FivBottomSheetContent;
 
   private _startPositionTop: number;
   private readonly _BOUNCE_DELTA = 30;

@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { animate, style, transition, trigger, AnimationBuilder } from '@angular/animations';
 import { LoadingService } from '../loading/loading.service';
-import { timer, Observable } from 'rxjs';
-import { timeInterval, pluck, take } from 'rxjs/operators';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'fiv-loading-progress-bar',
@@ -35,7 +34,7 @@ import { timeInterval, pluck, take } from 'rxjs/operators';
     ])
   ]
 })
-export class LoadingProgressBarComponent implements OnInit, OnDestroy {
+export class FivLoadingProgressBar implements OnInit, OnDestroy {
 
   loading = false;
   @Input() global = false;
@@ -44,7 +43,7 @@ export class LoadingProgressBarComponent implements OnInit, OnDestroy {
   @Input() verticalAlign: 'top' | 'bottom' = 'top';
   @Output() fivComplete: EventEmitter<any> = new EventEmitter<any>();
   @Output() fivDoneShrinking: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() fivRefresh: EventEmitter<LoadingProgressBarComponent> = new EventEmitter<LoadingProgressBarComponent>();
+  @Output() fivRefresh: EventEmitter<FivLoadingProgressBar> = new EventEmitter<FivLoadingProgressBar>();
 
   @ViewChild('bar') bar: ElementRef;
   @ViewChild('linear') linear: ElementRef;

@@ -1,14 +1,13 @@
 import { Component, OnInit, Input, HostBinding, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { Color, Mode } from '@ionic/core';
-import { IonicModule } from '@ionic/angular';
+import { Color } from '@ionic/core';
 
 @Component({
   selector: 'fiv-router-item',
   templateUrl: './router-item.component.html',
   styleUrls: ['./router-item.component.scss']
 })
-export class RouterItemComponent implements OnInit {
+export class FivRouterItem implements OnInit {
 
   @Input() active = false;
 

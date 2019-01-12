@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppBarTabComponent } from './app-bar-tab.component';
+import { FivAppBarTab } from './app-bar-tab.component';
 
 describe('AppBarTabComponent', () => {
-  let component: AppBarTabComponent;
-  let fixture: ComponentFixture<AppBarTabComponent>;
+  let component: FivAppBarTab;
+  let fixture: ComponentFixture<FivAppBarTab>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppBarTabComponent ]
+      declarations: [ FivAppBarTab ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppBarTabComponent);
+    fixture = TestBed.createComponent(FivAppBarTab);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

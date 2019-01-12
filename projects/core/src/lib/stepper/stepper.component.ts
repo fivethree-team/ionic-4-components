@@ -1,18 +1,18 @@
-import { StepComponent } from './../step/step.component';
+import { FivStep } from './../step/step.component';
 import { EventEmitter, Component, OnInit, ViewChildren, ContentChildren, QueryList, Input, ViewChild, Output } from '@angular/core';
-import { StepContentComponent } from '../step-content/step-content.component';
-import { StepperHorizontalComponent } from '../stepper-horizontal/stepper-horizontal.component';
+import { FivStepContent } from '../step-content/step-content.component';
+import { FivStepperHorizontal } from '../stepper-horizontal/stepper-horizontal.component';
 
 @Component({
   selector: 'fiv-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss']
 })
-export class StepperComponent implements OnInit {
+export class FivStepper implements OnInit {
 
-  @ContentChildren(StepComponent) contents: QueryList<StepComponent>;
-  @ViewChildren(StepContentComponent) steps: QueryList<StepContentComponent>;
-  @ViewChild(StepperHorizontalComponent) horizontal: StepperHorizontalComponent;
+  @ContentChildren(FivStep) contents: QueryList<FivStep>;
+  @ViewChildren(FivStepContent) steps: QueryList<FivStepContent>;
+  @ViewChild(FivStepperHorizontal) horizontal: FivStepperHorizontal;
   @Input() mode: 'horizontal' | 'vertical' = 'vertical';
   @Output() fivClick = new EventEmitter<number>();
   @Output() fivClose = new EventEmitter<{ index: number, param: any }>();

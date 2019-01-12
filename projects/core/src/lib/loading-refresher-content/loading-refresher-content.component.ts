@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, HostBinding, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { animate, style, transition, trigger, state, AnimationBuilder } from '@angular/animations';
-import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
+import { FivLoadingSpinner } from '../loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'fiv-loading-refresher-content',
@@ -54,7 +54,7 @@ import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.comp
     )]
   )]
 })
-export class LoadingRefresherContentComponent implements OnInit {
+export class FivLoadingRefresherContent implements OnInit {
 
   @Input() icon: string;
   @Input() spinColor: string;
@@ -63,13 +63,13 @@ export class LoadingRefresherContentComponent implements OnInit {
   @Input() checkmark = false;
   @Input() disabled = false;
 
-  @Output() fivComplete: EventEmitter<LoadingRefresherContentComponent> = new EventEmitter<LoadingRefresherContentComponent>();
-  @Output() fivRefresh: EventEmitter<LoadingRefresherContentComponent> = new EventEmitter<LoadingRefresherContentComponent>();
-  @Output() fivHidden: EventEmitter<LoadingRefresherContentComponent> = new EventEmitter<LoadingRefresherContentComponent>();
-  @Output() fivShowed: EventEmitter<LoadingRefresherContentComponent> = new EventEmitter<LoadingRefresherContentComponent>();
+  @Output() fivComplete: EventEmitter<FivLoadingRefresherContent> = new EventEmitter<FivLoadingRefresherContent>();
+  @Output() fivRefresh: EventEmitter<FivLoadingRefresherContent> = new EventEmitter<FivLoadingRefresherContent>();
+  @Output() fivHidden: EventEmitter<FivLoadingRefresherContent> = new EventEmitter<FivLoadingRefresherContent>();
+  @Output() fivShowed: EventEmitter<FivLoadingRefresherContent> = new EventEmitter<FivLoadingRefresherContent>();
   @Output() fivProgress: EventEmitter<number> = new EventEmitter<number>();
 
-  @ViewChild('spinner') spinner: LoadingSpinnerComponent;
+  @ViewChild('spinner') spinner: FivLoadingSpinner;
   @ViewChild('background') background: ElementRef;
 
   visible = false;

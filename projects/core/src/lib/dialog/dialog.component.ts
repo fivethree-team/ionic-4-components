@@ -32,14 +32,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class DialogComponent implements OnInit {
+export class FivDialog implements OnInit {
 
   @Input() verticalAlign: 'bottom' | 'center' | 'top' = 'center';
   @Input() animation: 'slide' | 'fade' = 'fade';
   visible = false;
   @Input() backdrop: true;
-  @Output() fivClose: EventEmitter<DialogComponent> = new EventEmitter();
-  @Output() fivOpen: EventEmitter<DialogComponent> = new EventEmitter();
+  @Output() fivClose: EventEmitter<FivDialog> = new EventEmitter();
+  @Output() fivOpen: EventEmitter<FivDialog> = new EventEmitter();
 
   @HostBinding('class.visible') get isVisible() {
     return this.visible;

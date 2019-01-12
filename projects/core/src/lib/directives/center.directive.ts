@@ -4,7 +4,7 @@ import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 @Directive({
   selector: '[fivCenter]'
 })
-export class CenterDirective implements OnInit {
+export class FivCenter implements OnInit {
   vertical = true;
   horizontal = true;
 

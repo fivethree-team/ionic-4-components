@@ -6,7 +6,7 @@ import { filter, map, skipWhile, takeUntil, takeLast } from 'rxjs/operators';
 @Directive({
   selector: '[fivPull]'
 })
-export class PullDirective implements OnInit {
+export class FivPull implements OnInit {
 
   @Input() minPullHeight = 112;
   @Input() maxPullHeight = 168;

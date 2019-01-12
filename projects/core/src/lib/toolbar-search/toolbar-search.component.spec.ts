@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ToolbarSearchComponent } from './toolbar-search.component';
+import { FivToolbarSearch } from './toolbar-search.component';
 
 describe('ToolbarSearchComponent', () => {
-  let component: ToolbarSearchComponent;
-  let fixture: ComponentFixture<ToolbarSearchComponent>;
+  let component: FivToolbarSearch;
+  let fixture: ComponentFixture<FivToolbarSearch>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToolbarSearchComponent ]
+      declarations: [ FivToolbarSearch ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToolbarSearchComponent);
+    fixture = TestBed.createComponent(FivToolbarSearch);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

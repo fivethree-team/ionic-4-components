@@ -1,16 +1,16 @@
 import { Component, OnInit, ViewChild, Input, EventEmitter, Output, HostBinding } from '@angular/core';
-import { LoadingProgressBarComponent } from '../loading-progress-bar/loading-progress-bar.component';
+import { FivLoadingProgressBar } from '../loading-progress-bar/loading-progress-bar.component';
 
 @Component({
   selector: 'fiv-loading-button',
   templateUrl: './loading-button.component.html',
   styleUrls: ['./loading-button.component.scss']
 })
-export class LoadingButtonComponent implements OnInit {
+export class FivLoadingButton implements OnInit {
 
   loading = false;
 
-  @ViewChild('progress') progress: LoadingProgressBarComponent;
+  @ViewChild('progress') progress: FivLoadingProgressBar;
   @Input() color = 'light';
   @Input() expand = 'block';
   @Input() fill = 'solid';
@@ -25,9 +25,9 @@ export class LoadingButtonComponent implements OnInit {
 
   @Input() type: 'submit' | 'reset' | 'button' = 'button';
 
-  @Output() fivRefresh: EventEmitter<LoadingButtonComponent> = new EventEmitter();
-  @Output() fivRefreshComplete: EventEmitter<LoadingButtonComponent> = new EventEmitter();
-  @Output() fivButtonClick: EventEmitter<LoadingButtonComponent> = new EventEmitter();
+  @Output() fivRefresh: EventEmitter<FivLoadingButton> = new EventEmitter();
+  @Output() fivRefreshComplete: EventEmitter<FivLoadingButton> = new EventEmitter();
+  @Output() fivButtonClick: EventEmitter<FivLoadingButton> = new EventEmitter();
 
   constructor() {
   }

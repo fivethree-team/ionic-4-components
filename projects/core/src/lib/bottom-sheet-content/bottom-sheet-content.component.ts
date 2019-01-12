@@ -7,7 +7,7 @@ import { DrawerState } from '../bottom-sheet/drawer-state';
   templateUrl: './bottom-sheet-content.component.html',
   styleUrls: ['./bottom-sheet-content.component.scss']
 })
-export class BottomSheetContentComponent implements OnInit {
+export class FivBottomSheetContent implements OnInit {
 
   @Input() rounded = true;
   @Input() handle = true;

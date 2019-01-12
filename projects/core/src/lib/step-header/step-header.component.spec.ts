@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StepHeaderComponent } from './step-header.component';
+import { FivStepHeader } from './step-header.component';
 
 describe('StepHeaderComponent', () => {
-  let component: StepHeaderComponent;
-  let fixture: ComponentFixture<StepHeaderComponent>;
+  let component: FivStepHeader;
+  let fixture: ComponentFixture<FivStepHeader>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StepHeaderComponent ]
+      declarations: [ FivStepHeader ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StepHeaderComponent);
+    fixture = TestBed.createComponent(FivStepHeader);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

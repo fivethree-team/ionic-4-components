@@ -5,9 +5,7 @@ import { Platforms } from '@ionic/core';
 @Directive({
   selector: '[fivIf]'
 })
-export class IfPlatformDirective {
-
-
+export class FivIfPlatform {
 
   constructor(private platform: Platform, private viewContainer: ViewContainerRef, private templateRef: TemplateRef<any>) {
 

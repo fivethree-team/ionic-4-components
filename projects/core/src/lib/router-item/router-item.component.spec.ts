@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RouterItemComponent } from './router-item.component';
+import { FivRouterItem } from './router-item.component';
 
 describe('RouterItemComponent', () => {
-  let component: RouterItemComponent;
-  let fixture: ComponentFixture<RouterItemComponent>;
+  let component: FivRouterItem;
+  let fixture: ComponentFixture<FivRouterItem>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RouterItemComponent ]
+      declarations: [ FivRouterItem ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RouterItemComponent);
+    fixture = TestBed.createComponent(FivRouterItem);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

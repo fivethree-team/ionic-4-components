@@ -1,4 +1,4 @@
-import { ButtonComponent } from './../button/button.component';
+import { FivButton } from './../button/button.component';
 import { Component, OnInit } from '@angular/core';
 import { NavParams, PopoverController } from '@ionic/angular';
 
@@ -7,9 +7,9 @@ import { NavParams, PopoverController } from '@ionic/angular';
   templateUrl: './popover.component.html',
   styleUrls: ['./popover.component.scss']
 })
-export class PopoverComponent implements OnInit {
+export class FivPopover implements OnInit {
 
-  public buttons: ButtonComponent[] = [];
+  public buttons: FivButton[] = [];
 
   constructor(public navParams: NavParams, public popoverController: PopoverController) {
     this.buttons = navParams.get('buttons');

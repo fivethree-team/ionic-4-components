@@ -1,4 +1,4 @@
-import { HostListener, ElementRef, Renderer2, HostBinding, EventEmitter, Component, ViewEncapsulation, Input, Output } from '@angular/core';
+import { HostListener, ElementRef, Renderer2, HostBinding, EventEmitter, Component, Input, Output } from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -11,7 +11,7 @@ import { debounceTime } from 'rxjs/operators';
     '[style.touch-action]': 'auto',
   },
 })
-export class RippleComponent {
+export class FivRipple {
 
   auto = 'auto';
 

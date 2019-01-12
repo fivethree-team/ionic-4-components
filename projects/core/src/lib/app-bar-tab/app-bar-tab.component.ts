@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './app-bar-tab.component.html',
   styleUrls: ['./app-bar-tab.component.scss']
 })
-export class AppBarTabComponent implements OnInit {
+export class FivAppBarTab implements OnInit {
 
   @Input() name: string;
   @Input() icon: string;

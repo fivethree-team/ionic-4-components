@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { StepperHorizontalComponent } from './stepper-horizontal.component';
+import { FivStepperHorizontal } from './stepper-horizontal.component';
 
 
 describe('StepperHeaderHorizontalComponent', () => {
-  let component: StepperHorizontalComponent;
-  let fixture: ComponentFixture<StepperHorizontalComponent>;
+  let component: FivStepperHorizontal;
+  let fixture: ComponentFixture<FivStepperHorizontal>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StepperHorizontalComponent ]
+      declarations: [ FivStepperHorizontal ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StepperHorizontalComponent);
+    fixture = TestBed.createComponent(FivStepperHorizontal);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

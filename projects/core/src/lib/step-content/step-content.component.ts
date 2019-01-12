@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
-import { StepHeaderComponent } from '../step-header/step-header.component';
-import { ExpandableComponent } from '../expandable/expandable.component';
+import { FivStepHeader } from '../step-header/step-header.component';
+import { FivExpandable } from '../expandable/expandable.component';
 
 @Component({
   selector: 'fiv-step-content',
   templateUrl: './step-content.component.html',
   styleUrls: ['./step-content.component.scss']
 })
-export class StepContentComponent implements OnInit {
+export class FivStepContent implements OnInit {
 
   @Input() index: number;
   @Input() icon: string;
@@ -15,12 +15,12 @@ export class StepContentComponent implements OnInit {
   @Input() isOpen = false;
   @Input() title = '';
   @Input() subtitle = '';
-  @Output() fivDidOpen: EventEmitter<StepContentComponent> = new EventEmitter();
-  @Output() fivDidClose: EventEmitter<StepContentComponent> = new EventEmitter();
-  @Output() fivClick: EventEmitter<StepContentComponent> = new EventEmitter();
+  @Output() fivDidOpen: EventEmitter<FivStepContent> = new EventEmitter();
+  @Output() fivDidClose: EventEmitter<FivStepContent> = new EventEmitter();
+  @Output() fivClick: EventEmitter<FivStepContent> = new EventEmitter();
 
-  @ViewChild('self') step: ExpandableComponent;
-  @ViewChild('header') header: StepHeaderComponent;
+  @ViewChild('self') step: FivExpandable;
+  @ViewChild('header') header: FivStepHeader;
 
   constructor(private change: ChangeDetectorRef) {
   }

@@ -1,4 +1,4 @@
-import { LoadingRefresherContentComponent } from './../loading-refresher-content/loading-refresher-content.component';
+import { FivLoadingRefresherContent } from './../loading-refresher-content/loading-refresher-content.component';
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Input, Renderer2 } from '@angular/core';
 import { animate, style, transition, trigger, state, AnimationBuilder, AnimationPlayer } from '@angular/animations';
 
@@ -43,15 +43,15 @@ import { animate, style, transition, trigger, state, AnimationBuilder, Animation
     ),
   ],
 })
-export class LoadingContentComponent implements OnInit {
+export class FivLoadingContent implements OnInit {
 
   @Input() hintText = 'new posts';
   @Input() maxPullHeight = 168;
   @Input() minPullHeight = 112;
   @Output() fivProgressChanged: EventEmitter<number> = new EventEmitter();
-  @Output() fivRefresh: EventEmitter<LoadingContentComponent> = new EventEmitter();
+  @Output() fivRefresh: EventEmitter<FivLoadingContent> = new EventEmitter();
   @ViewChild('content') content: ElementRef;
-  @ViewChild('spinner') spinner: LoadingRefresherContentComponent;
+  @ViewChild('spinner') spinner: FivLoadingRefresherContent;
   hintVisible = false;
   currentProgress = 0;
 

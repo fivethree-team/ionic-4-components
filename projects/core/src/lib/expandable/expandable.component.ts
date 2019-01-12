@@ -27,13 +27,13 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
     ])
   ]
 })
-export class ExpandableComponent implements OnInit {
+export class FivExpandable implements OnInit {
 
   @Input() isOpen = false;
-  @Output() fivWillOpen: EventEmitter<ExpandableComponent> = new EventEmitter();
-  @Output() fivDidOpen: EventEmitter<ExpandableComponent> = new EventEmitter();
-  @Output() fivWillClose: EventEmitter<ExpandableComponent> = new EventEmitter();
-  @Output() fivDidClose: EventEmitter<{ expandable: ExpandableComponent, param: any }> = new EventEmitter();
+  @Output() fivWillOpen: EventEmitter<FivExpandable> = new EventEmitter();
+  @Output() fivDidOpen: EventEmitter<FivExpandable> = new EventEmitter();
+  @Output() fivWillClose: EventEmitter<FivExpandable> = new EventEmitter();
+  @Output() fivDidClose: EventEmitter<{ expandable: FivExpandable, param: any }> = new EventEmitter();
 
   param: any;
 

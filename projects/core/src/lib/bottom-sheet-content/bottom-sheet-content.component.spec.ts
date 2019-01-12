@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BottomSheetContentComponent } from './bottom-sheet-content.component';
+import { FivBottomSheetContent } from './bottom-sheet-content.component';
 
 describe('BottomSheetContentComponent', () => {
-  let component: BottomSheetContentComponent;
-  let fixture: ComponentFixture<BottomSheetContentComponent>;
+  let component: FivBottomSheetContent;
+  let fixture: ComponentFixture<FivBottomSheetContent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BottomSheetContentComponent ]
+      declarations: [ FivBottomSheetContent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BottomSheetContentComponent);
+    fixture = TestBed.createComponent(FivBottomSheetContent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

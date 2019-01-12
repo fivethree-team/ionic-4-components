@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DialogComponent } from '@fivethree/core';
+import { FivDialog } from '@fivethree/core';
 
 @Component({
   selector: 'app-dialog',
@@ -8,7 +8,7 @@ import { DialogComponent } from '@fivethree/core';
 })
 export class DialogPage implements OnInit {
 
-  @ViewChild('dialog') dialog: DialogComponent;
+  @ViewChild('dialog') dialog: FivDialog;
 
   backdrop = true;
   verticalAlign = 'top';

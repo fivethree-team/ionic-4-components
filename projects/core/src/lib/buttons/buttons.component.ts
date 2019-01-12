@@ -1,14 +1,14 @@
-import { PopoverComponent } from './../popover/popover.component';
+import { FivPopover } from './../popover/popover.component';
 import { Platform, PopoverController, ActionSheetController } from '@ionic/angular';
 import { Component, OnInit, Input, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
-import { ButtonComponent } from '../button/button.component';
+import { FivButton } from '../button/button.component';
 
 @Component({
   selector: 'fiv-buttons',
-  templateUrl: './fiv-buttons.component.html',
-  styleUrls: ['./fiv-buttons.component.scss']
+  templateUrl: './buttons.component.html',
+  styleUrls: ['./buttons.component.scss']
 })
-export class FivButtonsComponent implements OnInit, AfterContentInit {
+export class FivButtons implements OnInit, AfterContentInit {
 
   @Input() slot = 'end';
   @Input() subHeader: string;
@@ -17,7 +17,7 @@ export class FivButtonsComponent implements OnInit, AfterContentInit {
   @Input() forceActionsheet = false;
   @Input() forcePopover = false;
   @Input() iconsOnly = true;
-  @ContentChildren(ButtonComponent) buttons: QueryList<ButtonComponent>;
+  @ContentChildren(FivButton) buttons: QueryList<FivButton>;
 
   constructor(private platform: Platform,
     private popoverController: PopoverController,
@@ -48,7 +48,7 @@ export class FivButtonsComponent implements OnInit, AfterContentInit {
 
   async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
-      component: PopoverComponent,
+      component: FivPopover,
       event: ev,
       translucent: false,
       componentProps: {

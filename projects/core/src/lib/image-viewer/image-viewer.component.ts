@@ -69,7 +69,7 @@ import { flatMap, tap, filter, debounceTime, takeUntil, take, repeat } from 'rxj
     ])
   ]
 })
-export class ImageViewerComponent implements OnInit {
+export class FivImageViewer implements OnInit {
 
   @HostBinding('style')
   get myStyle(): SafeStyle {
@@ -90,7 +90,7 @@ export class ImageViewerComponent implements OnInit {
   @Input() actions: ImageViewerAction[] = [];
   @Output() fivClose = new EventEmitter();
   @Output() fivActionClick = new EventEmitter<number>();
-  componentRef: ComponentRef<ImageViewerComponent>;
+  componentRef: ComponentRef<FivImageViewer>;
   _isOpen = false;
   _controlsVisible = true;
   thumbnailVisible = true;
@@ -143,7 +143,7 @@ export class ImageViewerComponent implements OnInit {
 
   appendComponentToBody(event) {
     this.componentRef = this.componentFactoryResolver
-      .resolveComponentFactory(ImageViewerComponent)
+      .resolveComponentFactory(FivImageViewer)
       .create(this.injector);
 
     this.thumbnailVisible = false;

@@ -3,7 +3,7 @@ import { Directive, Input, ViewContainerRef, TemplateRef } from '@angular/core';
 @Directive({
   selector: '[fivPermissions]'
 })
-export class PermissionsDirective {
+export class FivPermissions {
 
   allowedPermissions: string[] = [];
   uPermissions: string[] = [];

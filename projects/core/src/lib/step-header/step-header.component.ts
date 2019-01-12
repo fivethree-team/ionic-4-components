@@ -18,7 +18,7 @@ import { trigger, transition, animate, state, style } from '@angular/animations'
   ])
   ]
 })
-export class StepHeaderComponent implements OnInit {
+export class FivStepHeader implements OnInit {
 
   @Input() index: number;
   @Input() icon: string;

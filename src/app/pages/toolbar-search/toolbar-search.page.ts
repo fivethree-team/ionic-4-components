@@ -1,4 +1,4 @@
-import { DrawerState, ToolbarSearchComponent } from '@fivethree/core';
+import { DrawerState, FivToolbarSearch } from '@fivethree/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
@@ -12,7 +12,7 @@ export class ToolbarSearchPage implements OnInit {
   small = false;
   states = DrawerState;
   state: DrawerState = DrawerState.Bottom;
-  @ViewChild('search') search: ToolbarSearchComponent;
+  @ViewChild('search') search: FivToolbarSearch;
 
   constructor() { }
 
@@ -52,7 +52,7 @@ export class ToolbarSearchPage implements OnInit {
     this.state = DrawerState.Bottom;
   }
 
-  bottomSheetClose(search: ToolbarSearchComponent) {
+  bottomSheetClose(search: FivToolbarSearch) {
     console.log('bottomSheetClose !!!!');
 
     search.closeSearchbar();

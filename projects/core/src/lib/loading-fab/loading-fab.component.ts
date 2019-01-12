@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter, Renderer2, HostBinding } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
-import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
-import { timer } from 'rxjs';
+import { FivLoadingSpinner } from '../loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'fiv-loading-fab',
@@ -55,7 +54,7 @@ import { timer } from 'rxjs';
     )]
   )]
 })
-export class LoadingFabComponent implements OnInit {
+export class FivLoadingFab implements OnInit {
 
   @Input() vertical?: 'top' | 'center' | 'bottom';
   @Input() horizontal?: 'center' | 'start' | 'end';
@@ -69,12 +68,12 @@ export class LoadingFabComponent implements OnInit {
   @Input() disabled = false;
   @Input() visible = true;
 
-  @Output() fivComplete: EventEmitter<LoadingFabComponent> = new EventEmitter<LoadingFabComponent>();
-  @Output() fivRefresh: EventEmitter<LoadingFabComponent> = new EventEmitter<LoadingFabComponent>();
-  @Output() fivHidden: EventEmitter<LoadingFabComponent> = new EventEmitter<LoadingFabComponent>();
-  @Output() fivShow: EventEmitter<LoadingFabComponent> = new EventEmitter<LoadingFabComponent>();
+  @Output() fivComplete: EventEmitter<FivLoadingFab> = new EventEmitter<FivLoadingFab>();
+  @Output() fivRefresh: EventEmitter<FivLoadingFab> = new EventEmitter<FivLoadingFab>();
+  @Output() fivHidden: EventEmitter<FivLoadingFab> = new EventEmitter<FivLoadingFab>();
+  @Output() fivShow: EventEmitter<FivLoadingFab> = new EventEmitter<FivLoadingFab>();
 
-  @ViewChild('spinner') spinner: LoadingSpinnerComponent;
+  @ViewChild('spinner') spinner: FivLoadingSpinner;
 
   loading = false;
   iconState = 'normal';

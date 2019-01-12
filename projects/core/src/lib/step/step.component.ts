@@ -5,7 +5,7 @@ import { Component, OnInit, Input, ViewChild, TemplateRef } from '@angular/core'
   templateUrl: './step.component.html',
   styleUrls: ['./step.component.scss']
 })
-export class StepComponent implements OnInit {
+export class FivStep implements OnInit {
 
   @Input() index: number;
   @Input() icon: string;

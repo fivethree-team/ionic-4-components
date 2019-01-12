@@ -30,7 +30,6 @@ export class LoadingService {
   }
 
   complete() {
-    console.log('set service complete');
     this.isComplete = true;
     this.completeChange.next(this.isComplete);
   }

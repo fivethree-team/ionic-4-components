@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { trigger, transition, animate, state, style } from '@angular/animations';
 
 @Component({
@@ -33,7 +33,7 @@ import { trigger, transition, animate, state, style } from '@angular/animations'
     ])
   ]
 })
-export class IconComponent implements OnInit {
+export class FivIcon implements OnInit {
 
   _name: string;
   _indicatorValue = -1;

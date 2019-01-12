@@ -34,7 +34,7 @@ import { IonInput } from '@ionic/angular';
     ]),
   ]
 })
-export class ToolbarSearchComponent implements OnInit, OnChanges {
+export class FivToolbarSearch implements OnInit, OnChanges {
 
   searching = false;
   titleVisible = true;

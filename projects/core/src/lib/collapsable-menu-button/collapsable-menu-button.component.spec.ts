@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CollapsableMenuButtonComponent } from './collapsable-menu-button.component';
+import { FivCollapsableMenuButton } from './collapsable-menu-button.component';
 
 describe('CollapsableMenuButtonComponent', () => {
-  let component: CollapsableMenuButtonComponent;
-  let fixture: ComponentFixture<CollapsableMenuButtonComponent>;
+  let component: FivCollapsableMenuButton;
+  let fixture: ComponentFixture<FivCollapsableMenuButton>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CollapsableMenuButtonComponent ]
+      declarations: [ FivCollapsableMenuButton ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CollapsableMenuButtonComponent);
+    fixture = TestBed.createComponent(FivCollapsableMenuButton);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

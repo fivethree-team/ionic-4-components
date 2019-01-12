@@ -28,7 +28,7 @@ export * from './lib/stepper-horizontal/stepper-horizontal.component';
 export * from './lib/toolbar-search/toolbar-search.component';
 export * from './lib/app-bar-tab/app-bar-tab.component';
 export * from './lib/app-bar-tab-content/app-bar-tab-content.component';
-export * from './lib/fiv-buttons/fiv-buttons.component';
+export * from './lib/buttons/buttons.component';
 export * from './lib/button/button.component';
 
 // export services

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FivButtonsComponent } from './fiv-buttons.component';
+import { FivButtons } from './buttons.component';
 
 describe('FivButtonsComponent', () => {
-  let component: FivButtonsComponent;
-  let fixture: ComponentFixture<FivButtonsComponent>;
+  let component: FivButtons;
+  let fixture: ComponentFixture<FivButtons>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivButtonsComponent ]
+      declarations: [ FivButtons ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FivButtonsComponent);
+    fixture = TestBed.createComponent(FivButtons);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

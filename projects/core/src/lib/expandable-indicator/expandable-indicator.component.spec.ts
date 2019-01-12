@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExpandableIndicatorComponent } from './expandable-indicator.component';
+import { FivExpandableIndicator } from './expandable-indicator.component';
 
 describe('ExpandableIndicatorComponent', () => {
-  let component: ExpandableIndicatorComponent;
-  let fixture: ComponentFixture<ExpandableIndicatorComponent>;
+  let component: FivExpandableIndicator;
+  let fixture: ComponentFixture<FivExpandableIndicator>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExpandableIndicatorComponent ]
+      declarations: [ FivExpandableIndicator ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExpandableIndicatorComponent);
+    fixture = TestBed.createComponent(FivExpandableIndicator);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
