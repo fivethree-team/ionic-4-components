@@ -26,6 +26,8 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
 
   @Input() minimumHeight = 24;
 
+  @Input() panEnabled = true;
+
   @Output() stateChange: EventEmitter<DrawerState> = new EventEmitter<DrawerState>();
   @Output() fivOpen: EventEmitter<FivBottomSheet> = new EventEmitter<FivBottomSheet>();
   @Output() fivDocked: EventEmitter<FivBottomSheet> = new EventEmitter<FivBottomSheet>();
@@ -62,6 +64,10 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
     const hammer = new Hammer(this._element.nativeElement);
     hammer.get('pan').set({ enable: true, direction: Hammer.DIRECTION_VERTICAL });
     hammer.on('pan panstart panend', (ev: any) => {
+      if (!this.panEnabled) {
+        return;
+      }
+
       switch (ev.type) {
         case 'panstart':
           this._handlePanStart();
