@@ -6,5 +6,5 @@
   <ng-container *ngIf="!iconsOnly">
     <fiv-button (click)="onButtonClicked(i)" [icon]="button.icon" [text]="button.text" *ngFor="let button of buttons.toArray() | slice:0:count; let i = index;"></fiv-button>
   </ng-container>
-  <fiv-button *ngIf="(slot === 'end' || slot ==='secondary') && count < buttons.length" (click)="onMenuClicked($event)" [icon]="'md-more'"></fiv-button>
+  <fiv-button *ngIf="(slot === 'end' || slot ==='secondary') && count < buttons.length" (click)="onMenuClicked($event)" [icon]="icon"></fiv-button>
 </ion-buttons>

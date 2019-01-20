@@ -1,6 +1,7 @@
 <div>
   <ng-content select="[header]"></ng-content>
-  <div [@listAnim]="isOpen ? 'open' : 'closed'" (@listAnim.done)="onAnimationEnd($event)" style="overflow: hidden">
+  <div [@listAnim]="{value: isOpen ? 'open' : 'closed', params: timingFunction ? {time: timingFunction} : {}}" (@listAnim.done)="onAnimationEnd($event)"
+    style="overflow: hidden">
     <ng-content select="[content]"></ng-content>
   </div>
 </div>

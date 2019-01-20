@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'expandable', loadChildren: './pages/expandable/expandable.module#ExpandablePageModule' },
   { path: 'stepper', loadChildren: './pages/stepper/stepper.module#StepperPageModule' },
   { path: 'directives', loadChildren: './pages/directives/directives.module#DirectivesPageModule' },
+  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
   { path: '**', loadChildren: './pages/page-not-found/page-not-found.module#PageNotFoundPageModule' },
 
 ];

@@ -13,6 +13,7 @@ export class FivButtons implements OnInit, AfterContentInit {
   @Input() slot = 'end';
   @Input() subHeader: string;
   @Input() header: string;
+  @Input() icon = 'more';
   @Input() count = 0;
   @Input() forceActionsheet = false;
   @Input() forcePopover = false;

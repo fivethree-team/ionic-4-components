@@ -11,25 +11,26 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
       state('open', style({ height: '*', opacity: 1 })),
       state('closed', style({ height: '0', opacity: 0 })),
       transition('closed => open', [
-        animate('275ms ease-out', keyframes([
+        animate('{{time}}', keyframes([
           style({ height: '0', opacity: 0, offset: 0 }),
           style({ height: '*', opacity: 0.1, offset: 0.8 }),
           style({ height: '*', opacity: 1, offset: 1 }),
         ]))
-      ]),
+      ], { params: { time: '270ms ease-out' } }),
       transition('open => closed', [
-        animate('220ms ease-out', keyframes([
+        animate('{{time}}', keyframes([
           style({ height: '*', opacity: 1, offset: 0 }),
           style({ height: '*', opacity: 0.1, offset: 0.2 }),
           style({ height: '0', opacity: 0, offset: 1 }),
         ]))
-      ])
+      ], { params: { time: '220ms ease-out' } }),
     ])
   ]
 })
 export class FivExpandable implements OnInit {
 
   @Input() isOpen = false;
+  @Input() timingFunction: string;
   @Output() fivWillOpen: EventEmitter<FivExpandable> = new EventEmitter();
   @Output() fivDidOpen: EventEmitter<FivExpandable> = new EventEmitter();
   @Output() fivWillClose: EventEmitter<FivExpandable> = new EventEmitter();
@@ -66,6 +67,7 @@ export class FivExpandable implements OnInit {
   }
 
   onAnimationEnd(event) {
+    console.log(event, this.timingFunction);
     if (event.fromState === 'closed') {
       this.fivDidOpen.emit(this);
     } else if (event.fromState === 'open') {
