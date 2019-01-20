@@ -1,6 +1,6 @@
 {
   "name": "@fivethree/core",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Fivethree Core Components",
   "keywords": [
     "fivethree",
@@ -21,7 +21,7 @@
     "@angular/forms": "^7.0.0",
     "@angular/platform-browser": "^7.0.0",
     "@angular/router": "^7.0.0",
-    "@ionic/angular": "^4.0.0-rc.0"
+    "@ionic/angular": "^4.0.0-rc.2"
   },
   "author": "Fivethree Team",
   "license": "MIT",

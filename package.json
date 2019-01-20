@@ -1,6 +1,6 @@
 {
   "name": "fivethree",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": "Fivethree Team",
   "homepage": "http://fivethree.io/",
   "description": "Fivethree Web Components",
@@ -42,7 +42,7 @@
     "@ionic-native/google-maps": "5.0.0-beta.23",
     "@ionic-native/splash-screen": "5.0.0-beta.23",
     "@ionic-native/status-bar": "5.0.0-beta.23",
-    "@ionic/angular": "4.0.0-rc.1",
+    "@ionic/angular": "4.0.0-rc.2",
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
     "cordova-android": "7.1.2",
