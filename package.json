@@ -45,7 +45,7 @@
     "@ionic/angular": "4.0.0-rc.3",
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
-    "cordova-android": "7.1.2",
+    "cordova-android": "7.1.4",
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-googlemaps": "2.4.6",
     "cordova-plugin-ionic-keyboard": "2.1.3",
