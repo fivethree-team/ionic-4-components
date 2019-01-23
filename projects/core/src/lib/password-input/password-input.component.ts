@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, forwardRef, HostBinding } from '@angular/core';
+import { Component, Input, forwardRef, HostBinding } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Color } from '@ionic/core';
 
@@ -16,7 +16,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
     CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR
   ],
 })
-export class FivPasswordInput implements ControlValueAccessor, OnInit {
+export class FivPasswordInput implements ControlValueAccessor {
 
   @Input() clearOnEdit = false;
 
@@ -43,9 +43,6 @@ export class FivPasswordInput implements ControlValueAccessor, OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
   toggleShowPassword() {
     this.show = !this.show;
   }
@@ -68,7 +65,9 @@ export class FivPasswordInput implements ControlValueAccessor, OnInit {
   }
 
   blur() {
-    this.onTouchedCallback();
+    if (this.onTouchedCallback) {
+      this.onTouchedCallback();
+    }
   }
 
   registerOnChange(fn: any) {
