@@ -73,7 +73,7 @@
     "@ionic/angular-toolkit": "1.2.2",
     "@types/googlemaps": "3.30.16",
     "@types/jasmine": "2.8.9",
-    "@types/jasminewd2": "2.0.5",
+    "@types/jasminewd2": "2.0.6",
     "@types/node": "10.12.18",
     "angular-cli-ghpages": "0.5.3",
     "codelyzer": "4.5.0",
