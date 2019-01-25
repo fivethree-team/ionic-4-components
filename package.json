@@ -1,9 +1,19 @@
 {
   "name": "fivethree",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "Fivethree Team",
   "homepage": "http://fivethree.io/",
   "description": "Fivethree Web Components",
+  "contributors": [
+    {
+      "name": "Gary Großgarten",
+      "email": "gary@fivethree.io"
+    },
+    {
+      "name": "Marc Stammerjohann",
+      "email": "marc@fivethree.io"
+    }
+  ],
   "keywords": [
     "fivethree",
     "angular",

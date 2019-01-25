@@ -1,3 +1,11 @@
+## [0.5.1](https://github.com/fivethree-team/fivethree/compare/v0.1.0...v0.5.1) (2019-01-25)
+
+### Features
+
+* **ionic:** update to ionic 4 ([be07fd6](https://github.com/fivethree-team/fivethree/commit/be07fd6))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/fivethree-team/fivethree/compare/v0.1.0...v0.5.0) (2019-01-23)
 
