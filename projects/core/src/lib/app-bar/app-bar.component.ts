@@ -1,3 +1,4 @@
+import { FivAppBarTabContent } from './../app-bar-tab-content/app-bar-tab-content.component';
 import { FivLoadingFab } from './../loading-fab/loading-fab.component';
 import {
   Component,
@@ -8,7 +9,8 @@ import {
   QueryList,
   AfterViewInit,
   AfterContentInit,
-  Host
+  Host,
+  ViewChildren
 } from '@angular/core';
 import { FivAppBarTab } from '../app-bar-tab/app-bar-tab.component';
 import { Router } from '@angular/router';
@@ -36,6 +38,7 @@ export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
   @Input() icon = 'md-add';
   @Input() titleLayout: AppBarTitleLayout = 'hide';
   @Output() fivFabClick = new EventEmitter<FivAppBar>();
+  @ViewChildren(FivAppBarTabContent) _tabs: QueryList<FivAppBarTabContent>;
 
   @ContentChildren(FivAppBarTab) tabComponents: QueryList<FivAppBarTab>;
 
@@ -151,5 +154,9 @@ export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
 
   ionTabButtonClick(event: TabButtonClickEventDetail) {
     this.tabs.select(event.tab);
+  }
+
+  setBadge(tab: number, badge: number) {
+    this._tabs.toArray()[tab].setBadge(badge);
   }
 }
