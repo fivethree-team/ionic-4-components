@@ -19,7 +19,7 @@ export class FivAppBarTabContent implements OnInit {
   @Input() titleLayout: AppBarTitleLayout = 'hide';
 
   private selected = false;
-  public badge = -1;
+  @Input() badge = -1;
 
   @HostBinding('class') get classes(): string {
     return `label-${this.titleLayout}`;
@@ -41,9 +41,5 @@ export class FivAppBarTabContent implements OnInit {
       href: this.href,
       selected: true
     });
-  }
-
-  setBadge(badge: number) {
-    this.badge = badge;
   }
 }

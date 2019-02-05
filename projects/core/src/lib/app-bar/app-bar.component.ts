@@ -155,8 +155,4 @@ export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
   ionTabButtonClick(event: TabButtonClickEventDetail) {
     this.tabs.select(event.tab);
   }
-
-  setBadge(tab: number, badge: number) {
-    this._tabs.toArray()[tab].setBadge(badge);
-  }
 }
