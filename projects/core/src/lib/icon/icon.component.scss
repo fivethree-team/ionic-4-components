@@ -1,57 +1,57 @@
 :host {
-  --fiv-padding-end: 0;
-  --fiv-padding-start: 0;
-  --fiv-color-icon: inherit;
+    --fiv-padding-end: 0;
+    --fiv-padding-start: 0;
+    --fiv-dot-right: -6px;
+    --fiv-dot-top: -2px;
+    --fiv-color-icon: inherit;
+    position: relative;
 }
 
 ion-icon {
-  margin: 0;
-  font-size: 1.8em;
-  color: var(--fiv-color-icon);
-  padding-right: var(--fiv-padding-end);
-  padding-left: var(--fiv-padding-start);
+    margin: 0;
+    font-size: 1.8em;
+    color: var(--fiv-color-icon);
+    padding-right: var(--fiv-padding-end);
+    padding-left: var(--fiv-padding-start);
 }
 
 .indicator {
-  position: absolute;
-  width: var(--fiv-dot-width, 8px);
-  height: var(--fiv-dot-heigt, 8px);
-  background-color: var(
-    --fiv-dot-color,
-    var(--fiv-color-indicator, --ion-color-primary)
-  );
-  top: 4px;
-  border-radius: 100%;
-  right: 8px;
-  z-index: 12;
+    position: absolute;
+    width: var(--fiv-dot-width, 8px);
+    height: var(--fiv-dot-height, 8px);
+    background-color: var( --fiv-dot-color, var(--fiv-color-indicator, --ion-color-primary));
+    top: calc(var(--fiv-dot-top, 0px) + 3px);
+    border-radius: 100%;
+    right: calc(var(--fiv-dot-right, 4px) + 3px);
+    z-index: 12;
 }
 
 .indicator-value {
-  position: absolute;
-  min-width: var(--fiv-dot-width, 14px);
-  height: var(--fiv-dot-heigt, 14px);
-  background-color: var(--fiv-dot-color, var(--ion-color-primary));
-  color: var(--fiv-dot-color-background, var(--ion-color-light));
-  top: 0px;
-  border-radius: 14px;
-  right: 4px;
-  z-index: 13;
-  * {
     position: absolute;
-    transform: translateX(-50%) translateY(-50%);
-    left: 50%;
-    top: 50%;
-    font-size: 0.6em;
-  }
+    min-width: var(--fiv-dot-width, 14px);
+    height: var(--fiv-dot-height, 14px);
+    background-color: var(--fiv-dot-color, var(--ion-color-primary));
+    color: var(--fiv-dot-color-background, var(--ion-color-light));
+    top: var(--fiv-dot-top, 0);
+    border-radius: 14px;
+    right: var(--fiv-dot-right, 4px);
+    z-index: 13;
+    * {
+        position: absolute;
+        transform: translateX(-50%) translateY(-50%);
+        left: 50%;
+        top: 50%;
+        font-size: 0.6em;
+    }
 }
 
 .indicator-background {
-  position: absolute;
-  width: var(--fiv-dot-width, 10px);
-  height: var(--fiv-dot-heigt, 10px);
-  background-color: var(--fiv-dot-color-background, transparent);
-  top: 3px;
-  border-radius: 100%;
-  right: 7px;
-  z-index: 11;
+    position: absolute;
+    width: var(--fiv-dot-width, 18px);
+    height: var(--fiv-dot-height, 18px);
+    background-color: var(--fiv-dot-color-background, var(--ion-color-light));
+    top: calc(var(--fiv-dot-top, 0px) - 2px);
+    border-radius: 100%;
+    right: calc(var(--fiv-dot-right, 4px) - 2px);
+    z-index: 11;
 }

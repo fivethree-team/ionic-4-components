@@ -2,7 +2,7 @@
   <div class="appbar-rect left">
     <div class="tabs">
       <fiv-app-bar-tab-content (ionTabButtonClick)="ionTabButtonClick($event)"  [active]="router.url.endsWith(tab.href)" [tab]="tab.tab" [href]="tab.href" [name]="tab.name"
-        [icon]="tab.icon" [titleLayout]="titleLayout" *ngFor="let tab of tabsLeft"></fiv-app-bar-tab-content>
+        [icon]="tab.icon" [badge]="tab.badge" [titleLayout]="titleLayout" *ngFor="let tab of tabsLeft"></fiv-app-bar-tab-content>
     </div>
   </div>
   <fiv-loading-fab (fivHidden)="onFabHidden()" [icon]="icon" [visible]="_fabVisible" #fab (click)="fabClick()"></fiv-loading-fab>
@@ -10,7 +10,7 @@
   <div class="appbar-rect right">
     <div class="tabs">
       <fiv-app-bar-tab-content (ionTabButtonClick)="ionTabButtonClick($event)" [active]="router.url.endsWith(tab.href)" [tab]="tab.tab" [href]="tab.href" [name]="tab.name"
-        [icon]="tab.icon" [titleLayout]="titleLayout" *ngFor="let tab of tabsRight"></fiv-app-bar-tab-content>
+        [icon]="tab.icon" [badge]="tab.badge"  [titleLayout]="titleLayout" *ngFor="let tab of tabsRight"></fiv-app-bar-tab-content>
     </div>
   </div>
 </div>
