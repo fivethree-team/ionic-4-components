@@ -11,6 +11,7 @@ export class FivAppBarTab implements OnInit {
   @Input() icon: string;
   @Input() tab: string;
   @Input() href: string;
+  @Input() badge = -1;
 
   constructor() { }
 

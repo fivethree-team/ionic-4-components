@@ -19,6 +19,7 @@ export class FivAppBarTabContent implements OnInit {
   @Input() titleLayout: AppBarTitleLayout = 'hide';
 
   private selected = false;
+  @Input() badge = -1;
 
   @HostBinding('class') get classes(): string {
     return `label-${this.titleLayout}`;
