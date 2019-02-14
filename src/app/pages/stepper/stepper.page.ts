@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { FivStepper } from './../../../../projects/core/src/lib/stepper/stepper.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-stepper',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StepperPage implements OnInit {
 
+  @ViewChild('stepperV') stepperV: FivStepper;
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  ionViewDidEnter() {
+    // this.stepperV.openLast();
+
+    // timer(1000).subscribe(() => this.stepperV.closeLast());
   }
 
 }

@@ -1,4 +1,12 @@
-import { Component, OnInit, ViewChild, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectorRef
+} from '@angular/core';
 import { FivStepHeader } from '../step-header/step-header.component';
 import { FivExpandable } from '../expandable/expandable.component';
 
@@ -35,7 +43,11 @@ export class FivStepContent implements OnInit {
   close() {
     this.isOpen = false;
     this.change.detectChanges();
+  }
 
+  completeAndClose() {
+    this.close();
+    this.complete();
   }
 
   complete() {

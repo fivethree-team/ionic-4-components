@@ -29,24 +29,32 @@ export class FivStepper implements OnInit {
   open(index: number) {
     if (this.mode === 'horizontal') {
       this.currentIndex = index;
-      console.log('+#+#+');
+      // console.log('+#+#+');
       this.horizontal.open(index);
     } else {
-      console.log('###open', this.steps, this.steps.toArray(), index, this.steps.toArray()[index]);
+      // console.log('###open', this.steps, this.steps.toArray(), index, this.steps.toArray()[index]);
       if (this.steps.toArray()[index]) {
         if (this.steps.toArray()[index].isOpen) {
-          console.log('is already open', this.steps.toArray()[index].isOpen);
+          // console.log('is already open', this.steps.toArray()[index].isOpen);
           this.close(index);
         } else {
-          console.log('is closed', this.steps.toArray()[index].isOpen);
+          // console.log('is closed', this.steps.toArray()[index].isOpen);
           this.currentIndex = index;
           this.steps.toArray()[index].open();
         }
       } else {
-        console.log('####', index, this.steps, this.steps.toArray());
+        // console.log('####', index, this.steps, this.steps.toArray());
       }
 
     }
+  }
+
+  openFirst() {
+    this.open(0);
+  }
+
+  openLast() {
+    this.open(this.steps.toArray().length - 1);
   }
 
   close(index: number, param?: any) {
@@ -58,15 +66,21 @@ export class FivStepper implements OnInit {
       this.currentIndex = - 1;
       this.steps.toArray()[index].close();
     }
+  }
 
+  closeFirst() {
+    this.close(0);
+  }
+
+  closeLast() {
+    this.close(this.steps.toArray().length - 1);
   }
 
   select(index: number) {
-    console.log('select', index);
+    // console.log('select', index);
     if (index >= 0 && index < this.contents.length) {
       if (this.mode === 'vertical') {
         this.closeAll();
-
       }
       this.open(index);
     }
@@ -85,23 +99,28 @@ export class FivStepper implements OnInit {
 
   next() {
     const next = this.currentIndex < this.steps.length ? this.currentIndex + 1 : -1;
-    console.log('next index', next);
+    // console.log('next index', next);
     this.select(next);
   }
 
   previous() {
     const next = this.currentIndex > 0 ? this.currentIndex + -1 : -1;
-    console.log('next index', next);
     this.select(next);
   }
 
   completeStep(index: number) {
     if (this.mode === 'horizontal') {
       // not yet impletented
-
     } else {
       this.steps.toArray()[index].complete();
+    }
+  }
 
+  completeAndCloseStep(index: number) {
+    if (this.mode === 'horizontal') {
+      // not yet impletented
+    } else {
+      this.steps.toArray()[index].completeAndClose();
     }
   }
 
