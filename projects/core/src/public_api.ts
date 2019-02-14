@@ -12,6 +12,7 @@ export * from './lib/bottom-sheet/bottom-sheet.component';
 export * from './lib/bottom-sheet-content/bottom-sheet-content.component';
 export * from './lib/collapsable-menu-button/collapsable-menu-button.component';
 export * from './lib/dialog/dialog.component';
+export * from './lib/editable-label/editable-label.component';
 export * from './lib/expandable/expandable.component';
 export * from './lib/expandable-indicator/expandable-indicator.component';
 export * from './lib/loading-button/loading-button.component';

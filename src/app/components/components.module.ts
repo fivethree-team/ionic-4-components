@@ -10,23 +10,25 @@ import { FooterComponent } from './footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { LottieAnimationViewModule } from 'ng-lottie';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ExampleComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     IonicModule,
+    FormsModule,
     MarkdownModule.forChild(),
     TranslateModule.forChild(),
     FivethreeCoreModule,
     MatTooltipModule,
     MatTabsModule,
-    LottieAnimationViewModule
+    LottieAnimationViewModule,
   ],
   exports: [
     ExampleComponent,

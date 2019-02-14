@@ -27,6 +27,11 @@ export class AppComponent {
     //   icon: 'notifications'
     // },
     {
+      title: 'Editable Label',
+      url: '/editable-label',
+      icon: 'create'
+    },
+    {
       title: 'Expandable',
       url: '/expandable',
       icon: 'resize'

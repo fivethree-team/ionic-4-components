@@ -39,6 +39,7 @@ import { FivButtons } from './buttons/buttons.component';
 import { FivButton } from './button/button.component';
 import { FivPopover } from './popover/popover.component';
 import { FivExpandableIndicator} from './expandable-indicator/expandable-indicator.component';
+import { FivEditableLabel } from './editable-label/editable-label.component';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -55,6 +56,7 @@ export class MyHammerConfig extends HammerGestureConfig {
   ],
   declarations: [
     FivExpandable,
+    FivEditableLabel,
     FivPasswordInput,
     FivStepper,
     FivStep,
@@ -93,6 +95,7 @@ export class MyHammerConfig extends HammerGestureConfig {
   entryComponents: [FivImageViewer, FivPopover],
   exports: [
     FivExpandable,
+    FivEditableLabel,
     FivPasswordInput,
     FivStepper,
     FivStep,

@@ -1,0 +1,8 @@
+<!-- TODO if value is empty label or title can not be clicked, show placeholder?! -->
+<ion-title *ngIf="type === 'title' && !editing" (click)="edit()" (@titleAnim.done)="titleAnimDone($event)" [@titleAnim]>
+    {{value}}</ion-title>
+<ion-label *ngIf="type === 'label' && !editing" class="label" (click)="edit()" (@titleAnim.done)="titleAnimDone($event)" [@titleAnim]>
+    {{value}}</ion-label>
+<ion-input *ngIf="editing" [(ngModel)]="internalValue" (blur)="onBlur()" (keyup.enter)="onEnterClick()"
+    (keyup.escape)="onEscapeClick()" #input [@titleAnim] [ngClass]="{'title-input': type === 'title'}">
+</ion-input>
