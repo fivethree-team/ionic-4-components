@@ -56,7 +56,6 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
   // }
 
   ngAfterViewInit() {
-    // console.log(this._element, this._element.nativeElement.querySelector('.fiv-bottom-drawer-scrollable-content .scroll-y'));
     // this._renderer.
     //   setStyle(this._element.nativeElement.querySelector('.fiv-bottom-drawer-scrollable-content .scroll-y'), 'touch-action', 'none');
     this._setDrawerState(this.state);

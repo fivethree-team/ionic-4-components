@@ -61,13 +61,13 @@ export class FivExpandable implements OnInit {
   close(param?: any) {
     this.param = param;
     this.fivWillClose.emit(this);
-    console.log('close');
+
     this.isOpen = false;
     this.change.detectChanges();
   }
 
   onAnimationEnd(event) {
-    console.log(event, this.timingFunction);
+
     if (event.fromState === 'closed') {
       this.fivDidOpen.emit(this);
     } else if (event.fromState === 'open') {

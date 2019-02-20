@@ -22,7 +22,7 @@ export class FivIfPlatform {
       }
     });
 
-    console.log('if platforms', platforms, show);
+
 
     if (show) {
       this.viewContainer.createEmbeddedView(this.templateRef);

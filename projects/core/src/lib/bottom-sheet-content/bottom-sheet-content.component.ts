@@ -40,7 +40,7 @@ export class FivBottomSheetContent implements OnInit {
   }
 
   updateState(state: DrawerState): any {
-    console.log('content got state', state);
+
     this.currentState = state;
   }
 

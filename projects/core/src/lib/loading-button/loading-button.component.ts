@@ -58,7 +58,7 @@ export class FivLoadingButton implements OnInit {
   }
 
   onComplete(isComplete: boolean) {
-    console.log('on complete', isComplete);
+
     this.loading = false;
     this.fivRefreshComplete.emit(this);
   }

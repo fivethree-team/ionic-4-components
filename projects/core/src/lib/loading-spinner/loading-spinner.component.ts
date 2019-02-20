@@ -151,10 +151,6 @@ export class FivLoadingSpinner implements OnInit {
   completeIn(duration: number) {
     this.mode = 'determinate';
     this.change.detectChanges();
-    // console.log('complete in', duration);
-    // console.log('interval', duration / 100);
-    // console.log('timer length', duration + duration / 50);
-    // console.log('loop count', (duration + duration / 50) / (duration / 100));
 
     const animation = this.builder.build([
       style({

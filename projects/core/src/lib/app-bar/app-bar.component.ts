@@ -44,7 +44,7 @@ export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
 
   @Input()
   set position(position: AppBarFabPosition) {
-    console.log('set position', position, !position, this._position);
+
     if (!position) {
       return;
     }
@@ -72,7 +72,7 @@ export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
   @Input()
   set fabVisible(fabVisible: boolean) {
     if (this._fabVisible === true && fabVisible === false) {
-      console.log('hide fab');
+
       this._fabVisible = false;
     } else if (this._fabVisible === false && fabVisible === true) {
       this.cutoutVisible = true;
@@ -100,19 +100,19 @@ export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
   }
 
   onFabHidden() {
-    console.log('fab hidden');
 
-    console.log('to void');
+
+
     if (this.transitioning) {
-      console.log('while transitioning to position', this._position);
+
       this.setPosition();
-      console.log('remove cutout');
+
       this.cutoutVisible = false;
       setTimeout(() => {
-        console.log('show cutout again');
+
         this.cutoutVisible = true;
         setTimeout(() => {
-          console.log('show fab again and end transition');
+
           this._fabVisible = true;
           this.transitioning = false;
         }, 225);

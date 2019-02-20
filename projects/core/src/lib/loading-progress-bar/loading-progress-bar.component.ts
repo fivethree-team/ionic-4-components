@@ -86,15 +86,15 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
   }
 
   complete(param: any) {
-    console.log('set complete');
+
     this.param = param;
     this.isComplete = true;
-    console.log(this.isComplete);
+
   }
 
   fillAnimationComplete(isComplete: boolean) {
     if (isComplete) {
-      console.log('fill animation complete', isComplete);
+
       this.fivComplete.emit(this.param);
       this.isComplete = false;
       this.param = null;
@@ -116,7 +116,7 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
       return;
     }
     this.progress = progress;
-    console.log('set progress', progress);
+
 
   }
 
@@ -145,7 +145,7 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
           return t.unsubscribe();
         }
         this.progress++;
-        console.log('current progress', this.progress);
+
       });
     player.onDone(() => {
       this.fivComplete.emit(true);
@@ -171,7 +171,7 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
           return t.unsubscribe();
         }
         this.progress--;
-        console.log('current progress', this.progress);
+
       });
 
     player.play();

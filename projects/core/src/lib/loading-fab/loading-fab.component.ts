@@ -119,7 +119,7 @@ export class FivLoadingFab implements OnInit {
   }
 
   changeIconAndReveal(event, icon: string) {
-    console.log(event, icon);
+
     if (event.fromState === 'normal') {
       this.icon = icon;
       this.iconState = 'normal';
@@ -132,7 +132,7 @@ export class FivLoadingFab implements OnInit {
   }
 
   postComplete() {
-    console.log('post complete');
+
     this.unload();
     this.fivComplete.emit(this);
   }
@@ -142,7 +142,7 @@ export class FivLoadingFab implements OnInit {
   }
 
   fabAnimDone(event) {
-    console.log('fab anim done', event);
+
     if (event.fromState === 'void') {
       this.fivShow.emit(this);
     }

@@ -40,10 +40,6 @@ export class FivViewport implements OnInit, OnDestroy, AfterContentInit {
     this.subscription = fromEvent(this.elementRef.nativeElement.closest('ion-content'), 'ionScroll')
       .pipe(merge(fromEvent(window, 'resize')), debounceTime(50))
       .subscribe(() => this.check());
-
-    console.log('visible', this.visible, document.body.contains(this.elementRef.nativeElement),
-      this.elementRef.nativeElement.getBoundingClientRect(), this.elementRef.nativeElement,
-      window.innerHeight + this.offset);
   }
 
   ngOnInit() {

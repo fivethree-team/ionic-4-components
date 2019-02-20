@@ -26,7 +26,7 @@ export class FivCenter implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('apply position relative to parent here');
+
   }
 
 

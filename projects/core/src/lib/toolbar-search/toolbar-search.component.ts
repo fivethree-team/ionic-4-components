@@ -63,7 +63,7 @@ export class FivToolbarSearch implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('on changes', changes);
+
     if (changes && changes.small && changes.small.previousValue === true && changes.small.currentValue === false) {
       this.state = 'normal';
       return;
@@ -92,7 +92,7 @@ export class FivToolbarSearch implements OnInit, OnChanges {
 
 
   searchBarStateChange(event) {
-    console.log('searchbarState', event);
+
     if (event.fromState === 'normal' && event.toState === 'small') {
 
     }
@@ -120,14 +120,14 @@ export class FivToolbarSearch implements OnInit, OnChanges {
 
 
   searchAnimDone(event) {
-    console.log('###', event);
+
     if (event.fromState !== 'void') {
       this.closeButtonVisible = true;
     }
   }
 
   closeAnimDone(event) {
-    console.log('###', event);
+
     if (event.fromState !== 'void') {
       this.searching = false;
     }

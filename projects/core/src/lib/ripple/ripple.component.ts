@@ -43,7 +43,7 @@ export class FivRipple {
   constructor(private el: ElementRef,
     public renderer: Renderer2) {
 
-    console.log('ripple constructor');
+
     this.rippleAnimationEvent.pipe(
       debounceTime(750)
     )

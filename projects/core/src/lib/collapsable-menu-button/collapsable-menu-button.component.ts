@@ -16,7 +16,7 @@ export class FivCollapsableMenuButton implements OnInit {
   }
 
   onClick() {
-    console.log('###', this.menu);
+
     this.menu.toggleMenu();
   }
 

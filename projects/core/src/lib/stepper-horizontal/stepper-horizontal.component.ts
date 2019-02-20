@@ -35,7 +35,7 @@ export class FivStepperHorizontal implements OnInit {
     this.slides.slideTo(0);
   }
   open(index: number): any {
-    console.log('open slide', index);
+
     this.slides.lockSwipes(false);
     this.slides.slideTo(index);
     this.slides.lockSwipes(true);

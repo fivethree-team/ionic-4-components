@@ -29,21 +29,16 @@ export class FivStepper implements OnInit {
   open(index: number) {
     if (this.mode === 'horizontal') {
       this.currentIndex = index;
-      // console.log('+#+#+');
       this.horizontal.open(index);
     } else {
-      // console.log('###open', this.steps, this.steps.toArray(), index, this.steps.toArray()[index]);
       if (this.steps.toArray()[index]) {
         if (this.steps.toArray()[index].isOpen) {
-          // console.log('is already open', this.steps.toArray()[index].isOpen);
           this.close(index);
         } else {
-          // console.log('is closed', this.steps.toArray()[index].isOpen);
           this.currentIndex = index;
           this.steps.toArray()[index].open();
         }
       } else {
-        // console.log('####', index, this.steps, this.steps.toArray());
       }
 
     }
@@ -77,7 +72,6 @@ export class FivStepper implements OnInit {
   }
 
   select(index: number) {
-    // console.log('select', index);
     if (index >= 0 && index < this.contents.length) {
       if (this.mode === 'vertical') {
         this.closeAll();
@@ -99,7 +93,6 @@ export class FivStepper implements OnInit {
 
   next() {
     const next = this.currentIndex < this.steps.length ? this.currentIndex + 1 : -1;
-    // console.log('next index', next);
     this.select(next);
   }
 

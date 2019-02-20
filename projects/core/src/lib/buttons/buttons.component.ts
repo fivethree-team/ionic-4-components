@@ -28,7 +28,7 @@ export class FivButtons implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    console.log('###', this.buttons.length);
+
   }
 
   onMenuClicked(event) {
