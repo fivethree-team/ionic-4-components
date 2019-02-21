@@ -14,6 +14,7 @@ export class FivButtons implements OnInit, AfterContentInit {
   @Input() subHeader: string;
   @Input() header: string;
   @Input() icon = 'more';
+  @Input() text: string;
   @Input() count = 0;
   @Input() forceActionsheet = false;
   @Input() forcePopover = false;
