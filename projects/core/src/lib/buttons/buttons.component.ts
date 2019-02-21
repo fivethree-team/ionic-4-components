@@ -53,7 +53,7 @@ export class FivButtons implements OnInit, AfterContentInit {
       event: ev,
       translucent: false,
       componentProps: {
-        'buttons': this.buttons.toArray().slice(this.count),
+        'buttons': this.buttons.toArray().slice(this.count).filter(button => !button.disabled),
       }
     });
 
@@ -68,13 +68,16 @@ export class FivButtons implements OnInit, AfterContentInit {
     const buttons = [];
     this.buttons.toArray().slice(this.count)
       .forEach((button, index) => {
-        buttons.push({
-          text: button.text,
-          icon: button.icon,
-          handler: () => {
-            this.onButtonClicked(this.count + index);
-          }
-        });
+        if (!button.disabled) {
+          buttons.push({
+            text: button.text,
+            icon: button.icon,
+            handler: () => {
+              this.onButtonClicked(this.count + index);
+            }
+          });
+        }
+
       });
     const actionSheet = await this.actionSheetController.create({
       header: this.header,
