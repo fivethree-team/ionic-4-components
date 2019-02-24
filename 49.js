@@ -1,8 +1,32 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[49],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-0f8926dc.js":
+/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-6d7d2f8c.js":
 /*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-0f8926dc.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-6d7d2f8c.js ***!
+  \***********************************************************************/
+/*! exports provided: a, b, c, d, e, f, g, h, i, j, k */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return rIC; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return now; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return hasShadowDom; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return findItemLabel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return renderHiddenInput; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return debounceEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return isEndSide; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return assert; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return clamp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return debounce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return pointerCoord; });
+function rIC(e){"requestIdleCallback"in window?window.requestIdleCallback(e):setTimeout(e,32)}function hasShadowDom(e){return!!e.shadowRoot&&!!e.attachShadow}function findItemLabel(e){var n=e.closest("ion-item");return n?n.querySelector("ion-label"):null}function renderHiddenInput(e,n,t,a,r){if(e||hasShadowDom(n)){var o=n.querySelector("input.aux-input");o||((o=n.ownerDocument.createElement("input")).type="hidden",o.classList.add("aux-input"),n.appendChild(o)),o.disabled=r,o.name=t,o.value=a||""}}function clamp(e,n,t){return Math.max(e,Math.min(n,t))}function assert(e,n){if(!e){var t="ASSERT: "+n;throw console.error(t),new Error(t)}}function now(e){return e.timeStamp||Date.now()}function pointerCoord(e){if(e){var n=e.changedTouches;if(n&&n.length>0){var t=n[0];return{x:t.clientX,y:t.clientY}}if(void 0!==e.pageX)return{x:e.pageX,y:e.pageY}}return{x:0,y:0}}function isEndSide(e,n){var t="rtl"===e.document.dir;switch(n){case"start":return t;case"end":return!t;default:throw new Error('"'+n+'" is not a valid value for [side]. Use "start" or "end" instead.')}}function debounceEvent(e,n){var t=e._original||e;return{_original:e,emit:debounce(t.emit.bind(t),n)}}function debounce(e,n){var t;return void 0===n&&(n=0),function(){for(var a=[],r=0;r<arguments.length;r++)a[r]=arguments[r];clearTimeout(t),t=setTimeout.apply(void 0,[e,n].concat(a))}}
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-7c632336.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-7c632336.js ***!
   \***********************************************************************/
 /*! exports provided: a, b, c, d, e */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -10,8 +34,8 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getClassMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return createColorClasses; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return openURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return openURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createColorClasses; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hostContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return createThemedClasses; });
 /* harmony import */ var _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../polyfills/tslib.js */ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js");
@@ -19,19 +43,20 @@ function hostContext(t,e){return null!==e.closest(t)}function createColorClasses
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/kck6ua3e.entry.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/kck6ua3e.entry.js ***!
-  \***********************************************************************/
-/*! exports provided: IonText */
+/***/ "./node_modules/@ionic/core/dist/esm/es5/build/sghmhl28.sc.entry.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/es5/build/sghmhl28.sc.entry.js ***!
+  \**************************************************************************/
+/*! exports provided: IonCheckbox */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IonText", function() { return Text; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IonCheckbox", function() { return Checkbox; });
 /* harmony import */ var _ionic_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ionic.core.js */ "./node_modules/@ionic/core/dist/esm/es5/ionic.core.js");
-/* harmony import */ var _chunk_0f8926dc_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chunk-0f8926dc.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-0f8926dc.js");
-var Text=function(){function e(){}return e.prototype.hostData=function(){return{class:Object(_chunk_0f8926dc_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this.color)}},e.prototype.render=function(){return Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot",null)},Object.defineProperty(e,"is",{get:function(){return"ion-text"},enumerable:!0,configurable:!0}),Object.defineProperty(e,"encapsulation",{get:function(){return"shadow"},enumerable:!0,configurable:!0}),Object.defineProperty(e,"properties",{get:function(){return{color:{type:String,attr:"color"},mode:{type:String,attr:"mode"}}},enumerable:!0,configurable:!0}),Object.defineProperty(e,"style",{get:function(){return":host(.ion-color){color:var(--ion-color-base)}"},enumerable:!0,configurable:!0}),e}();
+/* harmony import */ var _chunk_7c632336_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chunk-7c632336.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-7c632336.js");
+/* harmony import */ var _chunk_6d7d2f8c_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./chunk-6d7d2f8c.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-6d7d2f8c.js");
+var Checkbox=function(){function e(){var e=this;this.inputId="ion-cb-"+checkboxIds++,this.name=this.inputId,this.checked=!1,this.disabled=!1,this.value="on",this.onFocus=function(){e.ionFocus.emit()},this.onBlur=function(){e.ionBlur.emit()}}return e.prototype.componentWillLoad=function(){this.emitStyle()},e.prototype.checkedChanged=function(e){this.ionChange.emit({checked:e,value:this.value}),this.emitStyle()},e.prototype.emitStyle=function(){this.ionStyle.emit({"checkbox-checked":this.checked,"interactive-disabled":this.disabled})},e.prototype.onClick=function(){this.setFocus(),this.checked=!this.checked},e.prototype.setFocus=function(){this.buttonEl&&this.buttonEl.focus()},e.prototype.hostData=function(){var e=this,t=e.disabled,o=e.checked,n=e.color,i=e.el,c=e.inputId+"-lbl",r=Object(_chunk_6d7d2f8c_js__WEBPACK_IMPORTED_MODULE_2__["d"])(i);return r&&(r.id=c),{role:"checkbox","aria-disabled":t?"true":null,"aria-checked":""+o,"aria-labelledby":c,class:Object.assign({},Object(_chunk_7c632336_js__WEBPACK_IMPORTED_MODULE_1__["c"])(n),{"in-item":Object(_chunk_7c632336_js__WEBPACK_IMPORTED_MODULE_1__["d"])("ion-item",i),"checkbox-checked":o,"checkbox-disabled":t,interactive:!0})}},e.prototype.render=function(){var e=this;return Object(_chunk_6d7d2f8c_js__WEBPACK_IMPORTED_MODULE_2__["e"])(!0,this.el,this.name,this.checked?this.value:"",this.disabled),[Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("svg",{class:"checkbox-icon",viewBox:"0 0 24 24"},Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("path","md"===this.mode?{d:"M1.73,12.91 8.1,19.28 22.79,4.59"}:{d:"M5.9,12.5l3.8,3.8l8.8-8.8"})),Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button",{type:"button",onFocus:this.onFocus,onBlur:this.onBlur,disabled:this.disabled,ref:function(t){return e.buttonEl=t}})]},Object.defineProperty(e,"is",{get:function(){return"ion-checkbox"},enumerable:!0,configurable:!0}),Object.defineProperty(e,"encapsulation",{get:function(){return"shadow"},enumerable:!0,configurable:!0}),Object.defineProperty(e,"properties",{get:function(){return{checked:{type:Boolean,attr:"checked",mutable:!0,watchCallbacks:["checkedChanged"]},color:{type:String,attr:"color"},disabled:{type:Boolean,attr:"disabled",watchCallbacks:["emitStyle"]},el:{elementRef:!0},mode:{type:String,attr:"mode"},name:{type:String,attr:"name"},value:{type:String,attr:"value"}}},enumerable:!0,configurable:!0}),Object.defineProperty(e,"events",{get:function(){return[{name:"ionChange",method:"ionChange",bubbles:!0,cancelable:!0,composed:!0},{name:"ionFocus",method:"ionFocus",bubbles:!0,cancelable:!0,composed:!0},{name:"ionBlur",method:"ionBlur",bubbles:!0,cancelable:!0,composed:!0},{name:"ionStyle",method:"ionStyle",bubbles:!0,cancelable:!0,composed:!0}]},enumerable:!0,configurable:!0}),Object.defineProperty(e,"listeners",{get:function(){return[{name:"click",method:"onClick"}]},enumerable:!0,configurable:!0}),Object.defineProperty(e,"style",{get:function(){return".sc-ion-checkbox-md-h{--background-checked:var(--ion-color-primary,#3880ff);--border-color-checked:var(--ion-color-primary,#3880ff);--checkmark-color:var(--ion-color-primary-contrast,#fff);--transition:none;display:inline-block;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}.ion-color.sc-ion-checkbox-md-h{--background-checked:var(--ion-color-base);--border-color-checked:var(--ion-color-base);--checkmark-color:var(--ion-color-contrast)}button.sc-ion-checkbox-md{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl].sc-ion-checkbox-md-h   button.sc-ion-checkbox-md, [dir=rtl]   .sc-ion-checkbox-md-h   button.sc-ion-checkbox-md{right:0}button.sc-ion-checkbox-md::-moz-focus-inner{border:0}.checkbox-icon.sc-ion-checkbox-md{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);contain:strict;-webkit-box-sizing:border-box;box-sizing:border-box}.checkbox-icon.sc-ion-checkbox-md   path.sc-ion-checkbox-md{fill:none;stroke:var(--checkmark-color);stroke-width:1;opacity:0}.checkbox-checked.sc-ion-checkbox-md-h   .checkbox-icon.sc-ion-checkbox-md{border-color:var(--border-color-checked);background:var(--background-checked)}.checkbox-checked.sc-ion-checkbox-md-h   .checkbox-icon.sc-ion-checkbox-md   path.sc-ion-checkbox-md{opacity:1}.checkbox-disabled.sc-ion-checkbox-md-h{pointer-events:none}.sc-ion-checkbox-md-h{--border-radius:calc(var(--size) * .125);--border-width:2px;--border-style:solid;--border-color:rgba(0,0,0,0.54);--background:var(--ion-item-background,var(--ion-background-color,#fff));--transition:background 180ms cubic-bezier(0.4,0,0.2,1);--size:18px;width:var(--size);height:var(--size)}.checkbox-icon.sc-ion-checkbox-md   path.sc-ion-checkbox-md{stroke-dasharray:30;stroke-dashoffset:30;stroke-width:3}.checkbox-checked.sc-ion-checkbox-md-h   .checkbox-icon.sc-ion-checkbox-md   path.sc-ion-checkbox-md{stroke-dashoffset:0;-webkit-transition:stroke-dashoffset 90ms linear 90ms;transition:stroke-dashoffset 90ms linear 90ms}.checkbox-disabled.sc-ion-checkbox-md-h{opacity:.3}.in-item.sc-ion-checkbox-md-h{margin-left:0;margin-right:0;margin-top:18px;margin-bottom:18px;display:block;position:static}.in-item[slot=start].sc-ion-checkbox-md-h{margin-left:4px;margin-right:36px;margin-top:18px;margin-bottom:18px}\@supports ((-webkit-margin-start:0) or (margin-inline-start:0)) or (-webkit-margin-start:0){.in-item[slot=start].sc-ion-checkbox-md-h{margin-left:unset;margin-right:unset;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:36px;margin-inline-end:36px}}"},enumerable:!0,configurable:!0}),Object.defineProperty(e,"styleMode",{get:function(){return"md"},enumerable:!0,configurable:!0}),e}(),checkboxIds=0;
 
 /***/ }),
 

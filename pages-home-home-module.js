@@ -15,7 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _home_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home.page */ "./src/app/pages/home/home.page.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -68,7 +68,7 @@ var HomePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n\n<ion-content>\n    <div class=\"docs-header\">\n        <h1>Fivethree Components</h1>\n        <h2>Material components for Ionic and Angular</h2>\n\n        <ion-button class=\"docs-header-get-started\" href=\"/fivethree/getting-started\" shape=\"round\" translate>\n            common.get-started\n        </ion-button>\n    </div>\n\n    <div class=\"docs-homepage-promo\">\n        <ion-grid fixed>\n            <ion-row>\n                <ion-col size=\"6\">\n                    <h2>Optimized for Ionic and Angular</h2>\n                    <p>Built with Angular Library adding new components and extending Ionic components.</p>\n                </ion-col>\n                <ion-col size=\"6\">\n                    <!-- TODO add icon -->\n                </ion-col>\n            </ion-row>\n        </ion-grid>\n    </div>\n\n    <app-footer></app-footer>\n</ion-content>"
+module.exports = "<app-header></app-header>\n\n<ion-content>\n    <div class=\"docs-header\">\n        <h1>Fivethree Components</h1>\n        <h2>Material components for Ionic and Angular</h2>\n\n        <ion-button class=\"docs-header-get-started\" routerLink=\"/getting-started\" shape=\"round\" translate>\n            common.get-started\n        </ion-button>\n    </div>\n\n    <div class=\"docs-homepage-promo\">\n        <ion-grid fixed>\n            <ion-row>\n                <ion-col size=\"6\">\n                    <h2>Optimized for Ionic and Angular</h2>\n                    <p>Built with Angular Library adding new components and extending Ionic components.</p>\n                </ion-col>\n                <ion-col size=\"6\">\n                    <!-- TODO add icon -->\n                </ion-col>\n            </ion-row>\n        </ion-grid>\n    </div>\n\n    <app-footer></app-footer>\n</ion-content>"
 
 /***/ }),
 
@@ -79,7 +79,7 @@ module.exports = "<app-header></app-header>\n\n<ion-content>\n    <div class=\"d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".docs-header {\n  text-align: center;\n  margin-top: 64px;\n  margin-bottom: 64px; }\n\n.docs-header-get-started {\n  margin: 60px 0; }\n\n.docs-homepage-promo {\n  min-height: 42vh; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2hvbWUvaG9tZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxtQkFBa0I7RUFDbEIsaUJBQWdCO0VBQ2hCLG9CQUFtQixFQUN0Qjs7QUFFRDtFQUNJLGVBQWMsRUFDakI7O0FBRUQ7RUFDSSxpQkFBZ0IsRUFDbkIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9ob21lL2hvbWUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRvY3MtaGVhZGVyIHtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgbWFyZ2luLXRvcDogNjRweDtcbiAgICBtYXJnaW4tYm90dG9tOiA2NHB4O1xufVxuXG4uZG9jcy1oZWFkZXItZ2V0LXN0YXJ0ZWQge1xuICAgIG1hcmdpbjogNjBweCAwO1xufVxuXG4uZG9jcy1ob21lcGFnZS1wcm9tbyB7XG4gICAgbWluLWhlaWdodDogNDJ2aDtcbn0iXX0= */"
+module.exports = ".docs-header {\n  text-align: center;\n  margin-top: 64px;\n  margin-bottom: 64px; }\n\n.docs-header-get-started {\n  margin: 60px 0; }\n\n.docs-homepage-promo {\n  min-height: 42vh; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2hvbWUvaG9tZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLG1CQUFtQixFQUFBOztBQUd2QjtFQUNJLGNBQWMsRUFBQTs7QUFHbEI7RUFDSSxnQkFBZ0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2hvbWUvaG9tZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZG9jcy1oZWFkZXIge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBtYXJnaW4tdG9wOiA2NHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDY0cHg7XG59XG5cbi5kb2NzLWhlYWRlci1nZXQtc3RhcnRlZCB7XG4gICAgbWFyZ2luOiA2MHB4IDA7XG59XG5cbi5kb2NzLWhvbWVwYWdlLXByb21vIHtcbiAgICBtaW4taGVpZ2h0OiA0MnZoO1xufSJdfQ== */"
 
 /***/ }),
 

@@ -10,12 +10,12 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToolbarSearchPageModule", function() { return ToolbarSearchPageModule; });
-/* harmony import */ var core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core */ "./dist/core/fesm5/fivethree-core.js");
+/* harmony import */ var _fivethree_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fivethree/core */ "./dist/@fivethree/core/fesm5/fivethree-core.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _toolbar_search_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./toolbar-search.page */ "./src/app/pages/toolbar-search/toolbar-search.page.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -45,7 +45,7 @@ var ToolbarSearchPageModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
-                core__WEBPACK_IMPORTED_MODULE_0__["FivethreeCoreModule"],
+                _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["FivethreeCoreModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes)
             ],
             declarations: [_toolbar_search_page__WEBPACK_IMPORTED_MODULE_6__["ToolbarSearchPage"]]
@@ -90,7 +90,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToolbarSearchPage", function() { return ToolbarSearchPage; });
-/* harmony import */ var core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core */ "./dist/core/fesm5/fivethree-core.js");
+/* harmony import */ var _fivethree_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fivethree/core */ "./dist/@fivethree/core/fesm5/fivethree-core.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -106,8 +106,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var ToolbarSearchPage = /** @class */ (function () {
     function ToolbarSearchPage() {
         this.small = false;
-        this.states = core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"];
-        this.state = core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"].Bottom;
+        this.states = _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"];
+        this.state = _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"].Bottom;
     }
     ToolbarSearchPage.prototype.ngOnInit = function () {
     };
@@ -131,14 +131,14 @@ var ToolbarSearchPage = /** @class */ (function () {
             this.search.grow();
         }
         console.log('open !!!!');
-        this.state = core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"].Top;
+        this.state = _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"].Top;
     };
     ToolbarSearchPage.prototype.close = function () {
         console.log('open !!!!');
         if (this.small) {
             this.search.shrink();
         }
-        this.state = core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"].Bottom;
+        this.state = _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"].Bottom;
     };
     ToolbarSearchPage.prototype.bottomSheetClose = function (search) {
         console.log('bottomSheetClose !!!!');
@@ -146,7 +146,7 @@ var ToolbarSearchPage = /** @class */ (function () {
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('search'),
-        __metadata("design:type", core__WEBPACK_IMPORTED_MODULE_0__["ToolbarSearchComponent"])
+        __metadata("design:type", _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["FivToolbarSearch"])
     ], ToolbarSearchPage.prototype, "search", void 0);
     ToolbarSearchPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

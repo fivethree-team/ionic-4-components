@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _page_not_found_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./page-not-found.page */ "./src/app/pages/page-not-found/page-not-found.page.ts");
 /* harmony import */ var src_app_components_components_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/components/components.module */ "./src/app/components/components.module.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
@@ -68,7 +68,7 @@ var PageNotFoundPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n\n<ion-content>\n    \n    <div id=\"page-not-found-container\">\n      <div [fivCenter]>\n          <lottie-animation-view [options]=\"lottieConfig\"\n          [width]=\"200\" [height]=\"200\" (animCreated)=\"handleAnimation($event)\">\n        </lottie-animation-view>\n        <h3 text-center translate>404.text</h3>\n        <!-- <a text-center href=\"/\">Go back to homepage</a> -->\n      </div>\n    </div>\n    <app-footer></app-footer>\n  </ion-content>"
+module.exports = "<app-header></app-header>\n\n<ion-content>\n\n  <div id=\"page-not-found-container\">\n    <div [fivCenter] text-center>\n      <lottie-animation-view [options]=\"lottieConfig\" [width]=\"200\" [height]=\"200\" (animCreated)=\"handleAnimation($event)\">\n      </lottie-animation-view>\n      <h3 text-center translate>404.text</h3>\n      <ion-button routerLink=\"/\" shape=\"round\" translate>\n        404.go.back\n      </ion-button>\n    </div>\n  </div>\n  <app-footer></app-footer>\n</ion-content>"
 
 /***/ }),
 
@@ -79,7 +79,7 @@ module.exports = "<app-header></app-header>\n\n<ion-content>\n    \n    <div id=
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#page-not-found-container {\n  height: 100vh; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL3BhZ2Utbm90LWZvdW5kL3BhZ2Utbm90LWZvdW5kLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQWEsRUFDaEIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9wYWdlLW5vdC1mb3VuZC9wYWdlLW5vdC1mb3VuZC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjcGFnZS1ub3QtZm91bmQtY29udGFpbmVyIHsgXG4gICAgaGVpZ2h0OiAxMDB2aDtcbn0iXX0= */"
+module.exports = "#page-not-found-container {\n  height: 100vh; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL3BhZ2Utbm90LWZvdW5kL3BhZ2Utbm90LWZvdW5kLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQWEsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3BhZ2Utbm90LWZvdW5kL3BhZ2Utbm90LWZvdW5kLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNwYWdlLW5vdC1mb3VuZC1jb250YWluZXIgeyBcbiAgICBoZWlnaHQ6IDEwMHZoO1xufSJdfQ== */"
 
 /***/ }),
 

@@ -15,9 +15,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _bottom_sheet_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./bottom-sheet.page */ "./src/app/pages/bottom-sheet/bottom-sheet.page.ts");
-/* harmony import */ var core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core */ "./dist/core/fesm5/fivethree-core.js");
+/* harmony import */ var _fivethree_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fivethree/core */ "./dist/@fivethree/core/fesm5/fivethree-core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -48,7 +48,7 @@ var BottomSheetPageModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes),
-                core__WEBPACK_IMPORTED_MODULE_7__["FivethreeCoreModule"],
+                _fivethree_core__WEBPACK_IMPORTED_MODULE_7__["FivethreeCoreModule"],
                 _components_components_module__WEBPACK_IMPORTED_MODULE_0__["ComponentsModule"]
             ],
             declarations: [_bottom_sheet_page__WEBPACK_IMPORTED_MODULE_6__["BottomSheetPage"]]
@@ -79,7 +79,7 @@ module.exports = "<app-header title=\"Bottom Sheet\"></app-header>\n\n\n<ion-con
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".drawer-content {\n  border-top: 0.5px solid #e5e5e5;\n  padding: 10px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2JvdHRvbS1zaGVldC9ib3R0b20tc2hlZXQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0NBQStCO0VBQy9CLGNBQWEsRUFDZCIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2JvdHRvbS1zaGVldC9ib3R0b20tc2hlZXQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyYXdlci1jb250ZW50IHtcbiAgICBib3JkZXItdG9wOiAwLjVweCBzb2xpZCAjZTVlNWU1O1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gIH0iXX0= */"
+module.exports = ".drawer-content {\n  border-top: 0.5px solid #e5e5e5;\n  padding: 10px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2JvdHRvbS1zaGVldC9ib3R0b20tc2hlZXQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQStCO0VBQy9CLGFBQWEsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2JvdHRvbS1zaGVldC9ib3R0b20tc2hlZXQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyYXdlci1jb250ZW50IHtcbiAgICBib3JkZXItdG9wOiAwLjVweCBzb2xpZCAjZTVlNWU1O1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -94,7 +94,7 @@ module.exports = ".drawer-content {\n  border-top: 0.5px solid #e5e5e5;\n  paddi
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BottomSheetPage", function() { return BottomSheetPage; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core */ "./dist/core/fesm5/fivethree-core.js");
+/* harmony import */ var _fivethree_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fivethree/core */ "./dist/@fivethree/core/fesm5/fivethree-core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -111,8 +111,8 @@ var BottomSheetPage = /** @class */ (function () {
         this.shouldBounce = true;
         this.dockedHeight = 170;
         this.distanceTop = 56;
-        this.drawerState = core__WEBPACK_IMPORTED_MODULE_1__["DrawerState"].Docked;
-        this.states = core__WEBPACK_IMPORTED_MODULE_1__["DrawerState"];
+        this.drawerState = _fivethree_core__WEBPACK_IMPORTED_MODULE_1__["DrawerState"].Docked;
+        this.states = _fivethree_core__WEBPACK_IMPORTED_MODULE_1__["DrawerState"];
         this.minimumHeight = 24;
         this.handle = true;
         this.float = true;
