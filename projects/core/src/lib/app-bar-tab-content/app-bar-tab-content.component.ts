@@ -1,6 +1,4 @@
-import { FivAppBar } from './../app-bar/app-bar.component';
-import { Component, OnInit, Input, HostBinding, Output, EventEmitter, Host } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Component, OnInit, Input, HostBinding, Output, EventEmitter } from '@angular/core';
 import { AppBarTitleLayout } from '../interfaces';
 import { TabButtonClickEventDetail } from '@ionic/core';
 
@@ -27,8 +25,7 @@ export class FivAppBarTabContent implements OnInit {
 
   @Output() ionTabButtonClick = new EventEmitter<TabButtonClickEventDetail>();
 
-  constructor(private nav: NavController,
-    @Host() private appbar: FivAppBar) { }
+  constructor() { }
 
   ngOnInit() {
 
