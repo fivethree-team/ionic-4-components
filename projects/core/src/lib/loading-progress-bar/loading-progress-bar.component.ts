@@ -85,11 +85,9 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
     }
   }
 
-  complete(param: any) {
-
+  complete(param?: any) {
     this.param = param;
     this.isComplete = true;
-
   }
 
   fillAnimationComplete(isComplete: boolean) {
