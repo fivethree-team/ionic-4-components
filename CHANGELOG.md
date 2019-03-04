@@ -1,3 +1,12 @@
+## [0.5.12](https://github.com/fivethree-team/fivethree/compare/v0.5.11...v0.5.12) (2019-03-04)
+
+
+### Features
+
+* **router-item:** add rounded active state ([3380885](https://github.com/fivethree-team/fivethree/commit/3380885))
+
+
+
 <a name="0.5.6"></a>
 ## [0.5.6](https://github.com/fivethree-team/component-library/compare/v0.1.0...v0.5.6) (2019-02-20)
 
