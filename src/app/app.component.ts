@@ -14,12 +14,14 @@ export class AppComponent {
     {
       title: 'App Bar',
       url: '/app-bar',
-      icon: 'git-commit'
+      icon: 'git-commit',
+      shape: 'rounded'
     },
     {
       title: 'Bottom Sheet',
       url: '/bottom-sheet',
-      icon: 'ios-arrow-up'
+      icon: 'ios-arrow-up',
+      shape: 'rounded'
     },
     // {
     //   title: 'Dialog',
@@ -29,27 +31,32 @@ export class AppComponent {
     {
       title: 'Editable Label',
       url: '/editable-label',
-      icon: 'create'
+      icon: 'create',
+      shape: 'line'
     },
     {
       title: 'Expandable',
       url: '/expandable',
-      icon: 'resize'
+      icon: 'resize',
+      shape: 'dot'
     },
     {
       title: 'Icon',
       url: '/icon',
-      icon: 'mail-unread'
+      icon: 'mail-unread',
+      shape: 'rounded'
     },
     {
       title: 'Image View',
       url: '/image',
-      icon: 'image'
+      icon: 'image',
+      shape: 'dot'
     },
     {
       title: 'Loading Indicators',
       url: '/loading',
-      icon: 'time'
+      icon: 'time',
+      shape: 'line'
     },
     // {
     //   title: 'Map',
@@ -59,17 +66,20 @@ export class AppComponent {
     {
       title: 'Overflow Buttons',
       url: '/buttons',
-      icon: 'more'
+      icon: 'more',
+      shape: 'rounded'
     },
     {
       title: 'Password Reveal Input',
       url: '/password',
-      icon: 'key'
+      icon: 'key',
+      shape: 'line'
     },
     {
       title: 'Refresher',
       url: '/refresh',
-      icon: 'refresh'
+      icon: 'refresh',
+      shape: 'dot'
     },
     // {
     //   title: 'Searchbar',
@@ -79,7 +89,8 @@ export class AppComponent {
     {
       title: 'Stepper',
       url: '/stepper',
-      icon: 'share'
+      icon: 'share',
+      shape: 'rounded'
     },
     // {
     //   title: 'Directives',

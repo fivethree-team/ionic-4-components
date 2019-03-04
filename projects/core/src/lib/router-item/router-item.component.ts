@@ -40,7 +40,7 @@ export class FivRouterItem implements OnInit {
    * Possible values are: `"line"`, `"dot"` and any ionicon.
    * Default value is: `"line"`
    */
-  @Input() shape: 'line' | 'dot' | string = 'line';
+  @Input() shape: 'line' | 'dot' | 'rounded' | string = 'line';
 
   @Input() text: string;
 

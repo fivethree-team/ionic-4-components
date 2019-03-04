@@ -1,33 +1,51 @@
 :host {
+  /**
+  * @prop --background-hover: Background of the item when hovered
+  * @prop --background-line: Background of the item when line
+  * @prop --background-rounded: Background of the item as rgb values when rounded
+  *
+  * @prop --border-radius-rounded-left: Border radius of the rounded background to the left
+  * @prop --border-radius-rounded-right: Border radius of the rounded background to the right
+  *
+  * @prop --color-active: Color of the item when actived
+  *
+  * @prop --opacity-rounded: Opacity of the item when rounded
+  * 
+  * @prop --width-line: Width of the line when actived
+  */
+
   display: block;
   position: relative;
   width: 100%;
 }
 
-:host.active {
-  --fiv-color-icon: var(--ion-color-primary);
+:host(.active) {
+  --color-active: var(--ion-color-primary);
+
   ion-item {
-    --color: var(--ion-color-primary);
+    --color: var(--color-active);
   }
 }
 
-:host.active .dot {
-  display: block;
+// line
+:host(.line) {
+  --width-line: 4px;
+  --background-line: var(--ion-color-primary);
 }
 
-:host.active .line {
-  background-color: var(--fiv-dot-color, var(--ion-color-primary));
+:host(.active) .line {
   display: block;
+  background: var(--background-line);
 }
 
 :host.active.left .line {
-  width: 2px;
+  width: var(--width-line);
   height: 100%;
   top: 0;
 }
 
 :host.active.right .line {
-  width: 2px;
+  width: var(--width-line);
   height: 100%;
   top: 0;
 }
@@ -44,15 +62,19 @@
   left: 8px;
 }
 
-:host.active.dot.left {
-  padding-left: 24px;
-}
-
 .indicator {
   position: absolute;
 }
 
 // dot
+:host.active .dot {
+  display: block;
+}
+
+:host.active.dot.left {
+  padding-left: 24px;
+}
+
 .dot {
   width: var(--fiv-dot-width, 8px);
   height: var(--fiv-dot-heigt, 8px);
@@ -73,6 +95,32 @@
   right: 8px;
 }
 
+// rounded
+:host(.rounded.left) {
+  --border-radius-rounded-left: 0 50px 50px 0;
+
+  ion-item {
+    --border-radius: var(--border-radius-rounded-left);
+  }
+}
+
+:host(.rounded.right) {
+  --border-radius-rounded-right: 50px 0 0 50px;
+
+  ion-item {
+    --border-radius: var(--border-radius-rounded-right);
+  }
+}
+
+:host(.active.rounded) {
+  --background-rounded: var(--ion-color-primary-rgb);
+  --opacity-rounded: 0.25;
+
+  ion-item {
+    --background: rgba(var(--background-rounded), var(--opacity-rounded));
+  }
+}
+
 // position
 .left {
   left: 0;
@@ -90,9 +138,6 @@
   bottom: 0;
 }
 
-.outline {
-}
-
 ion-item {
   --border-style: none;
 }
@@ -102,8 +147,10 @@ fiv-icon {
 }
 
 ion-item:hover {
+  --background-hover: var(--ion-color-light);
+
   cursor: pointer;
-  --background: rgb(240, 240, 240);
+  --background: var(--background-hover);
 }
 
 :host(.router-item-disabled) {
