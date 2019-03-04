@@ -4,7 +4,7 @@
 /*!******************************************************!*\
   !*** ./dist/@fivethree/core/fesm5/fivethree-core.js ***!
   \******************************************************/
-/*! exports provided: MyHammerConfig, FivethreeCoreModule, DrawerState, FivAppBar, FivBottomSheet, FivBottomSheetContent, FivCollapsableMenuButton, FivDialog, CUSTOM_EDITIABLE_LABEL_CONTROL_VALUE_ACCESSOR, FivEditableLabel, FivExpandable, FivExpandableIndicator, FivLoadingButton, FivLoadingContent, FivLoadingFab, FivLoadingProgressBar, CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR, FivPasswordInput, FivRouterItem, FivStep, FivStepContent, FivStepHeader, FivStepper, FivStepperHorizontal, FivToolbarSearch, FivAppBarTab, FivAppBarTabContent, FivButtons, FivButton, LoadingService, ɵb, ɵa, ɵc, ɵd, ɵg, ɵf, ɵj, ɵk, ɵh, ɵi, ɵl, ɵe */
+/*! exports provided: MyHammerConfig, FivethreeCoreModule, DrawerState, FivAppBar, FivBottomSheet, FivBottomSheetContent, FivCollapsableMenuButton, FivDialog, CUSTOM_EDITIABLE_LABEL_CONTROL_VALUE_ACCESSOR, FivEditableLabel, FivExpandable, FivExpandableIndicator, FivLoadingButton, FivLoadingContent, FivLoadingFab, FivLoadingProgressBar, CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR, FivPasswordInput, FivRouterItem, FivStep, FivStepContent, FivStepHeader, FivStepper, FivStepperHorizontal, FivToolbarSearch, FivAppBarTab, FivAppBarTabContent, FivButtons, FivButton, FivImageViewer, LoadingService, ɵb, ɵa, ɵc, ɵd, ɵg, ɵf, ɵj, ɵh, ɵi, ɵk, ɵe */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38,6 +38,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FivAppBarTabContent", function() { return FivAppBarTabContent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FivButtons", function() { return FivButtons; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FivButton", function() { return FivButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FivImageViewer", function() { return FivImageViewer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadingService", function() { return LoadingService; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return FivCollapsableMenu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return FivCenter; });
@@ -46,10 +47,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵg", function() { return FivPull; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵf", function() { return FivViewport; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵj", function() { return FivIcon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵk", function() { return FivImageViewer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵh", function() { return FivLoadingRefresherContent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵi", function() { return FivLoadingSpinner; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵl", function() { return FivPopover; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵk", function() { return FivPopover; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵe", function() { return FivRipple; });
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
@@ -78,7 +78,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivStep = /** @class */ (function () {
     function FivStep() {
@@ -118,7 +118,7 @@ var FivStep = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivStepHeader = /** @class */ (function () {
     function FivStepHeader() {
@@ -197,7 +197,7 @@ var FivStepHeader = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivExpandable = /** @class */ (function () {
     function FivExpandable(change) {
@@ -316,7 +316,7 @@ var FivExpandable = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivStepContent = /** @class */ (function () {
     function FivStepContent(change) {
@@ -440,7 +440,7 @@ var FivStepContent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivStepperHorizontal = /** @class */ (function () {
     function FivStepperHorizontal() {
@@ -508,7 +508,7 @@ var FivStepperHorizontal = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivStepper = /** @class */ (function () {
     function FivStepper() {
@@ -635,13 +635,9 @@ var FivStepper = /** @class */ (function () {
             this.horizontal.close();
         }
         else {
-            this.steps.forEach((/**
-             * @param {?} step
-             * @return {?}
-             */
-            function (step) {
+            this.steps.forEach(function (step) {
                 step.close();
-            }));
+            });
         }
     };
     /**
@@ -730,7 +726,7 @@ var FivStepper = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivRouterItem = /** @class */ (function () {
     function FivRouterItem(router) {
@@ -851,7 +847,7 @@ var FivRouterItem = /** @class */ (function () {
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
                     selector: 'fiv-router-item',
                     template: "<ion-menu-toggle auto-hide=\"false\">\n    <fiv-ripple>\n        <ion-item [color]=\"color\" [detail]=\"detail\" [detailIcon]=\"detailIcon\" [disabled]=\"disabled\" [lines]=\"lines\">\n            <fiv-icon [name]=\"icon\"></fiv-icon>\n            <ion-label>{{text}}</ion-label>\n        </ion-item>\n    </fiv-ripple>\n</ion-menu-toggle>\n<span *ngIf=\"hasShape()\" [ngClass]=\"getClasses()\" class=\"indicator\"></span>\n<ion-icon *ngIf=\"!hasShape()\" [ngClass]=\"position\" [name]=\"shape\" class=\"indicator\"></ion-icon>",
-                    styles: [":host{display:block;position:relative;width:100%}:host.active{--fiv-color-icon:var(--ion-color-primary)}:host.active ion-item{--color:var(--ion-color-primary)}:host.active .dot{display:block}:host.active .line{background-color:var(--fiv-dot-color,var(--ion-color-primary));display:block}:host.active.left .line{width:2px;height:100%;top:0}:host.active.right .line{width:2px;height:100%;top:0}:host.active.top .line{width:calc(100% - 16px);left:8px;height:2px}:host.active.bottom .line{width:calc(100% - 16px);height:2px;left:8px}:host.active.dot.left{padding-left:24px}.indicator{position:absolute}.dot{width:var(--fiv-dot-width,8px);height:var(--fiv-dot-heigt,8px);background-color:var(--fiv-dot-color,var(--ion-color-primary));top:50%;border-radius:100%;-webkit-transform:translateY(-50%);transform:translateY(-50%);right:8px;display:none}.dot.left{left:8px;right:unset}.dot.right{right:8px}.left{left:0}.right{right:0}.top{top:0}.bottom{bottom:0}ion-item{--border-style:none}fiv-icon{--fiv-padding-end:8px}ion-item:hover{cursor:pointer;--background:rgb(240, 240, 240)}:host(.router-item-disabled){pointer-events:none}"]
+                    styles: [":host{display:block;position:relative;width:100%}:host(.active){--color-active:var(--ion-color-primary)}:host(.active) ion-item{--color:var(--color-active)}:host(.line){--width-line:4px;--background-line:var(--ion-color-primary)}:host(.active) .line{display:block;background:var(--background-line)}:host.active.left .line{width:var(--width-line);height:100%;top:0}:host.active.right .line{width:var(--width-line);height:100%;top:0}:host.active.top .line{width:calc(100% - 16px);left:8px;height:2px}:host.active.bottom .line{width:calc(100% - 16px);height:2px;left:8px}.indicator{position:absolute}:host.active .dot{display:block}:host.active.dot.left{padding-left:24px}.dot{width:var(--fiv-dot-width,8px);height:var(--fiv-dot-heigt,8px);background-color:var(--fiv-dot-color,var(--ion-color-primary));top:50%;border-radius:100%;-webkit-transform:translateY(-50%);transform:translateY(-50%);right:8px;display:none}.dot.left{left:8px;right:unset}.dot.right{right:8px}:host(.rounded.left){--border-radius-rounded-left:0 50px 50px 0}:host(.rounded.left) ion-item{--border-radius:var(--border-radius-rounded-left)}:host(.rounded.right){--border-radius-rounded-right:50px 0 0 50px}:host(.rounded.right) ion-item{--border-radius:var(--border-radius-rounded-right)}:host(.active.rounded){--background-rounded:var(--ion-color-primary-rgb);--opacity-rounded:0.25}:host(.active.rounded) ion-item{--background:rgba(var(--background-rounded), var(--opacity-rounded))}.left{left:0}.right{right:0}.top{top:0}.bottom{bottom:0}ion-item{--border-style:none}fiv-icon{--fiv-padding-end:8px}ion-item:hover{--background-hover:var(--ion-color-light);cursor:pointer;--background:var(--background-hover)}:host(.router-item-disabled){pointer-events:none}"]
                 }] }
     ];
     /** @nocollapse */
@@ -882,7 +878,7 @@ var FivRouterItem = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivCollapsableMenu = /** @class */ (function () {
     function FivCollapsableMenu(sanitizer, platform) {
@@ -1001,7 +997,7 @@ var FivCollapsableMenu = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivCollapsableMenuButton = /** @class */ (function () {
     function FivCollapsableMenuButton() {
@@ -1040,15 +1036,12 @@ var FivCollapsableMenuButton = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR = {
     provide: _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NG_VALUE_ACCESSOR"],
-    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["forwardRef"])((/**
-     * @return {?}
-     */
-    function () { return FivPasswordInput; })),
+    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["forwardRef"])(function () { return FivPasswordInput; }),
     multi: true
 };
 var FivPasswordInput = /** @class */ (function () {
@@ -1163,7 +1156,7 @@ var FivPasswordInput = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @enum {number} */
 var DrawerState = {
@@ -1177,7 +1170,7 @@ DrawerState[DrawerState.Top] = 'Top';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivBottomSheetContent = /** @class */ (function () {
     function FivBottomSheetContent(sanitizer) {
@@ -1267,7 +1260,7 @@ var FivBottomSheetContent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivBottomSheet = /** @class */ (function () {
     function FivBottomSheet(_element, _renderer, _domCtrl, _platform, sanitizer) {
@@ -1322,11 +1315,7 @@ var FivBottomSheet = /** @class */ (function () {
         /** @type {?} */
         var hammer = new hammerjs__WEBPACK_IMPORTED_MODULE_3__(this._element.nativeElement);
         hammer.get('pan').set({ enable: true, direction: hammerjs__WEBPACK_IMPORTED_MODULE_3__["DIRECTION_VERTICAL"] });
-        hammer.on('pan panstart panend', (/**
-         * @param {?} ev
-         * @return {?}
-         */
-        function (ev) {
+        hammer.on('pan panstart panend', function (ev) {
             if (!_this.panEnabled) {
                 return;
             }
@@ -1340,17 +1329,14 @@ var FivBottomSheet = /** @class */ (function () {
                 default:
                     _this._handlePan(ev);
             }
-        }));
+        });
         this.content.fivHandleClick
-            .subscribe((/**
-         * @return {?}
-         */
-        function () {
+            .subscribe(function () {
             switch (_this.state) {
                 case DrawerState.Bottom: return _this.dock();
                 case DrawerState.Docked: return _this.open();
             }
-        }));
+        });
     };
     /**
      * @param {?} changes
@@ -1561,12 +1547,9 @@ var FivBottomSheet = /** @class */ (function () {
      */
     function (value) {
         var _this = this;
-        this._domCtrl.write((/**
-         * @return {?}
-         */
-        function () {
+        this._domCtrl.write(function () {
             _this._renderer.setStyle(_this._element.nativeElement, 'transform', 'translateY(' + value + ')');
-        }));
+        });
     };
     /**
      * @return {?}
@@ -1635,7 +1618,7 @@ var FivBottomSheet = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var LoadingService = /** @class */ (function () {
     function LoadingService() {
@@ -1697,7 +1680,7 @@ var LoadingService = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivLoadingProgressBar = /** @class */ (function () {
     function FivLoadingProgressBar(loadingService, builder) {
@@ -1721,15 +1704,11 @@ var FivLoadingProgressBar = /** @class */ (function () {
     function () {
         var _this = this;
         if (this.global) {
-            this.loadingService.completeChange.subscribe((/**
-             * @param {?} isComplete
-             * @return {?}
-             */
-            function (isComplete) {
+            this.loadingService.completeChange.subscribe(function (isComplete) {
                 if (isComplete) {
                     _this.complete(null);
                 }
-            }));
+            });
         }
     };
     /**
@@ -1775,11 +1754,11 @@ var FivLoadingProgressBar = /** @class */ (function () {
         }
     };
     /**
-     * @param {?} param
+     * @param {?=} param
      * @return {?}
      */
     FivLoadingProgressBar.prototype.complete = /**
-     * @param {?} param
+     * @param {?=} param
      * @return {?}
      */
     function (param) {
@@ -1870,23 +1849,17 @@ var FivLoadingProgressBar = /** @class */ (function () {
         player.play();
         /** @type {?} */
         var t = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["timer"])(0, ms / (100))
-            .subscribe((/**
-         * @return {?}
-         */
-        function () {
+            .subscribe(function () {
             if (_this.progress >= 100) {
                 return t.unsubscribe();
             }
             _this.progress++;
-        }));
-        player.onDone((/**
-         * @return {?}
-         */
-        function () {
+        });
+        player.onDone(function () {
             _this.fivComplete.emit(true);
             _this.progress = 100;
             player.destroy();
-        }));
+        });
     };
     /**
      * @param {?} ms
@@ -1910,24 +1883,18 @@ var FivLoadingProgressBar = /** @class */ (function () {
         var player = myAnimation.create(this.linear.nativeElement);
         /** @type {?} */
         var t = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["timer"])(0, ms / (100))
-            .subscribe((/**
-         * @return {?}
-         */
-        function () {
+            .subscribe(function () {
             if (_this.progress <= 0) {
                 return t.unsubscribe();
             }
             _this.progress--;
-        }));
+        });
         player.play();
-        player.onDone((/**
-         * @return {?}
-         */
-        function () {
+        player.onDone(function () {
             _this.fivDoneShrinking.emit(true);
             _this.progress = 0;
             player.destroy();
-        }));
+        });
     };
     FivLoadingProgressBar.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
@@ -1982,7 +1949,7 @@ var FivLoadingProgressBar = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivLoadingButton = /** @class */ (function () {
     function FivLoadingButton() {
@@ -2097,7 +2064,7 @@ var FivLoadingButton = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var BASE_SIZE = 100;
@@ -2317,26 +2284,19 @@ var FivLoadingSpinner = /** @class */ (function () {
         /** @type {?} */
         var player = animation.create(this.determinateCircle.nativeElement);
         player.play();
-        player.onDone((/**
-         * @return {?}
-         */
-        function () {
+        player.onDone(function () {
             _this.fivComplete.emit(_this);
             _this._value = 0;
-        }));
+        });
         /** @type {?} */
         var i = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["interval"])(duration / 100);
         /** @type {?} */
         var t = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["timer"])(duration + duration / 50);
         /** @type {?} */
         var progress = i.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(t));
-        progress.subscribe((/**
-         * @param {?} p
-         * @return {?}
-         */
-        function (p) {
+        progress.subscribe(function (p) {
             _this.fivProgress.emit(p);
-        }));
+        });
     };
     /**
      * @param {?} progress
@@ -2424,7 +2384,7 @@ var FivLoadingSpinner = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivLoadingRefresherContent = /** @class */ (function () {
     function FivLoadingRefresherContent(element, builder) {
@@ -2502,13 +2462,10 @@ var FivLoadingRefresherContent = /** @class */ (function () {
             /** @type {?} */
             var player_1 = animation.create(this.background.nativeElement);
             player_1.play();
-            player_1.onDone((/**
-             * @return {?}
-             */
-            function () {
+            player_1.onDone(function () {
                 _this.fivShowed.emit(_this);
                 player_1.destroy();
-            }));
+            });
         }
     };
     /**
@@ -2530,14 +2487,11 @@ var FivLoadingRefresherContent = /** @class */ (function () {
             /** @type {?} */
             var player_2 = animation.create(this.background.nativeElement);
             player_2.play();
-            player_2.onDone((/**
-             * @return {?}
-             */
-            function () {
+            player_2.onDone(function () {
                 _this.fivHidden.emit(_this);
                 _this.visible = false;
                 player_2.destroy();
-            }));
+            });
         }
     };
     /**
@@ -2683,7 +2637,7 @@ var FivLoadingRefresherContent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivLoadingContent = /** @class */ (function () {
     function FivLoadingContent(builder, renderer) {
@@ -2795,11 +2749,7 @@ var FivLoadingContent = /** @class */ (function () {
      */
     function (progress) {
         var _this = this;
-        return new Promise((/**
-         * @param {?} resolve
-         * @return {?}
-         */
-        function (resolve) {
+        return new Promise(function (resolve) {
             /** @type {?} */
             var animation = _this.builder.build([
                 Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: "translateY(" + _this.currentProgress * 168 + "px) rotateZ(" + 360 * _this.currentProgress + "deg)" }),
@@ -2808,15 +2758,12 @@ var FivLoadingContent = /** @class */ (function () {
             /** @type {?} */
             var player = animation.create(_this.spinner.element.nativeElement);
             player.play();
-            player.onDone((/**
-             * @return {?}
-             */
-            function () {
+            player.onDone(function () {
                 _this.setPullAnimationProgress(progress);
                 player.destroy();
                 resolve();
-            }));
-        }));
+            });
+        });
     };
     /**
      * @param {?} progress
@@ -2879,14 +2826,11 @@ var FivLoadingContent = /** @class */ (function () {
         /** @type {?} */
         var player = animation.create(this.spinner.element.nativeElement);
         player.play();
-        player.onDone((/**
-         * @return {?}
-         */
-        function () {
+        player.onDone(function () {
             _this.setPullAnimationProgress(0);
             _this.spinner.visible = false;
             player.destroy();
-        }));
+        });
     };
     /**
      * @param {?} progress
@@ -2962,7 +2906,7 @@ var FivLoadingContent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivLoadingFab = /** @class */ (function () {
     function FivLoadingFab(renderer) {
@@ -3193,12 +3137,10 @@ var FivLoadingFab = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivAppBarTabContent = /** @class */ (function () {
-    function FivAppBarTabContent(nav, appbar) {
-        this.nav = nav;
-        this.appbar = appbar;
+    function FivAppBarTabContent() {
         this.active = false;
         this.titleLayout = 'hide';
         this.selected = false;
@@ -3245,10 +3187,7 @@ var FivAppBarTabContent = /** @class */ (function () {
                 }] }
     ];
     /** @nocollapse */
-    FivAppBarTabContent.ctorParameters = function () { return [
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["NavController"] },
-        { type: FivAppBar, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Host"] }] }
-    ]; };
+    FivAppBarTabContent.ctorParameters = function () { return []; };
     FivAppBarTabContent.propDecorators = {
         name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
         icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
@@ -3265,7 +3204,7 @@ var FivAppBarTabContent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivAppBarTab = /** @class */ (function () {
     function FivAppBarTab() {
@@ -3300,7 +3239,7 @@ var FivAppBarTab = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivAppBar = /** @class */ (function () {
     function FivAppBar(router, tabs) {
@@ -3366,12 +3305,9 @@ var FivAppBar = /** @class */ (function () {
             }
             else if (this._fabVisible === false && fabVisible === true) {
                 this.cutoutVisible = true;
-                setTimeout((/**
-                 * @return {?}
-                 */
-                function () {
+                setTimeout(function () {
                     _this._fabVisible = true;
-                }), 250);
+                }, 250);
             }
         },
         enumerable: true,
@@ -3413,19 +3349,13 @@ var FivAppBar = /** @class */ (function () {
         if (this.transitioning) {
             this.setPosition();
             this.cutoutVisible = false;
-            setTimeout((/**
-             * @return {?}
-             */
-            function () {
+            setTimeout(function () {
                 _this.cutoutVisible = true;
-                setTimeout((/**
-                 * @return {?}
-                 */
-                function () {
+                setTimeout(function () {
                     _this._fabVisible = true;
                     _this.transitioning = false;
-                }), 225);
-            }), 225);
+                }, 225);
+            }, 225);
         }
         else {
             this.cutoutVisible = false;
@@ -3524,7 +3454,7 @@ var FivAppBar = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivIfPlatform = /** @class */ (function () {
     function FivIfPlatform(platform, viewContainer, templateRef) {
@@ -3541,15 +3471,11 @@ var FivIfPlatform = /** @class */ (function () {
             var _this = this;
             /** @type {?} */
             var show = true;
-            platforms.forEach((/**
-             * @param {?} p
-             * @return {?}
-             */
-            function (p) {
+            platforms.forEach(function (p) {
                 if (!_this.platform.is(p)) {
                     show = false;
                 }
-            }));
+            });
             if (show) {
                 this.viewContainer.createEmbeddedView(this.templateRef);
             }
@@ -3579,7 +3505,7 @@ var FivIfPlatform = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivCenter = /** @class */ (function () {
     function FivCenter(sanitizer) {
@@ -3640,7 +3566,7 @@ var FivCenter = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivPermissions = /** @class */ (function () {
     function FivPermissions(viewContainer, templateRef) {
@@ -3683,19 +3609,11 @@ var FivPermissions = /** @class */ (function () {
         var _this = this;
         /** @type {?} */
         var show = false;
-        this.uPermissions.forEach((/**
-         * @param {?} role
-         * @return {?}
-         */
-        function (role) {
-            if (_this.allowedPermissions.find((/**
-             * @param {?} a
-             * @return {?}
-             */
-            function (a) { return a.toUpperCase() === role.toUpperCase(); }))) {
+        this.uPermissions.forEach(function (role) {
+            if (_this.allowedPermissions.find(function (a) { return a.toUpperCase() === role.toUpperCase(); })) {
                 show = true;
             }
-        }));
+        });
         return show;
     };
     /**
@@ -3731,7 +3649,7 @@ var FivPermissions = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivRipple = /** @class */ (function () {
     function FivRipple(el, renderer) {
@@ -3743,13 +3661,10 @@ var FivRipple = /** @class */ (function () {
         this.hover = false;
         this.fivClick = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
         this.rippleAnimationEvent.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(750))
-            .subscribe((/**
-         * @return {?}
-         */
-        function () {
+            .subscribe(function () {
             renderer.removeClass(el.nativeElement.querySelector('.ripple'), 'show');
             renderer.removeClass(el.nativeElement.querySelector('.rippleWrapper'), 'show');
-        }));
+        });
     }
     /**
      * @param {?} event
@@ -3900,7 +3815,7 @@ var FivRipple = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivViewport = /** @class */ (function () {
     function FivViewport(elementRef) {
@@ -3924,10 +3839,7 @@ var FivViewport = /** @class */ (function () {
         content.scrollEvents = true;
         this.subscription = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.elementRef.nativeElement.closest('ion-content'), 'ionScroll')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["merge"])(Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(window, 'resize')), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(50))
-            .subscribe((/**
-         * @return {?}
-         */
-        function () { return _this.check(); }));
+            .subscribe(function () { return _this.check(); });
     };
     /**
      * @return {?}
@@ -4006,7 +3918,7 @@ var FivViewport = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivPull = /** @class */ (function () {
     function FivPull(element, content) {
@@ -4028,14 +3940,10 @@ var FivPull = /** @class */ (function () {
     function () {
         var _this = this;
         this.content.scrollEvents = true;
-        this.content.getScrollElement().then((/**
-         * @param {?} s
-         * @return {?}
-         */
-        function (s) {
+        this.content.getScrollElement().then(function (s) {
             _this.scrollY = s; // needed for scrollTop
             _this.setupPanListener();
-        }));
+        });
     };
     /**
      * @private
@@ -4059,26 +3967,14 @@ var FivPull = /** @class */ (function () {
         var end$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["merge"])(touchend$, touchcancel$);
         /** @type {?} */
         var dragAtTop = touchstart$
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
-         * @param {?} e
-         * @return {?}
-         */
-        function (e) { return _this.scrollY.scrollTop === 0 && _this.enabled; })));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (e) { return _this.scrollY.scrollTop === 0 && _this.enabled; }));
         /** @type {?} */
         var dragTopDown = dragAtTop
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
-         * @param {?} start
-         * @return {?}
-         */
-        function (start) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (start) {
             /** @type {?} */
             var startY = start.touches[0].pageY;
             return touchmove$
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
-             * @param {?} move
-             * @return {?}
-             */
-            function (move) {
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (move) {
                 /** @type {?} */
                 var currentY = move.touches[0].pageY;
                 return {
@@ -4088,22 +3984,10 @@ var FivPull = /** @class */ (function () {
                     currentY: currentY,
                     offset: currentY - startY
                 };
-            })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["skipWhile"])((/**
-             * @param {?} drag
-             * @return {?}
-             */
-            function (drag) { return drag.offset < 0; })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(end$));
-        })));
-        dragTopDown.forEach((/**
-         * @param {?} drags
-         * @return {?}
-         */
-        function (drags) {
-            drags.forEach((/**
-             * @param {?} drag
-             * @return {?}
-             */
-            function (drag) {
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["skipWhile"])(function (drag) { return drag.offset < 0; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(end$));
+        }));
+        dragTopDown.forEach(function (drags) {
+            drags.forEach(function (drag) {
                 drag.moveEvent.preventDefault();
                 /** @type {?} */
                 var offset = drag.offset / 2;
@@ -4112,14 +3996,10 @@ var FivPull = /** @class */ (function () {
                 }
                 if (offset <= _this.maxPullHeight) ;
                 _this.fivPull.emit(offset / _this.maxPullHeight);
-            }));
+            });
             drags
                 .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeLast"])(1))
-                .subscribe((/**
-             * @param {?} drag
-             * @return {?}
-             */
-            function (drag) {
+                .subscribe(function (drag) {
                 /** @type {?} */
                 var offset = drag.offset / 2;
                 /** @type {?} */
@@ -4130,8 +4010,8 @@ var FivPull = /** @class */ (function () {
                 else {
                     _this.fivCancel.emit();
                 }
-            }));
-        }));
+            });
+        });
     };
     FivPull.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Directive"], args: [{
@@ -4156,7 +4036,7 @@ var FivPull = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivIcon = /** @class */ (function () {
     function FivIcon() {
@@ -4339,7 +4219,7 @@ var FivIcon = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivDialog = /** @class */ (function () {
     function FivDialog() {
@@ -4430,7 +4310,7 @@ var FivDialog = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivImageViewer = /** @class */ (function () {
     function FivImageViewer(componentFactoryResolver, appRef, domCtrl, platform, renderer, change, animation, sanitizer, injector) {
@@ -4522,22 +4402,15 @@ var FivImageViewer = /** @class */ (function () {
         this.componentRef.instance.actions = this.actions;
         this.closeSub = this.componentRef.instance.fivClose
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1))
-            .subscribe((/**
-         * @return {?}
-         */
-        function () {
+            .subscribe(function () {
             _this.closeSub.unsubscribe();
             _this.actionSub.unsubscribe();
             _this.thumbnailVisible = true;
-        }));
+        });
         this.actionSub = this.componentRef.instance.fivActionClick
-            .subscribe((/**
-         * @param {?} ev
-         * @return {?}
-         */
-        function (ev) {
+            .subscribe(function (ev) {
             _this.fivActionClick.emit(ev);
-        }));
+        });
         this.appRef.attachView(this.componentRef.hostView);
         /** @type {?} */
         var domElem = (/** @type {?} */ (((/** @type {?} */ (this.componentRef.hostView)))
@@ -4646,21 +4519,9 @@ var FivImageViewer = /** @class */ (function () {
         var doubletap$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.doubleTapHammer, 'tap');
         /** @type {?} */
         var singletap$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.singletapHammer, 'tap')
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(300), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(doubletap$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
-         * @param {?} event
-         * @return {?}
-         */
-        function (event) { return event.tapCount === 1; })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["repeat"])());
-        this.doubletap = doubletap$.subscribe((/**
-         * @param {?} res
-         * @return {?}
-         */
-        function (res) { return _this.handleDoubleTap(res); }));
-        this.singletap = singletap$.subscribe((/**
-         * @param {?} res
-         * @return {?}
-         */
-        function (res) { return _this.handleSingleTap(); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(300), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(doubletap$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (event) { return event.tapCount === 1; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["repeat"])());
+        this.doubletap = doubletap$.subscribe(function (res) { return _this.handleDoubleTap(res); });
+        this.singletap = singletap$.subscribe(function (res) { return _this.handleSingleTap(); });
     };
     /**
      * @return {?}
@@ -4674,28 +4535,20 @@ var FivImageViewer = /** @class */ (function () {
         this.pinchHammer.get('pinch').set({ enable: true });
         /** @type {?} */
         var pinchend$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.pinchHammer, 'pinchend');
-        this.pinchend = pinchend$.subscribe((/**
-         * @param {?} event
-         * @return {?}
-         */
-        function (event) {
+        this.pinchend = pinchend$.subscribe(function (event) {
             _this.scale = Math.max(0, Math.min(_this.scale * event.scale, 8));
             if (_this.scale < 1) {
                 _this.resetScale();
             }
-        }));
+        });
         /** @type {?} */
         var pinch$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.pinchHammer, 'pinch');
         this.pinch = pinch$
-            .subscribe((/**
-         * @param {?} event
-         * @return {?}
-         */
-        function (event) {
+            .subscribe(function (event) {
             _this.pinchCenter = event.center;
             _this.transform(event.scale);
             _this.move(event);
-        }));
+        });
     };
     /**
      * @return {?}
@@ -4722,82 +4575,37 @@ var FivImageViewer = /** @class */ (function () {
         var panup = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.panHammer, 'panup');
         /** @type {?} */
         var down = panstart
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])((/**
-         * @return {?}
-         */
-        function () { return pandown.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
-         * @return {?}
-         */
-        function () { return _this.scale === 1; }))); })));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])(function () { return pandown.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function () { return _this.scale === 1; })); }));
         /** @type {?} */
         var up = panstart
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])((/**
-         * @return {?}
-         */
-        function () { return panup.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
-         * @return {?}
-         */
-        function () { return _this.scale === 1; }))); })));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])(function () { return panup.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function () { return _this.scale === 1; })); }));
         /** @type {?} */
         var verticalPan$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["merge"])(up, down);
-        this.verticalPan = verticalPan$.subscribe((/**
-         * @param {?} res
-         * @return {?}
-         */
-        function (res) {
+        this.verticalPan = verticalPan$.subscribe(function (res) {
             _this.setBottom(_this.calculateBottom(res));
             _this.setTop(_this.calculateTop(res));
-        }));
+        });
         /** @type {?} */
         var pinchPanMove = panmove
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
-         * @return {?}
-         */
-        function () { return _this.scale > 1; })));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function () { return _this.scale > 1; }));
         /** @type {?} */
         var pinchPan$ = panstart
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
-         * @param {?} event
-         * @return {?}
-         */
-        function (event) { return _this.pinchCenter = event.center; })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])((/**
-         * @return {?}
-         */
-        function () { return pinchPanMove; })));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (event) { return _this.pinchCenter = event.center; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])(function () { return pinchPanMove; }));
         this.pinchPan = pinchPan$
-            .subscribe((/**
-         * @param {?} res
-         * @return {?}
-         */
-        function (res) {
+            .subscribe(function (res) {
             _this.move(res);
-        }));
+        });
         this.panRemove = panend
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
-         * @param {?} event
-         * @return {?}
-         */
-        function (event) { return _this.scale === 1 && event.distance > pullDistance && event.maxPointers === 1; })))
-            .subscribe((/**
-         * @return {?}
-         */
-        function () { _this.remove(); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (event) { return _this.scale === 1 && event.distance > pullDistance && event.maxPointers === 1; }))
+            .subscribe(function () { _this.remove(); });
         this.panReset = panend
             .pipe(
         // tslint:disable-next-line:max-line-length
-        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
-         * @param {?} event
-         * @return {?}
-         */
-        function (event) { return _this.scale === 1 && event.distance <= pullDistance || _this.scale === 1 && event.distance > pullDistance && event.maxPointers > 1; })))
-            .subscribe((/**
-         * @param {?} event
-         * @return {?}
-         */
-        function (event) {
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (event) { return _this.scale === 1 && event.distance <= pullDistance || _this.scale === 1 && event.distance > pullDistance && event.maxPointers > 1; }))
+            .subscribe(function (event) {
             _this.resetPan();
             _this.resetFooter(_this.calculateBottom(event));
-        }));
+        });
     };
     /**
      * @param {?} event
@@ -4887,14 +4695,11 @@ var FivImageViewer = /** @class */ (function () {
      */
     function (bottom) {
         var _this = this;
-        this.domCtrl.write((/**
-         * @return {?}
-         */
-        function () {
+        this.domCtrl.write(function () {
             if (_this._controlsVisible && _this.footer) {
                 _this.renderer.setStyle(_this.footer.nativeElement, 'bottom', "-" + bottom + "px");
             }
-        }));
+        });
     };
     /**
      * @param {?} event
@@ -4950,14 +4755,11 @@ var FivImageViewer = /** @class */ (function () {
         if (!skip) {
             this.scale = scale;
         }
-        this.domCtrl.write((/**
-         * @return {?}
-         */
-        function () {
+        this.domCtrl.write(function () {
             if (_this.imageView) {
                 _this.renderer.setStyle(_this.imageView.nativeElement, 'transform', "translateY(-50%) scale(" + scale + ")");
             }
-        }));
+        });
     };
     /**
      * @param {?} top
@@ -4971,14 +4773,11 @@ var FivImageViewer = /** @class */ (function () {
         var _this = this;
         this.top = top;
         this.thumbnailPosition.panTop = this.top + 'px';
-        this.domCtrl.write((/**
-         * @return {?}
-         */
-        function () {
+        this.domCtrl.write(function () {
             if (_this.imageView) {
                 _this.renderer.setStyle(_this.imageView.nativeElement, 'top', top + "px");
             }
-        }));
+        });
     };
     /**
      * @param {?} left
@@ -4991,14 +4790,11 @@ var FivImageViewer = /** @class */ (function () {
     function (left) {
         var _this = this;
         this.left = left;
-        this.domCtrl.write((/**
-         * @return {?}
-         */
-        function () {
+        this.domCtrl.write(function () {
             if (_this.imageView) {
                 _this.renderer.setStyle(_this.imageView.nativeElement, 'left', left + "px");
             }
-        }));
+        });
     };
     /**
      * @param {?} event
@@ -5039,13 +4835,10 @@ var FivImageViewer = /** @class */ (function () {
         /** @type {?} */
         var animation = reset.create(this.imageView.nativeElement);
         animation.play();
-        animation.onDone((/**
-         * @return {?}
-         */
-        function () {
+        animation.onDone(function () {
             animation.destroy();
             _this.setTop(_this.platform.height() / 2);
-        }));
+        });
     };
     /**
      * @param {?} start
@@ -5069,13 +4862,10 @@ var FivImageViewer = /** @class */ (function () {
         /** @type {?} */
         var animation = reset.create(this.footer.nativeElement);
         animation.play();
-        animation.onDone((/**
-         * @return {?}
-         */
-        function () {
+        animation.onDone(function () {
             animation.destroy();
             _this.setBottom(0);
-        }));
+        });
     };
     /**
      * @param {?} toScale
@@ -5107,16 +4897,13 @@ var FivImageViewer = /** @class */ (function () {
         /** @type {?} */
         var animation = scale.create(this.imageView.nativeElement);
         animation.play();
-        animation.onDone((/**
-         * @return {?}
-         */
-        function () {
+        animation.onDone(function () {
             animation.destroy();
             _this.setScale(toScale);
             _this.setTop(newTop);
             _this.setLeft(newLeft);
             _this.pinchCenter = toPosition;
-        }));
+        });
     };
     /**
      * @return {?}
@@ -5136,16 +4923,13 @@ var FivImageViewer = /** @class */ (function () {
         /** @type {?} */
         var animation = scale.create(this.imageView.nativeElement);
         animation.play();
-        animation.onDone((/**
-         * @return {?}
-         */
-        function () {
+        animation.onDone(function () {
             animation.destroy();
             _this.setScale(1);
             _this.setTop(t);
             _this.setLeft(0);
             _this.pinchCenter = _this.getAbsoluteCenter();
-        }));
+        });
     };
     /**
      * @return {?}
@@ -5287,7 +5071,7 @@ var FivImageViewer = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivToolbarSearch = /** @class */ (function () {
     function FivToolbarSearch(renderer) {
@@ -5509,7 +5293,7 @@ var FivToolbarSearch = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivPopover = /** @class */ (function () {
     function FivPopover(navParams, popoverController) {
@@ -5554,7 +5338,7 @@ var FivPopover = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivButton = /** @class */ (function () {
     function FivButton() {
@@ -5588,7 +5372,7 @@ var FivButton = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivButtons = /** @class */ (function () {
     function FivButtons(platform, popoverController, actionSheetController) {
@@ -5660,11 +5444,7 @@ var FivButtons = /** @class */ (function () {
                             event: ev,
                             translucent: false,
                             componentProps: {
-                                'buttons': this.buttons.toArray().slice(this.count).filter((/**
-                                 * @param {?} button
-                                 * @return {?}
-                                 */
-                                function (button) { return !button.disabled; })),
+                                'buttons': this.buttons.toArray().slice(this.count).filter(function (button) { return !button.disabled; }),
                             }
                         })];
                     case 1:
@@ -5700,25 +5480,17 @@ var FivButtons = /** @class */ (function () {
                     case 0:
                         buttons = [];
                         this.buttons.toArray().slice(this.count)
-                            .forEach((/**
-                         * @param {?} button
-                         * @param {?} index
-                         * @return {?}
-                         */
-                        function (button, index) {
+                            .forEach(function (button, index) {
                             if (!button.disabled) {
                                 buttons.push({
                                     text: button.text,
                                     icon: button.icon,
-                                    handler: (/**
-                                     * @return {?}
-                                     */
-                                    function () {
+                                    handler: function () {
                                         _this.onButtonClicked(_this.count + index);
-                                    })
+                                    }
                                 });
                             }
-                        }));
+                        });
                         return [4 /*yield*/, this.actionSheetController.create({
                                 header: this.header,
                                 subHeader: this.subHeader,
@@ -5775,7 +5547,7 @@ var FivButtons = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivExpandableIndicator = /** @class */ (function () {
     function FivExpandableIndicator(expandable) {
@@ -5809,15 +5581,12 @@ var FivExpandableIndicator = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var CUSTOM_EDITIABLE_LABEL_CONTROL_VALUE_ACCESSOR = {
     provide: _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NG_VALUE_ACCESSOR"],
-    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["forwardRef"])((/**
-     * @return {?}
-     */
-    function () { return FivEditableLabel; })),
+    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["forwardRef"])(function () { return FivEditableLabel; }),
     multi: true
 };
 var FivEditableLabel = /** @class */ (function () {
@@ -5851,10 +5620,7 @@ var FivEditableLabel = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["timer"])(0).subscribe((/**
-         * @return {?}
-         */
-        function () { return _this.internalValue = _this.value; }));
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["timer"])(0).subscribe(function () { return _this.internalValue = _this.value; });
     };
     Object.defineProperty(FivEditableLabel.prototype, "internalValue", {
         get: /**
@@ -6010,7 +5776,7 @@ var FivEditableLabel = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var MyHammerConfig = /** @class */ (function (_super) {
     Object(tslib__WEBPACK_IMPORTED_MODULE_5__["__extends"])(MyHammerConfig, _super);
@@ -6116,12 +5882,12 @@ var FivethreeCoreModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 
@@ -6180,15 +5946,25 @@ var map = {
 		"common",
 		133
 	],
+	"./4bqlcwkr.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/4bqlcwkr.entry.js",
+		"common",
+		10
+	],
+	"./4bqlcwkr.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/4bqlcwkr.sc.entry.js",
+		"common",
+		11
+	],
 	"./4jebvdzz.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/4jebvdzz.entry.js",
 		"common",
-		10
+		12
 	],
 	"./4jebvdzz.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/4jebvdzz.sc.entry.js",
 		"common",
-		11
+		13
 	],
 	"./4m739wpj.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/4m739wpj.entry.js",
@@ -6235,42 +6011,32 @@ var map = {
 	"./5ey3bs99.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/5ey3bs99.entry.js",
 		"common",
-		12
+		14
 	],
 	"./5ey3bs99.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/5ey3bs99.sc.entry.js",
 		"common",
-		13
-	],
-	"./6f4biktp.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/6f4biktp.entry.js",
-		"common",
-		70
-	],
-	"./6f4biktp.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/6f4biktp.sc.entry.js",
-		"common",
-		71
+		15
 	],
 	"./8ldpeqpe.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/8ldpeqpe.entry.js",
 		"common",
-		14
+		16
 	],
 	"./8ldpeqpe.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/8ldpeqpe.sc.entry.js",
 		"common",
-		15
+		17
 	],
 	"./8q1e6dus.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/8q1e6dus.entry.js",
 		"common",
-		16
+		18
 	],
 	"./8q1e6dus.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/8q1e6dus.sc.entry.js",
 		"common",
-		17
+		19
 	],
 	"./96olk0dp.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/96olk0dp.entry.js",
@@ -6292,25 +6058,15 @@ var map = {
 		"common",
 		139
 	],
-	"./9ynbzp83.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/9ynbzp83.entry.js",
-		"common",
-		18
-	],
-	"./9ynbzp83.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/9ynbzp83.sc.entry.js",
-		"common",
-		19
-	],
 	"./afjpklm4.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/afjpklm4.entry.js",
 		"common",
-		72
+		70
 	],
 	"./afjpklm4.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/afjpklm4.sc.entry.js",
 		"common",
-		73
+		71
 	],
 	"./bhtvuxzz.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/bhtvuxzz.entry.js",
@@ -6324,47 +6080,55 @@ var map = {
 		"common",
 		141
 	],
+	"./bneiwm8s.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/bneiwm8s.entry.js",
+		"common",
+		20
+	],
+	"./bneiwm8s.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/bneiwm8s.sc.entry.js",
+		"common",
+		21
+	],
 	"./c2kiol1t.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/c2kiol1t.entry.js",
 		"common",
-		20
+		22
 	],
 	"./c2kiol1t.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/c2kiol1t.sc.entry.js",
 		"common",
-		21
+		23
 	],
-	"./ch8upsxn.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ch8upsxn.entry.js",
-		0,
+	"./c3xilup3.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/c3xilup3.entry.js",
 		"common",
-		114
+		24
 	],
-	"./ch8upsxn.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ch8upsxn.sc.entry.js",
-		0,
+	"./c3xilup3.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/c3xilup3.sc.entry.js",
 		"common",
-		115
+		25
 	],
 	"./coytbtgb.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/coytbtgb.entry.js",
 		"common",
-		78
+		76
 	],
 	"./coytbtgb.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/coytbtgb.sc.entry.js",
 		"common",
-		79
+		77
 	],
 	"./cuwemyof.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/cuwemyof.entry.js",
 		"common",
-		80
+		78
 	],
 	"./cuwemyof.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/cuwemyof.sc.entry.js",
 		"common",
-		81
+		79
 	],
 	"./cyhnsxpk.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/cyhnsxpk.entry.js",
@@ -6378,25 +6142,25 @@ var map = {
 		"common",
 		145
 	],
-	"./dnpeoh7c.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/dnpeoh7c.entry.js",
+	"./dznymaqz.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/dznymaqz.entry.js",
 		"common",
-		22
+		80
 	],
-	"./dnpeoh7c.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/dnpeoh7c.sc.entry.js",
+	"./dznymaqz.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/dznymaqz.sc.entry.js",
 		"common",
-		23
+		81
 	],
 	"./ejzmat7r.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ejzmat7r.entry.js",
 		"common",
-		74
+		72
 	],
 	"./ejzmat7r.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ejzmat7r.sc.entry.js",
 		"common",
-		75
+		73
 	],
 	"./fcbdrndu.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/fcbdrndu.entry.js",
@@ -6408,6 +6172,18 @@ var map = {
 		"common",
 		83
 	],
+	"./fdynremk.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/fdynremk.entry.js",
+		0,
+		"common",
+		114
+	],
+	"./fdynremk.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/fdynremk.sc.entry.js",
+		0,
+		"common",
+		115
+	],
 	"./ffukzwt6.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ffukzwt6.entry.js",
 		"common",
@@ -6417,16 +6193,6 @@ var map = {
 		"./node_modules/@ionic/core/dist/esm/es5/build/ffukzwt6.sc.entry.js",
 		"common",
 		123
-	],
-	"./fhznfhbd.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/fhznfhbd.entry.js",
-		"common",
-		24
-	],
-	"./fhznfhbd.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/fhznfhbd.sc.entry.js",
-		"common",
-		25
 	],
 	"./fiqi6app.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/fiqi6app.entry.js",
@@ -6448,13 +6214,13 @@ var map = {
 		"common",
 		149
 	],
-	"./gvyg1bwh.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/gvyg1bwh.entry.js",
+	"./hqdeczjh.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/hqdeczjh.entry.js",
 		"common",
 		26
 	],
-	"./gvyg1bwh.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/gvyg1bwh.sc.entry.js",
+	"./hqdeczjh.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/hqdeczjh.sc.entry.js",
 		"common",
 		27
 	],
@@ -6518,16 +6284,6 @@ var map = {
 		"common",
 		33
 	],
-	"./jzmfoyaa.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/jzmfoyaa.entry.js",
-		"common",
-		34
-	],
-	"./jzmfoyaa.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/jzmfoyaa.sc.entry.js",
-		"common",
-		35
-	],
 	"./k1gbeuol.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/k1gbeuol.entry.js",
 		"common",
@@ -6548,6 +6304,16 @@ var map = {
 		"common",
 		89
 	],
+	"./lucyelmx.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/lucyelmx.entry.js",
+		"common",
+		34
+	],
+	"./lucyelmx.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/lucyelmx.sc.entry.js",
+		"common",
+		35
+	],
 	"./ly8zbpmk.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ly8zbpmk.entry.js",
 		"common",
@@ -6557,6 +6323,18 @@ var map = {
 		"./node_modules/@ionic/core/dist/esm/es5/build/ly8zbpmk.sc.entry.js",
 		"common",
 		37
+	],
+	"./m0ainuth.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/m0ainuth.entry.js",
+		0,
+		"common",
+		116
+	],
+	"./m0ainuth.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/m0ainuth.sc.entry.js",
+		0,
+		"common",
+		117
 	],
 	"./mny78lhg.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/mny78lhg.entry.js",
@@ -6570,35 +6348,15 @@ var map = {
 		"common",
 		151
 	],
-	"./n361sgpa.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/n361sgpa.entry.js",
-		"common",
-		38
-	],
-	"./n361sgpa.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/n361sgpa.sc.entry.js",
-		"common",
-		39
-	],
 	"./nr6wcehx.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/nr6wcehx.entry.js",
 		"common",
-		40
+		38
 	],
 	"./nr6wcehx.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/nr6wcehx.sc.entry.js",
 		"common",
-		41
-	],
-	"./ntxo2f3d.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ntxo2f3d.entry.js",
-		"common",
-		42
-	],
-	"./ntxo2f3d.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ntxo2f3d.sc.entry.js",
-		"common",
-		43
+		39
 	],
 	"./nxacca4l.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/nxacca4l.entry.js",
@@ -6611,16 +6369,6 @@ var map = {
 		0,
 		"common",
 		153
-	],
-	"./nxghvzhm.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/nxghvzhm.entry.js",
-		"common",
-		44
-	],
-	"./nxghvzhm.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/nxghvzhm.sc.entry.js",
-		"common",
-		45
 	],
 	"./oboc8zd4.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/oboc8zd4.entry.js",
@@ -6635,12 +6383,12 @@ var map = {
 	"./odqmlmdd.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/odqmlmdd.entry.js",
 		"common",
-		46
+		40
 	],
 	"./odqmlmdd.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/odqmlmdd.sc.entry.js",
 		"common",
-		47
+		41
 	],
 	"./psxwmesv.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/psxwmesv.entry.js",
@@ -6669,12 +6417,22 @@ var map = {
 	"./qvwswew4.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/qvwswew4.entry.js",
 		"common",
-		116
+		118
 	],
 	"./qvwswew4.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/qvwswew4.sc.entry.js",
 		"common",
-		117
+		119
+	],
+	"./qztmfygd.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/qztmfygd.entry.js",
+		"common",
+		42
+	],
+	"./qztmfygd.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/qztmfygd.sc.entry.js",
+		"common",
+		43
 	],
 	"./raunowwy.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/raunowwy.entry.js",
@@ -6698,6 +6456,16 @@ var map = {
 		"common",
 		159
 	],
+	"./s3pnsa7u.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/s3pnsa7u.entry.js",
+		"common",
+		44
+	],
+	"./s3pnsa7u.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/s3pnsa7u.sc.entry.js",
+		"common",
+		45
+	],
 	"./sdfyvdro.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sdfyvdro.entry.js",
 		"common",
@@ -6711,12 +6479,12 @@ var map = {
 	"./sghmhl28.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sghmhl28.entry.js",
 		"common",
-		48
+		46
 	],
 	"./sghmhl28.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sghmhl28.sc.entry.js",
 		"common",
-		49
+		47
 	],
 	"./sjcqnbtt.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sjcqnbtt.entry.js",
@@ -6731,12 +6499,12 @@ var map = {
 	"./t547wlk7.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/t547wlk7.entry.js",
 		"common",
-		118
+		120
 	],
 	"./t547wlk7.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/t547wlk7.sc.entry.js",
 		"common",
-		119
+		121
 	],
 	"./ta1bgxgm.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ta1bgxgm.entry.js",
@@ -6748,33 +6516,43 @@ var map = {
 		"common",
 		99
 	],
-	"./tui62q7d.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/tui62q7d.entry.js",
+	"./tqgphjq7.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/tqgphjq7.entry.js",
 		"common",
-		100
+		48
 	],
-	"./tui62q7d.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/tui62q7d.sc.entry.js",
+	"./tqgphjq7.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/tqgphjq7.sc.entry.js",
 		"common",
-		101
+		49
 	],
 	"./tylmm2yl.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/tylmm2yl.entry.js",
 		"common",
-		102
+		100
 	],
 	"./tylmm2yl.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/tylmm2yl.sc.entry.js",
 		"common",
-		103
+		101
 	],
 	"./uegz8gm3.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/uegz8gm3.entry.js",
 		"common",
-		104
+		102
 	],
 	"./uegz8gm3.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/uegz8gm3.sc.entry.js",
+		"common",
+		103
+	],
+	"./uetn90ud.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/uetn90ud.entry.js",
+		"common",
+		104
+	],
+	"./uetn90ud.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/uetn90ud.sc.entry.js",
 		"common",
 		105
 	],
@@ -6803,12 +6581,12 @@ var map = {
 	"./vjeei8vr.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/vjeei8vr.entry.js",
 		"common",
-		76
+		74
 	],
 	"./vjeei8vr.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/vjeei8vr.sc.entry.js",
 		"common",
-		77
+		75
 	],
 	"./wem5ffil.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/wem5ffil.entry.js",
@@ -6822,18 +6600,6 @@ var map = {
 		"common",
 		163
 	],
-	"./wy4rjeqs.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/wy4rjeqs.entry.js",
-		0,
-		"common",
-		120
-	],
-	"./wy4rjeqs.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/wy4rjeqs.sc.entry.js",
-		0,
-		"common",
-		121
-	],
 	"./xbafxwto.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xbafxwto.entry.js",
 		0,
@@ -6846,15 +6612,25 @@ var map = {
 		"common",
 		165
 	],
+	"./xdz5gsa7.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/xdz5gsa7.entry.js",
+		"common",
+		50
+	],
+	"./xdz5gsa7.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/xdz5gsa7.sc.entry.js",
+		"common",
+		51
+	],
 	"./xfbndl84.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xfbndl84.entry.js",
 		"common",
-		50
+		52
 	],
 	"./xfbndl84.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xfbndl84.sc.entry.js",
 		"common",
-		51
+		53
 	],
 	"./xgnma4yj.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xgnma4yj.entry.js",
@@ -6886,26 +6662,6 @@ var map = {
 		"common",
 		111
 	],
-	"./ygh0szo0.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ygh0szo0.entry.js",
-		"common",
-		52
-	],
-	"./ygh0szo0.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ygh0szo0.sc.entry.js",
-		"common",
-		53
-	],
-	"./z9eemkqi.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/z9eemkqi.entry.js",
-		"common",
-		54
-	],
-	"./z9eemkqi.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/z9eemkqi.sc.entry.js",
-		"common",
-		55
-	],
 	"./z9nt6ntd.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/z9nt6ntd.entry.js",
 		"common",
@@ -6915,6 +6671,16 @@ var map = {
 		"./node_modules/@ionic/core/dist/esm/es5/build/z9nt6ntd.sc.entry.js",
 		"common",
 		131
+	],
+	"./zewwnxh6.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/zewwnxh6.entry.js",
+		"common",
+		54
+	],
+	"./zewwnxh6.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/zewwnxh6.sc.entry.js",
+		"common",
+		55
 	],
 	"./zktscnoo.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/zktscnoo.entry.js",
@@ -7174,7 +6940,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <ion-split-pane>\n    <ion-menu menuId=\"menuId\" [fivCollapseMenu]=\"true\" [hoverMenu]=\"true\" #menu=menuCollapse>\n      <ion-header>\n        <ion-toolbar>\n          <ion-buttons slot=\"start\">\n            <fiv-collapsable-menu-button #mb *fivIf=\"['desktop']\" [menu]=\"menu\"></fiv-collapsable-menu-button>\n          </ion-buttons>\n          <ion-title>Fivethree Components</ion-title>\n        </ion-toolbar>\n      </ion-header>\n      <ion-content>\n        <ion-list>\n          <fiv-router-item [icon]=\"p.icon\" [text]=\"p.title\" [matchChildUrl]=\"false\"\n            [pageUrl]=\"p.url\" *ngFor=\"let p of appPages\">\n          </fiv-router-item>\n        </ion-list>\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>"
+module.exports = "<ion-app>\n  <ion-split-pane>\n    <ion-menu menuId=\"menuId\" [fivCollapseMenu]=\"true\" [hoverMenu]=\"true\" #menu=menuCollapse>\n      <ion-header>\n        <ion-toolbar>\n          <ion-buttons slot=\"start\">\n            <fiv-collapsable-menu-button #mb *fivIf=\"['desktop']\" [menu]=\"menu\"></fiv-collapsable-menu-button>\n          </ion-buttons>\n          <ion-title>Fivethree Components</ion-title>\n        </ion-toolbar>\n      </ion-header>\n      <ion-content>\n        <ion-list>\n          <fiv-router-item [icon]=\"p.icon\" [text]=\"p.title\" [matchChildUrl]=\"false\" [shape]=\"p.shape\"\n            [pageUrl]=\"p.url\" *ngFor=\"let p of appPages\">\n          </fiv-router-item>\n        </ion-list>\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>"
 
 /***/ }),
 
@@ -7217,12 +6983,14 @@ var AppComponent = /** @class */ (function () {
             {
                 title: 'App Bar',
                 url: '/app-bar',
-                icon: 'git-commit'
+                icon: 'git-commit',
+                shape: 'rounded'
             },
             {
                 title: 'Bottom Sheet',
                 url: '/bottom-sheet',
-                icon: 'ios-arrow-up'
+                icon: 'ios-arrow-up',
+                shape: 'rounded'
             },
             // {
             //   title: 'Dialog',
@@ -7232,27 +7000,32 @@ var AppComponent = /** @class */ (function () {
             {
                 title: 'Editable Label',
                 url: '/editable-label',
-                icon: 'create'
+                icon: 'create',
+                shape: 'line'
             },
             {
                 title: 'Expandable',
                 url: '/expandable',
-                icon: 'resize'
+                icon: 'resize',
+                shape: 'dot'
             },
             {
                 title: 'Icon',
                 url: '/icon',
-                icon: 'mail-unread'
+                icon: 'mail-unread',
+                shape: 'rounded'
             },
             {
                 title: 'Image View',
                 url: '/image',
-                icon: 'image'
+                icon: 'image',
+                shape: 'dot'
             },
             {
                 title: 'Loading Indicators',
                 url: '/loading',
-                icon: 'time'
+                icon: 'time',
+                shape: 'line'
             },
             // {
             //   title: 'Map',
@@ -7262,17 +7035,20 @@ var AppComponent = /** @class */ (function () {
             {
                 title: 'Overflow Buttons',
                 url: '/buttons',
-                icon: 'more'
+                icon: 'more',
+                shape: 'rounded'
             },
             {
                 title: 'Password Reveal Input',
                 url: '/password',
-                icon: 'key'
+                icon: 'key',
+                shape: 'line'
             },
             {
                 title: 'Refresher',
                 url: '/refresh',
-                icon: 'refresh'
+                icon: 'refresh',
+                shape: 'dot'
             },
             // {
             //   title: 'Searchbar',
@@ -7282,7 +7058,8 @@ var AppComponent = /** @class */ (function () {
             {
                 title: 'Stepper',
                 url: '/stepper',
-                icon: 'share'
+                icon: 'share',
+                shape: 'rounded'
             },
         ];
         this.language.initializeLanguage();
