@@ -1,3 +1,17 @@
+## [0.5.13](https://github.com/fivethree-team/fivethree/compare/v0.5.11...v0.5.13) (2019-03-05)
+
+
+### Bug Fixes
+
+* **router-item:** add rounded to hasShape ([d132314](https://github.com/fivethree-team/fivethree/commit/d132314))
+
+
+### Features
+
+* **router-item:** add rounded active state ([3380885](https://github.com/fivethree-team/fivethree/commit/3380885))
+
+
+
 ## [0.5.12](https://github.com/fivethree-team/fivethree/compare/v0.5.11...v0.5.12) (2019-03-04)
 
 
