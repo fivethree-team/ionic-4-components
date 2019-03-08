@@ -26,7 +26,7 @@ export class FivLoadingButton implements OnInit {
   @Input() type: 'submit' | 'reset' | 'button' = 'button';
 
   @Output() fivRefresh: EventEmitter<FivLoadingButton> = new EventEmitter();
-  @Output() fivRefreshComplete: EventEmitter<FivLoadingButton> = new EventEmitter();
+  @Output() fivComplete: EventEmitter<FivLoadingButton> = new EventEmitter();
   @Output() fivButtonClick: EventEmitter<FivLoadingButton> = new EventEmitter();
 
   constructor() {
