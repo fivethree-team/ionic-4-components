@@ -1,3 +1,18 @@
+## [0.5.14](https://github.com/fivethree-team/fivethree/compare/v0.5.11...v0.5.14) (2019-03-08)
+
+
+### Bug Fixes
+
+* **router-item:** add rounded to hasShape ([d132314](https://github.com/fivethree-team/fivethree/commit/d132314))
+
+
+### Features
+
+* **loading:** add css props for loading-button and bar ([4f4c98f](https://github.com/fivethree-team/fivethree/commit/4f4c98f))
+* **router-item:** add rounded active state ([3380885](https://github.com/fivethree-team/fivethree/commit/3380885))
+
+
+
 ## [0.5.13](https://github.com/fivethree-team/fivethree/compare/v0.5.11...v0.5.13) (2019-03-05)
 
 
