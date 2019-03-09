@@ -1,94 +1,104 @@
-.slider {
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    overflow-x: hidden;
-    z-index: 5000;
+:host {
+  --background-progress-bar: var(--ion-color-primary);
+  --color-spin-0: var(--ion-color-primary-shade);
+  --color-spin-25: var(--ion-color-primary-shade);
+  --color-spin-50: var(--ion-color-primary-shade);
+  --color-spin-75: var(--ion-color-primary-shade);
+  --color-spin-100: var(--ion-color-primary-shade);
 }
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  overflow-x: hidden;
+  z-index: 5000;
+}
+
 .progress {
-    position: absolute;
-    height: 5px;
-    width: 0px;
-    overflow-x: hidden;
-    z-index: 5000;
-    background: var(--ion-color-primary);
-    transition: ease 240ms;
+  position: absolute;
+  height: 5px;
+  width: 0px;
+  overflow-x: hidden;
+  z-index: 5000;
+  background: var(--background-progress-bar);
+  transition: ease 240ms;
 }
 
 .line {
-    position: absolute;
-    opacity: 0.4;
-    width: 240%;
-    height: 5px;
-    animation: colorspin 5.6s ease-in-out infinite;
+  position: absolute;
+  opacity: 0.4;
+  width: 240%;
+  height: 5px;
+  animation: colorspin 5.6s ease-in-out infinite;
 }
 
 .subline {
-    position: absolute;
-    height: 5px;
-    background: inherit;
+  position: absolute;
+  height: 5px;
+  background: inherit;
 }
 
 .inc {
-    animation: increase 1.6s infinite, colorspin 5.6s ease-in-out infinite;;
+  animation: increase 1.6s infinite, colorspin 5.6s ease-in-out infinite;
 }
 
 .dec {
-    animation: decrease 1.6s 0.4s infinite, colorspin 5.6s ease-in-out infinite;
+  animation: decrease 1.6s 0.4s infinite, colorspin 5.6s ease-in-out infinite;
 }
 
 .fill {
-    left: 0%;
-    width: 100%;
-    animation: colorspin 5.6s ease-in-out infinite;;
+  left: 0%;
+  width: 100%;
+  animation: colorspin 5.6s ease-in-out infinite;
 }
 
 @keyframes increase {
-    from {
-        left: -5%;
-        width: 5%;
-    }
-    to {
-        left: 130%;
-        width: 100%;
-    }
+  from {
+    left: -5%;
+    width: 5%;
+  }
+  to {
+    left: 130%;
+    width: 100%;
+  }
 }
 
 @keyframes decrease {
-    from {
-        left: -80%;
-        width: 80%;
-    }
-    to {
-        left: 110%;
-        width: 10%;
-    }
+  from {
+    left: -80%;
+    width: 80%;
+  }
+  to {
+    left: 110%;
+    width: 10%;
+  }
 }
 
 @keyframes colorspin {
-    0% {
-        background-color: #4285F4;
-    }
-    25% {
-        background-color: #DE3E35;
-    }
-    50% {
-        background-color: #F7C223;
-    }
-    75% {
-        background-color: #1B9A59;
-    }
-    100% {
-        background-color: #4285F4;
-    }
+  0% {
+    background-color: var(--color-spin-0);
+  }
+  25% {
+    background-color: var(--color-spin-25);
+  }
+  50% {
+    background-color: var(--color-spin-50);
+  }
+  75% {
+    background-color: var(--color-spin-75);
+  }
+  100% {
+    background-color: var(--color-spin-100);
+  }
 }
 
-.top{
-    top:0;
-    left:0;
+.top {
+  top: 0;
+  left: 0;
 }
 
-.bottom{
-    bottom:0;
-    left:0;
+.bottom {
+  bottom: 0;
+  left: 0;
 }

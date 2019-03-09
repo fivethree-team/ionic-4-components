@@ -1,4 +1,22 @@
+:host {
+  --background-progress: var(--ion-color-primary);
+  --color-progress-spin-0: var(--ion-color-primary-shade);
+  --color-progress-spin-25: var(--ion-color-primary-shade);
+  --color-progress-spin-50: var(--ion-color-primary-shade);
+  --color-progress-spin-75: var(--ion-color-primary-shade);
+  --color-progress-spin-100: var(--ion-color-primary-shade);
+}
+
 :host(.button-disabled) {
   pointer-events: none;
 }
-  
+
+fiv-loading-progress-bar {
+  --background-progress-bar: var(--background-progress);
+
+  --color-spin-0: var(--color-progress-spin-0);
+  --color-spin-25: var(--color-progress-spin-25);
+  --color-spin-50: var(--color-progress-spin-50);
+  --color-spin-75: var(--color-progress-spin-75);
+  --color-spin-100: var(--color-progress-spin-100);
+}
