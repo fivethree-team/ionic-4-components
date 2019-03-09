@@ -23,11 +23,11 @@ export class AppComponent {
       icon: 'ios-arrow-up',
       shape: 'rounded'
     },
-    // {
-    //   title: 'Dialog',
-    //   url: '/dialog',
-    //   icon: 'notifications'
-    // },
+    {
+      title: 'Dialog',
+      url: '/dialog',
+      icon: 'notifications'
+    },
     {
       title: 'Editable Label',
       url: '/editable-label',

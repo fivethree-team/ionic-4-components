@@ -12,10 +12,10 @@
           </ion-item-divider>
 
           <ion-card>
-            <ion-toolbar color="primary">
+            <ion-toolbar>
               <fiv-buttons [iconsOnly]="iconsOnly" [forceActionsheet]="forceActionsheet" [forcePopover]="forcePopover"
                 [header]="header" [subHeader]="subHeader" [count]="count" slot="end">
-                <fiv-button (click)="presentToast('add clicked')" [icon]="'md-add'" [text]="'Add'">
+                <fiv-button  [color]="'primary'" (click)="presentToast('add clicked')" [text]="'Add'">
                 </fiv-button>
                 <fiv-button (click)="presentToast('delete clicked')" [icon]="'md-trash'" [text]="'Delete'">
                 </fiv-button>

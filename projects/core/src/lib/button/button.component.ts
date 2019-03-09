@@ -9,6 +9,7 @@ export class FivButton implements OnInit {
 
   @Input() icon: string;
   @Input() text: string;
+  @Input() color: string;
   @Input() disabled: boolean;
   @Output() click = new EventEmitter<any>();
 
