@@ -1,6 +1,16 @@
-<div class="host" [ngClass]="{'bottom': verticalAlign === 'bottom','center': verticalAlign === 'center', 'top': verticalAlign === 'top'}">
-    <div (click)="close()" *ngIf="visible && backdrop" class="backdrop"></div>
+<fiv-overlay #overlay>
+  <div *ngIf="backdrop" [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}" (click)="close()" class="backdrop"></div>
+  <div #dialog>
+    <ion-card [ngClass]="[verticalAlign]" [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}" [@slide]="{value: dialogState, params: {top: outPosition, inDuration: inDuration + 'ms',outDuration: outDuration + 'ms'}}"
+      (@slide.done)="animationDone($event)">
+      <fiv-loading-progress-bar [verticalAlign]="verticalAlign === 'top' ? 'bottom' : 'top'"
+        (fivDoneShrinking)="close()" #bar></fiv-loading-progress-bar>
+      <ion-card-header *ngIf="subtitle || title">
+        <ion-card-subtitle *ngIf="subtitle">{{subtitle}}</ion-card-subtitle>
+        <ion-card-title *ngIf="title">{{title}}</ion-card-title>
+      </ion-card-header>
+      <ng-content></ng-content>
+    </ion-card>
   </div>
-  <div [@dialogAnim]="visible ? verticalAlign : verticalAlign + '-' + animation" class="dialog">
-    <ng-content></ng-content>
-  </div>
+
+</fiv-overlay>

@@ -12,8 +12,12 @@ export class DialogPage implements OnInit {
 
   backdrop = true;
   verticalAlign = 'top';
-  animation = 'slide';
-  floating = false;
+  title = 'New Message';
+  subtitle = 'You have a new message from Marc!';
+  duration = 3600;
+  inDuration = '220';
+  outDuration = '180';
+
 
   constructor() { }
 

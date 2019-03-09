@@ -35,3 +35,4 @@ export * from './lib/image-viewer/image-viewer.component';
 
 // export services
 export * from './lib/loading/loading.service';
+export * from './lib/services/overlay.service';

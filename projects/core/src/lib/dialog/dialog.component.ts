@@ -1,67 +1,98 @@
-import { EventEmitter, Output, Input, HostBinding } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { FivLoadingProgressBar } from './../loading-progress-bar/loading-progress-bar.component';
+import {
+  EventEmitter, Output, Input, TemplateRef, Type, ElementRef, HostBinding
+} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { OverlayComponent } from '../overlay/overlay.component';
+import { trigger, transition, style, animate, state, AnimationPlayer } from '@angular/animations';
+import { IonCard } from '@ionic/angular';
+export type Content<T> = TemplateRef<T> | Type<T>;
 
 @Component({
   selector: 'fiv-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss'],
   animations: [
-    trigger('dialogAnim', [
-      state('bottom', style({ bottom: 0 })),
-      state('top', style({ top: 0 })),
-      state('center', style({
-        top: '50%',
-        transform: 'translateY(-50%)'
-      })),
-      state('bottom-slide', style({ bottom: 0, transform: 'translateY(100%)' })),
-      state('top-slide', style({ top: 0, transform: 'translateY(-100%)' })),
-      state('center-slide', style(
-        { bottom: 0, transform: 'translateY(100%)' }
-      )),
-      state('bottom-fade', style({ bottom: 0, opacity: 0 })),
-      state('top-fade', style({ top: 0, opacity: 0, display: 'none' })),
-      state('center-fade', style({
-        top: '50%',
-        transform: 'translateY(-50%)',
-        opacity: 0
-      })),
-      transition('* => *', [
-        animate('200ms ease-in')
-      ])
+    trigger('slide', [
+      transition('out => in', [
+        style({ top: '{{top}}' }),
+        animate('{{inDuration}} ease-out', style({ top: '*' }))
+      ], { params: { top: '-100%', inDuration: '400ms' } }),
+      transition('in => out', [
+        style({ top: '*' }),
+        animate('{{outDuration}} ease-in', style({ top: '{{top}}' }))
+      ], { params: { top: '-100%', outDuration: '250ms' } })
+    ]),
+    trigger('fade', [
+      transition('out => in', [
+        style({ opacity: '{{opacity}}' }),
+        animate('{{inDuration}} ease-out', style({ opacity: '1' }))
+      ], { params: { opacity: 0, inDuration: '250ms' } }),
+      transition('in => out', [
+        style({ opacity: '1' }),
+        animate('{{outDuration}} ease-in', style({ opacity: '0' }))
+      ], { params: { opacity: 0, outDuration: '200ms' } }),
+      state('out', style({ opacity: '0' }))
     ])
   ]
 })
 export class FivDialog implements OnInit {
 
-  @Input() verticalAlign: 'bottom' | 'center' | 'top' = 'center';
-  @Input() animation: 'slide' | 'fade' = 'fade';
-  visible = false;
-  @Input() backdrop: true;
+  @Input() verticalAlign: 'bottom' | 'center' | 'top' = 'top';
+
+  @Input() backdrop = false;
+  @Input() duration: number;
+  @Input() title: string;
+  @Input() subtitle: string;
+  // animation data
+  @Input() inDuration = 220;
+  @Input() outDuration = 180;
+  outPosition = '-100%';
+
   @Output() fivClose: EventEmitter<FivDialog> = new EventEmitter();
-  @Output() fivOpen: EventEmitter<FivDialog> = new EventEmitter();
+  @ViewChild(OverlayComponent) overlay: OverlayComponent;
+  @ViewChild(FivLoadingProgressBar) bar: FivLoadingProgressBar;
+  @ViewChild('dialog') dialogRef: ElementRef;
 
-  @HostBinding('class.visible') get isVisible() {
-    return this.visible;
-  }
+  dialogState: 'in' | 'out' = 'out';
 
-
-  constructor() {
-
-  }
-
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   open() {
-    this.visible = true;
+    this.outPosition = this.getSlideStartPosition();
+    console.log('open from', this.outPosition);
+    this.overlay.show();
+    this.dialogState = 'in';
+    if (this.duration) {
+      this.bar.shrinkIn(this.duration);
+    }
   }
 
   close() {
-    this.visible = false;
+    this.dialogState = 'out';
+    this.bar.stopProgressAnimation();
+    this.bar.progress = 0;
   }
 
+  animationDone(event) {
+    if (event.fromState === 'out' && event.toState === 'in') {
 
+    }
+    if (event.fromState === 'in' && event.toState === 'out') {
+      this.overlay.hide();
+      this.fivClose.emit(this);
+    }
+  }
 
+  getSlideStartPosition() {
+    if (this.verticalAlign === 'top') {
+      return '-100%';
+    }
+    if (this.verticalAlign === 'center') {
+      return '60%';
+    }
+    if (this.verticalAlign === 'bottom') {
+      return '100%';
+    }
+  }
 }

@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>dialog</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,41 +14,60 @@
       <ion-label>Backdrop</ion-label>
       <ion-toggle slot="end" [(ngModel)]="backdrop"></ion-toggle>
     </ion-item>
-    
     <ion-item>
-        <ion-label>Animation</ion-label>
-        <ion-select slot="end"  [(ngModel)]="animation">
-          <ion-select-option value="fade">fade</ion-select-option>
-          <ion-select-option value="slide">slide</ion-select-option>
-        </ion-select>
-      </ion-item>
+      <ion-label>Vertical Alignment</ion-label>
+      <ion-select slot="end" [(ngModel)]="verticalAlign">
+        <ion-select-option value="top">top</ion-select-option>
+        <ion-select-option value="center">center</ion-select-option>
+        <ion-select-option value="bottom">bottom</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-      <ion-item>
-          <ion-label>Vertical Alignment</ion-label>
-          <ion-select slot="end"  [(ngModel)]="verticalAlign">
-            <ion-select-option value="top">top</ion-select-option>
-            <ion-select-option value="center">center</ion-select-option>
-            <ion-select-option value="bottom">bottom</ion-select-option>
-          </ion-select>
-        </ion-item>
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input [(ngModel)]="title" type="text"></ion-input>
+    </ion-item>
 
-        <fiv-loading-button (click)="dialog.open()">
-          Zeige Dialog
-        </fiv-loading-button>
+    <ion-item>
+      <ion-label>Subtitle</ion-label>
+      <ion-input [(ngModel)]="subtitle" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Duration</ion-label>
+      <ion-input [(ngModel)]="duration" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Animation In Duration</ion-label>
+      <ion-input [(ngModel)]="inDuration" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Animation Out Duration</ion-label>
+      <ion-input [(ngModel)]="outDuration" type="text"></ion-input>
+    </ion-item>
+
+    <fiv-loading-button (click)="dialog.open()">
+      Zeige Dialog
+    </fiv-loading-button>
 
   </ion-list>
 
 </ion-content>
-<fiv-dialog #dialog [animation]="animation" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
-      <ion-card>
-          <ion-card-content>
-              <ion-card-title>Hello World</ion-card-title>
-          
-              <p>The content for this card</p>
-          
-              <ion-button (click)="dialog.close()">schließen</ion-button>
-            </ion-card-content>
-      </ion-card>
-  
-  
+<fiv-dialog [inDuration]="inDuration" [outDuration]="outDuration"
+ [title]="title" [subtitle]="subtitle" #dialog
+  [duration]="duration" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
+  <ion-card-content>
+    <p>The content for this dialog</p>
+  </ion-card-content>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="dialog.close()">
+        Cancel
+      </ion-button>
+      <ion-button color="primary">
+        Do Action
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
 </fiv-dialog>

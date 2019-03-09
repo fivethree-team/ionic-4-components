@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
-import { animate, style, transition, trigger, AnimationBuilder } from '@angular/animations';
+import { animate, style, transition, trigger, AnimationBuilder, AnimationPlayer } from '@angular/animations';
 import { LoadingService } from '../loading/loading.service';
 import { timer } from 'rxjs';
 
@@ -49,6 +49,8 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
   @ViewChild('linear') linear: ElementRef;
 
   param: any;
+
+  _progressPlayer: AnimationPlayer;
 
   constructor(public loadingService: LoadingService, private builder: AnimationBuilder) {
   }
@@ -148,8 +150,14 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
     player.onDone(() => {
       this.fivComplete.emit(true);
       this.progress = 100;
-      player.destroy();
+      this.stopProgressAnimation();
+
     });
+
+    this.stopProgressAnimation();
+
+
+    this._progressPlayer = player;
   }
 
   shrinkIn(ms: number) {
@@ -176,8 +184,18 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
     player.onDone(() => {
       this.fivDoneShrinking.emit(true);
       this.progress = 0;
-      player.destroy();
+      this.stopProgressAnimation();
     });
+    this.stopProgressAnimation();
+
+    this._progressPlayer = player;
+  }
+
+  stopProgressAnimation() {
+    if (this._progressPlayer) {
+      this._progressPlayer.destroy();
+      this._progressPlayer = null;
+    }
   }
 
 }
