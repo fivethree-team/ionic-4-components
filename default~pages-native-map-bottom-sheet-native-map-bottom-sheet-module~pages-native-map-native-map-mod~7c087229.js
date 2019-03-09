@@ -26,7 +26,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivGoogleMaps = /** @class */ (function () {
     function FivGoogleMaps() {
@@ -104,7 +104,7 @@ var FivGoogleMaps = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivGoogleMapsNative = /** @class */ (function () {
     function FivGoogleMapsNative() {
@@ -143,12 +143,15 @@ var FivGoogleMapsNative = /** @class */ (function () {
                 compass: true,
             }
         });
-        this.map.one(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_1__["GoogleMapsEvent"].MAP_READY).then(function () {
+        this.map.one(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_1__["GoogleMapsEvent"].MAP_READY).then((/**
+         * @return {?}
+         */
+        function () {
             _this.mapReady = true;
             if (_this.zoomToLocationOnMapReady) {
                 _this.zoomToMyLocation(_this.zoom);
             }
-        });
+        }));
     };
     /**
      * @param {?} zoom
@@ -242,7 +245,11 @@ var FivGoogleMapsNative = /** @class */ (function () {
                         return [4 /*yield*/, this.getCurrentPosition()];
                     case 1:
                         location_2 = _a.sent();
-                        positions = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])([location_2.latLng], this.markers.map(function (marker) { return marker.getPosition(); }));
+                        positions = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])([location_2.latLng], this.markers.map((/**
+                         * @param {?} marker
+                         * @return {?}
+                         */
+                        function (marker) { return marker.getPosition(); })));
                         this.moveCenterToPositions(positions);
                         return [3 /*break*/, 3];
                     case 2:
@@ -349,7 +356,11 @@ var FivGoogleMapsNative = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.markers.forEach(function (marker) { return marker.setVisible(false); });
+        this.markers.forEach((/**
+         * @param {?} marker
+         * @return {?}
+         */
+        function (marker) { return marker.setVisible(false); }));
     };
     /**
      * @return {?}
@@ -358,7 +369,11 @@ var FivGoogleMapsNative = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.markers.forEach(function (marker) { return marker.setVisible(true); });
+        this.markers.forEach((/**
+         * @param {?} marker
+         * @return {?}
+         */
+        function (marker) { return marker.setVisible(true); }));
     };
     /**
      * @param {?} position
@@ -370,12 +385,16 @@ var FivGoogleMapsNative = /** @class */ (function () {
      */
     function (position) {
         /** @type {?} */
-        var markerIndex = this.markers.findIndex(function (marker) {
+        var markerIndex = this.markers.findIndex((/**
+         * @param {?} marker
+         * @return {?}
+         */
+        function (marker) {
             /** @type {?} */
             var markerPosition = marker.getPosition();
             return markerPosition.lat === position.lat
                 && markerPosition.lng === position.lng;
-        });
+        }));
         if (markerIndex > -1) {
             this.markers[markerIndex].remove();
             this.markers.splice(markerIndex, 1);
@@ -388,7 +407,11 @@ var FivGoogleMapsNative = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.markers.forEach(function (marker) { return marker.remove(); });
+        this.markers.forEach((/**
+         * @param {?} marker
+         * @return {?}
+         */
+        function (marker) { return marker.remove(); }));
         this.markers = [];
     };
     FivGoogleMapsNative.decorators = [
@@ -411,7 +434,7 @@ var FivGoogleMapsNative = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivGoogleMapsWeb = /** @class */ (function () {
     function FivGoogleMapsWeb(renderer, element, _document) {
@@ -432,11 +455,19 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.init().then(function (res) {
+        this.init().then((/**
+         * @param {?} res
+         * @return {?}
+         */
+        function (res) {
             console.log('Google Maps ready.');
-        }, function (err) {
+        }), (/**
+         * @param {?} err
+         * @return {?}
+         */
+        function (err) {
             console.log(err);
-        });
+        }));
     };
     /**
      * @private
@@ -448,17 +479,37 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.loadSDK().then(function (res) {
-                _this.initMap().then(function () {
+        return new Promise((/**
+         * @param {?} resolve
+         * @param {?} reject
+         * @return {?}
+         */
+        function (resolve, reject) {
+            _this.loadSDK().then((/**
+             * @param {?} res
+             * @return {?}
+             */
+            function (res) {
+                _this.initMap().then((/**
+                 * @return {?}
+                 */
+                function () {
                     resolve(true);
-                }, function (err) {
+                }), (/**
+                 * @param {?} err
+                 * @return {?}
+                 */
+                function (err) {
                     reject(err);
-                });
-            }, function (err) {
+                }));
+            }), (/**
+             * @param {?} err
+             * @return {?}
+             */
+            function (err) {
                 reject(err);
-            });
-        });
+            }));
+        }));
     };
     /**
      * @private
@@ -471,18 +522,31 @@ var FivGoogleMapsWeb = /** @class */ (function () {
     function () {
         var _this = this;
         console.log('Loading Google Maps SDK');
-        return new Promise(function (resolve, reject) {
+        return new Promise((/**
+         * @param {?} resolve
+         * @param {?} reject
+         * @return {?}
+         */
+        function (resolve, reject) {
             if (!_this.mapsLoaded) {
-                _this.injectSDK().then(function (res) {
+                _this.injectSDK().then((/**
+                 * @param {?} res
+                 * @return {?}
+                 */
+                function (res) {
                     resolve(true);
-                }, function (err) {
+                }), (/**
+                 * @param {?} err
+                 * @return {?}
+                 */
+                function (err) {
                     reject(err);
-                });
+                }));
             }
             else {
                 reject('SDK already loaded');
             }
-        });
+        }));
     };
     /**
      * @private
@@ -494,11 +558,19 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        return new Promise(function (resolve, reject) {
-            window['mapInit'] = function () {
+        return new Promise((/**
+         * @param {?} resolve
+         * @param {?} reject
+         * @return {?}
+         */
+        function (resolve, reject) {
+            window['mapInit'] = (/**
+             * @return {?}
+             */
+            function () {
                 _this.mapsLoaded = true;
                 resolve(true);
-            };
+            });
             /** @type {?} */
             var script = _this.renderer.createElement('script');
             script.id = 'googleMaps';
@@ -509,7 +581,7 @@ var FivGoogleMapsWeb = /** @class */ (function () {
                 reject('');
             }
             _this.renderer.appendChild(_this._document.body, script);
-        });
+        }));
     };
     /**
      * @private
@@ -521,7 +593,11 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        return new Promise(function (resolve) {
+        return new Promise((/**
+         * @param {?} resolve
+         * @return {?}
+         */
+        function (resolve) {
             /** @type {?} */
             var latLng = new google.maps.LatLng(_this.lat, _this.lng);
             /** @type {?} */
@@ -531,7 +607,7 @@ var FivGoogleMapsWeb = /** @class */ (function () {
             };
             _this.map = new google.maps.Map(_this.element.nativeElement, mapOptions);
             resolve(true);
-        });
+        }));
     };
     /**
      * @param {?} lat
@@ -582,10 +658,14 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function (position) {
         /** @type {?} */
-        var index = this.markers.findIndex(function (m) {
+        var index = this.markers.findIndex((/**
+         * @param {?} m
+         * @return {?}
+         */
+        function (m) {
             return m.getPosition().lat() === position.lat
                 && m.getPosition().lng() === position.lng;
-        });
+        }));
         if (index > -1) {
             this.markers[index].setMap(null);
             this.markers.splice(index, 1);
@@ -612,7 +692,11 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      * @return {?}
      */
     function (map) {
-        this.markers.forEach(function (marker) { return marker.setMap(map); });
+        this.markers.forEach((/**
+         * @param {?} marker
+         * @return {?}
+         */
+        function (marker) { return marker.setMap(map); }));
     };
     FivGoogleMapsWeb.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
@@ -637,7 +721,7 @@ var FivGoogleMapsWeb = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var GoogleMapsModule = /** @class */ (function () {
     function GoogleMapsModule() {
@@ -664,17 +748,17 @@ var GoogleMapsModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 

@@ -4,7 +4,7 @@
 /*!******************************************************!*\
   !*** ./dist/@fivethree/core/fesm5/fivethree-core.js ***!
   \******************************************************/
-/*! exports provided: MyHammerConfig, FivethreeCoreModule, DrawerState, FivAppBar, FivBottomSheet, FivBottomSheetContent, FivCollapsableMenuButton, FivDialog, CUSTOM_EDITIABLE_LABEL_CONTROL_VALUE_ACCESSOR, FivEditableLabel, FivExpandable, FivExpandableIndicator, FivLoadingButton, FivLoadingContent, FivLoadingFab, FivLoadingProgressBar, CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR, FivPasswordInput, FivRouterItem, FivStep, FivStepContent, FivStepHeader, FivStepper, FivStepperHorizontal, FivToolbarSearch, FivAppBarTab, FivAppBarTabContent, FivButtons, FivButton, FivImageViewer, LoadingService, ɵb, ɵa, ɵc, ɵd, ɵg, ɵf, ɵj, ɵh, ɵi, ɵk, ɵe */
+/*! exports provided: MyHammerConfig, FivethreeCoreModule, DrawerState, FivAppBar, FivBottomSheet, FivBottomSheetContent, FivCollapsableMenuButton, FivDialog, CUSTOM_EDITIABLE_LABEL_CONTROL_VALUE_ACCESSOR, FivEditableLabel, FivExpandable, FivExpandableIndicator, FivLoadingButton, FivLoadingContent, FivLoadingFab, FivLoadingProgressBar, CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR, FivPasswordInput, FivRouterItem, FivStep, FivStepContent, FivStepHeader, FivStepper, FivStepperHorizontal, FivToolbarSearch, FivAppBarTab, FivAppBarTabContent, FivButtons, FivButton, FivImageViewer, LoadingService, OverlayService, ɵb, ɵa, ɵc, ɵd, ɵg, ɵf, ɵj, ɵh, ɵi, ɵm, ɵk, ɵl, ɵe */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40,6 +40,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FivButton", function() { return FivButton; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FivImageViewer", function() { return FivImageViewer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadingService", function() { return LoadingService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OverlayService", function() { return OverlayService; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return FivCollapsableMenu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return FivCenter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return FivIfPlatform; });
@@ -49,7 +50,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵj", function() { return FivIcon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵh", function() { return FivLoadingRefresherContent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵi", function() { return FivLoadingSpinner; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵk", function() { return FivPopover; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵm", function() { return OverlayContentComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵk", function() { return OverlayComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵl", function() { return FivPopover; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵe", function() { return FivRipple; });
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
@@ -58,11 +61,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
 
@@ -78,7 +81,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivStep = /** @class */ (function () {
     function FivStep() {
@@ -96,7 +99,7 @@ var FivStep = /** @class */ (function () {
     function () {
     };
     FivStep.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-step',
                     template: "<ng-template>\n  <ng-content></ng-content>\n</ng-template>",
                     styles: [""]
@@ -105,20 +108,20 @@ var FivStep = /** @class */ (function () {
     /** @nocollapse */
     FivStep.ctorParameters = function () { return []; };
     FivStep.propDecorators = {
-        index: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        isLast: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        open: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        subtitle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: [_angular_core__WEBPACK_IMPORTED_MODULE_6__["TemplateRef"],] }]
+        index: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        isLast: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        open: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        subtitle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: [_angular_core__WEBPACK_IMPORTED_MODULE_10__["TemplateRef"],] }]
     };
     return FivStep;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivStepHeader = /** @class */ (function () {
     function FivStepHeader() {
@@ -168,19 +171,19 @@ var FivStepHeader = /** @class */ (function () {
         this.icon = this.tempIcon;
     };
     FivStepHeader.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-step-header',
                     template: "<div class=\"number-container\">\n  <span *ngIf=\"index && !icon\" [@rotateAnim]=\"iconState\" (@rotateAnim.done)=\"changeIconAndReveal($event,'md-checkmark')\">{{index}}</span>\n  <ion-icon *ngIf=\"icon\" [@rotateAnim]=\"iconState\" (@rotateAnim.done)=\"changeIconAndReveal($event,'md-checkmark')\"\n    [name]=\"icon\"></ion-icon>\n</div>\n<div class=\"step-content\">\n  <ng-content>\n  </ng-content>\n</div>",
                     animations: [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('rotateAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('normal => rotate', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-out')
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('rotateAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('normal => rotate', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('rotate => normal', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-in')
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('rotate => normal', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-in')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('rotate', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0', transform: 'translate(-50%, -50%) rotateZ(45deg)' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '1', transform: 'translate(-50%, -50%) rotateZ(0deg)' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('rotate', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0', transform: 'translate(-50%, -50%) rotateZ(45deg)' })),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1', transform: 'translate(-50%, -50%) rotateZ(0deg)' }))
                         ])
                     ],
                     styles: [":host{display:block;width:100%;height:72px;align-items:center;position:relative;padding-top:8px}.number-container{width:24px;height:24px;border-radius:100%;position:absolute;left:16px;background:var(--fiv-color-circle,var(--ion-color-primary));color:var(--fiv-color-circle-color,var(--ion-color-light))}.number-container *{position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%) rotateZ(0);transform:translate(-50%,-50%) rotateZ(0)}.step-content{padding-left:56px}"]
@@ -189,24 +192,24 @@ var FivStepHeader = /** @class */ (function () {
     /** @nocollapse */
     FivStepHeader.ctorParameters = function () { return []; };
     FivStepHeader.propDecorators = {
-        index: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        index: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivStepHeader;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivExpandable = /** @class */ (function () {
     function FivExpandable(change) {
         this.change = change;
         this.isOpen = false;
-        this.fivWillOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivDidOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivWillClose = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivDidClose = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivWillOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivDidOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivWillClose = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivDidClose = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
     }
     /**
      * @return {?}
@@ -273,25 +276,25 @@ var FivExpandable = /** @class */ (function () {
         }
     };
     FivExpandable.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-expandable',
                     template: "<div>\n  <ng-content select=\"[header]\"></ng-content>\n  <div [@listAnim]=\"{value: isOpen ? 'open' : 'closed', params: timingFunction ? {time: timingFunction} : {}}\" (@listAnim.done)=\"onAnimationEnd($event)\"\n    style=\"overflow: hidden\">\n    <ng-content select=\"[content]\"></ng-content>\n  </div>\n</div>",
                     animations: [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('listAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('open', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '*', opacity: 1 })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('closed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '0', opacity: 0 })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('closed => open', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('{{time}}', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["keyframes"])([
-                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '0', opacity: 0, offset: 0 }),
-                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '*', opacity: 0.1, offset: 0.8 }),
-                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '*', opacity: 1, offset: 1 }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('listAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('open', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '*', opacity: 1 })),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('closed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '0', opacity: 0 })),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('closed => open', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('{{time}}', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["keyframes"])([
+                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '0', opacity: 0, offset: 0 }),
+                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '*', opacity: 0.1, offset: 0.8 }),
+                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '*', opacity: 1, offset: 1 }),
                                 ]))
                             ], { params: { time: '270ms ease-out' } }),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('open => closed', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('{{time}}', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["keyframes"])([
-                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '*', opacity: 1, offset: 0 }),
-                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '*', opacity: 0.1, offset: 0.2 }),
-                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '0', opacity: 0, offset: 1 }),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('open => closed', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('{{time}}', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["keyframes"])([
+                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '*', opacity: 1, offset: 0 }),
+                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '*', opacity: 0.1, offset: 0.2 }),
+                                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '0', opacity: 0, offset: 1 }),
                                 ]))
                             ], { params: { time: '220ms ease-out' } }),
                         ])
@@ -301,22 +304,22 @@ var FivExpandable = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivExpandable.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ChangeDetectorRef"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ChangeDetectorRef"] }
     ]; };
     FivExpandable.propDecorators = {
-        isOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        timingFunction: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivWillOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivDidOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivWillClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivDidClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }]
+        isOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        timingFunction: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivWillOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivDidOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivWillClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivDidClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }]
     };
     return FivExpandable;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivStepContent = /** @class */ (function () {
     function FivStepContent(change) {
@@ -325,9 +328,9 @@ var FivStepContent = /** @class */ (function () {
         this.isOpen = false;
         this.title = '';
         this.subtitle = '';
-        this.fivDidOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivDidClose = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivClick = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivDidOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivDidClose = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivClick = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
     }
     /**
      * @return {?}
@@ -412,7 +415,7 @@ var FivStepContent = /** @class */ (function () {
         this.fivClick.emit(this);
     };
     FivStepContent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-step-content',
                     template: "<div *ngIf=\"!isLast\" class=\"timeline\"></div>\n<fiv-expandable [isOpen]=\"isOpen\" (fivDidClose)=\"afterClose()\" (fivDidOpen)=\"afterOpen()\" #self>\n  <fiv-ripple header (fivClick)=\"click()\">\n    <fiv-step-header #header [index]=\"index\" [icon]=\"icon\">\n      <div class=\"header-title\">{{title}}</div>\n      <div class=\"header-subtitle\">{{subtitle}}</div>\n    </fiv-step-header>\n  </fiv-ripple>\n  <ng-container content>\n    <div class=\"step-content\">\n      <ng-content></ng-content>\n    </div>\n  </ng-container>\n</fiv-expandable>",
                     styles: [":host{display:block;width:100%;position:relative}.step-content{padding-left:44px;padding-bottom:24px}.timeline{width:1px;height:calc(100% - 32px);position:absolute;background:var(--fiv-color-timeline,var(--ion-color-medium));left:27.5px;top:36px}.header-title{color:var(--fiv-color-title,var(--ion-color-dark))}.header-subtitle{color:var(--fiv-color-subtitle,var(--ion-color-medium));font-size:.8em}"]
@@ -420,31 +423,31 @@ var FivStepContent = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivStepContent.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ChangeDetectorRef"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ChangeDetectorRef"] }
     ]; };
     FivStepContent.propDecorators = {
-        index: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        isLast: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        isOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        subtitle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivDidOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivDidClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        step: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['self',] }],
-        header: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['header',] }]
+        index: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        isLast: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        isOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        subtitle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivDidOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivDidClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        step: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['self',] }],
+        header: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['header',] }]
     };
     return FivStepContent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivStepperHorizontal = /** @class */ (function () {
     function FivStepperHorizontal() {
-        this.fivSelect = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivSelect = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
     }
     /**
      * @return {?}
@@ -478,19 +481,19 @@ var FivStepperHorizontal = /** @class */ (function () {
         this.slides.lockSwipes(true);
     };
     FivStepperHorizontal.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-stepper-horizontal',
                     template: "<ion-grid fixed>\n  <ion-row>\n    <ion-col *ngFor=\"let content of contents.toArray(); let i = index; let f = first; let l = last;\" [size]=\"12 / contents.length\">\n      <fiv-ripple (click)=\"fivSelect.emit(i)\">\n        <span *ngIf=\"!f\" class=\"line left\"></span>\n        <div class=\"number-container\">\n          <span *ngIf=\"!content.icon\">{{i +  1}}</span>\n          <ion-icon *ngIf=\"content.icon\"\n            [name]=\"content.icon\"></ion-icon>\n        </div>\n        <span *ngIf=\"!l\" class=\"line right\"></span>\n      </fiv-ripple>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col *ngFor=\"let content of contents.toArray(); let i = index; let f = first; let l = last;\" [size]=\"12 / contents.length\">\n      <fiv-ripple (click)=\"fivSelect.emit(i)\">\n          <div class=\"horizontal-content\">\n          <div class=\"header-title\">{{content.title}}</div>\n          <div class=\"header-subtitle\">{{content.subtitle}}</div>\n        </div>\n      </fiv-ripple>\n    </ion-col>\n  </ion-row>\n</ion-grid>\n\n<ion-slides #slides pager=\"false\">\n  <ion-slide *ngFor=\"let content of contents; let i = index\">\n    <ng-container [ngTemplateOutlet]=\"content.content\"></ng-container>\n  </ion-slide>\n</ion-slides>",
                     animations: [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('rotateAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('normal => rotate', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-out')
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('rotateAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('normal => rotate', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('rotate => normal', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-in')
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('rotate => normal', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-in')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('rotate', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0', transform: 'translate(-50%, -50%) rotateZ(45deg)' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '1', transform: 'translate(-50%, -50%) rotateZ(0deg)' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('rotate', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0', transform: 'translate(-50%, -50%) rotateZ(45deg)' })),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1', transform: 'translate(-50%, -50%) rotateZ(0deg)' }))
                         ])
                     ],
                     styles: [".number-container{width:24px;height:24px;border-radius:100%;position:relative;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);background:var(--fiv-color-circle,var(--ion-color-primary));color:var(--fiv-color-circle-color,var(--ion-color-light))}.number-container *{position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%) rotateZ(0);transform:translate(-50%,-50%) rotateZ(0)}ion-col{text-align:center;padding:0}.line{width:calc(50% - 20px);height:1px;position:absolute;background:var(--fiv-color-timeline,var(--ion-color-medium));top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.left{left:0}.right{right:0}.header-title{color:var(--fiv-color-title,var(--ion-color-dark))}.header-subtitle{color:var(--fiv-color-subtitle,var(--ion-color-medium));font-size:.8em}"]
@@ -499,22 +502,22 @@ var FivStepperHorizontal = /** @class */ (function () {
     /** @nocollapse */
     FivStepperHorizontal.ctorParameters = function () { return []; };
     FivStepperHorizontal.propDecorators = {
-        contents: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        slides: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['slides',] }],
-        fivSelect: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }]
+        contents: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        slides: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['slides',] }],
+        fivSelect: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }]
     };
     return FivStepperHorizontal;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivStepper = /** @class */ (function () {
     function FivStepper() {
         this.mode = 'vertical';
-        this.fivClick = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivClick = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.currentIndex = 0;
     }
     /**
@@ -635,9 +638,13 @@ var FivStepper = /** @class */ (function () {
             this.horizontal.close();
         }
         else {
-            this.steps.forEach(function (step) {
+            this.steps.forEach((/**
+             * @param {?} step
+             * @return {?}
+             */
+            function (step) {
                 step.close();
-            });
+            }));
         }
     };
     /**
@@ -705,7 +712,7 @@ var FivStepper = /** @class */ (function () {
         }
     };
     FivStepper.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-stepper',
                     template: "<ion-list *ngIf=\"mode === 'vertical'\">\n  <fiv-step-content (fivDidClose)=\"fivClose.emit({index: i, param: param}); param = null;\" (fivClick)=\"fivClick.emit(i)\" *ngFor=\"let content of contents; let i = index; let l = last;\" [icon]=\"content.icon\" [index]=\"i + 1\"\n    [isLast]=\"l\" [title]=\"content.title\" [subtitle]=\"content.subtitle\" [isOpen]=\"content.open\">\n    <ng-container [ngTemplateOutlet]=\"content.content\"></ng-container>\n  </fiv-step-content>\n</ion-list>\n<div *ngIf=\"mode === 'horizontal'\">\n  <fiv-stepper-horizontal (fivSelect)=\"select($event)\" [contents]=\"contents\"></fiv-stepper-horizontal>\n</div>",
                     styles: [":host{display:block;width:100%}"]
@@ -714,19 +721,19 @@ var FivStepper = /** @class */ (function () {
     /** @nocollapse */
     FivStepper.ctorParameters = function () { return []; };
     FivStepper.propDecorators = {
-        contents: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ContentChildren"], args: [FivStep,] }],
-        steps: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChildren"], args: [FivStepContent,] }],
-        horizontal: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: [FivStepperHorizontal,] }],
-        mode: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }]
+        contents: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ContentChildren"], args: [FivStep,] }],
+        steps: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChildren"], args: [FivStepContent,] }],
+        horizontal: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: [FivStepperHorizontal,] }],
+        mode: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }]
     };
     return FivStepper;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivRouterItem = /** @class */ (function () {
     function FivRouterItem(router) {
@@ -805,7 +812,8 @@ var FivRouterItem = /** @class */ (function () {
      */
     function () {
         return this.shape === 'line'
-            || this.shape === 'dot';
+            || this.shape === 'dot'
+            || this.shape === 'rounded';
     };
     /**
      * @return {?}
@@ -844,7 +852,7 @@ var FivRouterItem = /** @class */ (function () {
         return this.router.url.startsWith(this.pageUrl);
     };
     FivRouterItem.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-router-item',
                     template: "<ion-menu-toggle auto-hide=\"false\">\n    <fiv-ripple>\n        <ion-item [color]=\"color\" [detail]=\"detail\" [detailIcon]=\"detailIcon\" [disabled]=\"disabled\" [lines]=\"lines\">\n            <fiv-icon [name]=\"icon\"></fiv-icon>\n            <ion-label>{{text}}</ion-label>\n        </ion-item>\n    </fiv-ripple>\n</ion-menu-toggle>\n<span *ngIf=\"hasShape()\" [ngClass]=\"getClasses()\" class=\"indicator\"></span>\n<ion-icon *ngIf=\"!hasShape()\" [ngClass]=\"position\" [name]=\"shape\" class=\"indicator\"></ion-icon>",
                     styles: [":host{display:block;position:relative;width:100%}:host(.active){--color-active:var(--ion-color-primary)}:host(.active) ion-item{--color:var(--color-active)}:host(.line){--width-line:4px;--background-line:var(--ion-color-primary)}:host(.active) .line{display:block;background:var(--background-line)}:host.active.left .line{width:var(--width-line);height:100%;top:0}:host.active.right .line{width:var(--width-line);height:100%;top:0}:host.active.top .line{width:calc(100% - 16px);left:8px;height:2px}:host.active.bottom .line{width:calc(100% - 16px);height:2px;left:8px}.indicator{position:absolute}:host.active .dot{display:block}:host.active.dot.left{padding-left:24px}.dot{width:var(--fiv-dot-width,8px);height:var(--fiv-dot-heigt,8px);background-color:var(--fiv-dot-color,var(--ion-color-primary));top:50%;border-radius:100%;-webkit-transform:translateY(-50%);transform:translateY(-50%);right:8px;display:none}.dot.left{left:8px;right:unset}.dot.right{right:8px}:host(.rounded.left){--border-radius-rounded-left:0 50px 50px 0}:host(.rounded.left) ion-item{--border-radius:var(--border-radius-rounded-left)}:host(.rounded.right){--border-radius-rounded-right:50px 0 0 50px}:host(.rounded.right) ion-item{--border-radius:var(--border-radius-rounded-right)}:host(.active.rounded){--background-rounded:var(--ion-color-primary-rgb);--opacity-rounded:0.25}:host(.active.rounded) ion-item{--background:rgba(var(--background-rounded), var(--opacity-rounded))}.left{left:0}.right{right:0}.top{top:0}.bottom{bottom:0}ion-item{--border-style:none}fiv-icon{--fiv-padding-end:8px}ion-item:hover{--background-hover:var(--ion-color-light);cursor:pointer;--background:var(--background-hover)}:host(.router-item-disabled){pointer-events:none}"]
@@ -855,30 +863,30 @@ var FivRouterItem = /** @class */ (function () {
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }
     ]; };
     FivRouterItem.propDecorators = {
-        active: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        detail: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        detailIcon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        lines: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        matchChildUrl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        navigate: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        pageUrl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        position: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        shape: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        text: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        onclick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostListener"], args: ['click',] }],
-        classes: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class',] }],
-        activeClass: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class.active',] }],
-        disabledClass: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class.router-item-disabled',] }]
+        active: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        detail: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        detailIcon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        lines: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        matchChildUrl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        navigate: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        pageUrl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        position: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        shape: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        text: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        onclick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostListener"], args: ['click',] }],
+        classes: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class',] }],
+        activeClass: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class.active',] }],
+        disabledClass: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class.router-item-disabled',] }]
     };
     return FivRouterItem;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivCollapsableMenu = /** @class */ (function () {
     function FivCollapsableMenu(sanitizer, platform) {
@@ -975,7 +983,7 @@ var FivCollapsableMenu = /** @class */ (function () {
         this.collapsed = true;
     };
     FivCollapsableMenu.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Directive"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Directive"], args: [{
                     selector: '[fivCollapseMenu]',
                     exportAs: 'menuCollapse'
                 },] }
@@ -983,21 +991,21 @@ var FivCollapsableMenu = /** @class */ (function () {
     /** @nocollapse */
     FivCollapsableMenu.ctorParameters = function () { return [
         { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["Platform"] }
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["Platform"] }
     ]; };
     FivCollapsableMenu.propDecorators = {
-        hoverMenu: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        myStyle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['style',] }],
-        hover: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostListener"], args: ['mouseenter',] }],
-        blur: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostListener"], args: ['mouseleave',] }],
-        fivCollapseMenu: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        hoverMenu: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        myStyle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['style',] }],
+        hover: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostListener"], args: ['mouseenter',] }],
+        blur: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostListener"], args: ['mouseleave',] }],
+        fivCollapseMenu: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivCollapsableMenu;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivCollapsableMenuButton = /** @class */ (function () {
     function FivCollapsableMenuButton() {
@@ -1020,7 +1028,7 @@ var FivCollapsableMenuButton = /** @class */ (function () {
         this.menu.toggleMenu();
     };
     FivCollapsableMenuButton.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-collapsable-menu-button',
                     template: "<ion-button fivCenter (click)=\"onClick()\">\n  <ion-icon slot=\"icon-only\" name=\"menu\"></ion-icon>\n</ion-button>",
                     styles: [":host{width:42px;height:42px;display:block}"]
@@ -1029,19 +1037,22 @@ var FivCollapsableMenuButton = /** @class */ (function () {
     /** @nocollapse */
     FivCollapsableMenuButton.ctorParameters = function () { return []; };
     FivCollapsableMenuButton.propDecorators = {
-        menu: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        menu: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivCollapsableMenuButton;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR = {
-    provide: _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NG_VALUE_ACCESSOR"],
-    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["forwardRef"])(function () { return FivPasswordInput; }),
+    provide: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["NG_VALUE_ACCESSOR"],
+    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_10__["forwardRef"])((/**
+     * @return {?}
+     */
+    function () { return FivPasswordInput; })),
     multi: true
 };
 var FivPasswordInput = /** @class */ (function () {
@@ -1129,7 +1140,7 @@ var FivPasswordInput = /** @class */ (function () {
         this.onTouchedCallback = fn;
     };
     FivPasswordInput.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-password-input',
                     template: "<ion-item [color]=\"color\" [disabled]=\"disabled\" [lines]=\"lines\">\n  <ion-label *ngIf=\"placeholder\" [position]=\"position\">{{ placeholder }}</ion-label>\n  <ion-input [type]=\"show ? 'text' : 'password'\" [(ngModel)]=\"passwordValue\" [clearOnEdit]=\"clearOnEdit\" (ionBlur)=\"blur()\"></ion-input>\n  <ion-icon slot=\"end\" [name]=\"show ? hideIcon : showIcon\" (click)=\"toggleShowPassword()\"></ion-icon>\n</ion-item>",
                     providers: [
@@ -1141,22 +1152,22 @@ var FivPasswordInput = /** @class */ (function () {
     /** @nocollapse */
     FivPasswordInput.ctorParameters = function () { return []; };
     FivPasswordInput.propDecorators = {
-        clearOnEdit: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class.password-disabled',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        hideIcon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        lines: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        position: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        show: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        showIcon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        clearOnEdit: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class.password-disabled',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        hideIcon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        lines: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        position: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        show: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        showIcon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivPasswordInput;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @enum {number} */
 var DrawerState = {
@@ -1170,7 +1181,7 @@ DrawerState[DrawerState.Top] = 'Top';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivBottomSheetContent = /** @class */ (function () {
     function FivBottomSheetContent(sanitizer) {
@@ -1178,7 +1189,7 @@ var FivBottomSheetContent = /** @class */ (function () {
         this.rounded = true;
         this.handle = true;
         this.float = true;
-        this.fivHandleClick = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivHandleClick = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.states = DrawerState;
     }
     Object.defineProperty(FivBottomSheetContent.prototype, "isRounded", {
@@ -1237,7 +1248,7 @@ var FivBottomSheetContent = /** @class */ (function () {
         this.fivHandleClick.emit();
     };
     FivBottomSheetContent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-bottom-sheet-content',
                     template: "<div class=\"bsc-wrapper\">\n  <span (click)=\"click()\" *ngIf=\"currentState !== states.Top && handle\" [fivCenter]=\"{vertical: false, horizontal: true}\" class=\"handle\"></span>\n  <div [ngClass]=\"{'margin': handle}\" class=\"content\">\n    <ng-content>\n  \n    </ng-content>\n  </div>\n</div>\n\n\n\n\n",
                     styles: [":host{display:block;width:100%;height:100%}.bsc-wrapper{width:100%;height:100%}:host.rounded{border-top-left-radius:12px;border-top-right-radius:12px}.handle{display:block;background:var(--ion-color-light);border-radius:12px;top:8px;width:32px;height:8px;position:absolute}.content.margin{margin-top:24px}"]
@@ -1248,19 +1259,19 @@ var FivBottomSheetContent = /** @class */ (function () {
         { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"] }
     ]; };
     FivBottomSheetContent.propDecorators = {
-        rounded: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        handle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        float: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivHandleClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        isRounded: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class.rounded',] }],
-        styles: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['style',] }]
+        rounded: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        handle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        float: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivHandleClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        isRounded: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class.rounded',] }],
+        styles: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['style',] }]
     };
     return FivBottomSheetContent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivBottomSheet = /** @class */ (function () {
     function FivBottomSheet(_element, _renderer, _domCtrl, _platform, sanitizer) {
@@ -1276,10 +1287,10 @@ var FivBottomSheet = /** @class */ (function () {
         this.state = DrawerState.Bottom;
         this.minimumHeight = 24;
         this.panEnabled = true;
-        this.stateChange = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivDocked = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.stateChange = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivDocked = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this._BOUNCE_DELTA = 30;
     }
     // @HostBinding('style') get styles() {
@@ -1315,7 +1326,11 @@ var FivBottomSheet = /** @class */ (function () {
         /** @type {?} */
         var hammer = new hammerjs__WEBPACK_IMPORTED_MODULE_3__(this._element.nativeElement);
         hammer.get('pan').set({ enable: true, direction: hammerjs__WEBPACK_IMPORTED_MODULE_3__["DIRECTION_VERTICAL"] });
-        hammer.on('pan panstart panend', function (ev) {
+        hammer.on('pan panstart panend', (/**
+         * @param {?} ev
+         * @return {?}
+         */
+        function (ev) {
             if (!_this.panEnabled) {
                 return;
             }
@@ -1329,14 +1344,17 @@ var FivBottomSheet = /** @class */ (function () {
                 default:
                     _this._handlePan(ev);
             }
-        });
+        }));
         this.content.fivHandleClick
-            .subscribe(function () {
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             switch (_this.state) {
                 case DrawerState.Bottom: return _this.dock();
                 case DrawerState.Docked: return _this.open();
             }
-        });
+        }));
     };
     /**
      * @param {?} changes
@@ -1547,9 +1565,12 @@ var FivBottomSheet = /** @class */ (function () {
      */
     function (value) {
         var _this = this;
-        this._domCtrl.write(function () {
+        this._domCtrl.write((/**
+         * @return {?}
+         */
+        function () {
             _this._renderer.setStyle(_this._element.nativeElement, 'transform', 'translateY(' + value + ')');
-        });
+        }));
     };
     /**
      * @return {?}
@@ -1585,7 +1606,7 @@ var FivBottomSheet = /** @class */ (function () {
         this.updateContent(this.state);
     };
     FivBottomSheet.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-bottom-sheet',
                     template: "<div class=\"fiv-bottom-drawer-scrollable-content\" no-bounce>\n  <ng-content></ng-content>\n</div>",
                     styles: [":host{width:100%;height:100%;position:absolute;left:0;z-index:11!important;background-color:#fff;-webkit-transform:translateY(100vh);transform:translateY(100vh)}.fiv-bottom-drawer-scrollable-content{width:100%;height:100%}"]
@@ -1593,39 +1614,39 @@ var FivBottomSheet = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivBottomSheet.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Renderer2"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["DomController"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["Platform"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ElementRef"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Renderer2"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["DomController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["Platform"] },
         { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"] }
     ]; };
     FivBottomSheet.propDecorators = {
-        dockedHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        shouldBounce: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        distanceTop: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        transition: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        state: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        minimumHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        panEnabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        stateChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivDocked: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ContentChild"], args: [FivBottomSheetContent,] }]
+        dockedHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        shouldBounce: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        distanceTop: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        transition: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        state: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        minimumHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        panEnabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        stateChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivDocked: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ContentChild"], args: [FivBottomSheetContent,] }]
     };
     return FivBottomSheet;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var LoadingService = /** @class */ (function () {
     function LoadingService() {
         this.loading = false;
         this.isComplete = false;
-        this.loadChange = new rxjs__WEBPACK_IMPORTED_MODULE_10__["BehaviorSubject"](this.loading);
-        this.completeChange = new rxjs__WEBPACK_IMPORTED_MODULE_10__["BehaviorSubject"](this.isComplete);
+        this.loadChange = new rxjs__WEBPACK_IMPORTED_MODULE_9__["BehaviorSubject"](this.loading);
+        this.completeChange = new rxjs__WEBPACK_IMPORTED_MODULE_9__["BehaviorSubject"](this.isComplete);
     }
     /**
      * @return {?}
@@ -1668,19 +1689,19 @@ var LoadingService = /** @class */ (function () {
         this.completeChange.next(this.isComplete);
     };
     LoadingService.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Injectable"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Injectable"], args: [{
                     providedIn: 'root'
                 },] }
     ];
     /** @nocollapse */
     LoadingService.ctorParameters = function () { return []; };
-    /** @nocollapse */ LoadingService.ngInjectableDef = Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["defineInjectable"])({ factory: function LoadingService_Factory() { return new LoadingService(); }, token: LoadingService, providedIn: "root" });
+    /** @nocollapse */ LoadingService.ngInjectableDef = Object(_angular_core__WEBPACK_IMPORTED_MODULE_10__["defineInjectable"])({ factory: function LoadingService_Factory() { return new LoadingService(); }, token: LoadingService, providedIn: "root" });
     return LoadingService;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivLoadingProgressBar = /** @class */ (function () {
     function FivLoadingProgressBar(loadingService, builder) {
@@ -1691,9 +1712,9 @@ var FivLoadingProgressBar = /** @class */ (function () {
         this.isComplete = false;
         this.progress = 0;
         this.verticalAlign = 'top';
-        this.fivComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivDoneShrinking = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivDoneShrinking = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
     }
     /**
      * @return {?}
@@ -1704,11 +1725,15 @@ var FivLoadingProgressBar = /** @class */ (function () {
     function () {
         var _this = this;
         if (this.global) {
-            this.loadingService.completeChange.subscribe(function (isComplete) {
+            this.loadingService.completeChange.subscribe((/**
+             * @param {?} isComplete
+             * @return {?}
+             */
+            function (isComplete) {
                 if (isComplete) {
                     _this.complete(null);
                 }
-            });
+            }));
         }
     };
     /**
@@ -1840,26 +1865,34 @@ var FivLoadingProgressBar = /** @class */ (function () {
         // first define a reusable animation
         /** @type {?} */
         var myAnimation = this.builder.build([
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ width: this.progress }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])(ms, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ width: '100%' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ width: this.progress }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])(ms, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ width: '100%' }))
         ]);
         // use the returned factory object to create a player
         /** @type {?} */
         var player = myAnimation.create(this.linear.nativeElement);
         player.play();
         /** @type {?} */
-        var t = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["timer"])(0, ms / (100))
-            .subscribe(function () {
+        var t = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["timer"])(0, ms / (100))
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             if (_this.progress >= 100) {
                 return t.unsubscribe();
             }
             _this.progress++;
-        });
-        player.onDone(function () {
+        }));
+        player.onDone((/**
+         * @return {?}
+         */
+        function () {
             _this.fivComplete.emit(true);
             _this.progress = 100;
-            player.destroy();
-        });
+            _this.stopProgressAnimation();
+        }));
+        this.stopProgressAnimation();
+        this._progressPlayer = player;
     };
     /**
      * @param {?} ms
@@ -1875,81 +1908,101 @@ var FivLoadingProgressBar = /** @class */ (function () {
         this.progress = 100;
         /** @type {?} */
         var myAnimation = this.builder.build([
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ width: this.progress + "%" }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])(ms, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ width: 0 }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ width: this.progress + "%" }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])(ms, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ width: 0 }))
         ]);
         // use the returned factory object to create a player
         /** @type {?} */
         var player = myAnimation.create(this.linear.nativeElement);
         /** @type {?} */
-        var t = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["timer"])(0, ms / (100))
-            .subscribe(function () {
+        var t = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["timer"])(0, ms / (100))
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             if (_this.progress <= 0) {
                 return t.unsubscribe();
             }
             _this.progress--;
-        });
+        }));
         player.play();
-        player.onDone(function () {
+        player.onDone((/**
+         * @return {?}
+         */
+        function () {
             _this.fivDoneShrinking.emit(true);
             _this.progress = 0;
-            player.destroy();
-        });
+            _this.stopProgressAnimation();
+        }));
+        this.stopProgressAnimation();
+        this._progressPlayer = player;
+    };
+    /**
+     * @return {?}
+     */
+    FivLoadingProgressBar.prototype.stopProgressAnimation = /**
+     * @return {?}
+     */
+    function () {
+        if (this._progressPlayer) {
+            this._progressPlayer.destroy();
+            this._progressPlayer = null;
+        }
     };
     FivLoadingProgressBar.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-loading-progress-bar',
                     template: "<div [@progressAnim] *ngIf=\"(!global && loading) || (global && loadingService.loading)\" class=\"slider\" [ngClass]=\"{'top':verticalAlign == 'top','bottom': verticalAlign == 'bottom'}\" >\n  <div class=\"line\"></div>\n  <div *ngIf=\"!isComplete\" class=\"subline inc\"></div>\n  <div *ngIf=\"isComplete\" [@fillAnim] (@fillAnim.done)=\"fillAnimationComplete(isComplete)\" class=\"subline fill\"></div>\n  <div *ngIf=\"!isComplete\" class=\"subline dec\"></div>\n</div>\n<div #linear [@progressAnimLinear] [style.width]=\"progress + '%'\" class=\"progress\"  [ngClass]=\"{'top':verticalAlign == 'top','bottom': verticalAlign == 'bottom'}\" ></div>\n",
                     animations: [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('progressAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '0px' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('250ms ease-out')
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('progressAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '0px' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('250ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => void', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('299ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '0px' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => void', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('299ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '0px' }))
                             ])
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('progressAnimLinear', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '0px' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('65ms ease-out')
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('progressAnimLinear', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '0px' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('65ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => void', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('299ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ height: '0px' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => void', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('299ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '0px' }))
                             ])
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('fillAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ left: '-5%', width: '5%' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('850ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ left: '0%', width: '100%' }))
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('fillAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ left: '-5%', width: '5%' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('850ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ left: '0%', width: '100%' }))
                             ]),
                         ])
                     ],
-                    styles: [".slider{position:absolute;width:100%;height:5px;overflow-x:hidden;z-index:5000}.progress{position:absolute;height:5px;width:0;overflow-x:hidden;z-index:5000;background:var(--ion-color-primary);transition:240ms}.line{position:absolute;opacity:.4;width:240%;height:5px;-webkit-animation:5.6s ease-in-out infinite colorspin;animation:5.6s ease-in-out infinite colorspin}.subline{position:absolute;height:5px;background:inherit}.inc{-webkit-animation:1.6s infinite increase,5.6s ease-in-out infinite colorspin;animation:1.6s infinite increase,5.6s ease-in-out infinite colorspin}.dec{-webkit-animation:1.6s .4s infinite decrease,5.6s ease-in-out infinite colorspin;animation:1.6s .4s infinite decrease,5.6s ease-in-out infinite colorspin}.fill{left:0;width:100%;-webkit-animation:5.6s ease-in-out infinite colorspin;animation:5.6s ease-in-out infinite colorspin}@-webkit-keyframes increase{from{left:-5%;width:5%}to{left:130%;width:100%}}@keyframes increase{from{left:-5%;width:5%}to{left:130%;width:100%}}@-webkit-keyframes decrease{from{left:-80%;width:80%}to{left:110%;width:10%}}@keyframes decrease{from{left:-80%;width:80%}to{left:110%;width:10%}}@-webkit-keyframes colorspin{0%,100%{background-color:#4285f4}25%{background-color:#de3e35}50%{background-color:#f7c223}75%{background-color:#1b9a59}}@keyframes colorspin{0%,100%{background-color:#4285f4}25%{background-color:#de3e35}50%{background-color:#f7c223}75%{background-color:#1b9a59}}.top{top:0;left:0}.bottom{bottom:0;left:0}"]
+                    styles: [":host{--background-progress-bar:var(--ion-color-primary);--color-spin-0:var(--ion-color-primary-shade);--color-spin-25:var(--ion-color-primary-shade);--color-spin-50:var(--ion-color-primary-shade);--color-spin-75:var(--ion-color-primary-shade);--color-spin-100:var(--ion-color-primary-shade)}.slider{position:absolute;width:100%;height:5px;overflow-x:hidden;z-index:5000}.progress{position:absolute;height:5px;width:0;overflow-x:hidden;z-index:5000;background:var(--background-progress-bar);transition:240ms}.line{position:absolute;opacity:.4;width:240%;height:5px;-webkit-animation:5.6s ease-in-out infinite colorspin;animation:5.6s ease-in-out infinite colorspin}.subline{position:absolute;height:5px;background:inherit}.inc{-webkit-animation:1.6s infinite increase,5.6s ease-in-out infinite colorspin;animation:1.6s infinite increase,5.6s ease-in-out infinite colorspin}.dec{-webkit-animation:1.6s .4s infinite decrease,5.6s ease-in-out infinite colorspin;animation:1.6s .4s infinite decrease,5.6s ease-in-out infinite colorspin}.fill{left:0;width:100%;-webkit-animation:5.6s ease-in-out infinite colorspin;animation:5.6s ease-in-out infinite colorspin}@-webkit-keyframes increase{from{left:-5%;width:5%}to{left:130%;width:100%}}@keyframes increase{from{left:-5%;width:5%}to{left:130%;width:100%}}@-webkit-keyframes decrease{from{left:-80%;width:80%}to{left:110%;width:10%}}@keyframes decrease{from{left:-80%;width:80%}to{left:110%;width:10%}}@-webkit-keyframes colorspin{0%{background-color:var(--color-spin-0)}25%{background-color:var(--color-spin-25)}50%{background-color:var(--color-spin-50)}75%{background-color:var(--color-spin-75)}100%{background-color:var(--color-spin-100)}}@keyframes colorspin{0%{background-color:var(--color-spin-0)}25%{background-color:var(--color-spin-25)}50%{background-color:var(--color-spin-50)}75%{background-color:var(--color-spin-75)}100%{background-color:var(--color-spin-100)}}.top{top:0;left:0}.bottom{bottom:0;left:0}"]
                 }] }
     ];
     /** @nocollapse */
     FivLoadingProgressBar.ctorParameters = function () { return [
         { type: LoadingService },
-        { type: _angular_animations__WEBPACK_IMPORTED_MODULE_8__["AnimationBuilder"] }
+        { type: _angular_animations__WEBPACK_IMPORTED_MODULE_7__["AnimationBuilder"] }
     ]; };
     FivLoadingProgressBar.propDecorators = {
-        global: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        isComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        verticalAlign: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivDoneShrinking: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        bar: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['bar',] }],
-        linear: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['linear',] }]
+        global: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        isComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        verticalAlign: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivDoneShrinking: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        bar: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['bar',] }],
+        linear: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['linear',] }]
     };
     return FivLoadingProgressBar;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivLoadingButton = /** @class */ (function () {
     function FivLoadingButton() {
@@ -1961,9 +2014,9 @@ var FivLoadingButton = /** @class */ (function () {
         this.disabled = false;
         this.verticalAlign = 'top';
         this.type = 'button';
-        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivRefreshComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivButtonClick = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivButtonClick = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
     }
     /**
      * @return {?}
@@ -2025,7 +2078,7 @@ var FivLoadingButton = /** @class */ (function () {
      */
     function (isComplete) {
         this.loading = false;
-        this.fivRefreshComplete.emit(this);
+        this.fivComplete.emit(this);
     };
     /**
      * @return {?}
@@ -2037,34 +2090,34 @@ var FivLoadingButton = /** @class */ (function () {
         this.fivButtonClick.emit(this);
     };
     FivLoadingButton.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-loading-button',
                     template: "<ion-button (click)=\"onClick()\" [disabled]=\"disabled\" [fill]=\"fill\" [shape]=\"shape\" [size]=\"size\" [expand]=\"expand\" [color]=\"color\" [type]=\"type\">\n  <fiv-loading-progress-bar [verticalAlign]=\"verticalAlign\" (fivComplete)=\"onComplete($event)\" #progress [global]=\"false\"></fiv-loading-progress-bar>\n  <ng-content></ng-content>\n</ion-button>",
-                    styles: [":host(.button-disabled){pointer-events:none}"]
+                    styles: [":host{--background-progress:var(--ion-color-primary);--color-progress-spin-0:var(--ion-color-primary-shade);--color-progress-spin-25:var(--ion-color-primary-shade);--color-progress-spin-50:var(--ion-color-primary-shade);--color-progress-spin-75:var(--ion-color-primary-shade);--color-progress-spin-100:var(--ion-color-primary-shade)}:host(.button-disabled){pointer-events:none}fiv-loading-progress-bar{--background-progress-bar:var(--background-progress);--color-spin-0:var(--color-progress-spin-0);--color-spin-25:var(--color-progress-spin-25);--color-spin-50:var(--color-progress-spin-50);--color-spin-75:var(--color-progress-spin-75);--color-spin-100:var(--color-progress-spin-100)}"]
                 }] }
     ];
     /** @nocollapse */
     FivLoadingButton.ctorParameters = function () { return []; };
     FivLoadingButton.propDecorators = {
-        progress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['progress',] }],
-        color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        expand: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fill: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        size: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        shape: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class.button-disabled',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        verticalAlign: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivRefreshComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivButtonClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }]
+        progress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['progress',] }],
+        color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        expand: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fill: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        size: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        shape: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class.button-disabled',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        verticalAlign: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivButtonClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }]
     };
     return FivLoadingButton;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var BASE_SIZE = 100;
@@ -2079,8 +2132,8 @@ var FivLoadingSpinner = /** @class */ (function () {
         this._diameter = BASE_SIZE;
         this._strokeWidth = 10;
         this._value = 0;
-        this.fivProgress = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivProgress = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.mode = 'indeterminate';
         this.circleRadius = 45;
     }
@@ -2267,13 +2320,13 @@ var FivLoadingSpinner = /** @class */ (function () {
         this.change.detectChanges();
         /** @type {?} */
         var animation = this.builder.build([
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({
                 'stroke-dasharray': 180,
                 'stroke-dashoffset': 90,
                 'transformOrigin': 'center',
                 'stroke': '#DE3E35'
             }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])(duration + "ms ease-out", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])(duration + "ms ease-out", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({
                 'stroke-dasharray': 315,
                 'stroke-dashoffset': 0,
                 'transformOrigin': 'center',
@@ -2284,19 +2337,26 @@ var FivLoadingSpinner = /** @class */ (function () {
         /** @type {?} */
         var player = animation.create(this.determinateCircle.nativeElement);
         player.play();
-        player.onDone(function () {
+        player.onDone((/**
+         * @return {?}
+         */
+        function () {
             _this.fivComplete.emit(_this);
             _this._value = 0;
-        });
+        }));
         /** @type {?} */
-        var i = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["interval"])(duration / 100);
+        var i = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["interval"])(duration / 100);
         /** @type {?} */
-        var t = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["timer"])(duration + duration / 50);
+        var t = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["timer"])(duration + duration / 50);
         /** @type {?} */
         var progress = i.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(t));
-        progress.subscribe(function (p) {
+        progress.subscribe((/**
+         * @param {?} p
+         * @return {?}
+         */
+        function (p) {
             _this.fivProgress.emit(p);
-        });
+        }));
     };
     /**
      * @param {?} progress
@@ -2346,7 +2406,7 @@ var FivLoadingSpinner = /** @class */ (function () {
     FivLoadingSpinner.diameters = new Set([BASE_SIZE]);
     FivLoadingSpinner.styleTag = null;
     FivLoadingSpinner.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-loading-spinner',
                     template: "<svg [style.width.px]=\"diameter\" [style.height.px]=\"diameter\" [attr.viewBox]=\"viewBox\" preserveAspectRatio=\"xMidYMid meet\"\n  focusable=\"false\" [ngSwitch]=\"mode == 'indeterminate'\">\n\n\n  <circle *ngSwitchCase=\"true\" cx=\"50%\" cy=\"50%\" [attr.r]=\"circleRadius\" [style.animation-name]=\"'mat-progress-spinner-stroke-rotate-' + diameter\"\n    [style.stroke-dashoffset.px]=\"strokeDashOffset\" [style.stroke-dasharray.px]=\"strokeCircumference\"\n    [style.stroke-width.%]=\"circleStrokeWidth\"></circle>\n\n  <circle class=\"determinate-circle\" #determinateCircle *ngSwitchCase=\"false\" cx=\"50%\" cy=\"50%\" [attr.r]=\"circleRadius\"\n    [style.stroke-dashoffset.px]=\"strokeDashOffset\" [style.stroke-dasharray.px]=\"strokeCircumference\"\n    [style.stroke-width.%]=\"circleStrokeWidth\"></circle>\n</svg>",
                     // tslint:disable-next-line:use-host-property-decorator
@@ -2354,37 +2414,37 @@ var FivLoadingSpinner = /** @class */ (function () {
                         '[style.width.px]': 'diameter',
                         '[style.height.px]': 'diameter'
                     },
-                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ChangeDetectionStrategy"].OnPush,
-                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewEncapsulation"].None,
+                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ChangeDetectionStrategy"].OnPush,
+                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewEncapsulation"].None,
                     styles: ["fiv-loading-spinner{display:block;position:relative}fiv-loading-spinner svg{position:absolute;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);top:0;left:0;-webkit-transform-origin:center;transform-origin:center;overflow:visible}fiv-loading-spinner circle{fill:transparent;-webkit-transform-origin:center;transform-origin:center;transition:stroke-dashoffset 225ms linear}fiv-loading-spinner.mat-progress-spinner-indeterminate-animation.determinate{-webkit-animation:5.6s ease-in-out infinite colors;animation:5.6s ease-in-out infinite colors}fiv-loading-spinner.mat-progress-spinner-indeterminate-animation.determinate circle{transition-property:stroke;-webkit-animation-duration:4s;animation-duration:4s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}fiv-loading-spinner.mat-progress-spinner-indeterminate-animation.indeterminate{-webkit-animation:5.6s ease-in-out infinite colors,2s linear infinite mat-progress-spinner-linear-rotate;animation:5.6s ease-in-out infinite colors,2s linear infinite mat-progress-spinner-linear-rotate}fiv-loading-spinner.mat-progress-spinner-indeterminate-animation.indeterminate circle{transition-property:stroke;-webkit-animation-duration:4s;animation-duration:4s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}@-webkit-keyframes mat-progress-spinner-linear-rotate{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes mat-progress-spinner-linear-rotate{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes mat-progress-spinner-stroke-rotate-100{0%{stroke-dashoffset:268.60617px;-webkit-transform:rotate(0);transform:rotate(0)}12.5%{stroke-dashoffset:56.54867px;-webkit-transform:rotate(0);transform:rotate(0)}12.5001%{stroke-dashoffset:56.54867px;-webkit-transform:rotateX(180deg) rotate(72.5deg);transform:rotateX(180deg) rotate(72.5deg)}25%{stroke-dashoffset:268.60617px;-webkit-transform:rotateX(180deg) rotate(72.5deg);transform:rotateX(180deg) rotate(72.5deg)}25.0001%{stroke-dashoffset:268.60617px;-webkit-transform:rotate(270deg);transform:rotate(270deg)}37.5%{stroke-dashoffset:56.54867px;-webkit-transform:rotate(270deg);transform:rotate(270deg)}37.5001%{stroke-dashoffset:56.54867px;-webkit-transform:rotateX(180deg) rotate(161.5deg);transform:rotateX(180deg) rotate(161.5deg)}50%{stroke-dashoffset:268.60617px;-webkit-transform:rotateX(180deg) rotate(161.5deg);transform:rotateX(180deg) rotate(161.5deg)}50.0001%{stroke-dashoffset:268.60617px;-webkit-transform:rotate(180deg);transform:rotate(180deg)}62.5%{stroke-dashoffset:56.54867px;-webkit-transform:rotate(180deg);transform:rotate(180deg)}62.5001%{stroke-dashoffset:56.54867px;-webkit-transform:rotateX(180deg) rotate(251.5deg);transform:rotateX(180deg) rotate(251.5deg)}75%{stroke-dashoffset:268.60617px;-webkit-transform:rotateX(180deg) rotate(251.5deg);transform:rotateX(180deg) rotate(251.5deg)}75.0001%{stroke-dashoffset:268.60617px;-webkit-transform:rotate(90deg);transform:rotate(90deg)}87.5%{stroke-dashoffset:56.54867px;-webkit-transform:rotate(90deg);transform:rotate(90deg)}87.5001%{stroke-dashoffset:56.54867px;-webkit-transform:rotateX(180deg) rotate(341.5deg);transform:rotateX(180deg) rotate(341.5deg)}100%{stroke-dashoffset:268.60617px;-webkit-transform:rotateX(180deg) rotate(341.5deg);transform:rotateX(180deg) rotate(341.5deg)}}@keyframes mat-progress-spinner-stroke-rotate-100{0%{stroke-dashoffset:268.60617px;-webkit-transform:rotate(0);transform:rotate(0)}12.5%{stroke-dashoffset:56.54867px;-webkit-transform:rotate(0);transform:rotate(0)}12.5001%{stroke-dashoffset:56.54867px;-webkit-transform:rotateX(180deg) rotate(72.5deg);transform:rotateX(180deg) rotate(72.5deg)}25%{stroke-dashoffset:268.60617px;-webkit-transform:rotateX(180deg) rotate(72.5deg);transform:rotateX(180deg) rotate(72.5deg)}25.0001%{stroke-dashoffset:268.60617px;-webkit-transform:rotate(270deg);transform:rotate(270deg)}37.5%{stroke-dashoffset:56.54867px;-webkit-transform:rotate(270deg);transform:rotate(270deg)}37.5001%{stroke-dashoffset:56.54867px;-webkit-transform:rotateX(180deg) rotate(161.5deg);transform:rotateX(180deg) rotate(161.5deg)}50%{stroke-dashoffset:268.60617px;-webkit-transform:rotateX(180deg) rotate(161.5deg);transform:rotateX(180deg) rotate(161.5deg)}50.0001%{stroke-dashoffset:268.60617px;-webkit-transform:rotate(180deg);transform:rotate(180deg)}62.5%{stroke-dashoffset:56.54867px;-webkit-transform:rotate(180deg);transform:rotate(180deg)}62.5001%{stroke-dashoffset:56.54867px;-webkit-transform:rotateX(180deg) rotate(251.5deg);transform:rotateX(180deg) rotate(251.5deg)}75%{stroke-dashoffset:268.60617px;-webkit-transform:rotateX(180deg) rotate(251.5deg);transform:rotateX(180deg) rotate(251.5deg)}75.0001%{stroke-dashoffset:268.60617px;-webkit-transform:rotate(90deg);transform:rotate(90deg)}87.5%{stroke-dashoffset:56.54867px;-webkit-transform:rotate(90deg);transform:rotate(90deg)}87.5001%{stroke-dashoffset:56.54867px;-webkit-transform:rotateX(180deg) rotate(341.5deg);transform:rotateX(180deg) rotate(341.5deg)}100%{stroke-dashoffset:268.60617px;-webkit-transform:rotateX(180deg) rotate(341.5deg);transform:rotateX(180deg) rotate(341.5deg)}}@-webkit-keyframes colors{0%,100%{stroke:#4285f4}25%{stroke:#de3e35}50%{stroke:#f7c223}75%{stroke:#1b9a59}}@keyframes colors{0%,100%{stroke:#4285f4}25%{stroke:#de3e35}50%{stroke:#f7c223}75%{stroke:#1b9a59}}"]
                 }] }
     ];
     /** @nocollapse */
     FivLoadingSpinner.ctorParameters = function () { return [
-        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Inject"], args: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["DOCUMENT"],] }] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ChangeDetectorRef"] },
-        { type: _angular_animations__WEBPACK_IMPORTED_MODULE_8__["AnimationBuilder"] },
+        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Inject"], args: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["DOCUMENT"],] }] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ElementRef"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ChangeDetectorRef"] },
+        { type: _angular_animations__WEBPACK_IMPORTED_MODULE_7__["AnimationBuilder"] },
         { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Renderer2"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Renderer2"] }
     ]; };
     FivLoadingSpinner.propDecorators = {
-        fivProgress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        determinateCircle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['determinateCircle',] }],
-        mode: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        circleRadius: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        class: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class',] }],
-        value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        diameter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        strokeWidth: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        fivProgress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        determinateCircle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['determinateCircle',] }],
+        mode: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        circleRadius: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        class: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class',] }],
+        value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        diameter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        strokeWidth: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivLoadingSpinner;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivLoadingRefresherContent = /** @class */ (function () {
     function FivLoadingRefresherContent(element, builder) {
@@ -2393,11 +2453,11 @@ var FivLoadingRefresherContent = /** @class */ (function () {
         this.iconColor = '#000';
         this.checkmark = false;
         this.disabled = false;
-        this.fivComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivHidden = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivShowed = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivProgress = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivHidden = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivShowed = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivProgress = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.visible = false;
         this.iconState = 'normal';
     }
@@ -2456,16 +2516,19 @@ var FivLoadingRefresherContent = /** @class */ (function () {
             this.visible = true;
             /** @type {?} */
             var animation = this.builder.build([
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: 'scale(0)' }),
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('0ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: 'scale(1)' }))
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(0)' }),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('0ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(1)' }))
             ]);
             /** @type {?} */
             var player_1 = animation.create(this.background.nativeElement);
             player_1.play();
-            player_1.onDone(function () {
+            player_1.onDone((/**
+             * @return {?}
+             */
+            function () {
                 _this.fivShowed.emit(_this);
                 player_1.destroy();
-            });
+            }));
         }
     };
     /**
@@ -2481,17 +2544,20 @@ var FivLoadingRefresherContent = /** @class */ (function () {
             var transform = "scale(1)";
             /** @type {?} */
             var animation = this.builder.build([
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: transform }),
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('175ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: 'scale(0)' }))
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: transform }),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('175ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(0)' }))
             ]);
             /** @type {?} */
             var player_2 = animation.create(this.background.nativeElement);
             player_2.play();
-            player_2.onDone(function () {
+            player_2.onDone((/**
+             * @return {?}
+             */
+            function () {
                 _this.fivHidden.emit(_this);
                 _this.visible = false;
                 player_2.destroy();
-            });
+            }));
         }
     };
     /**
@@ -2560,48 +2626,48 @@ var FivLoadingRefresherContent = /** @class */ (function () {
         this.spinner.setMode('indeterminate');
     };
     FivLoadingRefresherContent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-loading-refresher-content',
                     template: "<div #background class=\"spinner-background\">\n    <fiv-loading-spinner #spinner (fivProgress)=\"fivProgress.emit($event)\" (fivComplete)=\"fillAnimationDone()\" class=\"spinner\" [circleRadius]=\"8\" [diameter]=\"20\" [strokeWidth]=\"2\"></fiv-loading-spinner>\n</div>",
-                    animations: [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('fabAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: 'scale(0)' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('250ms ease-out')
+                    animations: [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('fabAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(0)' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('250ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => void', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('250ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: 'scale(0)' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => void', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('250ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(0)' }))
                             ])
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('spinnerAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('250ms ease-out')
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('spinnerAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('250ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => void', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('250ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => void', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('250ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0' }))
                             ])
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('rotateAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('normal => rotate', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-out')
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('rotateAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('normal => rotate', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('rotate => normal', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-in')
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('rotate => normal', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-in')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('rotate', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0', transform: 'rotateZ(45deg)' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '1', transform: 'rotateZ(0deg)' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('rotate', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0', transform: 'rotateZ(45deg)' })),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1', transform: 'rotateZ(0deg)' }))
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('fillAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => fill', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('fillAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => fill', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({
                                     'stroke-dasharray': 180,
                                     'stroke-dashoffset': 90,
                                     'transformOrigin': 'center',
                                     'stroke': '#DE3E35'
                                 }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('1400ms ease-out')
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('1400ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('fill', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('fill', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({
                                 'stroke-dasharray': 315,
                                 'stroke-dashoffset': 0,
                                 'transformOrigin': 'center',
@@ -2614,30 +2680,30 @@ var FivLoadingRefresherContent = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivLoadingRefresherContent.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"] },
-        { type: _angular_animations__WEBPACK_IMPORTED_MODULE_8__["AnimationBuilder"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ElementRef"] },
+        { type: _angular_animations__WEBPACK_IMPORTED_MODULE_7__["AnimationBuilder"] }
     ]; };
     FivLoadingRefresherContent.propDecorators = {
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        spinColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fabColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        iconColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        checkmark: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivHidden: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivShowed: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivProgress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        spinner: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['spinner',] }],
-        background: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['background',] }]
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        spinColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fabColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        iconColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        checkmark: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivHidden: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivShowed: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivProgress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        spinner: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['spinner',] }],
+        background: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['background',] }]
     };
     return FivLoadingRefresherContent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivLoadingContent = /** @class */ (function () {
     function FivLoadingContent(builder, renderer) {
@@ -2646,8 +2712,8 @@ var FivLoadingContent = /** @class */ (function () {
         this.hintText = 'new posts';
         this.maxPullHeight = 168;
         this.minPullHeight = 112;
-        this.fivProgressChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivProgressChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.hintVisible = false;
         this.currentProgress = 0;
         this.refreshing = false;
@@ -2749,21 +2815,28 @@ var FivLoadingContent = /** @class */ (function () {
      */
     function (progress) {
         var _this = this;
-        return new Promise(function (resolve) {
+        return new Promise((/**
+         * @param {?} resolve
+         * @return {?}
+         */
+        function (resolve) {
             /** @type {?} */
             var animation = _this.builder.build([
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: "translateY(" + _this.currentProgress * 168 + "px) rotateZ(" + 360 * _this.currentProgress + "deg)" }),
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('85ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: "translateY(" + progress * 168 + "px) rotateZ(" + 360 * progress + "deg)" }))
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: "translateY(" + _this.currentProgress * 168 + "px) rotateZ(" + 360 * _this.currentProgress + "deg)" }),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('85ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: "translateY(" + progress * 168 + "px) rotateZ(" + 360 * progress + "deg)" }))
             ]);
             /** @type {?} */
             var player = animation.create(_this.spinner.element.nativeElement);
             player.play();
-            player.onDone(function () {
+            player.onDone((/**
+             * @return {?}
+             */
+            function () {
                 _this.setPullAnimationProgress(progress);
                 player.destroy();
                 resolve();
-            });
-        });
+            }));
+        }));
     };
     /**
      * @param {?} progress
@@ -2820,17 +2893,20 @@ var FivLoadingContent = /** @class */ (function () {
         var _this = this;
         /** @type {?} */
         var animation = this.builder.build([
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: "translateY(" + this.currentProgress * 168 + "px) rotateZ(" + 360 * this.currentProgress + "deg)" }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('145ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: 'translateY(0) rotateZ(0)' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: "translateY(" + this.currentProgress * 168 + "px) rotateZ(" + 360 * this.currentProgress + "deg)" }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('145ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'translateY(0) rotateZ(0)' }))
         ]);
         /** @type {?} */
         var player = animation.create(this.spinner.element.nativeElement);
         player.play();
-        player.onDone(function () {
+        player.onDone((/**
+         * @return {?}
+         */
+        function () {
             _this.setPullAnimationProgress(0);
             _this.spinner.visible = false;
             player.destroy();
-        });
+        }));
     };
     /**
      * @param {?} progress
@@ -2847,40 +2923,40 @@ var FivLoadingContent = /** @class */ (function () {
             setStyle(this.spinner.element.nativeElement, 'transform', "translateY(" + 168 * this.currentProgress + "px) rotateZ(" + 360 * progress / 200 + "deg)");
     };
     FivLoadingContent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-loading-content',
                     template: "<fiv-loading-refresher-content (fivProgress)=\"onSpinnerProgress($event)\" (fivHidden)=\"afterSpinnerHide()\" (fivComplete)=\"fillAnimationDone()\"\n  #spinner></fiv-loading-refresher-content>\n<ion-chip class=\"gg-hint-wrapper\" *ngIf=\"hintVisible\" [@hintAnim] (@hintAnim.done)=\"postHint($event)\" (click)=\"onHintClicked()\"\n  #hint>\n  <ion-icon class=\"icon\" name=\"md-arrow-up\"></ion-icon>\n  <ion-label class=\"text\">{{hintText}}</ion-label>\n</ion-chip>\n\n<ion-content no-bounce fivPull [maxPullHeight]=\"maxPullHeight\" [minPullHeight]=\"minPullHeight\" (fivPull)=\"fivPull($event)\"\n  (fivRefresh)=\"onRefresh()\" (fivCancel)=\"fivCancel()\" [enabled]=\"!refreshing && !hintVisible\">\n\n  <ng-content></ng-content>\n</ion-content>",
                     animations: [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('fillAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => fill', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('fillAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => fill', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({
                                     'stroke-dasharray': 180,
                                     'stroke-dashoffset': 90,
                                     'transformOrigin': 'center',
                                     'stroke': '#DE3E35'
                                 }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('360ms ease-out')
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('360ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('fill', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('fill', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({
                                 'stroke-dasharray': 315,
                                 'stroke-dashoffset': 0,
                                 'transformOrigin': 'center',
                                 'stroke': '#1B9A59',
                             }))
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('spinnerAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => void', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('250ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: 0 }))
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('spinnerAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => void', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('250ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 0 }))
                             ]),
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('hintAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: 'translateY(0px) translateX(-50%)' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('150ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: 1, transform: 'translateY(112px) translateX(-50%)' }))
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('hintAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'translateY(0px) translateX(-50%)' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('150ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 1, transform: 'translateY(112px) translateX(-50%)' }))
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => void', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ width: '112px', opacity: 1, transform: 'translateY(112px) translateX(-50%)' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ width: '40px', transform: 'translateY(112px) translateX(-50%)' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => void', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ width: '112px', opacity: 1, transform: 'translateY(112px) translateX(-50%)' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ width: '40px', transform: 'translateY(112px) translateX(-50%)' }))
                             ]),
                         ]),
                     ],
@@ -2889,24 +2965,24 @@ var FivLoadingContent = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivLoadingContent.ctorParameters = function () { return [
-        { type: _angular_animations__WEBPACK_IMPORTED_MODULE_8__["AnimationBuilder"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Renderer2"] }
+        { type: _angular_animations__WEBPACK_IMPORTED_MODULE_7__["AnimationBuilder"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Renderer2"] }
     ]; };
     FivLoadingContent.propDecorators = {
-        hintText: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        maxPullHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        minPullHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivProgressChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['content',] }],
-        spinner: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['spinner',] }]
+        hintText: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        maxPullHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        minPullHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivProgressChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['content',] }],
+        spinner: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['spinner',] }]
     };
     return FivLoadingContent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivLoadingFab = /** @class */ (function () {
     function FivLoadingFab(renderer) {
@@ -2915,10 +2991,10 @@ var FivLoadingFab = /** @class */ (function () {
         this.checkmark = false;
         this.disabled = false;
         this.visible = true;
-        this.fivComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivHidden = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivShow = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivHidden = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivShow = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.loading = false;
         this.iconState = 'normal';
     }
@@ -3057,48 +3133,48 @@ var FivLoadingFab = /** @class */ (function () {
         }
     };
     FivLoadingFab.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-loading-fab',
                     template: "<ion-fab *ngIf=\"visible\" (@fabAnim.done)=\"fabAnimDone($event)\" [@fabAnim] [vertical]=\"vertical\" [horizontal]=\"horizontal\" [slot]=\"slot\" [edge]=\"edge\">\n  <!-- <fiv-loading-spinner (fivProgress)=\"rotate($event)\" #spinner (fivComplete)=\"fillAnimationDone()\" *ngIf=\"loading\" class=\"spinner\" [circleRadius]=\"32\" [diameter]=\"72\" [strokeWidth]=\"4\" [mode]=\"'indeterminate'\"></fiv-loading-spinner> -->\n  <fiv-loading-spinner (fivProgress)=\"rotate($event)\" #spinner (fivComplete)=\"fillAnimationDone()\" *ngIf=\"loading\" class=\"spinner\" [circleRadius]=\"30\" [diameter]=\"68\" [strokeWidth]=\"4\" [mode]=\"'indeterminate'\"></fiv-loading-spinner>\n\n  <ion-fab-button [disabled]=\"disabled\">\n    <fiv-icon (transitionDone)=\"postComplete()\" [fivCenter]=\"{horizontal: true, vertical: true}\" [name]=\"icon\" [color]=\"iconColor\"></fiv-icon>\n  </ion-fab-button>\n</ion-fab>",
-                    animations: [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('fabAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: 'scale(0)' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('250ms ease-out')
+                    animations: [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('fabAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(0)' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('250ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => void', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('250ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: 'scale(0)' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => void', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('250ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(0)' }))
                             ])
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('spinnerAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('250ms ease-out')
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('spinnerAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('250ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => void', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('250ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => void', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('250ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0' }))
                             ])
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('rotateAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('normal => rotate', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-out')
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('rotateAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('normal => rotate', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('rotate => normal', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-in')
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('rotate => normal', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-in')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('rotate', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0', transform: 'rotateZ(45deg)' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '1', transform: 'rotateZ(0deg)' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('rotate', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0', transform: 'rotateZ(45deg)' })),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1', transform: 'rotateZ(0deg)' }))
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('fillAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => fill', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('fillAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => fill', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({
                                     'stroke-dasharray': 180,
                                     'stroke-dashoffset': 90,
                                     'transformOrigin': 'center',
                                     'stroke': '#DE3E35'
                                 }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('1400ms ease-out')
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('1400ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('fill', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('fill', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({
                                 'stroke-dasharray': 315,
                                 'stroke-dashoffset': 0,
                                 'transformOrigin': 'center',
@@ -3111,33 +3187,33 @@ var FivLoadingFab = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivLoadingFab.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Renderer2"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Renderer2"] }
     ]; };
     FivLoadingFab.propDecorators = {
-        vertical: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        horizontal: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        edge: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        slot: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        spinColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fabColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        iconColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        checkmark: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        visible: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivHidden: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivShow: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        spinner: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['spinner',] }],
-        classes: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class',] }]
+        vertical: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        horizontal: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        edge: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        slot: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        spinColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fabColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        iconColor: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        checkmark: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        visible: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivComplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivHidden: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivShow: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        spinner: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['spinner',] }],
+        classes: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class',] }]
     };
     return FivLoadingFab;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivAppBarTabContent = /** @class */ (function () {
     function FivAppBarTabContent() {
@@ -3145,7 +3221,7 @@ var FivAppBarTabContent = /** @class */ (function () {
         this.titleLayout = 'hide';
         this.selected = false;
         this.badge = -1;
-        this.ionTabButtonClick = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.ionTabButtonClick = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
     }
     Object.defineProperty(FivAppBarTabContent.prototype, "classes", {
         get: /**
@@ -3180,7 +3256,7 @@ var FivAppBarTabContent = /** @class */ (function () {
         });
     };
     FivAppBarTabContent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-app-bar-tab-content',
                     template: "<fiv-ripple (fivClick)=\"onClick()\" class=\"tab\" [ngClass]=\"{'active': active}\">\n  <fiv-icon [(indicatorValue)]=\"badge\" [name]=\"icon\"></fiv-icon>\n  <ion-label>{{name}}</ion-label>\n</fiv-ripple>",
                     styles: [":host{width:50%;height:100%;display:inline-block;position:relative}:host fiv-ripple{width:100%;height:100%;display:flex;position:relative;flex-direction:column;align-items:center;justify-content:center}:host fiv-icon{display:block;order:-1;--fiv-dot-top:-6px;--fiv-dot-right:-6px}:host ion-label{order:0}:host .tab.active{--fiv-color-icon:var(--ion-color-primary)}:host .tab.active ion-label{color:var(--ion-color-primary)}:host(.label-hide) ion-label{display:none}:host(.label-active-only) fiv-ripple:not(.active) ion-label{display:none}"]
@@ -3189,22 +3265,22 @@ var FivAppBarTabContent = /** @class */ (function () {
     /** @nocollapse */
     FivAppBarTabContent.ctorParameters = function () { return []; };
     FivAppBarTabContent.propDecorators = {
-        name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        tab: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        href: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        active: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        titleLayout: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        badge: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        classes: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class',] }],
-        ionTabButtonClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }]
+        name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        tab: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        href: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        active: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        titleLayout: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        badge: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        classes: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class',] }],
+        ionTabButtonClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }]
     };
     return FivAppBarTabContent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivAppBarTab = /** @class */ (function () {
     function FivAppBarTab() {
@@ -3219,7 +3295,7 @@ var FivAppBarTab = /** @class */ (function () {
     function () {
     };
     FivAppBarTab.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-app-bar-tab',
                     template: "<ng-template>\n  <ng-content></ng-content>\n</ng-template>",
                     styles: [":host{width:50%;height:100%;display:inline-block;position:relative}:host fiv-ripple{width:100%;height:100%}:host fiv-icon{display:block}:host .tab.active{--fiv-color-icon:var(--ion-color-primary)}"]
@@ -3228,18 +3304,18 @@ var FivAppBarTab = /** @class */ (function () {
     /** @nocollapse */
     FivAppBarTab.ctorParameters = function () { return []; };
     FivAppBarTab.propDecorators = {
-        name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        tab: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        href: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        badge: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        tab: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        href: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        badge: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivAppBarTab;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivAppBar = /** @class */ (function () {
     function FivAppBar(router, tabs) {
@@ -3252,7 +3328,7 @@ var FivAppBar = /** @class */ (function () {
         this.transitioning = false;
         this.icon = 'md-add';
         this.titleLayout = 'hide';
-        this.fivFabClick = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivFabClick = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
     }
     Object.defineProperty(FivAppBar.prototype, "position", {
         get: /**
@@ -3305,9 +3381,12 @@ var FivAppBar = /** @class */ (function () {
             }
             else if (this._fabVisible === false && fabVisible === true) {
                 this.cutoutVisible = true;
-                setTimeout(function () {
+                setTimeout((/**
+                 * @return {?}
+                 */
+                function () {
                     _this._fabVisible = true;
-                }, 250);
+                }), 250);
             }
         },
         enumerable: true,
@@ -3349,13 +3428,19 @@ var FivAppBar = /** @class */ (function () {
         if (this.transitioning) {
             this.setPosition();
             this.cutoutVisible = false;
-            setTimeout(function () {
+            setTimeout((/**
+             * @return {?}
+             */
+            function () {
                 _this.cutoutVisible = true;
-                setTimeout(function () {
+                setTimeout((/**
+                 * @return {?}
+                 */
+                function () {
                     _this._fabVisible = true;
                     _this.transitioning = false;
-                }, 225);
-            }, 225);
+                }), 225);
+            }), 225);
         }
         else {
             this.cutoutVisible = false;
@@ -3428,7 +3513,7 @@ var FivAppBar = /** @class */ (function () {
         this.tabs.select(event.tab);
     };
     FivAppBar.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-app-bar',
                     template: "<div class=\"appbar\" [ngClass]=\"{'cutout': cutoutVisible, 'left': left, 'right': right}\">\n  <div class=\"appbar-rect left\">\n    <div class=\"tabs\">\n      <fiv-app-bar-tab-content (ionTabButtonClick)=\"ionTabButtonClick($event)\"  [active]=\"router.url.endsWith(tab.href)\" [tab]=\"tab.tab\" [href]=\"tab.href\" [name]=\"tab.name\"\n        [icon]=\"tab.icon\" [badge]=\"tab.badge\" [titleLayout]=\"titleLayout\" *ngFor=\"let tab of tabsLeft\"></fiv-app-bar-tab-content>\n    </div>\n  </div>\n  <fiv-loading-fab (fivHidden)=\"onFabHidden()\" [icon]=\"icon\" [visible]=\"_fabVisible\" #fab (click)=\"fabClick()\"></fiv-loading-fab>\n  <div class=\"rect\"></div>\n  <div class=\"appbar-rect right\">\n    <div class=\"tabs\">\n      <fiv-app-bar-tab-content (ionTabButtonClick)=\"ionTabButtonClick($event)\" [active]=\"router.url.endsWith(tab.href)\" [tab]=\"tab.tab\" [href]=\"tab.href\" [name]=\"tab.name\"\n        [icon]=\"tab.icon\" [badge]=\"tab.badge\"  [titleLayout]=\"titleLayout\" *ngFor=\"let tab of tabsRight\"></fiv-app-bar-tab-content>\n    </div>\n  </div>\n</div>",
                     styles: [":host{--fiv-color-appbar:var(--ion-color-light);--fiv-color-fab:var(--ion-color-primary)}.appbar{width:100%;position:fixed;bottom:0;left:0;height:84px;background:rgba(0,0,0,0);z-index:5000}.appbar .appbar-rect{position:absolute;width:calc(50% - 34px);height:56px;bottom:0;box-shadow:3px -4px 5px 0 rgba(0,0,0,.1);transition:350ms}.appbar .appbar-rect.left{left:0;background:var(--fiv-color-appbar);border-top-right-radius:12px}.appbar .appbar-rect.right{right:0;background:var(--fiv-color-appbar);border-top-left-radius:12px}.appbar fiv-loading-fab{width:56px;height:56px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;position:absolute;z-index:14}.appbar fiv-loading-fab fiv-icon{--fiv-color-icon:var(--fiv-color-fab-icon)}.appbar .rect{display:inline-block;width:68px;height:48px;position:absolute;overflow:hidden;bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);transition:350ms}.appbar .rect:before{content:'';position:absolute;bottom:50%;width:100%;height:100%;border-radius:100%;box-shadow:0 300px 0 300px var(--fiv-color-appbar);transition:350ms}.appbar:not(.cutout) .appbar-rect.left{border-top-right-radius:0}.appbar:not(.cutout) .appbar-rect.right{border-top-left-radius:0}.appbar:not(.cutout) .rect{height:56px;box-shadow:3px -4px 5px 0 rgba(0,0,0,.1);background:var(--fiv-color-appbar)}.appbar:not(.cutout) .rect:before{border-radius:0;bottom:100%}.appbar.left .appbar-rect.left{width:4px}.appbar.left .appbar-rect.right{width:calc(100% - 70px)}.appbar.left .rect{left:4px;-webkit-transform:translateX(0);transform:translateX(0);width:66px}.appbar.left fiv-loading-fab{width:56px;height:56px;-webkit-transform:translateX(0);transform:translateX(0);left:10px;position:absolute}.appbar.right .appbar-rect.left{width:calc(100% - 70px)}.appbar.right .appbar-rect.right{width:4px}.appbar.right .rect{left:calc(100% - 37px);width:67px}.appbar.right fiv-loading-fab{width:56px;height:56px;-webkit-transform:translateX(0);transform:translateX(0);left:calc(100% - 64px);position:absolute;--fiv-spinner-size:68px}.tabs{display:flex;width:100%;height:100%;position:relative}"]
@@ -3437,24 +3522,24 @@ var FivAppBar = /** @class */ (function () {
     /** @nocollapse */
     FivAppBar.ctorParameters = function () { return [
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["IonTabs"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Host"] }] }
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["IonTabs"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Host"] }] }
     ]; };
     FivAppBar.propDecorators = {
-        fab: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['fab',] }],
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        titleLayout: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivFabClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        _tabs: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChildren"], args: [FivAppBarTabContent,] }],
-        tabComponents: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ContentChildren"], args: [FivAppBarTab,] }],
-        position: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fabVisible: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        fab: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['fab',] }],
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        titleLayout: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivFabClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        _tabs: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChildren"], args: [FivAppBarTabContent,] }],
+        tabComponents: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ContentChildren"], args: [FivAppBarTab,] }],
+        position: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fabVisible: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivAppBar;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivIfPlatform = /** @class */ (function () {
     function FivIfPlatform(platform, viewContainer, templateRef) {
@@ -3471,11 +3556,15 @@ var FivIfPlatform = /** @class */ (function () {
             var _this = this;
             /** @type {?} */
             var show = true;
-            platforms.forEach(function (p) {
+            platforms.forEach((/**
+             * @param {?} p
+             * @return {?}
+             */
+            function (p) {
                 if (!_this.platform.is(p)) {
                     show = false;
                 }
-            });
+            }));
             if (show) {
                 this.viewContainer.createEmbeddedView(this.templateRef);
             }
@@ -3487,25 +3576,25 @@ var FivIfPlatform = /** @class */ (function () {
         configurable: true
     });
     FivIfPlatform.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Directive"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Directive"], args: [{
                     selector: '[fivIf]'
                 },] }
     ];
     /** @nocollapse */
     FivIfPlatform.ctorParameters = function () { return [
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["Platform"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewContainerRef"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["TemplateRef"] }
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["Platform"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewContainerRef"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["TemplateRef"] }
     ]; };
     FivIfPlatform.propDecorators = {
-        fivIf: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        fivIf: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivIfPlatform;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivCenter = /** @class */ (function () {
     function FivCenter(sanitizer) {
@@ -3549,7 +3638,7 @@ var FivCenter = /** @class */ (function () {
     function () {
     };
     FivCenter.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Directive"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Directive"], args: [{
                     selector: '[fivCenter]'
                 },] }
     ];
@@ -3558,15 +3647,15 @@ var FivCenter = /** @class */ (function () {
         { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"] }
     ]; };
     FivCenter.propDecorators = {
-        myStyle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['style',] }],
-        fivCenter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        myStyle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['style',] }],
+        fivCenter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivCenter;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivPermissions = /** @class */ (function () {
     function FivPermissions(viewContainer, templateRef) {
@@ -3609,11 +3698,19 @@ var FivPermissions = /** @class */ (function () {
         var _this = this;
         /** @type {?} */
         var show = false;
-        this.uPermissions.forEach(function (role) {
-            if (_this.allowedPermissions.find(function (a) { return a.toUpperCase() === role.toUpperCase(); })) {
+        this.uPermissions.forEach((/**
+         * @param {?} role
+         * @return {?}
+         */
+        function (role) {
+            if (_this.allowedPermissions.find((/**
+             * @param {?} a
+             * @return {?}
+             */
+            function (a) { return a.toUpperCase() === role.toUpperCase(); }))) {
                 show = true;
             }
-        });
+        }));
         return show;
     };
     /**
@@ -3631,40 +3728,43 @@ var FivPermissions = /** @class */ (function () {
         }
     };
     FivPermissions.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Directive"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Directive"], args: [{
                     selector: '[fivPermissions]'
                 },] }
     ];
     /** @nocollapse */
     FivPermissions.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewContainerRef"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["TemplateRef"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewContainerRef"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["TemplateRef"] }
     ]; };
     FivPermissions.propDecorators = {
-        fivPermissionsUserPermissions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivPermissions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        fivPermissionsUserPermissions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivPermissions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivPermissions;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivRipple = /** @class */ (function () {
     function FivRipple(el, renderer) {
         this.el = el;
         this.renderer = renderer;
         this.auto = 'auto';
-        this.rippleAnimationEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.rippleAnimationEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.round = false;
         this.hover = false;
-        this.fivClick = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivClick = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.rippleAnimationEvent.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(750))
-            .subscribe(function () {
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             renderer.removeClass(el.nativeElement.querySelector('.ripple'), 'show');
             renderer.removeClass(el.nativeElement.querySelector('.rippleWrapper'), 'show');
-        });
+        }));
     }
     /**
      * @param {?} event
@@ -3784,7 +3884,7 @@ var FivRipple = /** @class */ (function () {
         this.rippleAnimationEvent.emit();
     };
     FivRipple.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     // tslint:disable-next-line:component-selector
                     selector: 'fiv-ripple',
                     template: "<ng-content></ng-content>",
@@ -3797,32 +3897,32 @@ var FivRipple = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivRipple.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Renderer2"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ElementRef"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Renderer2"] }
     ]; };
     FivRipple.propDecorators = {
-        round: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        hover: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        position: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['style.position',] }],
-        clickEvent: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostListener"], args: ['click', ['$event'],] }],
-        PressEvent: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostListener"], args: ['press', ['$event'],] }],
-        isRound: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class.round',] }],
-        canHover: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class.hover',] }]
+        round: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        hover: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        position: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['style.position',] }],
+        clickEvent: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostListener"], args: ['click', ['$event'],] }],
+        PressEvent: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostListener"], args: ['press', ['$event'],] }],
+        isRound: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class.round',] }],
+        canHover: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class.hover',] }]
     };
     return FivRipple;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivViewport = /** @class */ (function () {
     function FivViewport(elementRef) {
         this.elementRef = elementRef;
         this.offset = 0;
-        this.fivAppear = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivDisappear = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivAppear = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivDisappear = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.visible = false;
     }
     /**
@@ -3837,9 +3937,12 @@ var FivViewport = /** @class */ (function () {
         var content = this.elementRef.nativeElement.closest('ion-content');
         this.check();
         content.scrollEvents = true;
-        this.subscription = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.elementRef.nativeElement.closest('ion-content'), 'ionScroll')
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["merge"])(Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(window, 'resize')), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(50))
-            .subscribe(function () { return _this.check(); });
+        this.subscription = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.elementRef.nativeElement.closest('ion-content'), 'ionScroll')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["merge"])(Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(window, 'resize')), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(50))
+            .subscribe((/**
+         * @return {?}
+         */
+        function () { return _this.check(); }));
     };
     /**
      * @return {?}
@@ -3899,26 +4002,26 @@ var FivViewport = /** @class */ (function () {
         return this.visible;
     };
     FivViewport.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Directive"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Directive"], args: [{
                     selector: '[fivViewport]',
                     exportAs: 'viewport'
                 },] }
     ];
     /** @nocollapse */
     FivViewport.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ElementRef"] }
     ]; };
     FivViewport.propDecorators = {
-        offset: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivAppear: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivDisappear: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }]
+        offset: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivAppear: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivDisappear: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }]
     };
     return FivViewport;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivPull = /** @class */ (function () {
     function FivPull(element, content) {
@@ -3927,9 +4030,9 @@ var FivPull = /** @class */ (function () {
         this.minPullHeight = 112;
         this.maxPullHeight = 168;
         this.enabled = true;
-        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivCancel = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivPull = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivRefresh = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivCancel = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivPull = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
     }
     /**
      * @return {?}
@@ -3940,10 +4043,14 @@ var FivPull = /** @class */ (function () {
     function () {
         var _this = this;
         this.content.scrollEvents = true;
-        this.content.getScrollElement().then(function (s) {
+        this.content.getScrollElement().then((/**
+         * @param {?} s
+         * @return {?}
+         */
+        function (s) {
             _this.scrollY = s; // needed for scrollTop
             _this.setupPanListener();
-        });
+        }));
     };
     /**
      * @private
@@ -3956,25 +4063,37 @@ var FivPull = /** @class */ (function () {
     function () {
         var _this = this;
         /** @type {?} */
-        var touchstart$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.element.nativeElement, 'touchstart');
+        var touchstart$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.element.nativeElement, 'touchstart');
         /** @type {?} */
-        var touchmove$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.element.nativeElement, 'touchmove');
+        var touchmove$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.element.nativeElement, 'touchmove');
         /** @type {?} */
-        var touchend$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.element.nativeElement, 'touchend');
+        var touchend$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.element.nativeElement, 'touchend');
         /** @type {?} */
-        var touchcancel$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.element.nativeElement, 'touchcancel');
+        var touchcancel$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.element.nativeElement, 'touchcancel');
         /** @type {?} */
-        var end$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["merge"])(touchend$, touchcancel$);
+        var end$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["merge"])(touchend$, touchcancel$);
         /** @type {?} */
         var dragAtTop = touchstart$
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (e) { return _this.scrollY.scrollTop === 0 && _this.enabled; }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @param {?} e
+         * @return {?}
+         */
+        function (e) { return _this.scrollY.scrollTop === 0 && _this.enabled; })));
         /** @type {?} */
         var dragTopDown = dragAtTop
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (start) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
+         * @param {?} start
+         * @return {?}
+         */
+        function (start) {
             /** @type {?} */
             var startY = start.touches[0].pageY;
             return touchmove$
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (move) {
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
+             * @param {?} move
+             * @return {?}
+             */
+            function (move) {
                 /** @type {?} */
                 var currentY = move.touches[0].pageY;
                 return {
@@ -3984,10 +4103,22 @@ var FivPull = /** @class */ (function () {
                     currentY: currentY,
                     offset: currentY - startY
                 };
-            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["skipWhile"])(function (drag) { return drag.offset < 0; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(end$));
-        }));
-        dragTopDown.forEach(function (drags) {
-            drags.forEach(function (drag) {
+            })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["skipWhile"])((/**
+             * @param {?} drag
+             * @return {?}
+             */
+            function (drag) { return drag.offset < 0; })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(end$));
+        })));
+        dragTopDown.forEach((/**
+         * @param {?} drags
+         * @return {?}
+         */
+        function (drags) {
+            drags.forEach((/**
+             * @param {?} drag
+             * @return {?}
+             */
+            function (drag) {
                 drag.moveEvent.preventDefault();
                 /** @type {?} */
                 var offset = drag.offset / 2;
@@ -3996,10 +4127,14 @@ var FivPull = /** @class */ (function () {
                 }
                 if (offset <= _this.maxPullHeight) ;
                 _this.fivPull.emit(offset / _this.maxPullHeight);
-            });
+            }));
             drags
                 .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeLast"])(1))
-                .subscribe(function (drag) {
+                .subscribe((/**
+             * @param {?} drag
+             * @return {?}
+             */
+            function (drag) {
                 /** @type {?} */
                 var offset = drag.offset / 2;
                 /** @type {?} */
@@ -4010,39 +4145,39 @@ var FivPull = /** @class */ (function () {
                 else {
                     _this.fivCancel.emit();
                 }
-            });
-        });
+            }));
+        }));
     };
     FivPull.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Directive"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Directive"], args: [{
                     selector: '[fivPull]'
                 },] }
     ];
     /** @nocollapse */
     FivPull.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["IonContent"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ElementRef"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["IonContent"] }
     ]; };
     FivPull.propDecorators = {
-        minPullHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        maxPullHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        enabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivCancel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivPull: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }]
+        minPullHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        maxPullHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        enabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivRefresh: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivCancel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivPull: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }]
     };
     return FivPull;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivIcon = /** @class */ (function () {
     function FivIcon() {
         this._indicatorValue = -1;
         this.state = 'normal';
-        this.transitionDone = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.transitionDone = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.indicatorState = 'scale';
         this.indicatorValueState = 'scale';
     }
@@ -4173,34 +4308,34 @@ var FivIcon = /** @class */ (function () {
         }
     };
     FivIcon.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-icon',
                     template: "<ion-icon [@rotateAnim]=\"state\" (@rotateAnim.done)=\"rotateAnimDone($event)\" [name]=\"_name\" [color]=\"color\"></ion-icon>\n<span [@scaleAnim]=\"indicatorState\" class=\"indicator\"></span>\n<span *ngIf=\"_indicatorValue > 0\" class=\"indicator-background\">\n</span>\n<span [@scaleAnim]=\"indicatorValueState\" (@scaleAnim.done)=\"incrementDone($event)\" class=\"indicator-value\"><span *ngIf=\"indicatorValue <= 9\">{{indicatorValue}}</span><span *ngIf=\"indicatorValue > 9\">9+</span></span>\n",
-                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ChangeDetectionStrategy"].OnPush,
+                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ChangeDetectionStrategy"].OnPush,
                     animations: [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('rotateAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('normal => rotate', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-out')
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('rotateAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('normal => rotate', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('rotate => normal', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-in')
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('rotate => normal', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-in')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('rotate', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0', transform: 'scale(0) rotateZ(45deg)' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '1', transform: 'scale(1) rotateZ(0deg)' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('rotate', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0', transform: 'scale(0) rotateZ(45deg)' })),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1', transform: 'scale(1) rotateZ(0deg)' }))
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('scaleAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => normal', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0', transform: 'scale(0)' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '1', transform: 'scale(1)' }))
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('scaleAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => normal', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0', transform: 'scale(0)' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1', transform: 'scale(1)' }))
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('normal => scale', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-out')
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('normal => scale', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('scale => normal', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-in')
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('scale => normal', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-in')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('scale', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0', transform: 'scale(0)' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '1', transform: 'scale(1)' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('scale', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0', transform: 'scale(0)' })),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1', transform: 'scale(1)' }))
                         ])
                     ],
                     styles: [":host{--fiv-padding-end:0;--fiv-padding-start:0;--fiv-dot-right:-6px;--fiv-dot-top:-2px;--fiv-color-icon:inherit;position:relative}ion-icon{margin:0;font-size:1.8em;color:var(--fiv-color-icon);padding-right:var(--fiv-padding-end);padding-left:var(--fiv-padding-start)}.indicator{position:absolute;width:var(--fiv-dot-width,8px);height:var(--fiv-dot-height,8px);background-color:var(--fiv-dot-color,var(--fiv-color-indicator,--ion-color-primary));top:calc(var(--fiv-dot-top,0px) + 3px);border-radius:100%;right:calc(var(--fiv-dot-right,4px) + 3px);z-index:12}.indicator-value{position:absolute;min-width:var(--fiv-dot-width,14px);height:var(--fiv-dot-height,14px);background-color:var(--fiv-dot-color,var(--ion-color-primary));color:var(--fiv-dot-color-background,var(--ion-color-light));top:var(--fiv-dot-top,0);border-radius:14px;right:var(--fiv-dot-right,4px);z-index:13}.indicator-value *{position:absolute;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);left:50%;top:50%;font-size:.6em}.indicator-background{position:absolute;width:var(--fiv-dot-width,18px);height:var(--fiv-dot-height,18px);background-color:var(--fiv-dot-color-background,var(--ion-color-light));top:calc(var(--fiv-dot-top,0px) - 2px);border-radius:100%;right:calc(var(--fiv-dot-right,4px) - 2px);z-index:11}"]
@@ -4209,44 +4344,126 @@ var FivIcon = /** @class */ (function () {
     /** @nocollapse */
     FivIcon.ctorParameters = function () { return []; };
     FivIcon.propDecorators = {
-        color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        transitionDone: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        indicatorValue: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        transitionDone: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        indicatorValue: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivIcon;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var FivDialog = /** @class */ (function () {
-    function FivDialog() {
-        this.verticalAlign = 'center';
-        this.animation = 'fade';
-        this.visible = false;
-        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+var OverlayContentComponent = /** @class */ (function () {
+    function OverlayContentComponent() {
     }
-    Object.defineProperty(FivDialog.prototype, "isVisible", {
+    /**
+     * @return {?}
+     */
+    OverlayContentComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () { };
+    OverlayContentComponent.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
+                    selector: 'fiv-overlay-content',
+                    template: "<ng-content #content></ng-content>",
+                    styles: [""]
+                }] }
+    ];
+    /** @nocollapse */
+    OverlayContentComponent.ctorParameters = function () { return []; };
+    return OverlayContentComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var OverlayComponent = /** @class */ (function () {
+    function OverlayComponent(overlay) {
+        this.overlay = overlay;
+        this._open = false;
+    }
+    /**
+     * @return {?}
+     */
+    OverlayComponent.prototype.show = /**
+     * @return {?}
+     */
+    function () {
+        if (!this.componentRef) {
+            /** @type {?} */
+            var ref = this.overlay.createOverlay(OverlayContentComponent, this.ngContent);
+            this.componentRef = ref;
+            this._open = true;
+            return ref.instance;
+        }
+    };
+    /**
+     * @return {?}
+     */
+    OverlayComponent.prototype.hide = /**
+     * @return {?}
+     */
+    function () {
+        if (this.componentRef) {
+            this.componentRef.destroy();
+            this.componentRef = null;
+            this._open = false;
+        }
+    };
+    Object.defineProperty(OverlayComponent.prototype, "open", {
         get: /**
          * @return {?}
          */
         function () {
-            return this.visible;
+            return this._open;
         },
         enumerable: true,
         configurable: true
     });
+    OverlayComponent.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
+                    selector: 'fiv-overlay',
+                    template: "<ng-template #content>\n  <ng-content></ng-content>\n</ng-template>",
+                    styles: [""]
+                }] }
+    ];
+    /** @nocollapse */
+    OverlayComponent.ctorParameters = function () { return [
+        { type: OverlayService }
+    ]; };
+    OverlayComponent.propDecorators = {
+        ngContent: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['content',] }]
+    };
+    return OverlayComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var FivDialog = /** @class */ (function () {
+    function FivDialog() {
+        this.verticalAlign = 'top';
+        this.backdrop = false;
+        // animation data
+        this.inDuration = 220;
+        this.outDuration = 180;
+        this.outPosition = '-100%';
+        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.dialogState = 'out';
+    }
     /**
      * @return {?}
      */
     FivDialog.prototype.ngOnInit = /**
      * @return {?}
      */
-    function () {
-    };
+    function () { };
     /**
      * @return {?}
      */
@@ -4254,7 +4471,13 @@ var FivDialog = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.visible = true;
+        this.outPosition = this.getSlideStartPosition();
+        console.log('open from', this.outPosition);
+        this.overlay.show();
+        this.dialogState = 'in';
+        if (this.duration) {
+            this.bar.shrinkIn(this.duration);
+        }
     };
     /**
      * @return {?}
@@ -4263,54 +4486,91 @@ var FivDialog = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.visible = false;
+        this.dialogState = 'out';
+        this.bar.stopProgressAnimation();
+        this.bar.progress = 0;
+    };
+    /**
+     * @param {?} event
+     * @return {?}
+     */
+    FivDialog.prototype.animationDone = /**
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        if (event.fromState === 'out' && event.toState === 'in') ;
+        if (event.fromState === 'in' && event.toState === 'out') {
+            this.overlay.hide();
+            this.fivClose.emit(this);
+        }
+    };
+    /**
+     * @return {?}
+     */
+    FivDialog.prototype.getSlideStartPosition = /**
+     * @return {?}
+     */
+    function () {
+        if (this.verticalAlign === 'top') {
+            return '-100%';
+        }
+        if (this.verticalAlign === 'center') {
+            return '60%';
+        }
+        if (this.verticalAlign === 'bottom') {
+            return '100%';
+        }
     };
     FivDialog.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-dialog',
-                    template: "<div class=\"host\" [ngClass]=\"{'bottom': verticalAlign === 'bottom','center': verticalAlign === 'center', 'top': verticalAlign === 'top'}\">\n    <div (click)=\"close()\" *ngIf=\"visible && backdrop\" class=\"backdrop\"></div>\n  </div>\n  <div [@dialogAnim]=\"visible ? verticalAlign : verticalAlign + '-' + animation\" class=\"dialog\">\n    <ng-content></ng-content>\n  </div>",
+                    template: "<fiv-overlay #overlay>\n  <div *ngIf=\"backdrop\" [@fade]=\"{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}\" (click)=\"close()\" class=\"backdrop\"></div>\n  <div #dialog>\n    <ion-card [ngClass]=\"[verticalAlign]\" [@fade]=\"{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}\" [@slide]=\"{value: dialogState, params: {top: outPosition, inDuration: inDuration + 'ms',outDuration: outDuration + 'ms'}}\"\n      (@slide.done)=\"animationDone($event)\">\n      <fiv-loading-progress-bar [verticalAlign]=\"verticalAlign === 'top' ? 'bottom' : 'top'\"\n        (fivDoneShrinking)=\"close()\" #bar></fiv-loading-progress-bar>\n      <ion-card-header *ngIf=\"subtitle || title\">\n        <ion-card-subtitle *ngIf=\"subtitle\">{{subtitle}}</ion-card-subtitle>\n        <ion-card-title *ngIf=\"title\">{{title}}</ion-card-title>\n      </ion-card-header>\n      <ng-content></ng-content>\n    </ion-card>\n  </div>\n\n</fiv-overlay>",
                     animations: [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('dialogAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('bottom', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ bottom: 0 })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('top', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ top: 0 })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('center', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({
-                                top: '50%',
-                                transform: 'translateY(-50%)'
-                            })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('bottom-slide', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ bottom: 0, transform: 'translateY(100%)' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('top-slide', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ top: 0, transform: 'translateY(-100%)' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('center-slide', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ bottom: 0, transform: 'translateY(100%)' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('bottom-fade', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ bottom: 0, opacity: 0 })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('top-fade', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ top: 0, opacity: 0, display: 'none' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('center-fade', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({
-                                top: '50%',
-                                transform: 'translateY(-50%)',
-                                opacity: 0
-                            })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('200ms ease-in')
-                            ])
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('slide', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('out => in', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ top: '{{top}}' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('{{inDuration}} ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ top: '*' }))
+                            ], { params: { top: '-100%', inDuration: '400ms' } }),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('in => out', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ top: '*' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('{{outDuration}} ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ top: '{{top}}' }))
+                            ], { params: { top: '-100%', outDuration: '250ms' } })
+                        ]),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('fade', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('out => in', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '{{opacity}}' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('{{inDuration}} ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1' }))
+                            ], { params: { opacity: 0, inDuration: '250ms' } }),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('in => out', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('{{outDuration}} ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0' }))
+                            ], { params: { opacity: 0, outDuration: '200ms' } }),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0' }))
                         ])
                     ],
-                    styles: [".host{display:block;position:absolute;width:100%;z-index:5001}.host .backdrop{position:absolute;width:100%;height:100vh;background:rgba(0,0,0,.15)}.host.bottom,.host.bottom .backdrop{bottom:0}.host.center,.host.center .backdrop,.host.top,.host.top .backdrop{top:0}.dialog{position:absolute;width:100%;min-height:112px;z-index:5002}"]
+                    styles: ["ion-card{--ion-item-background:#fff;position:absolute;width:calc(100% - 20px)}ion-card.top{top:0}ion-card.center{top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}ion-card.bottom{bottom:0}.backdrop{width:100%;height:100%;background:rgba(0,0,0,.2);position:absolute}"]
                 }] }
     ];
-    /** @nocollapse */
-    FivDialog.ctorParameters = function () { return []; };
     FivDialog.propDecorators = {
-        verticalAlign: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        animation: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        backdrop: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        isVisible: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class.visible',] }]
+        verticalAlign: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        backdrop: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        duration: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        subtitle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        inDuration: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        outDuration: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        overlay: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: [OverlayComponent,] }],
+        bar: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: [FivLoadingProgressBar,] }],
+        dialogRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['dialog',] }]
     };
     return FivDialog;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivImageViewer = /** @class */ (function () {
     function FivImageViewer(componentFactoryResolver, appRef, domCtrl, platform, renderer, change, animation, sanitizer, injector) {
@@ -4325,8 +4585,8 @@ var FivImageViewer = /** @class */ (function () {
         this.injector = injector;
         this.pullDistance = 150;
         this.actions = [];
-        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivActionClick = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivActionClick = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this._isOpen = false;
         this._controlsVisible = true;
         this.thumbnailVisible = true;
@@ -4402,15 +4662,22 @@ var FivImageViewer = /** @class */ (function () {
         this.componentRef.instance.actions = this.actions;
         this.closeSub = this.componentRef.instance.fivClose
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1))
-            .subscribe(function () {
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             _this.closeSub.unsubscribe();
             _this.actionSub.unsubscribe();
             _this.thumbnailVisible = true;
-        });
+        }));
         this.actionSub = this.componentRef.instance.fivActionClick
-            .subscribe(function (ev) {
+            .subscribe((/**
+         * @param {?} ev
+         * @return {?}
+         */
+        function (ev) {
             _this.fivActionClick.emit(ev);
-        });
+        }));
         this.appRef.attachView(this.componentRef.hostView);
         /** @type {?} */
         var domElem = (/** @type {?} */ (((/** @type {?} */ (this.componentRef.hostView)))
@@ -4516,12 +4783,24 @@ var FivImageViewer = /** @class */ (function () {
         this.singletapHammer = new hammerjs__WEBPACK_IMPORTED_MODULE_3__(this.imageView.nativeElement);
         this.singletapHammer.get('tap').set({ enable: true, taps: 1 });
         /** @type {?} */
-        var doubletap$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.doubleTapHammer, 'tap');
+        var doubletap$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.doubleTapHammer, 'tap');
         /** @type {?} */
-        var singletap$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.singletapHammer, 'tap')
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(300), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(doubletap$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (event) { return event.tapCount === 1; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["repeat"])());
-        this.doubletap = doubletap$.subscribe(function (res) { return _this.handleDoubleTap(res); });
-        this.singletap = singletap$.subscribe(function (res) { return _this.handleSingleTap(); });
+        var singletap$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.singletapHammer, 'tap')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(300), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(doubletap$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @param {?} event
+         * @return {?}
+         */
+        function (event) { return event.tapCount === 1; })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["repeat"])());
+        this.doubletap = doubletap$.subscribe((/**
+         * @param {?} res
+         * @return {?}
+         */
+        function (res) { return _this.handleDoubleTap(res); }));
+        this.singletap = singletap$.subscribe((/**
+         * @param {?} res
+         * @return {?}
+         */
+        function (res) { return _this.handleSingleTap(); }));
     };
     /**
      * @return {?}
@@ -4534,21 +4813,29 @@ var FivImageViewer = /** @class */ (function () {
         this.pinchHammer = new hammerjs__WEBPACK_IMPORTED_MODULE_3__(this.imageView.nativeElement);
         this.pinchHammer.get('pinch').set({ enable: true });
         /** @type {?} */
-        var pinchend$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.pinchHammer, 'pinchend');
-        this.pinchend = pinchend$.subscribe(function (event) {
+        var pinchend$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.pinchHammer, 'pinchend');
+        this.pinchend = pinchend$.subscribe((/**
+         * @param {?} event
+         * @return {?}
+         */
+        function (event) {
             _this.scale = Math.max(0, Math.min(_this.scale * event.scale, 8));
             if (_this.scale < 1) {
                 _this.resetScale();
             }
-        });
+        }));
         /** @type {?} */
-        var pinch$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.pinchHammer, 'pinch');
+        var pinch$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.pinchHammer, 'pinch');
         this.pinch = pinch$
-            .subscribe(function (event) {
+            .subscribe((/**
+         * @param {?} event
+         * @return {?}
+         */
+        function (event) {
             _this.pinchCenter = event.center;
             _this.transform(event.scale);
             _this.move(event);
-        });
+        }));
     };
     /**
      * @return {?}
@@ -4564,48 +4851,93 @@ var FivImageViewer = /** @class */ (function () {
         this.panHammer = new hammerjs__WEBPACK_IMPORTED_MODULE_3__(this.imageView.nativeElement);
         this.panHammer.get('pan').set({ enable: true, direction: hammerjs__WEBPACK_IMPORTED_MODULE_3__["DIRECTION_ALL"] });
         /** @type {?} */
-        var panstart = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.panHammer, 'panstart');
+        var panstart = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.panHammer, 'panstart');
         /** @type {?} */
-        var panend = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.panHammer, 'panend');
+        var panend = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.panHammer, 'panend');
         /** @type {?} */
-        var panmove = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.panHammer, 'panmove');
+        var panmove = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.panHammer, 'panmove');
         /** @type {?} */
-        var pandown = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.panHammer, 'pandown');
+        var pandown = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.panHammer, 'pandown');
         /** @type {?} */
-        var panup = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["fromEvent"])(this.panHammer, 'panup');
+        var panup = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this.panHammer, 'panup');
         /** @type {?} */
         var down = panstart
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])(function () { return pandown.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function () { return _this.scale === 1; })); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])((/**
+         * @return {?}
+         */
+        function () { return pandown.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @return {?}
+         */
+        function () { return _this.scale === 1; }))); })));
         /** @type {?} */
         var up = panstart
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])(function () { return panup.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function () { return _this.scale === 1; })); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])((/**
+         * @return {?}
+         */
+        function () { return panup.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @return {?}
+         */
+        function () { return _this.scale === 1; }))); })));
         /** @type {?} */
-        var verticalPan$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["merge"])(up, down);
-        this.verticalPan = verticalPan$.subscribe(function (res) {
+        var verticalPan$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["merge"])(up, down);
+        this.verticalPan = verticalPan$.subscribe((/**
+         * @param {?} res
+         * @return {?}
+         */
+        function (res) {
             _this.setBottom(_this.calculateBottom(res));
             _this.setTop(_this.calculateTop(res));
-        });
+        }));
         /** @type {?} */
         var pinchPanMove = panmove
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function () { return _this.scale > 1; }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @return {?}
+         */
+        function () { return _this.scale > 1; })));
         /** @type {?} */
         var pinchPan$ = panstart
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (event) { return _this.pinchCenter = event.center; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])(function () { return pinchPanMove; }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
+         * @param {?} event
+         * @return {?}
+         */
+        function (event) { return _this.pinchCenter = event.center; })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["flatMap"])((/**
+         * @return {?}
+         */
+        function () { return pinchPanMove; })));
         this.pinchPan = pinchPan$
-            .subscribe(function (res) {
+            .subscribe((/**
+         * @param {?} res
+         * @return {?}
+         */
+        function (res) {
             _this.move(res);
-        });
+        }));
         this.panRemove = panend
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (event) { return _this.scale === 1 && event.distance > pullDistance && event.maxPointers === 1; }))
-            .subscribe(function () { _this.remove(); });
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @param {?} event
+         * @return {?}
+         */
+        function (event) { return _this.scale === 1 && event.distance > pullDistance && event.maxPointers === 1; })))
+            .subscribe((/**
+         * @return {?}
+         */
+        function () { _this.remove(); }));
         this.panReset = panend
             .pipe(
         // tslint:disable-next-line:max-line-length
-        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (event) { return _this.scale === 1 && event.distance <= pullDistance || _this.scale === 1 && event.distance > pullDistance && event.maxPointers > 1; }))
-            .subscribe(function (event) {
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @param {?} event
+         * @return {?}
+         */
+        function (event) { return _this.scale === 1 && event.distance <= pullDistance || _this.scale === 1 && event.distance > pullDistance && event.maxPointers > 1; })))
+            .subscribe((/**
+         * @param {?} event
+         * @return {?}
+         */
+        function (event) {
             _this.resetPan();
             _this.resetFooter(_this.calculateBottom(event));
-        });
+        }));
     };
     /**
      * @param {?} event
@@ -4695,11 +5027,14 @@ var FivImageViewer = /** @class */ (function () {
      */
     function (bottom) {
         var _this = this;
-        this.domCtrl.write(function () {
+        this.domCtrl.write((/**
+         * @return {?}
+         */
+        function () {
             if (_this._controlsVisible && _this.footer) {
                 _this.renderer.setStyle(_this.footer.nativeElement, 'bottom', "-" + bottom + "px");
             }
-        });
+        }));
     };
     /**
      * @param {?} event
@@ -4755,11 +5090,14 @@ var FivImageViewer = /** @class */ (function () {
         if (!skip) {
             this.scale = scale;
         }
-        this.domCtrl.write(function () {
+        this.domCtrl.write((/**
+         * @return {?}
+         */
+        function () {
             if (_this.imageView) {
                 _this.renderer.setStyle(_this.imageView.nativeElement, 'transform', "translateY(-50%) scale(" + scale + ")");
             }
-        });
+        }));
     };
     /**
      * @param {?} top
@@ -4773,11 +5111,14 @@ var FivImageViewer = /** @class */ (function () {
         var _this = this;
         this.top = top;
         this.thumbnailPosition.panTop = this.top + 'px';
-        this.domCtrl.write(function () {
+        this.domCtrl.write((/**
+         * @return {?}
+         */
+        function () {
             if (_this.imageView) {
                 _this.renderer.setStyle(_this.imageView.nativeElement, 'top', top + "px");
             }
-        });
+        }));
     };
     /**
      * @param {?} left
@@ -4790,11 +5131,14 @@ var FivImageViewer = /** @class */ (function () {
     function (left) {
         var _this = this;
         this.left = left;
-        this.domCtrl.write(function () {
+        this.domCtrl.write((/**
+         * @return {?}
+         */
+        function () {
             if (_this.imageView) {
                 _this.renderer.setStyle(_this.imageView.nativeElement, 'left', left + "px");
             }
-        });
+        }));
     };
     /**
      * @param {?} event
@@ -4829,16 +5173,19 @@ var FivImageViewer = /** @class */ (function () {
         var _this = this;
         /** @type {?} */
         var reset = this.animation.build([
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ top: this.top + "px" }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('150ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ top: this.platform.height() / 2 + "px" }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ top: this.top + "px" }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('150ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ top: this.platform.height() / 2 + "px" }))
         ]);
         /** @type {?} */
         var animation = reset.create(this.imageView.nativeElement);
         animation.play();
-        animation.onDone(function () {
+        animation.onDone((/**
+         * @return {?}
+         */
+        function () {
             animation.destroy();
             _this.setTop(_this.platform.height() / 2);
-        });
+        }));
     };
     /**
      * @param {?} start
@@ -4856,16 +5203,19 @@ var FivImageViewer = /** @class */ (function () {
         }
         /** @type {?} */
         var reset = this.animation.build([
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ bottom: "-" + start + "px" }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('150ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ bottom: "0px" }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ bottom: "-" + start + "px" }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('150ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ bottom: "0px" }))
         ]);
         /** @type {?} */
         var animation = reset.create(this.footer.nativeElement);
         animation.play();
-        animation.onDone(function () {
+        animation.onDone((/**
+         * @return {?}
+         */
+        function () {
             animation.destroy();
             _this.setBottom(0);
-        });
+        }));
     };
     /**
      * @param {?} toScale
@@ -4891,19 +5241,22 @@ var FivImageViewer = /** @class */ (function () {
         var newTop = this.top + deltaY / toScale;
         /** @type {?} */
         var scale = this.animation.build([
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: "translateY(-50%) scale(" + this.scale + ")", top: this.top + "px", left: this.left + "px" }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('200ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: "translateY(-50%) scale(" + toScale + ")", top: newTop + "px", left: newLeft + "px" }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: "translateY(-50%) scale(" + this.scale + ")", top: this.top + "px", left: this.left + "px" }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('200ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: "translateY(-50%) scale(" + toScale + ")", top: newTop + "px", left: newLeft + "px" }))
         ]);
         /** @type {?} */
         var animation = scale.create(this.imageView.nativeElement);
         animation.play();
-        animation.onDone(function () {
+        animation.onDone((/**
+         * @return {?}
+         */
+        function () {
             animation.destroy();
             _this.setScale(toScale);
             _this.setTop(newTop);
             _this.setLeft(newLeft);
             _this.pinchCenter = toPosition;
-        });
+        }));
     };
     /**
      * @return {?}
@@ -4917,19 +5270,22 @@ var FivImageViewer = /** @class */ (function () {
         var t = this.platform.height() / 2;
         /** @type {?} */
         var scale = this.animation.build([
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: "translateY(-50%) scale(" + this.scale + ")", top: this.top + "px", left: this.left + "px" }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('200ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ transform: "translateY(-50%) scale(" + 1 + ")", top: t + "px", left: 0 + "px" }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: "translateY(-50%) scale(" + this.scale + ")", top: this.top + "px", left: this.left + "px" }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('200ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: "translateY(-50%) scale(" + 1 + ")", top: t + "px", left: 0 + "px" }))
         ]);
         /** @type {?} */
         var animation = scale.create(this.imageView.nativeElement);
         animation.play();
-        animation.onDone(function () {
+        animation.onDone((/**
+         * @return {?}
+         */
+        function () {
             animation.destroy();
             _this.setScale(1);
             _this.setTop(t);
             _this.setLeft(0);
             _this.pinchCenter = _this.getAbsoluteCenter();
-        });
+        }));
     };
     /**
      * @return {?}
@@ -4995,46 +5351,46 @@ var FivImageViewer = /** @class */ (function () {
         this.fivActionClick.emit(index);
     };
     FivImageViewer.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-image-viewer',
                     template: "<img class=\"thumbnail\" [width]=\"width\" [height]=\"height\" #thumbnail *ngIf=\"thumbnailVisible\" (click)=\"open($event)\"\n  [src]=\"src\">\n<div #backdrop [@backdrop] (@backdrop.done)=\"onEnter($event)\" *ngIf=\"_isOpen\" class=\"backdrop\">\n  <ion-toolbar [@fade] *ngIf=\"_controlsVisible\" color=\"translucent\">\n    <ion-buttons slot=\"start\">\n      <ion-button (click)=\"remove()\">\n        <ion-icon slot=\"icon-only\" name=\"md-arrow-back\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n  <div #footer class=\"actions\" [@fade] *ngIf=\"_controlsVisible\">\n    <ion-grid fixed>\n      <ion-row>\n        <ion-col style=\"text-align: center;\" *ngFor=\"let action of actions; let c = count; let i = index\" [size]=\"12 / c\">\n          <ion-button (click)=\"onActionClicked(i)\" color=\"light\" *ngIf=\"action.name\" [fill]=\"'clear'\">\n            <ion-icon *ngIf=\"action.icon\" slot=\"start\" [name]=\"action.icon\"></ion-icon>\n            {{action.name}}\n          </ion-button>\n          <fiv-ripple (fivClick)=\"onActionClicked(i)\" *ngIf=\"!action.name\">\n            <ion-icon *ngIf=\"action.icon\" [fivCenter] [name]=\"action.icon\"></ion-icon>\n          </fiv-ripple>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n</div>\n<img #imageView (@imageLeave.done)=\"detach($event)\" class=\"image-view\" [@imageLeave]=\"{value: ':leave', params : {top: thumbnailPosition.offsetTop, left: thumbnailPosition.offsetLeft, height: thumbnailPosition.height, width: thumbnailPosition.width, panTop: thumbnailPosition.panTop}}\"\n  [@imageEnter]=\"{value: ':enter', params : {top: thumbnailPosition.offsetTop, left: thumbnailPosition.offsetLeft, height: thumbnailPosition.height, width: thumbnailPosition.width}}\"\n  *ngIf=\"thumbnailPosition && _isOpen\" [src]=\"src\">",
-                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewEncapsulation"].None,
+                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewEncapsulation"].None,
                     animations: [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('backdrop', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])(':enter', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: 0 }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('backdrop', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])(':enter', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 0 }),
                                 // tslint:disable-next-line:max-line-length
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('75ms 125ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: 1 }))
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('75ms 125ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 1 }))
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])(':leave', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: 1 }),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])(':leave', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 1 }),
                                 // tslint:disable-next-line:max-line-length
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('100ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: 0 }))
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('100ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 0 }))
                             ])
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('fade', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])(':enter', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: 0 }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: 1 }))
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('fade', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])(':enter', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 0 }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 1 }))
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])(':leave', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: 1 }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('150ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: 0 }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])(':leave', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 1 }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('150ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 0 }))
                             ])
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('imageEnter', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])(':enter', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('imageEnter', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])(':enter', [
                                 // tslint:disable-next-line:max-line-length
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ position: 'absolute', top: '{{top}}px', left: '{{left}}px', transform: 'translate(0,0)', height: '{{height}}px', width: '{{width}}px' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ position: 'absolute', top: '{{top}}px', left: '{{left}}px', transform: 'translate(0,0)', height: '{{height}}px', width: '{{width}}px' }),
                                 // tslint:disable-next-line:max-line-length
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('150ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', height: 'auto', width: '100%' }))
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('150ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', height: 'auto', width: '100%' }))
                             ], { params: { top: '0px', left: '0px', height: '*', width: '*' } })
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('imageLeave', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])(':leave', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ position: 'absolute', top: '{{panTop}}', left: '50%', transform: 'translate(-50%,-50%)', height: 'auto', width: '100%' }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('imageLeave', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])(':leave', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ position: 'absolute', top: '{{panTop}}', left: '50%', transform: 'translate(-50%,-50%)', height: 'auto', width: '100%' }),
                                 // tslint:disable-next-line:max-line-length
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('225ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ position: 'absolute', top: '{{top}}px', left: '{{left}}px', transform: 'translate(0,0)', height: '{{height}}px', width: '{{width}}px' }))
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('225ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ position: 'absolute', top: '{{top}}px', left: '{{left}}px', transform: 'translate(0,0)', height: '{{height}}px', width: '{{width}}px' }))
                             ], { params: { top: '0px', left: '0px', height: '*', width: '*', panTop: '50%' } })
                         ])
                     ],
@@ -5043,35 +5399,35 @@ var FivImageViewer = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivImageViewer.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ComponentFactoryResolver"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ApplicationRef"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["DomController"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["Platform"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Renderer2"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ChangeDetectorRef"] },
-        { type: _angular_animations__WEBPACK_IMPORTED_MODULE_8__["AnimationBuilder"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ComponentFactoryResolver"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ApplicationRef"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["DomController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["Platform"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Renderer2"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ChangeDetectorRef"] },
+        { type: _angular_animations__WEBPACK_IMPORTED_MODULE_7__["AnimationBuilder"] },
         { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Injector"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Injector"] }
     ]; };
     FivImageViewer.propDecorators = {
-        myStyle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['style',] }],
-        thumbnail: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['thumbnail',] }],
-        imageView: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['imageView',] }],
-        footer: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['footer',] }],
-        src: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        height: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        width: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        pullDistance: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        actions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivActionClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }]
+        myStyle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['style',] }],
+        thumbnail: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['thumbnail',] }],
+        imageView: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['imageView',] }],
+        footer: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['footer',] }],
+        src: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        height: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        width: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        pullDistance: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        actions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivActionClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }]
     };
     return FivImageViewer;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivToolbarSearch = /** @class */ (function () {
     function FivToolbarSearch(renderer) {
@@ -5080,9 +5436,9 @@ var FivToolbarSearch = /** @class */ (function () {
         this.titleVisible = true;
         this.closeButtonVisible = false;
         this.small = false;
-        this.fivInputChange = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
-        this.open = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.fivInputChange = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
+        this.open = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
         this.state = 'normal';
     }
     /**
@@ -5242,33 +5598,33 @@ var FivToolbarSearch = /** @class */ (function () {
         }
     };
     FivToolbarSearch.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-toolbar-search',
                     template: "<ion-toolbar [@searchbarAnim]=\"small ? state : 'normal'\" (@searchbarAnim.done)=\"searchBarStateChange($event)\" [color]=\"color\" [ngClass]=\"{'small': state === 'small'}\">\n  <ion-buttons slot=\"start\">\n    <ng-content select=\"[start]\"></ng-content>\n\n  </ion-buttons>\n  <ion-title [@titleAnim] *ngIf=\"titleVisible\">{{title}}</ion-title>\n  <ion-input (ionChange)=\"fivInputChange.emit($event)\" [placeholder]=\"!titleVisible ? placeholder : ''\" autofocus #input class=\"toolbar-searchbar\"\n    [@titleAnim] (@titleAnim.done)=\"seachbarAnimDone($event,input)\" *ngIf=\"searching\">\n  </ion-input>\n\n  <ion-buttons slot=\"end\">\n    <ion-button (click)=\"toggleSearchbar()\">\n      <fiv-icon [name]=\"searching ? 'md-close' : 'md-search'\"></fiv-icon>\n    </ion-button>\n    <!-- <ion-button [@rotateAnim] (@rotateAnim.done)=\"searchAnimDone($event)\" *ngIf=\"!searching\" (click)=\"toggleSearchbar()\">\n      <ion-icon style=\"transform: matrix(-1, 0, 0, 1, 0, 0);\" name=\"md-search\"></ion-icon>\n    </ion-button>\n    <ion-button [@rotateAnim] (@rotateAnim.done)=\"closeAnimDone($event)\" *ngIf=\"closeButtonVisible\" (click)=\"closeSearchbar()\">\n      <ion-icon name=\"md-close\"></ion-icon>\n    </ion-button> -->\n    <ng-content select=\"[end]\"></ng-content>\n\n  </ion-buttons>\n</ion-toolbar>",
                     animations: [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('searchbarAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('small => normal', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('125ms ease-out')
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('searchbarAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('small => normal', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('125ms ease-out')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('normal => small', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('95ms ease-in')
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('normal => small', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('95ms ease-in')
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('small', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ width: '92px' })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ width: '100%' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('small', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ width: '92px' })),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ width: '100%' }))
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('rotateAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('85ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '1', transform: 'rotateZ(0deg)' }))
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('rotateAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('85ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1', transform: 'rotateZ(0deg)' }))
                             ]),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('* => void', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('65ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0', transform: 'rotateZ(45deg)' }))
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => void', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('65ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0', transform: 'rotateZ(45deg)' }))
                             ]),
                         ]),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('titleAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0', transform: 'translateY(-20%)' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('175ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '1', transform: 'translateY(0)' }))
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('titleAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0', transform: 'translateY(-20%)' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('175ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1', transform: 'translateY(0)' }))
                             ]),
                         ]),
                     ],
@@ -5277,23 +5633,23 @@ var FivToolbarSearch = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivToolbarSearch.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Renderer2"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Renderer2"] }
     ]; };
     FivToolbarSearch.propDecorators = {
-        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        small: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        fivInputChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        open: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }]
+        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        small: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        fivInputChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        open: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }]
     };
     return FivToolbarSearch;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivPopover = /** @class */ (function () {
     function FivPopover(navParams, popoverController) {
@@ -5322,7 +5678,7 @@ var FivPopover = /** @class */ (function () {
         this.popoverController.dismiss({ index: i });
     };
     FivPopover.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-popover',
                     template: "<ion-content>\n  <ion-item (click)=\"onItemClicked(i)\" class=\"popover-item\" *ngFor=\"let button of buttons; let i = index\">\n    <ion-icon slot=\"start\" [name]=\"button.icon\"></ion-icon>\n    <ion-label>{{button.text}}</ion-label>\n  </ion-item>\n</ion-content>",
                     styles: [".popover-item{--border-style:none}.popover-item:hover{--background:rgb(240, 240, 240);cursor:pointer}"]
@@ -5330,19 +5686,19 @@ var FivPopover = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivPopover.ctorParameters = function () { return [
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["NavParams"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["PopoverController"] }
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["NavParams"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["PopoverController"] }
     ]; };
     return FivPopover;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivButton = /** @class */ (function () {
     function FivButton() {
-        this.click = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.click = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
     }
     /**
      * @return {?}
@@ -5353,7 +5709,7 @@ var FivButton = /** @class */ (function () {
     function () {
     };
     FivButton.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-button',
                     template: "<ion-button [disabled]=\"disabled\">\n  <fiv-icon [name]=\"icon\"></fiv-icon>\n  {{text}}\n</ion-button>",
                     styles: [""]
@@ -5362,17 +5718,17 @@ var FivButton = /** @class */ (function () {
     /** @nocollapse */
     FivButton.ctorParameters = function () { return []; };
     FivButton.propDecorators = {
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        text: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        click: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }]
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        text: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        click: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }]
     };
     return FivButton;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivButtons = /** @class */ (function () {
     function FivButtons(platform, popoverController, actionSheetController) {
@@ -5444,7 +5800,11 @@ var FivButtons = /** @class */ (function () {
                             event: ev,
                             translucent: false,
                             componentProps: {
-                                'buttons': this.buttons.toArray().slice(this.count).filter(function (button) { return !button.disabled; }),
+                                'buttons': this.buttons.toArray().slice(this.count).filter((/**
+                                 * @param {?} button
+                                 * @return {?}
+                                 */
+                                function (button) { return !button.disabled; })),
                             }
                         })];
                     case 1:
@@ -5480,17 +5840,25 @@ var FivButtons = /** @class */ (function () {
                     case 0:
                         buttons = [];
                         this.buttons.toArray().slice(this.count)
-                            .forEach(function (button, index) {
+                            .forEach((/**
+                         * @param {?} button
+                         * @param {?} index
+                         * @return {?}
+                         */
+                        function (button, index) {
                             if (!button.disabled) {
                                 buttons.push({
                                     text: button.text,
                                     icon: button.icon,
-                                    handler: function () {
+                                    handler: (/**
+                                     * @return {?}
+                                     */
+                                    function () {
                                         _this.onButtonClicked(_this.count + index);
-                                    }
+                                    })
                                 });
                             }
-                        });
+                        }));
                         return [4 /*yield*/, this.actionSheetController.create({
                                 header: this.header,
                                 subHeader: this.subHeader,
@@ -5518,7 +5886,7 @@ var FivButtons = /** @class */ (function () {
         this.buttons.toArray()[i].click.emit();
     };
     FivButtons.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-buttons',
                     template: "<ion-buttons *ngIf=\"buttons\" [slot]=\"slot\">\n  <fiv-button *ngIf=\"(slot === 'start' || slot ==='primary') && count < buttons.length && text\"\n    (click)=\"onMenuClicked($event)\" [text]=\"text\"></fiv-button>\n  <fiv-button *ngIf=\"(slot === 'start' || slot ==='primary') && count < buttons.length && !text\"\n    (click)=\"onMenuClicked($event)\" [icon]=\"'md-more'\"></fiv-button>\n  <ng-container *ngIf=\"iconsOnly\">\n    <fiv-button (click)=\"onButtonClicked(i)\" [icon]=\"button.icon\"\n      *ngFor=\"let button of buttons.toArray() |\u00A0slice:0:count; let i = index;\"></fiv-button>\n  </ng-container>\n  <ng-container *ngIf=\"!iconsOnly\">\n    <fiv-button (click)=\"onButtonClicked(i)\" [icon]=\"button.icon\" [text]=\"button.text\"\n      *ngFor=\"let button of buttons.toArray() |\u00A0slice:0:count; let i = index;\"></fiv-button>\n  </ng-container>\n  <fiv-button *ngIf=\"(slot === 'end' || slot ==='secondary') && count < buttons.length && !text\"\n    (click)=\"onMenuClicked($event)\" [icon]=\"icon\"></fiv-button>\n  <fiv-button *ngIf=\"(slot === 'end' || slot ==='secondary') && count < buttons.length && text\"\n    (click)=\"onMenuClicked($event)\" [text]=\"text\"></fiv-button>\n</ion-buttons>",
                     styles: [":host{display:block}"]
@@ -5526,28 +5894,28 @@ var FivButtons = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivButtons.ctorParameters = function () { return [
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["Platform"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["PopoverController"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["ActionSheetController"] }
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["Platform"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["PopoverController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["ActionSheetController"] }
     ]; };
     FivButtons.propDecorators = {
-        slot: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        subHeader: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        header: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        text: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        count: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        forceActionsheet: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        forcePopover: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        iconsOnly: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        buttons: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ContentChildren"], args: [FivButton,] }]
+        slot: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        subHeader: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        header: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        text: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        count: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        forceActionsheet: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        forcePopover: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        iconsOnly: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        buttons: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ContentChildren"], args: [FivButton,] }]
     };
     return FivButtons;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivExpandableIndicator = /** @class */ (function () {
     function FivExpandableIndicator(expandable) {
@@ -5563,7 +5931,7 @@ var FivExpandableIndicator = /** @class */ (function () {
     function () {
     };
     FivExpandableIndicator.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-expandable-indicator',
                     template: "<ion-icon class=\"indicator\" [ngClass]=\"{'rotate': expandable.isOpen}\" [name]=\"icon\"></ion-icon>",
                     styles: [":host{display:flex}.indicator{transition:125ms}.indicator.rotate{-webkit-transform:rotateZ(180deg);transform:rotateZ(180deg)}"]
@@ -5574,26 +5942,29 @@ var FivExpandableIndicator = /** @class */ (function () {
         { type: FivExpandable }
     ]; };
     FivExpandableIndicator.propDecorators = {
-        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }]
+        icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }]
     };
     return FivExpandableIndicator;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var CUSTOM_EDITIABLE_LABEL_CONTROL_VALUE_ACCESSOR = {
-    provide: _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NG_VALUE_ACCESSOR"],
-    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["forwardRef"])(function () { return FivEditableLabel; }),
+    provide: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["NG_VALUE_ACCESSOR"],
+    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_10__["forwardRef"])((/**
+     * @return {?}
+     */
+    function () { return FivEditableLabel; })),
     multi: true
 };
 var FivEditableLabel = /** @class */ (function () {
     function FivEditableLabel() {
         this.type = 'label';
         this.disabled = false;
-        this.blur = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
+        this.blur = new _angular_core__WEBPACK_IMPORTED_MODULE_10__["EventEmitter"]();
     }
     Object.defineProperty(FivEditableLabel.prototype, "editing", {
         get: /**
@@ -5620,7 +5991,10 @@ var FivEditableLabel = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["timer"])(0).subscribe(function () { return _this.internalValue = _this.value; });
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["timer"])(0).subscribe((/**
+         * @return {?}
+         */
+        function () { return _this.internalValue = _this.value; }));
     };
     Object.defineProperty(FivEditableLabel.prototype, "internalValue", {
         get: /**
@@ -5744,14 +6118,14 @@ var FivEditableLabel = /** @class */ (function () {
         }
     };
     FivEditableLabel.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Component"], args: [{
                     selector: 'fiv-editable-label',
                     template: "<!-- TODO if value is empty label or title can not be clicked, show placeholder?! -->\n<ion-title *ngIf=\"type === 'title' && !editing\" (click)=\"edit()\" (@titleAnim.done)=\"titleAnimDone($event)\" [@titleAnim]>\n    {{value}}</ion-title>\n<ion-label *ngIf=\"type === 'label' && !editing\" class=\"label\" (click)=\"edit()\" (@titleAnim.done)=\"titleAnimDone($event)\" [@titleAnim]>\n    {{value}}</ion-label>\n<ion-input *ngIf=\"editing\" [(ngModel)]=\"internalValue\" (blur)=\"onBlur()\" (keyup.enter)=\"onEnterClick()\"\n    (keyup.escape)=\"onEscapeClick()\" #input [@titleAnim] [ngClass]=\"{'title-input': type === 'title'}\">\n</ion-input>",
                     animations: [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["trigger"])('titleAnim', [
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["transition"])('void => *', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '0', transform: 'translateY(-20%)' }),
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["animate"])('175ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_8__["style"])({ opacity: '1', transform: 'translateY(0)' }))
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('titleAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '0', transform: 'translateY(-20%)' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('175ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: '1', transform: 'translateY(0)' }))
                             ]),
                         ]),
                     ],
@@ -5764,19 +6138,97 @@ var FivEditableLabel = /** @class */ (function () {
     /** @nocollapse */
     FivEditableLabel.ctorParameters = function () { return []; };
     FivEditableLabel.propDecorators = {
-        editing: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["HostBinding"], args: ['class.editable-label-disabled',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"] }],
-        blur: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["Output"] }],
-        input: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"], args: ['input',] }]
+        editing: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["HostBinding"], args: ['class.editable-label-disabled',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Input"] }],
+        blur: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Output"] }],
+        input: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ViewChild"], args: ['input',] }]
     };
     return FivEditableLabel;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var OverlayService = /** @class */ (function () {
+    function OverlayService(componentFactoryResolver, appRef, injector) {
+        this.componentFactoryResolver = componentFactoryResolver;
+        this.appRef = appRef;
+        this.injector = injector;
+    }
+    /**
+     * @template T
+     * @param {?} component
+     * @param {?=} content
+     * @return {?}
+     */
+    OverlayService.prototype.createOverlay = /**
+     * @template T
+     * @param {?} component
+     * @param {?=} content
+     * @return {?}
+     */
+    function (component, content) {
+        /** @type {?} */
+        var resolvedContent = this.resolveNgContent(content);
+        /** @type {?} */
+        var componentRef = this.componentFactoryResolver
+            .resolveComponentFactory(component)
+            .create(this.injector, resolvedContent);
+        this.appRef.attachView(componentRef.hostView);
+        /** @type {?} */
+        var domElem = (/** @type {?} */ (((/** @type {?} */ (componentRef.hostView)))
+            .rootNodes[0]));
+        document.body.appendChild(domElem);
+        return componentRef;
+    };
+    /**
+     * @private
+     * @template T
+     * @param {?} content
+     * @return {?}
+     */
+    OverlayService.prototype.resolveNgContent = /**
+     * @private
+     * @template T
+     * @param {?} content
+     * @return {?}
+     */
+    function (content) {
+        if (!content) {
+            return;
+        }
+        if (content instanceof _angular_core__WEBPACK_IMPORTED_MODULE_10__["TemplateRef"]) {
+            /** @type {?} */
+            var viewRef = content.createEmbeddedView(null);
+            return [viewRef.rootNodes];
+        }
+        /** @type {?} */
+        var factory = this.componentFactoryResolver.resolveComponentFactory(content);
+        /** @type {?} */
+        var componentRef = factory.create(this.injector);
+        return [[componentRef.location.nativeElement]];
+    };
+    OverlayService.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Injectable"], args: [{
+                    providedIn: 'root'
+                },] }
+    ];
+    /** @nocollapse */
+    OverlayService.ctorParameters = function () { return [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ComponentFactoryResolver"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["ApplicationRef"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["Injector"] }
+    ]; };
+    /** @nocollapse */ OverlayService.ngInjectableDef = Object(_angular_core__WEBPACK_IMPORTED_MODULE_10__["defineInjectable"])({ factory: function OverlayService_Factory() { return new OverlayService(Object(_angular_core__WEBPACK_IMPORTED_MODULE_10__["inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_10__["ComponentFactoryResolver"]), Object(_angular_core__WEBPACK_IMPORTED_MODULE_10__["inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_10__["ApplicationRef"]), Object(_angular_core__WEBPACK_IMPORTED_MODULE_10__["inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_10__["INJECTOR"])); }, token: OverlayService, providedIn: "root" });
+    return OverlayService;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var MyHammerConfig = /** @class */ (function (_super) {
     Object(tslib__WEBPACK_IMPORTED_MODULE_5__["__extends"])(MyHammerConfig, _super);
@@ -5793,11 +6245,11 @@ var FivethreeCoreModule = /** @class */ (function () {
     function FivethreeCoreModule() {
     }
     FivethreeCoreModule.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_6__["NgModule"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_10__["NgModule"], args: [{
                     imports: [
                         _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
-                        _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"],
-                        _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["IonicModule"]
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"],
+                        _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["IonicModule"]
                     ],
                     declarations: [
                         FivExpandable,
@@ -5836,8 +6288,10 @@ var FivethreeCoreModule = /** @class */ (function () {
                         FivButton,
                         FivPopover,
                         FivExpandableIndicator,
+                        OverlayComponent,
+                        OverlayContentComponent
                     ],
-                    entryComponents: [FivImageViewer, FivPopover],
+                    entryComponents: [FivImageViewer, FivPopover, OverlayContentComponent],
                     exports: [
                         FivExpandable,
                         FivEditableLabel,
@@ -5873,7 +6327,12 @@ var FivethreeCoreModule = /** @class */ (function () {
                         FivImageViewer,
                         FivButtons,
                         FivButton,
-                        FivExpandableIndicator
+                        FivExpandableIndicator,
+                        OverlayComponent,
+                        OverlayContentComponent
+                    ],
+                    providers: [
+                        OverlayService
                     ]
                 },] }
     ];
@@ -5882,12 +6341,12 @@ var FivethreeCoreModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 
@@ -5946,25 +6405,15 @@ var map = {
 		"common",
 		133
 	],
-	"./4bqlcwkr.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/4bqlcwkr.entry.js",
-		"common",
-		10
-	],
-	"./4bqlcwkr.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/4bqlcwkr.sc.entry.js",
-		"common",
-		11
-	],
 	"./4jebvdzz.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/4jebvdzz.entry.js",
 		"common",
-		12
+		10
 	],
 	"./4jebvdzz.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/4jebvdzz.sc.entry.js",
 		"common",
-		13
+		11
 	],
 	"./4m739wpj.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/4m739wpj.entry.js",
@@ -6011,32 +6460,42 @@ var map = {
 	"./5ey3bs99.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/5ey3bs99.entry.js",
 		"common",
-		14
+		12
 	],
 	"./5ey3bs99.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/5ey3bs99.sc.entry.js",
 		"common",
-		15
+		13
+	],
+	"./6f4biktp.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/6f4biktp.entry.js",
+		"common",
+		70
+	],
+	"./6f4biktp.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/6f4biktp.sc.entry.js",
+		"common",
+		71
 	],
 	"./8ldpeqpe.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/8ldpeqpe.entry.js",
 		"common",
-		16
+		14
 	],
 	"./8ldpeqpe.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/8ldpeqpe.sc.entry.js",
 		"common",
-		17
+		15
 	],
 	"./8q1e6dus.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/8q1e6dus.entry.js",
 		"common",
-		18
+		16
 	],
 	"./8q1e6dus.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/8q1e6dus.sc.entry.js",
 		"common",
-		19
+		17
 	],
 	"./96olk0dp.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/96olk0dp.entry.js",
@@ -6058,15 +6517,25 @@ var map = {
 		"common",
 		139
 	],
+	"./9ynbzp83.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/9ynbzp83.entry.js",
+		"common",
+		18
+	],
+	"./9ynbzp83.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/9ynbzp83.sc.entry.js",
+		"common",
+		19
+	],
 	"./afjpklm4.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/afjpklm4.entry.js",
 		"common",
-		70
+		72
 	],
 	"./afjpklm4.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/afjpklm4.sc.entry.js",
 		"common",
-		71
+		73
 	],
 	"./bhtvuxzz.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/bhtvuxzz.entry.js",
@@ -6080,55 +6549,47 @@ var map = {
 		"common",
 		141
 	],
-	"./bneiwm8s.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/bneiwm8s.entry.js",
-		"common",
-		20
-	],
-	"./bneiwm8s.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/bneiwm8s.sc.entry.js",
-		"common",
-		21
-	],
 	"./c2kiol1t.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/c2kiol1t.entry.js",
 		"common",
-		22
+		20
 	],
 	"./c2kiol1t.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/c2kiol1t.sc.entry.js",
 		"common",
-		23
+		21
 	],
-	"./c3xilup3.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/c3xilup3.entry.js",
+	"./ch8upsxn.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/ch8upsxn.entry.js",
+		0,
 		"common",
-		24
+		114
 	],
-	"./c3xilup3.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/c3xilup3.sc.entry.js",
+	"./ch8upsxn.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/ch8upsxn.sc.entry.js",
+		0,
 		"common",
-		25
+		115
 	],
 	"./coytbtgb.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/coytbtgb.entry.js",
 		"common",
-		76
+		78
 	],
 	"./coytbtgb.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/coytbtgb.sc.entry.js",
 		"common",
-		77
+		79
 	],
 	"./cuwemyof.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/cuwemyof.entry.js",
 		"common",
-		78
+		80
 	],
 	"./cuwemyof.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/cuwemyof.sc.entry.js",
 		"common",
-		79
+		81
 	],
 	"./cyhnsxpk.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/cyhnsxpk.entry.js",
@@ -6142,25 +6603,25 @@ var map = {
 		"common",
 		145
 	],
-	"./dznymaqz.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/dznymaqz.entry.js",
+	"./dnpeoh7c.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/dnpeoh7c.entry.js",
 		"common",
-		80
+		22
 	],
-	"./dznymaqz.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/dznymaqz.sc.entry.js",
+	"./dnpeoh7c.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/dnpeoh7c.sc.entry.js",
 		"common",
-		81
+		23
 	],
 	"./ejzmat7r.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ejzmat7r.entry.js",
 		"common",
-		72
+		74
 	],
 	"./ejzmat7r.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ejzmat7r.sc.entry.js",
 		"common",
-		73
+		75
 	],
 	"./fcbdrndu.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/fcbdrndu.entry.js",
@@ -6172,18 +6633,6 @@ var map = {
 		"common",
 		83
 	],
-	"./fdynremk.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/fdynremk.entry.js",
-		0,
-		"common",
-		114
-	],
-	"./fdynremk.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/fdynremk.sc.entry.js",
-		0,
-		"common",
-		115
-	],
 	"./ffukzwt6.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ffukzwt6.entry.js",
 		"common",
@@ -6193,6 +6642,16 @@ var map = {
 		"./node_modules/@ionic/core/dist/esm/es5/build/ffukzwt6.sc.entry.js",
 		"common",
 		123
+	],
+	"./fhznfhbd.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/fhznfhbd.entry.js",
+		"common",
+		24
+	],
+	"./fhznfhbd.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/fhznfhbd.sc.entry.js",
+		"common",
+		25
 	],
 	"./fiqi6app.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/fiqi6app.entry.js",
@@ -6214,13 +6673,13 @@ var map = {
 		"common",
 		149
 	],
-	"./hqdeczjh.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/hqdeczjh.entry.js",
+	"./gvyg1bwh.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/gvyg1bwh.entry.js",
 		"common",
 		26
 	],
-	"./hqdeczjh.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/hqdeczjh.sc.entry.js",
+	"./gvyg1bwh.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/gvyg1bwh.sc.entry.js",
 		"common",
 		27
 	],
@@ -6284,6 +6743,16 @@ var map = {
 		"common",
 		33
 	],
+	"./jzmfoyaa.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/jzmfoyaa.entry.js",
+		"common",
+		34
+	],
+	"./jzmfoyaa.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/jzmfoyaa.sc.entry.js",
+		"common",
+		35
+	],
 	"./k1gbeuol.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/k1gbeuol.entry.js",
 		"common",
@@ -6304,16 +6773,6 @@ var map = {
 		"common",
 		89
 	],
-	"./lucyelmx.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/lucyelmx.entry.js",
-		"common",
-		34
-	],
-	"./lucyelmx.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/lucyelmx.sc.entry.js",
-		"common",
-		35
-	],
 	"./ly8zbpmk.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ly8zbpmk.entry.js",
 		"common",
@@ -6323,18 +6782,6 @@ var map = {
 		"./node_modules/@ionic/core/dist/esm/es5/build/ly8zbpmk.sc.entry.js",
 		"common",
 		37
-	],
-	"./m0ainuth.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/m0ainuth.entry.js",
-		0,
-		"common",
-		116
-	],
-	"./m0ainuth.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/m0ainuth.sc.entry.js",
-		0,
-		"common",
-		117
 	],
 	"./mny78lhg.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/mny78lhg.entry.js",
@@ -6348,15 +6795,35 @@ var map = {
 		"common",
 		151
 	],
+	"./n361sgpa.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/n361sgpa.entry.js",
+		"common",
+		38
+	],
+	"./n361sgpa.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/n361sgpa.sc.entry.js",
+		"common",
+		39
+	],
 	"./nr6wcehx.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/nr6wcehx.entry.js",
 		"common",
-		38
+		40
 	],
 	"./nr6wcehx.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/nr6wcehx.sc.entry.js",
 		"common",
-		39
+		41
+	],
+	"./ntxo2f3d.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/ntxo2f3d.entry.js",
+		"common",
+		42
+	],
+	"./ntxo2f3d.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/ntxo2f3d.sc.entry.js",
+		"common",
+		43
 	],
 	"./nxacca4l.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/nxacca4l.entry.js",
@@ -6369,6 +6836,16 @@ var map = {
 		0,
 		"common",
 		153
+	],
+	"./nxghvzhm.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/nxghvzhm.entry.js",
+		"common",
+		44
+	],
+	"./nxghvzhm.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/nxghvzhm.sc.entry.js",
+		"common",
+		45
 	],
 	"./oboc8zd4.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/oboc8zd4.entry.js",
@@ -6383,12 +6860,12 @@ var map = {
 	"./odqmlmdd.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/odqmlmdd.entry.js",
 		"common",
-		40
+		46
 	],
 	"./odqmlmdd.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/odqmlmdd.sc.entry.js",
 		"common",
-		41
+		47
 	],
 	"./psxwmesv.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/psxwmesv.entry.js",
@@ -6417,22 +6894,12 @@ var map = {
 	"./qvwswew4.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/qvwswew4.entry.js",
 		"common",
-		118
+		116
 	],
 	"./qvwswew4.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/qvwswew4.sc.entry.js",
 		"common",
-		119
-	],
-	"./qztmfygd.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/qztmfygd.entry.js",
-		"common",
-		42
-	],
-	"./qztmfygd.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/qztmfygd.sc.entry.js",
-		"common",
-		43
+		117
 	],
 	"./raunowwy.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/raunowwy.entry.js",
@@ -6456,16 +6923,6 @@ var map = {
 		"common",
 		159
 	],
-	"./s3pnsa7u.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/s3pnsa7u.entry.js",
-		"common",
-		44
-	],
-	"./s3pnsa7u.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/s3pnsa7u.sc.entry.js",
-		"common",
-		45
-	],
 	"./sdfyvdro.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sdfyvdro.entry.js",
 		"common",
@@ -6479,12 +6936,12 @@ var map = {
 	"./sghmhl28.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sghmhl28.entry.js",
 		"common",
-		46
+		48
 	],
 	"./sghmhl28.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sghmhl28.sc.entry.js",
 		"common",
-		47
+		49
 	],
 	"./sjcqnbtt.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sjcqnbtt.entry.js",
@@ -6499,12 +6956,12 @@ var map = {
 	"./t547wlk7.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/t547wlk7.entry.js",
 		"common",
-		120
+		118
 	],
 	"./t547wlk7.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/t547wlk7.sc.entry.js",
 		"common",
-		121
+		119
 	],
 	"./ta1bgxgm.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ta1bgxgm.entry.js",
@@ -6516,43 +6973,33 @@ var map = {
 		"common",
 		99
 	],
-	"./tqgphjq7.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/tqgphjq7.entry.js",
+	"./tui62q7d.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/tui62q7d.entry.js",
 		"common",
-		48
+		100
 	],
-	"./tqgphjq7.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/tqgphjq7.sc.entry.js",
+	"./tui62q7d.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/tui62q7d.sc.entry.js",
 		"common",
-		49
+		101
 	],
 	"./tylmm2yl.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/tylmm2yl.entry.js",
 		"common",
-		100
+		102
 	],
 	"./tylmm2yl.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/tylmm2yl.sc.entry.js",
 		"common",
-		101
+		103
 	],
 	"./uegz8gm3.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/uegz8gm3.entry.js",
 		"common",
-		102
+		104
 	],
 	"./uegz8gm3.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/uegz8gm3.sc.entry.js",
-		"common",
-		103
-	],
-	"./uetn90ud.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/uetn90ud.entry.js",
-		"common",
-		104
-	],
-	"./uetn90ud.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/uetn90ud.sc.entry.js",
 		"common",
 		105
 	],
@@ -6581,12 +7028,12 @@ var map = {
 	"./vjeei8vr.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/vjeei8vr.entry.js",
 		"common",
-		74
+		76
 	],
 	"./vjeei8vr.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/vjeei8vr.sc.entry.js",
 		"common",
-		75
+		77
 	],
 	"./wem5ffil.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/wem5ffil.entry.js",
@@ -6600,6 +7047,18 @@ var map = {
 		"common",
 		163
 	],
+	"./wy4rjeqs.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/wy4rjeqs.entry.js",
+		0,
+		"common",
+		120
+	],
+	"./wy4rjeqs.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/wy4rjeqs.sc.entry.js",
+		0,
+		"common",
+		121
+	],
 	"./xbafxwto.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xbafxwto.entry.js",
 		0,
@@ -6612,25 +7071,15 @@ var map = {
 		"common",
 		165
 	],
-	"./xdz5gsa7.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/xdz5gsa7.entry.js",
-		"common",
-		50
-	],
-	"./xdz5gsa7.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/xdz5gsa7.sc.entry.js",
-		"common",
-		51
-	],
 	"./xfbndl84.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xfbndl84.entry.js",
 		"common",
-		52
+		50
 	],
 	"./xfbndl84.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xfbndl84.sc.entry.js",
 		"common",
-		53
+		51
 	],
 	"./xgnma4yj.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xgnma4yj.entry.js",
@@ -6662,6 +7111,26 @@ var map = {
 		"common",
 		111
 	],
+	"./ygh0szo0.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/ygh0szo0.entry.js",
+		"common",
+		52
+	],
+	"./ygh0szo0.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/ygh0szo0.sc.entry.js",
+		"common",
+		53
+	],
+	"./z9eemkqi.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/z9eemkqi.entry.js",
+		"common",
+		54
+	],
+	"./z9eemkqi.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/z9eemkqi.sc.entry.js",
+		"common",
+		55
+	],
 	"./z9nt6ntd.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/z9nt6ntd.entry.js",
 		"common",
@@ -6671,16 +7140,6 @@ var map = {
 		"./node_modules/@ionic/core/dist/esm/es5/build/z9nt6ntd.sc.entry.js",
 		"common",
 		131
-	],
-	"./zewwnxh6.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/zewwnxh6.entry.js",
-		"common",
-		54
-	],
-	"./zewwnxh6.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/zewwnxh6.sc.entry.js",
-		"common",
-		55
 	],
 	"./zktscnoo.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/zktscnoo.entry.js",
@@ -6992,11 +7451,11 @@ var AppComponent = /** @class */ (function () {
                 icon: 'ios-arrow-up',
                 shape: 'rounded'
             },
-            // {
-            //   title: 'Dialog',
-            //   url: '/dialog',
-            //   icon: 'notifications'
-            // },
+            {
+                title: 'Dialog',
+                url: '/dialog',
+                icon: 'notifications'
+            },
             {
                 title: 'Editable Label',
                 url: '/editable-label',
@@ -7283,7 +7742,7 @@ module.exports = "<ion-card class=\"example\">\n  <ion-toolbar color=\"transluce
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: relative;\n  display: block; }\n\n.swiper-slide {\n  text-align: left; }\n\n.content-container {\n  width: 100%; }\n\n@media (max-width: 411px) {\n  .example {\n    margin: 0px; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL2NvbXBvbmVudHMvZXhhbXBsZS9leGFtcGxlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQWtCO0VBQ2xCLGNBQWMsRUFBQTs7QUFHbEI7RUFDSSxnQkFBZ0IsRUFBQTs7QUFHcEI7RUFDSSxXQUFXLEVBQUE7O0FBR2Y7RUFDSTtJQUNJLFdBQVcsRUFBQSxFQUNkIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9leGFtcGxlL2V4YW1wbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGRpc3BsYXk6IGJsb2NrO1xufVxuXG4uc3dpcGVyLXNsaWRlIHtcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xufVxuXG4uY29udGVudC1jb250YWluZXIge1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG5AbWVkaWEobWF4LXdpZHRoOiA0MTFweCkge1xuICAgIC5leGFtcGxlIHtcbiAgICAgICAgbWFyZ2luOiAwcHg7XG4gICAgfVxufSJdfQ== */"
+module.exports = ":host {\n  position: relative;\n  display: block; }\n\n.swiper-slide {\n  text-align: left; }\n\n.content-container {\n  width: 100%; }\n\n@media (max-width: 411px) {\n  .example {\n    margin: 0px; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvY29tcG9uZW50cy9leGFtcGxlL2V4YW1wbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBa0I7RUFDbEIsY0FBYyxFQUFBOztBQUdsQjtFQUNJLGdCQUFnQixFQUFBOztBQUdwQjtFQUNJLFdBQVcsRUFBQTs7QUFHZjtFQUNJO0lBQ0ksV0FBVyxFQUFBLEVBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2V4YW1wbGUvZXhhbXBsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgZGlzcGxheTogYmxvY2s7XG59XG5cbi5zd2lwZXItc2xpZGUge1xuICAgIHRleHQtYWxpZ246IGxlZnQ7XG59XG5cbi5jb250ZW50LWNvbnRhaW5lciB7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbkBtZWRpYShtYXgtd2lkdGg6IDQxMXB4KSB7XG4gICAgLmV4YW1wbGUge1xuICAgICAgICBtYXJnaW46IDBweDtcbiAgICB9XG59Il19 */"
 
 /***/ }),
 
@@ -7385,7 +7844,7 @@ module.exports = "<ion-footer #footer no-border>\n  <ion-grid fixed>\n    <ion-r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-footer {\n  background: var(--ion-color-dark);\n  padding: 24px 0 24px 0; }\n\nh4 {\n  color: var(--ion-color-dark-contrast); }\n\n.links {\n  display: block;\n  margin-bottom: 8px;\n  font-size: 16px;\n  line-height: 1.3;\n  color: var(--ion-color-light); }\n\na:hover {\n  color: var(--ion-color-light-shade); }\n\na {\n  text-decoration: none; }\n\n#social {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n#social a {\n    color: var(--ion-color-light);\n    font-size: 2rem;\n    padding: 0 12px 0 12px; }\n\n#social a:first-child {\n    padding-left: 0; }\n\n#social a:last-child {\n    padding-right: 0; }\n\n@media screen and (max-width: 991px) {\n  #social {\n    order: -1; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL2NvbXBvbmVudHMvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGlDQUFpQztFQUNqQyxzQkFBc0IsRUFBQTs7QUFHMUI7RUFDSSxxQ0FBcUMsRUFBQTs7QUFHekM7RUFDSSxjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsNkJBQTZCLEVBQUE7O0FBR2pDO0VBQ0ksbUNBQW1DLEVBQUE7O0FBR3ZDO0VBQ0kscUJBQXFCLEVBQUE7O0FBR3pCO0VBQ0ksYUFBYTtFQUNiLHVCQUF1QjtFQUN2QixtQkFBbUIsRUFBQTs7QUFIdkI7SUFNUSw2QkFBNkI7SUFDN0IsZUFBZTtJQUNmLHNCQUFzQixFQUFBOztBQVI5QjtJQVlRLGVBQWUsRUFBQTs7QUFadkI7SUFnQlEsZ0JBQWdCLEVBQUE7O0FBSXhCO0VBQ0k7SUFDSSxTQUFTLEVBQUEsRUFDWiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1mb290ZXIge1xuICAgIGJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1kYXJrKTtcbiAgICBwYWRkaW5nOiAyNHB4IDAgMjRweCAwO1xufVxuXG5oNCB7XG4gICAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1kYXJrLWNvbnRyYXN0KTtcbn1cblxuLmxpbmtzIHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBtYXJnaW4tYm90dG9tOiA4cHg7XG4gICAgZm9udC1zaXplOiAxNnB4O1xuICAgIGxpbmUtaGVpZ2h0OiAxLjM7XG4gICAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XG59XG5cbmE6aG92ZXIge1xuICAgIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItbGlnaHQtc2hhZGUpO1xufVxuXG5hIHtcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbiNzb2NpYWwge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcblxuICAgIGEge1xuICAgICAgICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLWxpZ2h0KTtcbiAgICAgICAgZm9udC1zaXplOiAycmVtO1xuICAgICAgICBwYWRkaW5nOiAwIDEycHggMCAxMnB4O1xuICAgIH1cblxuICAgIGE6Zmlyc3QtY2hpbGQge1xuICAgICAgICBwYWRkaW5nLWxlZnQ6IDA7XG4gICAgfVxuXG4gICAgYTpsYXN0LWNoaWxkIHtcbiAgICAgICAgcGFkZGluZy1yaWdodDogMDtcbiAgICB9XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDk5MXB4KSB7XG4gICAgI3NvY2lhbCB7XG4gICAgICAgIG9yZGVyOiAtMTtcbiAgICB9XG59Il19 */"
+module.exports = "ion-footer {\n  background: var(--ion-color-dark);\n  padding: 24px 0 24px 0; }\n\nh4 {\n  color: var(--ion-color-dark-contrast); }\n\n.links {\n  display: block;\n  margin-bottom: 8px;\n  font-size: 16px;\n  line-height: 1.3;\n  color: var(--ion-color-light); }\n\na:hover {\n  color: var(--ion-color-light-shade); }\n\na {\n  text-decoration: none; }\n\n#social {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n#social a {\n    color: var(--ion-color-light);\n    font-size: 2rem;\n    padding: 0 12px 0 12px; }\n\n#social a:first-child {\n    padding-left: 0; }\n\n#social a:last-child {\n    padding-right: 0; }\n\n@media screen and (max-width: 991px) {\n  #social {\n    order: -1; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUNBQWlDO0VBQ2pDLHNCQUFzQixFQUFBOztBQUcxQjtFQUNJLHFDQUFxQyxFQUFBOztBQUd6QztFQUNJLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQiw2QkFBNkIsRUFBQTs7QUFHakM7RUFDSSxtQ0FBbUMsRUFBQTs7QUFHdkM7RUFDSSxxQkFBcUIsRUFBQTs7QUFHekI7RUFDSSxhQUFhO0VBQ2IsdUJBQXVCO0VBQ3ZCLG1CQUFtQixFQUFBOztBQUh2QjtJQU1RLDZCQUE2QjtJQUM3QixlQUFlO0lBQ2Ysc0JBQXNCLEVBQUE7O0FBUjlCO0lBWVEsZUFBZSxFQUFBOztBQVp2QjtJQWdCUSxnQkFBZ0IsRUFBQTs7QUFJeEI7RUFDSTtJQUNJLFNBQVMsRUFBQSxFQUNaIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWZvb3RlciB7XG4gICAgYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLWRhcmspO1xuICAgIHBhZGRpbmc6IDI0cHggMCAyNHB4IDA7XG59XG5cbmg0IHtcbiAgICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLWRhcmstY29udHJhc3QpO1xufVxuXG4ubGlua3Mge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIG1hcmdpbi1ib3R0b206IDhweDtcbiAgICBmb250LXNpemU6IDE2cHg7XG4gICAgbGluZS1oZWlnaHQ6IDEuMztcbiAgICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLWxpZ2h0KTtcbn1cblxuYTpob3ZlciB7XG4gICAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1saWdodC1zaGFkZSk7XG59XG5cbmEge1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn1cblxuI3NvY2lhbCB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuXG4gICAgYSB7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItbGlnaHQpO1xuICAgICAgICBmb250LXNpemU6IDJyZW07XG4gICAgICAgIHBhZGRpbmc6IDAgMTJweCAwIDEycHg7XG4gICAgfVxuXG4gICAgYTpmaXJzdC1jaGlsZCB7XG4gICAgICAgIHBhZGRpbmctbGVmdDogMDtcbiAgICB9XG5cbiAgICBhOmxhc3QtY2hpbGQge1xuICAgICAgICBwYWRkaW5nLXJpZ2h0OiAwO1xuICAgIH1cbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogOTkxcHgpIHtcbiAgICAjc29jaWFsIHtcbiAgICAgICAgb3JkZXI6IC0xO1xuICAgIH1cbn0iXX0= */"
 
 /***/ }),
 
@@ -7482,7 +7941,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-title {\n  cursor: pointer; }\n\n#github {\n  color: var(--ion-color-light-contrast); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxzQ0FBc0MsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi10aXRsZSB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4jZ2l0aHViIHtcbiAgICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLWxpZ2h0LWNvbnRyYXN0KTtcbn0gIl19 */"
+module.exports = "ion-title {\n  cursor: pointer; }\n\n#github {\n  color: var(--ion-color-light-contrast); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBZSxFQUFBOztBQUduQjtFQUNJLHNDQUFzQyxFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXRpdGxlIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbiNnaXRodWIge1xuICAgIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItbGlnaHQtY29udHJhc3QpO1xufSAiXX0= */"
 
 /***/ }),
 
@@ -11600,7 +12059,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/mj/Dev/fivethree/web-components/fivethree/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/garygrossgarten/Dev/things/fivethree-lib/src/main.ts */"./src/main.ts");
 
 
 /***/ })

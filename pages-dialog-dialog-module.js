@@ -65,7 +65,7 @@ var DialogPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n      <ion-buttons slot=\"start\">\n          <ion-menu-button></ion-menu-button>\n      </ion-buttons>\n    <ion-title>dialog</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item>\n      <ion-label>Backdrop</ion-label>\n      <ion-toggle slot=\"end\" [(ngModel)]=\"backdrop\"></ion-toggle>\n    </ion-item>\n    \n    <ion-item>\n        <ion-label>Animation</ion-label>\n        <ion-select slot=\"end\"  [(ngModel)]=\"animation\">\n          <ion-select-option value=\"fade\">fade</ion-select-option>\n          <ion-select-option value=\"slide\">slide</ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item>\n          <ion-label>Vertical Alignment</ion-label>\n          <ion-select slot=\"end\"  [(ngModel)]=\"verticalAlign\">\n            <ion-select-option value=\"top\">top</ion-select-option>\n            <ion-select-option value=\"center\">center</ion-select-option>\n            <ion-select-option value=\"bottom\">bottom</ion-select-option>\n          </ion-select>\n        </ion-item>\n\n        <fiv-loading-button (click)=\"dialog.open()\">\n          Zeige Dialog\n        </fiv-loading-button>\n\n  </ion-list>\n\n</ion-content>\n<fiv-dialog #dialog [animation]=\"animation\" [verticalAlign]=\"verticalAlign\" [backdrop]=\"backdrop\">\n      <ion-card>\n          <ion-card-content>\n              <ion-card-title>Hello World</ion-card-title>\n          \n              <p>The content for this card</p>\n          \n              <ion-button (click)=\"dialog.close()\">schließen</ion-button>\n            </ion-card-content>\n      </ion-card>\n  \n  \n</fiv-dialog>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>dialog</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item>\n      <ion-label>Backdrop</ion-label>\n      <ion-toggle slot=\"end\" [(ngModel)]=\"backdrop\"></ion-toggle>\n    </ion-item>\n    <ion-item>\n      <ion-label>Vertical Alignment</ion-label>\n      <ion-select slot=\"end\" [(ngModel)]=\"verticalAlign\">\n        <ion-select-option value=\"top\">top</ion-select-option>\n        <ion-select-option value=\"center\">center</ion-select-option>\n        <ion-select-option value=\"bottom\">bottom</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Title</ion-label>\n      <ion-input [(ngModel)]=\"title\" type=\"text\"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Subtitle</ion-label>\n      <ion-input [(ngModel)]=\"subtitle\" type=\"text\"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Duration</ion-label>\n      <ion-input [(ngModel)]=\"duration\" type=\"number\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Animation In Duration</ion-label>\n      <ion-input [(ngModel)]=\"inDuration\" type=\"text\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Animation Out Duration</ion-label>\n      <ion-input [(ngModel)]=\"outDuration\" type=\"text\"></ion-input>\n    </ion-item>\n\n    <fiv-loading-button (click)=\"dialog.open()\">\n      Zeige Dialog\n    </fiv-loading-button>\n\n  </ion-list>\n\n</ion-content>\n<fiv-dialog [inDuration]=\"inDuration\" [outDuration]=\"outDuration\"\n [title]=\"title\" [subtitle]=\"subtitle\" #dialog\n  [duration]=\"duration\" [verticalAlign]=\"verticalAlign\" [backdrop]=\"backdrop\">\n  <ion-card-content>\n    <p>The content for this dialog</p>\n  </ion-card-content>\n  <ion-toolbar>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)=\"dialog.close()\">\n        Cancel\n      </ion-button>\n      <ion-button color=\"primary\">\n        Do Action\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n\n</fiv-dialog>\n"
 
 /***/ }),
 
@@ -76,7 +76,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n      <ion-buttons slot=\"start
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-card {\n  --ion-item-background-color: #fff; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2RpYWxvZy9kaWFsb2cucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUNBQTRCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9kaWFsb2cvZGlhbG9nLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1jYXJke1xuICAgIC0taW9uLWl0ZW0tYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbn0iXX0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2RpYWxvZy9kaWFsb2cucGFnZS5zY3NzIn0= */"
 
 /***/ }),
 
@@ -107,8 +107,11 @@ var DialogPage = /** @class */ (function () {
     function DialogPage() {
         this.backdrop = true;
         this.verticalAlign = 'top';
-        this.animation = 'slide';
-        this.floating = false;
+        this.title = 'New Message';
+        this.subtitle = 'You have a new message from Marc!';
+        this.duration = 3600;
+        this.inDuration = '220';
+        this.outDuration = '180';
     }
     DialogPage.prototype.ngOnInit = function () {
     };
