@@ -32,7 +32,9 @@ export * from './lib/app-bar-tab-content/app-bar-tab-content.component';
 export * from './lib/buttons/buttons.component';
 export * from './lib/button/button.component';
 export * from './lib/image-viewer/image-viewer.component';
+export * from './lib/network-status/network-status.component';
 
 // export services
 export * from './lib/loading/loading.service';
 export * from './lib/services/overlay.service';
+export * from './lib/services/dialog.service';

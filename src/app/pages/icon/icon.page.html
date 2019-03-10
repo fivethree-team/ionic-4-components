@@ -20,9 +20,14 @@
             <ion-icon slot="icon-only" name="remove"></ion-icon>
           </ion-button>
 
+          <ion-item>
+            <ion-label>Icon turned off</ion-label>
+            <ion-checkbox [(ngModel)]="off" slot="end"></ion-checkbox>
+          </ion-item>
+
           <div class="example">
             <ion-button [fivCenter] fill="clear">
-              <fiv-icon slot="icon-only" [indicatorValue]="indicatorValue" [name]="icon"></fiv-icon>
+              <fiv-icon [off]="off" slot="icon-only" [indicatorValue]="indicatorValue" [name]="icon"></fiv-icon>
             </ion-button>
           </div>
 

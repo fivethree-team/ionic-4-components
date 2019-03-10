@@ -1,3 +1,5 @@
+import { DialogService } from './services/dialog.service';
+import { NetworkStatusComponent } from './network-status/network-status.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -95,9 +97,10 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivPopover,
     FivExpandableIndicator,
     OverlayComponent,
-    OverlayContentComponent
+    OverlayContentComponent,
+    NetworkStatusComponent
   ],
-  entryComponents: [FivImageViewer, FivPopover, OverlayContentComponent],
+  entryComponents: [FivImageViewer, FivPopover, OverlayContentComponent, NetworkStatusComponent, FivDialog],
   exports: [
     FivExpandable,
     FivEditableLabel,
@@ -135,10 +138,12 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivButton,
     FivExpandableIndicator,
     OverlayComponent,
-    OverlayContentComponent
+    OverlayContentComponent,
+    NetworkStatusComponent
   ],
   providers: [
-    OverlayService
+    OverlayService,
+    DialogService
   ]
 })
 export class FivethreeCoreModule { }

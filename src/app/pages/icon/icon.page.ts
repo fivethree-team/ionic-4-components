@@ -10,6 +10,7 @@ export class IconPage implements OnInit {
 
   icon = 'md-notifications';
   indicatorValue = -1;
+  off = false;
 
   constructor(private util: UtilService) { }
 

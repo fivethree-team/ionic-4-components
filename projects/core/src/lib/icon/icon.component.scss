@@ -55,3 +55,22 @@ ion-icon {
     right: calc(var(--fiv-dot-right, 4px) - 2px);
     z-index: 11;
 }
+
+.off {
+    width: 120%;
+    height: 2px;
+    background: var(--fiv-color-icon);
+    position: absolute;
+    left: 0;
+    transform: rotateZ(45deg) translateY(10px) translateX(6px);
+}
+
+.off-background {
+    width: 120%;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    background-color: var(--fiv-dot-color-background, var(--ion-color-light));
+    left: 2px;
+    transform: rotateZ(45deg) translateY(10px) translateX(6px);
+}

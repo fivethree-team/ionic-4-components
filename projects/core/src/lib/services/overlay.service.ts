@@ -1,20 +1,25 @@
 import {
   Injectable, TemplateRef, Type, ComponentFactoryResolver,
-  ApplicationRef, Injector, EmbeddedViewRef, ComponentRef
+  ApplicationRef, Injector, EmbeddedViewRef, ComponentRef, Renderer2, RendererFactory2
 } from '@angular/core';
-export type NgContent<T> = TemplateRef<T> | Type<T>;
+export type NgContent<T> = TemplateRef<T> | Type<T> | string;
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class OverlayService {
+  private renderer: Renderer2;
+
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
+    rendererFactory: RendererFactory2,
     private appRef: ApplicationRef,
-    private injector: Injector) { }
+    private injector: Injector) {
+    this.renderer = rendererFactory.createRenderer(null, null);
+  }
 
-  createOverlay<T>(component: Type<T>, content?: TemplateRef<any>): ComponentRef<T> {
+  createOverlay<T>(component: Type<T>, content?: NgContent<T>): ComponentRef<T> {
     const resolvedContent = this.resolveNgContent(content);
     const componentRef = this.componentFactoryResolver
       .resolveComponentFactory(component)
@@ -34,6 +39,10 @@ export class OverlayService {
 
   private resolveNgContent<T>(content: NgContent<T>) {
     if (!content) { return; }
+    if (typeof content === 'string') {
+      const element = this.renderer.createText(content);
+      return [[element]];
+    }
     if (content instanceof TemplateRef) {
       const viewRef = content.createEmbeddedView(null);
       return [viewRef.rootNodes];

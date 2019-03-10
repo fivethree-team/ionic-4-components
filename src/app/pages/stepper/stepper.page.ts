@@ -1,6 +1,5 @@
 import { FivStepper } from './../../../../projects/core/src/lib/stepper/stepper.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-stepper',

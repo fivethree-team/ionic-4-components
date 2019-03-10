@@ -6,10 +6,19 @@
 
 <ion-content padding>
 
-  <ion-toolbar>
-    <fiv-buttons [count]="0" slot="end" [text]="'Test'">
-      <fiv-button [text]="'yolo'"></fiv-button>
-    </fiv-buttons>
-  </ion-toolbar>
+  <ion-button (click)="onClick()">
+    open network status
+  </ion-button>
+  <ion-button (click)="toggle()">
+    strike
+  </ion-button>
+
+  <ion-button (click)="dialog()">
+    dialog
+  </ion-button>
 
 </ion-content>
+
+<ng-template #template>
+  dialog content
+</ng-template>

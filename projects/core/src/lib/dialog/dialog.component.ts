@@ -5,7 +5,6 @@ import {
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { OverlayComponent } from '../overlay/overlay.component';
 import { trigger, transition, style, animate, state, AnimationPlayer } from '@angular/animations';
-import { IonCard } from '@ionic/angular';
 export type Content<T> = TemplateRef<T> | Type<T>;
 
 @Component({

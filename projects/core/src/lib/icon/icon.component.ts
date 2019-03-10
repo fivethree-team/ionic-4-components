@@ -41,7 +41,9 @@ export class FivIcon implements OnInit {
   state: 'normal' | 'rotate' = 'normal';
   temp: string;
   @Input() color: string;
+  @Input() off = false;
   @Output() transitionDone = new EventEmitter<string>();
+
 
   indicatorState: 'normal' | 'scale' = 'scale';
   indicatorValueState: 'normal' | 'scale' = 'scale';
