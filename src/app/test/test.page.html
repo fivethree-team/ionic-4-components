@@ -6,19 +6,19 @@
 
 <ion-content padding>
 
-  <ion-button (click)="onClick()">
-    open network status
+  <ion-button (click)="show()">
+    Show
   </ion-button>
-  <ion-button (click)="toggle()">
-    strike
+  <ion-button (click)="hide()">
+    hide
   </ion-button>
 
-  <ion-button (click)="dialog()">
-    dialog
+  <ion-button (click)="online()">
+    set online
+  </ion-button>
+
+  <ion-button (click)="offline()">
+    set offline
   </ion-button>
 
 </ion-content>
-
-<ng-template #template>
-  dialog content
-</ng-template>

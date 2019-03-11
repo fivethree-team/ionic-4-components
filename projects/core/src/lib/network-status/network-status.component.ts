@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'fiv-network-status',
@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./network-status.component.scss'],
 })
 export class NetworkStatusComponent implements OnInit {
-  off: boolean;
+  visible = true;
+  status: 'online' | 'offline' = 'online';
+
+  onClick = new EventEmitter<NetworkStatusComponent>();
 
   constructor() { }
 
@@ -14,8 +17,20 @@ export class NetworkStatusComponent implements OnInit {
 
   }
 
-  toggleOff() {
-    this.off = !this.off;
+  show() {
+    this.visible = true;
+  }
+
+  hide() {
+    this.visible = false;
+  }
+
+  setStatus(status: 'online' | 'offline') {
+    this.status = status;
+  }
+
+  networkStatusClicked() {
+    this.onClick.emit(this);
   }
 
 }

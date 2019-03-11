@@ -8,34 +8,47 @@ import { NetworkStatusComponent, DialogService, DialogOptions } from '@fivethree
   styleUrls: ['./test.page.scss'],
 })
 export class TestPage implements OnInit {
-  off: boolean;
   componentRef: ComponentRef<NetworkStatusComponent>;
-  @ViewChild('template') template: TemplateRef<any>;
 
 
-  constructor(private dialogS: DialogService, private overlay: OverlayService) { }
+  constructor(private overlay: OverlayService) { }
 
   ngOnInit() {
   }
 
+  show() {
+    if (!this.componentRef) {
+      this.componentRef = this.overlay.createOverlay(NetworkStatusComponent);
+      this.componentRef.instance.onClick.subscribe(this.onclick);
+    } else {
+      this.componentRef.instance.show();
 
-  onClick() {
-    this.componentRef = this.overlay.createOverlay(NetworkStatusComponent);
+    }
+  }
+  hide() {
+    if (this.componentRef) {
+      this.componentRef.instance.hide();
+    }
   }
 
-  toggle() {
-    this.componentRef.instance.toggleOff();
+  online() {
+    if (this.componentRef) {
+      this.componentRef.instance.setStatus('online');
+    }
+  }
+  offline() {
+    if (this.componentRef) {
+      this.componentRef.instance.setStatus('offline');
+    }
   }
 
-  dialog() {
-    const options: DialogOptions = {
-      title: 'title',
-      subtitle: 'subtitle',
-      duration: 2700,
-      verticalAlign: 'bottom',
-      backdrop: true
-    };
-    this.dialogS.openDialog('Cooler Content', options);
+  onclick(component: NetworkStatusComponent) {
+    console.log(component);
   }
+
+
+
+
+
 
 }
