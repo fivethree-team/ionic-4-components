@@ -8,13 +8,11 @@ import { Platform, NavController } from '@ionic/angular';
   templateUrl: './back-button.component.html',
   styleUrls: ['./back-button.component.scss'],
 })
-export class FivBackButton implements OnInit, OnDestroy {
+export class FivBackButton implements OnInit {
 
   @Input() icon = 'arrow-back';
   @Input() color;
   @Input() defaultHref = '/';
-
-  private androidBackSubscription: Subscription;
 
   constructor(
     private platform: Platform,
@@ -24,19 +22,29 @@ export class FivBackButton implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.platform.backButton.subscribe((event) => {
-      this.buttonClick();
-    });
-  }
-
-  ngOnDestroy(): void {
-    if (this.androidBackSubscription) {
-      this.androidBackSubscription.unsubscribe();
-    }
+    this.platform.backButton
+      .subscribeWithPriority(9999, () => {
+        console.log('android back button click');
+        if (this.routingState.getHistory().length <= 1) {
+          // close the app because we are at root level
+          navigator['app'].exitApp();
+        } else {
+          // go back
+          this.buttonClick();
+        }
+      });
   }
 
   buttonClick() {
-    this.navCtrl.navigateBack(this.routingState.getPreviousUrl(this.defaultHref));
+    this.navCtrl.navigateBack(this.routingState.getPreviousUrl(this.defaultHref))
+      .then(() => {
+        // pop newly pushed page
+        this.routingState.pop();
+
+        // pop back we want to navigate back from
+        this.routingState.pop();
+
+      });
   }
 
 }
