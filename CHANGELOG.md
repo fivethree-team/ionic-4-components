@@ -1,3 +1,26 @@
+<a name="0.5.14"></a>
+## [0.5.14](https://github.com/fivethree-team/component-library/compare/v0.5.11...v0.5.14) (2019-03-15)
+
+
+### Bug Fixes
+
+* **overlay:** fix import of service ([3aaf17f](https://github.com/fivethree-team/component-library/commit/3aaf17f))
+* **router-item:** add rounded to hasShape ([d132314](https://github.com/fivethree-team/component-library/commit/d132314))
+
+
+### Features
+
+* **back-button:** added custom back button feature (needs FivRoutingService) ([1032374](https://github.com/fivethree-team/component-library/commit/1032374))
+* **buttons:** add color property to buttons and button ([5f90db7](https://github.com/fivethree-team/component-library/commit/5f90db7))
+* **dialog:** added dialogService ([d0aced0](https://github.com/fivethree-team/component-library/commit/d0aced0))
+* **loading:** add css props for loading-button and bar ([4f4c98f](https://github.com/fivethree-team/component-library/commit/4f4c98f))
+* **network-status:** added fade in fade out animation ([1e286ad](https://github.com/fivethree-team/component-library/commit/1e286ad))
+* **network-status:** added network status component ([56bb446](https://github.com/fivethree-team/component-library/commit/56bb446))
+* **overlay:** add overlay component and service ([256ab5a](https://github.com/fivethree-team/component-library/commit/256ab5a))
+* **router-item:** add rounded active state ([3380885](https://github.com/fivethree-team/component-library/commit/3380885))
+
+
+
 ## [0.5.14](https://github.com/fivethree-team/fivethree/compare/v0.5.11...v0.5.14) (2019-03-08)
 
 
