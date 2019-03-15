@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { OverlayService, NgContent } from './overlay.service';
+import { FivOverlayService, NgContent } from './overlay.service';
 import { FivDialog } from '../dialog/dialog.component';
 
 export interface DialogOptions {
@@ -13,9 +13,9 @@ export interface DialogOptions {
 @Injectable({
   providedIn: 'root'
 })
-export class DialogService {
+export class FivDialogService {
 
-  constructor(private overlay: OverlayService) { }
+  constructor(private overlay: FivOverlayService) { }
 
   openDialog(content: NgContent<any>, options?: DialogOptions) {
     const c = this.overlay.createOverlay(FivDialog, content);

@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LanguageService } from './services/language.service';
+import { FivRoutingStateService } from '@fivethree/core';
 
 @Component({
   selector: 'app-root',
@@ -92,18 +93,19 @@ export class AppComponent {
       icon: 'share',
       shape: 'rounded'
     },
-    // {
-    //   title: 'Directives',
-    //   url: '/directives',
-    //   icon: 'rocket'
-    // },
+    {
+      title: 'Test',
+      url: '/test',
+      icon: 'bug'
+    },
   ];
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private language: LanguageService
+    private language: LanguageService,
+    private routing: FivRoutingStateService
   ) {
     this.language.initializeLanguage();
     this.initializeApp();
@@ -111,6 +113,7 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.routing.loadRouting();
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

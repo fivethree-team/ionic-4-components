@@ -1,26 +1,26 @@
 import { Component, ViewChild, ComponentRef, TemplateRef } from '@angular/core';
-import { OverlayService } from '../../public_api';
-import { OverlayContentComponent } from '../overlay-content/overlay-content.component';
+import { FivOverlayService } from '../../public_api';
+import { FivOverlayContent } from '../overlay-content/overlay-content.component';
 
 @Component({
   selector: 'fiv-overlay',
   templateUrl: './overlay.component.html',
   styleUrls: ['./overlay.component.scss'],
 })
-export class OverlayComponent {
+export class FivOverlay {
 
-  private componentRef: ComponentRef<OverlayContentComponent>;
+  private componentRef: ComponentRef<FivOverlayContent>;
 
   @ViewChild('content') ngContent: TemplateRef<any>;
   private _open = false;
 
-  constructor(private overlay: OverlayService) {
+  constructor(private overlay: FivOverlayService) {
 
   }
 
   show() {
     if (!this.componentRef) {
-      const ref = this.overlay.createOverlay(OverlayContentComponent, this.ngContent);
+      const ref = this.overlay.createOverlay(FivOverlayContent, this.ngContent);
       this.componentRef = ref;
       this._open = true;
       return ref.instance;

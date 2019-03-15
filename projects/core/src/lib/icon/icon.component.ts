@@ -41,6 +41,7 @@ export class FivIcon implements OnInit {
   state: 'normal' | 'rotate' = 'normal';
   temp: string;
   @Input() color: string;
+  @Input() slot: string;
   @Input() off = false;
   @Output() transitionDone = new EventEmitter<string>();
 

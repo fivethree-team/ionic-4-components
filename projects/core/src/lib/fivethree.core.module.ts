@@ -1,5 +1,6 @@
-import { DialogService } from './services/dialog.service';
-import { NetworkStatusComponent } from './network-status/network-status.component';
+import { FivBackButton } from './back-button/back-button.component';
+import { FivDialogService } from './services/dialog.service';
+import { FivNetworkStatus } from './network-status/network-status.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -42,9 +43,9 @@ import { FivButton } from './button/button.component';
 import { FivPopover } from './popover/popover.component';
 import { FivExpandableIndicator } from './expandable-indicator/expandable-indicator.component';
 import { FivEditableLabel } from './editable-label/editable-label.component';
-import { OverlayService } from './services/overlay.service';
-import { OverlayComponent } from './overlay/overlay.component';
-import { OverlayContentComponent } from './overlay-content/overlay-content.component';
+import { FivOverlayService } from './services/overlay.service';
+import { FivOverlay } from './overlay/overlay.component';
+import { FivOverlayContent } from './overlay-content/overlay-content.component';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -96,11 +97,17 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivButton,
     FivPopover,
     FivExpandableIndicator,
-    OverlayComponent,
-    OverlayContentComponent,
-    NetworkStatusComponent
+    FivOverlay,
+    FivOverlayContent,
+    FivNetworkStatus,
+    FivBackButton
   ],
-  entryComponents: [FivImageViewer, FivPopover, OverlayContentComponent, NetworkStatusComponent, FivDialog],
+  entryComponents: [
+    FivImageViewer,
+    FivPopover,
+    FivOverlayContent,
+    FivNetworkStatus,
+    FivDialog],
   exports: [
     FivExpandable,
     FivEditableLabel,
@@ -137,13 +144,14 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivButtons,
     FivButton,
     FivExpandableIndicator,
-    OverlayComponent,
-    OverlayContentComponent,
-    NetworkStatusComponent
+    FivOverlay,
+    FivOverlayContent,
+    FivNetworkStatus,
+    FivBackButton
   ],
   providers: [
-    OverlayService,
-    DialogService
+    FivOverlayService,
+    FivDialogService
   ]
 })
 export class FivethreeCoreModule { }

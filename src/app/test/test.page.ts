@@ -1,6 +1,5 @@
-import { Component, OnInit, ComponentRef, ViewChild, TemplateRef } from '@angular/core';
-import { OverlayService } from '@fivethree/core';
-import { NetworkStatusComponent, DialogService, DialogOptions } from '@fivethree/core';
+import { Component, OnInit, ComponentRef } from '@angular/core';
+import { FivNetworkStatus, FivOverlayService } from '@fivethree/core';
 
 @Component({
   selector: 'app-test',
@@ -8,17 +7,17 @@ import { NetworkStatusComponent, DialogService, DialogOptions } from '@fivethree
   styleUrls: ['./test.page.scss'],
 })
 export class TestPage implements OnInit {
-  componentRef: ComponentRef<NetworkStatusComponent>;
+  componentRef: ComponentRef<FivNetworkStatus>;
 
 
-  constructor(private overlay: OverlayService) { }
+  constructor(private overlay: FivOverlayService) { }
 
   ngOnInit() {
   }
 
   show() {
     if (!this.componentRef) {
-      this.componentRef = this.overlay.createOverlay(NetworkStatusComponent);
+      this.componentRef = this.overlay.createOverlay(FivNetworkStatus);
       this.componentRef.instance.onClick.subscribe(this.onclick);
     } else {
       this.componentRef.instance.show();
@@ -42,7 +41,7 @@ export class TestPage implements OnInit {
     }
   }
 
-  onclick(component: NetworkStatusComponent) {
+  onclick(component: FivNetworkStatus) {
     console.log(component);
   }
 

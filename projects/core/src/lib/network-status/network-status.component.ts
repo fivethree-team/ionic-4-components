@@ -18,11 +18,11 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ])
   ]
 })
-export class NetworkStatusComponent implements OnInit {
+export class FivNetworkStatus implements OnInit {
   visible = true;
   status: 'online' | 'offline' = 'online';
 
-  onClick = new EventEmitter<NetworkStatusComponent>();
+  onClick = new EventEmitter<FivNetworkStatus>();
 
   constructor() { }
 
@@ -42,7 +42,7 @@ export class NetworkStatusComponent implements OnInit {
     this.status = status;
   }
 
-  networkStatusClicked() {
+  FivNetworkStatusClicked() {
     this.onClick.emit(this);
   }
 

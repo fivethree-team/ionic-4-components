@@ -3,7 +3,7 @@ import {
   EventEmitter, Output, Input, TemplateRef, Type, ElementRef, HostBinding
 } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OverlayComponent } from '../overlay/overlay.component';
+import { FivOverlay } from '../overlay/overlay.component';
 import { trigger, transition, style, animate, state, AnimationPlayer } from '@angular/animations';
 export type Content<T> = TemplateRef<T> | Type<T>;
 
@@ -49,7 +49,7 @@ export class FivDialog implements OnInit {
   outPosition = '-100%';
 
   @Output() fivClose: EventEmitter<FivDialog> = new EventEmitter();
-  @ViewChild(OverlayComponent) overlay: OverlayComponent;
+  @ViewChild(FivOverlay) overlay: FivOverlay;
   @ViewChild(FivLoadingProgressBar) bar: FivLoadingProgressBar;
   @ViewChild('dialog') dialogRef: ElementRef;
 

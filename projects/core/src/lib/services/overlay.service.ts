@@ -8,7 +8,7 @@ export type NgContent<T> = TemplateRef<T> | Type<T> | string;
 @Injectable({
   providedIn: 'root'
 })
-export class OverlayService {
+export class FivOverlayService {
   private renderer: Renderer2;
 
 
