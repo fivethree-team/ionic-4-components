@@ -5,6 +5,7 @@ import { NavController, Platform } from '@ionic/angular';
 
 export interface RoutingStateConfig {
   clearOnRoot?: boolean;
+  root: '/';
 }
 
 @Injectable({
@@ -32,7 +33,7 @@ export class FivRoutingStateService {
       .subscribe(({ urlAfterRedirects }: NavigationEnd) => {
         // add url to history
         this.history = [...this.history, urlAfterRedirects];
-        if (this.config && this.config.clearOnRoot && urlAfterRedirects === '/') {
+        if (this.config && this.config.clearOnRoot && urlAfterRedirects === this.config.root) {
           // clear on root
           this.clearHistory();
         }
