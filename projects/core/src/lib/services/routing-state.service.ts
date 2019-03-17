@@ -36,7 +36,7 @@ export class FivRoutingStateService {
 
         if (this.config && this.config.clearOn &&
           this.config.clearOn.some(s => s === urlAfterRedirects)) {
-          this.clearHistory(s);
+          this.clearHistory(urlAfterRedirects);
         }
       });
   }
