@@ -33,7 +33,7 @@ export class FivRoutingStateService {
       .subscribe(({ urlAfterRedirects }: NavigationEnd) => {
         // add url to history
         this.history = [...this.history, urlAfterRedirects];
-        console.log('CLEAR HISTORY', this.config, urlAfterRedirects, !!this.config, !!this.config.clearOn,
+        console.log('CLEAR HISTORY', urlAfterRedirects, typeof urlAfterRedirects,
           this.config.clearOn.indexOf(urlAfterRedirects) !== -1);
 
         if (this.config && this.config.clearOn &&
