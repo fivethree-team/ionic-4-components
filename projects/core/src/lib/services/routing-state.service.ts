@@ -31,6 +31,11 @@ export class FivRoutingStateService {
         filter(event => event instanceof NavigationEnd),
       )
       .subscribe(({ urlAfterRedirects }: NavigationEnd) => {
+        if (urlAfterRedirects === this.getPreviousUrl(this.config.root)) {
+          console.log('went back');
+          this.pop();
+          this.pop();
+        }
         // add url to history
         this.history = [...this.history, urlAfterRedirects];
         if (this.config && this.config.clearOn) {
