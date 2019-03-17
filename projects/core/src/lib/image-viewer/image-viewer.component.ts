@@ -134,7 +134,7 @@ export class FivImageViewer implements OnInit {
   }
 
   open(event) {
-    this.fivOpen.emit();
+    this.fivOpen.emit(this);
     this.appendComponentToBody(event);
   }
 
