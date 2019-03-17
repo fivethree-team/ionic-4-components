@@ -34,10 +34,10 @@ export class FivRoutingStateService {
         // add url to history
         this.history = [...this.history, urlAfterRedirects];
         console.log('CLEAR HISTORY', urlAfterRedirects, typeof urlAfterRedirects,
-          this.config.clearOn.indexOf(urlAfterRedirects) !== -1);
+          this.config.clearOn.some(s => s.valueOf() === urlAfterRedirects.valueOf()));
 
         if (this.config && this.config.clearOn &&
-          this.config.clearOn.indexOf(urlAfterRedirects) !== -1) {
+          this.config.clearOn.some(s => s.valueOf() === urlAfterRedirects.valueOf())) {
           this.clearHistory(urlAfterRedirects);
         }
       });
@@ -70,13 +70,16 @@ export class FivRoutingStateService {
 
   public clearHistory(fromUrl: string) {
     console.log('clear history', fromUrl);
-    this.history = this.history.filter(h => this.config.clearOn.some(s => s === h));
+    this.history = this.history.filter(h => this.config.clearOn.some(s => s.valueOf() === h.valueOf()));
     if (fromUrl !== this.config.root) {
       this.history.push(fromUrl);
     }
-    this.history = this.history.reverse().filter(function (item, pos, self) {
-      return self.indexOf(item) === pos;
-    });
+    this.history = this.history
+      .reverse()
+      .filter(function (item, pos, self) {
+        return self.indexOf(item) === pos;
+      })
+      .reverse();
 
     console.log('CLEARED HISTORY', this.history);
   }
