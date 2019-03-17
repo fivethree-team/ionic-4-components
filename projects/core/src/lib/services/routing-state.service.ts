@@ -33,12 +33,18 @@ export class FivRoutingStateService {
       .subscribe(({ urlAfterRedirects }: NavigationEnd) => {
         // add url to history
         this.history = [...this.history, urlAfterRedirects];
-        console.log('CLEAR HISTORY', urlAfterRedirects, typeof urlAfterRedirects,
-          this.config.clearOn.some(s => s.valueOf() === urlAfterRedirects.valueOf()));
+        console.log('CLEAR HISTORY', urlAfterRedirects);
 
-        if (this.config && this.config.clearOn &&
-          this.config.clearOn.some(s => s.valueOf() === urlAfterRedirects.valueOf())) {
-          this.clearHistory(urlAfterRedirects);
+        if (this.config && this.config.clearOn) {
+          const clear = this.config.clearOn
+            .some(s => {
+              // tslint:disable-next-line:triple-equals
+              console.log(s, urlAfterRedirects, s === urlAfterRedirects, s == urlAfterRedirects, typeof s, typeof urlAfterRedirects);
+              return s === urlAfterRedirects;
+            });
+          if (clear) {
+            this.clearHistory(urlAfterRedirects);
+          }
         }
       });
   }
