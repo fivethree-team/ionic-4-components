@@ -74,15 +74,15 @@ export class FivRoutingStateService {
     if (fromUrl !== this.config.root) {
       this.history.push(fromUrl);
     }
-    if (this.history[0] !== this.config.root) {
-      this.history = [this.config.root, ...this.history];
-    }
     this.history = this.history
       .reverse()
       .filter(function (item, pos, self) {
         return self.indexOf(item) === pos;
       })
       .reverse();
+    if (this.history[0] !== this.config.root) {
+      this.history = [this.config.root, ...this.history];
+    }
   }
 
   public getCurrentUrl(): string {
