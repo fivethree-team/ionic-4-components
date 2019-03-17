@@ -32,12 +32,13 @@ export class FivRoutingStateService {
       )
       .subscribe(({ urlAfterRedirects }: NavigationEnd) => {
         // add url to history
+        this.history = [...this.history, urlAfterRedirects];
         if (this.config && this.config.clearOn) {
-          const clear = this.config.clearOn
-            .some(s => s === urlAfterRedirects);
+          const clear = this.config.clearOn.some(s => s === urlAfterRedirects);
           if (clear) {
             this.clearHistory(urlAfterRedirects);
           }
+          console.log(this.history);
         }
       });
   }
@@ -68,7 +69,7 @@ export class FivRoutingStateService {
   }
 
   public clearHistory(fromUrl: string) {
-    console.log('clear history', fromUrl);
+    console.log('clear history from', fromUrl);
     this.history = this.history.filter(h => this.config.clearOn.some(s => s === h));
     if (fromUrl !== this.config.root) {
       this.history.push(fromUrl);
@@ -82,10 +83,6 @@ export class FivRoutingStateService {
         return self.indexOf(item) === pos;
       })
       .reverse();
-
-
-
-    console.log('CLEARED HISTORY', this.history);
   }
 
   public getCurrentUrl(): string {
@@ -93,15 +90,6 @@ export class FivRoutingStateService {
   }
 
   goBack(defaultHref = '/') {
-
-    this.navCtrl.navigateBack(this.getPreviousUrl(defaultHref))
-      .then(() => {
-        // pop newly pushed page
-        this.pop();
-
-        // pop back we want to navigate back from
-        this.pop();
-
-      });
+    this.navCtrl.navigateBack(this.getPreviousUrl(defaultHref));
   }
 }
