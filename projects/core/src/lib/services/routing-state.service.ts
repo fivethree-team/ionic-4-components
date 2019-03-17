@@ -13,7 +13,7 @@ export interface RoutingStateConfig {
 })
 export class FivRoutingStateService {
 
-  private history = [];
+  private history: string[] = [];
   private config: RoutingStateConfig;
 
   constructor(
@@ -34,10 +34,10 @@ export class FivRoutingStateService {
         // add url to history
         this.history = [...this.history, urlAfterRedirects];
         console.log('CLEAR HISTORY', this.config, urlAfterRedirects, !!this.config, !!this.config.clearOn,
-          this.config.clearOn.some(s => s === urlAfterRedirects.toString()));
+          this.config.clearOn.indexOf(urlAfterRedirects) !== -1);
 
         if (this.config && this.config.clearOn &&
-          this.config.clearOn.some(s => s === urlAfterRedirects.toString())) {
+          this.config.clearOn.indexOf(urlAfterRedirects) !== -1) {
           this.clearHistory(urlAfterRedirects);
         }
       });
@@ -70,7 +70,15 @@ export class FivRoutingStateService {
 
   public clearHistory(fromUrl: string) {
     console.log('clear history', fromUrl);
-    this.history = [this.config.root || '/', fromUrl];
+    this.history = this.history.filter(h => this.config.clearOn.some(s => s === h));
+    if (fromUrl !== this.config.root) {
+      this.history.push(fromUrl);
+    }
+    this.history = this.history.reverse().filter(function (item, pos, self) {
+      return self.indexOf(item) === pos;
+    });
+
+    console.log('CLEARED HISTORY', this.history);
   }
 
   public getCurrentUrl(): string {
