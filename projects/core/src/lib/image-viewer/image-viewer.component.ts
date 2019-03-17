@@ -89,6 +89,7 @@ export class FivImageViewer implements OnInit {
   @Input() pullDistance = 150;
   @Input() actions: ImageViewerAction[] = [];
   @Output() fivClose = new EventEmitter();
+  @Output() fivOpen = new EventEmitter();
   @Output() fivActionClick = new EventEmitter<number>();
   componentRef: ComponentRef<FivImageViewer>;
   _isOpen = false;
@@ -133,6 +134,7 @@ export class FivImageViewer implements OnInit {
   }
 
   open(event) {
+    this.fivOpen.emit();
     this.appendComponentToBody(event);
   }
 
@@ -158,6 +160,7 @@ export class FivImageViewer implements OnInit {
     this.closeSub = this.componentRef.instance.fivClose
       .pipe(take(1))
       .subscribe(() => {
+        this.fivClose.emit(this);
         this.closeSub.unsubscribe();
         this.actionSub.unsubscribe();
         this.thumbnailVisible = true;

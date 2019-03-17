@@ -16,4 +16,8 @@ export class ImagePage implements OnInit {
     console.log('test', index);
   }
 
+  fivClose(event) {
+    console.log('fivClose', event);
+  }
+
 }

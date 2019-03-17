@@ -4,7 +4,7 @@ import { filter } from 'rxjs/operators';
 import { NavController, Platform } from '@ionic/angular';
 
 export interface RoutingStateConfig {
-  clearOnRoot?: boolean;
+  clearOn: string[];
   root: string;
 }
 
@@ -33,8 +33,9 @@ export class FivRoutingStateService {
       .subscribe(({ urlAfterRedirects }: NavigationEnd) => {
         // add url to history
         this.history = [...this.history, urlAfterRedirects];
-        if (this.config && this.config.clearOnRoot && urlAfterRedirects === (this.config.root || '/')) {
-          // clear on root
+
+        if (this.config && this.config.clearOn &&
+          this.config.clearOn.some(s => s === urlAfterRedirects)) {
           this.clearHistory();
         }
       });
@@ -67,7 +68,7 @@ export class FivRoutingStateService {
 
   public clearHistory() {
     console.log('clear history');
-    this.history = ['/'];
+    this.history = [this.config.root || '/'];
   }
 
   public getCurrentUrl(): string {
