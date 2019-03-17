@@ -36,7 +36,7 @@ export class FivRoutingStateService {
 
         if (this.config && this.config.clearOn &&
           this.config.clearOn.some(s => s === urlAfterRedirects)) {
-          this.clearHistory();
+          this.clearHistory(s);
         }
       });
   }
@@ -66,9 +66,9 @@ export class FivRoutingStateService {
     return this.history.pop();
   }
 
-  public clearHistory() {
-    console.log('clear history');
-    this.history = [this.config.root || '/'];
+  public clearHistory(fromUrl: string) {
+    console.log('clear history', fromUrl);
+    this.history = [this.config.root || '/', fromUrl];
   }
 
   public getCurrentUrl(): string {
