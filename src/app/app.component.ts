@@ -113,7 +113,8 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.routing.loadRouting({ clearOnRoot: true, root: '/' });
+      this.routing.loadRouting({ clearOn: ['/'], root: '/' });
+
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
