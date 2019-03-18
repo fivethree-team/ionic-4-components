@@ -1,16 +1,49 @@
 <fiv-overlay #overlay>
-  <div *ngIf="backdrop" [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}" (click)="close()" class="backdrop"></div>
-  <div #dialog>
-    <ion-card [ngClass]="[verticalAlign]" [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}" [@slide]="{value: dialogState, params: {top: outPosition, inDuration: inDuration + 'ms',outDuration: outDuration + 'ms'}}"
-      (@slide.done)="animationDone($event)">
-      <fiv-loading-progress-bar [verticalAlign]="verticalAlign === 'top' ? 'bottom' : 'top'"
-        (fivDoneShrinking)="close()" #bar></fiv-loading-progress-bar>
-      <ion-card-header *ngIf="subtitle || title">
-        <ion-card-subtitle *ngIf="subtitle">{{subtitle}}</ion-card-subtitle>
-        <ion-card-title *ngIf="title">{{title}}</ion-card-title>
-      </ion-card-header>
-      <ng-content></ng-content>
-    </ion-card>
+  <div *ngIf="backdrop" (@fade.done)="backdropAnimDone($event)"
+    [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}" (click)="close()" class="backdrop">
+  </div>
+  <div #dialog class="dialog" [ngClass]="[verticalAlign, shape]">
+    <ion-grid>
+      <ion-row *ngIf="horizontalAlign === 'left'">
+        <ion-col size="12" sizeXs="12" sizeSm="12" sizeMd="6" sizeLg="5" sizeXl="4">
+          <ng-container>
+            <ng-container *ngTemplateOutlet="card"></ng-container>
+          </ng-container>
+        </ion-col>
+        <ion-col size="12" sizeXs="12" sizeSm="12" sizeMd="6" sizeLg="7" sizeXl="8">
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="horizontalAlign === 'center'">
+        <ion-col size="12" sizeXs="12" sizeSm="12" sizeMd="3" sizeLg="3" sizeXl="3">
+        </ion-col>
+        <ion-col size="12" sizeXs="12" sizeSm="12" sizeMd="6" sizeLg="6" sizeXl="6">
+          <ng-container>
+            <ng-container *ngTemplateOutlet="card"></ng-container>
+          </ng-container>
+        </ion-col>
+        <ion-col size="12" sizeXs="12" sizeSm="12" sizeMd="3" sizeLg="3" sizeXl="3">
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="horizontalAlign === 'right'">
+        <ion-col size="12" sizeXs="12" sizeSm="12" sizeMd="6" sizeLg="7" sizeXl="8">
+        </ion-col>
+        <ion-col size="12" sizeXs="12" sizeSm="12" sizeMd="6" sizeLg="5" sizeXl="4">
+          <ng-container>
+            <ng-container *ngTemplateOutlet="card"></ng-container>
+          </ng-container>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 
 </fiv-overlay>
+
+<ng-template #card>
+  <ion-card [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}"
+    [@slide]="{value: dialogState, params: {top: outPosition, inDuration: inDuration + 'ms',outDuration: outDuration + 'ms'}}"
+    (@slide.done)="animationDone($event)">
+    <fiv-loading-progress-bar [verticalAlign]="verticalAlign === 'top' ? 'bottom' : 'top'" (fivDoneShrinking)="close()"
+      #bar></fiv-loading-progress-bar>
+    <ng-content></ng-content>
+  </ion-card>
+</ng-template>

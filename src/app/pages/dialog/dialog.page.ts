@@ -12,8 +12,8 @@ export class DialogPage implements OnInit {
 
   backdrop = true;
   verticalAlign = 'top';
-  title = 'New Message';
-  subtitle = 'You have a new message from Marc!';
+  horizontalAlign = 'left';
+  shape = 'fill';
   duration = 3600;
   inDuration = '220';
   outDuration = '180';

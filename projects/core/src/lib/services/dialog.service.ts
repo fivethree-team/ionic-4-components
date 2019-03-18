@@ -4,10 +4,10 @@ import { FivDialog } from '../dialog/dialog.component';
 
 export interface DialogOptions {
   verticalAlign: 'bottom' | 'center' | 'top';
+  horizontalAlign: 'left' | 'center' | 'right';
+  shape: 'card' | 'fill';
   backdrop: boolean;
   duration: number;
-  title: string;
-  subtitle: string;
 }
 
 @Injectable({
@@ -18,12 +18,12 @@ export class FivDialogService {
   constructor(private overlay: FivOverlayService) { }
 
   openDialog(content: NgContent<any>, options?: DialogOptions) {
-    const c = this.overlay.createOverlay(FivDialog, content);
+    const c = this.overlay.createOverlay<FivDialog>(FivDialog, content);
     c.instance.verticalAlign = options ? options.verticalAlign : 'top';
+    c.instance.verticalAlign = options ? options.verticalAlign : 'center';
     c.instance.backdrop = options ? options.backdrop : true;
     c.instance.duration = options ? options.duration : 0;
-    c.instance.title = options ? options.title : '';
-    c.instance.subtitle = options ? options.subtitle : '';
+    c.instance.shape = options ? options.shape : 'card';
     c.instance.open();
 
     return c;

@@ -38,17 +38,18 @@ export type Content<T> = TemplateRef<T> | Type<T>;
 export class FivDialog implements OnInit {
 
   @Input() verticalAlign: 'bottom' | 'center' | 'top' = 'top';
+  @Input() horizontalAlign: 'left' | 'center' | 'right' = 'center';
+  @Input() shape: 'fill' | 'card' = 'card';
 
-  @Input() backdrop = false;
+  @Input() backdrop = true;
   @Input() duration: number;
-  @Input() title: string;
-  @Input() subtitle: string;
   // animation data
-  @Input() inDuration = 220;
-  @Input() outDuration = 180;
+  @Input() inDuration = 160;
+  @Input() outDuration = 120;
   outPosition = '-100%';
 
   @Output() fivClose: EventEmitter<FivDialog> = new EventEmitter();
+  @Output() fivOpen: EventEmitter<FivDialog> = new EventEmitter();
   @ViewChild(FivOverlay) overlay: FivOverlay;
   @ViewChild(FivLoadingProgressBar) bar: FivLoadingProgressBar;
   @ViewChild('dialog') dialogRef: ElementRef;
@@ -59,7 +60,6 @@ export class FivDialog implements OnInit {
 
   open() {
     this.outPosition = this.getSlideStartPosition();
-    console.log('open from', this.outPosition);
     this.overlay.show();
     this.dialogState = 'in';
     if (this.duration) {
@@ -83,12 +83,18 @@ export class FivDialog implements OnInit {
     }
   }
 
+  backdropAnimDone(event) {
+    if (event.fromState === 'out' && event.toState === 'in') {
+      this.fivOpen.emit(this);
+    }
+  }
+
   getSlideStartPosition() {
     if (this.verticalAlign === 'top') {
       return '-100%';
     }
     if (this.verticalAlign === 'center') {
-      return '60%';
+      return '54%';
     }
     if (this.verticalAlign === 'bottom') {
       return '100%';

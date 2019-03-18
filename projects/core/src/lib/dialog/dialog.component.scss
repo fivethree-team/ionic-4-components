@@ -3,22 +3,58 @@
     // --fiv-dialog-bottom: 0px;
 }
 
-ion-card {
-    --ion-item-background: #fff;
-    position: absolute;
-    width: calc(100% - 20px);
+ion-grid {
+    --ion-grid-padding: 0;
+    --ion-grid-column-padding: 0;
 }
 
-ion-card.top {
+.dialog {
+    --ion-item-background: #fff;
+    position: absolute;
+    width: 100%;
+}
+
+.dialog.fill {
+    .sc-ion-card-ios-h,
+    .sc-ion-card-md-h {
+        margin-left: unset;
+        margin-right: unset;
+        -webkit-margin-start: 0px;
+        margin-inline-start: 0px;
+        -webkit-margin-end: 0px;
+        margin-inline-end: 0px;
+    }
+    .sc-ion-card-ios-h,
+    .sc-ion-card-md-h {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    &.top {
+        .sc-ion-card-ios-h,
+        .sc-ion-card-md-h {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+    }
+    &.bottom {
+        .sc-ion-card-ios-h,
+        .sc-ion-card-md-h {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+    }
+}
+
+.dialog.top {
     top: 0;
 }
 
-ion-card.center {
+.dialog.center {
     top: 50%;
     transform: translateY(-50%);
 }
 
-ion-card.bottom {
+.dialog.bottom {
     bottom: 0;
 }
 
