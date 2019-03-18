@@ -8,13 +8,13 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 84px;
+    height: calc(84px + env(safe-area-inset-bottom));
     background: rgba(0, 0, 0, 0);
     z-index: 5000;
     .appbar-rect {
         position: absolute;
         width: calc(50% - 34px);
-        height: 56px;
+        height: calc(56px + env(safe-area-inset-bottom));
         bottom: 0;
         box-shadow: 3px -4px 5px 0px rgba(0, 0, 0, 0.1);
         transition: all 350ms ease;
@@ -46,10 +46,22 @@
         height: 48px;
         position: absolute;
         overflow: hidden;
+        bottom: env(safe-area-inset-bottom);
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 350ms ease;
+    }
+    .rect-filler {
+        display: inline-block;
+        width: 72px;
+        height: env(safe-area-inset-bottom);
+        position: absolute;
+        overflow: hidden;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
         transition: all 350ms ease;
+        background: var(--fiv-color-appbar);
     }
     .rect:before {
         content: '';
