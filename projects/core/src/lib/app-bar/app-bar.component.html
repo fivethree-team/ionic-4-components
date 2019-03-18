@@ -7,6 +7,7 @@
   </div>
   <fiv-loading-fab (fivHidden)="onFabHidden()" [icon]="icon" [visible]="_fabVisible" #fab (click)="fabClick()"></fiv-loading-fab>
   <div class="rect"></div>
+  <div class="rect-filler"></div>
   <div class="appbar-rect right">
     <div class="tabs">
       <fiv-app-bar-tab-content (ionTabButtonClick)="ionTabButtonClick($event)" [active]="router.url.endsWith(tab.href)" [tab]="tab.tab" [href]="tab.href" [name]="tab.name"
