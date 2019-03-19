@@ -1,23 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-62036b20.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-62036b20.js ***!
-  \***********************************************************************/
-/*! exports provided: a, b, c, d, e */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isPlatform; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return PLATFORMS_MAP; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getPlatforms; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return setupPlatforms; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return testUserAgent; });
-var PLATFORMS_MAP={ipad:isIpad,iphone:isIphone,ios:isIOS,android:isAndroid,phablet:isPhablet,tablet:isTablet,cordova:isCordova,capacitor:isCapacitorNative,electron:isElectron,pwa:isPWA,mobile:isMobile,mobileweb:isMobileWeb,desktop:isDesktop,hybrid:isHybrid};function getPlatforms(t){return setupPlatforms(t)}function isPlatform(t,i){return getPlatforms(t).includes(i)}function setupPlatforms(t){t.Ionic=t.Ionic||{};var i=t.Ionic.platforms;if(null==i){i=t.Ionic.platforms=detectPlatforms(t);var e=t.document.documentElement.classList;i.forEach(function(t){return e.add("plt-"+t)})}return i}function isMobileWeb(t){return isMobile(t)&&!isHybrid(t)}function detectPlatforms(t){return Object.keys(PLATFORMS_MAP).filter(function(i){return PLATFORMS_MAP[i](t)})}function isIpad(t){return testUserAgent(t,/iPad/i)}function isIphone(t){return testUserAgent(t,/iPhone/i)}function isIOS(t){return testUserAgent(t,/iPad|iPhone|iPod/i)}function isAndroid(t){return testUserAgent(t,/android|sink/i)}function isPhablet(t){var i=t.innerWidth,e=t.innerHeight,n=Math.min(i,e),r=Math.max(i,e);return n>390&&n<520&&r>620&&r<800}function isTablet(t){var i=t.innerWidth,e=t.innerHeight,n=Math.min(i,e),r=Math.max(i,e);return n>460&&n<820&&r>780&&r<1400}function isMobile(t){return matchMedia(t,"(any-pointer:coarse)")}function isDesktop(t){return!isMobile(t)}function isHybrid(t){return isCordova(t)||isCapacitorNative(t)}function isCordova(t){return!!(t.cordova||t.phonegap||t.PhoneGap)}function isCapacitorNative(t){var i=t.Capacitor;return!(!i||!i.isNative)}function isElectron(t){return testUserAgent(t,/electron/)}function isPWA(t){return t.matchMedia("(display-mode: standalone)").matches||t.navigator.standalone}function testUserAgent(t,i){return i.test(t.navigator.userAgent)}function matchMedia(t,i){return t.matchMedia(i).matches}
-
-/***/ }),
-
 /***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-6d7d2f8c.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-6d7d2f8c.js ***!
@@ -58,6 +40,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return createThemedClasses; });
 /* harmony import */ var _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../polyfills/tslib.js */ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js");
 function hostContext(t,e){return null!==e.closest(t)}function createColorClasses(t){var e;return"string"==typeof t&&t.length>0?((e={"ion-color":!0})["ion-color-"+t]=!0,e):void 0}function createThemedClasses(t,e){var r;return(r={})[e]=!0,r[e+"-"+t]=void 0!==t,r}function getClassList(t){return void 0!==t?(Array.isArray(t)?t:t.split(" ")).filter(function(t){return null!=t}).map(function(t){return t.trim()}).filter(function(t){return""!==t}):[]}function getClassMap(t){var e={};return getClassList(t).forEach(function(t){return e[t]=!0}),e}var SCHEME=/^[a-z][a-z0-9+\-.]*:/;function openURL(t,e,r,n){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var s;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(o){switch(o.label){case 0:return null==e||"#"===e[0]||SCHEME.test(e)?[3,2]:(s=t.document.querySelector("ion-router"))?(null!=r&&r.preventDefault(),[4,s.componentOnReady()]):[3,2];case 1:return o.sent(),[2,s.push(e,n)];case 2:return[2,!1]}})})}
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-f0b1119d.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-f0b1119d.js ***!
+  \***********************************************************************/
+/*! exports provided: a, b, c, d, e */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isPlatform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getPlatforms; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return setupPlatforms; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return testUserAgent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return PLATFORMS_MAP; });
+var getPlatforms=function(t){return setupPlatforms(t)},isPlatform=function(t,i){return getPlatforms(t).includes(i)},setupPlatforms=function(t){t.Ionic=t.Ionic||{};var i=t.Ionic.platforms;return null==i&&(i=t.Ionic.platforms=detectPlatforms(t)).forEach(function(i){return t.document.documentElement.classList.add("plt-"+i)}),i},isMobileWeb=function(t){return isMobile(t)&&!isHybrid(t)},detectPlatforms=function(t){return Object.keys(PLATFORMS_MAP).filter(function(i){return PLATFORMS_MAP[i](t)})},isIpad=function(t){return testUserAgent(t,/iPad/i)},isIphone=function(t){return testUserAgent(t,/iPhone/i)},isIOS=function(t){return testUserAgent(t,/iPad|iPhone|iPod/i)},isAndroid=function(t){return testUserAgent(t,/android|sink/i)},isPhablet=function(t){var i=t.innerWidth,e=t.innerHeight,n=Math.min(i,e),r=Math.max(i,e);return n>390&&n<520&&r>620&&r<800},isTablet=function(t){var i=t.innerWidth,e=t.innerHeight,n=Math.min(i,e),r=Math.max(i,e);return n>460&&n<820&&r>780&&r<1400},isMobile=function(t){return matchMedia(t,"(any-pointer:coarse)")},isDesktop=function(t){return!isMobile(t)},isHybrid=function(t){return isCordova(t)||isCapacitorNative(t)},isCordova=function(t){return!!(t.cordova||t.phonegap||t.PhoneGap)},isCapacitorNative=function(t){var i=t.Capacitor;return!(!i||!i.isNative)},isElectron=function(t){return testUserAgent(t,/electron/)},isPWA=function(t){return!!t.matchMedia&&(t.matchMedia("(display-mode: standalone)").matches||t.navigator.standalone)},testUserAgent=function(t,i){return!(!t.navigator||!t.navigator.userAgent)&&i.test(t.navigator.userAgent)},matchMedia=function(t,i){return!!t.matchMedia&&t.matchMedia(i).matches},PLATFORMS_MAP={ipad:isIpad,iphone:isIphone,ios:isIOS,android:isAndroid,phablet:isPhablet,tablet:isTablet,cordova:isCordova,capacitor:isCapacitorNative,electron:isElectron,pwa:isPWA,mobile:isMobile,mobileweb:isMobileWeb,desktop:isDesktop,hybrid:isHybrid};
 
 /***/ }),
 

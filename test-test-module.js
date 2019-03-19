@@ -65,7 +65,7 @@ var TestPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>test</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-toolbar>\n    <fiv-buttons [count]=\"0\" slot=\"end\" [text]=\"'Test'\">\n      <fiv-button [text]=\"'yolo'\"></fiv-button>\n    </fiv-buttons>\n  </ion-toolbar>\n\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <fiv-back-button></fiv-back-button>\n    </ion-buttons>\n    <ion-title>test</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-button (click)=\"show()\">\n    Show\n  </ion-button>\n  <ion-button (click)=\"hide()\">\n    hide\n  </ion-button>\n\n  <ion-button (click)=\"online()\">\n    set online\n  </ion-button>\n\n  <ion-button (click)=\"offline()\">\n    set offline\n  </ion-button>\n\n</ion-content>"
 
 /***/ }),
 
@@ -91,6 +91,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestPage", function() { return TestPage; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _fivethree_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fivethree/core */ "./dist/@fivethree/core/fesm5/fivethree-core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -101,11 +102,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var TestPage = /** @class */ (function () {
-    function TestPage() {
-        this.timingFunction = '0ms';
+    function TestPage(overlay) {
+        this.overlay = overlay;
     }
     TestPage.prototype.ngOnInit = function () {
+    };
+    TestPage.prototype.show = function () {
+        if (!this.componentRef) {
+            this.componentRef = this.overlay.createOverlay(_fivethree_core__WEBPACK_IMPORTED_MODULE_1__["FivNetworkStatus"]);
+            this.componentRef.instance.onClick.subscribe(this.onclick);
+        }
+        else {
+            this.componentRef.instance.show();
+        }
+    };
+    TestPage.prototype.hide = function () {
+        if (this.componentRef) {
+            this.componentRef.instance.hide();
+        }
+    };
+    TestPage.prototype.online = function () {
+        if (this.componentRef) {
+            this.componentRef.instance.setStatus('online');
+        }
+    };
+    TestPage.prototype.offline = function () {
+        if (this.componentRef) {
+            this.componentRef.instance.setStatus('offline');
+        }
+    };
+    TestPage.prototype.onclick = function (component) {
+        console.log(component);
     };
     TestPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -113,7 +142,7 @@ var TestPage = /** @class */ (function () {
             template: __webpack_require__(/*! ./test.page.html */ "./src/app/test/test.page.html"),
             styles: [__webpack_require__(/*! ./test.page.scss */ "./src/app/test/test.page.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_fivethree_core__WEBPACK_IMPORTED_MODULE_1__["FivOverlayService"]])
     ], TestPage);
     return TestPage;
 }());
