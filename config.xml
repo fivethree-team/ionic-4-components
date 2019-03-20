@@ -86,4 +86,5 @@
         <variable name="API_KEY_FOR_IOS" value="MAPS_API_KEY_FOR_IOS" />
     </plugin>
     <engine name="android" spec="7.1.4" />
+    <engine name="ios" spec="4.5.5" />
 </widget>

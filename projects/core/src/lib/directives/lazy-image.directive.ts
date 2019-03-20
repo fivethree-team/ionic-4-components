@@ -25,6 +25,7 @@ export class LazyImageDirective implements OnInit {
         }
       });
     });
+    io['POLL_INTERVAL'] = 100;
     if (this.fivImage) {
       io.observe(this.fivImage.element.nativeElement);
     } else {

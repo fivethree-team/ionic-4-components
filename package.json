@@ -56,6 +56,7 @@
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
     "cordova-android": "7.1.4",
+    "cordova-ios": "4.5.5",
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-googlemaps": "2.5.0",
     "cordova-plugin-ionic-keyboard": "2.1.3",
@@ -64,6 +65,7 @@
     "cordova-plugin-whitelist": "1.3.3",
     "core-js": "2.6.5",
     "hammerjs": "2.0.8",
+    "intersection-observer": "^0.5.1",
     "ng-lottie": "0.3.2",
     "ngx-markdown": "7.1.4",
     "rxjs": "6.3.3",
@@ -124,7 +126,8 @@
     "cordova-plugin-ionic-webview": {},
     "cordova-plugin-ionic-keyboard": {},
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   },
   "platforms": [
