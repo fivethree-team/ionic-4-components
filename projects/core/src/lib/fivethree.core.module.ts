@@ -46,6 +46,7 @@ import { FivEditableLabel } from './editable-label/editable-label.component';
 import { FivOverlayService } from './services/overlay.service';
 import { FivOverlay } from './overlay/overlay.component';
 import { FivOverlayContent } from './overlay-content/overlay-content.component';
+import { LazyImageDirective } from './directives/lazy-image.directive';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -100,7 +101,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivOverlay,
     FivOverlayContent,
     FivNetworkStatus,
-    FivBackButton
+    FivBackButton,
+    LazyImageDirective
   ],
   entryComponents: [
     FivImageViewer,
@@ -147,7 +149,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivOverlay,
     FivOverlayContent,
     FivNetworkStatus,
-    FivBackButton
+    FivBackButton,
+    LazyImageDirective
   ],
   providers: [
     FivOverlayService,

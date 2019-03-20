@@ -1,4 +1,4 @@
-<img class="thumbnail" [width]="width" [height]="height" #thumbnail *ngIf="thumbnailVisible" (click)="open($event)"
+<img class="thumbnail" [width]="width" [height]="height" #thumbnail *ngIf="thumbnailVisible && src" (click)="open($event)"
   [src]="src">
 <div #backdrop [@backdrop] (@backdrop.done)="onEnter($event)" *ngIf="_isOpen" class="backdrop">
   <ion-toolbar [@fade] *ngIf="_controlsVisible" color="translucent">
@@ -26,4 +26,4 @@
 </div>
 <img #imageView (@imageLeave.done)="detach($event)" class="image-view" [@imageLeave]="{value: ':leave', params : {top: thumbnailPosition.offsetTop, left: thumbnailPosition.offsetLeft, height: thumbnailPosition.height, width: thumbnailPosition.width, panTop: thumbnailPosition.panTop}}"
   [@imageEnter]="{value: ':enter', params : {top: thumbnailPosition.offsetTop, left: thumbnailPosition.offsetLeft, height: thumbnailPosition.height, width: thumbnailPosition.width}}"
-  *ngIf="thumbnailPosition && _isOpen" [src]="src">
+  *ngIf="thumbnailPosition && _isOpen && src" [src]="src">

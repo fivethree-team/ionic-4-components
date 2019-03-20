@@ -16,6 +16,19 @@
 
   <fiv-image-viewer (fivActionClick)="onActionClick($event)" [width]="103.5" [height]="122" [actions]="[{icon: 'md-trash'},{icon: 'md-send'},{icon: 'md-image'},{icon: 'md-share'}]"
     [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'"></fiv-image-viewer>
-  <fiv-image-viewer (fivActionClick)="onActionClick($event)" [width]="207" [height]="244" [actions]="[{name: 'Ablesung abschließen'}]" [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'"></fiv-image-viewer>
  
+
+  <img fivLazyImage (willShow)="onLoad($event)" alt="" class="test">
+  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
+  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
+  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
+  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
+  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
+  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
+  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
+  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
+
+  <fiv-image-viewer (fivActionClick)="onActionClick($event)" [width]="207" [height]="244" [actions]="[{name: 'Ablesung abschließen'}]" [fivLazyImage]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'"></fiv-image-viewer>
+ 
+
 </ion-content>

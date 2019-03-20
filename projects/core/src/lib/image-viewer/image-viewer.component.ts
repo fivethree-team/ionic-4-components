@@ -121,6 +121,7 @@ export class FivImageViewer implements OnInit {
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
+    public element: ElementRef,
     private domCtrl: DomController,
     private platform: Platform,
     private renderer: Renderer2,
