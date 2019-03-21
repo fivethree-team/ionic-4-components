@@ -49,6 +49,7 @@ export class FivDialog implements OnInit {
   outPosition = '-100%';
 
   @Output() fivClose: EventEmitter<FivDialog> = new EventEmitter();
+  @Output() fivDurationOver: EventEmitter<FivDialog> = new EventEmitter();
   @Output() fivOpen: EventEmitter<FivDialog> = new EventEmitter();
   @ViewChild(FivOverlay) overlay: FivOverlay;
   @ViewChild(FivLoadingProgressBar) bar: FivLoadingProgressBar;
@@ -65,6 +66,10 @@ export class FivDialog implements OnInit {
     if (this.duration) {
       this.bar.shrinkIn(this.duration);
     }
+  }
+
+  doneShrinking() {
+    this.fivDurationOver.emit(this);
   }
 
   close() {
