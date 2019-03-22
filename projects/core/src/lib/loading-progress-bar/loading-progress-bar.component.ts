@@ -51,6 +51,7 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
   param: any;
 
   _progressPlayer: AnimationPlayer;
+  private animating = false;
 
   constructor(public loadingService: LoadingService, private builder: AnimationBuilder) {
   }
@@ -155,7 +156,7 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
     });
 
     this.stopProgressAnimation();
-
+    this.animating = true;
 
     this._progressPlayer = player;
   }
@@ -182,11 +183,13 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
 
     player.play();
     player.onDone(() => {
-      this.fivDoneShrinking.emit(true);
-      this.progress = 0;
-      this.stopProgressAnimation();
+      if (this.animating) {
+        this.fivDoneShrinking.emit(true);
+        this.stopProgressAnimation();
+      }
     });
     this.stopProgressAnimation();
+    this.animating = true;
 
     this._progressPlayer = player;
   }
@@ -195,6 +198,8 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
     if (this._progressPlayer) {
       this._progressPlayer.destroy();
       this._progressPlayer = null;
+      this.animating = false;
+      this.progress = 0;
     }
   }
 
