@@ -55,7 +55,8 @@ ion-grid {
 }
 
 .dialog.bottom {
-    bottom: 0;
+    top: 100%;
+    transform: translateY(-100%);
 }
 
 .backdrop {

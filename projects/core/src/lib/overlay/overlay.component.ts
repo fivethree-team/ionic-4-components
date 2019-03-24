@@ -20,10 +20,9 @@ export class FivOverlay {
 
   show() {
     if (!this.componentRef) {
-      const ref = this.overlay.createOverlay(FivOverlayContent, this.ngContent);
-      this.componentRef = ref;
+      this.componentRef = this.overlay.createOverlay(FivOverlayContent, this.ngContent);
       this._open = true;
-      return ref.instance;
+      return this.componentRef.instance;
     }
 
   }

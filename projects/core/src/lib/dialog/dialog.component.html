@@ -40,7 +40,7 @@
 
 <ng-template #card>
   <ion-card [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}"
-    [@slide]="{value: dialogState, params: {top: outPosition, inDuration: inDuration + 'ms',outDuration: outDuration + 'ms'}}"
+    [@slide]="{value: dialogState, params: {top: outPosition, inDuration: inDuration + 'ms',outDuration: outDuration + 'ms', toPosition: toPosition, translate: translate}}"
     (@slide.done)="animationDone($event)">
     <fiv-loading-progress-bar [verticalAlign]="verticalAlign === 'top' ? 'bottom' : 'top'" (fivDoneShrinking)="doneShrinking()"
       #bar></fiv-loading-progress-bar>

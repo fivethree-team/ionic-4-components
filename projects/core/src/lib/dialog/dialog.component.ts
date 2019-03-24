@@ -5,6 +5,7 @@ import {
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FivOverlay } from '../overlay/overlay.component';
 import { trigger, transition, style, animate, state, AnimationPlayer } from '@angular/animations';
+import { Platform } from '@ionic/angular';
 export type Content<T> = TemplateRef<T> | Type<T>;
 
 @Component({
@@ -13,11 +14,19 @@ export type Content<T> = TemplateRef<T> | Type<T>;
   styleUrls: ['./dialog.component.scss'],
   animations: [
     trigger('slide', [
-      transition('out => in', [
-        style({ top: '{{top}}' }),
-        animate('{{inDuration}} ease-out', style({ top: '*' }))
-      ], { params: { top: '-100%', inDuration: '400ms' } }),
-      transition('in => out', [
+      transition('out => top', [
+        style({ top: '{{top}}', transform: 'translateY({{translate}})', bottom: 'unset' }),
+        animate('{{inDuration}} ease-out', style({ top: '{{toPosition}}', transform: 'translateY({{translate}})' }))
+      ], { params: { top: '-100%', inDuration: '400ms', toPosition: '0px', translate: '0', bottom: 'unset' } }),
+      transition('out => center', [
+        style({ top: '{{top}}', transform: 'translateY({{translate}})', bottom: 'unset' }),
+        animate('{{inDuration}} ease-out', style({ top: '{{toPosition}}', transform: 'translateY({{translate}})' }))
+      ], { params: { top: '-100%', inDuration: '400ms', toPosition: '0px', translate: '0', bottom: 'unset' } }),
+      transition('out => bottom', [
+        style({ top: '{{top}}', transform: 'translateY({{translate}})', bottom: 'unset' }),
+        animate('{{inDuration}} ease-out', style({ top: '{{toPosition}}', transform: 'translateY({{translate}})' }))
+      ], { params: { top: '-100%', inDuration: '400ms', toPosition: '0px', translate: '0', bottom: 'unset' } }),
+      transition('* => out', [
         style({ top: '*' }),
         animate('{{outDuration}} ease-in', style({ top: '{{top}}' }))
       ], { params: { top: '-100%', outDuration: '250ms' } })
@@ -47,6 +56,8 @@ export class FivDialog implements OnInit {
   @Input() inDuration = 160;
   @Input() outDuration = 120;
   outPosition = '-100%';
+  toPosition = '0px';
+  translate = '0px';
 
   @Output() fivClose: EventEmitter<FivDialog> = new EventEmitter();
   @Output() fivDurationOver: EventEmitter<FivDialog> = new EventEmitter();
@@ -59,9 +70,15 @@ export class FivDialog implements OnInit {
 
   ngOnInit(): void { }
 
+  constructor(private platform: Platform) { }
+
   open() {
     this.outPosition = this.getSlideStartPosition();
+    this.toPosition = this.getSlideEndPosition();
+    this.translate = this.getTranslateIn();
     this.overlay.show();
+
+    console.log(this.toPosition, this.outPosition);
     this.dialogState = 'in';
     if (this.duration) {
       this.bar.shrinkIn(this.duration);
@@ -80,7 +97,6 @@ export class FivDialog implements OnInit {
 
   animationDone(event) {
     if (event.fromState === 'out' && event.toState === 'in') {
-
     }
     if (event.fromState === 'in' && event.toState === 'out') {
       this.overlay.hide();
@@ -99,10 +115,34 @@ export class FivDialog implements OnInit {
       return '-100%';
     }
     if (this.verticalAlign === 'center') {
-      return '54%';
+      return '52%';
     }
     if (this.verticalAlign === 'bottom') {
       return '100%';
+    }
+  }
+
+  getSlideEndPosition() {
+    if (this.verticalAlign === 'top') {
+      return '0';
+    }
+    if (this.verticalAlign === 'center') {
+      return '50%';
+    }
+    if (this.verticalAlign === 'bottom') {
+      return '100%';
+    }
+  }
+
+  getTranslateIn(): string {
+    if (this.verticalAlign === 'top') {
+      return '0';
+    }
+    if (this.verticalAlign === 'center') {
+      return '-50%';
+    }
+    if (this.verticalAlign === 'bottom') {
+      return '-100%';
     }
   }
 }
