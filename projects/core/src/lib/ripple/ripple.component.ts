@@ -5,15 +5,9 @@ import { debounceTime } from 'rxjs/operators';
   // tslint:disable-next-line:component-selector
   selector: 'fiv-ripple',
   templateUrl: './ripple.component.html',
-  styleUrls: ['./ripple.component.scss'],
-  // tslint:disable-next-line:use-host-property-decorator
-  host: {
-    '[style.touch-action]': 'auto',
-  },
+  styleUrls: ['./ripple.component.scss']
 })
 export class FivRipple {
-
-  auto = 'auto';
 
   private rippleAnimationEvent = new EventEmitter();
   @Input() round = false;
@@ -21,15 +15,10 @@ export class FivRipple {
   @Output() fivClick = new EventEmitter<any>();
 
 
-  @HostBinding('style.position') position;
   @HostListener('click', ['$event'])
   clickEvent(event: MouseEvent) {
     this.ripple(event);
     this.fivClick.emit(event);
-  }
-  @HostListener('press', ['$event'])
-  PressEvent(event) {
-    this.ripple(event);
   }
 
   @HostBinding('class.round') get isRound() {
@@ -64,9 +53,6 @@ export class FivRipple {
   rippleFactory() {
     const target = this.el.nativeElement;
     const rect = target.getBoundingClientRect();
-    if (window.getComputedStyle(target).position === 'static') {
-      this.position = 'relative';
-    }
     const radius = Math.max(rect.width, rect.height) + 'px';
     const rippleWrapper = this.renderer.createElement('div');
     this.renderer.addClass(rippleWrapper, 'rippleWrapper');
