@@ -28,8 +28,10 @@ import { timer } from 'rxjs';
     ]),
     trigger('fillAnim', [
       transition('void => *', [
-        style({ left: '-5%', width: '5%' }),
-        animate('850ms ease-out', style({ left: '0%', width: '100%' }))
+        style({
+          width: '0px'
+        }),
+        animate('850ms ease-out', style({ width: '100%' }))
       ]),
     ])
   ]
@@ -91,6 +93,7 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
   complete(param?: any) {
     this.param = param;
     this.isComplete = true;
+    this.fillIn(850, 'ease-out');
   }
 
   fillAnimationComplete(isComplete: boolean) {
@@ -129,11 +132,11 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
     this.setProgress(progress + this.progress);
   }
 
-  fillIn(ms: number) {
+  fillIn(ms: number, easing = '') {
     // first define a reusable animation
     const myAnimation = this.builder.build([
       style({ width: this.progress }),
-      animate(ms, style({ width: '100%' }))
+      animate(ms + `ms ${easing}`, style({ width: '100%' }))
     ]);
 
     // use the returned factory object to create a player
@@ -149,10 +152,8 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
 
       });
     player.onDone(() => {
-      this.fivComplete.emit(true);
-      this.progress = 100;
+      this.fillAnimationComplete(true);
       this.stopProgressAnimation();
-
     });
 
     this.stopProgressAnimation();
@@ -199,7 +200,6 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
       this._progressPlayer.destroy();
       this._progressPlayer = null;
       this.animating = false;
-      this.progress = 0;
     }
   }
 
