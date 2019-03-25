@@ -1,10 +1,10 @@
 import { FivLoadingProgressBar } from './../loading-progress-bar/loading-progress-bar.component';
 import {
-  EventEmitter, Output, Input, TemplateRef, Type, ElementRef, HostBinding
+  EventEmitter, Output, Input, TemplateRef, Type, ElementRef
 } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FivOverlay } from '../overlay/overlay.component';
-import { trigger, transition, style, animate, state, AnimationPlayer } from '@angular/animations';
+import { trigger, transition, style, animate, state } from '@angular/animations';
 import { Platform } from '@ionic/angular';
 export type Content<T> = TemplateRef<T> | Type<T>;
 
@@ -15,28 +15,39 @@ export type Content<T> = TemplateRef<T> | Type<T>;
   animations: [
     trigger('slide', [
       transition('out => top', [
-        style({ top: '{{top}}', transform: 'translateY({{translate}})', bottom: 'unset' }),
-        animate('{{inDuration}} ease-out', style({ top: '{{toPosition}}', transform: 'translateY({{translate}})' }))
-      ], { params: { top: '-100%', inDuration: '400ms', toPosition: '0px', translate: '0', bottom: 'unset' } }),
+        style({ top: '0', transform: 'translateY(-100%)' }),
+        animate('220ms ease-out')
+      ]),
       transition('out => center', [
-        style({ top: '{{top}}', transform: 'translateY({{translate}})', bottom: 'unset' }),
-        animate('{{inDuration}} ease-out', style({ top: '{{toPosition}}', transform: 'translateY({{translate}})' }))
-      ], { params: { top: '-100%', inDuration: '400ms', toPosition: '0px', translate: '0', bottom: 'unset' } }),
+        style({ top: '50%', transform: 'translateY(-50%) scale(0)', opacity: 0 }),
+        animate('220ms ease-out', style({ top: '50%', transform: 'translateY(-50%) scale(1)', opacity: 1 }))
+      ]),
       transition('out => bottom', [
-        style({ top: '{{top}}', transform: 'translateY({{translate}})', bottom: 'unset' }),
-        animate('{{inDuration}} ease-out', style({ top: '{{toPosition}}', transform: 'translateY({{translate}})' }))
-      ], { params: { top: '-100%', inDuration: '400ms', toPosition: '0px', translate: '0', bottom: 'unset' } }),
-      transition('* => out', [
-        style({ top: '*' }),
-        animate('{{outDuration}} ease-in', style({ top: '{{top}}' }))
-      ], { params: { top: '-100%', outDuration: '250ms' } })
+        style({ bottom: '0', transform: 'translateY(100%)' }),
+        animate('220ms ease-out')
+      ]),
+      transition('top => out', [
+        style({ top: '0', transform: 'translateY(0)' }),
+        animate('140ms ease-in', style({ top: '0', transform: 'translateY(-100%)' }))
+      ]),
+      transition('center => out', [
+        style({ top: '50%', transform: 'translateY(-50%) scale(1)', opacity: 1 }),
+        animate('140ms ease-in', style({ top: '50%', transform: 'translateY(-50%) scale(0)', opacity: 0 }))
+      ]),
+      transition('bottom => out', [
+        style({ bottom: '0', transform: 'translateY(0)' }),
+        animate('140ms ease-in', style({ bottom: '0', transform: 'translateY(100%)' }))
+      ]),
+      state('bottom', style({ bottom: '0', transform: 'translateY(0)' })),
+      state('top', style({ top: '0', transform: 'translateY(0)' })),
+      state('center', style({ top: '50%', transform: 'translateY(-50%)' })),
     ]),
     trigger('fade', [
-      transition('out => in', [
+      transition('out => *', [
         style({ opacity: '{{opacity}}' }),
         animate('{{inDuration}} ease-out', style({ opacity: '1' }))
       ], { params: { opacity: 0, inDuration: '250ms' } }),
-      transition('in => out', [
+      transition('* => out', [
         style({ opacity: '1' }),
         animate('{{outDuration}} ease-in', style({ opacity: '0' }))
       ], { params: { opacity: 0, outDuration: '200ms' } }),
@@ -66,20 +77,16 @@ export class FivDialog implements OnInit {
   @ViewChild(FivLoadingProgressBar) bar: FivLoadingProgressBar;
   @ViewChild('dialog') dialogRef: ElementRef;
 
-  dialogState: 'in' | 'out' = 'out';
+  dialogState: 'top' | 'center' | 'bottom' | 'out' = 'out';
 
   ngOnInit(): void { }
 
   constructor(private platform: Platform) { }
 
   open() {
-    this.outPosition = this.getSlideStartPosition();
-    this.toPosition = this.getSlideEndPosition();
-    this.translate = this.getTranslateIn();
     this.overlay.show();
 
-    console.log(this.toPosition, this.outPosition);
-    this.dialogState = 'in';
+    this.dialogState = this.verticalAlign;
     if (this.duration) {
       this.bar.shrinkIn(this.duration);
     }
@@ -92,57 +99,19 @@ export class FivDialog implements OnInit {
   close() {
     this.dialogState = 'out';
     this.bar.stopProgressAnimation();
-    this.bar.progress = 0;
   }
 
   animationDone(event) {
-    if (event.fromState === 'out' && event.toState === 'in') {
-    }
-    if (event.fromState === 'in' && event.toState === 'out') {
+
+    if (event.fromState !== 'void' && event.toState === 'out') {
       this.overlay.hide();
       this.fivClose.emit(this);
     }
   }
 
   backdropAnimDone(event) {
-    if (event.fromState === 'out' && event.toState === 'in') {
+    if (event.fromState === 'out' && event.toState !== 'void') {
       this.fivOpen.emit(this);
-    }
-  }
-
-  getSlideStartPosition() {
-    if (this.verticalAlign === 'top') {
-      return '-100%';
-    }
-    if (this.verticalAlign === 'center') {
-      return '52%';
-    }
-    if (this.verticalAlign === 'bottom') {
-      return '100%';
-    }
-  }
-
-  getSlideEndPosition() {
-    if (this.verticalAlign === 'top') {
-      return '0';
-    }
-    if (this.verticalAlign === 'center') {
-      return '50%';
-    }
-    if (this.verticalAlign === 'bottom') {
-      return '100%';
-    }
-  }
-
-  getTranslateIn(): string {
-    if (this.verticalAlign === 'top') {
-      return '0';
-    }
-    if (this.verticalAlign === 'center') {
-      return '-50%';
-    }
-    if (this.verticalAlign === 'bottom') {
-      return '-100%';
     }
   }
 }

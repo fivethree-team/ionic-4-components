@@ -52,7 +52,7 @@
   </ion-list>
 
 </ion-content>
-<fiv-dialog (fivClose)="close()" (fivDurationOver)="over()" [inDuration]="inDuration" [outDuration]="outDuration" #dialog [duration]="duration" [shape]="shape"
+<fiv-dialog (fivClose)="close()" (fivDurationOver)="dialog.close()" [inDuration]="inDuration" [outDuration]="outDuration" #dialog [duration]="duration" [shape]="shape"
   [horizontalAlign]="horizontalAlign" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
 
   <ion-card-header>
