@@ -68,7 +68,7 @@ var ImagePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header title=\"Image Viewer\"></app-header>\n\n\n<ion-content padding>\n\n  <ion-card>\n    <fiv-image-viewer (fivClose)=\"fivClose($event)\" (fivActionClick)=\"onActionClick($event)\" [actions]=\"[{icon: 'md-trash', name: 'remove'},{icon: 'md-send', name: 'send'}]\" [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n    <ion-card-header>\n      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>\n      <ion-card-title>Awesome Title</ion-card-title>\n    </ion-card-header>\n    <ion-card-content>\n      Awesome content\n    </ion-card-content>\n  </ion-card>\n\n  <fiv-image-viewer (fivActionClick)=\"onActionClick($event)\" [width]=\"103.5\" [height]=\"122\" [actions]=\"[{icon: 'md-trash'},{icon: 'md-send'},{icon: 'md-image'},{icon: 'md-share'}]\"\n    [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n  <fiv-image-viewer (fivActionClick)=\"onActionClick($event)\" [width]=\"207\" [height]=\"244\" [actions]=\"[{name: 'Ablesung abschließen'}]\" [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n \n</ion-content>"
+module.exports = "<app-header title=\"Image Viewer\"></app-header>\n\n\n<ion-content padding>\n\n  <ion-card>\n    <fiv-image-viewer (fivClose)=\"fivClose($event)\" (fivActionClick)=\"onActionClick($event)\" [actions]=\"[{icon: 'md-trash', name: 'remove'},{icon: 'md-send', name: 'send'}]\" [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n    <ion-card-header>\n      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>\n      <ion-card-title>Awesome Title</ion-card-title>\n    </ion-card-header>\n    <ion-card-content>\n      Awesome content\n    </ion-card-content>\n  </ion-card>\n\n  <fiv-image-viewer (fivActionClick)=\"onActionClick($event)\" [width]=\"103.5\" [height]=\"122\" [actions]=\"[{icon: 'md-trash'},{icon: 'md-send'},{icon: 'md-image'},{icon: 'md-share'}]\"\n    [src]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n \n\n  <img fivLazyImage (willShow)=\"onLoad($event)\" alt=\"\" class=\"test\">\n  <img fivLazyImage=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej\" alt=\"\" class=\"test\">\n  <img fivLazyImage=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej\" alt=\"\" class=\"test\">\n  <img fivLazyImage=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej\" alt=\"\" class=\"test\">\n  <img fivLazyImage=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej\" alt=\"\" class=\"test\">\n  <img fivLazyImage=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej\" alt=\"\" class=\"test\">\n  <img fivLazyImage=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej\" alt=\"\" class=\"test\">\n  <img fivLazyImage=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej\" alt=\"\" class=\"test\">\n  <img fivLazyImage=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej\" alt=\"\" class=\"test\">\n\n  <fiv-image-viewer (fivActionClick)=\"onActionClick($event)\" [width]=\"207\" [height]=\"244\" [actions]=\"[{name: 'Ablesung abschließen'}]\" [fivLazyImage]=\"'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'\"></fiv-image-viewer>\n \n\n</ion-content>"
 
 /***/ }),
 
@@ -79,7 +79,7 @@ module.exports = "<app-header title=\"Image Viewer\"></app-header>\n\n\n<ion-con
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2ltYWdlL2ltYWdlLnBhZ2Uuc2NzcyJ9 */"
+module.exports = ".test {\n  height: 120px;\n  display: block; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvaW1hZ2UvaW1hZ2UucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBYTtFQUNiLGNBQWMsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2ltYWdlL2ltYWdlLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50ZXN0IHtcbiAgICBoZWlnaHQ6IDEyMHB4O1xuICAgIGRpc3BsYXk6IGJsb2NrO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -114,6 +114,10 @@ var ImagePage = /** @class */ (function () {
     };
     ImagePage.prototype.fivClose = function (event) {
         console.log('fivClose', event);
+    };
+    ImagePage.prototype.onLoad = function (image) {
+        console.log('onload', image);
+        image.src = 'https://placehold.it/936x936';
     };
     ImagePage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
