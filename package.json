@@ -65,7 +65,7 @@
     "cordova-plugin-whitelist": "1.3.3",
     "core-js": "2.6.5",
     "hammerjs": "2.0.8",
-    "intersection-observer": "^0.5.1",
+    "intersection-observer": "0.5.1",
     "ng-lottie": "0.3.2",
     "ngx-markdown": "7.1.4",
     "rxjs": "6.3.3",
