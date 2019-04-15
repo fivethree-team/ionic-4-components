@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./image.page.scss'],
 })
 export class ImagePage implements OnInit {
+  numbers: number[];
 
-  constructor() { }
+  options = {
+    lazy: true
+  };
+
+  constructor() {
+    this.numbers = Array(5).fill(0).map((x, i) => i);
+  }
 
   ngOnInit() {
   }
@@ -24,6 +31,10 @@ export class ImagePage implements OnInit {
   onLoad(image: FivImageViewer | HTMLImageElement) {
     console.log('onload', image);
     image.src = 'https://placehold.it/936x936';
+  }
+
+  log(event, number) {
+    console.log('slide image showed', number, event);
   }
 
 }

@@ -1,4 +1,4 @@
-<img class="thumbnail" [width]="width" [height]="height" #thumbnail *ngIf="thumbnailVisible && src" (click)="open($event)"
+<img class="thumbnail" [style.background]="'rgba(0,0,0,' + opacity + ')'" [width]="width" [height]="height" #thumbnail *ngIf="thumbnailVisible && src" (click)="open($event)"
   [src]="src">
 <div #backdrop [@backdrop] (@backdrop.done)="onEnter($event)" *ngIf="_isOpen" class="backdrop">
   <ion-toolbar [@fade] *ngIf="_controlsVisible" color="translucent">

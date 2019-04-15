@@ -1,0 +1,9 @@
+<img #thumbnail [ngClass]="{'hidden': overlay.open}" class="thumbnail" [src]="src" (click)="open()">
+<fiv-overlay #overlay>
+
+  <div *ngIf="overlay.open && viewerState !== 'out'" [@fade] class="backdrop"></div>
+
+  <img *ngIf="overlay.open" class="viewer-image" (@image.done)="handleViewerAnimation($event)"
+    [@image]="{ value: viewerState, params : animationParams}" [src]="src">
+
+</fiv-overlay>

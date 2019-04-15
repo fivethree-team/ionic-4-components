@@ -1,0 +1,46 @@
+.viewer {
+    width: 100vw;
+    height: 100vh;
+
+    ion-slides {
+        height: 100%;
+    }
+
+    img {
+        height: auto;
+        max-height: 100%;
+        width: auto;
+        max-width: 100%;
+    }
+
+    img.instant {
+        // instantly scale back zoomed slided image
+        transition-duration: 0ms !important;
+    }
+
+}
+
+ion-toolbar {
+    position: absolute;
+
+    ion-title,
+    ion-icon,
+    ion-button,
+    fiv-icon {
+        color: #fff;
+    }
+}
+
+ion-toolbar.header {}
+
+ion-toolbar.footer {
+    bottom: 0;
+}
+
+
+
+
+ion-slides.in,
+ion-slides.out {
+    visibility: hidden;
+}

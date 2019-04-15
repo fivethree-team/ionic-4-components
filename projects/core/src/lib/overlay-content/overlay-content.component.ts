@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'fiv-overlay-content',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FivOverlayContent implements OnInit {
 
-  constructor() { }
+  @HostBinding('style')
+  get myStyle(): SafeStyle {
+    return this.priority ? this.sanitizer.bypassSecurityTrustStyle(`z-index: ${this.priority}`) : null;
+  }
 
-  ngOnInit() {}
+  priority: number;
+
+  constructor(private sanitizer: DomSanitizer) { }
+
+  ngOnInit() { }
 
 }

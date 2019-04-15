@@ -1,0 +1,55 @@
+<ng-content></ng-content>
+<fiv-overlay #overlay>
+
+  <ion-toolbar [@slideDown] *ngIf="controlsVisible" class="header" color="transparent">
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" [name]="'close'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="fullscreen()">
+        <fiv-icon slot="icon-only" [name]="inFullscreen ? 'contract' : 'expand'"></fiv-icon>
+      </ion-button>
+      <ion-button (click)="zoom()">
+        <fiv-icon slot="icon-only" [name]="zoomedIn ? 'remove' : 'add'"></fiv-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ng-container *fivIf="['desktop']">
+    <ion-fab [@scale] *ngIf="controlsVisible"vertical="center" horizontal="start" slot="fixed">
+      <ion-fab-button color="light" (click)="prev()" [disabled]="activeIndex === 0">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ng-container>
+
+
+
+  <div #viewer class="viewer" fivPull [maxPullHeight]="160" [minPullHeight]="120" (fivPull)="transformSlides($event)"
+    (fivRefresh)="closeFromPullDown($event)" (fivCancel)="resetPan($event)" [enableScroll]="true">
+    <ion-slides #slider *ngIf="overlay.open" [ngClass]="[initialImage?.viewerState]"
+      (ionSlideDidChange)="slideDidChange()" (ionSlidesDidLoad)="onSlidesLoad()" [options]="options">
+      <ion-slide *ngFor="let image of images; let i = index">
+        <div class="swiper-zoom-container">
+          <img [ngClass]="{'instant': activeIndex !== i}" [src]="image.src">
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ng-container *fivIf="['desktop']">
+    <ion-fab [@scale] *ngIf="controlsVisible" vertical="center" horizontal="end" slot="fixed">
+      <ion-fab-button color="light" (click)="next()" [disabled]="activeIndex === images.length - 1">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ng-container>
+
+  <ion-toolbar [@slideUp] *ngIf="controlsVisible" class="footer" color="transparent">
+  </ion-toolbar>
+
+
+</fiv-overlay>

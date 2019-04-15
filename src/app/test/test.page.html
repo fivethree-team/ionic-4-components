@@ -9,19 +9,40 @@
 
 <ion-content padding>
 
-  <ion-button (click)="show()">
-    Show
-  </ion-button>
-  <ion-button (click)="hide()">
-    hide
-  </ion-button>
+  <fiv-image-gallery>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">
+          <fiv-image [src]="'https://via.placeholder.com/823x412/00ffff'"></fiv-image>
+        </ion-col>
+        <ion-col size="6">
+          <fiv-image [src]="'https://via.placeholder.com/600x500'"></fiv-image>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <fiv-image [src]="'https://via.placeholder.com/823x412/00ffff'"></fiv-image>
+        </ion-col>
+        <ion-col size="4">
+          <fiv-image [src]="'https://via.placeholder.com/600x500'"></fiv-image>
+        </ion-col>
+        <ion-col size="4">
+          <fiv-image [src]="'https://via.placeholder.com/600x500'"></fiv-image>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <ion-button (click)="online()">
-    set online
-  </ion-button>
+    <ion-slides pager="true">
+      <ion-slide>
+        <fiv-image [src]="'https://via.placeholder.com/600x500'"></fiv-image>
+      </ion-slide>
+      <ion-slide>
+        <fiv-image [src]="'https://via.placeholder.com/823x412/00ffff'"></fiv-image>
+      </ion-slide>
+    </ion-slides>
 
-  <ion-button (click)="offline()">
-    set offline
-  </ion-button>
+  </fiv-image-gallery>
+
+
 
 </ion-content>

@@ -33,22 +33,22 @@ import { flatMap, tap, filter, debounceTime, takeUntil, take, repeat } from 'rxj
       transition(':enter', [
         style({ opacity: 0 }),
         // tslint:disable-next-line:max-line-length
-        animate('75ms 125ms ease-out', style({ opacity: 1 }))
+        animate('75ms 125ms linear', style({ opacity: 1 }))
       ]),
       transition(':leave', [
         style({ opacity: 1 }),
         // tslint:disable-next-line:max-line-length
-        animate('100ms ease-in', style({ opacity: 0 }))
+        animate('100ms linear', style({ opacity: 0 }))
       ])
     ]),
     trigger('fade', [
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('125ms ease-out', style({ opacity: 1 }))
+        animate('125ms linear', style({ opacity: 1 }))
       ]),
       transition(':leave', [
         style({ opacity: 1 }),
-        animate('150ms ease-in', style({ opacity: 0 }))
+        animate('150ms linear', style({ opacity: 0 }))
       ])
     ]),
     trigger('imageEnter', [
@@ -56,21 +56,20 @@ import { flatMap, tap, filter, debounceTime, takeUntil, take, repeat } from 'rxj
         // tslint:disable-next-line:max-line-length
         style({ position: 'absolute', top: '{{top}}px', left: '{{left}}px', transform: 'translate(0,0)', height: '{{height}}px', width: '{{width}}px' }),
         // tslint:disable-next-line:max-line-length
-        animate('150ms', style({ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', height: 'auto', width: '100%' }))
+        animate('120ms linear', style({ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', height: 'auto', width: '100%' }))
       ], { params: { top: '0px', left: '0px', height: '*', width: '*' } })
     ]),
     trigger('imageLeave', [
       transition(':leave', [
         style({ position: 'absolute', top: '{{panTop}}', left: '50%', transform: 'translate(-50%,-50%)', height: 'auto', width: '100%' }),
         // tslint:disable-next-line:max-line-length
-        animate('225ms', style({ position: 'absolute', top: '{{top}}px', left: '{{left}}px', transform: 'translate(0,0)', height: '{{height}}px', width: '{{width}}px' })
+        animate('135ms linear', style({ position: 'absolute', top: '{{top}}px', left: '{{left}}px', transform: 'translate(0,0)', height: '{{height}}px', width: '{{width}}px' })
         )
       ], { params: { top: '0px', left: '0px', height: '*', width: '*', panTop: '50%' } })
     ])
   ]
 })
 export class FivImageViewer implements OnInit {
-
   @HostBinding('style')
   get myStyle(): SafeStyle {
     if (this._isOpen) {
@@ -95,6 +94,7 @@ export class FivImageViewer implements OnInit {
   _isOpen = false;
   _controlsVisible = true;
   thumbnailVisible = true;
+  opacity = 0.87;
 
   thumbnailPosition: { offsetTop: number, offsetLeft: number, height: number, width: number, panTop?: string };
   scale = 1;
@@ -301,9 +301,12 @@ export class FivImageViewer implements OnInit {
     const verticalPan$ = merge(up, down);
 
     this.verticalPan = verticalPan$.subscribe((res: any) => {
+      this.opacity = this.calculatePanProgress(event) / 100 * 0.87;
+      console.log('opacity', this.opacity);
       this.setBottom(this.calculateBottom(res));
       this.setTop(this.calculateTop(res));
     });
+
 
     const pinchPanMove = panmove
       .pipe(
@@ -336,6 +339,7 @@ export class FivImageViewer implements OnInit {
       .subscribe((event) => {
         this.resetPan();
         this.resetFooter(this.calculateBottom(event));
+        this.opacity = 0.87;
       });
   }
 
@@ -453,7 +457,7 @@ export class FivImageViewer implements OnInit {
   resetPan() {
     const reset = this.animation.build([
       style({ top: `${this.top}px` }),
-      animate('150ms ease', style({ top: `${this.platform.height() / 2}px` }))
+      animate('150ms linear', style({ top: `${this.platform.height() / 2}px` }))
     ]);
 
     const animation = reset.create(this.imageView.nativeElement);
@@ -471,7 +475,7 @@ export class FivImageViewer implements OnInit {
     }
     const reset = this.animation.build([
       style({ bottom: `-${start}px` }),
-      animate('150ms ease', style({ bottom: `0px` }))
+      animate('150ms linear', style({ bottom: `0px` }))
     ]);
 
     const animation = reset.create(this.footer.nativeElement);
@@ -491,7 +495,7 @@ export class FivImageViewer implements OnInit {
     const newTop = this.top + deltaY / toScale;
     const scale = this.animation.build([
       style({ transform: `translateY(-50%) scale(${this.scale})`, top: `${this.top}px`, left: `${this.left}px` }),
-      animate('200ms ease', style({ transform: `translateY(-50%) scale(${toScale})`, top: `${newTop}px`, left: `${newLeft}px` }))
+      animate('200ms linear', style({ transform: `translateY(-50%) scale(${toScale})`, top: `${newTop}px`, left: `${newLeft}px` }))
     ]);
     const animation = scale.create(this.imageView.nativeElement);
     animation.play();
@@ -508,7 +512,7 @@ export class FivImageViewer implements OnInit {
     const t = this.platform.height() / 2;
     const scale = this.animation.build([
       style({ transform: `translateY(-50%) scale(${this.scale})`, top: `${this.top}px`, left: `${this.left}px` }),
-      animate('200ms ease', style({ transform: `translateY(-50%) scale(${1})`, top: `${t}px`, left: `${0}px` }))
+      animate('200ms linear', style({ transform: `translateY(-50%) scale(${1})`, top: `${t}px`, left: `${0}px` }))
     ]);
     const animation = scale.create(this.imageView.nativeElement);
     animation.play();

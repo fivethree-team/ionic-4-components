@@ -7,7 +7,7 @@ import { Directive, OnInit, Input, EventEmitter, Output, Host, Self, Optional, E
 export class LazyImageDirective implements OnInit {
 
   @Input() fivLazyImage: string;
-  @Output() willShow = new EventEmitter<FivImageViewer | HTMLImageElement>();
+  @Output() willShow = new EventEmitter<FivImageViewer | HTMLImageElement>();
 
   constructor(
     @Host() @Self() @Optional() public fivImage: FivImageViewer,
@@ -40,8 +40,10 @@ export class LazyImageDirective implements OnInit {
     if (this.fivLazyImage) {
       if (this.fivImage) {
         this.fivImage.src = this.fivLazyImage;
+        this.willShow.emit(this.fivImage);
       } else {
         this.image.nativeElement.src = this.fivLazyImage;
+        this.willShow.emit(this.image.nativeElement);
       }
     } else {
       this.willShow.emit(this.fivImage || this.image.nativeElement);

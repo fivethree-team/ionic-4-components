@@ -3,6 +3,12 @@
 
 <ion-content padding>
 
+  <ion-slides [options]="options" pager="true">
+    <ion-slide *ngFor="let number of numbers">
+        <img class="swiper-lazy test"  data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="">
+    </ion-slide>
+  </ion-slides>
+
   <ion-card>
     <fiv-image-viewer (fivClose)="fivClose($event)" (fivActionClick)="onActionClick($event)" [actions]="[{icon: 'md-trash', name: 'remove'},{icon: 'md-send', name: 'send'}]" [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'"></fiv-image-viewer>
     <ion-card-header>

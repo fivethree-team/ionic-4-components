@@ -1,3 +1,4 @@
+import { FivImage } from './image/image.component';
 import { FivBackButton } from './back-button/back-button.component';
 import { FivDialogService } from './services/dialog.service';
 import { FivNetworkStatus } from './network-status/network-status.component';
@@ -47,6 +48,7 @@ import { FivOverlayService } from './services/overlay.service';
 import { FivOverlay } from './overlay/overlay.component';
 import { FivOverlayContent } from './overlay-content/overlay-content.component';
 import { LazyImageDirective } from './directives/lazy-image.directive';
+import { FivImageGallery } from './image-gallery/image-gallery.component';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -93,6 +95,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivDialog,
     FivAppBarTab,
     FivAppBarTabContent,
+    FivImage,
+    FivImageGallery,
     FivImageViewer,
     FivButtons,
     FivButton,
@@ -142,6 +146,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivDialog,
     FivAppBarTab,
     FivAppBarTabContent,
+    FivImage,
+    FivImageGallery,
     FivImageViewer,
     FivButtons,
     FivButton,

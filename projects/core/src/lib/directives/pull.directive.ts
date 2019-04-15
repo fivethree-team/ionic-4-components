@@ -11,6 +11,7 @@ export class FivPull implements OnInit {
   @Input() minPullHeight = 112;
   @Input() maxPullHeight = 168;
   @Input() enabled = true;
+  @Input() enableScroll = false;
 
   @Output() fivRefresh = new EventEmitter<any>();
   @Output() fivCancel = new EventEmitter<any>();
@@ -41,7 +42,7 @@ export class FivPull implements OnInit {
 
     const dragAtTop = touchstart$
       .pipe(
-        filter(e => this.scrollY.scrollTop === 0 && this.enabled)
+        filter(e => this.scrollY.scrollTop === 0 && this.enabled || this.enableScroll)
       );
 
     const dragTopDown = dragAtTop
@@ -87,9 +88,9 @@ export class FivPull implements OnInit {
           const offset = drag.offset / 2;
           const refresh = offset >= this.minPullHeight;
           if (refresh) {
-            this.fivRefresh.emit();
+            this.fivRefresh.emit(offset / this.maxPullHeight);
           } else {
-            this.fivCancel.emit();
+            this.fivCancel.emit(offset / this.maxPullHeight);
           }
         });
     });
