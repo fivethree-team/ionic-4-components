@@ -48,6 +48,7 @@
     "@angular/pwa": "0.13.6",
     "@angular/router": "7.2.9",
     "@angular/service-worker": "7.2.9",
+    "@ctrl/ngx-github-buttons": "^2.1.1",
     "@ionic-native/core": "5.2.0",
     "@ionic-native/google-maps": "5.0.0-beta.24",
     "@ionic-native/splash-screen": "5.2.0",

@@ -1,19 +1,19 @@
-import { FivImage } from './../image/image.component';
+import { FivGalleryImage, Position } from './../gallery-image/gallery-image.component';
+import { ImageService } from './../services/image.service';
 import { IonSlides, DomController, Platform } from '@ionic/angular';
 import { FivOverlay } from './../overlay/overlay.component';
 import {
-  Component, OnInit, ViewChild, Input, ElementRef, Renderer2,
+  Component, OnInit, ViewChild, ElementRef, Renderer2,
   ContentChildren, QueryList, AfterContentInit, forwardRef, HostListener, Inject, ChangeDetectorRef
 } from '@angular/core';
-import { style, animate, AnimationBuilder, trigger, transition, keyframes } from '@angular/animations';
-import { Position } from '../image/image.component';
+import { style, animate, AnimationBuilder, trigger, transition } from '@angular/animations';
 import { Key } from './keycodes.enum';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'fiv-image-gallery',
-  templateUrl: './image-gallery.component.html',
-  styleUrls: ['./image-gallery.component.scss'],
+  selector: 'fiv-gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.scss'],
   animations: [
     trigger('scale', [
       transition('void => *', [
@@ -44,17 +44,17 @@ import { DOCUMENT } from '@angular/common';
         style({ opacity: 1, transform: 'translateY(-100%)' }),
         animate('125ms', style({ opacity: 0, transform: 'translateY(0%)' }))
       ])
-    ]),
+    ])
   ]
 })
-export class FivImageGallery implements OnInit, AfterContentInit {
+export class FivGallery implements OnInit, AfterContentInit {
 
   @ViewChild('overlay') overlay: FivOverlay;
   @ViewChild('viewer') viewer: ElementRef;
   @ViewChild('slider', { read: ElementRef }) swiper: ElementRef;
   @ViewChild('slider') slides: IonSlides;
 
-  @ContentChildren(forwardRef(() => FivImage), { descendants: true }) images: QueryList<FivImage>;
+  @ContentChildren(forwardRef(() => FivGalleryImage), { descendants: true }) images: QueryList<FivGalleryImage>;
 
   // properties for the slides
   activeIndex = 0;
@@ -62,10 +62,11 @@ export class FivImageGallery implements OnInit, AfterContentInit {
     zoom: true,
     initialSlide: 0
   };
-  initialImage: FivImage;
+  initialImage: FivGalleryImage;
   inFullscreen: boolean;
   zoomedIn: boolean;
   controlsVisible = true;
+  private slidesLoaded;
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
@@ -82,6 +83,7 @@ export class FivImageGallery implements OnInit, AfterContentInit {
     private change: ChangeDetectorRef,
     private platform: Platform,
     @Inject(DOCUMENT) private document: any,
+    private imageService: ImageService
   ) { }
 
   ngOnInit() {
@@ -124,7 +126,7 @@ export class FivImageGallery implements OnInit, AfterContentInit {
 
 
 
-  open(index: number, initial: FivImage) {
+  open(index: number, initial: FivGalleryImage) {
     this.options.initialSlide = index;
     this.overlay.show(50000);
     this.initialImage = initial;
@@ -140,6 +142,10 @@ export class FivImageGallery implements OnInit, AfterContentInit {
     const position = this.getImagePosition(this.images.toArray()[this.activeIndex].image, progress);
     console.log('close from position', position);
     this.initialImage.close(position);
+    if (this.inFullscreen) {
+      this.closeFullscreen();
+    }
+    this.slidesLoaded = false;
     this.overlay.hide();
   }
 
@@ -187,7 +193,24 @@ export class FivImageGallery implements OnInit, AfterContentInit {
     this.activeIndex = this.swiper.nativeElement.swiper.activeIndex;
   }
 
+  ionSlideNextStart() {
+    if (this.slidesLoaded) {
+      this.updateBackdrop(this.activeIndex + 1);
+    }
+  }
+  ionSlidePrevStart() {
+    if (this.slidesLoaded) {
+      this.updateBackdrop(this.activeIndex - 1);
+    }
+  }
+
+  updateBackdrop(index: number) {
+    this.initialImage.backdropColor = this.imageService.getAverageRGB(this.images.toArray()[index].image.nativeElement);
+  }
+
   onSlidesLoad() {
+    this.slidesLoaded = true;
+    this.activeIndex = this.swiper.nativeElement.swiper.activeIndex;
     this.initialImage.viewerState = 'hidden';
     this.swiper.nativeElement.swiper.on('click', () => {
       this.handleSingleTap();

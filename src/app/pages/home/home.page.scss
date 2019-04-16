@@ -1,13 +1,30 @@
-.docs-header {
-    text-align: center;
-    margin-top: 64px;
-    margin-bottom: 64px;
+.big {
+    height: calc(100% - 20px);
 }
 
-.docs-header-get-started {
-    margin: 60px 0;
+.small {
+    height: 164px;
 }
 
-.docs-homepage-promo {
-    min-height: 42vh;
+ion-card {
+    transition: box-shadow 140ms;
+
+    .card-content {
+        font-size: 12px;
+    }
+}
+
+ion-card:hover {
+    box-shadow: 0 0.35em 1.175em rgba(0, 0, 0, 0.1), 0 0.175em 0.5em rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+ion-title {
+    font-size: 26px;
+}
+
+ion-title {
+    markdown {
+        display: inline-block;
+    }
 }

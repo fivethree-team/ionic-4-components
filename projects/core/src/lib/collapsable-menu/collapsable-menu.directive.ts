@@ -11,6 +11,10 @@ export class FivCollapsableMenu {
   collapsed = false;
   hovering = false;
   @Input() hoverMenu = true;
+  @Input() width = 64;
+  @Input() minWidth = 270;
+  @Input() maxWidth = this.platform.width() * 0.28;
+
 
 
   constructor(private sanitizer: DomSanitizer, private platform: Platform) { }
@@ -21,9 +25,12 @@ export class FivCollapsableMenu {
     if (this.collapsed && (this.platform.is('tablet') || this.platform.is('electron') || this.platform.is('desktop'))) {
 
       return this.sanitizer
-        .bypassSecurityTrustStyle('min-width: 64px; max-width: 64px; --border: 0; transition: all cubic-bezier(.55,0,.1,1) 200ms;');
+        // tslint:disable-next-line:max-line-length
+        .bypassSecurityTrustStyle(`min-width: ${this.width}px; max-width: ${this.width}px; --border: 0; transition: all cubic-bezier(.55,0,.1,1) 200ms;`);
     } else {
-      return this.sanitizer.bypassSecurityTrustStyle('--border: 0; transition: all cubic-bezier(.55,0,.1,1)  250ms;');
+      return this.sanitizer
+        // tslint:disable-next-line:max-line-length
+        .bypassSecurityTrustStyle(`min-width: ${this.minWidth}px; max-width: ${this.maxWidth}px; --border: 0; transition: all cubic-bezier(.55,0,.1,1) 200ms;`);
     }
   }
 

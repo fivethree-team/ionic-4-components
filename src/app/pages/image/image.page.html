@@ -1,40 +1,44 @@
-<app-header title="Image Viewer"></app-header>
+<app-header title="Image Gallery"></app-header>
 
 
 <ion-content padding>
 
-  <ion-slides [options]="options" pager="true">
-    <ion-slide *ngFor="let number of numbers">
-        <img class="swiper-lazy test"  data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="">
-    </ion-slide>
-  </ion-slides>
+  <fiv-gallery>
+    <ion-grid fixed no-padding>
+      <ion-row class="big">
+        <ion-col size="6">
+            <fiv-gallery-image [src]="'assets/images/photo_2.jpeg'"></fiv-gallery-image>
+          </ion-col>
+        <ion-col size="6">
+          <fiv-gallery-image [src]="'assets/images/photo_1.jpeg'"></fiv-gallery-image>
+        </ion-col>
+      </ion-row>
+      <ion-row class="large">
+        <ion-col size="4">
+            <fiv-gallery-image [src]="'assets/images/photo_3.jpeg'"></fiv-gallery-image>
+          </ion-col>
+        <ion-col size="4">
+            <fiv-gallery-image [src]="'assets/images/photo_4.jpeg'"></fiv-gallery-image>
+          </ion-col>
+        <ion-col size="4">
+            <fiv-gallery-image [src]="'assets/images/photo_5.jpeg'"></fiv-gallery-image>
+        </ion-col>
+      </ion-row>
+      <ion-row class="small">
+        <ion-col size="3">
+            <fiv-gallery-image [src]="'assets/images/photo_6.jpeg'"></fiv-gallery-image>
+          </ion-col>
+        <ion-col size="3">
+            <fiv-gallery-image [src]="'assets/images/photo_7.jpeg'"></fiv-gallery-image>
+          </ion-col>
+        <ion-col size="3">
+            <fiv-gallery-image [src]="'assets/images/photo_8.jpeg'"></fiv-gallery-image>
+        </ion-col>
+        <ion-col size="3">
+            <fiv-gallery-image [src]="'assets/images/photo_9.jpeg'"></fiv-gallery-image>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <ion-card>
-    <fiv-image-viewer (fivClose)="fivClose($event)" (fivActionClick)="onActionClick($event)" [actions]="[{icon: 'md-trash', name: 'remove'},{icon: 'md-send', name: 'send'}]" [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'"></fiv-image-viewer>
-    <ion-card-header>
-      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-      <ion-card-title>Awesome Title</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Awesome content
-    </ion-card-content>
-  </ion-card>
-
-  <fiv-image-viewer (fivActionClick)="onActionClick($event)" [width]="103.5" [height]="122" [actions]="[{icon: 'md-trash'},{icon: 'md-send'},{icon: 'md-image'},{icon: 'md-share'}]"
-    [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'"></fiv-image-viewer>
- 
-
-  <img fivLazyImage (willShow)="onLoad($event)" alt="" class="test">
-  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
-  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
-  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
-  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
-  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
-  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
-  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
-  <img fivLazyImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej" alt="" class="test">
-
-  <fiv-image-viewer (fivActionClick)="onActionClick($event)" [width]="207" [height]="244" [actions]="[{name: 'Ablesung abschließen'}]" [fivLazyImage]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRop4VKhcYOvhY8gLZEICF8ZnWhKFVi6zgsxSCXwEGi2uukej'"></fiv-image-viewer>
- 
-
+  </fiv-gallery>
 </ion-content>

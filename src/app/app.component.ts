@@ -11,93 +11,72 @@ import { FivRoutingStateService } from '@fivethree/core';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  public appPages = [
+  public components = [
     {
       title: 'App Bar',
       url: '/app-bar',
       icon: 'git-commit',
-      shape: 'rounded'
     },
     {
       title: 'Bottom Sheet',
       url: '/bottom-sheet',
       icon: 'ios-arrow-up',
-      shape: 'rounded'
     },
     {
       title: 'Dialog',
       url: '/dialog',
-      icon: 'notifications'
+      icon: 'notifications',
     },
     {
       title: 'Editable Label',
       url: '/editable-label',
       icon: 'create',
-      shape: 'line'
     },
     {
       title: 'Expandable',
       url: '/expandable',
       icon: 'resize',
-      shape: 'dot'
     },
     {
       title: 'Icon',
       url: '/icon',
       icon: 'mail-unread',
-      shape: 'rounded'
     },
     {
-      title: 'Image View',
+      title: 'Image Gallery',
       url: '/image',
       icon: 'image',
-      shape: 'dot'
     },
     {
       title: 'Loading Indicators',
       url: '/loading',
       icon: 'time',
-      shape: 'line'
     },
-    // {
-    //   title: 'Map',
-    //   url: '/map',
-    //   icon: 'map'
-    // },
     {
       title: 'Overflow Buttons',
       url: '/buttons',
       icon: 'more',
-      shape: 'rounded'
     },
     {
       title: 'Password Reveal Input',
       url: '/password',
       icon: 'key',
-      shape: 'line'
     },
     {
       title: 'Refresher',
       url: '/refresh',
       icon: 'refresh',
-      shape: 'dot'
     },
-    // {
-    //   title: 'Searchbar',
-    //   url: '/toolbar-search',
-    //   icon: 'search'
-    // },
+
     {
       title: 'Stepper',
       url: '/stepper',
       icon: 'share',
-      shape: 'rounded'
-    },
-    {
-      title: 'Test',
-      url: '/test',
-      icon: 'bug'
-    },
+    }
+  ];
+  public directives = [
+  ];
+  public services = [
   ];
 
   constructor(

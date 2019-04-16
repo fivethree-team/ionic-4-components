@@ -1,4 +1,4 @@
-import { FivImageViewer } from './../image-viewer/image-viewer.component';
+import { FivGalleryImage } from './../gallery-image/gallery-image.component';
 import { Directive, OnInit, Input, EventEmitter, Output, Host, Self, Optional, ElementRef } from '@angular/core';
 
 @Directive({
@@ -7,10 +7,10 @@ import { Directive, OnInit, Input, EventEmitter, Output, Host, Self, Optional, E
 export class LazyImageDirective implements OnInit {
 
   @Input() fivLazyImage: string;
-  @Output() willShow = new EventEmitter<FivImageViewer | HTMLImageElement>();
+  @Output() willShow = new EventEmitter<FivGalleryImage | HTMLImageElement>();
 
   constructor(
-    @Host() @Self() @Optional() public fivImage: FivImageViewer,
+    @Host() @Self() @Optional() public fivImage: FivGalleryImage,
     public image: ElementRef,
   ) { }
 
@@ -27,7 +27,7 @@ export class LazyImageDirective implements OnInit {
     });
     io['POLL_INTERVAL'] = 100;
     if (this.fivImage) {
-      io.observe(this.fivImage.element.nativeElement);
+      io.observe(this.fivImage.image.nativeElement);
     } else {
       io.observe(this.image.nativeElement);
     }

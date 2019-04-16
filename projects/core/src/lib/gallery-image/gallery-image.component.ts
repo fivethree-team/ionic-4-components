@@ -1,14 +1,14 @@
-import { Platform } from '@ionic/angular';
-import { Component, OnInit, Input, ElementRef, ViewChild, Host, Optional, Output, EventEmitter } from '@angular/core';
+import { FivGallery } from './../gallery/gallery.component';
+import { Component, OnInit, Input, ElementRef, ViewChild, Host, Optional } from '@angular/core';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { trigger, transition, style, animate, state, AnimationEvent, keyframes } from '@angular/animations';
 import { FivOverlay } from '../overlay/overlay.component';
-import { FivImageGallery } from '../image-gallery/image-gallery.component';
+import { ImageService } from '../services/image.service';
 
 @Component({
-  selector: 'fiv-image',
-  templateUrl: './image.component.html',
-  styleUrls: ['./image.component.scss'],
+  selector: 'fiv-gallery-image',
+  templateUrl: './gallery-image.component.html',
+  styleUrls: ['./gallery-image.component.scss'],
   animations: [
     trigger('image', [
       transition('* => in', [
@@ -19,7 +19,8 @@ import { FivImageGallery } from '../image-gallery/image-gallery.component';
           transform: 'translate(0%,0%)',
           height: '{{height}}px',
           width: '{{width}}px',
-          opacity: 1
+          opacity: 1,
+          borderRadius: '*'
         }),
         animate('160ms',
           style({
@@ -29,7 +30,8 @@ import { FivImageGallery } from '../image-gallery/image-gallery.component';
             transform: 'translate(-50%,-50%)',
             height: '*',
             width: '*',
-            opacity: 1
+            opacity: 1,
+            borderRadius: '0'
           }))
       ], { params: { top: '0', left: '0', height: '*', width: '*' } }),
       transition('* => out', [
@@ -40,7 +42,8 @@ import { FivImageGallery } from '../image-gallery/image-gallery.component';
           transform: 'translate(-50%,-50%)',
           height: '*',
           width: '*',
-          opacity: 1
+          opacity: 1,
+          borderRadius: '0'
         }),
         animate('175ms',
           style({
@@ -50,7 +53,8 @@ import { FivImageGallery } from '../image-gallery/image-gallery.component';
             transform: 'translate(0%,0%)',
             height: '{{height}}px',
             width: '{{width}}px',
-            opacity: 1
+            opacity: 1,
+            borderRadius: '*'
           })),
       ], { params: { top: '0', left: '0', height: '*', width: '*', translate: '0' } }),
       state('hidden', style({ opacity: 0 }))
@@ -62,20 +66,20 @@ import { FivImageGallery } from '../image-gallery/image-gallery.component';
           keyframes([
             style({ opacity: 0, offset: 0 }),
             style({ opacity: 0.3, offset: 0.75 }),
-            style({ opacity: 1, offset: 1 })])
+            style({ opacity: 0.97, offset: 1 })])
         )
       ]),
       transition(':leave', [
-        style({ opacity: 1 }),
+        style({ opacity: 0.97 }),
         animate('150ms',
           keyframes([
-            style({ opacity: 1, offset: 0 }),
-            style({ opacity: 0.7, offset: 0.8 }),
+            style({ opacity: 0.97, offset: 0 }),
+            style({ opacity: 0.6, offset: 0.8 }),
             style({ opacity: 0, offset: 1 })]))
       ])
     ])]
 })
-export class FivImage implements OnInit {
+export class FivGalleryImage implements OnInit {
 
   @Input() src: string | SafeResourceUrl;
   index: number;
@@ -86,9 +90,11 @@ export class FivImage implements OnInit {
   viewerState = 'in';
   animationParams: Position;
 
+  backdropColor = 'rgb(0,0,0)';
+
   constructor(
-    private platform: Platform,
-    @Optional() @Host() private gallery: FivImageGallery
+    @Optional() @Host() private gallery: FivGallery,
+    private imageService: ImageService
   ) { }
 
   ngOnInit() { }
@@ -97,6 +103,7 @@ export class FivImage implements OnInit {
     this.animationParams = this.getThumbnailPosition(this.image);
     console.log(this.animationParams);
     this.overlay.show(49999);
+    this.backdropColor = this.imageService.getAverageRGB(this.image.nativeElement);
   }
 
   close(position: Position) {
@@ -125,8 +132,6 @@ export class FivImage implements OnInit {
       width: element.nativeElement.clientWidth
     };
   }
-
-
 }
 
 export class Position {

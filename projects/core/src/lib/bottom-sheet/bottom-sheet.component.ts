@@ -42,8 +42,7 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
     private _element: ElementRef,
     private _renderer: Renderer2,
     private _domCtrl: DomController,
-    private _platform: Platform,
-    private sanitizer: DomSanitizer
+    private _platform: Platform
   ) { }
 
 

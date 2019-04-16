@@ -1,4 +1,5 @@
-import { FivImage } from './image/image.component';
+import { FivGallery } from './gallery/gallery.component';
+import { FivGalleryImage } from './gallery-image/gallery-image.component';
 import { FivBackButton } from './back-button/back-button.component';
 import { FivDialogService } from './services/dialog.service';
 import { FivNetworkStatus } from './network-status/network-status.component';
@@ -37,7 +38,6 @@ import { FivDialog } from './dialog/dialog.component';
 import { FivLoadingRefresherContent } from './loading-refresher-content/loading-refresher-content.component';
 import { FivAppBarTab } from './app-bar-tab/app-bar-tab.component';
 import { FivAppBarTabContent } from './app-bar-tab-content/app-bar-tab-content.component';
-import { FivImageViewer } from './image-viewer/image-viewer.component';
 import { FivToolbarSearch } from './toolbar-search/toolbar-search.component';
 import { FivButtons } from './buttons/buttons.component';
 import { FivButton } from './button/button.component';
@@ -48,7 +48,6 @@ import { FivOverlayService } from './services/overlay.service';
 import { FivOverlay } from './overlay/overlay.component';
 import { FivOverlayContent } from './overlay-content/overlay-content.component';
 import { LazyImageDirective } from './directives/lazy-image.directive';
-import { FivImageGallery } from './image-gallery/image-gallery.component';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -95,9 +94,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivDialog,
     FivAppBarTab,
     FivAppBarTabContent,
-    FivImage,
-    FivImageGallery,
-    FivImageViewer,
+    FivGalleryImage,
+    FivGallery,
     FivButtons,
     FivButton,
     FivPopover,
@@ -109,7 +107,6 @@ export class MyHammerConfig extends HammerGestureConfig {
     LazyImageDirective
   ],
   entryComponents: [
-    FivImageViewer,
     FivPopover,
     FivOverlayContent,
     FivNetworkStatus,
@@ -146,9 +143,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivDialog,
     FivAppBarTab,
     FivAppBarTabContent,
-    FivImage,
-    FivImageGallery,
-    FivImageViewer,
+    FivGalleryImage,
+    FivGallery,
     FivButtons,
     FivButton,
     FivExpandableIndicator,

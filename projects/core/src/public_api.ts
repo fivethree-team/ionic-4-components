@@ -31,12 +31,14 @@ export * from './lib/app-bar-tab/app-bar-tab.component';
 export * from './lib/app-bar-tab-content/app-bar-tab-content.component';
 export * from './lib/buttons/buttons.component';
 export * from './lib/button/button.component';
-export * from './lib/image-viewer/image-viewer.component';
 export * from './lib/network-status/network-status.component';
 export * from './lib/back-button/back-button.component';
+export * from './lib/gallery/gallery.component';
+export * from './lib/gallery-image/gallery-image.component';
 
 // export services
 export * from './lib/loading/loading.service';
+export * from './lib/services/image.service';
 export * from './lib/services/overlay.service';
 export * from './lib/services/dialog.service';
 export * from './lib/services/routing-state.service';

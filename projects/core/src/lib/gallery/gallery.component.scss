@@ -20,6 +20,13 @@
 
 }
 
+.backdrop {
+    background: rgba(0, 0, 0, 0.97);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
 ion-toolbar {
     position: absolute;
 

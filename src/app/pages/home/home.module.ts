@@ -8,6 +8,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { HomePage } from './home.page';
 import { TranslateModule } from '@ngx-translate/core';
+import { MdoButtonModule } from '@ctrl/ngx-github-buttons';
+
 
 const routes: Routes = [
   {
@@ -23,8 +25,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     ComponentsModule,
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
+    MdoButtonModule
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule { }
