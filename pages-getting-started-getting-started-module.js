@@ -68,7 +68,7 @@ var GettingStartedPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header [title]=\"'getting-started.title' | translate\"></app-header>\n\n<ion-content>\n  <div>\n    <ion-grid fixed>\n      <ion-row>\n        <ion-col size=\"12\">\n          <markdown [src]=\"'assets/docs/getting-started/getting-started.md'\"></markdown>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n  </div>\n\n  <app-footer></app-footer>\n</ion-content>"
+module.exports = "<app-header [title]=\"'getting-started.title' | translate\"></app-header>\n\n<ion-content>\n  <div>\n    <ion-grid fixed>\n      <ion-row>\n        <ion-col size=\"12\">\n          <markdown [src]=\"'assets/docs/getting-started/getting-started.md'\"></markdown>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n  </div>\n\n</ion-content>"
 
 /***/ }),
 

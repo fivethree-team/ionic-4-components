@@ -68,7 +68,7 @@ var PageNotFoundPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n\n<ion-content>\n\n  <div id=\"page-not-found-container\">\n    <div [fivCenter] text-center>\n      <lottie-animation-view [options]=\"lottieConfig\" [width]=\"200\" [height]=\"200\" (animCreated)=\"handleAnimation($event)\">\n      </lottie-animation-view>\n      <h3 text-center translate>404.text</h3>\n      <ion-button routerLink=\"/\" shape=\"round\" translate>\n        404.go.back\n      </ion-button>\n    </div>\n  </div>\n  <app-footer></app-footer>\n</ion-content>"
+module.exports = "<app-header></app-header>\n\n<ion-content>\n\n  <div id=\"page-not-found-container\">\n    <div [fivCenter] text-center>\n      <lottie-animation-view [options]=\"lottieConfig\" [width]=\"200\" [height]=\"200\" (animCreated)=\"handleAnimation($event)\">\n      </lottie-animation-view>\n      <h3 text-center translate>404.text</h3>\n      <ion-button routerLink=\"/\" shape=\"round\" translate>\n        404.go.back\n      </ion-button>\n    </div>\n  </div>\n</ion-content>"
 
 /***/ }),
 
