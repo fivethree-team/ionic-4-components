@@ -82,7 +82,7 @@
     "@angular/compiler-cli": "7.2.13",
     "@angular/language-service": "7.2.13",
     "@ionic/angular-toolkit": "1.5.1",
-    "@types/googlemaps": "3.30.16",
+    "@types/googlemaps": "3.30.19",
     "@types/jasmine": "3.3.9",
     "@types/jasminewd2": "2.0.6",
     "@types/node": "10.12.18",
