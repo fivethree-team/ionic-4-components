@@ -17,14 +17,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _page_not_found_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./page-not-found.page */ "./src/app/pages/page-not-found/page-not-found.page.ts");
 /* harmony import */ var src_app_components_components_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/components/components.module */ "./src/app/components/components.module.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -49,7 +47,6 @@ var PageNotFoundPageModule = /** @class */ (function () {
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes),
                 src_app_components_components_module__WEBPACK_IMPORTED_MODULE_6__["ComponentsModule"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateModule"].forChild()
             ],
             declarations: [_page_not_found_page__WEBPACK_IMPORTED_MODULE_5__["PageNotFoundPage"]]
         })
@@ -68,7 +65,7 @@ var PageNotFoundPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n\n<ion-content>\n\n  <div id=\"page-not-found-container\">\n    <div [fivCenter] text-center>\n      <lottie-animation-view [options]=\"lottieConfig\" [width]=\"200\" [height]=\"200\" (animCreated)=\"handleAnimation($event)\">\n      </lottie-animation-view>\n      <h3 text-center translate>404.text</h3>\n      <ion-button routerLink=\"/\" shape=\"round\" translate>\n        404.go.back\n      </ion-button>\n    </div>\n  </div>\n</ion-content>"
+module.exports = "<app-header></app-header>\n\n<ion-content>\n\n  <div id=\"page-not-found-container\">\n    <div [fivCenter] text-center>\n      <lottie-animation-view [options]=\"lottieConfig\" [width]=\"200\" [height]=\"200\" (animCreated)=\"handleAnimation($event)\">\n      </lottie-animation-view>\n      <h3 text-center>Oops, we couldn't find the page you are looking for.</h3>\n      <ion-button routerLink=\"/\" shape=\"round\">\n        Go to homepage\n      </ion-button>\n    </div>\n  </div>\n</ion-content>"
 
 /***/ }),
 
