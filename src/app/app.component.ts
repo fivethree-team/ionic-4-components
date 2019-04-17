@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { LanguageService } from './services/language.service';
 import { FivRoutingStateService } from '@fivethree/core';
 
 @Component({
@@ -83,10 +82,8 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private language: LanguageService,
     private routing: FivRoutingStateService
   ) {
-    this.language.initializeLanguage();
     this.initializeApp();
   }
 

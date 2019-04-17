@@ -13,13 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LottieAnimationViewModule } from 'ng-lottie';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UtilService } from '@services/util.service';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,13 +26,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
     MarkdownModule.forRoot({ loader: HttpClient }),
     LottieAnimationViewModule.forRoot(),
     ComponentsModule

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { PageNotFoundPage } from './page-not-found.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -23,7 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     ComponentsModule,
-    TranslateModule.forChild()
   ],
   declarations: [PageNotFoundPage]
 })

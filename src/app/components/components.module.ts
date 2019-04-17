@@ -7,7 +7,6 @@ import { FivethreeCoreModule } from '@fivethree/core';
 import { MatTooltipModule, MatTabsModule } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { TranslateModule } from '@ngx-translate/core';
 import { LottieAnimationViewModule } from 'ng-lottie';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -24,7 +23,6 @@ import { FormsModule } from '@angular/forms';
     IonicModule,
     FormsModule,
     MarkdownModule.forChild(),
-    TranslateModule.forChild(),
     FivethreeCoreModule,
     MatTooltipModule,
     MatTabsModule,
