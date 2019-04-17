@@ -24,11 +24,11 @@ export class DialogPage implements OnInit {
   ngOnInit() {
   }
 
-
-  close(){
+  close() {
     console.log('dialog closed');
   }
-  over(){
+
+  over() {
     console.log('dialog duration over');
   }
 }
