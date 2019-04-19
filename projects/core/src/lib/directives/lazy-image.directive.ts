@@ -1,10 +1,10 @@
-import { FivGalleryImage } from './../gallery-image/gallery-image.component';
+import { FivGalleryImage } from '../gallery/gallery-image/gallery-image.component';
 import { Directive, OnInit, Input, EventEmitter, Output, Host, Self, Optional, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[fivLazyImage]'
 })
-export class LazyImageDirective implements OnInit {
+export class FivLazyImage implements OnInit {
 
   @Input() fivLazyImage: string;
   @Output() willShow = new EventEmitter<FivGalleryImage | HTMLImageElement>();

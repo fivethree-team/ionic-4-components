@@ -13,11 +13,6 @@ import { FivRouterItem } from './router-item.component';
         FivIconModule,
         FivRippleModule
     ],
-    exports: [
-        FivRouterItem,
-        // Re-export `FivIconModule` and `FivRippleModule`
-        FivIconModule,
-        FivRippleModule
-    ],
+    exports: [FivRouterItem],
 })
 export class FivRouterItemModule { }

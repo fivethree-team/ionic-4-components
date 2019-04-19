@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FivCollapsableMenu } from '../collapsable-menu/collapsable-menu.directive';
+import { FivCollapsableMenu } from '../collapsable-menu.directive';
 
 @Component({
   selector: 'fiv-collapsable-menu-button',
@@ -9,6 +9,7 @@ import { FivCollapsableMenu } from '../collapsable-menu/collapsable-menu.directi
 export class FivCollapsableMenuButton implements OnInit {
 
   @Input() menu: FivCollapsableMenu;
+  @Input() icon = 'menu';
 
   constructor() { }
 

@@ -1,6 +1,12 @@
 import {
-  Component, OnInit, ViewChild, AfterContentInit,
-  ElementRef, Renderer2, Output, EventEmitter
+  Component,
+  OnInit,
+  ViewChild,
+  AfterContentInit,
+  ElementRef,
+  Renderer2,
+  Output,
+  EventEmitter
 } from '@angular/core';
 import { AnimationEvent, trigger, transition, animate, style } from '@angular/animations';
 import { FeaturePosition } from '../interfaces';

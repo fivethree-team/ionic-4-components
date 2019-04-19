@@ -1,4 +1,4 @@
-import { FivRoutingStateService } from './../services/routing-state.service';
+import { FivRoutingStateService } from './routing-state.service';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -12,10 +12,7 @@ export class FivBackButton {
   @Input() color;
   @Input() defaultHref = '/';
 
-  constructor(
-    public routingState: FivRoutingStateService
-  ) {}
-
+  constructor(public routingState: FivRoutingStateService) { }
 
   buttonClick() {
     this.routingState.goBack(this.defaultHref);

@@ -6,11 +6,13 @@ import { IonicModule } from '@ionic/angular';
 import { FivOverlayModule } from '../overlay/overlay.module';
 import { FivIfModule } from '../directives/if-platform.module';
 import { FivPullModule } from '../directives/pull.module';
-import { FivGalleryImage } from '../gallery-image/gallery-image.component';
+import { FivGalleryImage } from './gallery-image/gallery-image.component';
 
 @NgModule({
-    declarations: [FivGallery,
-        FivGalleryImage],
+    declarations: [
+        FivGallery,
+        FivGalleryImage
+    ],
     imports: [
         CommonModule,
         IonicModule,
@@ -21,12 +23,7 @@ import { FivGalleryImage } from '../gallery-image/gallery-image.component';
     ],
     exports: [
         FivGallery,
-        FivGalleryImage,
-        // Re-Export `FivIconModule`, `FivIfModule`, `FivPullModule` and `FivOverlayModule`
-        FivIconModule,
-        FivIfModule,
-        FivPullModule,
-        FivOverlayModule
+        FivGalleryImage
     ],
 })
 export class FivGalleryModule { }

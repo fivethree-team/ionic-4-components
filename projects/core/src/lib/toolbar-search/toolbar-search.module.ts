@@ -9,8 +9,6 @@ import { FivIconModule } from '../icon/icon.module';
     imports: [CommonModule,
         IonicModule,
         FivIconModule],
-    exports: [FivToolbarSearch,
-        // Re-export `FivIconModule`
-        FivIconModule],
+    exports: [FivToolbarSearch],
 })
 export class FivToolbarSearchModule { }

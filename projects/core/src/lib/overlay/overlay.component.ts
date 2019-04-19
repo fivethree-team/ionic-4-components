@@ -1,6 +1,6 @@
 import { Component, ViewChild, ComponentRef, TemplateRef, Input } from '@angular/core';
-import { FivOverlayContent } from '../overlay-content/overlay-content.component';
-import { FivOverlayService } from '../services/overlay.service';
+import { FivOverlayContent } from './overlay-content/overlay-content.component';
+import { FivOverlayService } from './overlay.service';
 
 @Component({
   selector: 'fiv-overlay',

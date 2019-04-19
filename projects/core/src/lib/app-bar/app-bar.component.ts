@@ -1,4 +1,4 @@
-import { FivAppBarTabContent } from './../app-bar-tab-content/app-bar-tab-content.component';
+import { FivAppBarTabContent } from './app-bar-tab-content/app-bar-tab-content.component';
 import { FivLoadingFab } from './../loading-fab/loading-fab.component';
 import {
   Component,
@@ -12,7 +12,7 @@ import {
   Host,
   ViewChildren
 } from '@angular/core';
-import { FivAppBarTab } from '../app-bar-tab/app-bar-tab.component';
+import { FivAppBarTab } from './app-bar-tab/app-bar-tab.component';
 import { Router } from '@angular/router';
 import { AppBarTitleLayout, AppBarFabPosition } from '../interfaces';
 import { IonTabs } from '@ionic/angular';

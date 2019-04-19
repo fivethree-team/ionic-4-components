@@ -1,11 +1,18 @@
-import { FivBottomSheetContent } from '../bottom-sheet-content/bottom-sheet-content.component';
+import { FivBottomSheetContent } from './bottom-sheet-content/bottom-sheet-content.component';
 import {
-  Component, AfterViewInit, OnChanges, Input, Output, EventEmitter,
-  ElementRef, Renderer2, SimpleChanges, ContentChild
+  Component,
+  AfterViewInit,
+  OnChanges,
+  Input,
+  Output,
+  EventEmitter,
+  ElementRef,
+  Renderer2,
+  SimpleChanges,
+  ContentChild
 } from '@angular/core';
 import { DomController, Platform } from '@ionic/angular';
 import * as Hammer from 'hammerjs';
-import { DomSanitizer } from '@angular/platform-browser';
 import { DrawerState } from './drawer-state';
 
 @Component({

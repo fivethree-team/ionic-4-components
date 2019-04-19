@@ -8,7 +8,7 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 import { FivStepHeader } from '../step-header/step-header.component';
-import { FivExpandable } from '../expandable/expandable.component';
+import { FivExpandable } from '../../expandable/expandable.component';
 
 @Component({
   selector: 'fiv-step-content',

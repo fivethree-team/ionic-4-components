@@ -1,8 +1,8 @@
-import { FivIcon } from './icon/icon.component';
-import { FeaturePosition } from './interfaces.d';
+import { FivIcon } from '../icon/icon.component';
+import { FeaturePosition } from '../interfaces';
 import { Directive, Host, ElementRef, Input, Optional, ComponentRef } from '@angular/core';
-import { FivOverlayService } from './services/overlay.service';
-import { FivFeatureDiscovery } from './feature-discovery/feature-discovery.component';
+import { FivOverlayService } from '../overlay/overlay.service';
+import { FivFeatureDiscovery } from './feature-discovery.component';
 import { first } from 'rxjs/operators';
 import { Platform } from '@ionic/angular';
 

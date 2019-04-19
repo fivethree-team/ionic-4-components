@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { animate, style, transition, trigger, AnimationBuilder, AnimationPlayer } from '@angular/animations';
-import { LoadingService } from '../loading/loading.service';
 import { timer } from 'rxjs';
+import { FivLoadingService } from './loading.service';
 
 @Component({
   selector: 'fiv-loading-progress-bar',
@@ -55,7 +55,8 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
   _progressPlayer: AnimationPlayer;
   private animating = false;
 
-  constructor(public loadingService: LoadingService, private builder: AnimationBuilder) {
+  constructor(public loadingService: FivLoadingService,
+    private builder: AnimationBuilder) {
   }
 
   ngOnInit() {

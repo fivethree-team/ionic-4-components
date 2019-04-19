@@ -16,13 +16,6 @@ ion-list {
   --fiv-color-fab: var(--ion-color-light);
 }
 
-fiv-loading-button {
-  width: 240px;
-  --color-progress-spin-0: red;
-  --color-progress-spin-50: green;
-  --color-progress-spin-100: yellow;
-}
-
 fiv-loading-progress-bar {
   --background-progress-bar: purple;
   --color-spin-0: red;
