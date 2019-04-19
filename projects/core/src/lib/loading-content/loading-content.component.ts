@@ -1,4 +1,4 @@
-import { FivLoadingRefresherContent } from './../loading-refresher-content/loading-refresher-content.component';
+import { FivLoadingRefresherContent } from './loading-refresher-content/loading-refresher-content.component';
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, Input, Renderer2 } from '@angular/core';
 import { animate, style, transition, trigger, state, AnimationBuilder, AnimationPlayer } from '@angular/animations';
 
