@@ -1,3 +1,4 @@
+import { FivIconModule } from '@fivethree/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +7,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { IconPage } from './icon.page';
-import { FivethreeCoreModule } from '@fivethree/core';
 import { ComponentsModule } from '@components/components.module';
 
 const routes: Routes = [
@@ -22,8 +22,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    FivethreeCoreModule,
-    ComponentsModule
+    ComponentsModule,
+    FivIconModule
   ],
   declarations: [IconPage]
 })

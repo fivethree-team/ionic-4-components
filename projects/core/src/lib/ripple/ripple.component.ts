@@ -1,4 +1,13 @@
-import { HostListener, ElementRef, Renderer2, HostBinding, EventEmitter, Component, Input, Output } from '@angular/core';
+import {
+  HostListener,
+  ElementRef,
+  Renderer2,
+  HostBinding,
+  EventEmitter,
+  Component,
+  Input,
+  Output
+} from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({

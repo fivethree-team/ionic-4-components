@@ -54,7 +54,9 @@ export class FivPasswordInput implements ControlValueAccessor {
   set passwordValue(v: any) {
     if (v !== this._passwordValue) {
       this._passwordValue = v;
-      this.onChangeCallback(this._passwordValue);
+      if (this.onChangeCallback) {
+        this.onChangeCallback(this._passwordValue);
+      }
     }
   }
 

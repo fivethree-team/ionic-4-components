@@ -1,5 +1,14 @@
 import { FivStep } from './../step/step.component';
-import { EventEmitter, Component, OnInit, ViewChildren, ContentChildren, QueryList, Input, ViewChild, Output } from '@angular/core';
+import {
+  EventEmitter,
+  Component,
+  OnInit,
+  ViewChildren,
+  ContentChildren,
+  QueryList, Input,
+  ViewChild,
+  Output
+} from '@angular/core';
 import { FivStepContent } from '../step-content/step-content.component';
 import { FivStepperHorizontal } from '../stepper-horizontal/stepper-horizontal.component';
 

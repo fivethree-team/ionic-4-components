@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { StepperPage } from './stepper.page';
-import { FivethreeCoreModule } from '@fivethree/core';
+import { FivStepperModule } from '@fivethree/core';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     ComponentsModule,
-    FivethreeCoreModule
+    FivStepperModule
   ],
   declarations: [StepperPage]
 })

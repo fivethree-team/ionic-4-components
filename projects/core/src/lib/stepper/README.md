@@ -1,4 +1,4 @@
-# Ionic 4 Stepper Component
+# fiv-stepper
 
 A layout component to build steppers (e.g. for forms) in your ionic 4 project (currently in beta)
 

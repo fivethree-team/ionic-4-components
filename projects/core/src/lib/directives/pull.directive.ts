@@ -1,4 +1,4 @@
-import { Directive, OnInit, ElementRef, Input, Output, EventEmitter, Host } from '@angular/core';
+import { Directive, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { fromEvent, merge } from 'rxjs';
 import { filter, map, skipWhile, takeUntil, takeLast } from 'rxjs/operators';
