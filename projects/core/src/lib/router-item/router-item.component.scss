@@ -50,18 +50,6 @@
   top: 0;
 }
 
-:host.active.top .line {
-  width: calc(100% - 16px);
-  left: 8px;
-  height: 2px;
-}
-
-:host.active.bottom .line {
-  width: calc(100% - 16px);
-  height: 2px;
-  left: 8px;
-}
-
 .indicator {
   position: absolute;
 }
@@ -128,14 +116,6 @@
 
 .right {
   right: 0;
-}
-
-.top {
-  top: 0;
-}
-
-.bottom {
-  bottom: 0;
 }
 
 ion-item {

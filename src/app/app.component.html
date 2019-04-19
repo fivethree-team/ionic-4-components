@@ -29,8 +29,8 @@
                 <fiv-expandable-indicator icon="ios-arrow-down"></fiv-expandable-indicator>
               </ion-item>
             </fiv-ripple>
-            <div content>
-              <fiv-router-item [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'"
+            <div content> 
+              <fiv-router-item [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'" [position]="'left'"
                 [pageUrl]="p.url" *ngFor="let p of components">
               </fiv-router-item>
             </div>

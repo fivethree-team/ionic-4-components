@@ -1,5 +1,15 @@
+import { FivIcon } from './../icon/icon.component';
 import { FivExpandable } from './../expandable/expandable.component';
-import { Component, OnInit, Input, HostBinding, HostListener, Optional, Host } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  HostBinding,
+  HostListener,
+  Optional,
+  Host,
+  ViewChild
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Color } from '@ionic/core';
 
@@ -9,6 +19,8 @@ import { Color } from '@ionic/core';
   styleUrls: ['./router-item.component.scss']
 })
 export class FivRouterItem implements OnInit {
+
+  @ViewChild('fivIcon') fivIcon: FivIcon;
 
   @Input() active = false;
 
@@ -34,14 +46,14 @@ export class FivRouterItem implements OnInit {
    * The position of the active state.
    * Default value is: `"left"`
    */
-  @Input() position: 'left' | 'right' | 'bottom' | 'top' | 'outline' = 'left';
+  @Input() position: 'left' | 'right' = 'left';
 
   /**
    * The shape of the active state.
-   * Possible values are: `"line"`, `"dot"` and any ionicon.
+   * Possible values are: `"line"`, `"dot"` and `"rounded"`.
    * Default value is: `"line"`
    */
-  @Input() shape: 'line' | 'dot' | 'rounded' | string = 'line';
+  @Input() shape: 'line' | 'dot' | 'rounded' = 'line';
 
   @Input() text: string;
 
@@ -69,6 +81,7 @@ export class FivRouterItem implements OnInit {
     return this.disabled;
   }
 
+
   constructor(
     public router: Router,
     @Optional() @Host() private host: FivExpandable
@@ -77,14 +90,8 @@ export class FivRouterItem implements OnInit {
   ngOnInit() {
   }
 
-  hasShape(): boolean {
-    return this.shape === 'line'
-      || this.shape === 'dot'
-      || this.shape === 'rounded';
-  }
-
   getClasses(): string[] {
-    return this.hasShape() ? [this.position, this.shape] : [this.position];
+    return [this.position, this.shape];
   }
 
   matchActiveUrl(): boolean {

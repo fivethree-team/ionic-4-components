@@ -1,3 +1,4 @@
+import { FivExpandableModule } from './../expandable/expandable.module';
 import { FivIconModule } from './../icon/icon.module';
 import { FivRippleModule } from './../ripple/ripple.module';
 import { IonicModule } from '@ionic/angular';
@@ -10,6 +11,7 @@ import { FivRouterItem } from './router-item.component';
     imports: [
         CommonModule,
         IonicModule,
+        FivExpandableModule,
         FivIconModule,
         FivRippleModule
     ],
