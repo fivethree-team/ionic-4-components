@@ -3,9 +3,17 @@
  * Public API Surface of core
  */
 
+/**
+ * Modules
+ */
+// Core
 export * from './lib/fivethree.core.module';
-export * from './lib/bottom-sheet/drawer-state';
+// Components
+export { FivPasswordInputModule } from './lib/password-input/password-input.module';
 
+/**
+ * Components
+ */
 // export components
 export * from './lib/app-bar/app-bar.component';
 export * from './lib/bottom-sheet/bottom-sheet.component';
@@ -42,3 +50,6 @@ export * from './lib/services/image.service';
 export * from './lib/services/overlay.service';
 export * from './lib/services/dialog.service';
 export * from './lib/services/routing-state.service';
+
+
+export * from './lib/bottom-sheet/drawer-state';

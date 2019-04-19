@@ -1,5 +1,5 @@
+import { FivPasswordInputModule } from '@fivethree/core';
 import { ComponentsModule } from './../../components/components.module';
-import { FivethreeCoreModule } from '@fivethree/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +21,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    FivethreeCoreModule,
+    FivPasswordInputModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     ComponentsModule

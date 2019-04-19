@@ -17,7 +17,6 @@ import { FivExpandable } from './expandable/expandable.component';
 import { FivRouterItem } from './router-item/router-item.component';
 import { FivCollapsableMenu } from './collapsable-menu/collapsable-menu.directive';
 import { FivCollapsableMenuButton } from './collapsable-menu-button/collapsable-menu-button.component';
-import { FivPasswordInput } from './password-input/password-input.component';
 import { FivBottomSheet } from './bottom-sheet/bottom-sheet.component';
 import { FivBottomSheetContent } from './bottom-sheet-content/bottom-sheet-content.component';
 import { FivLoadingButton } from './loading-button/loading-button.component';
@@ -48,6 +47,7 @@ import { FivOverlayService } from './services/overlay.service';
 import { FivOverlay } from './overlay/overlay.component';
 import { FivOverlayContent } from './overlay-content/overlay-content.component';
 import { LazyImageDirective } from './directives/lazy-image.directive';
+import { FivPasswordInputModule } from './password-input/password-input.module';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -56,16 +56,19 @@ export class MyHammerConfig extends HammerGestureConfig {
   };
 }
 
+const componentsModule = [
+  FivPasswordInputModule
+];
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule
+    IonicModule,
+    ...componentsModule
   ],
   declarations: [
     FivExpandable,
     FivEditableLabel,
-    FivPasswordInput,
     FivStepper,
     FivStep,
     FivStepHeader,
@@ -112,9 +115,9 @@ export class MyHammerConfig extends HammerGestureConfig {
     FivNetworkStatus,
     FivDialog],
   exports: [
+    ...componentsModule,
     FivExpandable,
     FivEditableLabel,
-    FivPasswordInput,
     FivStepper,
     FivStep,
     FivStepHeader,
