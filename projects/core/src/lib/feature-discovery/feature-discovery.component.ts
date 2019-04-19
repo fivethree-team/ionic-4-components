@@ -1,9 +1,8 @@
-import { Platform } from '@ionic/angular';
 import {
   Component, OnInit, ViewChild, AfterContentInit,
-  ElementRef, Renderer2, Output, EventEmitter, HostListener
+  ElementRef, Renderer2, Output, EventEmitter
 } from '@angular/core';
-import { AnimationEvent, trigger, transition, animate, style, keyframes, animation } from '@angular/animations';
+import { AnimationEvent, trigger, transition, animate, style } from '@angular/animations';
 import { FeaturePosition } from '../interfaces';
 import { FivIcon } from '../icon/icon.component';
 

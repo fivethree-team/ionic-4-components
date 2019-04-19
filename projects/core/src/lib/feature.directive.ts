@@ -1,9 +1,9 @@
 import { FivIcon } from './icon/icon.component';
 import { FeaturePosition } from './interfaces.d';
-import { Directive, Host, ElementRef, Input, Optional, ComponentRef, ChangeDetectorRef } from '@angular/core';
+import { Directive, Host, ElementRef, Input, Optional, ComponentRef } from '@angular/core';
 import { FivOverlayService } from './services/overlay.service';
 import { FivFeatureDiscovery } from './feature-discovery/feature-discovery.component';
-import { first, flatMap, tap } from 'rxjs/operators';
+import { first } from 'rxjs/operators';
 import { Platform } from '@ionic/angular';
 
 @Directive({
@@ -20,7 +20,6 @@ export class FivFeature {
     @Host() @Optional() private icon: FivIcon,
     private overlay: FivOverlayService,
     private platform: Platform,
-    private change: ChangeDetectorRef
   ) {
   }
 
@@ -38,7 +37,6 @@ export class FivFeature {
     const bounds = this.icon ? this.getBounds(this.host.nativeElement.parentElement) : this.getBounds(this.host.nativeElement);
     this.overlayRef = this.overlay.createOverlay(FivFeatureDiscovery);
     const featureOverlay = this.overlayRef.instance;
-    console.log('set width and height to', this.diameter);
     featureOverlay.height = this.diameter;
     featureOverlay.width = this.diameter;
     featureOverlay.setIcon(this.icon);
