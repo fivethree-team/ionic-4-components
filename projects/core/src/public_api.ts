@@ -11,11 +11,16 @@ export * from './lib/fivethree.core.module';
 // Components
 export * from './lib/expandable/expandable.module';
 export * from './lib/icon/icon.module';
+export * from './lib/gallery/gallery.module';
+export * from './lib/overlay/overlay.module';
 export * from './lib/password-input/password-input.module';
 export * from './lib/ripple/ripple.module';
 export * from './lib/router-item/router-item.module';
 export * from './lib/stepper/stepper.module';
 export * from './lib/toolbar-search/toolbar-search.module';
+// Directives
+export * from './lib/directives/if-platform.module';
+export * from './lib/directives/pull.module';
 
 /**
  * Components

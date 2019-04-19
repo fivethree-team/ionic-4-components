@@ -1,7 +1,6 @@
+import { FivGalleryModule } from './gallery/gallery.module';
 import { FivToolbarSearchModule } from './toolbar-search/toolbar-search.module';
 import { FivIconModule } from './icon/icon.module';
-import { FivGallery } from './gallery/gallery.component';
-import { FivGalleryImage } from './gallery-image/gallery-image.component';
 import { FivBackButton } from './back-button/back-button.component';
 import { FivDialogService } from './services/dialog.service';
 import { FivNetworkStatus } from './network-status/network-status.component';
@@ -20,11 +19,9 @@ import { FivLoadingProgressBar } from './loading-progress-bar/loading-progress-b
 import { FivLoadingContent } from './loading-content/loading-content.component';
 import { FivLoadingFab } from './loading-fab/loading-fab.component';
 import { FivAppBar } from './app-bar/app-bar.component';
-import { FivIfPlatform } from './directives/if-platform.directive';
 import { FivCenter } from './directives/center.directive';
 import { FivPermissions } from './directives/permissions.directive';
 import { FivViewport } from './directives/viewport.directive';
-import { FivPull } from './directives/pull.directive';
 import { FivLoadingSpinner } from './loading-spinner/loading-spinner.component';
 import { FivDialog } from './dialog/dialog.component';
 import { FivLoadingRefresherContent } from './loading-refresher-content/loading-refresher-content.component';
@@ -34,15 +31,15 @@ import { FivButtons } from './buttons/buttons.component';
 import { FivButton } from './button/button.component';
 import { FivPopover } from './popover/popover.component';
 import { FivEditableLabel } from './editable-label/editable-label.component';
-import { FivOverlayService } from './services/overlay.service';
-import { FivOverlay } from './overlay/overlay.component';
-import { FivOverlayContent } from './overlay-content/overlay-content.component';
 import { LazyImageDirective } from './directives/lazy-image.directive';
 import { FivPasswordInputModule } from './password-input/password-input.module';
 import { FivExpandableModule } from './expandable/expandable.module';
 import { FivStepperModule } from './stepper/stepper.module';
 import { FivRippleModule } from './ripple/ripple.module';
 import { FivRouterItemModule } from './router-item/router-item.module';
+import { FivOverlayModule } from './overlay/overlay.module';
+import { FivIfModule } from './directives/if-platform.module';
+import { FivPullModule } from './directives/pull.module';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -51,21 +48,29 @@ export class MyHammerConfig extends HammerGestureConfig {
   };
 }
 
-const componentsModule = [
+const componentModules = [
   FivExpandableModule,
+  FivGalleryModule,
   FivIconModule,
+  FivOverlayModule,
   FivPasswordInputModule,
   FivRippleModule,
   FivRouterItemModule,
   FivStepperModule,
   FivToolbarSearchModule
 ];
+
+const directiveModules = [
+  FivIfModule,
+  FivPullModule
+];
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ...componentsModule
+    ...componentModules,
+    ...directiveModules,
   ],
   declarations: [
     FivEditableLabel,
@@ -79,33 +84,27 @@ const componentsModule = [
     FivLoadingContent,
     FivLoadingFab,
     FivAppBar,
-    FivIfPlatform,
     FivPermissions,
     FivViewport,
-    FivPull,
     FivLoadingRefresherContent,
     FivLoadingSpinner,
     FivDialog,
     FivAppBarTab,
     FivAppBarTabContent,
-    FivGalleryImage,
-    FivGallery,
     FivButtons,
     FivButton,
     FivPopover,
-    FivOverlay,
-    FivOverlayContent,
     FivNetworkStatus,
     FivBackButton,
     LazyImageDirective
   ],
   entryComponents: [
     FivPopover,
-    FivOverlayContent,
     FivNetworkStatus,
     FivDialog],
   exports: [
-    ...componentsModule,
+    ...componentModules,
+    ...directiveModules,
     FivEditableLabel,
     FivCollapsableMenu,
     FivCenter,
@@ -117,27 +116,20 @@ const componentsModule = [
     FivLoadingContent,
     FivLoadingFab,
     FivAppBar,
-    FivIfPlatform,
     FivPermissions,
     FivViewport,
-    FivPull,
     FivLoadingRefresherContent,
     FivLoadingSpinner,
     FivDialog,
     FivAppBarTab,
     FivAppBarTabContent,
-    FivGalleryImage,
-    FivGallery,
     FivButtons,
     FivButton,
-    FivOverlay,
-    FivOverlayContent,
     FivNetworkStatus,
     FivBackButton,
     LazyImageDirective
   ],
   providers: [
-    FivOverlayService,
     FivDialogService
   ]
 })
