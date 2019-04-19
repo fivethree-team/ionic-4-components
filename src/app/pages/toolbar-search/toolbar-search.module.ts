@@ -1,4 +1,4 @@
-import { FivethreeCoreModule } from '@fivethree/core';
+import { FivToolbarSearchModule } from '@fivethree/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -20,8 +20,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    FivethreeCoreModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FivToolbarSearchModule
   ],
   declarations: [ToolbarSearchPage]
 })

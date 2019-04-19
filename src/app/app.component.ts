@@ -66,11 +66,15 @@ export class AppComponent {
       url: '/refresh',
       icon: 'refresh',
     },
-
     {
       title: 'Stepper',
       url: '/stepper',
       icon: 'share',
+    },
+    {
+      title: 'Toolbar Search',
+      url: '/toolbar-search',
+      icon: 'search',
     }
   ];
   public directives = [

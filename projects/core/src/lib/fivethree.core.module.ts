@@ -1,3 +1,4 @@
+import { FivToolbarSearchModule } from './toolbar-search/toolbar-search.module';
 import { FivIconModule } from './icon/icon.module';
 import { FivGallery } from './gallery/gallery.component';
 import { FivGalleryImage } from './gallery-image/gallery-image.component';
@@ -30,7 +31,6 @@ import { FivDialog } from './dialog/dialog.component';
 import { FivLoadingRefresherContent } from './loading-refresher-content/loading-refresher-content.component';
 import { FivAppBarTab } from './app-bar-tab/app-bar-tab.component';
 import { FivAppBarTabContent } from './app-bar-tab-content/app-bar-tab-content.component';
-import { FivToolbarSearch } from './toolbar-search/toolbar-search.component';
 import { FivButtons } from './buttons/buttons.component';
 import { FivButton } from './button/button.component';
 import { FivPopover } from './popover/popover.component';
@@ -56,7 +56,8 @@ const componentsModule = [
   FivIconModule,
   FivPasswordInputModule,
   FivRippleModule,
-  FivStepperModule
+  FivStepperModule,
+  FivToolbarSearchModule
 ];
 @NgModule({
   imports: [
@@ -73,7 +74,6 @@ const componentsModule = [
     FivCollapsableMenu,
     FivBottomSheet,
     FivBottomSheetContent,
-    FivToolbarSearch,
     FivLoadingButton,
     FivLoadingProgressBar,
     FivLoadingContent,
@@ -113,7 +113,6 @@ const componentsModule = [
     FivCollapsableMenuButton,
     FivBottomSheet,
     FivBottomSheetContent,
-    FivToolbarSearch,
     FivLoadingButton,
     FivLoadingProgressBar,
     FivLoadingContent,

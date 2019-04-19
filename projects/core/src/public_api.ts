@@ -14,6 +14,7 @@ export * from './lib/icon/icon.module';
 export * from './lib/password-input/password-input.module';
 export * from './lib/ripple/ripple.module';
 export * from './lib/stepper/stepper.module';
+export * from './lib/toolbar-search/toolbar-search.module';
 
 /**
  * Components
