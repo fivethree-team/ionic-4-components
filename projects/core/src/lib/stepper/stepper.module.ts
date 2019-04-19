@@ -32,9 +32,9 @@ import { FivRippleModule } from '../ripple/ripple.module';
         FivStepperHorizontal,
         FivStep,
         FivStepHeader,
-        // Re-export `FivExpandable` and `FivRipple`
-        FivExpandable,
-        FivRipple
+        // Re-export `FivExpandableModule` and `FivRippleModule`
+        FivExpandableModule,
+        FivRippleModule
     ],
 })
 export class FivStepperModule { }
