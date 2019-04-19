@@ -12,6 +12,8 @@ export * from './lib/fivethree.core.module';
 export * from './lib/expandable/expandable.module';
 export * from './lib/icon/icon.module';
 export * from './lib/password-input/password-input.module';
+export * from './lib/ripple/ripple.module';
+export * from './lib/stepper/stepper.module';
 
 /**
  * Components

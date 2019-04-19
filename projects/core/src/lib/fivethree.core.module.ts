@@ -10,10 +10,6 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { HammerGestureConfig } from '@angular/platform-browser';
 import { Hammer } from 'hammerjs';
-import { FivStepper } from './stepper/stepper.component';
-import { FivStep } from './step/step.component';
-import { FivStepHeader } from './step-header/step-header.component';
-import { FivStepContent } from './step-content/step-content.component';
 import { FivRouterItem } from './router-item/router-item.component';
 import { FivCollapsableMenu } from './collapsable-menu/collapsable-menu.directive';
 import { FivCollapsableMenuButton } from './collapsable-menu-button/collapsable-menu-button.component';
@@ -27,11 +23,9 @@ import { FivAppBar } from './app-bar/app-bar.component';
 import { FivIfPlatform } from './directives/if-platform.directive';
 import { FivCenter } from './directives/center.directive';
 import { FivPermissions } from './directives/permissions.directive';
-import { FivRipple } from './ripple/ripple.component';
 import { FivViewport } from './directives/viewport.directive';
 import { FivPull } from './directives/pull.directive';
 import { FivLoadingSpinner } from './loading-spinner/loading-spinner.component';
-import { FivStepperHorizontal } from './stepper-horizontal/stepper-horizontal.component';
 import { FivDialog } from './dialog/dialog.component';
 import { FivLoadingRefresherContent } from './loading-refresher-content/loading-refresher-content.component';
 import { FivAppBarTab } from './app-bar-tab/app-bar-tab.component';
@@ -47,6 +41,8 @@ import { FivOverlayContent } from './overlay-content/overlay-content.component';
 import { LazyImageDirective } from './directives/lazy-image.directive';
 import { FivPasswordInputModule } from './password-input/password-input.module';
 import { FivExpandableModule } from './expandable/expandable.module';
+import { FivStepperModule } from './stepper/stepper.module';
+import { FivRippleModule } from './ripple/ripple.module';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -58,7 +54,9 @@ export class MyHammerConfig extends HammerGestureConfig {
 const componentsModule = [
   FivExpandableModule,
   FivIconModule,
-  FivPasswordInputModule
+  FivPasswordInputModule,
+  FivRippleModule,
+  FivStepperModule
 ];
 @NgModule({
   imports: [
@@ -69,10 +67,6 @@ const componentsModule = [
   ],
   declarations: [
     FivEditableLabel,
-    FivStepper,
-    FivStep,
-    FivStepHeader,
-    FivStepContent,
     FivRouterItem,
     FivCenter,
     FivCollapsableMenuButton,
@@ -87,12 +81,10 @@ const componentsModule = [
     FivAppBar,
     FivIfPlatform,
     FivPermissions,
-    FivRipple,
     FivViewport,
     FivPull,
     FivLoadingRefresherContent,
     FivLoadingSpinner,
-    FivStepperHorizontal,
     FivDialog,
     FivAppBarTab,
     FivAppBarTabContent,
@@ -115,10 +107,6 @@ const componentsModule = [
   exports: [
     ...componentsModule,
     FivEditableLabel,
-    FivStepper,
-    FivStep,
-    FivStepHeader,
-    FivStepContent,
     FivRouterItem,
     FivCollapsableMenu,
     FivCenter,
@@ -133,12 +121,10 @@ const componentsModule = [
     FivAppBar,
     FivIfPlatform,
     FivPermissions,
-    FivRipple,
     FivViewport,
     FivPull,
     FivLoadingRefresherContent,
     FivLoadingSpinner,
-    FivStepperHorizontal,
     FivDialog,
     FivAppBarTab,
     FivAppBarTabContent,
