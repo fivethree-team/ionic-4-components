@@ -1,6 +1,7 @@
-import { Platform } from '@ionic/angular';
-import { Directive, HostBinding, Input, HostListener } from '@angular/core';
+import { Platform, IonMenu, IonSplitPane } from '@ionic/angular';
+import { Directive, HostBinding, Input, HostListener, Host, Optional } from '@angular/core';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
+import { tap, map } from 'rxjs/operators';
 
 @Directive({
   selector: '[fivCollapseMenu]',
@@ -10,27 +11,41 @@ export class FivCollapsableMenu {
 
   collapsed = false;
   hovering = false;
+  splitVisible = false;
   @Input() hoverMenu = true;
   @Input() width = 64;
   @Input() minWidth = 270;
   @Input() maxWidth = this.platform.width() * 0.28;
 
 
-
-  constructor(private sanitizer: DomSanitizer, private platform: Platform) { }
+  constructor(private sanitizer: DomSanitizer,
+    @Host() private menu: IonMenu,
+    @Host() @Optional() private split: IonSplitPane,
+    private platform: Platform) {
+    this.split.ionSplitPaneVisible
+      .pipe(
+        map((event) => event.detail.visible)
+      )
+      .subscribe((visible) => this.splitVisible = visible);
+  }
 
 
   @HostBinding('style')
   get myStyle(): SafeStyle {
-    if (this.collapsed && (this.platform.is('tablet') || this.platform.is('electron') || this.platform.is('desktop'))) {
-
+    if (this.collapsed && this.splitVisible) {
       return this.sanitizer
         // tslint:disable-next-line:max-line-length
         .bypassSecurityTrustStyle(`min-width: ${this.width}px; max-width: ${this.width}px; --border: 0; transition: all cubic-bezier(.55,0,.1,1) 200ms;`);
     } else {
-      return this.sanitizer
-        // tslint:disable-next-line:max-line-length
-        .bypassSecurityTrustStyle(`min-width: ${this.minWidth}px; max-width: ${this.maxWidth}px; --border: 0; transition: all cubic-bezier(.55,0,.1,1) 200ms;`);
+      if (!this.splitVisible) {
+        return this.sanitizer
+          // tslint:disable-next-line:max-line-length
+          .bypassSecurityTrustStyle(`--border: 0; transition: all cubic-bezier(.55,0,.1,1) 200ms;`);
+      } else {
+        return this.sanitizer
+          // tslint:disable-next-line:max-line-length
+          .bypassSecurityTrustStyle(`min-width: ${this.minWidth}px; max-width: ${this.maxWidth}px; --border: 0; transition: all cubic-bezier(.55,0,.1,1) 200ms;`);
+      }
     }
   }
 

@@ -35,6 +35,7 @@ export * from './lib/network-status/network-status.component';
 export * from './lib/back-button/back-button.component';
 export * from './lib/gallery/gallery.component';
 export * from './lib/gallery-image/gallery-image.component';
+export * from './lib/feature.directive';
 
 // export services
 export * from './lib/loading/loading.service';
