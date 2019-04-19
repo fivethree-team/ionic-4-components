@@ -1,4 +1,4 @@
-# FivPasswordInput
+# fiv-password-input
 
 ## Usage 
 

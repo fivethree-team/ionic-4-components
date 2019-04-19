@@ -1,1 +1,1 @@
-# FivExpandableIndicator
+# fiv-expandable-indicator

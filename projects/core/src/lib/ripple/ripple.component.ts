@@ -1,8 +1,16 @@
-import { HostListener, ElementRef, Renderer2, HostBinding, EventEmitter, Component, Input, Output } from '@angular/core';
+import {
+  HostListener,
+  ElementRef,
+  Renderer2,
+  HostBinding,
+  EventEmitter,
+  Component,
+  Input,
+  Output
+} from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
-  // tslint:disable-next-line:component-selector
   selector: 'fiv-ripple',
   templateUrl: './ripple.component.html',
   styleUrls: ['./ripple.component.scss']
