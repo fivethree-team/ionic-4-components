@@ -36,15 +36,15 @@ import { trigger, transition, animate, state, style } from '@angular/animations'
 export class FivIcon implements OnInit {
 
   _name: string;
-  _indicatorValue = -1;
+  _indicatorValue = 0;
   tempValue: number;
   state: 'normal' | 'rotate' = 'normal';
   temp: string;
   @Input() color: string;
+
   @Input() slot: string;
   @Input() off = false;
   @Output() transitionDone = new EventEmitter<string>();
-
 
   indicatorState: 'normal' | 'scale' = 'scale';
   indicatorValueState: 'normal' | 'scale' = 'scale';
@@ -69,6 +69,20 @@ export class FivIcon implements OnInit {
     this.transformIndicator(value);
   }
 
+  @Input()
+  set dotVisible(dotVisible: boolean) {
+    this._dotVisible = dotVisible;
+    if (dotVisible) {
+      this.indicatorState = 'normal';
+    }
+  }
+
+  get dotVisible(): boolean {
+    return this._dotVisible;
+  }
+
+  _dotVisible: boolean;
+
   constructor() { }
 
   ngOnInit() {
@@ -80,12 +94,12 @@ export class FivIcon implements OnInit {
   }
 
   transformIndicator(value: number) {
-    if (value === -1) {
+    if (this.dotVisible) {
       this._indicatorValue = value;
-      this.indicatorState = 'scale';
-      this.indicatorValueState = 'scale';
-    } else if (value === 0) {
-      this.tempValue = value;
+      return;
+    }
+    if (value === 0) {
+      this._indicatorValue = value;
       this.indicatorState = 'normal';
       this.indicatorValueState = 'scale';
     } else {
