@@ -8,17 +8,19 @@ import {
   HostListener,
   Optional,
   Host,
-  ViewChild
+  ViewChild,
+  AfterViewInit
 } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { Color } from '@ionic/core';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'fiv-router-item',
   templateUrl: './router-item.component.html',
   styleUrls: ['./router-item.component.scss']
 })
-export class FivRouterItem implements OnInit {
+export class FivRouterItem implements OnInit, AfterViewInit {
 
   @ViewChild('fivIcon') fivIcon: FivIcon;
 
@@ -68,12 +70,6 @@ export class FivRouterItem implements OnInit {
   }
 
   @HostBinding('class.active') get activeClass() {
-    const isActive = this.matchActiveUrl() || this.active;
-    if (isActive) {
-      if (this.host && !this.host.isOpen) {
-        this.host.open();
-      }
-    }
     return this.matchActiveUrl() || this.active;
   }
 
@@ -88,6 +84,24 @@ export class FivRouterItem implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(): void {
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        filter((event: NavigationEnd) => event.url === this.pageUrl),
+      )
+      .subscribe(() => this.openExpandableHost());
+  }
+
+  openExpandableHost() {
+    const isActive = this.matchActiveUrl() || this.active;
+    if (isActive) {
+      if (this.host && !this.host.isOpen) {
+        this.host.open();
+      }
+    }
   }
 
   getClasses(): string[] {
