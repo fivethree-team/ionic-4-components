@@ -40,6 +40,7 @@ export * from './lib/if-platform/if-platform.module';
 export * from './lib/lazy-image/lazy-image.module';
 export * from './lib/permissions/permissions.module';
 export * from './lib/pull/pull.module';
+export * from './lib/scroll-vanish/scroll-vanish.module';
 export * from './lib/viewport/viewport.module';
 
 /**
@@ -78,6 +79,7 @@ export * from './lib/gallery/gallery-image/gallery-image.component';
  * Directives
  */
 export * from './lib/feature-discovery/feature.directive';
+export * from './lib/scroll-vanish/scroll-vanish.directive';
 
 // export services
 export * from './lib/loading-progress-bar/loading.service';
