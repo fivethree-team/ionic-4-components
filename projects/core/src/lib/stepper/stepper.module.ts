@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FivStepper } from './stepper.component';
-import { FivStepHeader } from './../step-header/step-header.component';
-import { FivStepperHorizontal } from './../stepper-horizontal/stepper-horizontal.component';
-import { FivStepContent } from './../step-content/step-content.component';
-import { FivStep } from '../step/step.component';
+import { FivStepHeader } from './step-header/step-header.component';
+import { FivStepperHorizontal } from './stepper-horizontal/stepper-horizontal.component';
+import { FivStepContent } from './step-content/step-content.component';
+import { FivStep } from './step/step.component';
 import { FivRippleModule } from '../ripple/ripple.module';
 import { FivExpandableModule } from './../expandable/expandable.module';
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FivExpandable } from '../expandable/expandable.component';
+import { FivExpandable } from '../expandable.component';
 
 @Component({
   selector: 'fiv-expandable-indicator',

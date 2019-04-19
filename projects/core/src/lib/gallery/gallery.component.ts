@@ -1,4 +1,4 @@
-import { FivGalleryImage, Position } from './../gallery-image/gallery-image.component';
+import { FivGalleryImage, Position } from './gallery-image/gallery-image.component';
 import { ImageService } from './image.service';
 import { IonSlides, DomController, Platform } from '@ionic/angular';
 import { FivOverlay } from './../overlay/overlay.component';

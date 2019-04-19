@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostBinding, Output, EventEmitter } from '@angular/core';
-import { AppBarTitleLayout } from '../interfaces';
+import { AppBarTitleLayout } from '../../interfaces';
 import { TabButtonClickEventDetail } from '@ionic/core';
 
 @Component({

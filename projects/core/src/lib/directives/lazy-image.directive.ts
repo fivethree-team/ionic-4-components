@@ -1,4 +1,4 @@
-import { FivGalleryImage } from './../gallery-image/gallery-image.component';
+import { FivGalleryImage } from '../gallery/gallery-image/gallery-image.component';
 import { Directive, OnInit, Input, EventEmitter, Output, Host, Self, Optional, ElementRef } from '@angular/core';
 
 @Directive({

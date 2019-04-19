@@ -1,4 +1,4 @@
-import { FivStep } from './../step/step.component';
+import { FivStep } from './step/step.component';
 import {
   EventEmitter,
   Component,
@@ -9,8 +9,8 @@ import {
   ViewChild,
   Output
 } from '@angular/core';
-import { FivStepContent } from '../step-content/step-content.component';
-import { FivStepperHorizontal } from '../stepper-horizontal/stepper-horizontal.component';
+import { FivStepContent } from './step-content/step-content.component';
+import { FivStepperHorizontal } from './stepper-horizontal/stepper-horizontal.component';
 
 @Component({
   selector: 'fiv-stepper',

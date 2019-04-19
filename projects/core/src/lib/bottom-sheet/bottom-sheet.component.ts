@@ -1,4 +1,4 @@
-import { FivBottomSheetContent } from '../bottom-sheet-content/bottom-sheet-content.component';
+import { FivBottomSheetContent } from './bottom-sheet-content/bottom-sheet-content.component';
 import {
   Component,
   AfterViewInit,

@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LoadingService {
+export class FivLoadingService {
 
   public loading = false;
   public isComplete = false;
