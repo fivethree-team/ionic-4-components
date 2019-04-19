@@ -9,8 +9,10 @@ import { FivExpandableIndicator } from '../expandable-indicator/expandable-indic
         FivExpandable,
         FivExpandableIndicator
     ],
-    imports: [CommonModule,
-        IonicModule],
+    imports: [
+        CommonModule,
+        IonicModule
+    ],
     exports: [
         FivExpandable,
         FivExpandableIndicator

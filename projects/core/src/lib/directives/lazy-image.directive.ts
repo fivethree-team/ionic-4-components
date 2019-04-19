@@ -4,7 +4,7 @@ import { Directive, OnInit, Input, EventEmitter, Output, Host, Self, Optional, E
 @Directive({
   selector: '[fivLazyImage]'
 })
-export class LazyImageDirective implements OnInit {
+export class FivLazyImage implements OnInit {
 
   @Input() fivLazyImage: string;
   @Output() willShow = new EventEmitter<FivGalleryImage | HTMLImageElement>();

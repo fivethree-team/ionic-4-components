@@ -34,7 +34,6 @@ export * from './lib/dialog/dialog.component';
 export * from './lib/editable-label/editable-label.component';
 export * from './lib/expandable/expandable.component';
 export * from './lib/expandable-indicator/expandable-indicator.component';
-export * from './lib/loading-button/loading-button.component';
 export * from './lib/loading-content/loading-content.component';
 export * from './lib/loading-fab/loading-fab.component';
 export * from './lib/loading-progress-bar/loading-progress-bar.component';

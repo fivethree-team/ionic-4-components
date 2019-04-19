@@ -9,6 +9,7 @@ import { FivCollapsableMenu } from '../collapsable-menu/collapsable-menu.directi
 export class FivCollapsableMenuButton implements OnInit {
 
   @Input() menu: FivCollapsableMenu;
+  @Input() icon = 'menu';
 
   constructor() { }
 

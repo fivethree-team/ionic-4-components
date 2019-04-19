@@ -12,10 +12,7 @@ export class FivBackButton {
   @Input() color;
   @Input() defaultHref = '/';
 
-  constructor(
-    public routingState: FivRoutingStateService
-  ) {}
-
+  constructor(public routingState: FivRoutingStateService) { }
 
   buttonClick() {
     this.routingState.goBack(this.defaultHref);
