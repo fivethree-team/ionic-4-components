@@ -1,6 +1,3 @@
-import { FivRipple } from './../ripple/ripple.component';
-import { FivExpandableModule } from './../expandable/expandable.module';
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -9,8 +6,8 @@ import { FivStepHeader } from './../step-header/step-header.component';
 import { FivStepperHorizontal } from './../stepper-horizontal/stepper-horizontal.component';
 import { FivStepContent } from './../step-content/step-content.component';
 import { FivStep } from '../step/step.component';
-import { FivExpandable } from '../expandable/expandable.component';
 import { FivRippleModule } from '../ripple/ripple.module';
+import { FivExpandableModule } from './../expandable/expandable.module';
 
 @NgModule({
     declarations: [
@@ -31,10 +28,7 @@ import { FivRippleModule } from '../ripple/ripple.module';
         FivStepContent,
         FivStepperHorizontal,
         FivStep,
-        FivStepHeader,
-        // Re-export `FivExpandableModule` and `FivRippleModule`
-        FivExpandableModule,
-        FivRippleModule
+        FivStepHeader
     ],
 })
 export class FivStepperModule { }
