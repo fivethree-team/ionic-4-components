@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FivOverlay } from './overlay.component';
 import { FivOverlayContent } from '../overlay-content/overlay-content.component';
-import { FivOverlayService } from '../services/overlay.service';
+import { FivOverlayService } from './overlay.service';
 
 @NgModule({
     declarations: [

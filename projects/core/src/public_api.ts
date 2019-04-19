@@ -57,10 +57,10 @@ export * from './lib/feature-discovery/feature.directive';
 
 // export services
 export * from './lib/loading/loading.service';
-export * from './lib/services/image.service';
-export * from './lib/services/overlay.service';
-export * from './lib/services/dialog.service';
-export * from './lib/services/routing-state.service';
+export * from './lib/gallery/image.service';
+export * from './lib/overlay/overlay.service';
+export * from './lib/dialog/dialog.service';
+export * from './lib/back-button/routing-state.service';
 
 
 export * from './lib/bottom-sheet/drawer-state';

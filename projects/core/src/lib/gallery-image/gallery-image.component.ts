@@ -3,7 +3,7 @@ import { Component, OnInit, Input, ElementRef, ViewChild, Host, Optional } from 
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { trigger, transition, style, animate, state, AnimationEvent, keyframes } from '@angular/animations';
 import { FivOverlay } from '../overlay/overlay.component';
-import { ImageService } from '../services/image.service';
+import { ImageService } from '../gallery/image.service';
 
 @Component({
   selector: 'fiv-gallery-image',

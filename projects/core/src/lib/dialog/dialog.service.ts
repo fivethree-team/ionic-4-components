@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FivOverlayService, NgContent } from './overlay.service';
+import { FivOverlayService, NgContent } from '../overlay/overlay.service';
 import { FivDialog } from '../dialog/dialog.component';
 
 export interface DialogOptions {

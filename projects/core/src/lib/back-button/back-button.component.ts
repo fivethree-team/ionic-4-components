@@ -1,4 +1,4 @@
-import { FivRoutingStateService } from './../services/routing-state.service';
+import { FivRoutingStateService } from './routing-state.service';
 import { Component, Input } from '@angular/core';
 
 @Component({

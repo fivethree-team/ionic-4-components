@@ -1,4 +1,4 @@
-import { FivDialogService } from './../services/dialog.service';
+import { FivDialogService } from './dialog.service';
 import { FivOverlayModule } from './../overlay/overlay.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
