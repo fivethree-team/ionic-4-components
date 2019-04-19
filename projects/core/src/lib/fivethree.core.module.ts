@@ -33,6 +33,7 @@ import { FivPopoverModule } from './popover/popover.module';
 import { FivPermissionsModule } from './directives/permissions.module';
 import { FivViewportModule } from './directives/viewport.module';
 import { FivLazyImageModule } from './directives/lazy-image.module';
+import { FivFeatureDiscoveryModule } from './feature-discovery/feature-discovery.module';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -51,6 +52,7 @@ const componentModules = [
   FivDialogModule,
   FivEditableLabelModule,
   FivExpandableModule,
+  FivFeatureDiscoveryModule,
   FivGalleryModule,
   FivIconModule,
   FivLoadingContentModule,

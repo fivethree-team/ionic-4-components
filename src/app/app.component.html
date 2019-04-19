@@ -17,9 +17,6 @@
           </fiv-router-item>
           <fiv-router-item [text]="'Installation'" [matchChildUrl]="true" [shape]="'rounded'">
           </fiv-router-item>
-          <fiv-router-item [icon]="p.icon" [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'" [pageUrl]="p.url"
-            *ngFor="let p of appPages">
-          </fiv-router-item>
           <ion-item-divider>
             <ion-label>Documentation</ion-label>
           </ion-item-divider>
@@ -31,7 +28,7 @@
               </ion-item>
             </fiv-ripple>
             <div content>
-              <fiv-router-item [icon]="p.icon" [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'"
+              <fiv-router-item [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'"
                 [pageUrl]="p.url" *ngFor="let p of components">
               </fiv-router-item>
             </div>

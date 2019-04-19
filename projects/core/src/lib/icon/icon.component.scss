@@ -5,6 +5,7 @@
     --fiv-dot-top: -2px;
     --fiv-color-icon: inherit;
     position: relative;
+    display: inline-block;
 }
 
 ion-icon {
@@ -19,7 +20,7 @@ ion-icon {
     position: absolute;
     width: var(--fiv-dot-width, 8px);
     height: var(--fiv-dot-height, 8px);
-    background-color: var( --fiv-dot-color, var(--fiv-color-indicator, --ion-color-primary));
+    background-color: var(--fiv-dot-color, var(--fiv-color-indicator, --ion-color-primary));
     top: calc(var(--fiv-dot-top, 0px) + 3px);
     border-radius: 100%;
     right: calc(var(--fiv-dot-right, 4px) + 3px);
@@ -36,6 +37,7 @@ ion-icon {
     border-radius: 14px;
     right: var(--fiv-dot-right, 4px);
     z-index: 13;
+
     * {
         position: absolute;
         transform: translateX(-50%) translateY(-50%);

@@ -11,7 +11,8 @@ import {
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
-  selector: 'fiv-ripple',
+  // tslint:disable-next-line:component-selector
+  selector: 'fiv-ripple, [fivRipple]',
   templateUrl: './ripple.component.html',
   styleUrls: ['./ripple.component.scss']
 })
@@ -50,10 +51,18 @@ export class FivRipple {
       });
   }
 
-  ripple(event) {
+  ripple(event?) {
     const ripple = this.el.nativeElement.querySelector('.ripple');
     if (!ripple) {
       this.rippleFactory();
+    }
+    if (!event) {
+      const target = this.el.nativeElement;
+      const rect = target.getBoundingClientRect();
+      const centerY = rect.top + rect.height / 2;
+      const centerX = rect.left + rect.width / 2;
+      event = { pageX: centerX, pageY: centerY };
+      console.log('ripple', event);
     }
     this.rippleAnimation({ pageX: event.pageX, pageY: event.pageY });
     return;

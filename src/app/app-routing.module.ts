@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'stepper', loadChildren: './pages/stepper/stepper.module#StepperPageModule' },
   { path: 'directives', loadChildren: './pages/directives/directives.module#DirectivesPageModule' },
   { path: 'editable-label', loadChildren: './pages/editable-label/editable-label.module#EditableLabelPageModule' },
+  { path: 'feature-discovery', loadChildren: './pages/feature-discovery/feature-discovery.module#FeatureDirectoryPageModule' },
   { path: '**', loadChildren: './pages/page-not-found/page-not-found.module#PageNotFoundPageModule' },
 ];
 

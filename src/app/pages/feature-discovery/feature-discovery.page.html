@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="pizza.open()">
+        <fiv-icon #menu fivFeature slot="icon-only" name="more"></fiv-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-button (click)="fabFeature.show()">
+    open fab
+  </ion-button>
+  <ion-button (click)="buttonFeature.show()">
+    open button
+  </ion-button>
+  <ion-button (click)="menuFeature.show()">
+    open menu
+  </ion-button>
+
+  <ion-fab vertical="bottom" [edge]="true" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="log('FAB Clicked')">
+      <fiv-icon #fab fivFeature name="add"></fiv-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+      <ion-card-title>Awesome Title</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button shape="round" #button fivFeature (click)="log('Cool Feature clicked')">
+        Cool Feature
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-menu [swipeGesture]="false" #pizza menuId="pizzaMenu" side="end" type="overlay" (ionDidOpen)="ripple.ripple()">
+  <ion-header>
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <fiv-ripple #ripple>
+      <ion-item>
+        <ion-label>Do this action!</ion-label>
+      </ion-item>
+    </fiv-ripple>
+
+  </ion-content>
+</ion-menu>

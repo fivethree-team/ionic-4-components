@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, HostBinding, HostListener } from '@angular/core';
+import { FivExpandable } from './../expandable/expandable.component';
+import { Component, OnInit, Input, HostBinding, HostListener, Optional, Host } from '@angular/core';
 import { Router } from '@angular/router';
 import { Color } from '@ionic/core';
 
@@ -55,6 +56,12 @@ export class FivRouterItem implements OnInit {
   }
 
   @HostBinding('class.active') get activeClass() {
+    const isActive = this.matchActiveUrl() || this.active;
+    if (isActive) {
+      if (this.host && !this.host.isOpen) {
+        this.host.open();
+      }
+    }
     return this.matchActiveUrl() || this.active;
   }
 
@@ -62,7 +69,10 @@ export class FivRouterItem implements OnInit {
     return this.disabled;
   }
 
-  constructor(public router: Router) { }
+  constructor(
+    public router: Router,
+    @Optional() @Host() private host: FivExpandable
+  ) { }
 
   ngOnInit() {
   }
