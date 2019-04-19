@@ -1,8 +1,7 @@
-<svg [style.width.px]="diameter" [style.height.px]="diameter" [attr.viewBox]="viewBox" preserveAspectRatio="xMidYMid meet"
-  focusable="false" [ngSwitch]="mode == 'indeterminate'">
-
-
-  <circle *ngSwitchCase="true" cx="50%" cy="50%" [attr.r]="circleRadius" [style.animation-name]="'mat-progress-spinner-stroke-rotate-' + diameter"
+<svg [style.width.px]="diameter" [style.height.px]="diameter" [attr.viewBox]="viewBox"
+  preserveAspectRatio="xMidYMid meet" focusable="false" [ngSwitch]="mode == 'indeterminate'">
+  <circle *ngSwitchCase="true" cx="50%" cy="50%" [attr.r]="circleRadius"
+    [style.animation-name]="'mat-progress-spinner-stroke-rotate-' + diameter"
     [style.stroke-dashoffset.px]="strokeDashOffset" [style.stroke-dasharray.px]="strokeCircumference"
     [style.stroke-width.%]="circleStrokeWidth"></circle>
 

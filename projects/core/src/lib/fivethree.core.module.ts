@@ -17,16 +17,10 @@ import { FivBottomSheetContent } from './bottom-sheet-content/bottom-sheet-conte
 import { FivLoadingButton } from './loading-button/loading-button.component';
 import { FivLoadingProgressBar } from './loading-progress-bar/loading-progress-bar.component';
 import { FivLoadingContent } from './loading-content/loading-content.component';
-import { FivLoadingFab } from './loading-fab/loading-fab.component';
-import { FivAppBar } from './app-bar/app-bar.component';
-import { FivCenter } from './directives/center.directive';
 import { FivPermissions } from './directives/permissions.directive';
 import { FivViewport } from './directives/viewport.directive';
-import { FivLoadingSpinner } from './loading-spinner/loading-spinner.component';
 import { FivDialog } from './dialog/dialog.component';
 import { FivLoadingRefresherContent } from './loading-refresher-content/loading-refresher-content.component';
-import { FivAppBarTab } from './app-bar-tab/app-bar-tab.component';
-import { FivAppBarTabContent } from './app-bar-tab-content/app-bar-tab-content.component';
 import { FivButtons } from './buttons/buttons.component';
 import { FivButton } from './button/button.component';
 import { FivPopover } from './popover/popover.component';
@@ -40,6 +34,10 @@ import { FivRouterItemModule } from './router-item/router-item.module';
 import { FivOverlayModule } from './overlay/overlay.module';
 import { FivIfModule } from './directives/if-platform.module';
 import { FivPullModule } from './directives/pull.module';
+import { FivCenterModule } from './directives/center.module';
+import { FivAppBarModule } from './app-bar/app-bar.module';
+import { FivLoadingFabModule } from './loading-fab/loading-fab.module';
+import { FivLoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -49,9 +47,12 @@ export class MyHammerConfig extends HammerGestureConfig {
 }
 
 const componentModules = [
+  FivAppBarModule,
   FivExpandableModule,
   FivGalleryModule,
   FivIconModule,
+  FivLoadingFabModule,
+  FivLoadingSpinnerModule,
   FivOverlayModule,
   FivPasswordInputModule,
   FivRippleModule,
@@ -61,6 +62,7 @@ const componentModules = [
 ];
 
 const directiveModules = [
+  FivCenterModule,
   FivIfModule,
   FivPullModule
 ];
@@ -74,7 +76,6 @@ const directiveModules = [
   ],
   declarations: [
     FivEditableLabel,
-    FivCenter,
     FivCollapsableMenuButton,
     FivCollapsableMenu,
     FivBottomSheet,
@@ -82,15 +83,10 @@ const directiveModules = [
     FivLoadingButton,
     FivLoadingProgressBar,
     FivLoadingContent,
-    FivLoadingFab,
-    FivAppBar,
     FivPermissions,
     FivViewport,
     FivLoadingRefresherContent,
-    FivLoadingSpinner,
     FivDialog,
-    FivAppBarTab,
-    FivAppBarTabContent,
     FivButtons,
     FivButton,
     FivPopover,
@@ -107,22 +103,16 @@ const directiveModules = [
     ...directiveModules,
     FivEditableLabel,
     FivCollapsableMenu,
-    FivCenter,
     FivCollapsableMenuButton,
     FivBottomSheet,
     FivBottomSheetContent,
     FivLoadingButton,
     FivLoadingProgressBar,
     FivLoadingContent,
-    FivLoadingFab,
-    FivAppBar,
     FivPermissions,
     FivViewport,
     FivLoadingRefresherContent,
-    FivLoadingSpinner,
     FivDialog,
-    FivAppBarTab,
-    FivAppBarTabContent,
     FivButtons,
     FivButton,
     FivNetworkStatus,
