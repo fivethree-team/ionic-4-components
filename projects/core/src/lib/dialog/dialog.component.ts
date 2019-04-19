@@ -58,7 +58,7 @@ export type Content<T> = TemplateRef<T> | Type<T>;
 export class FivDialog implements OnInit {
 
   @Input() verticalAlign: 'bottom' | 'center' | 'top' = 'top';
-  @Input() horizontalAlign: 'left' | 'center' | 'right' = 'center';
+  @Input() horizontalAlign: 'left' | 'middle' | 'right' = 'middle';
   @Input() shape: 'fill' | 'card' = 'card';
 
   @Input() backdrop = true;

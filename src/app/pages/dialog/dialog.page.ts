@@ -13,7 +13,7 @@ export class DialogPage implements OnInit {
   backdrop = true;
   verticalAlign = 'top';
   horizontalAlign = 'left';
-  shape = 'fill';
+  shape = 'card';
   duration = 3600;
   inDuration = '220';
   outDuration = '180';
