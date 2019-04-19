@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FivGallery } from './gallery.component';
 import { IonicModule } from '@ionic/angular';
 import { FivOverlayModule } from '../overlay/overlay.module';
-import { FivIfModule } from '../directives/if-platform.module';
-import { FivPullModule } from '../directives/pull.module';
+import { FivIfModule } from '../if-platform/if-platform.module';
+import { FivPullModule } from '../pull/pull.module';
 import { FivGalleryImage } from './gallery-image/gallery-image.component';
 
 @NgModule({

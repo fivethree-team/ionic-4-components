@@ -2,7 +2,7 @@ import { FivBottomSheetContent } from './bottom-sheet-content/bottom-sheet-conte
 import { FivBottomSheet } from './bottom-sheet.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FivCenterModule } from '../directives/center.module';
+import { FivCenterModule } from '../center/center.module';
 
 @NgModule({
     declarations: [

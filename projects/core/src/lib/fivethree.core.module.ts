@@ -15,9 +15,9 @@ import { FivStepperModule } from './stepper/stepper.module';
 import { FivRippleModule } from './ripple/ripple.module';
 import { FivRouterItemModule } from './router-item/router-item.module';
 import { FivOverlayModule } from './overlay/overlay.module';
-import { FivIfModule } from './directives/if-platform.module';
-import { FivPullModule } from './directives/pull.module';
-import { FivCenterModule } from './directives/center.module';
+import { FivIfModule } from './if-platform/if-platform.module';
+import { FivPullModule } from './pull/pull.module';
+import { FivCenterModule } from './center/center.module';
 import { FivAppBarModule } from './app-bar/app-bar.module';
 import { FivLoadingFabModule } from './loading-fab/loading-fab.module';
 import { FivLoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
@@ -30,9 +30,9 @@ import { FivLoadingContentModule } from './loading-content/loading-content.modul
 import { FivLoadingProgressBarModule } from './loading-progress-bar/loading-progress-bar.module';
 import { FivNetworkStatusModule } from './network-status/network-status.module';
 import { FivPopoverModule } from './popover/popover.module';
-import { FivPermissionsModule } from './directives/permissions.module';
-import { FivViewportModule } from './directives/viewport.module';
-import { FivLazyImageModule } from './directives/lazy-image.module';
+import { FivPermissionsModule } from './permissions/permissions.module';
+import { FivViewportModule } from './viewport/viewport.module';
+import { FivLazyImageModule } from './lazy-image/lazy-image.module';
 import { FivFeatureDiscoveryModule } from './feature-discovery/feature-discovery.module';
 
 

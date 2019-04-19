@@ -19,8 +19,8 @@ export * from './lib/router-item/router-item.module';
 export * from './lib/stepper/stepper.module';
 export * from './lib/toolbar-search/toolbar-search.module';
 // Directives
-export * from './lib/directives/if-platform.module';
-export * from './lib/directives/pull.module';
+export * from './lib/if-platform/if-platform.module';
+export * from './lib/pull/pull.module';
 
 /**
  * Components

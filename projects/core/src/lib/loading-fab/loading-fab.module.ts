@@ -1,4 +1,4 @@
-import { FivCenterModule } from './../directives/center.module';
+import { FivCenterModule } from '../center/center.module';
 import { FivIconModule } from './../icon/icon.module';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';

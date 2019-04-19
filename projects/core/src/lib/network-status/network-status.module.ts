@@ -1,4 +1,4 @@
-import { FivCenterModule } from './../directives/center.module';
+import { FivCenterModule } from '../center/center.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FivNetworkStatus } from './network-status.component';

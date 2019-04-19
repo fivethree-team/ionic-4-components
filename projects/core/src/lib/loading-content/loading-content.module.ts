@@ -1,5 +1,5 @@
 import { FivLoadingSpinnerModule } from './../loading-spinner/loading-spinner.module';
-import { FivPullModule } from './../directives/pull.module';
+import { FivPullModule } from '../pull/pull.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FivLoadingContent } from './loading-content.component';

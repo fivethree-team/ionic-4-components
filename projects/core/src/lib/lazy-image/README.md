@@ -1,4 +1,4 @@
-# FivLazyImageDirective
+# [fivLazyImage]
 
 use polyfill for safari
 https://github.com/w3c/IntersectionObserver/tree/master/polyfill
