@@ -1,7 +1,6 @@
 import { FivGalleryModule } from './gallery/gallery.module';
 import { FivToolbarSearchModule } from './toolbar-search/toolbar-search.module';
 import { FivIconModule } from './icon/icon.module';
-import { FivBackButton } from './back-button/back-button.component';
 import { FivDialogService } from './services/dialog.service';
 import { FivNetworkStatus } from './network-status/network-status.component';
 import { FormsModule } from '@angular/forms';
@@ -38,6 +37,7 @@ import { FivCenterModule } from './directives/center.module';
 import { FivAppBarModule } from './app-bar/app-bar.module';
 import { FivLoadingFabModule } from './loading-fab/loading-fab.module';
 import { FivLoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
+import { FivBackButtonModule } from './back-button/back-button.module';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -48,6 +48,7 @@ export class MyHammerConfig extends HammerGestureConfig {
 
 const componentModules = [
   FivAppBarModule,
+  FivBackButtonModule,
   FivExpandableModule,
   FivGalleryModule,
   FivIconModule,
@@ -91,7 +92,6 @@ const directiveModules = [
     FivButton,
     FivPopover,
     FivNetworkStatus,
-    FivBackButton,
     LazyImageDirective
   ],
   entryComponents: [
@@ -116,7 +116,6 @@ const directiveModules = [
     FivButtons,
     FivButton,
     FivNetworkStatus,
-    FivBackButton,
     LazyImageDirective
   ],
   providers: [
