@@ -1,4 +1,3 @@
-import { ComponentsModule } from 'src/app/components/components.module';
 import { FivethreeCoreModule } from '@fivethree/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,7 +27,6 @@ import { UtilService } from '@services/util.service';
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
     LottieAnimationViewModule.forRoot(),
-    ComponentsModule
   ],
   providers: [
     StatusBar,

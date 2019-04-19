@@ -11,7 +11,6 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { HammerGestureConfig } from '@angular/platform-browser';
 import { Hammer } from 'hammerjs';
-import { FivRouterItem } from './router-item/router-item.component';
 import { FivCollapsableMenu } from './collapsable-menu/collapsable-menu.directive';
 import { FivCollapsableMenuButton } from './collapsable-menu-button/collapsable-menu-button.component';
 import { FivBottomSheet } from './bottom-sheet/bottom-sheet.component';
@@ -43,6 +42,7 @@ import { FivPasswordInputModule } from './password-input/password-input.module';
 import { FivExpandableModule } from './expandable/expandable.module';
 import { FivStepperModule } from './stepper/stepper.module';
 import { FivRippleModule } from './ripple/ripple.module';
+import { FivRouterItemModule } from './router-item/router-item.module';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -56,6 +56,7 @@ const componentsModule = [
   FivIconModule,
   FivPasswordInputModule,
   FivRippleModule,
+  FivRouterItemModule,
   FivStepperModule,
   FivToolbarSearchModule
 ];
@@ -68,7 +69,6 @@ const componentsModule = [
   ],
   declarations: [
     FivEditableLabel,
-    FivRouterItem,
     FivCenter,
     FivCollapsableMenuButton,
     FivCollapsableMenu,
@@ -107,7 +107,6 @@ const componentsModule = [
   exports: [
     ...componentsModule,
     FivEditableLabel,
-    FivRouterItem,
     FivCollapsableMenu,
     FivCenter,
     FivCollapsableMenuButton,
