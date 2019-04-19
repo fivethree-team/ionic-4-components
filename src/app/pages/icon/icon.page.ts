@@ -9,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class IconPage implements OnInit {
 
   icon = 'md-notifications';
-  indicatorValue = -1;
+  indicatorValue = 0;
   off = false;
+  dot = false;
 
   constructor(private util: UtilService) { }
 
@@ -18,7 +19,7 @@ export class IconPage implements OnInit {
   }
 
   decrement() {
-    if (this.indicatorValue >= 0) {
+    if (this.indicatorValue > 0) {
       this.indicatorValue--;
     }
   }
