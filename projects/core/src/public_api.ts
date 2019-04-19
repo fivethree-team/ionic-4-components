@@ -9,6 +9,7 @@
 // Core
 export * from './lib/fivethree.core.module';
 // Components
+export * from './lib/expandable/expandable.module';
 export * from './lib/icon/icon.module';
 export * from './lib/password-input/password-input.module';
 

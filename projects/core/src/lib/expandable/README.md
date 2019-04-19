@@ -1,4 +1,4 @@
-# fiv-expandable
+# FivExpandable
 
 ## Properties
 | Property          | Attribute          | Description       | Type                                           |

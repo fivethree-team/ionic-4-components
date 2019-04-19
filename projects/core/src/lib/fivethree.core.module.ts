@@ -14,7 +14,6 @@ import { FivStepper } from './stepper/stepper.component';
 import { FivStep } from './step/step.component';
 import { FivStepHeader } from './step-header/step-header.component';
 import { FivStepContent } from './step-content/step-content.component';
-import { FivExpandable } from './expandable/expandable.component';
 import { FivRouterItem } from './router-item/router-item.component';
 import { FivCollapsableMenu } from './collapsable-menu/collapsable-menu.directive';
 import { FivCollapsableMenuButton } from './collapsable-menu-button/collapsable-menu-button.component';
@@ -41,13 +40,13 @@ import { FivToolbarSearch } from './toolbar-search/toolbar-search.component';
 import { FivButtons } from './buttons/buttons.component';
 import { FivButton } from './button/button.component';
 import { FivPopover } from './popover/popover.component';
-import { FivExpandableIndicator } from './expandable-indicator/expandable-indicator.component';
 import { FivEditableLabel } from './editable-label/editable-label.component';
 import { FivOverlayService } from './services/overlay.service';
 import { FivOverlay } from './overlay/overlay.component';
 import { FivOverlayContent } from './overlay-content/overlay-content.component';
 import { LazyImageDirective } from './directives/lazy-image.directive';
 import { FivPasswordInputModule } from './password-input/password-input.module';
+import { FivExpandableModule } from './expandable/expandable.module';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -57,6 +56,7 @@ export class MyHammerConfig extends HammerGestureConfig {
 }
 
 const componentsModule = [
+  FivExpandableModule,
   FivIconModule,
   FivPasswordInputModule
 ];
@@ -68,7 +68,6 @@ const componentsModule = [
     ...componentsModule
   ],
   declarations: [
-    FivExpandable,
     FivEditableLabel,
     FivStepper,
     FivStep,
@@ -102,7 +101,6 @@ const componentsModule = [
     FivButtons,
     FivButton,
     FivPopover,
-    FivExpandableIndicator,
     FivOverlay,
     FivOverlayContent,
     FivNetworkStatus,
@@ -116,7 +114,6 @@ const componentsModule = [
     FivDialog],
   exports: [
     ...componentsModule,
-    FivExpandable,
     FivEditableLabel,
     FivStepper,
     FivStep,
@@ -149,7 +146,6 @@ const componentsModule = [
     FivGallery,
     FivButtons,
     FivButton,
-    FivExpandableIndicator,
     FivOverlay,
     FivOverlayContent,
     FivNetworkStatus,
