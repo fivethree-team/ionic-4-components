@@ -12,6 +12,5 @@ import { FivPasswordInput } from './password-input.component';
         IonicModule
     ],
     exports: [FivPasswordInput],
-    providers: [],
 })
 export class FivPasswordInputModule { }

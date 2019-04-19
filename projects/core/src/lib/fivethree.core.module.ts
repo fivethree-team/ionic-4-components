@@ -1,3 +1,4 @@
+import { FivIconModule } from './icon/icon.module';
 import { FivGallery } from './gallery/gallery.component';
 import { FivGalleryImage } from './gallery-image/gallery-image.component';
 import { FivBackButton } from './back-button/back-button.component';
@@ -32,7 +33,6 @@ import { FivViewport } from './directives/viewport.directive';
 import { FivPull } from './directives/pull.directive';
 import { FivLoadingSpinner } from './loading-spinner/loading-spinner.component';
 import { FivStepperHorizontal } from './stepper-horizontal/stepper-horizontal.component';
-import { FivIcon } from './icon/icon.component';
 import { FivDialog } from './dialog/dialog.component';
 import { FivLoadingRefresherContent } from './loading-refresher-content/loading-refresher-content.component';
 import { FivAppBarTab } from './app-bar-tab/app-bar-tab.component';
@@ -57,6 +57,7 @@ export class MyHammerConfig extends HammerGestureConfig {
 }
 
 const componentsModule = [
+  FivIconModule,
   FivPasswordInputModule
 ];
 @NgModule({
@@ -93,7 +94,6 @@ const componentsModule = [
     FivLoadingRefresherContent,
     FivLoadingSpinner,
     FivStepperHorizontal,
-    FivIcon,
     FivDialog,
     FivAppBarTab,
     FivAppBarTabContent,
@@ -142,7 +142,6 @@ const componentsModule = [
     FivLoadingRefresherContent,
     FivLoadingSpinner,
     FivStepperHorizontal,
-    FivIcon,
     FivDialog,
     FivAppBarTab,
     FivAppBarTabContent,

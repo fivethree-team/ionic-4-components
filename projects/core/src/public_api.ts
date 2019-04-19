@@ -9,7 +9,8 @@
 // Core
 export * from './lib/fivethree.core.module';
 // Components
-export { FivPasswordInputModule } from './lib/password-input/password-input.module';
+export * from './lib/icon/icon.module';
+export * from './lib/password-input/password-input.module';
 
 /**
  * Components
