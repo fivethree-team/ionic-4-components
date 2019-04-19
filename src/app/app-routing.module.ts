@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'directives', loadChildren: './pages/directives/directives.module#DirectivesPageModule' },
   { path: 'editable-label', loadChildren: './pages/editable-label/editable-label.module#EditableLabelPageModule' },
   { path: 'feature-discovery', loadChildren: './pages/feature-discovery/feature-discovery.module#FeatureDirectoryPageModule' },
+  { path: 'installation', loadChildren: './pages/installation/installation.module#InstallationPageModule' },
   { path: '**', loadChildren: './pages/page-not-found/page-not-found.module#PageNotFoundPageModule' },
 ];
 

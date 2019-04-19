@@ -103,7 +103,7 @@ export class FivLoadingContent implements OnInit {
 
     if (progress < 1) {
       this.renderer.
-        setStyle(this.spinner.element.nativeElement, 'transform', `translateY(${168 * progress}px) rotateZ(${360 * progress}deg)`);
+        setStyle(this.spinner.element.nativeElement, 'transform', `translateY(${168 * progress}px)`);
     }
   }
 

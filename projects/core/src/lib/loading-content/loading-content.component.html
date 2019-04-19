@@ -1,4 +1,4 @@
-<fiv-loading-refresher-content (fivProgress)="onSpinnerProgress($event)" (fivHidden)="afterSpinnerHide()" (fivComplete)="fillAnimationDone()"
+<fiv-loading-refresher-content [progress]="currentProgress" (fivProgress)="onSpinnerProgress($event)" (fivHidden)="afterSpinnerHide()" (fivComplete)="fillAnimationDone()"
   #spinner></fiv-loading-refresher-content>
 <ion-chip class="gg-hint-wrapper" *ngIf="hintVisible" [@hintAnim] (@hintAnim.done)="postHint($event)" (click)="onHintClicked()"
   #hint>

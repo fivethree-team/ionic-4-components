@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter, Renderer2 } from '@angular/core';
 import { animate, style, transition, trigger, state, AnimationBuilder } from '@angular/animations';
 import { FivLoadingSpinner } from '../loading-spinner/loading-spinner.component';
 
@@ -62,6 +62,18 @@ export class FivLoadingRefresherContent implements OnInit {
   @Input() iconColor = '#000';
   @Input() checkmark = false;
   @Input() disabled = false;
+  _progress = 0;
+  @Input() set progress(progress) {
+    this._progress = progress;
+    if (progress < 1) {
+      this.renderer.
+        setStyle(this.spinnerRef.nativeElement, 'transform', `rotateZ(${360 * progress}deg)`);
+    }
+  }
+
+  get progress() {
+    return this._progress;
+  }
 
   @Output() fivComplete: EventEmitter<FivLoadingRefresherContent> = new EventEmitter<FivLoadingRefresherContent>();
   @Output() fivRefresh: EventEmitter<FivLoadingRefresherContent> = new EventEmitter<FivLoadingRefresherContent>();
@@ -70,16 +82,22 @@ export class FivLoadingRefresherContent implements OnInit {
   @Output() fivProgress: EventEmitter<number> = new EventEmitter<number>();
 
   @ViewChild('spinner') spinner: FivLoadingSpinner;
+  @ViewChild('spinner', { read: ElementRef }) spinnerRef: ElementRef;
   @ViewChild('background') background: ElementRef;
 
   visible = false;
   iconState = 'normal';
 
-  constructor(public element: ElementRef, public builder: AnimationBuilder) {
+  constructor(
+    public element: ElementRef,
+    private renderer: Renderer2,
+    public builder: AnimationBuilder) {
   }
 
   ngOnInit() {
   }
+
+
 
   load() {
     this.visible = true;
