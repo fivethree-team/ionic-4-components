@@ -6,8 +6,16 @@
 [Component Demos](https://fivethree-team.github.io/ionic-4-components/components) |
 [Getting Started](https://fivethree-team.github.io/ionic-4-components/getting-started)
 
+# ✨ Features
+* Twitter inspired Image Gallery
+* Material Design Pull-to-Refresh
+* Flexible Dialog Component
+* Feature Discovery
+* Material Design App Bar for Ionic Tabs
+* [more components](https://fivethree-team.github.io/ionic-4-components/components)
 
-# Installation
+
+# 📦 Installation
 To get started, install the package from npm. The latest version supports Ionic 4 and Angular 7.
 
 ## Step 1. Install the UI Library 
@@ -70,7 +78,7 @@ export class HomePageModule {}
 ```
 
 
-## Development
+## 🔨 Development
 This package is under active construction.
 
 * Run `ng build core` to rebuild the component library.
