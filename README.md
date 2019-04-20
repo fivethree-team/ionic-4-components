@@ -6,7 +6,7 @@ Costumizable UI Components for Ionic 4.
 
 [Documentation](https://fivethree-team.github.io/ionic-4-components) |
 [Component Demos](https://fivethree-team.github.io/ionic-4-components/components) |
-[Getting Started](https://fivethree-team.github.io/ionic-4-components/getting-started)
+[Getting Started](https://fivethree-team.github.io/ionic-4-components/getting-started) |
 [Get In Touch](https://fivethree.io/)
 
 ![gallery](src/assets/gif/gallery.gif)
