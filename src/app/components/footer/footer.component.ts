@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.content.getScrollElement()
       .then(el => {
-        console.log('min height', el.clientHeight - this.el.nativeElement.firstChild.clientHeight);
+        
         this.setMinHeight(el.clientHeight - this.el.nativeElement.firstChild.clientHeight);
       });
 
@@ -27,11 +27,11 @@ export class FooterComponent implements OnInit, OnDestroy {
       ).subscribe(res => {
         this.content.getScrollElement()
           .then(el => {
-            console.log('min height', el.clientHeight - this.el.nativeElement.firstChild.clientHeight);
+            
             this.setMinHeight(el.clientHeight - this.el.nativeElement.firstChild.clientHeight);
           });
       });
-    console.log(this.el);
+    
   }
 
   ngOnDestroy(): void {

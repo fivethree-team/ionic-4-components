@@ -101,7 +101,7 @@ export class FivGalleryImage implements OnInit {
 
   open() {
     this.animationParams = this.getThumbnailPosition(this.image);
-    console.log(this.animationParams);
+    
     this.overlay.show(49999);
     this.backdropColor = this.imageService.getAverageRGB(this.image.nativeElement);
   }
@@ -113,7 +113,7 @@ export class FivGalleryImage implements OnInit {
   }
 
   handleViewerAnimation(event: AnimationEvent) {
-    console.log(event.fromState, event.toState);
+    
     if (event.fromState === 'void' && event.toState === 'in') {
       this.gallery.open(this.index, this);
     }

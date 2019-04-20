@@ -1,17 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{button.isVisible() ? 'Button is in Viewport' : 'Not in Viewport'}}</ion-title>
+    <ion-title>In Viewport: {{visible}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <p *ngIf="!visible">
+    scroll to reveal the button
+  </p>
   <div class="container">
-    <ion-button #button=viewport fivViewport (fivAppear)="appear($event)" (fivDisappear)="disappear($event)">
+
+    <ion-button [fivCenter] fivViewport (fivAppear)="appear($event)" (fivDisappear)="disappear($event)">
       Click me
     </ion-button>
 
   </div>
+
 
 
 </ion-content>

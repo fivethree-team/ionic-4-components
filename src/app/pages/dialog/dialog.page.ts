@@ -25,10 +25,8 @@ export class DialogPage implements OnInit {
   }
 
   close() {
-    console.log('dialog closed');
   }
 
   over() {
-    console.log('dialog duration over');
   }
 }

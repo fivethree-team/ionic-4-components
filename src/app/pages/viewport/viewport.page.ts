@@ -7,16 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewportPage implements OnInit {
 
+  visible = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   appear(event) {
-    console.log('element appeared in viewport', event);
+    this.visible = true;
   }
   disappear(event) {
-    console.log('element disappeard', event);
+    this.visible = false;
   }
 
 }

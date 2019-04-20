@@ -72,17 +72,22 @@ export class AppComponent {
       icon: 'refresh',
     },
     {
+      title: 'Searchbar',
+      url: '/toolbar-search',
+      icon: 'search',
+    },
+    {
       title: 'Stepper',
       url: '/stepper',
       icon: 'share',
     },
-    {
-      title: 'Toolbar Search',
-      url: '/toolbar-search',
-      icon: 'search',
-    }
   ];
   public directives = [
+    {
+      title: 'Viewport',
+      url: '/viewport',
+      icon: 'share',
+    },
   ];
   public services = [
   ];

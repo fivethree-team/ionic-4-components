@@ -1,14 +1,14 @@
-import { FivToolbarSearch } from './toolbar-search.component';
+import { FivSearchbar } from './searchbar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FivIconModule } from '../icon/icon.module';
 
 @NgModule({
-    declarations: [FivToolbarSearch],
+    declarations: [FivSearchbar],
     imports: [CommonModule,
         IonicModule,
         FivIconModule],
-    exports: [FivToolbarSearch],
+    exports: [FivSearchbar],
 })
-export class FivToolbarSearchModule { }
+export class FivSearchbarModule { }

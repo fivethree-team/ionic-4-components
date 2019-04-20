@@ -94,7 +94,7 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
   complete(param?: any) {
     this.param = param;
     this.isComplete = true;
-    this.fillIn(850, 'ease-out');
+    this.fillIn(850);
   }
 
   fillAnimationComplete(isComplete: boolean) {
@@ -125,38 +125,34 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
 
   }
 
-  incrementBy(progress) {
-    this.setProgress(progress + this.progress);
-  }
 
-  decrementBy(progress) {
-    this.setProgress(progress + this.progress);
-  }
-
-  fillIn(ms: number, easing = '') {
+  fillIn(ms: number) {
     // first define a reusable animation
+    this.progress = 0;
     const myAnimation = this.builder.build([
-      style({ width: this.progress }),
-      animate(ms + `ms ${easing}`, style({ width: '100%' }))
+      style({ width: `${this.progress}%` }),
+      animate(ms, style({ width: '100%' }))
     ]);
 
     // use the returned factory object to create a player
     const player = myAnimation.create(this.linear.nativeElement);
 
-    player.play();
     const t = timer(0, ms / (100))
       .subscribe(() => {
-        if (this.progress >= 100) {
+        if (this.progress <= 0) {
           return t.unsubscribe();
         }
         this.progress++;
 
       });
-    player.onDone(() => {
-      this.fillAnimationComplete(true);
-      this.stopProgressAnimation();
-    });
 
+    player.play();
+    player.onDone(() => {
+      if (this.animating) {
+        this.fillAnimationComplete(true);
+        this.stopProgressAnimation();
+      }
+    });
     this.stopProgressAnimation();
     this.animating = true;
 

@@ -6,13 +6,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ComponentsPage } from './components.page';
-import { FivethreeCoreModule } from '@fivethree/core';
+import { DeveloperToolsPage } from './developer-tools.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ComponentsPage
+    component: DeveloperToolsPage
   }
 ];
 
@@ -21,10 +20,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    FivethreeCoreModule,
     RouterModule.forChild(routes),
     ComponentsModule
   ],
-  declarations: [ComponentsPage]
+  declarations: [DeveloperToolsPage]
 })
-export class ComponentsPageModule {}
+export class DeveloperToolsPageModule {}

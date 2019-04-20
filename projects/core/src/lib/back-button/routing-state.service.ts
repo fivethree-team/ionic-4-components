@@ -32,7 +32,7 @@ export class FivRoutingStateService {
       )
       .subscribe(({ urlAfterRedirects }: NavigationEnd) => {
         if (urlAfterRedirects === this.getPreviousUrl(this.config.root)) {
-          console.log('went back');
+          
           this.pop();
           this.pop();
         }
@@ -43,7 +43,7 @@ export class FivRoutingStateService {
           if (clear) {
             this.clearHistory(urlAfterRedirects);
           }
-          console.log(this.history);
+          
         }
       });
   }
@@ -74,7 +74,7 @@ export class FivRoutingStateService {
   }
 
   public clearHistory(fromUrl: string) {
-    console.log('clear history from', fromUrl);
+    
     this.history = this.history.filter(h => this.config.clearOn.some(s => s === h));
     if (fromUrl !== this.config.root) {
       this.history.push(fromUrl);

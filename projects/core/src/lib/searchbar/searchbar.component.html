@@ -1,4 +1,4 @@
-<ion-toolbar [@searchbarAnim]="small ? state : 'normal'" (@searchbarAnim.done)="searchBarStateChange($event)" [color]="color" [ngClass]="{'small': state === 'small'}">
+<ion-toolbar [@searchbarAnim]="state" (@searchbarAnim.done)="searchBarStateChange($event)" [color]="color" [ngClass]="{'small': state === 'small'}">
   <ion-buttons slot="start">
     <ng-content select="[start]"></ng-content>
 
@@ -12,12 +12,6 @@
     <ion-button (click)="toggleSearchbar()">
       <fiv-icon [name]="searching ? 'md-close' : 'md-search'"></fiv-icon>
     </ion-button>
-    <!-- <ion-button [@rotateAnim] (@rotateAnim.done)="searchAnimDone($event)" *ngIf="!searching" (click)="toggleSearchbar()">
-      <ion-icon style="transform: matrix(-1, 0, 0, 1, 0, 0);" name="md-search"></ion-icon>
-    </ion-button>
-    <ion-button [@rotateAnim] (@rotateAnim.done)="closeAnimDone($event)" *ngIf="closeButtonVisible" (click)="closeSearchbar()">
-      <ion-icon name="md-close"></ion-icon>
-    </ion-button> -->
     <ng-content select="[end]"></ng-content>
 
   </ion-buttons>

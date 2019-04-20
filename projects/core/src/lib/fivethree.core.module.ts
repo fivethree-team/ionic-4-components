@@ -1,7 +1,6 @@
 import { FivBottomSheetModule } from './bottom-sheet/bottom-sheet.module';
 import { FivButtonModule } from './button/button.module';
 import { FivGalleryModule } from './gallery/gallery.module';
-import { FivToolbarSearchModule } from './toolbar-search/toolbar-search.module';
 import { FivIconModule } from './icon/icon.module';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -34,6 +33,7 @@ import { FivPermissionsModule } from './permissions/permissions.module';
 import { FivViewportModule } from './viewport/viewport.module';
 import { FivLazyImageModule } from './lazy-image/lazy-image.module';
 import { FivFeatureDiscoveryModule } from './feature-discovery/feature-discovery.module';
+import { FivSearchbarModule } from './searchbar/searchbar.module';
 
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -66,7 +66,7 @@ const componentModules = [
   FivRippleModule,
   FivRouterItemModule,
   FivStepperModule,
-  FivToolbarSearchModule
+  FivSearchbarModule
 ];
 
 const directiveModules = [

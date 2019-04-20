@@ -140,7 +140,7 @@ export class FivGallery implements OnInit, AfterContentInit {
   closeFromPullDown(progress: number) {
     this.transformSlides(0);
     const position = this.getImagePosition(this.images.toArray()[this.activeIndex].image, progress);
-    console.log('close from position', position);
+    
     this.initialImage.close(position);
     if (this.inFullscreen) {
       this.closeFullscreen();
@@ -280,7 +280,7 @@ export class FivGallery implements OnInit, AfterContentInit {
 
   handleSingleTap() {
     this.controlsVisible = !this.controlsVisible;
-    console.log('controlsVisible', this.controlsVisible);
+    
     this.change.detectChanges();
   }
 

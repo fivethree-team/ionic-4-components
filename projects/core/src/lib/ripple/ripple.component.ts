@@ -62,7 +62,7 @@ export class FivRipple {
       const centerY = rect.top + rect.height / 2;
       const centerX = rect.left + rect.width / 2;
       event = { pageX: centerX, pageY: centerY };
-      console.log('ripple', event);
+      
     }
     this.rippleAnimation({ pageX: event.pageX, pageY: event.pageY });
     return;

@@ -15,12 +15,10 @@ export class ComponentsPage implements OnInit {
   }
 
   toggleIcon() {
-    console.log('toggle icon');
     this.iconState = !this.iconState;
   }
 
-  stepperClick(event){
-    console.log(event);
+  stepperClick(event) {
   }
 
 }

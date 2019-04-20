@@ -26,9 +26,7 @@ export class FivGoogleMapsWeb implements OnInit, IFivGoogleMaps {
 
     ngOnInit() {
         this.init().then((res) => {
-            console.log('Google Maps ready.');
         }, (err) => {
-            console.log(err);
         });
     }
 
@@ -55,7 +53,6 @@ export class FivGoogleMapsWeb implements OnInit, IFivGoogleMaps {
     }
 
     private loadSDK(): Promise<any> {
-        console.log('Loading Google Maps SDK');
         return new Promise((resolve, reject) => {
             if (!this.mapsLoaded) {
                 this.injectSDK().then((res) => {

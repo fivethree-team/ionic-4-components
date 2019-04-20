@@ -1,4 +1,4 @@
-import { DrawerState, FivToolbarSearch } from '@fivethree/core';
+import { DrawerState, FivSearchbar } from '@fivethree/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
@@ -9,10 +9,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class ToolbarSearchPage implements OnInit {
 
   searchInput: string;
-  small = false;
+  small = true;
   states = DrawerState;
   state: DrawerState = DrawerState.Bottom;
-  @ViewChild('search') search: FivToolbarSearch;
+  @ViewChild('search') search: FivSearchbar;
 
   constructor() { }
 
@@ -21,41 +21,19 @@ export class ToolbarSearchPage implements OnInit {
 
   onSearchInputChanged(event) {
     this.searchInput = event.detail.value;
-    console.log(event.detail.value);
   }
 
   closeSearch() {
     this.searchInput = '';
   }
 
-  smallChange() {
-    if (this.small) {
-      this.open();
-    } else {
-      this.close();
-    }
-  }
-
-  open() {
-    if (this.small) {
-      this.search.grow();
-    }
-    console.log('open !!!!');
-    this.state = DrawerState.Top;
-  }
-
-  close() {
-    console.log('open !!!!');
-    if (this.small) {
-      this.search.shrink();
-    }
-    this.state = DrawerState.Bottom;
-  }
-
-  bottomSheetClose(search: FivToolbarSearch) {
-    console.log('bottomSheetClose !!!!');
+  bottomSheetClose(search: FivSearchbar) {
 
     search.closeSearchbar();
+  }
+
+  checkChanged(event) {
+    this.small = event.detail.checked;
   }
 
 }

@@ -3,79 +3,60 @@ import {
   ElementRef,
   EventEmitter,
   Input,
-  OnDestroy,
   OnInit,
   Output,
-  AfterContentInit,
+  OnDestroy,
 } from '@angular/core';
-import { fromEvent, Subscription } from 'rxjs';
-import { debounceTime, merge } from 'rxjs/operators';
-import { IonContent } from '@ionic/angular';
 
-export interface InViewportEvent {
-  target: HTMLElement;
-  value: boolean;
-}
 
 @Directive({
   selector: '[fivViewport]',
   exportAs: 'viewport'
 })
-export class FivViewport implements OnInit, OnDestroy, AfterContentInit {
+export class FivViewport implements OnInit, OnDestroy {
 
-  @Input() offset = 0;
-  @Output() fivAppear = new EventEmitter<InViewportEvent>();
-  @Output() fivDisappear = new EventEmitter<InViewportEvent>();
-  private subscription: Subscription;
+  @Output() fivAppear = new EventEmitter<any>();
+  @Output() fivDisappear = new EventEmitter<any>();
   private visible = false;
+  private io: IntersectionObserver;
 
   constructor(
     private readonly elementRef: ElementRef
   ) { }
 
-  ngAfterContentInit(): void {
-    const content: IonContent = this.elementRef.nativeElement.closest('ion-content');
-    this.check();
-    content.scrollEvents = true;
-    this.subscription = fromEvent(this.elementRef.nativeElement.closest('ion-content'), 'ionScroll')
-      .pipe(merge(fromEvent(window, 'resize')), debounceTime(50))
-      .subscribe(() => this.check());
-  }
 
   ngOnInit() {
+    this.io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
 
-
+        if (entry.isIntersecting) {
+          this.handleIntersection();
+        } else {
+          this.handleNonIntersection();
+        }
+      });
+    });
+    this.io['POLL_INTERVAL'] = 100;
+    this.io.observe(this.elementRef.nativeElement);
   }
 
-  ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
+  handleNonIntersection() {
+    if (this.visible) {
+      this.fivDisappear.emit(this);
     }
+    this.visible = false;
   }
-
-  private check() {
-    const event: InViewportEvent = {
-      target: this.elementRef.nativeElement,
-      value:
-        document.body.contains(this.elementRef.nativeElement) &&
-        this.elementRef.nativeElement.getBoundingClientRect().top <=
-        window.innerHeight + this.offset
-    };
-
-    if (event.value === true) {
-
-      if (!this.visible) {
-        this.fivAppear.emit(event);
-        this.visible = true;
-      }
-    } else {
-      if (this.visible) {
-        this.fivDisappear.emit(event);
-        this.visible = false;
-      }
-
+  handleIntersection() {
+    if (!this.visible) {
+      this.fivAppear.emit(this);
     }
+    this.visible = true;
   }
+
+  ngOnDestroy(): void {
+    this.io.disconnect();
+  }
+
 
   isVisible() {
     return this.visible;

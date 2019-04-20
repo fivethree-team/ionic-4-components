@@ -31,12 +31,10 @@ export class FivGoogleMapsNative implements OnInit, IFivGoogleMaps {
     constructor() { }
 
     ngOnInit() {
-        console.log('GoogleMapNativeComponent ng on init');
         this.loadMap();
     }
 
     private loadMap(): any {
-        console.log('loading Map');
         this.map = GoogleMaps.create('map', {
             mapType: this.mapType,
             controls: {
@@ -60,7 +58,6 @@ export class FivGoogleMapsNative implements OnInit, IFivGoogleMaps {
             this.moveCenterToWithAnimation(zoom, location.latLng);
         } catch (error) {
             // TODO add output
-            console.log('zoom to current location failed', error);
         }
     }
 
@@ -89,7 +86,6 @@ export class FivGoogleMapsNative implements OnInit, IFivGoogleMaps {
                 ...this.markers.map(marker => marker.getPosition())];
             this.moveCenterToPositions(positions);
         } catch (error) {
-            console.log('current Location not available', error);
         }
     }
 

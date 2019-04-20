@@ -30,6 +30,5 @@ export class EditableLabelPage implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
   }
 }

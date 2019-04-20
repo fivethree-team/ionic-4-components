@@ -85,10 +85,10 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
 
 
   setBounds(bounds: FeaturePosition) {
-    console.log('bounds for overlay', bounds);
+    
     this.bounds = bounds;
     this.innerDiameter = bounds.height > bounds.width ? bounds.height : bounds.width;
-    console.log('inner diameter', this.innerDiameter);
+    
     this.top = bounds.top + bounds.height / 2 - this.height / 2 + 'px';
     this.left = bounds.left + bounds.width / 2 - this.width / 2 + 'px';
     if (!this.icon) {
@@ -104,7 +104,7 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
   }
 
   handleCircleAnimation(event: AnimationEvent) {
-    console.log('handle animation', event);
+    
     if (event.toState === 'visible') {
       this.fivOpen.emit();
     }
@@ -126,7 +126,7 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
   }
 
   show() {
-    console.log('wh', this.width, this.height);
+    
     this.animationState = 'visible';
   }
 

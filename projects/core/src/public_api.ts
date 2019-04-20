@@ -17,7 +17,7 @@ export * from './lib/password-input/password-input.module';
 export * from './lib/ripple/ripple.module';
 export * from './lib/router-item/router-item.module';
 export * from './lib/stepper/stepper.module';
-export * from './lib/toolbar-search/toolbar-search.module';
+export * from './lib/searchbar/searchbar.module';
 // Directives
 export * from './lib/if-platform/if-platform.module';
 export * from './lib/pull/pull.module';
@@ -44,7 +44,7 @@ export * from './lib/stepper/step-content/step-content.component';
 export * from './lib/stepper/step-header/step-header.component';
 export * from './lib/stepper/stepper.component';
 export * from './lib/stepper/stepper-horizontal/stepper-horizontal.component';
-export * from './lib/toolbar-search/toolbar-search.component';
+export * from './lib/searchbar/searchbar.component';
 export * from './lib/app-bar/app-bar-tab/app-bar-tab.component';
 export * from './lib/app-bar/app-bar-tab-content/app-bar-tab-content.component';
 export * from './lib/buttons/buttons.component';

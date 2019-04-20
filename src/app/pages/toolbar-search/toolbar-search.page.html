@@ -1,23 +1,17 @@
-<fiv-toolbar-search #search title="Toolbar Search" placeholder="Search ...."
-  (fivInputChange)="onSearchInputChanged($event)" (fivClose)="closeSearch(); close()" (open)="open()" [(small)]="small">
-  <ion-menu-button start menu="menuId"></ion-menu-button>
-</fiv-toolbar-search>
+  <fiv-searchbar #search title="Searchbar" placeholder="Search ...." (fivInputChange)="onSearchInputChanged($event)"
+    (fivClose)="closeSearch();" [small]="small">
+    <ion-menu-button start menu="menuId"></ion-menu-button>
+  </fiv-searchbar>
 
 <ion-content padding no-bounce>
 
+  <p *ngIf="searchInput">searching for {{searchInput}}</p>
+
   <ion-item>
     <ion-label>Small Searchbar</ion-label>
-    <ion-checkbox [checked]="small" (click)="smallChange()" slot="start"></ion-checkbox>
+    <ion-checkbox (ionChange)="checkChanged($event)" [checked]="small" slot="start"></ion-checkbox>
   </ion-item>
 
 
 
 </ion-content>
-
-<!-- <fiv-bottom-sheet (onClose)="bottomSheetClose(search)" [(state)]="state" #bottomSheet [minimumHeight]="0" [dockedHeight]="0" [shouldBounce]="true"
-[distanceTop]="56">
-  <fiv-bottom-sheet-content [handle]="false">
-      <ion-item-divider>Search Input</ion-item-divider>
-      <ion-label>{{searchInput}}</ion-label>
-  </fiv-bottom-sheet-content>
-</fiv-bottom-sheet> -->

@@ -7,15 +7,8 @@
       <ion-col size="12">
         <app-example [html]="'assets/docs/snippets/loading-bar/loading.html.md'" [title]="'Bar'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
           labore et dolore magna aliqua.'">
-          <ion-button [disabled]="bar.loading" (click)="bar.incrementBy(10)">
-            increment
-          </ion-button>
 
-          <ion-button [disabled]="bar.loading" (click)="bar.decrementBy(-10)">
-            decrement
-          </ion-button>
-
-          <ion-button [disabled]="bar.loading" (click)="bar.fillIn(700)">
+          <ion-button [disabled]="bar.loading" (click)="bar.fillIn(2000)">
             fill
           </ion-button>
 
@@ -61,6 +54,15 @@
             <fiv-loading-fab [disabled]="fab.loading" [icon]="'md-add'" [iconColor]="'dark'" [fivCenter] #fab>
             </fiv-loading-fab>
           </div>
+        </app-example>
+        <app-example [title]="'Spinner'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
+       labore et dolore magna aliqua.'">
+       <div class="wrapper">
+          <div [fivCenter]>
+              <fiv-loading-spinner></fiv-loading-spinner>
+           </div>
+       </div>
+       
         </app-example>
       </ion-col>
     </ion-row>
