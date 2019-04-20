@@ -1,3 +1,57 @@
+<a name="0.6.10"></a>
+## [0.6.10](https://github.com/fivethree-team/component-library/compare/v0.6.6...v0.6.10) (2019-04-20)
+
+
+### Bug Fixes
+
+* **app:** add root ([33c8fa4](https://github.com/fivethree-team/component-library/commit/33c8fa4))
+* **app-bar:** add ios safe area ([62fe73d](https://github.com/fivethree-team/component-library/commit/62fe73d))
+* **app-bar:** added filler div for safe area on ios ([3de81ed](https://github.com/fivethree-team/component-library/commit/3de81ed))
+* **back-button:** fix configurable root ([adaf316](https://github.com/fivethree-team/component-library/commit/adaf316))
+* **back-button:** handle android back button in service ([25006b8](https://github.com/fivethree-team/component-library/commit/25006b8))
+* **collapsable-menu:** fix styles ([675bbd7](https://github.com/fivethree-team/component-library/commit/675bbd7))
+* **deps:** pin dependency intersection-observer to 0.5.1 ([35a4a5c](https://github.com/fivethree-team/component-library/commit/35a4a5c))
+* **dialog:** fix animations ([7401aa0](https://github.com/fivethree-team/component-library/commit/7401aa0))
+* **image-viewer:** add instance to open event ([37fbac8](https://github.com/fivethree-team/component-library/commit/37fbac8))
+* **module:** remove re-exports ([81b0446](https://github.com/fivethree-team/component-library/commit/81b0446))
+* **password-input:** check if onChangeCallback exist ([bb88e3f](https://github.com/fivethree-team/component-library/commit/bb88e3f))
+* **progress-bar:** fix fill animation on safari ([8767381](https://github.com/fivethree-team/component-library/commit/8767381))
+* **refresher-content:** only rotate spinner and not container ([2809d98](https://github.com/fivethree-team/component-library/commit/2809d98))
+* **ripple:** fix ripple preventing scrolling ([d207cb5](https://github.com/fivethree-team/component-library/commit/d207cb5))
+* **router-item:** handle page navigation and expandable host ([1bb03e2](https://github.com/fivethree-team/component-library/commit/1bb03e2))
+* **routing:** clear history ([6d471eb](https://github.com/fivethree-team/component-library/commit/6d471eb))
+* **routing:** debug ([0f4aaa0](https://github.com/fivethree-team/component-library/commit/0f4aaa0))
+* **routing:** fix from url ([f9da77b](https://github.com/fivethree-team/component-library/commit/f9da77b))
+* **routing:** push fromUrl to cleared History stack ([02f7028](https://github.com/fivethree-team/component-library/commit/02f7028))
+* **routing-state:** debug routing ([4af9b62](https://github.com/fivethree-team/component-library/commit/4af9b62))
+* **stepper:** export expandable and ripple module ([efb4363](https://github.com/fivethree-team/component-library/commit/efb4363))
+
+
+### Features
+
+* **app-bar,loading-fab,loading-spinner,center:** add module ([f2e0812](https://github.com/fivethree-team/component-library/commit/f2e0812))
+* **back-button:** add module ([d3d43b0](https://github.com/fivethree-team/component-library/commit/d3d43b0))
+* **back-button:** configurable root url ([5a46e6d](https://github.com/fivethree-team/component-library/commit/5a46e6d))
+* **back-button:** handle android back button ([1fbdc42](https://github.com/fivethree-team/component-library/commit/1fbdc42))
+* **dialog:** remove ion grid for positioning. Using css instead ([c001e7e](https://github.com/fivethree-team/component-library/commit/c001e7e))
+* **directives:** fivLazyImage directive using intersection observer ([a77f58e](https://github.com/fivethree-team/component-library/commit/a77f58e))
+* **expandable:** add expandable module ([2959d0e](https://github.com/fivethree-team/component-library/commit/2959d0e))
+* **feature-discovery:** added feature discovery ([cfdb0f1](https://github.com/fivethree-team/component-library/commit/cfdb0f1))
+* **feature-discovery:** update module ([9f63232](https://github.com/fivethree-team/component-library/commit/9f63232))
+* **fivLazyImage:** add polyfill for safari (see README.md in directives folder) ([0f588d3](https://github.com/fivethree-team/component-library/commit/0f588d3))
+* **gallery:** gallery component ([4027fc1](https://github.com/fivethree-team/component-library/commit/4027fc1))
+* **gallery,overlay,if,pull:** add gallery, overlay, if and pull module ([74c5cbb](https://github.com/fivethree-team/component-library/commit/74c5cbb))
+* **icon:** add dotVisible input ([dd502be](https://github.com/fivethree-team/component-library/commit/dd502be))
+* **icon:** add icon module ([b1d641f](https://github.com/fivethree-team/component-library/commit/b1d641f))
+* **image-viewer:** close and open events ([f91c5b3](https://github.com/fivethree-team/component-library/commit/f91c5b3))
+* **module:** add modules for all components ([081e8f9](https://github.com/fivethree-team/component-library/commit/081e8f9))
+* **password-input:** expose password input module ([7227527](https://github.com/fivethree-team/component-library/commit/7227527))
+* **router-item:** add router item module ([3b39e1b](https://github.com/fivethree-team/component-library/commit/3b39e1b))
+* **stepper,ripple:** add stepper and ripple module ([b28d4d1](https://github.com/fivethree-team/component-library/commit/b28d4d1))
+* **toolbar-search:** add toolbar-search module ([4f8a031](https://github.com/fivethree-team/component-library/commit/4f8a031))
+
+
+
 <a name="0.5.14"></a>
 ## [0.5.14](https://github.com/fivethree-team/component-library/compare/v0.5.11...v0.5.14) (2019-03-15)
 
