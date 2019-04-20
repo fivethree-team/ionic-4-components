@@ -13,6 +13,8 @@ import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LottieAnimationViewModule } from 'ng-lottie';
 import { UtilService } from '@services/util.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { UtilService } from '@services/util.service';
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
     LottieAnimationViewModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     StatusBar,
