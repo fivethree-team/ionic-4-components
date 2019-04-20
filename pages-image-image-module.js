@@ -48,8 +48,8 @@ var ImagePageModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes),
-                _fivethree_core__WEBPACK_IMPORTED_MODULE_7__["FivethreeCoreModule"],
-                _components_components_module__WEBPACK_IMPORTED_MODULE_0__["ComponentsModule"]
+                _components_components_module__WEBPACK_IMPORTED_MODULE_0__["ComponentsModule"],
+                _fivethree_core__WEBPACK_IMPORTED_MODULE_7__["FivGalleryModule"]
             ],
             declarations: [_image_page__WEBPACK_IMPORTED_MODULE_6__["ImagePage"]]
         })
@@ -79,7 +79,7 @@ module.exports = "<app-header title=\"Image Gallery\"></app-header>\n\n\n<ion-co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-row.big fiv-gallery-image {\n  --max-height: 86px; }\n\nion-row.small fiv-gallery-image {\n  --max-height: 60px; }\n\nion-row.large fiv-gallery-image {\n  --max-height: 120px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2ltYWdlL2ltYWdlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUVRLGtCQUFhLEVBQUE7O0FBSXJCO0VBRVEsa0JBQWEsRUFBQTs7QUFHckI7RUFFUSxtQkFBYSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvaW1hZ2UvaW1hZ2UucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pb24tcm93LmJpZyB7XG4gICAgZml2LWdhbGxlcnktaW1hZ2Uge1xuICAgICAgICAtLW1heC1oZWlnaHQ6IDg2cHg7XG4gICAgfVxufVxuXG5pb24tcm93LnNtYWxsIHtcbiAgICBmaXYtZ2FsbGVyeS1pbWFnZSB7XG4gICAgICAgIC0tbWF4LWhlaWdodDogNjBweDtcbiAgICB9XG59XG5pb24tcm93LmxhcmdlIHtcbiAgICBmaXYtZ2FsbGVyeS1pbWFnZSB7XG4gICAgICAgIC0tbWF4LWhlaWdodDogMTIwcHg7XG4gICAgfVxufVxuIl19 */"
+module.exports = "ion-row.big fiv-gallery-image {\n  --max-height: 86px;\n}\n\nion-row.small fiv-gallery-image {\n  --max-height: 60px;\n}\n\nion-row.large fiv-gallery-image {\n  --max-height: 120px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvaW1hZ2UvaW1hZ2UucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9pbWFnZS9pbWFnZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUk7RUFDSSxrQkFBQTtBQ0RSOztBRE1JO0VBQ0ksa0JBQUE7QUNIUjs7QURPSTtFQUNJLG1CQUFBO0FDSlIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9pbWFnZS9pbWFnZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbmlvbi1yb3cuYmlnIHtcbiAgICBmaXYtZ2FsbGVyeS1pbWFnZSB7XG4gICAgICAgIC0tbWF4LWhlaWdodDogODZweDtcbiAgICB9XG59XG5cbmlvbi1yb3cuc21hbGwge1xuICAgIGZpdi1nYWxsZXJ5LWltYWdlIHtcbiAgICAgICAgLS1tYXgtaGVpZ2h0OiA2MHB4O1xuICAgIH1cbn1cbmlvbi1yb3cubGFyZ2Uge1xuICAgIGZpdi1nYWxsZXJ5LWltYWdlIHtcbiAgICAgICAgLS1tYXgtaGVpZ2h0OiAxMjBweDtcbiAgICB9XG59XG4iLCJpb24tcm93LmJpZyBmaXYtZ2FsbGVyeS1pbWFnZSB7XG4gIC0tbWF4LWhlaWdodDogODZweDtcbn1cblxuaW9uLXJvdy5zbWFsbCBmaXYtZ2FsbGVyeS1pbWFnZSB7XG4gIC0tbWF4LWhlaWdodDogNjBweDtcbn1cblxuaW9uLXJvdy5sYXJnZSBmaXYtZ2FsbGVyeS1pbWFnZSB7XG4gIC0tbWF4LWhlaWdodDogMTIwcHg7XG59Il19 */"
 
 /***/ }),
 

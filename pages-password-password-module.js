@@ -10,8 +10,8 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordPageModule", function() { return PasswordPageModule; });
-/* harmony import */ var _components_components_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../components/components.module */ "./src/app/components/components.module.ts");
-/* harmony import */ var _fivethree_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fivethree/core */ "./dist/@fivethree/core/fesm5/fivethree-core.js");
+/* harmony import */ var _fivethree_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fivethree/core */ "./dist/@fivethree/core/fesm5/fivethree-core.js");
+/* harmony import */ var _components_components_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../components/components.module */ "./src/app/components/components.module.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
@@ -47,10 +47,10 @@ var PasswordPageModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"],
-                _fivethree_core__WEBPACK_IMPORTED_MODULE_1__["FivethreeCoreModule"],
+                _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["FivPasswordInputModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forChild(routes),
-                _components_components_module__WEBPACK_IMPORTED_MODULE_0__["ComponentsModule"]
+                _components_components_module__WEBPACK_IMPORTED_MODULE_1__["ComponentsModule"]
             ],
             declarations: [_password_page__WEBPACK_IMPORTED_MODULE_7__["PasswordPage"]]
         })
@@ -129,7 +129,6 @@ var PasswordPage = /** @class */ (function () {
         configurable: true
     });
     PasswordPage.prototype.onSubmit = function () {
-        console.log(this.loginForm.value);
     };
     Object.defineProperty(PasswordPage.prototype, "password", {
         get: function () {

@@ -45,8 +45,8 @@ var ToolbarSearchPageModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
-                _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["FivethreeCoreModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes)
+                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes),
+                _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["FivSearchbarModule"]
             ],
             declarations: [_toolbar_search_page__WEBPACK_IMPORTED_MODULE_6__["ToolbarSearchPage"]]
         })
@@ -65,7 +65,7 @@ var ToolbarSearchPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<fiv-toolbar-search #search title=\"Toolbar Search\" placeholder=\"Search ....\" (fivInputChange)=\"onSearchInputChanged($event)\"\n  (fivClose)=\"closeSearch(); close()\" (open)=\"open()\" [(small)]=\"small\">\n  <ion-menu-button start menu=\"menuId\"></ion-menu-button>\n</fiv-toolbar-search>\n\n<ion-content padding no-bounce>\n\n<ion-item>\n  <ion-label>Small Searchbar</ion-label>\n  <ion-checkbox [checked]=\"small\" (click)=\"smallChange()\" slot=\"start\"></ion-checkbox>\n</ion-item>\n\n  \n\n</ion-content>\n\n<fiv-bottom-sheet (onClose)=\"bottomSheetClose(search)\" [(state)]=\"state\" #bottomSheet [minimumHeight]=\"0\" [dockedHeight]=\"0\" [shouldBounce]=\"true\"\n[distanceTop]=\"56\">\n  <fiv-bottom-sheet-content [handle]=\"false\">\n      <ion-item-divider>Search Input</ion-item-divider>\n      <ion-label>{{searchInput}}</ion-label>\n  </fiv-bottom-sheet-content>\n</fiv-bottom-sheet>"
+module.exports = "  <fiv-searchbar #search title=\"Searchbar\" placeholder=\"Search ....\" (fivInputChange)=\"onSearchInputChanged($event)\"\n    (fivClose)=\"closeSearch();\" [small]=\"small\">\n    <ion-menu-button start menu=\"menuId\"></ion-menu-button>\n  </fiv-searchbar>\n\n<ion-content padding no-bounce>\n\n  <p *ngIf=\"searchInput\">searching for {{searchInput}}</p>\n\n  <ion-item>\n    <ion-label>Small Searchbar</ion-label>\n    <ion-checkbox (ionChange)=\"checkChanged($event)\" [checked]=\"small\" slot=\"start\"></ion-checkbox>\n  </ion-item>\n\n\n\n</ion-content>"
 
 /***/ }),
 
@@ -105,7 +105,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var ToolbarSearchPage = /** @class */ (function () {
     function ToolbarSearchPage() {
-        this.small = false;
+        this.small = true;
         this.states = _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"];
         this.state = _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"].Bottom;
     }
@@ -113,40 +113,19 @@ var ToolbarSearchPage = /** @class */ (function () {
     };
     ToolbarSearchPage.prototype.onSearchInputChanged = function (event) {
         this.searchInput = event.detail.value;
-        console.log(event.detail.value);
     };
     ToolbarSearchPage.prototype.closeSearch = function () {
         this.searchInput = '';
     };
-    ToolbarSearchPage.prototype.smallChange = function () {
-        if (this.small) {
-            this.open();
-        }
-        else {
-            this.close();
-        }
-    };
-    ToolbarSearchPage.prototype.open = function () {
-        if (this.small) {
-            this.search.grow();
-        }
-        console.log('open !!!!');
-        this.state = _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"].Top;
-    };
-    ToolbarSearchPage.prototype.close = function () {
-        console.log('open !!!!');
-        if (this.small) {
-            this.search.shrink();
-        }
-        this.state = _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["DrawerState"].Bottom;
-    };
     ToolbarSearchPage.prototype.bottomSheetClose = function (search) {
-        console.log('bottomSheetClose !!!!');
         search.closeSearchbar();
+    };
+    ToolbarSearchPage.prototype.checkChanged = function (event) {
+        this.small = event.detail.checked;
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('search'),
-        __metadata("design:type", _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["FivToolbarSearch"])
+        __metadata("design:type", _fivethree_core__WEBPACK_IMPORTED_MODULE_0__["FivSearchbar"])
     ], ToolbarSearchPage.prototype, "search", void 0);
     ToolbarSearchPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

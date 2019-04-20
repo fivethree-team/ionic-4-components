@@ -120,7 +120,6 @@ var EditableLabelPage = /** @class */ (function () {
         });
     };
     EditableLabelPage.prototype.onSubmit = function () {
-        console.log(this.form.value);
     };
     EditableLabelPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

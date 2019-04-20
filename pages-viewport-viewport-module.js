@@ -65,7 +65,7 @@ var ViewportPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>{{button.isVisible() ? 'Button is in Viewport' : 'Not in Viewport'}}</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <div class=\"container\">\n    <ion-button #button=viewport fivViewport (fivAppear)=\"appear($event)\" (fivDisappear)=\"disappear($event)\">\n      Click me\n    </ion-button>\n\n  </div>\n\n\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>In Viewport: {{visible}}</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <p *ngIf=\"!visible\">\n    scroll to reveal the button\n  </p>\n  <div class=\"container\">\n\n    <ion-button [fivCenter] fivViewport (fivAppear)=\"appear($event)\" (fivDisappear)=\"disappear($event)\">\n      Click me\n    </ion-button>\n\n  </div>\n\n\n\n</ion-content>"
 
 /***/ }),
 
@@ -76,7 +76,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>{{button.isVisib
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  min-height: 150vh;\n  position: relative; }\n  .container ion-button {\n    bottom: 50px;\n    position: absolute; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL3ZpZXdwb3J0L3ZpZXdwb3J0LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGlCQUFpQjtFQUNqQixrQkFBa0IsRUFBQTtFQUZ0QjtJQUtRLFlBQVk7SUFDWixrQkFBa0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3ZpZXdwb3J0L3ZpZXdwb3J0LnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXIge1xuICAgIG1pbi1oZWlnaHQ6IDE1MHZoO1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcblxuICAgIGlvbi1idXR0b257XG4gICAgICAgIGJvdHRvbTogNTBweDtcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIH1cbn0iXX0= */"
+module.exports = ".container {\n  min-height: 300vh;\n  position: relative;\n}\n.container ion-button {\n  bottom: 50px;\n  position: absolute;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvdmlld3BvcnQvdmlld3BvcnQucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy92aWV3cG9ydC92aWV3cG9ydC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQkFBQTtFQUNBLGtCQUFBO0FDQ0o7QURDSTtFQUNJLFlBQUE7RUFDQSxrQkFBQTtBQ0NSIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvdmlld3BvcnQvdmlld3BvcnQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lciB7XG4gICAgbWluLWhlaWdodDogMzAwdmg7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuXG4gICAgaW9uLWJ1dHRvbntcbiAgICAgICAgYm90dG9tOiA1MHB4O1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgfVxufSIsIi5jb250YWluZXIge1xuICBtaW4taGVpZ2h0OiAzMDB2aDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuLmNvbnRhaW5lciBpb24tYnV0dG9uIHtcbiAgYm90dG9tOiA1MHB4O1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG59Il19 */"
 
 /***/ }),
 
@@ -103,14 +103,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var ViewportPage = /** @class */ (function () {
     function ViewportPage() {
+        this.visible = false;
     }
     ViewportPage.prototype.ngOnInit = function () {
     };
     ViewportPage.prototype.appear = function (event) {
-        console.log('element appeared in viewport', event);
+        this.visible = true;
     };
     ViewportPage.prototype.disappear = function (event) {
-        console.log('element disappeard', event);
+        this.visible = false;
     };
     ViewportPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

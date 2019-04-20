@@ -79,7 +79,7 @@ module.exports = "<app-header title=\"Bottom Sheet\"></app-header>\n\n\n<ion-con
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".drawer-content {\n  border-top: 0.5px solid #e5e5e5;\n  padding: 10px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2JvdHRvbS1zaGVldC9ib3R0b20tc2hlZXQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQStCO0VBQy9CLGFBQWEsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2JvdHRvbS1zaGVldC9ib3R0b20tc2hlZXQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyYXdlci1jb250ZW50IHtcbiAgICBib3JkZXItdG9wOiAwLjVweCBzb2xpZCAjZTVlNWU1O1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gIH0iXX0= */"
+module.exports = ".drawer-content {\n  border-top: 0.5px solid #e5e5e5;\n  padding: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvYm90dG9tLXNoZWV0L2JvdHRvbS1zaGVldC5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2JvdHRvbS1zaGVldC9ib3R0b20tc2hlZXQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQUE7RUFDQSxhQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9ib3R0b20tc2hlZXQvYm90dG9tLXNoZWV0LnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kcmF3ZXItY29udGVudCB7XG4gICAgYm9yZGVyLXRvcDogMC41cHggc29saWQgI2U1ZTVlNTtcbiAgICBwYWRkaW5nOiAxMHB4O1xuICB9IiwiLmRyYXdlci1jb250ZW50IHtcbiAgYm9yZGVyLXRvcDogMC41cHggc29saWQgI2U1ZTVlNTtcbiAgcGFkZGluZzogMTBweDtcbn0iXX0= */"
 
 /***/ }),
 

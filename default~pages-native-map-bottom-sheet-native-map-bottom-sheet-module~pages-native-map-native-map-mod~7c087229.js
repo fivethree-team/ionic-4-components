@@ -120,7 +120,6 @@ var FivGoogleMapsNative = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        console.log('GoogleMapNativeComponent ng on init');
         this.loadMap();
     };
     /**
@@ -133,7 +132,6 @@ var FivGoogleMapsNative = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        console.log('loading Map');
         this.map = _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_1__["GoogleMaps"].create('map', {
             mapType: this.mapType,
             controls: {
@@ -172,8 +170,6 @@ var FivGoogleMapsNative = /** @class */ (function () {
                         return [3 /*break*/, 3];
                     case 2:
                         error_1 = _a.sent();
-                        // TODO add output
-                        console.log('zoom to current location failed', error_1);
                         return [3 /*break*/, 3];
                     case 3: return [2 /*return*/];
                 }
@@ -247,7 +243,6 @@ var FivGoogleMapsNative = /** @class */ (function () {
                         return [3 /*break*/, 3];
                     case 2:
                         error_2 = _a.sent();
-                        console.log('current Location not available', error_2);
                         return [3 /*break*/, 3];
                     case 3: return [2 /*return*/];
                 }
@@ -433,9 +428,7 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function () {
         this.init().then(function (res) {
-            console.log('Google Maps ready.');
         }, function (err) {
-            console.log(err);
         });
     };
     /**
@@ -470,7 +463,6 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        console.log('Loading Google Maps SDK');
         return new Promise(function (resolve, reject) {
             if (!_this.mapsLoaded) {
                 _this.injectSDK().then(function (res) {

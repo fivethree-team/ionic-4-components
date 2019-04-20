@@ -73,7 +73,7 @@ module.exports = "<app-header title=\"App Bar\"></app-header>\n\n<ion-content>\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container.min {\n  min-height: 50vh; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tai9EZXYvZml2ZXRocmVlL3dlYi1jb21wb25lbnRzL2ZpdmV0aHJlZS9zcmMvYXBwL3BhZ2VzL2FwcC1iYXIvYXBwLWJhci5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBZ0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FwcC1iYXIvYXBwLWJhci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyLm1pbiB7XG4gIG1pbi1oZWlnaHQ6IDUwdmg7XG59XG4iXX0= */"
+module.exports = ".container.min {\n  min-height: 50vh;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9nYXJ5Z3Jvc3NnYXJ0ZW4vRGV2L3RoaW5ncy9maXZldGhyZWUtbGliL3NyYy9hcHAvcGFnZXMvYXBwLWJhci9hcHAtYmFyLnBhZ2Uuc2NzcyIsInNyYy9hcHAvcGFnZXMvYXBwLWJhci9hcHAtYmFyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9hcHAtYmFyL2FwcC1iYXIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lci5taW4ge1xuICBtaW4taGVpZ2h0OiA1MHZoO1xufVxuIiwiLmNvbnRhaW5lci5taW4ge1xuICBtaW4taGVpZ2h0OiA1MHZoO1xufSJdfQ== */"
 
 /***/ }),
 
