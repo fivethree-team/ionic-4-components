@@ -59929,7 +59929,7 @@ var FooterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <!-- <ion-menu-button></ion-menu-button> -->\n      <ng-container *ngIf=\"backbutton\">\n        <fiv-back-button></fiv-back-button>\n      </ng-container>\n    </ion-buttons>\n    <ion-title (click)=\"onTitleClicked()\">{{title}}</ion-title>\n    <ion-buttons slot=\"end\">\n      <a href=\"https://fivethree.io\" target=\"blank\">\n        <ion-button color=\"secondary\" fill=\"outline\" shape=\"round\">\n          <ion-icon slot=\"start\" name=\"globe\"></ion-icon>\n          fivethree.io\n        </ion-button>\n      </a>\n\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <!-- <ion-menu-button></ion-menu-button> -->\n      <ng-container *ngIf=\"backbutton\">\n        <fiv-back-button></fiv-back-button>\n      </ng-container>\n    </ion-buttons>\n    <ion-title (click)=\"onTitleClicked()\">{{title}}</ion-title>\n    <ion-buttons slot=\"end\">\n      <a href=\"https://fivethree.io\" target=\"blank\">\n        <ion-button color=\"secondary\" fill=\"outline\" shape=\"round\">\n          <ion-icon slot=\"start\" name=\"globe\"></ion-icon>\n          fivethree.io\n        </ion-button>\n      </a>\n      <ng-content></ng-content>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>"
 
 /***/ }),
 
