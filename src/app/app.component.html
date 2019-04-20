@@ -7,9 +7,7 @@
           <ion-buttons slot="start">
             <fiv-collapsable-menu-button #mb *fivIf="['desktop']" [menu]="menu"></fiv-collapsable-menu-button>
           </ion-buttons>
-          <a href="/">
-              <ion-title color="dark">Fivethree</ion-title>
-          </a>
+          <ion-title (click)="navigateRoot('/')" color="dark">Fivethree</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
@@ -17,7 +15,8 @@
           <fiv-router-item [text]="'Getting Started'" [matchChildUrl]="true" [shape]="'rounded'"
             [pageUrl]="'/getting-started'">
           </fiv-router-item>
-          <fiv-router-item [text]="'Installation'" [matchChildUrl]="true" [shape]="'rounded'" [pageUrl]="'/installation'">
+          <fiv-router-item [text]="'Installation'" [matchChildUrl]="true" [shape]="'rounded'"
+            [pageUrl]="'/installation'">
           </fiv-router-item>
           <ion-item-divider>
             <ion-label>Documentation</ion-label>
@@ -29,7 +28,7 @@
                 <fiv-expandable-indicator icon="ios-arrow-down"></fiv-expandable-indicator>
               </ion-item>
             </fiv-ripple>
-            <div content> 
+            <div content>
               <fiv-router-item [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'" [position]="'left'"
                 [pageUrl]="p.url" *ngFor="let p of components">
               </fiv-router-item>
@@ -43,8 +42,8 @@
               </ion-item>
             </fiv-ripple>
             <div content>
-              <fiv-router-item [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'"
-                [pageUrl]="p.url" *ngFor="let p of directives">
+              <fiv-router-item [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'" [pageUrl]="p.url"
+                *ngFor="let p of directives">
               </fiv-router-item>
             </div>
           </fiv-expandable>
@@ -56,8 +55,8 @@
               </ion-item>
             </fiv-ripple>
             <div content>
-              <fiv-router-item [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'"
-                [pageUrl]="p.url" *ngFor="let p of services">
+              <fiv-router-item [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'" [pageUrl]="p.url"
+                *ngFor="let p of services">
               </fiv-router-item>
               <ion-item>
                 <ion-label>nothing yet</ion-label>
@@ -67,7 +66,8 @@
           <ion-item-divider>
             <ion-label>More</ion-label>
           </ion-item-divider>
-          <fiv-router-item  [pageUrl]="'/developer-tools'" [text]="'Developer Tools'" [matchChildUrl]="true" [shape]="'rounded'">
+          <fiv-router-item [pageUrl]="'/developer-tools'" [text]="'Developer Tools'" [matchChildUrl]="true"
+            [shape]="'rounded'">
           </fiv-router-item>
         </ion-list>
       </ion-content>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { FivRoutingStateService } from '@fivethree/core';
@@ -96,7 +96,8 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private routing: FivRoutingStateService
+    private routing: FivRoutingStateService,
+    private navCtrl: NavController
   ) {
     this.initializeApp();
   }
@@ -108,5 +109,12 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  navigateRoot(url: string) {
+    this.navCtrl.navigateRoot(url);
+  }
+  navigate(url: string) {
+    this.navCtrl.navigateForward(url);
   }
 }
