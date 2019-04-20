@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter, Renderer2 } from '@angular/core';
 import { animate, style, transition, trigger, state, AnimationBuilder } from '@angular/animations';
-import { FivLoadingSpinner } from '../loading-spinner/loading-spinner.component';
+import { FivLoadingSpinner } from '../../loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'fiv-loading-refresher-content',
