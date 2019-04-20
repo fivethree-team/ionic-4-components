@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/%40fivethree%2Fcore.svg)](https://www.npmjs.com/@fivethree/core)
 
+Costumizable UI Components for Ionic 4. 
+
 [Documentation](https://fivethree-team.github.io/ionic-4-components) |
 [Component Demos](https://fivethree-team.github.io/ionic-4-components/components) |
 [Getting Started](https://fivethree-team.github.io/ionic-4-components/getting-started)
