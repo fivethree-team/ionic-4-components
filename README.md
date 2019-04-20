@@ -52,7 +52,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class AppModule {}
 ```
 
-To use the library import it into the page or component module. You can either import the full FivethreeCoreModule or one of the feature modules (e.g. FivGalleryModule).
+## Step 3. Usage Instructions 
+
+To use the **UI Library** import it into a Page or Component Module. You can either import the full FivethreeCoreModule or one of the feature modules (e.g. FivGalleryModule).
 
 For example:
 
