@@ -1,23 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="end">
-      <ion-button (click)="pizza.open()">
-        <fiv-icon #menu fivFeature slot="icon-only" name="more"></fiv-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-header [title]="'Feature Discovery'">
+  <ion-button (click)="pizza.open()">
+    <fiv-icon #menu fivFeature slot="icon-only" name="more"></fiv-icon>
+  </ion-button>
+</app-header>
 
 <ion-content padding>
 
   <ion-button (click)="fabFeature.show()">
-    open fab
+    FAB FEATURE
   </ion-button>
   <ion-button (click)="buttonFeature.show()">
-    open button
+    BUTTON FEATURE
   </ion-button>
   <ion-button (click)="menuFeature.show()">
-    open menu
+    MENU FEATURE
   </ion-button>
 
   <ion-fab vertical="bottom" [edge]="true" horizontal="end" slot="fixed">
@@ -33,7 +29,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-button shape="round" #button fivFeature (click)="log('Cool Feature clicked')">
-        Cool Feature
+        Example Button
       </ion-button>
     </ion-card-content>
   </ion-card>

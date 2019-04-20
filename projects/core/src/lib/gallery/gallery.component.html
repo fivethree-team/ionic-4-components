@@ -1,7 +1,7 @@
 <ng-content></ng-content>
 <fiv-overlay #overlay>
 
-  <ion-toolbar [@slideDown] *ngIf="controlsVisible" class="header" color="transparent">
+  <!-- <ion-toolbar [@slideDown] *ngIf="controlsVisible" class="header" color="transparent">
     <ion-buttons slot="start">
       <ion-button (click)="close()">
         <ion-icon slot="icon-only" [name]="'close'"></ion-icon>
@@ -16,7 +16,7 @@
         <fiv-icon slot="icon-only" [name]="zoomedIn ? 'remove' : 'add'"></fiv-icon>
       </ion-button>
     </ion-buttons>
-  </ion-toolbar>
+  </ion-toolbar> -->
 
   <ng-container *fivIf="['desktop']">
     <ion-fab [@scale] *ngIf="controlsVisible" vertical="center" horizontal="start" slot="fixed">
