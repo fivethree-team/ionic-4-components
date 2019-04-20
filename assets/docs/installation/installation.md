@@ -9,27 +9,27 @@ You can use either npm or yarn to install `@fivethree/core` from npm.
 npm install --save @fivethree/core @angular/animations hammerjs
 ```
 
-## Step 2. Configure the Library 
+## Step 2. Configure your Ionic App 
 
-Once the packages are installed, import `BrowserAnimationsModule` and `FivethreeCoreModule` in `app.module.ts`:
+Once the packages are installed, import `BrowserAnimationsModule` in `app.module.ts`:
 
 ```typescript
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FivethreeCoreModule } from '@fivethree/core';
 
 @NgModule({
   imports: [
     ...
     BrowserAnimationsModule,
-    FivethreeCoreModule,
     ...
   ]
 })
 export class AppModule {}
 ```
 
-To use components you need to import the `FivethreeCoreModule` into the page or component module. For example:
+To use the library import it into the page or component module. You can either import the full FivethreeCoreModule or one of the feature modules (e.g. FivGalleryModule).
+
+For example:
 
 ```typescript
 import { NgModule } from '@angular/core';
