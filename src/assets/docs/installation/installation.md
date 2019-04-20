@@ -9,7 +9,7 @@ You can use either npm or yarn to install `@fivethree/core` from npm.
 npm install --save @fivethree/core @angular/animations hammerjs
 ```
 
-## Step 2. Configure the Library 
+## Step 2. Configure your Ionic App 
 
 Once the packages are installed, import `BrowserAnimationsModule` and `FivethreeCoreModule` in `app.module.ts`:
 
