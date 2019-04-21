@@ -1,6 +1,4 @@
-import { Platform, ToastController } from '@ionic/angular';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FivFeature } from '@fivethree/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-feature-discovery',
@@ -9,22 +7,16 @@ import { FivFeature } from '@fivethree/core';
 })
 export class FeatureDiscoveryPage implements OnInit {
 
-  @ViewChild('fab', { read: FivFeature }) fabFeature: FivFeature;
-  @ViewChild('button', { read: FivFeature }) buttonFeature: FivFeature;
-  @ViewChild('menu', { read: FivFeature }) menuFeature: FivFeature;
+  fp = 20;
+  co = 20;
 
-  constructor(private platform: Platform,
-    private toastController: ToastController) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
 
   async log(s: string) {
-    const toast = await this.toastController.create({
-      message: s,
-      duration: 2000
-    });
-    toast.present();
+    console.log(s);
   }
 }

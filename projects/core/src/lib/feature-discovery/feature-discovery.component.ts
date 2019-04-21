@@ -1,3 +1,4 @@
+import { Platform } from '@ionic/angular';
 import {
   Component,
   OnInit,
@@ -50,18 +51,31 @@ import { FivIcon } from '../icon/icon.component';
         style({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0 }),
         animate('400ms', style({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0 }))
       ]),
+    ]),
+    trigger('contentAnim', [
+      transition('void => *', [
+        style({ opacity: '0' }),
+        animate('100ms 240ms ease-out', style({ opacity: '1' }))
+      ])
     ])
   ]
 })
 export class FivFeatureDiscovery implements OnInit, AfterContentInit {
-  top = '0px';
-  left = '0px';
+  top = 0;
+  left = 0;
   width = 420;
   height = 420;
-  innerDiameter = 80;
+  innerDiameter = 0;
+  featurePadding = 0;
+  contentTop = 0;
+  contentLeft = 0;
+  contentWidth = 0;
+  contentHeight = 0;
+  contentOffset = 0;
   bounds: FeaturePosition;
   icon: string;
   @ViewChild('circle') circle: ElementRef;
+  @ViewChild('rect') rect: ElementRef;
   @ViewChild('pInner', { read: ElementRef }) innerPulse: ElementRef;
   @ViewChild('pOuter') outerPulse: ElementRef;
 
@@ -72,9 +86,11 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
   @Output() fivBackdropClick = new EventEmitter<any>();
   @Output() fivClose = new EventEmitter<any>();
   @Output() fivOpen = new EventEmitter<any>();
+  @Output() fivAnimation = new EventEmitter<AnimationEvent>();
 
   constructor(
     private renderer: Renderer2,
+    private platform: Platform
   ) {
   }
 
@@ -85,12 +101,11 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
 
 
   setBounds(bounds: FeaturePosition) {
-    
     this.bounds = bounds;
     this.innerDiameter = bounds.height > bounds.width ? bounds.height : bounds.width;
-    
-    this.top = bounds.top + bounds.height / 2 - this.height / 2 + 'px';
-    this.left = bounds.left + bounds.width / 2 - this.width / 2 + 'px';
+    this.top = bounds.top + bounds.height / 2 - this.height / 2;
+    this.left = bounds.left + bounds.width / 2 - this.width / 2;
+    this.calculateContentBounds();
     if (!this.icon) {
       // tslint:disable-next-line:max-line-length
       const gradient = `-webkit-radial-gradient(transparent ${this.innerDiameter / 2 + 5}px, var(--fiv-color-feature) ${this.innerDiameter / 2 + 5}px)`;
@@ -102,9 +117,37 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
     }
 
   }
+  calculateContentBounds() {
+    const absoluteCenter: { x: number, y: number } = { x: this.platform.width() / 2, y: this.platform.height() / 2 };
+    const center: { x: number, y: number } = { x: this.left + this.width / 2, y: this.top + this.width / 2 };
+    const rectWidth = Math.sqrt((Math.pow(this.width, 2) / 2));
+    const isTop = center.y < absoluteCenter.y;
+    const isLeft = center.x < absoluteCenter.x;
+    const innerRadius = this.innerDiameter / 2;
+    const padding = this.featurePadding / 2;
+    let contentRight = 0;
+    let contentBottom = 0;
+    if (isLeft) {
+      this.contentLeft = center.x - innerRadius;
+      contentRight = Math.min(center.x + rectWidth / 2 + this.contentOffset, this.platform.width());
+    } else {
+      this.contentLeft = Math.max(center.x - rectWidth / 2 - this.contentOffset, 0);
+      contentRight = center.x + innerRadius;
+    }
+    if (isTop) {
+      this.contentTop = center.y + innerRadius + padding;
+      contentBottom = center.y + rectWidth / 2 + -1 * this.contentOffset;
+    } else {
+      this.contentTop = center.y - rectWidth / 2 + this.contentOffset;
+      contentBottom = center.y - innerRadius - padding;
+    }
 
+    this.contentWidth = Math.abs(this.contentLeft - contentRight);
+    this.contentHeight = Math.abs(this.contentTop - contentBottom);
+
+  }
   handleCircleAnimation(event: AnimationEvent) {
-    
+    this.fivAnimation.emit(event);
     if (event.toState === 'visible') {
       this.fivOpen.emit();
     }
@@ -126,7 +169,6 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
   }
 
   show() {
-    
     this.animationState = 'visible';
   }
 
