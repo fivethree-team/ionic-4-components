@@ -8,15 +8,19 @@
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-        <ion-button fill="outline" shape="round" color="secondary" #tour="fivFeature" [fivFeature]="tourContent" (click)="fab.show()">
-            TOUR
-          </ion-button>
+      <ion-button fill="outline" shape="round" color="secondary" #tour="fivFeature" [fivFeature]="tourContent"
+        (click)="fab.show()">
+        TOUR
+      </ion-button>
     </ion-buttons>
     <ion-title>Feature Discovery</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-item-divider>
+    <ion-label>Example</ion-label>
+  </ion-item-divider>
   <ion-button shape="round" (click)="tour.show()">
     Open Feature
   </ion-button>
@@ -43,12 +47,20 @@
 
   <ion-fab vertical="bottom" [edge]="true" horizontal="end" slot="fixed">
     <ion-fab-button color="primary" (click)="log('FAB Clicked')">
+      <!-- use the fiv-icon for cool icon effect -->
       <fiv-icon #fab="fivFeature" [fivFeature]="fabContent" [featurePadding]="fp" [contentOffset]="co" name="add"
         (fivFeatureClick)="log('feature click')" (fivWillOpen)="log('fiv will open')" (fivOpen)="log('fiv open')"
         (fivWillClose)="log('fiv will close')" (fivClose)="log('fiv close')">
       </fiv-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <ion-item-divider>
+    <ion-label>Documentation</ion-label>
+  </ion-item-divider>
+  <markdown
+    [src]="'https://raw.githubusercontent.com/fivethree-team/ionic-4-components/master/projects/core/src/lib/feature-discovery/README.md'">
+  </markdown>
 
 </ion-content>
 <ion-footer>
