@@ -65,7 +65,7 @@ var FeatureDirectoryPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header [title]=\"'Feature Discovery'\">\n  <ion-button (click)=\"pizza.open()\">\n    <fiv-icon #menu fivFeature slot=\"icon-only\" name=\"more\"></fiv-icon>\n  </ion-button>\n</app-header>\n\n<ion-content padding>\n\n  <ion-button (click)=\"fabFeature.show()\">\n    FAB FEATURE\n  </ion-button>\n  <ion-button (click)=\"buttonFeature.show()\">\n    BUTTON FEATURE\n  </ion-button>\n  <ion-button (click)=\"menuFeature.show()\">\n    MENU FEATURE\n  </ion-button>\n\n  <ion-fab vertical=\"bottom\" [edge]=\"true\" horizontal=\"end\" slot=\"fixed\">\n    <ion-fab-button color=\"primary\" (click)=\"log('FAB Clicked')\">\n      <fiv-icon #fab fivFeature name=\"add\"></fiv-icon>\n    </ion-fab-button>\n  </ion-fab>\n\n  <ion-card>\n    <ion-card-header>\n      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>\n      <ion-card-title>Awesome Title</ion-card-title>\n    </ion-card-header>\n    <ion-card-content>\n      <ion-button shape=\"round\" #button fivFeature (click)=\"log('Cool Feature clicked')\">\n        Example Button\n      </ion-button>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n  </ion-toolbar>\n</ion-footer>\n\n<ion-menu [swipeGesture]=\"false\" #pizza menuId=\"pizzaMenu\" side=\"end\" type=\"overlay\" (ionDidOpen)=\"ripple.ripple()\">\n  <ion-header>\n    <ion-toolbar>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <fiv-ripple #ripple>\n      <ion-item>\n        <ion-label>Do this action!</ion-label>\n      </ion-item>\n    </fiv-ripple>\n\n  </ion-content>\n</ion-menu>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-button>\n        <fiv-icon #back=\"fivFeature\" [fivFeature]=\"backContent\" [featurePadding]=\"fp\" [contentOffset]=\"co\"\n          slot=\"icon-only\" [name]=\"'arrow-back'\">\n        </fiv-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-buttons slot=\"end\">\n      <ion-button fill=\"outline\" shape=\"round\" color=\"secondary\" #tour=\"fivFeature\" [fivFeature]=\"tourContent\"\n        (click)=\"fab.show()\">\n        TOUR\n      </ion-button>\n    </ion-buttons>\n    <ion-title>Feature Discovery</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item-divider>\n    <ion-label>Example</ion-label>\n  </ion-item-divider>\n  <ion-button shape=\"round\" (click)=\"tour.show()\">\n    Open Feature\n  </ion-button>\n  <ion-list>\n    <ion-item>\n      <ion-label>Feature Radius</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-range [(ngModel)]=\"fp\" min=\"0\" max=\"200\" color=\"secondary\">\n        <ion-label slot=\"start\">small</ion-label>\n        <ion-label slot=\"end\">big</ion-label>\n      </ion-range>\n    </ion-item>\n    <ion-item>\n      <ion-label>Content</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-range [(ngModel)]=\"co\" min=\"-50\" max=\"50\" color=\"secondary\">\n        <ion-label slot=\"start\">narrow</ion-label>\n        <ion-label slot=\"end\">wide</ion-label>\n      </ion-range>\n    </ion-item>\n  </ion-list>\n\n  <ion-fab vertical=\"bottom\" [edge]=\"true\" horizontal=\"end\" slot=\"fixed\">\n    <ion-fab-button color=\"primary\" (click)=\"log('FAB Clicked')\">\n      <!-- use the fiv-icon for cool icon effect -->\n      <fiv-icon #fab=\"fivFeature\" [fivFeature]=\"fabContent\" [featurePadding]=\"fp\" [contentOffset]=\"co\" name=\"add\"\n        (fivFeatureClick)=\"log('feature click')\" (fivWillOpen)=\"log('fiv will open')\" (fivOpen)=\"log('fiv open')\"\n        (fivWillClose)=\"log('fiv will close')\" (fivClose)=\"log('fiv close')\">\n      </fiv-icon>\n    </ion-fab-button>\n  </ion-fab>\n\n  <ion-item-divider>\n    <ion-label>Documentation</ion-label>\n  </ion-item-divider>\n  <markdown\n    [src]=\"'https://raw.githubusercontent.com/fivethree-team/ionic-4-components/master/projects/core/src/lib/feature-discovery/README.md'\">\n  </markdown>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n  </ion-toolbar>\n</ion-footer>\n\n<ng-template #backContent>\n  <div padding>\n    <ion-text color=\"light\">\n      <h1>Go Back</h1>\n      <p>Leave this page by clicking the back arrow.</p>\n    </ion-text>\n    <ion-buttons>\n      <ion-button (click)=\"back.hide(); fab.show()\" color=\"light\" shape=\"round\" fill=\"outline\">\n        <ion-icon slot=\"start\" name=\"arrow-back\"></ion-icon>\n        PREVIOUS\n      </ion-button>\n      <ion-button color=\"light\" shape=\"round\" fill=\"outline\" (click)=\"back.hide()\">\n        FINISH\n      </ion-button>\n    </ion-buttons>\n  </div>\n</ng-template>\n\n<ng-template #fabContent>\n  <div padding>\n    <ion-text color=\"light\">\n      <h1>This is a FAB</h1>\n      <p>Click this Button to do some cool stuff.</p>\n    </ion-text>\n    <ion-buttons>\n      <ion-button color=\"light\" shape=\"round\" fill=\"outline\" (click)=\"fab.hide(); back.show()\">\n        <ion-icon slot=\"end\" name=\"arrow-forward\"></ion-icon>\n        NEXT\n      </ion-button>\n    </ion-buttons>\n  </div>\n</ng-template>\n\n<ng-template #tourContent>\n  <div padding>\n    <ion-text color=\"light\">\n      <h1>Take the Tour</h1>\n      <p>You can also build a little feature tour.</p>\n    </ion-text>\n  </div>\n</ng-template>\n"
 
 /***/ }),
 
@@ -90,9 +90,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeatureDiscoveryPage", function() { return FeatureDiscoveryPage; });
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _fivethree_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fivethree/core */ "./dist/@fivethree/core/fesm5/fivethree-core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -138,52 +136,28 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     }
 };
 
-
-
 var FeatureDiscoveryPage = /** @class */ (function () {
-    function FeatureDiscoveryPage(platform, toastController) {
-        this.platform = platform;
-        this.toastController = toastController;
+    function FeatureDiscoveryPage() {
+        this.fp = 20;
+        this.co = 20;
     }
     FeatureDiscoveryPage.prototype.ngOnInit = function () {
     };
     FeatureDiscoveryPage.prototype.log = function (s) {
         return __awaiter(this, void 0, void 0, function () {
-            var toast;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.toastController.create({
-                            message: s,
-                            duration: 2000
-                        })];
-                    case 1:
-                        toast = _a.sent();
-                        toast.present();
-                        return [2 /*return*/];
-                }
+                console.log(s);
+                return [2 /*return*/];
             });
         });
     };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('fab', { read: _fivethree_core__WEBPACK_IMPORTED_MODULE_2__["FivFeature"] }),
-        __metadata("design:type", _fivethree_core__WEBPACK_IMPORTED_MODULE_2__["FivFeature"])
-    ], FeatureDiscoveryPage.prototype, "fabFeature", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('button', { read: _fivethree_core__WEBPACK_IMPORTED_MODULE_2__["FivFeature"] }),
-        __metadata("design:type", _fivethree_core__WEBPACK_IMPORTED_MODULE_2__["FivFeature"])
-    ], FeatureDiscoveryPage.prototype, "buttonFeature", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('menu', { read: _fivethree_core__WEBPACK_IMPORTED_MODULE_2__["FivFeature"] }),
-        __metadata("design:type", _fivethree_core__WEBPACK_IMPORTED_MODULE_2__["FivFeature"])
-    ], FeatureDiscoveryPage.prototype, "menuFeature", void 0);
     FeatureDiscoveryPage = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-feature-discovery',
             template: __webpack_require__(/*! ./feature-discovery.page.html */ "./src/app/pages/feature-discovery/feature-discovery.page.html"),
             styles: [__webpack_require__(/*! ./feature-discovery.page.scss */ "./src/app/pages/feature-discovery/feature-discovery.page.scss")]
         }),
-        __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_0__["Platform"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_0__["ToastController"]])
+        __metadata("design:paramtypes", [])
     ], FeatureDiscoveryPage);
     return FeatureDiscoveryPage;
 }());

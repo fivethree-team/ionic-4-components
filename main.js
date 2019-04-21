@@ -7245,19 +7245,27 @@ var FivLazyImageModule = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivFeatureDiscovery = /** @class */ (function () {
-    function FivFeatureDiscovery(renderer) {
+    function FivFeatureDiscovery(renderer, platform) {
         this.renderer = renderer;
-        this.top = '0px';
-        this.left = '0px';
+        this.platform = platform;
+        this.top = 0;
+        this.left = 0;
         this.width = 420;
         this.height = 420;
-        this.innerDiameter = 80;
+        this.innerDiameter = 0;
+        this.featurePadding = 0;
+        this.contentTop = 0;
+        this.contentLeft = 0;
+        this.contentWidth = 0;
+        this.contentHeight = 0;
+        this.contentOffset = 0;
         this.animationState = 'hidden';
         this.pulse = 'small';
         this.fivClick = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
         this.fivBackdropClick = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
         this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
         this.fivOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        this.fivAnimation = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
     }
     /**
      * @return {?}
@@ -7285,8 +7293,9 @@ var FivFeatureDiscovery = /** @class */ (function () {
     function (bounds) {
         this.bounds = bounds;
         this.innerDiameter = bounds.height > bounds.width ? bounds.height : bounds.width;
-        this.top = bounds.top + bounds.height / 2 - this.height / 2 + 'px';
-        this.left = bounds.left + bounds.width / 2 - this.width / 2 + 'px';
+        this.top = bounds.top + bounds.height / 2 - this.height / 2;
+        this.left = bounds.left + bounds.width / 2 - this.width / 2;
+        this.calculateContentBounds();
         if (!this.icon) {
             // tslint:disable-next-line:max-line-length
             /** @type {?} */
@@ -7300,6 +7309,50 @@ var FivFeatureDiscovery = /** @class */ (function () {
         }
     };
     /**
+     * @return {?}
+     */
+    FivFeatureDiscovery.prototype.calculateContentBounds = /**
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var absoluteCenter = { x: this.platform.width() / 2, y: this.platform.height() / 2 };
+        /** @type {?} */
+        var center = { x: this.left + this.width / 2, y: this.top + this.width / 2 };
+        /** @type {?} */
+        var rectWidth = Math.sqrt((Math.pow(this.width, 2) / 2));
+        /** @type {?} */
+        var isTop = center.y < absoluteCenter.y;
+        /** @type {?} */
+        var isLeft = center.x < absoluteCenter.x;
+        /** @type {?} */
+        var innerRadius = this.innerDiameter / 2;
+        /** @type {?} */
+        var padding = this.featurePadding / 2;
+        /** @type {?} */
+        var contentRight = 0;
+        /** @type {?} */
+        var contentBottom = 0;
+        if (isLeft) {
+            this.contentLeft = center.x - innerRadius;
+            contentRight = Math.min(center.x + rectWidth / 2 + this.contentOffset, this.platform.width());
+        }
+        else {
+            this.contentLeft = Math.max(center.x - rectWidth / 2 - this.contentOffset, 0);
+            contentRight = center.x + innerRadius;
+        }
+        if (isTop) {
+            this.contentTop = center.y + innerRadius + padding;
+            contentBottom = center.y + rectWidth / 2 + -1 * this.contentOffset;
+        }
+        else {
+            this.contentTop = center.y - rectWidth / 2 + this.contentOffset;
+            contentBottom = center.y - innerRadius - padding;
+        }
+        this.contentWidth = Math.abs(this.contentLeft - contentRight);
+        this.contentHeight = Math.abs(this.contentTop - contentBottom);
+    };
+    /**
      * @param {?} event
      * @return {?}
      */
@@ -7308,6 +7361,7 @@ var FivFeatureDiscovery = /** @class */ (function () {
      * @return {?}
      */
     function (event) {
+        this.fivAnimation.emit(event);
         if (event.toState === 'visible') {
             this.fivOpen.emit();
         }
@@ -7377,7 +7431,7 @@ var FivFeatureDiscovery = /** @class */ (function () {
     FivFeatureDiscovery.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"], args: [{
                     selector: 'fiv-feature-discovery',
-                    template: "<div class=\"backdrop\" (click)=\"fivBackdropClick.emit()\"></div>\n<div [@scale]=\"animationState\" (@scale.done)=\"handleCircleAnimation($event)\" #circle class=\"circle\"\n  [style.height]=\"height + 'px'\" [style.width]=\"width + 'px'\" [style.top]=\"top\" [style.left]=\"left\">\n  <div #pOuter class=\"feature center\" [@pulseFade]=\"pulse\" [style.height]=\"(innerDiameter + (icon ? 20 : 40)) + 'px'\"\n    [style.width]=\"(innerDiameter + (icon ? 20 : 40)) + 'px'\">\n  </div>\n  <fiv-ripple #pInner class=\"feature center\" (fivClick)=\"fivClick.emit()\" [@pulse]=\"pulse\"\n    (@pulse.done)=\"handleFeatureAnimation($event)\" [style.height]=\"(innerDiameter + (icon ? 20 : 0)) + 'px'\"\n    [style.width]=\"(innerDiameter + (icon ? 20 : 0)) + 'px'\">\n    <fiv-icon class=\"center\" *ngIf=\"icon\" [name]=\"icon\"></fiv-icon>\n</fiv-ripple>\n</div>",
+                    template: "<div class=\"backdrop\" (click)=\"fivBackdropClick.emit()\"></div>\n<div [@scale]=\"animationState\" (@scale.done)=\"handleCircleAnimation($event)\" #circle class=\"circle\"\n  [style.height]=\"height + 'px'\" [style.width]=\"width + 'px'\" [style.top]=\"top + 'px'\" [style.left]=\"left + 'px'\">\n  <div #pOuter class=\"feature center\" [@pulseFade]=\"pulse\" [style.height]=\"(innerDiameter + featurePadding) + 'px'\"\n    [style.width]=\"(innerDiameter + featurePadding) + 'px'\">\n  </div>\n  <fiv-ripple #pInner class=\"feature center\" (fivClick)=\"fivClick.emit()\" [@pulse]=\"pulse\"\n    (@pulse.done)=\"handleFeatureAnimation($event)\" [style.height]=\"(innerDiameter + (icon ? featurePadding : 0)) + 'px'\"\n    [style.width]=\"(innerDiameter + (icon ? featurePadding : 0)) + 'px'\">\n    <fiv-icon class=\"center\" *ngIf=\"icon\" [name]=\"icon\"></fiv-icon>\n  </fiv-ripple>\n</div>\n<div class=\"content\" *ngIf=\"animationState === 'visible'\" [@contentAnim] [style.width]=\"contentWidth + 'px'\" [style.height]=\"contentHeight + 'px'\" [style.top]=\"contentTop + 'px'\" [style.left]=\"contentLeft + 'px'\">\n    <ng-content></ng-content>\n  </div>\n",
                     animations: [
                         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["trigger"])('scale', [
                             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["transition"])('* => visible', [
@@ -7412,23 +7466,32 @@ var FivFeatureDiscovery = /** @class */ (function () {
                                 Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0 }),
                                 Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["animate"])('400ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0 }))
                             ]),
+                        ]),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["trigger"])('contentAnim', [
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["transition"])('void => *', [
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({ opacity: '0' }),
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["animate"])('100ms 240ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({ opacity: '1' }))
+                            ])
                         ])
                     ],
-                    styles: [":host{display:block;height:100vh;width:100vw;position:absolute;--fiv-color-feature:rgba(56, 128, 255, 0.97);--fiv-color-pulse:var(--ion-color-light)}.backdrop{display:block;height:100vh;width:100vw;position:absolute}fiv-icon{--fiv-color-icon:var(--ion-color-primary)}.circle{position:absolute;border-radius:100%;background:var(--fiv-color-feature);box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}.feature{border-radius:100%;background:var(--fiv-color-pulse)}.center{position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}"]
+                    styles: [":host{display:block;height:100vh;width:100vw;position:absolute;--fiv-color-feature:rgba(56, 128, 255, 0.97);--fiv-color-pulse:var(--ion-color-light)}.backdrop{display:block;height:100vh;width:100vw;position:absolute}fiv-icon{--fiv-color-icon:var(--ion-color-primary)}.circle{position:absolute;border-radius:100%;background:var(--fiv-color-feature);box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}.feature{border-radius:100%;background:var(--fiv-color-pulse)}.content{position:absolute}.center{position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}"]
                 }] }
     ];
     /** @nocollapse */
     FivFeatureDiscovery.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Renderer2"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Renderer2"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] }
     ]; };
     FivFeatureDiscovery.propDecorators = {
         circle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"], args: ['circle',] }],
+        rect: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"], args: ['rect',] }],
         innerPulse: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"], args: ['pInner', { read: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"] },] }],
         outerPulse: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"], args: ['pOuter',] }],
         fivClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
         fivBackdropClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
         fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
-        fivOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }]
+        fivOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
+        fivAnimation: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }]
     };
     return FivFeatureDiscovery;
 }());
@@ -7445,6 +7508,15 @@ var FivFeature = /** @class */ (function () {
         this.platform = platform;
         this.maxDiameter = 1080;
         this.diameter = Math.min(this.platform.width() * 2, this.maxDiameter);
+        this.contentOffset = 20;
+        this.featurePadding = 20;
+        this.clickEnabled = true;
+        this.fivFeatureClick = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        this.fivOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        this.fivWillOpen = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        this.fivClose = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        this.fivWillClose = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        this.isOpen = false;
     }
     /**
      * @private
@@ -7476,14 +7548,28 @@ var FivFeature = /** @class */ (function () {
         var _this = this;
         /** @type {?} */
         var bounds = this.icon ? this.getBounds(this.host.nativeElement.parentElement) : this.getBounds(this.host.nativeElement);
-        this.overlayRef = this.overlay.createOverlay(FivFeatureDiscovery);
+        console.log('content', this.fivFeature);
+        this.overlayRef = this.overlay.createOverlay(FivFeatureDiscovery, this.fivFeature);
         /** @type {?} */
         var featureOverlay = this.overlayRef.instance;
         featureOverlay.height = this.diameter;
         featureOverlay.width = this.diameter;
+        featureOverlay.featurePadding = this.featurePadding;
+        featureOverlay.contentOffset = this.contentOffset;
         featureOverlay.setIcon(this.icon);
         featureOverlay.setBounds(bounds);
         featureOverlay.show();
+        this.fivWillOpen.emit();
+        featureOverlay.fivAnimation
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["filter"])((/**
+         * @param {?} event
+         * @return {?}
+         */
+        function (event) { return event.toState === 'visible'; })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["first"])())
+            .subscribe((/**
+         * @return {?}
+         */
+        function () { _this.didOpen(); }));
         featureOverlay.fivClick
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["first"])())
             .subscribe((/**
@@ -7505,6 +7591,7 @@ var FivFeature = /** @class */ (function () {
      */
     function () {
         var _this = this;
+        this.fivWillClose.emit();
         if (this.overlayRef) {
             this.overlayRef.instance.hide();
             this.overlayRef
@@ -7515,10 +7602,22 @@ var FivFeature = /** @class */ (function () {
              * @return {?}
              */
             function () {
+                _this.fivClose.emit();
+                _this.isOpen = false;
                 _this.overlayRef.destroy();
                 _this.overlayRef = null;
             }));
         }
+    };
+    /**
+     * @return {?}
+     */
+    FivFeature.prototype.didOpen = /**
+     * @return {?}
+     */
+    function () {
+        this.fivOpen.emit();
+        this.isOpen = true;
     };
     /**
      * @return {?}
@@ -7529,6 +7628,8 @@ var FivFeature = /** @class */ (function () {
     function () {
         var _this = this;
         if (this.overlayRef) {
+            this.fivFeatureClick.emit();
+            this.fivWillClose.emit();
             this.overlayRef.instance.featureClick();
             this.overlayRef
                 .instance
@@ -7538,15 +7639,19 @@ var FivFeature = /** @class */ (function () {
              * @return {?}
              */
             function () {
+                _this.fivClose.emit();
                 _this.overlayRef.destroy();
                 _this.overlayRef = null;
-                _this.host.nativeElement.click();
+                if (_this.clickEnabled) {
+                    _this.host.nativeElement.click();
+                }
             }));
         }
     };
     FivFeature.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Directive"], args: [{
-                    selector: '[fivFeature]'
+                    selector: '[fivFeature]',
+                    exportAs: 'fivFeature'
                 },] }
     ];
     /** @nocollapse */
@@ -7558,7 +7663,16 @@ var FivFeature = /** @class */ (function () {
     ]; };
     FivFeature.propDecorators = {
         maxDiameter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
-        diameter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }]
+        diameter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+        contentOffset: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+        featurePadding: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+        clickEnabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+        fivFeature: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+        fivFeatureClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
+        fivOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
+        fivWillOpen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
+        fivClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
+        fivWillClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }]
     };
     return FivFeature;
 }());

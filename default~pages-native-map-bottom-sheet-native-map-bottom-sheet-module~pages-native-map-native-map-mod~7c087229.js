@@ -13,11 +13,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FivGoogleMapsNative", function() { return FivGoogleMapsNative; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FivGoogleMapsWeb", function() { return FivGoogleMapsWeb; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GoogleMapsModule", function() { return GoogleMapsModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic-native/google-maps */ "./node_modules/@ionic-native/google-maps/index.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/google-maps */ "./node_modules/@ionic-native/google-maps/index.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 
 
 
@@ -26,7 +26,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivGoogleMaps = /** @class */ (function () {
     function FivGoogleMaps() {
@@ -87,7 +87,7 @@ var FivGoogleMaps = /** @class */ (function () {
     function () {
     };
     FivGoogleMaps.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: 'fiv-google-maps',
                     template: "\n    <fiv-google-maps-web *ngIf=\"!isCordova\" [apiKey]=\"apiKey\"></fiv-google-maps-web>\n    <fiv-google-maps-native *ngIf=\"isCordova\"></fiv-google-maps-native>\n  "
                 }] }
@@ -95,16 +95,16 @@ var FivGoogleMaps = /** @class */ (function () {
     /** @nocollapse */
     FivGoogleMaps.ctorParameters = function () { return []; };
     FivGoogleMaps.propDecorators = {
-        isCordova: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        apiKey: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        zoom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
+        isCordova: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        apiKey: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        zoom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
     };
     return FivGoogleMaps;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivGoogleMapsNative = /** @class */ (function () {
     function FivGoogleMapsNative() {
@@ -132,7 +132,7 @@ var FivGoogleMapsNative = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        this.map = _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_1__["GoogleMaps"].create('map', {
+        this.map = _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMaps"].create('map', {
             mapType: this.mapType,
             controls: {
                 myLocation: true,
@@ -141,12 +141,15 @@ var FivGoogleMapsNative = /** @class */ (function () {
                 compass: true,
             }
         });
-        this.map.one(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_1__["GoogleMapsEvent"].MAP_READY).then(function () {
+        this.map.one(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsEvent"].MAP_READY).then((/**
+         * @return {?}
+         */
+        function () {
             _this.mapReady = true;
             if (_this.zoomToLocationOnMapReady) {
                 _this.zoomToMyLocation(_this.zoom);
             }
-        });
+        }));
     };
     /**
      * @param {?} zoom
@@ -157,9 +160,9 @@ var FivGoogleMapsNative = /** @class */ (function () {
      * @return {?}
      */
     function (zoom) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__awaiter"])(this, void 0, void 0, function () {
             var location_1, error_1;
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__generator"])(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
@@ -229,16 +232,20 @@ var FivGoogleMapsNative = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__awaiter"])(this, void 0, void 0, function () {
             var location_2, positions, error_2;
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__generator"])(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
                         return [4 /*yield*/, this.getCurrentPosition()];
                     case 1:
                         location_2 = _a.sent();
-                        positions = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])([location_2.latLng], this.markers.map(function (marker) { return marker.getPosition(); }));
+                        positions = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spread"])([location_2.latLng], this.markers.map((/**
+                         * @param {?} marker
+                         * @return {?}
+                         */
+                        function (marker) { return marker.getPosition(); })));
                         this.moveCenterToPositions(positions);
                         return [3 /*break*/, 3];
                     case 2:
@@ -272,9 +279,9 @@ var FivGoogleMapsNative = /** @class */ (function () {
      * @return {?}
      */
     function (options) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__awaiter"])(this, void 0, void 0, function () {
             var location;
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__generator"])(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!options) {
@@ -344,7 +351,11 @@ var FivGoogleMapsNative = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.markers.forEach(function (marker) { return marker.setVisible(false); });
+        this.markers.forEach((/**
+         * @param {?} marker
+         * @return {?}
+         */
+        function (marker) { return marker.setVisible(false); }));
     };
     /**
      * @return {?}
@@ -353,7 +364,11 @@ var FivGoogleMapsNative = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.markers.forEach(function (marker) { return marker.setVisible(true); });
+        this.markers.forEach((/**
+         * @param {?} marker
+         * @return {?}
+         */
+        function (marker) { return marker.setVisible(true); }));
     };
     /**
      * @param {?} position
@@ -365,12 +380,16 @@ var FivGoogleMapsNative = /** @class */ (function () {
      */
     function (position) {
         /** @type {?} */
-        var markerIndex = this.markers.findIndex(function (marker) {
+        var markerIndex = this.markers.findIndex((/**
+         * @param {?} marker
+         * @return {?}
+         */
+        function (marker) {
             /** @type {?} */
             var markerPosition = marker.getPosition();
             return markerPosition.lat === position.lat
                 && markerPosition.lng === position.lng;
-        });
+        }));
         if (markerIndex > -1) {
             this.markers[markerIndex].remove();
             this.markers.splice(markerIndex, 1);
@@ -383,11 +402,15 @@ var FivGoogleMapsNative = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.markers.forEach(function (marker) { return marker.remove(); });
+        this.markers.forEach((/**
+         * @param {?} marker
+         * @return {?}
+         */
+        function (marker) { return marker.remove(); }));
         this.markers = [];
     };
     FivGoogleMapsNative.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: 'fiv-google-maps-native',
                     template: "<div id=\"map\">\n    <ng-content></ng-content>\n</div>",
                     styles: [":host #map{height:100%;width:100%}"]
@@ -396,17 +419,17 @@ var FivGoogleMapsNative = /** @class */ (function () {
     /** @nocollapse */
     FivGoogleMapsNative.ctorParameters = function () { return []; };
     FivGoogleMapsNative.propDecorators = {
-        zoom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        zoomToLocationOnMapReady: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        mapOptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        mapType: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
+        zoom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        zoomToLocationOnMapReady: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        mapOptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        mapType: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
     };
     return FivGoogleMapsNative;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var FivGoogleMapsWeb = /** @class */ (function () {
     function FivGoogleMapsWeb(renderer, element, _document) {
@@ -427,9 +450,17 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.init().then(function (res) {
-        }, function (err) {
-        });
+        this.init().then((/**
+         * @param {?} res
+         * @return {?}
+         */
+        function (res) {
+        }), (/**
+         * @param {?} err
+         * @return {?}
+         */
+        function (err) {
+        }));
     };
     /**
      * @private
@@ -441,17 +472,37 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.loadSDK().then(function (res) {
-                _this.initMap().then(function () {
+        return new Promise((/**
+         * @param {?} resolve
+         * @param {?} reject
+         * @return {?}
+         */
+        function (resolve, reject) {
+            _this.loadSDK().then((/**
+             * @param {?} res
+             * @return {?}
+             */
+            function (res) {
+                _this.initMap().then((/**
+                 * @return {?}
+                 */
+                function () {
                     resolve(true);
-                }, function (err) {
+                }), (/**
+                 * @param {?} err
+                 * @return {?}
+                 */
+                function (err) {
                     reject(err);
-                });
-            }, function (err) {
+                }));
+            }), (/**
+             * @param {?} err
+             * @return {?}
+             */
+            function (err) {
                 reject(err);
-            });
-        });
+            }));
+        }));
     };
     /**
      * @private
@@ -463,18 +514,31 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        return new Promise(function (resolve, reject) {
+        return new Promise((/**
+         * @param {?} resolve
+         * @param {?} reject
+         * @return {?}
+         */
+        function (resolve, reject) {
             if (!_this.mapsLoaded) {
-                _this.injectSDK().then(function (res) {
+                _this.injectSDK().then((/**
+                 * @param {?} res
+                 * @return {?}
+                 */
+                function (res) {
                     resolve(true);
-                }, function (err) {
+                }), (/**
+                 * @param {?} err
+                 * @return {?}
+                 */
+                function (err) {
                     reject(err);
-                });
+                }));
             }
             else {
                 reject('SDK already loaded');
             }
-        });
+        }));
     };
     /**
      * @private
@@ -486,11 +550,19 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        return new Promise(function (resolve, reject) {
-            window['mapInit'] = function () {
+        return new Promise((/**
+         * @param {?} resolve
+         * @param {?} reject
+         * @return {?}
+         */
+        function (resolve, reject) {
+            window['mapInit'] = (/**
+             * @return {?}
+             */
+            function () {
                 _this.mapsLoaded = true;
                 resolve(true);
-            };
+            });
             /** @type {?} */
             var script = _this.renderer.createElement('script');
             script.id = 'googleMaps';
@@ -501,7 +573,7 @@ var FivGoogleMapsWeb = /** @class */ (function () {
                 reject('');
             }
             _this.renderer.appendChild(_this._document.body, script);
-        });
+        }));
     };
     /**
      * @private
@@ -513,7 +585,11 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function () {
         var _this = this;
-        return new Promise(function (resolve) {
+        return new Promise((/**
+         * @param {?} resolve
+         * @return {?}
+         */
+        function (resolve) {
             /** @type {?} */
             var latLng = new google.maps.LatLng(_this.lat, _this.lng);
             /** @type {?} */
@@ -523,7 +599,7 @@ var FivGoogleMapsWeb = /** @class */ (function () {
             };
             _this.map = new google.maps.Map(_this.element.nativeElement, mapOptions);
             resolve(true);
-        });
+        }));
     };
     /**
      * @param {?} lat
@@ -574,10 +650,14 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      */
     function (position) {
         /** @type {?} */
-        var index = this.markers.findIndex(function (m) {
+        var index = this.markers.findIndex((/**
+         * @param {?} m
+         * @return {?}
+         */
+        function (m) {
             return m.getPosition().lat() === position.lat
                 && m.getPosition().lng() === position.lng;
-        });
+        }));
         if (index > -1) {
             this.markers[index].setMap(null);
             this.markers.splice(index, 1);
@@ -604,10 +684,14 @@ var FivGoogleMapsWeb = /** @class */ (function () {
      * @return {?}
      */
     function (map) {
-        this.markers.forEach(function (marker) { return marker.setMap(map); });
+        this.markers.forEach((/**
+         * @param {?} marker
+         * @return {?}
+         */
+        function (marker) { return marker.setMap(map); }));
     };
     FivGoogleMapsWeb.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: 'fiv-google-maps-web',
                     template: "",
                     styles: [":host{display:block;width:100%;height:100%}"]
@@ -615,29 +699,29 @@ var FivGoogleMapsWeb = /** @class */ (function () {
     ];
     /** @nocollapse */
     FivGoogleMapsWeb.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Renderer2"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"] },
-        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"], args: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"],] }] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
+        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"],] }] }
     ]; };
     FivGoogleMapsWeb.propDecorators = {
-        apiKey: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        zoom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        mapOptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
+        apiKey: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        zoom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+        mapOptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
     };
     return FivGoogleMapsWeb;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var GoogleMapsModule = /** @class */ (function () {
     function GoogleMapsModule() {
     }
     GoogleMapsModule.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
                     imports: [
-                        _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"]
+                        _angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"]
                     ],
                     declarations: [
                         FivGoogleMaps,
@@ -656,22 +740,22 @@ var GoogleMapsModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-
 
 
 //# sourceMappingURL=fivethree-google-maps.js.map
+
 
 /***/ }),
 
