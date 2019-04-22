@@ -4,7 +4,9 @@
     <ion-grid fixed>
       <ion-row>
         <ion-col size="12">
-          <markdown [src]="'assets/docs/developer-tools/developer-tools.md'"></markdown>
+          <markdown [src]="path"></markdown>
+
+          <app-docs-footer [path]="path"></app-docs-footer>
         </ion-col>
       </ion-row>
     </ion-grid>

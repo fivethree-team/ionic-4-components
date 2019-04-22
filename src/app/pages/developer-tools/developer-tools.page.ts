@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeveloperToolsPage implements OnInit {
 
+  path = 'assets/docs/developer-tools/developer-tools.md';
+
   constructor() { }
 
   ngOnInit() {

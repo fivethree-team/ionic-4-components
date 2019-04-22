@@ -10,13 +10,16 @@ import { FooterComponent } from './footer/footer.component';
 import { LottieAnimationViewModule } from 'ng-lottie';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { DocsFooterComponent } from './docs-footer/docs-footer.component';
 
+const components = [
+  ExampleComponent,
+  HeaderComponent,
+  FooterComponent,
+  DocsFooterComponent
+];
 @NgModule({
-  declarations: [
-    ExampleComponent,
-    HeaderComponent,
-    FooterComponent,
-  ],
+  declarations: components,
   imports: [
     CommonModule,
     RouterModule,
@@ -29,9 +32,7 @@ import { FormsModule } from '@angular/forms';
     LottieAnimationViewModule,
   ],
   exports: [
-    ExampleComponent,
-    HeaderComponent,
-    FooterComponent,
+    ...components,
     FivethreeCoreModule,
     LottieAnimationViewModule,
     MarkdownModule

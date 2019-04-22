@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstallationPage implements OnInit {
 
+  path = 'assets/docs/installation/installation.md';
+
   constructor() { }
 
   ngOnInit() {
