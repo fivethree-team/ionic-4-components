@@ -1,3 +1,17 @@
+<a name="0.8.1"></a>
+## [0.8.1](https://github.com/fivethree-team/component-library/compare/v0.8.0...v0.8.1) (2019-04-22)
+
+
+### Features
+
+* **developer-tools:** add content ([dba2efe](https://github.com/fivethree-team/component-library/commit/dba2efe))
+* **developer-tools:** update heading ([2a7444e](https://github.com/fivethree-team/component-library/commit/2a7444e))
+* **docs-footer:** add edit page button ([a7b5b16](https://github.com/fivethree-team/component-library/commit/a7b5b16))
+* **feature-discovery:** navigate back ([d4e3120](https://github.com/fivethree-team/component-library/commit/d4e3120))
+* **gallery:** added fiv-gallery-toolbar ([59c395b](https://github.com/fivethree-team/component-library/commit/59c395b))
+
+
+
 <a name="0.6.10"></a>
 ## [0.6.10](https://github.com/fivethree-team/component-library/compare/v0.6.6...v0.6.10) (2019-04-20)
 
