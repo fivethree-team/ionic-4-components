@@ -1,12 +1,8 @@
-# Developer Tools
-
-## VS Code Snippets
-
-### [vscode-fivethree-snippets](https://github.com/fivethree-team/vscode-fivethree-snippets)
+## [vscode-fivethree-snippets](https://github.com/fivethree-team/vscode-fivethree-snippets)
 
 Visual Studio Code Extension adds TypeScript, HTML and SCSS snippets for Fivethree UI Components.
 
-### [vscode-ionic-snippets](https://github.com/fivethree-team/vscode-ionic-snippets)
+## [vscode-ionic-snippets](https://github.com/fivethree-team/vscode-ionic-snippets)
 
 Visual Studio Code Extension adds TypeScript, HTML and SCSS snippets for Ionic 4.
 
