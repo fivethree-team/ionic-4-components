@@ -59670,6 +59670,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ng_lottie__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ng-lottie */ "./node_modules/ng-lottie/dist/esm/src/index.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _docs_footer_docs_footer_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./docs-footer/docs-footer.component */ "./src/app/components/docs-footer/docs-footer.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59688,16 +59689,19 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+var components = [
+    _example_example_component__WEBPACK_IMPORTED_MODULE_0__["ExampleComponent"],
+    _header_header_component__WEBPACK_IMPORTED_MODULE_7__["HeaderComponent"],
+    _footer_footer_component__WEBPACK_IMPORTED_MODULE_8__["FooterComponent"],
+    _docs_footer_docs_footer_component__WEBPACK_IMPORTED_MODULE_12__["DocsFooterComponent"]
+];
 var ComponentsModule = /** @class */ (function () {
     function ComponentsModule() {
     }
     ComponentsModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [
-                _example_example_component__WEBPACK_IMPORTED_MODULE_0__["ExampleComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_7__["HeaderComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_8__["FooterComponent"],
-            ],
+            declarations: components,
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"],
@@ -59709,17 +59713,82 @@ var ComponentsModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTabsModule"],
                 ng_lottie__WEBPACK_IMPORTED_MODULE_9__["LottieAnimationViewModule"],
             ],
-            exports: [
-                _example_example_component__WEBPACK_IMPORTED_MODULE_0__["ExampleComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_7__["HeaderComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_8__["FooterComponent"],
+            exports: components.concat([
                 _fivethree_core__WEBPACK_IMPORTED_MODULE_5__["FivethreeCoreModule"],
                 ng_lottie__WEBPACK_IMPORTED_MODULE_9__["LottieAnimationViewModule"],
                 ngx_markdown__WEBPACK_IMPORTED_MODULE_4__["MarkdownModule"]
-            ]
+            ])
         })
     ], ComponentsModule);
     return ComponentsModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/docs-footer/docs-footer.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/docs-footer/docs-footer.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-button color=\"secondary\" shape=\"round\" [href]=\"editHref\">\n  Edit this page\n  <ion-icon slot=\"end\" name=\"ios-arrow-forward\"></ion-icon>\n</ion-button>"
+
+/***/ }),
+
+/***/ "./src/app/components/docs-footer/docs-footer.component.scss":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/docs-footer/docs-footer.component.scss ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZG9jcy1mb290ZXIvZG9jcy1mb290ZXIuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/docs-footer/docs-footer.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/docs-footer/docs-footer.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: DocsFooterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DocsFooterComponent", function() { return DocsFooterComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DocsFooterComponent = /** @class */ (function () {
+    function DocsFooterComponent() {
+    }
+    DocsFooterComponent.prototype.ngOnInit = function () {
+        this.editHref = "https://github.com/fivethree-team/ionic-4-components/edit/master/src/" + this.path;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], DocsFooterComponent.prototype, "path", void 0);
+    DocsFooterComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-docs-footer',
+            template: __webpack_require__(/*! ./docs-footer.component.html */ "./src/app/components/docs-footer/docs-footer.component.html"),
+            styles: [__webpack_require__(/*! ./docs-footer.component.scss */ "./src/app/components/docs-footer/docs-footer.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], DocsFooterComponent);
+    return DocsFooterComponent;
 }());
 
 

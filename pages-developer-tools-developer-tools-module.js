@@ -65,7 +65,7 @@ var DeveloperToolsPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header [title]=\"'Developer Tools'\"></app-header>\n<ion-content>\n  <div>\n    <ion-grid fixed>\n      <ion-row>\n        <ion-col size=\"12\">\n          <markdown [src]=\"'assets/docs/developer-tools/developer-tools.md'\"></markdown>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n\n</ion-content>\n"
+module.exports = "<app-header [title]=\"'Developer Tools'\"></app-header>\n<ion-content>\n  <div>\n    <ion-grid fixed>\n      <ion-row>\n        <ion-col size=\"12\">\n          <markdown [src]=\"path\"></markdown>\n\n          <app-docs-footer [path]=\"path\"></app-docs-footer>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n\n</ion-content>"
 
 /***/ }),
 
@@ -103,6 +103,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var DeveloperToolsPage = /** @class */ (function () {
     function DeveloperToolsPage() {
+        this.path = 'assets/docs/developer-tools/developer-tools.md';
     }
     DeveloperToolsPage.prototype.ngOnInit = function () {
     };

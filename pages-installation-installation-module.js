@@ -65,7 +65,7 @@ var InstallationPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header title=\"Installation\"></app-header>\n\n<ion-content>\n  <div>\n    <ion-grid fixed>\n      <ion-row>\n        <ion-col size=\"12\">\n          <markdown [src]=\"'assets/docs/installation/installation.md'\"></markdown>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n\n</ion-content>"
+module.exports = "<app-header title=\"Installation\"></app-header>\n\n<ion-content>\n  <div>\n    <ion-grid fixed>\n      <ion-row>\n        <ion-col size=\"12\">\n          <markdown [src]=\"path\"></markdown>\n\n          <app-docs-footer [path]=\"path\"></app-docs-footer>\n        \n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n\n</ion-content>"
 
 /***/ }),
 
@@ -103,6 +103,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var InstallationPage = /** @class */ (function () {
     function InstallationPage() {
+        this.path = 'assets/docs/installation/installation.md';
     }
     InstallationPage.prototype.ngOnInit = function () {
     };
