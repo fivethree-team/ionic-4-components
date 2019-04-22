@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-button>
         <fiv-icon #back="fivFeature" [fivFeature]="backContent" [featurePadding]="fp" [contentOffset]="co"
-          slot="icon-only" [name]="'arrow-back'">
+          slot="icon-only" [name]="'arrow-back'" (click)="navigateBack()">
         </fiv-icon>
       </ion-button>
     </ion-buttons>
