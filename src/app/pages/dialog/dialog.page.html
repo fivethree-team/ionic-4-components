@@ -3,48 +3,58 @@
 
 <ion-content padding>
 
-  <ion-list>
-    <ion-item>
-      <ion-label>Backdrop</ion-label>
-      <ion-toggle slot="end" [(ngModel)]="backdrop"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label>Vertical Alignment</ion-label>
-      <ion-select slot="end" [(ngModel)]="verticalAlign">
-        <ion-select-option value="top">top</ion-select-option>
-        <ion-select-option value="center">center</ion-select-option>
-        <ion-select-option value="bottom">bottom</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Horizontal Alignment</ion-label>
-      <ion-select slot="end" [(ngModel)]="horizontalAlign">
-        <ion-select-option value="left">left</ion-select-option>
-        <ion-select-option value="middle">middle</ion-select-option>
-        <ion-select-option value="right">right</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Shape</ion-label>
-      <ion-select slot="end" [(ngModel)]="shape">
-        <ion-select-option value="card">card</ion-select-option>
-        <ion-select-option value="fill">fill</ion-select-option>
-      </ion-select>
-    </ion-item>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
+        offsetMd="0" sizeSm="12" sizeMd="12">
+        <ion-list>
+          <ion-item>
+            <ion-label>Backdrop</ion-label>
+            <ion-toggle slot="end" [(ngModel)]="backdrop"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>Vertical Alignment</ion-label>
+            <ion-select slot="end" [(ngModel)]="verticalAlign">
+              <ion-select-option value="top">top</ion-select-option>
+              <ion-select-option value="center">center</ion-select-option>
+              <ion-select-option value="bottom">bottom</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Horizontal Alignment</ion-label>
+            <ion-select slot="end" [(ngModel)]="horizontalAlign">
+              <ion-select-option value="left">left</ion-select-option>
+              <ion-select-option value="middle">middle</ion-select-option>
+              <ion-select-option value="right">right</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Shape</ion-label>
+            <ion-select slot="end" [(ngModel)]="shape">
+              <ion-select-option value="card">card</ion-select-option>
+              <ion-select-option value="fill">fill</ion-select-option>
+            </ion-select>
+          </ion-item>
 
-    <ion-item>
-      <ion-label>Duration</ion-label>
-      <ion-input [(ngModel)]="duration" type="number"></ion-input>
-    </ion-item>
-    <ion-button (click)="dialog.open()">
-      Show Dialog
-    </ion-button>
+          <ion-item>
+            <ion-label>Duration</ion-label>
+            <ion-input [(ngModel)]="duration" type="number"></ion-input>
+          </ion-item>
+          <ion-button (click)="dialog.open()">
+            Show Dialog
+          </ion-button>
 
-  </ion-list>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
 
 </ion-content>
-<fiv-dialog (fivClose)="close()" (fivDurationOver)="dialog.close()" [inDuration]="inDuration" [outDuration]="outDuration" #dialog [duration]="duration" [shape]="shape"
-  [horizontalAlign]="horizontalAlign" [verticalAlign]="verticalAlign" [backdrop]="backdrop">
+<fiv-dialog (fivClose)="close()" (fivDurationOver)="dialog.close()" [inDuration]="inDuration"
+  [outDuration]="outDuration" #dialog [duration]="duration" [shape]="shape" [horizontalAlign]="horizontalAlign"
+  [verticalAlign]="verticalAlign" [backdrop]="backdrop">
 
   <ion-card-header>
     <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>

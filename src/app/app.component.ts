@@ -37,11 +37,6 @@ export class AppComponent {
       icon: 'resize',
     },
     {
-      title: 'Feature Discovery',
-      url: '/feature-discovery',
-      icon: 'resize',
-    },
-    {
       title: 'Icon',
       url: '/icon',
       icon: 'mail-unread',
@@ -84,10 +79,15 @@ export class AppComponent {
   ];
   public directives = [
     {
+      title: 'Feature Discovery',
+      url: '/feature-discovery',
+      icon: 'resize',
+    },
+    {
       title: 'Viewport',
       url: '/viewport',
       icon: 'share',
-    },
+    }
   ];
   public services = [
   ];

@@ -30,7 +30,7 @@ export class ImageService {
       data = context.getImageData(0, 0, width, height);
     } catch (e) {
       /* security error, img on diff domain */
-      
+
       return `rgb(${defaultRGB.r},${defaultRGB.g},${defaultRGB.b})`;
     }
 

@@ -1,3 +1,6 @@
+:host {
+}
+
 .viewer {
     width: 100vw;
     height: 100vh;
@@ -27,20 +30,16 @@
     position: absolute;
 }
 
-ion-toolbar {
+.gallery-toolbar {
+    width: 100%;
+    --fiv-gallery-toolbar-color: #fff;
     position: absolute;
-
-    ion-title,
-    ion-icon,
-    ion-button,
-    fiv-icon {
-        color: #fff;
-    }
+    color: var(--fiv-gallery-toolbar-color);
 }
 
-ion-toolbar.header {}
+.gallery-toolbar.header {}
 
-ion-toolbar.footer {
+.gallery-toolbar.footer {
     bottom: 0;
 }
 

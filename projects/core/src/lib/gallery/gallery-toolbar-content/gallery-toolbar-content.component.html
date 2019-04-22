@@ -1,0 +1,15 @@
+<ion-toolbar color="transparent">
+  <ion-buttons slot="start">
+    <ion-button (click)="gallery.close()">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button (click)="gallery.fullscreen()">
+      <fiv-icon slot="icon-only" [name]="gallery.inFullscreen ? 'contract': 'expand'"></fiv-icon>
+    </ion-button>
+    <ion-button (click)="gallery.zoom()">
+      <fiv-icon slot="icon-only" [name]="gallery.zoomedIn ? 'remove': 'add'"></fiv-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>

@@ -3,48 +3,61 @@
 
 <ion-content padding>
 
-  <ion-item>
-    <ion-label>Editing</ion-label>
-    <ion-checkbox slot="start" [(ngModel)]="editing"></ion-checkbox>
-  </ion-item>
-
-  <ion-card>
-    <ion-card-content>
-      <fiv-editable-label value="Not in a form" [editing]="editing"></fiv-editable-label>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-content>
-      <ion-item>
-        <fiv-editable-label value="Text with NgModel" [(ngModel)]="model" [editing]="editing"></fiv-editable-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>{{model}}</ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <ion-card>
-      <ion-toolbar>
-        <fiv-editable-label value="Title" type="title" formControlName="title" [editing]="editing"></fiv-editable-label>
-      </ion-toolbar>
-      <ion-card-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
+        offsetMd="0" sizeSm="12" sizeMd="12">
         <ion-item>
-          <fiv-editable-label value="Your Name" formControlName="name" [editing]="editing"></fiv-editable-label>
+          <ion-label>Editing</ion-label>
+          <ion-checkbox slot="start" [(ngModel)]="editing"></ion-checkbox>
         </ion-item>
-      </ion-card-content>
-    </ion-card>
-    <ion-button block color="primary" type="submit">
-      Login
-    </ion-button>
-  </form>
 
-  <ion-card>
-    <ion-card-content>
-      {{form.value | json}}
-    </ion-card-content>
-  </ion-card>
+        <ion-card>
+          <ion-card-content>
+            <fiv-editable-label value="Not in a form" [editing]="editing"></fiv-editable-label>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-content>
+            <ion-item>
+              <fiv-editable-label value="Text with NgModel" [(ngModel)]="model" [editing]="editing">
+              </fiv-editable-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>{{model}}</ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <ion-card>
+            <ion-toolbar>
+              <fiv-editable-label value="Title" type="title" formControlName="title" [editing]="editing">
+              </fiv-editable-label>
+            </ion-toolbar>
+            <ion-card-content>
+              <ion-item>
+                <fiv-editable-label value="Your Name" formControlName="name" [editing]="editing"></fiv-editable-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+          <ion-button block color="primary" type="submit">
+            Login
+          </ion-button>
+        </form>
+
+        <ion-card>
+          <ion-card-content>
+            {{form.value | json}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
 </ion-content>

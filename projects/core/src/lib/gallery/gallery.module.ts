@@ -7,11 +7,15 @@ import { FivOverlayModule } from '../overlay/overlay.module';
 import { FivIfModule } from '../if-platform/if-platform.module';
 import { FivPullModule } from '../pull/pull.module';
 import { FivGalleryImage } from './gallery-image/gallery-image.component';
+import { FivGalleryToolbar } from './gallery-toolbar/gallery-toolbar.component';
+import { FivGalleryToolbarContent } from './gallery-toolbar-content/gallery-toolbar-content.component';
 
 @NgModule({
     declarations: [
         FivGallery,
-        FivGalleryImage
+        FivGalleryImage,
+        FivGalleryToolbar,
+        FivGalleryToolbarContent
     ],
     imports: [
         CommonModule,
@@ -23,7 +27,9 @@ import { FivGalleryImage } from './gallery-image/gallery-image.component';
     ],
     exports: [
         FivGallery,
-        FivGalleryImage
+        FivGalleryImage,
+        FivGalleryToolbar,
+        FivGalleryToolbarContent
     ],
 })
 export class FivGalleryModule { }

@@ -1,10 +1,11 @@
+import { FivGalleryToolbar } from './gallery-toolbar/gallery-toolbar.component';
 import { FivGalleryImage, Position } from './gallery-image/gallery-image.component';
 import { ImageService } from './image.service';
 import { IonSlides, DomController, Platform } from '@ionic/angular';
 import { FivOverlay } from './../overlay/overlay.component';
 import {
   Component, OnInit, ViewChild, ElementRef, Renderer2,
-  ContentChildren, QueryList, AfterContentInit, forwardRef, HostListener, Inject, ChangeDetectorRef
+  ContentChildren, QueryList, AfterContentInit, forwardRef, HostListener, Inject, ChangeDetectorRef, TemplateRef, ViewChildren
 } from '@angular/core';
 import { style, animate, AnimationBuilder, trigger, transition } from '@angular/animations';
 import { Key } from './keycodes.enum';
@@ -55,6 +56,10 @@ export class FivGallery implements OnInit, AfterContentInit {
   @ViewChild('slider') slides: IonSlides;
 
   @ContentChildren(forwardRef(() => FivGalleryImage), { descendants: true }) images: QueryList<FivGalleryImage>;
+  @ContentChildren(FivGalleryToolbar) toolbars: QueryList<FivGalleryToolbar>;
+
+  topToolbar: TemplateRef<any>;
+  bottomToolbar: TemplateRef<any>;
 
   // properties for the slides
   activeIndex = 0;
@@ -91,10 +96,21 @@ export class FivGallery implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     this.updateImages();
+    this.updateToolbars();
   }
 
   updateImages() {
     this.images.forEach((img, i) => img.index = i);
+  }
+  updateToolbars() {
+    this.toolbars
+      .forEach((toolbar) => {
+        if (toolbar.position === 'top') {
+          this.topToolbar = toolbar.content;
+        } else {
+          this.bottomToolbar = toolbar.content;
+        }
+      });
   }
 
   handleKeyboardEvents(event: KeyboardEvent) {
@@ -140,7 +156,6 @@ export class FivGallery implements OnInit, AfterContentInit {
   closeFromPullDown(progress: number) {
     this.transformSlides(0);
     const position = this.getImagePosition(this.images.toArray()[this.activeIndex].image, progress);
-    
     this.initialImage.close(position);
     if (this.inFullscreen) {
       this.closeFullscreen();
@@ -280,7 +295,6 @@ export class FivGallery implements OnInit, AfterContentInit {
 
   handleSingleTap() {
     this.controlsVisible = !this.controlsVisible;
-    
     this.change.detectChanges();
   }
 
