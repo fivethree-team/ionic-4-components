@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +11,7 @@ export class FeatureDiscoveryPage implements OnInit {
   fp = 20;
   co = 20;
 
-  constructor() { }
+  constructor(private navController: NavController) { }
 
   ngOnInit() {
   }
@@ -18,5 +19,9 @@ export class FeatureDiscoveryPage implements OnInit {
 
   async log(s: string) {
     console.log(s);
+  }
+
+  navigateBack() {
+    this.navController.back();
   }
 }
