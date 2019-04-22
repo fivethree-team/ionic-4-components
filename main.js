@@ -8973,18 +8973,6 @@ var map = {
 		"common",
 		"pages-loading-loading-module"
 	],
-	"./pages/native-map-bottom-sheet/native-map-bottom-sheet.module": [
-		"./src/app/pages/native-map-bottom-sheet/native-map-bottom-sheet.module.ts",
-		"default~pages-native-map-bottom-sheet-native-map-bottom-sheet-module~pages-native-map-native-map-mod~7c087229",
-		"common",
-		"pages-native-map-bottom-sheet-native-map-bottom-sheet-module"
-	],
-	"./pages/native-map/native-map.module": [
-		"./src/app/pages/native-map/native-map.module.ts",
-		"default~pages-native-map-bottom-sheet-native-map-bottom-sheet-module~pages-native-map-native-map-mod~7c087229",
-		"common",
-		"pages-native-map-native-map-module"
-	],
 	"./pages/page-not-found/page-not-found.module": [
 		"./src/app/pages/page-not-found/page-not-found.module.ts",
 		"default~bottom-sheet-bottom-sheet-module~buttons-buttons-module~expandable-expandable-module~pages-a~f7152fba",
@@ -9078,11 +9066,6 @@ var routes = [
     { path: 'app-bar', loadChildren: './pages/app-bar/app-bar.module#AppBarPageModule' },
     { path: 'viewport', loadChildren: './pages/viewport/viewport.module#ViewportPageModule' },
     { path: 'icon', loadChildren: './pages/icon/icon.module#IconPageModule' },
-    { path: 'native-map', loadChildren: './pages/native-map/native-map.module#NativeMapPageModule' },
-    {
-        path: 'native-map-bottom-sheet',
-        loadChildren: './pages/native-map-bottom-sheet/native-map-bottom-sheet.module#NativeMapBottomSheetPageModule'
-    },
     { path: 'dialog', loadChildren: './pages/dialog/dialog.module#DialogPageModule' },
     { path: 'image', loadChildren: './pages/image/image.module#ImagePageModule' },
     { path: 'refresh', loadChildren: './pages/refresh/refresh.module#RefreshPageModule' },
@@ -13338,7 +13321,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/garygrossgarten/Dev/things/fivethree-lib/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/mj/Dev/fivethree/web-components/fivethree/src/main.ts */"./src/main.ts");
 
 
 /***/ })

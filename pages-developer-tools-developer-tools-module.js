@@ -65,7 +65,7 @@ var DeveloperToolsPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header [title]=\"'Developer Tools'\"></app-header>\n<ion-content padding>\n  Coming soon!\n</ion-content>\n"
+module.exports = "<app-header [title]=\"'Developer Tools'\"></app-header>\n<ion-content>\n  <div>\n    <ion-grid fixed>\n      <ion-row>\n        <ion-col size=\"12\">\n          <markdown [src]=\"'assets/docs/developer-tools/developer-tools.md'\"></markdown>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n\n</ion-content>\n"
 
 /***/ }),
 
