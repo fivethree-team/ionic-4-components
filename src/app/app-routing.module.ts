@@ -19,11 +19,6 @@ const routes: Routes = [
   { path: 'app-bar', loadChildren: './pages/app-bar/app-bar.module#AppBarPageModule' },
   { path: 'viewport', loadChildren: './pages/viewport/viewport.module#ViewportPageModule' },
   { path: 'icon', loadChildren: './pages/icon/icon.module#IconPageModule' },
-  { path: 'native-map', loadChildren: './pages/native-map/native-map.module#NativeMapPageModule' },
-  {
-    path: 'native-map-bottom-sheet',
-    loadChildren: './pages/native-map-bottom-sheet/native-map-bottom-sheet.module#NativeMapBottomSheetPageModule'
-  },
   { path: 'dialog', loadChildren: './pages/dialog/dialog.module#DialogPageModule' },
   { path: 'image', loadChildren: './pages/image/image.module#ImagePageModule' },
   { path: 'refresh', loadChildren: './pages/refresh/refresh.module#RefreshPageModule' },
