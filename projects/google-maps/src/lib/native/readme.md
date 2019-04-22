@@ -1,2 +1,0 @@
-# fiv-google-map-native
-
