@@ -1,17 +1,5 @@
 ```html
 <ion-tabs>
-  <ion-tab tab="tab1">
-    <ion-router-outlet name="tab1"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab tab="tab2">
-    <ion-router-outlet name="tab2"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab tab="tab3">
-    <ion-router-outlet name="tab3"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab tab="tab4">
-    <ion-router-outlet name="tab4"></ion-router-outlet>
-  </ion-tab>
 
   <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom" [titleLayout]="titleLayout"
     #bar [position]="position" [fabVisible]="true" [icon]="'md-camera'">
