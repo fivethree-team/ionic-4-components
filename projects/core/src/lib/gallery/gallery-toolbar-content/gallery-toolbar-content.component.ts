@@ -1,5 +1,5 @@
 import { FivGallery } from './../gallery.component';
-import { Component, OnInit, Host, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Host } from '@angular/core';
 
 @Component({
   selector: 'fiv-gallery-toolbar-content',
