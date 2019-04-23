@@ -60,6 +60,7 @@ export class FivDialog implements OnInit {
   @Input() verticalAlign: 'bottom' | 'center' | 'top' = 'top';
   @Input() horizontalAlign: 'left' | 'middle' | 'right' = 'middle';
   @Input() shape: 'fill' | 'card' = 'card';
+  @Input() priority = 20001;
 
   @Input() backdrop = true;
   @Input() backdropDismiss = true;
@@ -85,7 +86,7 @@ export class FivDialog implements OnInit {
   constructor(private platform: Platform) { }
 
   open() {
-    this.overlay.show();
+    this.overlay.show(this.priority);
 
     this.dialogState = this.verticalAlign;
     if (this.duration) {
