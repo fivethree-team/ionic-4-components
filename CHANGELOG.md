@@ -1,3 +1,13 @@
+<a name="0.8.3"></a>
+## [0.8.3](https://github.com/fivethree-team/component-library/compare/v0.8.2...v0.8.3) (2019-04-23)
+
+
+### Features
+
+* **dialog:** add priority input for multiple dialogs ([2497732](https://github.com/fivethree-team/component-library/commit/2497732))
+
+
+
 <a name="0.8.2"></a>
 ## [0.8.2](https://github.com/fivethree-team/component-library/compare/v0.8.1...v0.8.2) (2019-04-23)
 
