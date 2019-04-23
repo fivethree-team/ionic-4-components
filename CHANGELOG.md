@@ -1,3 +1,13 @@
+<a name="0.8.2"></a>
+## [0.8.2](https://github.com/fivethree-team/component-library/compare/v0.8.1...v0.8.2) (2019-04-23)
+
+
+### Features
+
+* **dialog:** add backdropDismiss option to fiv dialog (defaults to true) ([5753771](https://github.com/fivethree-team/component-library/commit/5753771))
+
+
+
 <a name="0.8.1"></a>
 ## [0.8.1](https://github.com/fivethree-team/component-library/compare/v0.8.0...v0.8.1) (2019-04-22)
 
