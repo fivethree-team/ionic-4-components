@@ -1,3 +1,13 @@
+<a name="0.8.4"></a>
+## [0.8.4](https://github.com/fivethree-team/component-library/compare/v0.8.3...v0.8.4) (2019-04-23)
+
+
+### Features
+
+* **icon:** additional small icon in top right corner ([e19a09b](https://github.com/fivethree-team/component-library/commit/e19a09b))
+
+
+
 <a name="0.8.3"></a>
 ## [0.8.3](https://github.com/fivethree-team/component-library/compare/v0.8.2...v0.8.3) (2019-04-23)
 
