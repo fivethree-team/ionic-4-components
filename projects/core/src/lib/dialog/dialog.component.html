@@ -1,6 +1,6 @@
 <fiv-overlay #overlay>
   <div *ngIf="backdrop" (@fade.done)="backdropAnimDone($event)"
-    [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}" (click)="close()" class="backdrop">
+    [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}" (click)="backdropClick()" class="backdrop">
   </div>
   <div #dialog class="dialog" [ngClass]="[verticalAlign, horizontalAlign, shape]">
     <ng-container>

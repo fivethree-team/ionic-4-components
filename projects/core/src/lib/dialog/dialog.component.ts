@@ -62,6 +62,7 @@ export class FivDialog implements OnInit {
   @Input() shape: 'fill' | 'card' = 'card';
 
   @Input() backdrop = true;
+  @Input() backdropDismiss = true;
   @Input() duration: number;
   // animation data
   @Input() inDuration = 160;
@@ -99,6 +100,12 @@ export class FivDialog implements OnInit {
   close() {
     this.dialogState = 'out';
     this.bar.stopProgressAnimation();
+  }
+
+  backdropClick() {
+    if (this.backdropDismiss) {
+      this.close();
+    }
   }
 
   animationDone(event) {
