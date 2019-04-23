@@ -47,6 +47,25 @@ ion-icon {
     }
 }
 
+.indicator-icon {
+    position: absolute;
+    min-width: var(--fiv-dot-width, 14px);
+    height: var(--fiv-dot-height, 14px);
+    background-color: var(--fiv-dot-color-background, #fff);
+    top: 0;
+    border-radius: 14px;
+    right: 0;
+    z-index: 13;
+
+    * {
+        position: absolute;
+        transform: translateX(-50%) translateY(-50%);
+        left: 50%;
+        top: 50%;
+        font-size: 1em;
+    }
+}
+
 .indicator-background {
     position: absolute;
     width: var(--fiv-dot-width, 18px);

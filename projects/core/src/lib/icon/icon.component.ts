@@ -43,8 +43,10 @@ export class FivIcon implements OnInit {
   @Input() color: string;
 
   @Input() slot: string;
+  @Input() smallIcon: string;
   @Input() off = false;
   @Output() transitionDone = new EventEmitter<string>();
+
 
   indicatorState: 'normal' | 'scale' = 'scale';
   indicatorValueState: 'normal' | 'scale' = 'scale';
