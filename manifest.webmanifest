@@ -5,7 +5,7 @@
   "background_color": "#222428",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "https://fivethree-team.github.io/ionic-4-components/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
