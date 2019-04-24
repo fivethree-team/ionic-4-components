@@ -1,11 +1,11 @@
 {
-  "name": "app",
-  "short_name": "app",
-  "theme_color": "#222428",
-  "background_color": "#222428",
+  "name": "Fivethree Ionic 4 Components",
+  "short_name": "Fivethree",
+  "theme_color": "#424242",
+  "background_color": "#424242",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "https://fivethree-team.github.io/ionic-4-components/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
