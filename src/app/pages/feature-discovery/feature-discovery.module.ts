@@ -1,3 +1,4 @@
+import { FivFeatureDiscoveryModule, FivIconModule } from '@fivethree/core';
 import { FeatureDiscoveryPage } from './feature-discovery.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { NgModule } from '@angular/core';
@@ -21,8 +22,10 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    ComponentsModule
+    ComponentsModule,
+    FivFeatureDiscoveryModule,
+    FivIconModule
   ],
   declarations: [FeatureDiscoveryPage]
 })
-export class FeatureDirectoryPageModule {}
+export class FeatureDirectoryPageModule { }

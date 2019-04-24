@@ -6,17 +6,18 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { AppBarPage } from './app-bar.page';
-import { FivethreeCoreModule } from '@fivethree/core';
 import { TabsPageRoutingModule } from './tabs.router.module';
+import { FivAppBarModule, FivCenterModule } from '@fivethree/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FivethreeCoreModule,
     TabsPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    FivAppBarModule,
+    FivCenterModule
   ],
   declarations: [AppBarPage]
 })

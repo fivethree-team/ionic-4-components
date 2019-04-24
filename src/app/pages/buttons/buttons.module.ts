@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ButtonsPage } from './buttons.page';
-import { FivethreeCoreModule } from '@fivethree/core';
+import { FivButtonsModule } from '@fivethree/core';
 
 const routes: Routes = [
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    FivethreeCoreModule,
+    FivButtonsModule,
     ComponentsModule
   ],
   declarations: [ButtonsPage]

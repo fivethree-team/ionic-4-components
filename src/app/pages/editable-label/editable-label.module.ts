@@ -1,3 +1,4 @@
+import { FivEditableLabelModule } from './../../../../projects/core/src/lib/editable-label/editable-label.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +23,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    ComponentsModule
+    ComponentsModule,
+    FivEditableLabelModule
   ],
   declarations: [EditableLabelPage]
 })

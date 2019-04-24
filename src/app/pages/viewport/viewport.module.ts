@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ViewportPage } from './viewport.page';
-import { FivethreeCoreModule } from '@fivethree/core';
+import { FivViewportModule, FivCenterModule } from '@fivethree/core';
 
 const routes: Routes = [
   {
@@ -21,8 +21,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    FivethreeCoreModule
+    FivViewportModule,
+    FivCenterModule
   ],
   declarations: [ViewportPage]
 })
-export class ViewportPageModule {}
+export class ViewportPageModule { }

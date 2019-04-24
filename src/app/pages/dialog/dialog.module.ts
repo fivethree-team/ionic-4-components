@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { DialogPage } from './dialog.page';
-import { FivethreeCoreModule } from '@fivethree/core';
+import { FivDialogModule } from '@fivethree/core';
 
 const routes: Routes = [
   {
@@ -21,7 +21,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    FivethreeCoreModule,
+    FivDialogModule,
     RouterModule.forChild(routes),
     ComponentsModule
   ],

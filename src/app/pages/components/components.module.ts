@@ -21,7 +21,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    FivethreeCoreModule,
     RouterModule.forChild(routes),
     ComponentsModule
   ],

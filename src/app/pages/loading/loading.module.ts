@@ -1,5 +1,5 @@
 import { ComponentsModule } from './../../components/components.module';
-import { FivethreeCoreModule } from '@fivethree/core';
+import { FivLoadingProgressBarModule, FivLoadingFabModule, FivLoadingSpinnerModule, FivCenterModule } from '@fivethree/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -21,10 +21,13 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    FivethreeCoreModule,
     RouterModule.forChild(routes),
-    ComponentsModule
+    ComponentsModule,
+    FivLoadingProgressBarModule,
+    FivLoadingFabModule,
+    FivLoadingSpinnerModule,
+    FivCenterModule
   ],
   declarations: [LoadingPage]
 })
-export class LoadingPageModule {}
+export class LoadingPageModule { }

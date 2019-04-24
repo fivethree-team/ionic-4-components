@@ -1,3 +1,5 @@
+import { FivBackButtonModule } from './../../../projects/core/src/lib/back-button/back-button.module';
+import { FivIconModule } from './../../../projects/core/src/lib/icon/icon.module';
 import { ExampleComponent } from './example/example.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -26,14 +28,14 @@ const components = [
     IonicModule,
     FormsModule,
     MarkdownModule.forChild(),
-    FivethreeCoreModule,
     MatTooltipModule,
     MatTabsModule,
     LottieAnimationViewModule,
+    FivIconModule,
+    FivBackButtonModule
   ],
   exports: [
     ...components,
-    FivethreeCoreModule,
     LottieAnimationViewModule,
     MarkdownModule
   ]
