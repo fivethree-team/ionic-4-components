@@ -9,7 +9,7 @@ import { Component, OnInit, Host } from '@angular/core';
 export class FivGalleryToolbarContent implements OnInit {
 
   constructor(@Host() public gallery: FivGallery) {
-    console.log('TOOLBAR CONTENT', gallery);
+    
   }
 
   ngOnInit() { }

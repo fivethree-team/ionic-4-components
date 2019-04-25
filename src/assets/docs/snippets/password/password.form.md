@@ -52,7 +52,7 @@ export class PasswordExample implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loginForm.value);
+    
   }
 
   get email(): AbstractControl {

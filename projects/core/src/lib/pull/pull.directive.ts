@@ -1,7 +1,7 @@
 import { Directive, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { IonContent, Platform } from '@ionic/angular';
 import { fromEvent, merge } from 'rxjs';
-import { filter, map, skipWhile, takeUntil, takeLast,tap } from 'rxjs/operators';
+import { filter, map, skipWhile, takeUntil, takeLast, tap } from 'rxjs/operators';
 
 @Directive({
   selector: '[fivPull]'
@@ -132,7 +132,6 @@ export class FivPull implements OnInit {
         if (offset < 0 || offset > this.maxPullHeight) {
           return;
         }
-        console.log('pull up progress',offset / this.maxPullHeight)
         this.fivPull.emit(offset / this.maxPullHeight);
       });
 

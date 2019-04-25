@@ -48,7 +48,7 @@ export class FivFeature {
 
   show() {
     const bounds = this.icon ? this.getBounds(this.host.nativeElement.parentElement) : this.getBounds(this.host.nativeElement);
-    console.log('content', this.fivFeature);
+    
     this.overlayRef = this.overlay.createOverlay(FivFeatureDiscovery, this.fivFeature);
     const featureOverlay = this.overlayRef.instance;
     featureOverlay.height = this.diameter;

@@ -18,7 +18,7 @@ export class FeatureDiscoveryPage implements OnInit {
 
 
   async log(s: string) {
-    console.log(s);
+    
   }
 
   navigateBack() {
