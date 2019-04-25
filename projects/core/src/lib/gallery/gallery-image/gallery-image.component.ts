@@ -22,7 +22,7 @@ import { ImageService } from '../image.service';
           opacity: 1,
           borderRadius: '*'
         }),
-        animate('160ms',
+        animate('200ms',
           style({
             position: 'absolute',
             top: '50%',
@@ -45,7 +45,7 @@ import { ImageService } from '../image.service';
           opacity: 1,
           borderRadius: '0'
         }),
-        animate('175ms',
+        animate('275ms',
           style({
             position: 'absolute',
             top: '{{top}}px',

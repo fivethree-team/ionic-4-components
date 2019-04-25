@@ -2,6 +2,9 @@
     display: block;
     --max-height: 100%;
     --border-radius: 0px;
+    min-height: var(--max-height);
+    --background: var(--ion-color-light);
+    background: var(--background);
 }
 
 .backdrop {

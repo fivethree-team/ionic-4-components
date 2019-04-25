@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ImagePage } from './image.page';
-import { FivGalleryModule } from '@fivethree/core';
+import { FivGalleryModule, FivLoadingSpinnerModule, FivCenterModule } from '@fivethree/core';
 
 const routes: Routes = [
   {
@@ -23,7 +23,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     ComponentsModule,
-    FivGalleryModule
+    FivGalleryModule,
+    FivLoadingSpinnerModule,
+    FivCenterModule
   ],
   declarations: [ImagePage]
 })

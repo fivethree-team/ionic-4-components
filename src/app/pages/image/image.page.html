@@ -13,7 +13,11 @@
           <fiv-gallery-image [src]="'assets/images/photo_2.jpeg'"></fiv-gallery-image>
         </ion-col>
         <ion-col size="6">
-          <fiv-gallery-image [src]="'assets/images/photo_1.jpeg'"></fiv-gallery-image>
+          <fiv-gallery-image>
+            <div [fivCenter]>
+                <fiv-loading-spinner [circleRadius]="8" [diameter]="20" [strokeWidth]="2"></fiv-loading-spinner>
+            </div>
+          </fiv-gallery-image>
         </ion-col>
       </ion-row>
       <ion-row class="large">
@@ -43,12 +47,12 @@
       </ion-row>
     </ion-grid>
 
-    <fiv-gallery-toolbar [position]="'bottom'">
+    <!-- <fiv-gallery-toolbar [position]="'bottom'">
       <ion-toolbar color="transparent">
         <ion-title>Custom Toolbar</ion-title>
 
       </ion-toolbar>
-    </fiv-gallery-toolbar>
+    </fiv-gallery-toolbar> -->
 
   </fiv-gallery>
 </ion-content>

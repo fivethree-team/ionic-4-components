@@ -1,4 +1,8 @@
-<img #thumbnail [ngClass]="{'hidden': overlay.open}" class="thumbnail" [src]="src" (click)="open()">
+<ng-container *ngIf="!overlay.open && !src">
+  <ng-content></ng-content>
+</ng-container>
+
+<img #thumbnail [ngClass]="{'hidden': overlay.open || !src}" class="thumbnail" [src]="src" (click)="open()">
 <fiv-overlay #overlay>
 
   <div [style.backgroundColor]="backdropColor" *ngIf="overlay.open && viewerState !== 'out'" [@fade] class="backdrop">
