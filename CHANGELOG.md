@@ -1,3 +1,19 @@
+<a name="0.8.5"></a>
+## [0.8.5](https://github.com/fivethree-team/component-library/compare/v0.8.4...v0.8.5) (2019-04-25)
+
+
+### Bug Fixes
+
+* **deps:** update angular monorepo to v7.2.14 ([27ab235](https://github.com/fivethree-team/component-library/commit/27ab235))
+
+
+### Features
+
+* **dialog:** add pull to close functionality ([40b5588](https://github.com/fivethree-team/component-library/commit/40b5588))
+* **gallery:** improve animation for image,  add placeholder content ([11cc991](https://github.com/fivethree-team/component-library/commit/11cc991))
+
+
+
 <a name="0.8.4"></a>
 ## [0.8.4](https://github.com/fivethree-team/component-library/compare/v0.8.3...v0.8.4) (2019-04-23)
 
