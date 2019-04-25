@@ -1,8 +1,11 @@
 <fiv-overlay #overlay>
-  <div *ngIf="backdrop" (@fade.done)="backdropAnimDone($event)"
+  <ion-content no-bounce [direction]="verticalAlign === 'top' ? 'up' : 'down'" fivPull [enabled]="pullEnabled" [maxPullHeight]="168" [minPullHeight]="120" (fivPull)="transformDialog($event)"
+  (fivRefresh)="onRefresh()" (fivCancel)="fivCancel()"  *ngIf="backdrop" (@fade.done)="backdropAnimDone($event)"
     [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}" (click)="backdropClick()" class="backdrop">
-  </div>
-  <div #dialog class="dialog" [ngClass]="[verticalAlign, horizontalAlign, shape]">
+</ion-content>
+  <div #dialog [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}"
+  [@slide]="{value: dialogState, params: {top: outPosition, inDuration: inDuration + 'ms',outDuration: outDuration + 'ms', toPosition: toPosition, translate: translate}}"
+  (@slide.done)="animationDone($event)" class="dialog" [ngClass]="[verticalAlign, horizontalAlign, shape]">
     <ng-container>
       <ng-container *ngTemplateOutlet="card"></ng-container>
     </ng-container>
@@ -11,9 +14,7 @@
 </fiv-overlay>
 
 <ng-template #card>
-  <ion-card [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}"
-    [@slide]="{value: dialogState, params: {top: outPosition, inDuration: inDuration + 'ms',outDuration: outDuration + 'ms', toPosition: toPosition, translate: translate}}"
-    (@slide.done)="animationDone($event)">
+  <ion-card>
     <fiv-loading-progress-bar [verticalAlign]="verticalAlign === 'top' ? 'bottom' : 'top'"
       (fivDoneShrinking)="doneShrinking()" #bar></fiv-loading-progress-bar>
     <ng-content></ng-content>

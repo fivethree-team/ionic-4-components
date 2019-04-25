@@ -11,6 +11,7 @@ export class DialogPage implements OnInit {
   @ViewChild('dialog') dialog: FivDialog;
 
   backdrop = true;
+  pull = true;
   verticalAlign = 'top';
   horizontalAlign = 'left';
   shape = 'card';

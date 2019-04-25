@@ -62,7 +62,7 @@ import { ImageService } from '../image.service';
     , trigger('fade', [
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('125ms',
+        animate('180ms',
           keyframes([
             style({ opacity: 0, offset: 0 }),
             style({ opacity: 0.3, offset: 0.75 }),
@@ -71,7 +71,7 @@ import { ImageService } from '../image.service';
       ]),
       transition(':leave', [
         style({ opacity: 0.97 }),
-        animate('150ms',
+        animate('180ms',
           keyframes([
             style({ opacity: 0.97, offset: 0 }),
             style({ opacity: 0.6, offset: 0.8 }),

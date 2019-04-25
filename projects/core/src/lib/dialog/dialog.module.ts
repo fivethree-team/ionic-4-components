@@ -1,3 +1,4 @@
+import { FivPullModule } from './../pull/pull.module';
 import { FivDialogService } from './dialog.service';
 import { FivOverlayModule } from './../overlay/overlay.module';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,8 @@ import { FivLoadingProgressBarModule } from '../loading-progress-bar/loading-pro
         CommonModule,
         FivLoadingProgressBarModule,
         FivOverlayModule,
-        IonicModule
+        IonicModule,
+        FivPullModule
     ],
     exports: [FivDialog],
     entryComponents: [FivDialog],

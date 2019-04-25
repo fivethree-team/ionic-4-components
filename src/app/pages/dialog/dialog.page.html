@@ -13,6 +13,10 @@
             <ion-toggle slot="end" [(ngModel)]="backdrop"></ion-toggle>
           </ion-item>
           <ion-item>
+            <ion-label>Pull Enabled</ion-label>
+            <ion-toggle slot="end" [(ngModel)]="pull"></ion-toggle>
+          </ion-item>
+          <ion-item>
             <ion-label>Vertical Alignment</ion-label>
             <ion-select slot="end" [(ngModel)]="verticalAlign">
               <ion-select-option value="top">top</ion-select-option>
@@ -52,7 +56,7 @@
 
 
 </ion-content>
-<fiv-dialog (fivClose)="close()" (fivDurationOver)="dialog.close()" [inDuration]="inDuration"
+<fiv-dialog (fivClose)="close()" [pullEnabled]="pull" (fivDurationOver)="dialog.close()" [inDuration]="inDuration"
   [outDuration]="outDuration" #dialog [duration]="duration" [shape]="shape" [horizontalAlign]="horizontalAlign"
   [verticalAlign]="verticalAlign" [backdrop]="backdrop">
 

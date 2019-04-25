@@ -1,7 +1,7 @@
 import { Directive, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
-import { IonContent } from '@ionic/angular';
+import { IonContent, Platform } from '@ionic/angular';
 import { fromEvent, merge } from 'rxjs';
-import { filter, map, skipWhile, takeUntil, takeLast } from 'rxjs/operators';
+import { filter, map, skipWhile, takeUntil, takeLast,tap } from 'rxjs/operators';
 
 @Directive({
   selector: '[fivPull]'
@@ -12,6 +12,7 @@ export class FivPull implements OnInit {
   @Input() maxPullHeight = 168;
   @Input() enabled = true;
   @Input() enableScroll = false;
+  @Input() direction: 'up' | 'down' = 'down';
 
   @Output() fivRefresh = new EventEmitter<any>();
   @Output() fivCancel = new EventEmitter<any>();
@@ -19,7 +20,9 @@ export class FivPull implements OnInit {
 
   scrollY: HTMLElement;
 
-  constructor(private element: ElementRef, private content: IonContent) {
+  constructor(private element: ElementRef,
+    private platform: Platform,
+    private content: IonContent) {
   }
 
   ngOnInit(): void {
@@ -42,7 +45,13 @@ export class FivPull implements OnInit {
 
     const dragAtTop = touchstart$
       .pipe(
-        filter(e => this.scrollY.scrollTop === 0 && this.enabled || this.enableScroll)
+        filter(e => (this.scrollY.scrollTop === 0 || this.enableScroll) && this.direction === 'down' && this.enabled)
+      );
+
+    const dragAtBottom = touchstart$
+      .pipe(
+        filter(e => (this.scrollY.scrollTop === this.scrollY.clientHeight - this.platform.height() || this.enableScroll)
+          && this.direction === 'up' && this.enabled)
       );
 
     const dragTopDown = dragAtTop
@@ -75,8 +84,55 @@ export class FivPull implements OnInit {
           return;
         }
         if (offset <= this.maxPullHeight) {
-
         }
+        this.fivPull.emit(offset / this.maxPullHeight);
+      });
+
+      drags
+        .pipe(
+          takeLast(1)
+        )
+        .subscribe(drag => {
+          const offset = drag.offset / 2;
+          const refresh = offset >= this.minPullHeight;
+          if (refresh) {
+            this.fivRefresh.emit(offset / this.maxPullHeight);
+          } else {
+            this.fivCancel.emit(offset / this.maxPullHeight);
+          }
+        });
+    });
+
+    const dragBottomUp = dragAtBottom
+      .pipe(
+        map((start: any) => {
+          const startY = start.touches[0].pageY;
+          return touchmove$
+            .pipe(
+              map((move: any) => {
+                const currentY = move.touches[0].pageY;
+                return {
+                  startEvent: start,
+                  moveEvent: move,
+                  startY: startY,
+                  currentY: currentY,
+                  offset: startY - currentY
+                };
+              }),
+              skipWhile(drag => drag.offset < 0),
+              takeUntil(end$)
+            );
+        }));
+
+
+    dragBottomUp.forEach(drags => {
+      drags.forEach(drag => {
+        drag.moveEvent.preventDefault();
+        const offset = drag.offset / 2;
+        if (offset < 0 || offset > this.maxPullHeight) {
+          return;
+        }
+        console.log('pull up progress',offset / this.maxPullHeight)
         this.fivPull.emit(offset / this.maxPullHeight);
       });
 
