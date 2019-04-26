@@ -33,11 +33,11 @@ import { animate, style, transition, trigger, state, AnimationBuilder, Animation
     trigger('hintAnim', [
       transition('void => *', [
         style({ transform: 'translateY(0px) translateX(-50%)' }),
-        animate('150ms ease-in', style({ opacity: 1, transform: 'translateY(112px) translateX(-50%)' }))
+        animate('150ms ease-in', style({ opacity: 1, transform: 'translateY(calc(112px + env(safe-area-inset-top))) translateX(-50%)' }))
       ]),
       transition('* => void', [
-        style({ width: '112px', opacity: 1, transform: 'translateY(112px) translateX(-50%)' }),
-        animate('125ms ease-out', style({ width: '40px', transform: 'translateY(112px) translateX(-50%)' }))
+        style({ width: '112px', opacity: 1, transform: 'translateY(calc(112px + env(safe-area-inset-top))) translateX(-50%)' }),
+        animate('125ms ease-out', style({ width: '40px', transform: 'translateY(calc(112px + env(safe-area-inset-top))) translateX(-50%)' }))
       ]),
     ]
     ),

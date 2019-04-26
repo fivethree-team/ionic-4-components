@@ -3,10 +3,10 @@
 <ion-chip class="gg-hint-wrapper" *ngIf="hintVisible" [@hintAnim] (@hintAnim.done)="postHint($event)" (click)="onHintClicked()"
   #hint>
   <ion-icon class="icon" name="md-arrow-up"></ion-icon>
-  <ion-label class="text">{{hintText}}</ion-label>
+  <ion-label *ngIf="hintVisible" class="text">{{hintText}}</ion-label>
 </ion-chip>
 
-<ion-content no-bounce fivPull [maxPullHeight]="maxPullHeight" [minPullHeight]="minPullHeight" (fivPull)="fivPull($event)"
+<ion-content [forceOverscroll]="false" fivPull [maxPullHeight]="maxPullHeight" [minPullHeight]="minPullHeight" (fivPull)="fivPull($event)"
   (fivRefresh)="onRefresh()" (fivCancel)="fivCancel()" [enabled]="!refreshing && !hintVisible">
 
   <ng-content></ng-content>

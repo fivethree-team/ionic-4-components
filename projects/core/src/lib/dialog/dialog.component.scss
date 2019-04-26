@@ -20,6 +20,9 @@ ion-grid {
 
 .dialog.fill {
 
+    background: var(--ion-item-background);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+
     .sc-ion-card-ios-h,
     .sc-ion-card-md-h {
         margin-left: unset;
@@ -28,6 +31,7 @@ ion-grid {
         margin-inline-start: 0px;
         -webkit-margin-end: 0px;
         margin-inline-end: 0px;
+        box-shadow: none;
     }
 
     .sc-ion-card-ios-h,
@@ -42,6 +46,8 @@ ion-grid {
         .sc-ion-card-md-h {
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
         }
     }
 
@@ -49,6 +55,8 @@ ion-grid {
 
         .sc-ion-card-ios-h,
         .sc-ion-card-md-h {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
         }
@@ -56,22 +64,26 @@ ion-grid {
 }
 
 .dialog.top.left {
+    padding-top: env(safe-area-inset-top);
     top: 0;
     left: 0;
 }
 
 .dialog.top.right {
+    padding-top: env(safe-area-inset-top);
     top: 0;
     right: 0;
 }
 
 .dialog.top.middle {
+    padding-top: env(safe-area-inset-top);
     top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .dialog.center.middle {
+    padding-top: env(safe-area-inset-top);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -79,6 +91,7 @@ ion-grid {
 
 .dialog.center.left {
     top: 50%;
+    padding-top: env(safe-area-inset-top);
     left: 0;
     transform: translateY(-50%);
 }
@@ -86,23 +99,27 @@ ion-grid {
 .dialog.center.right {
     right: 0;
     top: 50%;
+    padding-top: env(safe-area-inset-top);
     transform: translateY(-50%);
 }
 
 .dialog.bottom.left {
     bottom: 0;
     left: 0;
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .dialog.bottom.right {
     bottom: 0;
     right: 0;
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .dialog.bottom.middle {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .backdrop {

@@ -3,6 +3,7 @@ $size: 40px !default;
     position: absolute;
     width: $size;
     height: $size;
+    top: env(safe-area-inset-top);
     left: calc(50% - 20px);
     z-index: 9;
 }

@@ -37,10 +37,14 @@
     color: var(--fiv-gallery-toolbar-color);
 }
 
-.gallery-toolbar.header {}
+.gallery-toolbar.header {
+    top: env(safe-area-inset-top);
+
+}
 
 .gallery-toolbar.footer {
-    bottom: 0;
+    bottom: env(safe-area-inset-bottom);
+    
 }
 
 

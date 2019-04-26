@@ -8,8 +8,8 @@
     right: 0;
 }
 
-ion-content{
-    --padding-top: var(--fiv-padding-top, 0px);
+ion-content {
+    --padding-top: calc(env(safe-area-inset-top) + var(--fiv-padding-top, 0px));
 }
 
 .icon {
@@ -29,7 +29,7 @@ ion-content{
     z-index: 8;
     opacity: 1;
     left: 50%;
-    transform: translateY(112px) translateX(-50%);
+    transform: translateY(calc(112px + env(safe-area-inset-top))) translateX(-50%);
     height: 40px;
     padding-left: 8px;
     padding-right: 8px;
