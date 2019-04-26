@@ -1,3 +1,13 @@
+<a name="0.8.6"></a>
+## [0.8.6](https://github.com/fivethree-team/component-library/compare/v0.8.5...v0.8.6) (2019-04-26)
+
+
+### Bug Fixes
+
+* **ios:** add safe areas where needed ([74e9481](https://github.com/fivethree-team/component-library/commit/74e9481))
+
+
+
 <a name="0.8.5"></a>
 ## [0.8.5](https://github.com/fivethree-team/component-library/compare/v0.8.4...v0.8.5) (2019-04-25)
 
