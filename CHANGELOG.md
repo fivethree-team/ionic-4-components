@@ -1,3 +1,13 @@
+<a name="0.8.7"></a>
+## [0.8.7](https://github.com/fivethree-team/component-library/compare/v0.8.6...v0.8.7) (2019-04-28)
+
+
+### Features
+
+* **gallery:** input pagerVisible ([3347c17](https://github.com/fivethree-team/component-library/commit/3347c17))
+
+
+
 <a name="0.8.6"></a>
 ## [0.8.6](https://github.com/fivethree-team/component-library/compare/v0.8.5...v0.8.6) (2019-04-26)
 
