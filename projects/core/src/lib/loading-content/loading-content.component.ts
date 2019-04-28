@@ -37,7 +37,8 @@ import { animate, style, transition, trigger, state, AnimationBuilder, Animation
       ]),
       transition('* => void', [
         style({ width: '112px', opacity: 1, transform: 'translateY(calc(112px + env(safe-area-inset-top))) translateX(-50%)' }),
-        animate('125ms ease-out', style({ width: '40px', transform: 'translateY(calc(112px + env(safe-area-inset-top))) translateX(-50%)' }))
+        animate('125ms ease-out',
+          style({ width: '40px', transform: 'translateY(calc(112px + env(safe-area-inset-top))) translateX(-50%)' }))
       ]),
     ]
     ),

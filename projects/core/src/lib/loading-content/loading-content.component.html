@@ -8,6 +8,8 @@
 
 <ion-content [forceOverscroll]="false" fivPull [maxPullHeight]="maxPullHeight" [minPullHeight]="minPullHeight" (fivPull)="fivPull($event)"
   (fivRefresh)="onRefresh()" (fivCancel)="fivCancel()" [enabled]="!refreshing && !hintVisible">
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
 
-  <ng-content></ng-content>
 </ion-content>

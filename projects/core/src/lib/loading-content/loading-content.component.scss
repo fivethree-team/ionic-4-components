@@ -12,6 +12,10 @@ ion-content {
     --padding-top: calc(env(safe-area-inset-top) + var(--fiv-padding-top, 0px));
 }
 
+.content{
+    transform: translate3d(0, 0, 0);
+}
+
 .icon {
     height: 20px;
     width: 20px;

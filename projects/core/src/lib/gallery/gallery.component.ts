@@ -5,7 +5,7 @@ import { IonSlides, DomController, Platform } from '@ionic/angular';
 import { FivOverlay } from './../overlay/overlay.component';
 import {
   Component, OnInit, ViewChild, ElementRef, Renderer2,
-  ContentChildren, QueryList, AfterContentInit, forwardRef, HostListener, Inject, ChangeDetectorRef, TemplateRef, ViewChildren
+  ContentChildren, QueryList, AfterContentInit, forwardRef, HostListener, Inject, ChangeDetectorRef, TemplateRef, ViewChildren, Input
 } from '@angular/core';
 import { style, animate, AnimationBuilder, trigger, transition } from '@angular/animations';
 import { Key } from './keycodes.enum';
@@ -71,6 +71,7 @@ export class FivGallery implements OnInit, AfterContentInit {
   inFullscreen: boolean;
   zoomedIn: boolean;
   controlsVisible = true;
+  @Input() pagerVisible = true;
   private slidesLoaded;
 
   @HostListener('window:keyup', ['$event'])

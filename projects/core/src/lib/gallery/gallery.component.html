@@ -7,7 +7,7 @@
   </div>
 
   <ng-container *fivIf="['desktop']">
-    <ion-fab [@scale] *ngIf="controlsVisible && images?.length > 0" vertical="center" horizontal="start" slot="fixed">
+    <ion-fab [@scale] *ngIf="controlsVisible && images?.length > 0 && pagerVisible" vertical="center" horizontal="start" slot="fixed">
       <ion-fab-button color="light" (click)="prev()" [disabled]="activeIndex === 0">
         <ion-icon name="arrow-back"></ion-icon>
       </ion-fab-button>
@@ -28,7 +28,7 @@
   </div>
 
   <ng-container *fivIf="['desktop']">
-    <ion-fab [@scale] *ngIf="controlsVisible" vertical="center" horizontal="end" slot="fixed">
+    <ion-fab [@scale] *ngIf="controlsVisible && pagerVisible" vertical="center" horizontal="end" slot="fixed">
       <ion-fab-button color="light" (click)="next()" [disabled]="activeIndex === images.length - 1">
         <ion-icon name="arrow-forward"></ion-icon>
       </ion-fab-button>
