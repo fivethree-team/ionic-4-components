@@ -14,7 +14,7 @@ import { IonInput } from '@ionic/angular';
       transition('normal => small', [
         animate('95ms ease-in')
       ]),
-      state('small', style({ width: '120px' })),
+      state('small', style({ width: '{{width}}px' }), { params: { width: 120 } }),
       state('normal', style({ width: '100%' }))
     ]),
     trigger('titleAnim', [
@@ -33,6 +33,7 @@ export class FivSearchbar implements OnInit {
   @Input() title: string;
   @Input() placeholder: string;
   @Input() color: string;
+  @Input() smallWidth = 120;
   _small = false;
   @Input() set small(s: boolean) {
     if (s && !this._small) {
@@ -58,16 +59,16 @@ export class FivSearchbar implements OnInit {
   }
 
   shrink() {
-    
+
     this.state = 'small';
   }
   grow() {
-    
+
     this.state = 'normal';
   }
 
   openSearchbar() {
-    
+
     if (this._small) {
       this.state = 'normal';
     }

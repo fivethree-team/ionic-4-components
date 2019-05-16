@@ -1,4 +1,4 @@
-<fiv-searchbar #search title="Searchbar" placeholder="Search ...." (fivInputChange)="onSearchInputChanged($event)"
+<fiv-searchbar [smallWidth]="300" #search title="Searchbar" placeholder="Search ...." (fivInputChange)="onSearchInputChanged($event)"
   (fivClose)="closeSearch();" [small]="small">
   <!-- <ion-menu-button start menu="menuId"></ion-menu-button> -->
   <ion-back-button start defaultHref="home"></ion-back-button>
