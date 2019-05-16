@@ -1,3 +1,19 @@
+<a name="0.8.9"></a>
+## [0.8.9](https://github.com/fivethree-team/component-library/compare/v0.8.6...v0.8.9) (2019-05-16)
+
+
+### Bug Fixes
+
+* **searchbar:** added input for width of small searchbar ([334654b](https://github.com/fivethree-team/component-library/commit/334654b))
+* **searchbar:** fix width for small searchbar to allow a single start button ([c1d8cab](https://github.com/fivethree-team/component-library/commit/c1d8cab))
+
+
+### Features
+
+* **gallery:** input pagerVisible ([3347c17](https://github.com/fivethree-team/component-library/commit/3347c17))
+
+
+
 <a name="0.8.8"></a>
 ## [0.8.8](https://github.com/fivethree-team/component-library/compare/v0.8.6...v0.8.8) (2019-05-16)
 
