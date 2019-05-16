@@ -1,7 +1,8 @@
-  <fiv-searchbar #search title="Searchbar" placeholder="Search ...." (fivInputChange)="onSearchInputChanged($event)"
-    (fivClose)="closeSearch();" [small]="small">
-    <ion-menu-button start menu="menuId"></ion-menu-button>
-  </fiv-searchbar>
+<fiv-searchbar #search title="Searchbar" placeholder="Search ...." (fivInputChange)="onSearchInputChanged($event)"
+  (fivClose)="closeSearch();" [small]="small">
+  <!-- <ion-menu-button start menu="menuId"></ion-menu-button> -->
+  <ion-back-button start defaultHref="home"></ion-back-button>
+</fiv-searchbar>
 
 <ion-content padding no-bounce>
 

@@ -14,7 +14,7 @@ import { IonInput } from '@ionic/angular';
       transition('normal => small', [
         animate('95ms ease-in')
       ]),
-      state('small', style({ width: '92px' })),
+      state('small', style({ width: '120px' })),
       state('normal', style({ width: '100%' }))
     ]),
     trigger('titleAnim', [
