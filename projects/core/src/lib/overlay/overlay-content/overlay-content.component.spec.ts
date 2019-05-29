@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OverlayContentPage } from './overlay-content.page';
+import { FivOverlayContent } from './overlay-content.component';
 
-describe('OverlayContentPage', () => {
-  let component: OverlayContentPage;
-  let fixture: ComponentFixture<OverlayContentPage>;
+describe('FivOverlayContent', () => {
+  let component: FivOverlayContent;
+  let fixture: ComponentFixture<FivOverlayContent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OverlayContentPage ],
+      declarations: [ FivOverlayContent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OverlayContentPage);
+    fixture = TestBed.createComponent(FivOverlayContent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

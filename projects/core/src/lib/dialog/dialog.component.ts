@@ -5,7 +5,7 @@ import {
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FivOverlay } from '../overlay/overlay.component';
 import { trigger, transition, style, animate, state, AnimationBuilder } from '@angular/animations';
-import { Platform, DomController } from '@ionic/angular';
+import { DomController } from '@ionic/angular';
 export type Content<T> = TemplateRef<T> | Type<T>;
 
 @Component({
