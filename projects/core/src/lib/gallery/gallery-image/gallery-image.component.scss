@@ -19,9 +19,9 @@
     object-position: center;
     object-fit: cover;
     display: block;
-    height: auto;
+    height: var(--height, auto);
     max-height: var(--max-height);
-    width: 100%;
+    width: var(--width, 100%);
     border-radius: var(--border-radius);
 }
 
