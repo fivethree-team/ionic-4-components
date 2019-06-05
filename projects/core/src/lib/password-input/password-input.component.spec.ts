@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FivPasswordInput } from './password-input.component';
 
-describe('PasswordComponent', () => {
+describe('FivPasswordInput', () => {
   let component: FivPasswordInput;
   let fixture: ComponentFixture<FivPasswordInput>;
 

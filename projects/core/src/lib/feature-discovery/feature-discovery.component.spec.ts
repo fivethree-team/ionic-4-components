@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FeatureDiscoveryPage } from './feature-discovery.page';
+import { FivFeatureDiscovery } from './feature-discovery.component';
 
-describe('FeatureDiscoveryPage', () => {
-  let component: FeatureDiscoveryPage;
-  let fixture: ComponentFixture<FeatureDiscoveryPage>;
+describe('FivFeatureDiscovery', () => {
+  let component: FivFeatureDiscovery;
+  let fixture: ComponentFixture<FivFeatureDiscovery>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FeatureDiscoveryPage ],
+      declarations: [ FivFeatureDiscovery ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FeatureDiscoveryPage);
+    fixture = TestBed.createComponent(FivFeatureDiscovery);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
