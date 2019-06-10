@@ -1,3 +1,14 @@
+<a name="0.8.10"></a>
+## [0.8.10](https://github.com/fivethree-team/component-library/compare/v0.8.9...v0.8.10) (2019-06-10)
+
+
+### Bug Fixes
+
+* **refresher:** add content min-height ([4680e25](https://github.com/fivethree-team/component-library/commit/4680e25))
+* **tests:** enable tests ([72c0f4b](https://github.com/fivethree-team/component-library/commit/72c0f4b))
+
+
+
 <a name="0.8.9"></a>
 ## [0.8.9](https://github.com/fivethree-team/component-library/compare/v0.8.6...v0.8.9) (2019-05-16)
 
