@@ -1,19 +1,18 @@
 div[content] {
-    min-height: 200px;
-    background: var(--ion-color-light);
-    position: relative;
+  min-height: 200px;
+  background: var(--ion-color-light);
+  position: relative;
 }
 
 ion-item {
-    border: 1px solid var(--ion-color-light);
-    --inner-border-width: 0px;
+  border: 1px solid var(--ion-color-light);
+  --inner-border-width: 0px;
 }
 
-
 fiv-ripple {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
 .content {
-    color: var(--ion-color-primary);
+  color: var(--ion-color-primary);
 }

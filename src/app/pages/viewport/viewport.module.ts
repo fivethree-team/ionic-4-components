@@ -26,4 +26,4 @@ const routes: Routes = [
   ],
   declarations: [ViewportPage]
 })
-export class ViewportPageModule { }
+export class ViewportPageModule {}

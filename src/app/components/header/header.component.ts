@@ -7,17 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
   @Input() title = 'Ionic 4 Components';
   @Input() backbutton = true;
 
-  constructor(private navController: NavController) { }
+  constructor(private navController: NavController) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onTitleClicked() {
     this.navController.navigateRoot('/');
   }
-
 }

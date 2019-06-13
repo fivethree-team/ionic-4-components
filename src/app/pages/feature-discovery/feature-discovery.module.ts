@@ -8,7 +8,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -28,4 +27,4 @@ const routes: Routes = [
   ],
   declarations: [FeatureDiscoveryPage]
 })
-export class FeatureDirectoryPageModule { }
+export class FeatureDirectoryPageModule {}

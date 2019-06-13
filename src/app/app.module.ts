@@ -16,7 +16,6 @@ import { UtilService } from '@services/util.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -29,7 +28,9 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
     LottieAnimationViewModule.forRoot(),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production
+    })
   ],
   providers: [
     StatusBar,
@@ -39,4 +40,4 @@ import { environment } from '../environments/environment';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

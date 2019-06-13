@@ -21,4 +21,4 @@ import { FivAppBarModule, FivCenterModule } from '@fivethree/core';
   ],
   declarations: [AppBarPage]
 })
-export class AppBarPageModule { }
+export class AppBarPageModule {}

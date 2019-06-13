@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  AbstractControl
+} from '@angular/forms';
 
 @Component({
   selector: 'app-password',
   templateUrl: './password.page.html',
-  styleUrls: ['./password.page.scss'],
+  styleUrls: ['./password.page.scss']
 })
 export class PasswordPage implements OnInit {
-
   show = true;
 
   loginForm: FormGroup;
 
-  constructor(public formBuilder: FormBuilder) { }
+  constructor(public formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.setupForm();
@@ -21,7 +25,7 @@ export class PasswordPage implements OnInit {
   setupForm() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
-      password: ['', [Validators.minLength(4), Validators.required]],
+      password: ['', [Validators.minLength(4), Validators.required]]
     });
   }
 
@@ -29,11 +33,9 @@ export class PasswordPage implements OnInit {
     return this.loginForm.get('email');
   }
 
-  onSubmit() {
-  }
+  onSubmit() {}
 
   get password(): AbstractControl {
     return this.loginForm.get('password');
   }
-
 }

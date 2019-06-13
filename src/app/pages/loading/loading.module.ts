@@ -1,5 +1,10 @@
 import { ComponentsModule } from './../../components/components.module';
-import { FivLoadingProgressBarModule, FivLoadingFabModule, FivLoadingSpinnerModule, FivCenterModule } from '@fivethree/core';
+import {
+  FivLoadingProgressBarModule,
+  FivLoadingFabModule,
+  FivLoadingSpinnerModule,
+  FivCenterModule
+} from '@fivethree/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -30,4 +35,4 @@ const routes: Routes = [
   ],
   declarations: [LoadingPage]
 })
-export class LoadingPageModule { }
+export class LoadingPageModule {}

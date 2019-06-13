@@ -2,7 +2,6 @@ import { AppBarPage } from './app-bar.page';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-
 const routes: Routes = [
   {
     path: 'tabs',
@@ -13,7 +12,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../bottom-sheet/bottom-sheet.module#BottomSheetPageModule'
+            loadChildren:
+              '../bottom-sheet/bottom-sheet.module#BottomSheetPageModule'
           }
         ]
       },
@@ -47,8 +47,8 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: '/app-bar/tabs/tab1',
-        pathMatch: 'full',
-      },
+        pathMatch: 'full'
+      }
     ]
   },
   {
@@ -62,4 +62,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule { }
+export class TabsPageRoutingModule {}

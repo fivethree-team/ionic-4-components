@@ -10,7 +10,6 @@ import { IonicModule } from '@ionic/angular';
 import { HomePage } from './home.page';
 import { MdoButtonModule } from '@ctrl/ngx-github-buttons';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -30,4 +29,4 @@ const routes: Routes = [
   ],
   declarations: [HomePage]
 })
-export class HomePageModule { }
+export class HomePageModule {}

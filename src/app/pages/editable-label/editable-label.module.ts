@@ -28,4 +28,4 @@ const routes: Routes = [
   ],
   declarations: [EditableLabelPage]
 })
-export class EditableLabelPageModule { }
+export class EditableLabelPageModule {}

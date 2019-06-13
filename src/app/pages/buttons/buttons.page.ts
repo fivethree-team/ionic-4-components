@@ -4,10 +4,9 @@ import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-buttons',
   templateUrl: './buttons.page.html',
-  styleUrls: ['./buttons.page.scss'],
+  styleUrls: ['./buttons.page.scss']
 })
 export class ButtonsPage implements OnInit {
-
   subHeader = 'subheader here';
   header = 'More Actions';
   count = 1;
@@ -15,11 +14,9 @@ export class ButtonsPage implements OnInit {
   forcePopover = false;
   iconsOnly = true;
 
-  constructor(public toastController: ToastController) { }
+  constructor(public toastController: ToastController) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 
   async presentToast(text: string) {
     const toast = await this.toastController.create({
@@ -28,5 +25,4 @@ export class ButtonsPage implements OnInit {
     });
     toast.present();
   }
-
 }

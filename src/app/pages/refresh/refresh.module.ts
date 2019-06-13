@@ -22,8 +22,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    ComponentsModule, FivLoadingContentModule
+    ComponentsModule,
+    FivLoadingContentModule
   ],
   declarations: [RefreshPage]
 })
-export class RefreshPageModule { }
+export class RefreshPageModule {}

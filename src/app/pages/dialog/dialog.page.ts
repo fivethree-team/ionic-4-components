@@ -4,10 +4,9 @@ import { FivDialog } from '@fivethree/core';
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.page.html',
-  styleUrls: ['./dialog.page.scss'],
+  styleUrls: ['./dialog.page.scss']
 })
 export class DialogPage implements OnInit {
-
   @ViewChild('dialog') dialog: FivDialog;
 
   backdrop = true;
@@ -19,15 +18,11 @@ export class DialogPage implements OnInit {
   inDuration = '220';
   outDuration = '180';
 
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
+  close() {}
 
-  close() {
-  }
-
-  over() {
-  }
+  over() {}
 }

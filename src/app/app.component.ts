@@ -14,83 +14,82 @@ export class AppComponent {
     {
       title: 'App Bar',
       url: '/app-bar',
-      icon: 'git-commit',
+      icon: 'git-commit'
     },
     {
       title: 'Bottom Sheet',
       url: '/bottom-sheet',
-      icon: 'ios-arrow-up',
+      icon: 'ios-arrow-up'
     },
     {
       title: 'Dialog',
       url: '/dialog',
-      icon: 'notifications',
+      icon: 'notifications'
     },
     {
       title: 'Editable Label',
       url: '/editable-label',
-      icon: 'create',
+      icon: 'create'
     },
     {
       title: 'Expandable',
       url: '/expandable',
-      icon: 'resize',
+      icon: 'resize'
     },
     {
       title: 'Icon',
       url: '/icon',
-      icon: 'mail-unread',
+      icon: 'mail-unread'
     },
     {
       title: 'Image Gallery',
       url: '/image',
-      icon: 'image',
+      icon: 'image'
     },
     {
       title: 'Loading Indicators',
       url: '/loading',
-      icon: 'time',
+      icon: 'time'
     },
     {
       title: 'Overflow Buttons',
       url: '/buttons',
-      icon: 'more',
+      icon: 'more'
     },
     {
       title: 'Password Reveal Input',
       url: '/password',
-      icon: 'key',
+      icon: 'key'
     },
     {
       title: 'Refresher',
       url: '/refresh',
-      icon: 'refresh',
+      icon: 'refresh'
     },
     {
       title: 'Searchbar',
       url: '/toolbar-search',
-      icon: 'search',
+      icon: 'search'
     },
     {
       title: 'Stepper',
       url: '/stepper',
-      icon: 'share',
-    },
+      icon: 'share'
+    }
   ];
   public directives = [
     {
       title: 'Feature Discovery',
       url: '/feature-discovery',
-      icon: 'resize',
+      icon: 'resize'
     },
     {
       title: 'Viewport',
       url: '/viewport',
-      icon: 'share',
+      icon: 'share'
     }
   ];
-  public services = [
-  ];
+  public services = [];
 
   constructor(
     private platform: Platform,

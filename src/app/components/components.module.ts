@@ -34,10 +34,6 @@ const components = [
     FivIconModule,
     FivBackButtonModule
   ],
-  exports: [
-    ...components,
-    LottieAnimationViewModule,
-    MarkdownModule
-  ]
+  exports: [...components, LottieAnimationViewModule, MarkdownModule]
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

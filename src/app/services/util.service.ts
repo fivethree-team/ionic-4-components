@@ -5,8 +5,7 @@ import { icons, Icon } from './icons';
   providedIn: 'root'
 })
 export class UtilService {
-
-  constructor() { }
+  constructor() {}
 
   getRandomIcon(): Icon {
     return icons.icons[Math.floor(Math.random() * icons.icons.length)];

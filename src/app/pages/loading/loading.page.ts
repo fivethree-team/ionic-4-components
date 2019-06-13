@@ -3,23 +3,19 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-loading',
   templateUrl: './loading.page.html',
-  styleUrls: ['./loading.page.scss'],
+  styleUrls: ['./loading.page.scss']
 })
 export class LoadingPage implements OnInit {
-
   mode = 'determinate';
   value = 0;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  fabComplete() {
-  }
+  fabComplete() {}
 
-  buttonComplete() {
-  }
+  buttonComplete() {}
 
   showHint(refresher) {
     refresher.showHint();
@@ -31,8 +27,5 @@ export class LoadingPage implements OnInit {
     }, 2000);
   }
 
-
-  complete() {
-
-  }
+  complete() {}
 }

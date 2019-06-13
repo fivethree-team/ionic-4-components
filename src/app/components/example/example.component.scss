@@ -1,18 +1,18 @@
 :host {
-    position: relative;
-    display: block;
+  position: relative;
+  display: block;
 }
 
 .swiper-slide {
-    text-align: left;
+  text-align: left;
 }
 
 .content-container {
-    width: 100%;
+  width: 100%;
 }
 
-@media(max-width: 411px) {
-    .example {
-        margin: 0px;
-    }
+@media (max-width: 411px) {
+  .example {
+    margin: 0px;
+  }
 }

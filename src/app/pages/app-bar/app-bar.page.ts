@@ -4,10 +4,9 @@ import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-app-bar',
   templateUrl: './app-bar.page.html',
-  styleUrls: ['./app-bar.page.scss'],
+  styleUrls: ['./app-bar.page.scss']
 })
 export class AppBarPage implements OnInit {
-
   titleLayout = 'hide';
   position = 'center';
   fabVisible = true;
@@ -15,19 +14,17 @@ export class AppBarPage implements OnInit {
 
   customTitleLayoutOptions: any = {
     header: 'Title Layout',
-    subHeader: 'Select a title layout',
+    subHeader: 'Select a title layout'
   };
 
   customFabPositionOptions: any = {
     header: 'Fab Position',
-    subHeader: 'Select a floating action button position.',
+    subHeader: 'Select a floating action button position.'
   };
 
+  constructor(public toastController: ToastController) {}
 
-  constructor(public toastController: ToastController) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   async presentToast(text: string) {
     const toast = await this.toastController.create({
@@ -36,6 +33,4 @@ export class AppBarPage implements OnInit {
     });
     toast.present();
   }
-
-
 }

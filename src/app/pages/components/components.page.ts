@@ -3,22 +3,18 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-components',
   templateUrl: './components.page.html',
-  styleUrls: ['./components.page.scss'],
+  styleUrls: ['./components.page.scss']
 })
 export class ComponentsPage implements OnInit {
-
   iconState = true;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   toggleIcon() {
     this.iconState = !this.iconState;
   }
 
-  stepperClick(event) {
-  }
-
+  stepperClick(event) {}
 }

@@ -4,14 +4,12 @@ import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
+  constructor(private nav: NavController) {}
 
-  constructor(private nav: NavController) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   navigate(url: string) {
     this.nav.navigateForward(url);
@@ -19,5 +17,4 @@ export class HomePage implements OnInit {
   open(url: string) {
     window.open(url, '_blank');
   }
-
 }

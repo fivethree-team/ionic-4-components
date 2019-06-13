@@ -10,28 +10,27 @@
 @import '~@ionic/angular/css/flex-utils.css';
 
 .wrapper {
-    width: 100%;
-    min-height: 180px;
-    padding: 16px;
-    position: relative;
+  width: 100%;
+  min-height: 180px;
+  padding: 16px;
+  position: relative;
 }
 
 .mat-tab-group.mat-primary .mat-ink-bar,
 .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-    background: var(--ion-color-primary);
+  background: var(--ion-color-primary);
 }
 
 .page-content {
-    min-height: var(--example-min-height);
+  min-height: var(--example-min-height);
 }
 
 :root {
-    // --ion-font-family: 'Roboto Slab', serif;
-
+  // --ion-font-family: 'Roboto Slab', serif;
 }
 
-.avatar{
-    width: 24px;
-    height: 24px;
-    border-radius: 100%;
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
 }
