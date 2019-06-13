@@ -8,9 +8,8 @@ describe('LoadingFabComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivLoadingFab ]
-    })
-    .compileComponents();
+      declarations: [FivLoadingFab]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

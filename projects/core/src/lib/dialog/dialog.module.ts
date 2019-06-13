@@ -8,16 +8,16 @@ import { IonicModule } from '@ionic/angular';
 import { FivLoadingProgressBarModule } from '../loading-progress-bar/loading-progress-bar.module';
 
 @NgModule({
-    declarations: [FivDialog],
-    imports: [
-        CommonModule,
-        FivLoadingProgressBarModule,
-        FivOverlayModule,
-        IonicModule,
-        FivPullModule
-    ],
-    exports: [FivDialog],
-    entryComponents: [FivDialog],
-    providers: [FivDialogService]
+  declarations: [FivDialog],
+  imports: [
+    CommonModule,
+    FivLoadingProgressBarModule,
+    FivOverlayModule,
+    IonicModule,
+    FivPullModule
+  ],
+  exports: [FivDialog],
+  entryComponents: [FivDialog],
+  providers: [FivDialogService]
 })
-export class FivDialogModule { }
+export class FivDialogModule {}

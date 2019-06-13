@@ -1,19 +1,19 @@
-:host{
-    position: relative;
-    display: block;
-    width: 100%;
+:host {
+  position: relative;
+  display: block;
+  width: 100%;
 }
 
-ion-toolbar{
-    box-shadow: 0 1px 4px rgba(0,0,0,.25);
-    transition: border-bottom-right-radius ease 85ms;
-    margin-top: env(safe-area-inset-top);
+ion-toolbar {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  transition: border-bottom-right-radius ease 85ms;
+  margin-top: env(safe-area-inset-top);
 }
 
-ion-toolbar.small{
-    border-bottom-right-radius: 12px;
+ion-toolbar.small {
+  border-bottom-right-radius: 12px;
 }
 
-.toolbar-searchbar{
-    float: right;
+.toolbar-searchbar {
+  float: right;
 }

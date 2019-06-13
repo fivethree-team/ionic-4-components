@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class FivLoadingService {
-
   public loading = false;
   public isComplete = false;
-  public loadChange: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.loading);
-  public completeChange: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.isComplete);
+  public loadChange: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    this.loading
+  );
+  public completeChange: BehaviorSubject<boolean> = new BehaviorSubject<
+    boolean
+  >(this.isComplete);
 
-  constructor() { }
+  constructor() {}
 
   load() {
     this.loading = true;

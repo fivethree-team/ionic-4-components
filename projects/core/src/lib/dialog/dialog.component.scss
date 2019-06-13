@@ -1,130 +1,128 @@
-:host {}
+:host {
+}
 
 ion-grid {
-    --ion-grid-padding: 0;
-    --ion-grid-column-padding: 0;
+  --ion-grid-padding: 0;
+  --ion-grid-column-padding: 0;
 }
 
 .dialog {
-    --min-width: 340px;
-    --ion-item-background: #fff;
-    position: absolute;
-    min-width: var(--min-width);
+  --min-width: 340px;
+  --ion-item-background: #fff;
+  position: absolute;
+  min-width: var(--min-width);
 }
 
 @media (max-width: 600px) {
-    .dialog {
-        --min-width: 100%;
-    }
+  .dialog {
+    --min-width: 100%;
+  }
 }
 
 .dialog.fill {
+  background: var(--ion-item-background);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 
-    background: var(--ion-item-background);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+  .sc-ion-card-ios-h,
+  .sc-ion-card-md-h {
+    margin-left: unset;
+    margin-right: unset;
+    -webkit-margin-start: 0px;
+    margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+    margin-inline-end: 0px;
+    box-shadow: none;
+  }
 
+  .sc-ion-card-ios-h,
+  .sc-ion-card-md-h {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  &.top {
     .sc-ion-card-ios-h,
     .sc-ion-card-md-h {
-        margin-left: unset;
-        margin-right: unset;
-        -webkit-margin-start: 0px;
-        margin-inline-start: 0px;
-        -webkit-margin-end: 0px;
-        margin-inline-end: 0px;
-        box-shadow: none;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
     }
+  }
 
+  &.bottom {
     .sc-ion-card-ios-h,
     .sc-ion-card-md-h {
-        margin-top: 0px;
-        margin-bottom: 0px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
     }
-
-    &.top {
-
-        .sc-ion-card-ios-h,
-        .sc-ion-card-md-h {
-            border-top-left-radius: 0px;
-            border-top-right-radius: 0px;
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
-        }
-    }
-
-    &.bottom {
-
-        .sc-ion-card-ios-h,
-        .sc-ion-card-md-h {
-            border-top-left-radius: 0px;
-            border-top-right-radius: 0px;
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
-        }
-    }
+  }
 }
 
 .dialog.top.left {
-    padding-top: env(safe-area-inset-top);
-    top: 0;
-    left: 0;
+  padding-top: env(safe-area-inset-top);
+  top: 0;
+  left: 0;
 }
 
 .dialog.top.right {
-    padding-top: env(safe-area-inset-top);
-    top: 0;
-    right: 0;
+  padding-top: env(safe-area-inset-top);
+  top: 0;
+  right: 0;
 }
 
 .dialog.top.middle {
-    padding-top: env(safe-area-inset-top);
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+  padding-top: env(safe-area-inset-top);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .dialog.center.middle {
-    padding-top: env(safe-area-inset-top);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  padding-top: env(safe-area-inset-top);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .dialog.center.left {
-    top: 50%;
-    padding-top: env(safe-area-inset-top);
-    left: 0;
-    transform: translateY(-50%);
+  top: 50%;
+  padding-top: env(safe-area-inset-top);
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .dialog.center.right {
-    right: 0;
-    top: 50%;
-    padding-top: env(safe-area-inset-top);
-    transform: translateY(-50%);
+  right: 0;
+  top: 50%;
+  padding-top: env(safe-area-inset-top);
+  transform: translateY(-50%);
 }
 
 .dialog.bottom.left {
-    bottom: 0;
-    left: 0;
-    padding-bottom: env(safe-area-inset-bottom);
+  bottom: 0;
+  left: 0;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .dialog.bottom.right {
-    bottom: 0;
-    right: 0;
-    padding-bottom: env(safe-area-inset-bottom);
+  bottom: 0;
+  right: 0;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .dialog.bottom.middle {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-bottom: env(safe-area-inset-bottom);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .backdrop {
-    width: 100%;
-    height: 100%;
-    --background: rgba(0, 0, 0, 0.2);
-    position: absolute;
+  width: 100%;
+  height: 100%;
+  --background: rgba(0, 0, 0, 0.2);
+  position: absolute;
 }

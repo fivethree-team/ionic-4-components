@@ -1,5 +1,18 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
-import { trigger, transition, animate, state, style } from '@angular/animations';
+import {
+  Component,
+  OnInit,
+  Input,
+  ChangeDetectionStrategy,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import {
+  trigger,
+  transition,
+  animate,
+  state,
+  style
+} from '@angular/animations';
 
 @Component({
   selector: 'fiv-icon',
@@ -8,33 +21,33 @@ import { trigger, transition, animate, state, style } from '@angular/animations'
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('rotateAnim', [
-      transition('normal => rotate', [
-        animate('125ms ease-out')
-      ]),
-      transition('rotate => normal', [
-        animate('125ms ease-in')
-      ]),
-      state('rotate', style({ opacity: '0', transform: 'scale(0) rotateZ(45deg)' })),
-      state('normal', style({ opacity: '1', transform: 'scale(1) rotateZ(0deg)' }))
+      transition('normal => rotate', [animate('125ms ease-out')]),
+      transition('rotate => normal', [animate('125ms ease-in')]),
+      state(
+        'rotate',
+        style({ opacity: '0', transform: 'scale(0) rotateZ(45deg)' })
+      ),
+      state(
+        'normal',
+        style({ opacity: '1', transform: 'scale(1) rotateZ(0deg)' })
+      )
     ]),
     trigger('scaleAnim', [
       transition('void => normal', [
         style({ opacity: '0', transform: 'scale(0)' }),
-        animate('125ms ease-out', style({ opacity: '1', transform: 'scale(1)' }))
+        animate(
+          '125ms ease-out',
+          style({ opacity: '1', transform: 'scale(1)' })
+        )
       ]),
-      transition('normal => scale', [
-        animate('125ms ease-out')
-      ]),
-      transition('scale => normal', [
-        animate('125ms ease-in')
-      ]),
+      transition('normal => scale', [animate('125ms ease-out')]),
+      transition('scale => normal', [animate('125ms ease-in')]),
       state('scale', style({ opacity: '0', transform: 'scale(0)' })),
       state('normal', style({ opacity: '1', transform: 'scale(1)' }))
     ])
   ]
 })
 export class FivIcon implements OnInit {
-
   _name: string;
   _indicatorValue = 0;
   tempValue: number;
@@ -46,7 +59,6 @@ export class FivIcon implements OnInit {
   @Input() smallIcon: string;
   @Input() off = false;
   @Output() transitionDone = new EventEmitter<string>();
-
 
   indicatorState: 'normal' | 'scale' = 'scale';
   indicatorValueState: 'normal' | 'scale' = 'scale';
@@ -85,10 +97,9 @@ export class FivIcon implements OnInit {
 
   _dotVisible: boolean;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   transform(name: string) {
     this.temp = name;
@@ -116,8 +127,6 @@ export class FivIcon implements OnInit {
     }
   }
 
-
-
   rotateAnimDone(event) {
     if (event.fromState === 'normal' && event.toState === 'rotate') {
       this._name = this.temp;
@@ -138,6 +147,5 @@ export class FivIcon implements OnInit {
         this._indicatorValue = this.tempValue;
       }
     }
-
   }
 }

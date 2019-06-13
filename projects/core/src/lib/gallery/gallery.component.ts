@@ -1,13 +1,35 @@
 import { FivGalleryToolbar } from './gallery-toolbar/gallery-toolbar.component';
-import { FivGalleryImage, Position } from './gallery-image/gallery-image.component';
+import {
+  FivGalleryImage,
+  Position
+} from './gallery-image/gallery-image.component';
 import { ImageService } from './image.service';
 import { IonSlides, DomController, Platform } from '@ionic/angular';
 import { FivOverlay } from './../overlay/overlay.component';
 import {
-  Component, OnInit, ViewChild, ElementRef, Renderer2,
-  ContentChildren, QueryList, AfterContentInit, forwardRef, HostListener, Inject, ChangeDetectorRef, TemplateRef, ViewChildren, Input
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+  ContentChildren,
+  QueryList,
+  AfterContentInit,
+  forwardRef,
+  HostListener,
+  Inject,
+  ChangeDetectorRef,
+  TemplateRef,
+  ViewChildren,
+  Input
 } from '@angular/core';
-import { style, animate, AnimationBuilder, trigger, transition } from '@angular/animations';
+import {
+  style,
+  animate,
+  AnimationBuilder,
+  trigger,
+  transition
+} from '@angular/animations';
 import { Key } from './keycodes.enum';
 import { DOCUMENT } from '@angular/common';
 
@@ -49,13 +71,13 @@ import { DOCUMENT } from '@angular/common';
   ]
 })
 export class FivGallery implements OnInit, AfterContentInit {
-
   @ViewChild('overlay') overlay: FivOverlay;
   @ViewChild('viewer') viewer: ElementRef;
   @ViewChild('slider', { read: ElementRef }) swiper: ElementRef;
   @ViewChild('slider') slides: IonSlides;
 
-  @ContentChildren(forwardRef(() => FivGalleryImage), { descendants: true }) images: QueryList<FivGalleryImage>;
+  @ContentChildren(forwardRef(() => FivGalleryImage), { descendants: true })
+  images: QueryList<FivGalleryImage>;
   @ContentChildren(FivGalleryToolbar) toolbars: QueryList<FivGalleryToolbar>;
 
   topToolbar: TemplateRef<any>;
@@ -76,11 +98,15 @@ export class FivGallery implements OnInit, AfterContentInit {
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if (this.overlay && this.overlay.open && this.initialImage && this.initialImage.viewerState === 'hidden') {
+    if (
+      this.overlay &&
+      this.overlay.open &&
+      this.initialImage &&
+      this.initialImage.viewerState === 'hidden'
+    ) {
       this.handleKeyboardEvents(event);
     }
   }
-
 
   constructor(
     private domCtrl: DomController,
@@ -90,10 +116,9 @@ export class FivGallery implements OnInit, AfterContentInit {
     private platform: Platform,
     @Inject(DOCUMENT) private document: any,
     private imageService: ImageService
-  ) { }
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngAfterContentInit(): void {
     this.updateImages();
@@ -101,17 +126,16 @@ export class FivGallery implements OnInit, AfterContentInit {
   }
 
   updateImages() {
-    this.images.forEach((img, i) => img.index = i);
+    this.images.forEach((img, i) => (img.index = i));
   }
   updateToolbars() {
-    this.toolbars
-      .forEach((toolbar) => {
-        if (toolbar.position === 'top') {
-          this.topToolbar = toolbar.content;
-        } else {
-          this.bottomToolbar = toolbar.content;
-        }
-      });
+    this.toolbars.forEach(toolbar => {
+      if (toolbar.position === 'top') {
+        this.topToolbar = toolbar.content;
+      } else {
+        this.bottomToolbar = toolbar.content;
+      }
+    });
   }
 
   handleKeyboardEvents(event: KeyboardEvent) {
@@ -130,18 +154,25 @@ export class FivGallery implements OnInit, AfterContentInit {
   }
 
   next() {
-    if (this.overlay && this.overlay.open && this.initialImage && this.initialImage.viewerState === 'hidden') {
+    if (
+      this.overlay &&
+      this.overlay.open &&
+      this.initialImage &&
+      this.initialImage.viewerState === 'hidden'
+    ) {
       this.slides.slideNext();
     }
   }
   prev() {
-    if (this.overlay && this.overlay.open && this.initialImage && this.initialImage.viewerState === 'hidden') {
+    if (
+      this.overlay &&
+      this.overlay.open &&
+      this.initialImage &&
+      this.initialImage.viewerState === 'hidden'
+    ) {
       this.slides.slidePrev();
     }
   }
-
-
-
 
   open(index: number, initial: FivGalleryImage) {
     this.options.initialSlide = index;
@@ -156,7 +187,10 @@ export class FivGallery implements OnInit, AfterContentInit {
 
   closeFromPullDown(progress: number) {
     this.transformSlides(0);
-    const position = this.getImagePosition(this.images.toArray()[this.activeIndex].image, progress);
+    const position = this.getImagePosition(
+      this.images.toArray()[this.activeIndex].image,
+      progress
+    );
     this.initialImage.close(position);
     if (this.inFullscreen) {
       this.closeFullscreen();
@@ -180,13 +214,16 @@ export class FivGallery implements OnInit, AfterContentInit {
     };
   }
 
-
   transformSlides(progress: number) {
     if (this.controlsVisible) {
       this.hideControls();
     }
     this.domCtrl.write(() => {
-      this.renderer.setStyle(this.viewer.nativeElement, 'transform', `translateY(${progress * 120}px)`);
+      this.renderer.setStyle(
+        this.viewer.nativeElement,
+        'transform',
+        `translateY(${progress * 120}px)`
+      );
     });
   }
 
@@ -221,7 +258,9 @@ export class FivGallery implements OnInit, AfterContentInit {
   }
 
   updateBackdrop(index: number) {
-    this.initialImage.backdropColor = this.imageService.getAverageRGB(this.images.toArray()[index].image.nativeElement);
+    this.initialImage.backdropColor = this.imageService.getAverageRGB(
+      this.images.toArray()[index].image.nativeElement
+    );
   }
 
   onSlidesLoad() {
@@ -280,7 +319,6 @@ export class FivGallery implements OnInit, AfterContentInit {
       this.zoomOut();
     } else {
       this.zoomIn();
-
     }
   }
 
@@ -308,6 +346,4 @@ export class FivGallery implements OnInit, AfterContentInit {
     this.controlsVisible = true;
     this.change.detectChanges();
   }
-
-
 }

@@ -5,13 +5,9 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
-    declarations: [FivPopover],
-    imports: [
-        CommonModule,
-        FivButtonModule,
-        IonicModule
-    ],
-    exports: [FivPopover],
-    entryComponents: [FivPopover]
+  declarations: [FivPopover],
+  imports: [CommonModule, FivButtonModule, IonicModule],
+  exports: [FivPopover],
+  entryComponents: [FivPopover]
 })
-export class FivPopoverModule { }
+export class FivPopoverModule {}

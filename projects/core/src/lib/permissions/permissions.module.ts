@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-    declarations: [FivPermissions],
-    imports: [CommonModule],
-    exports: [FivPermissions],
+  declarations: [FivPermissions],
+  imports: [CommonModule],
+  exports: [FivPermissions]
 })
-export class FivPermissionsModule { }
+export class FivPermissionsModule {}

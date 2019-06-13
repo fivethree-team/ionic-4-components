@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-    declarations: [FivPull],
-    imports: [CommonModule],
-    exports: [FivPull],
+  declarations: [FivPull],
+  imports: [CommonModule],
+  exports: [FivPull]
 })
-export class FivPullModule { }
+export class FivPullModule {}

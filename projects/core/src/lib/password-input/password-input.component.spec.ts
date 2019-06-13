@@ -8,9 +8,8 @@ describe('FivPasswordInput', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivPasswordInput ]
-    })
-    .compileComponents();
+      declarations: [FivPasswordInput]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

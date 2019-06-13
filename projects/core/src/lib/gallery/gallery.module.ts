@@ -11,25 +11,25 @@ import { FivGalleryToolbar } from './gallery-toolbar/gallery-toolbar.component';
 import { FivGalleryToolbarContent } from './gallery-toolbar-content/gallery-toolbar-content.component';
 
 @NgModule({
-    declarations: [
-        FivGallery,
-        FivGalleryImage,
-        FivGalleryToolbar,
-        FivGalleryToolbarContent
-    ],
-    imports: [
-        CommonModule,
-        IonicModule,
-        FivIconModule,
-        FivIfModule,
-        FivPullModule,
-        FivOverlayModule,
-    ],
-    exports: [
-        FivGallery,
-        FivGalleryImage,
-        FivGalleryToolbar,
-        FivGalleryToolbarContent
-    ],
+  declarations: [
+    FivGallery,
+    FivGalleryImage,
+    FivGalleryToolbar,
+    FivGalleryToolbarContent
+  ],
+  imports: [
+    CommonModule,
+    IonicModule,
+    FivIconModule,
+    FivIfModule,
+    FivPullModule,
+    FivOverlayModule
+  ],
+  exports: [
+    FivGallery,
+    FivGalleryImage,
+    FivGalleryToolbar,
+    FivGalleryToolbarContent
+  ]
 })
-export class FivGalleryModule { }
+export class FivGalleryModule {}

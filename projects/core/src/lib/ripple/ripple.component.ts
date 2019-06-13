@@ -17,12 +17,10 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./ripple.component.scss']
 })
 export class FivRipple {
-
   private rippleAnimationEvent = new EventEmitter();
   @Input() round = false;
   @Input() hover = false;
   @Output() fivClick = new EventEmitter<any>();
-
 
   @HostListener('click', ['$event'])
   clickEvent(event: MouseEvent) {
@@ -37,18 +35,14 @@ export class FivRipple {
     return !!this.hover;
   }
 
-
-  constructor(private el: ElementRef,
-    public renderer: Renderer2) {
-
-
-    this.rippleAnimationEvent.pipe(
-      debounceTime(750)
-    )
-      .subscribe(() => {
-        renderer.removeClass(el.nativeElement.querySelector('.ripple'), 'show');
-        renderer.removeClass(el.nativeElement.querySelector('.rippleWrapper'), 'show');
-      });
+  constructor(private el: ElementRef, public renderer: Renderer2) {
+    this.rippleAnimationEvent.pipe(debounceTime(750)).subscribe(() => {
+      renderer.removeClass(el.nativeElement.querySelector('.ripple'), 'show');
+      renderer.removeClass(
+        el.nativeElement.querySelector('.rippleWrapper'),
+        'show'
+      );
+    });
   }
 
   ripple(event?) {
@@ -62,7 +56,6 @@ export class FivRipple {
       const centerY = rect.top + rect.height / 2;
       const centerX = rect.left + rect.width / 2;
       event = { pageX: centerX, pageY: centerY };
-      
     }
     this.rippleAnimation({ pageX: event.pageX, pageY: event.pageY });
     return;
@@ -88,14 +81,22 @@ export class FivRipple {
     const rippleWrapper = target.querySelector('.rippleWrapper');
     this.renderer.removeClass(rippleWrapper, 'show');
     this.renderer.removeClass(ripple, 'show');
-    const left = pageX - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft + 'px';
-    const top = pageY - rect.top - ripple.offsetHeight / 2 - document.body.scrollTop + 'px';
+    const left =
+      pageX -
+      rect.left -
+      ripple.offsetWidth / 2 -
+      document.body.scrollLeft +
+      'px';
+    const top =
+      pageY -
+      rect.top -
+      ripple.offsetHeight / 2 -
+      document.body.scrollTop +
+      'px';
     this.renderer.setStyle(ripple, 'top', top);
     this.renderer.setStyle(ripple, 'left', left);
     this.renderer.addClass(rippleWrapper, 'show');
     this.renderer.addClass(ripple, 'show');
     this.rippleAnimationEvent.emit();
   }
-
-
 }

@@ -6,13 +6,9 @@ import { FivIconModule } from '../icon/icon.module';
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
-    declarations: [FivBackButton],
-    imports: [
-        CommonModule,
-        FivIconModule,
-        IonicModule
-    ],
-    exports: [FivBackButton],
-    providers: [FivRoutingStateService],
+  declarations: [FivBackButton],
+  imports: [CommonModule, FivIconModule, IonicModule],
+  exports: [FivBackButton],
+  providers: [FivRoutingStateService]
 })
-export class FivBackButtonModule { }
+export class FivBackButtonModule {}

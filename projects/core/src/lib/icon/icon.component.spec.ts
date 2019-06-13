@@ -8,9 +8,8 @@ describe('IconComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivIcon ]
-    })
-    .compileComponents();
+      declarations: [FivIcon]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

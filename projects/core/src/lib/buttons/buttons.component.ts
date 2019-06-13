@@ -1,6 +1,17 @@
 import { FivPopover } from './../popover/popover.component';
-import { Platform, PopoverController, ActionSheetController } from '@ionic/angular';
-import { Component, OnInit, Input, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import {
+  Platform,
+  PopoverController,
+  ActionSheetController
+} from '@ionic/angular';
+import {
+  Component,
+  OnInit,
+  Input,
+  ContentChildren,
+  QueryList,
+  AfterContentInit
+} from '@angular/core';
 import { FivButton } from '../button/button.component';
 
 @Component({
@@ -9,7 +20,6 @@ import { FivButton } from '../button/button.component';
   styleUrls: ['./buttons.component.scss']
 })
 export class FivButtons implements OnInit, AfterContentInit {
-
   @Input() slot = 'end';
   @Input() subHeader: string;
   @Input() header: string;
@@ -22,16 +32,15 @@ export class FivButtons implements OnInit, AfterContentInit {
   @Input() iconsOnly = true;
   @ContentChildren(FivButton) buttons: QueryList<FivButton>;
 
-  constructor(private platform: Platform,
+  constructor(
+    private platform: Platform,
     private popoverController: PopoverController,
-    public actionSheetController: ActionSheetController) { }
+    public actionSheetController: ActionSheetController
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  ngAfterContentInit(): void {
-
-  }
+  ngAfterContentInit(): void {}
 
   onMenuClicked(event) {
     if (this.forceActionsheet) {
@@ -55,20 +64,29 @@ export class FivButtons implements OnInit, AfterContentInit {
       event: ev,
       translucent: false,
       componentProps: {
-        'buttons': this.buttons.toArray().slice(this.count).filter(button => !button.disabled),
+        buttons: this.buttons
+          .toArray()
+          .slice(this.count)
+          .filter(button => !button.disabled)
       }
     });
 
     await popover.present();
     const result = await popover.onDidDismiss();
-    if (result && result.data && (result.data.index || result.data.index === 0)) {
+    if (
+      result &&
+      result.data &&
+      (result.data.index || result.data.index === 0)
+    ) {
       this.onButtonClicked(result.data.index + this.count);
     }
   }
 
   async presentActionSheet(ev: any) {
     const buttons = [];
-    this.buttons.toArray().slice(this.count)
+    this.buttons
+      .toArray()
+      .slice(this.count)
       .forEach((button, index) => {
         if (!button.disabled) {
           buttons.push({
@@ -79,7 +97,6 @@ export class FivButtons implements OnInit, AfterContentInit {
             }
           });
         }
-
       });
     const actionSheet = await this.actionSheetController.create({
       header: this.header,
@@ -92,5 +109,4 @@ export class FivButtons implements OnInit, AfterContentInit {
   onButtonClicked(i: number) {
     this.buttons.toArray()[i].click.emit();
   }
-
 }

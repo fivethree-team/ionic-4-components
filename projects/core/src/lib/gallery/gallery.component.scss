@@ -2,55 +2,49 @@
 }
 
 .viewer {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-    ion-slides {
-        height: 100%;
-    }
+  ion-slides {
+    height: 100%;
+  }
 
-    img {
-        height: auto;
-        max-height: 100%;
-        width: auto;
-        max-width: 100%;
-    }
+  img {
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+  }
 
-    img.instant {
-        // instantly scale back zoomed slided image
-        transition-duration: 0ms !important;
-    }
-
+  img.instant {
+    // instantly scale back zoomed slided image
+    transition-duration: 0ms !important;
+  }
 }
 
 .backdrop {
-    background: rgba(0, 0, 0, 0.97);
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+  background: rgba(0, 0, 0, 0.97);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
 }
 
 .gallery-toolbar {
-    width: 100%;
-    --fiv-gallery-toolbar-color: #fff;
-    position: absolute;
-    color: var(--fiv-gallery-toolbar-color);
+  width: 100%;
+  --fiv-gallery-toolbar-color: #fff;
+  position: absolute;
+  color: var(--fiv-gallery-toolbar-color);
 }
 
 .gallery-toolbar.header {
-    top: env(safe-area-inset-top);
-
+  top: env(safe-area-inset-top);
 }
 
 .gallery-toolbar.footer {
-    bottom: env(safe-area-inset-bottom);
-    
+  bottom: env(safe-area-inset-bottom);
 }
-
-
-
 
 ion-slides.in,
 ion-slides.out {
-    visibility: hidden;
+  visibility: hidden;
 }

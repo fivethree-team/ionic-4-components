@@ -8,9 +8,8 @@ describe('ExpandableIndicatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivExpandableIndicator ]
-    })
-    .compileComponents();
+      declarations: [FivExpandableIndicator]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

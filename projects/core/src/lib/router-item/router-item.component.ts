@@ -21,7 +21,6 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./router-item.component.scss']
 })
 export class FivRouterItem implements OnInit, AfterViewInit {
-
   @ViewChild('fivIcon') fivIcon: FivIcon;
 
   @Input() active = false;
@@ -77,20 +76,18 @@ export class FivRouterItem implements OnInit, AfterViewInit {
     return this.disabled;
   }
 
-
   constructor(
     public router: Router,
     @Optional() @Host() private host: FivExpandable
-  ) { }
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngAfterViewInit(): void {
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
-        filter((event: NavigationEnd) => event.url === this.pageUrl),
+        filter((event: NavigationEnd) => event.url === this.pageUrl)
       )
       .subscribe(() => this.openExpandableHost());
   }
@@ -119,5 +116,4 @@ export class FivRouterItem implements OnInit, AfterViewInit {
   isChildUrl(): boolean {
     return this.router.url.startsWith(this.pageUrl);
   }
-
 }

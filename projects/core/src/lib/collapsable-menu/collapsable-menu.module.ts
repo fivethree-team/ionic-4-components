@@ -6,18 +6,8 @@ import { FivCollapsableMenuButton } from './collapsable-menu-button/collapsable-
 import { FivIconModule } from '../icon/icon.module';
 
 @NgModule({
-    declarations: [
-        FivCollapsableMenu,
-        FivCollapsableMenuButton
-    ],
-    imports: [
-        CommonModule,
-        FivIconModule,
-        IonicModule
-    ],
-    exports: [
-        FivCollapsableMenu,
-        FivCollapsableMenuButton
-    ],
+  declarations: [FivCollapsableMenu, FivCollapsableMenuButton],
+  imports: [CommonModule, FivIconModule, IonicModule],
+  exports: [FivCollapsableMenu, FivCollapsableMenuButton]
 })
-export class FivCollapsableModule { }
+export class FivCollapsableModule {}

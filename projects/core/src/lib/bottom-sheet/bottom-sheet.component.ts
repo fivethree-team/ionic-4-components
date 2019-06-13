@@ -35,10 +35,18 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
 
   @Input() panEnabled = true;
 
-  @Output() stateChange: EventEmitter<DrawerState> = new EventEmitter<DrawerState>();
-  @Output() fivOpen: EventEmitter<FivBottomSheet> = new EventEmitter<FivBottomSheet>();
-  @Output() fivDocked: EventEmitter<FivBottomSheet> = new EventEmitter<FivBottomSheet>();
-  @Output() fivClose: EventEmitter<FivBottomSheet> = new EventEmitter<FivBottomSheet>();
+  @Output() stateChange: EventEmitter<DrawerState> = new EventEmitter<
+    DrawerState
+  >();
+  @Output() fivOpen: EventEmitter<FivBottomSheet> = new EventEmitter<
+    FivBottomSheet
+  >();
+  @Output() fivDocked: EventEmitter<FivBottomSheet> = new EventEmitter<
+    FivBottomSheet
+  >();
+  @Output() fivClose: EventEmitter<FivBottomSheet> = new EventEmitter<
+    FivBottomSheet
+  >();
 
   @ContentChild(FivBottomSheetContent) content: FivBottomSheetContent;
 
@@ -50,8 +58,7 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
     private _renderer: Renderer2,
     private _domCtrl: DomController,
     private _platform: Platform
-  ) { }
-
+  ) {}
 
   // @HostBinding('style') get styles() {
   //   if (this.rounded) {
@@ -67,7 +74,9 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
     this._setDrawerState(this.state);
 
     const hammer = new Hammer(this._element.nativeElement);
-    hammer.get('pan').set({ enable: true, direction: Hammer.DIRECTION_VERTICAL });
+    hammer
+      .get('pan')
+      .set({ enable: true, direction: Hammer.DIRECTION_VERTICAL });
     hammer.on('pan panstart panend', (ev: any) => {
       if (!this.panEnabled) {
         return;
@@ -85,15 +94,15 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
       }
     });
 
-    this.content.fivHandleClick
-      .subscribe(() => {
-        switch (this.state) {
-          case DrawerState.Bottom: return this.dock();
-          case DrawerState.Docked: return this.open();
-        }
-      });
+    this.content.fivHandleClick.subscribe(() => {
+      switch (this.state) {
+        case DrawerState.Bottom:
+          return this.dock();
+        case DrawerState.Docked:
+          return this.open();
+      }
+    });
   }
-
 
   ngOnChanges(changes: SimpleChanges) {
     if (!changes.state) {
@@ -110,13 +119,17 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
   }
 
   private _setDrawerState(state: DrawerState) {
-    this._renderer.setStyle(this._element.nativeElement, 'transition', this.transition);
+    this._renderer.setStyle(
+      this._element.nativeElement,
+      'transition',
+      this.transition
+    );
     switch (state) {
       case DrawerState.Bottom:
         this._setTranslateY('calc(100vh - ' + this.minimumHeight + 'px)');
         break;
       case DrawerState.Docked:
-        this._setTranslateY((this._platform.height() - this.dockedHeight) + 'px');
+        this._setTranslateY(this._platform.height() - this.dockedHeight + 'px');
         break;
       default:
         this._setTranslateY(this.distanceTop + 'px');
@@ -129,7 +142,11 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
 
   private _handlePanEnd(ev) {
     if (this.shouldBounce && ev.isFinal) {
-      this._renderer.setStyle(this._element.nativeElement, 'transition', this.transition);
+      this._renderer.setStyle(
+        this._element.nativeElement,
+        'transition',
+        this.transition
+      );
 
       switch (this.state) {
         case DrawerState.Docked:
@@ -157,7 +174,6 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
           this.state = DrawerState.Docked;
           this.fivDocked.emit(this);
         }
-
       }
     } else {
       this._setTranslateY(this.distanceTop + 'px');
@@ -168,7 +184,6 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
     const absDeltaY = Math.abs(ev.deltaY);
     if (absDeltaY > this._BOUNCE_DELTA && ev.deltaY < 0) {
       if (this.state !== DrawerState.Top) {
-
         this.state = DrawerState.Top;
         this.fivOpen.emit();
       }
@@ -178,7 +193,7 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
         this.fivClose.emit();
       }
     } else {
-      this._setTranslateY((this._platform.height() - this.dockedHeight) + 'px');
+      this._setTranslateY(this._platform.height() - this.dockedHeight + 'px');
     }
   }
 
@@ -205,7 +220,9 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
           this._setTranslateY(this.distanceTop + 'px');
         }
         if (newTop > this._platform.height() - this.minimumHeight) {
-          this._setTranslateY((this._platform.height() - this.minimumHeight) + 'px');
+          this._setTranslateY(
+            this._platform.height() - this.minimumHeight + 'px'
+          );
         }
       }
     }
@@ -213,7 +230,11 @@ export class FivBottomSheet implements AfterViewInit, OnChanges {
 
   private _setTranslateY(value) {
     this._domCtrl.write(() => {
-      this._renderer.setStyle(this._element.nativeElement, 'transform', 'translateY(' + value + ')');
+      this._renderer.setStyle(
+        this._element.nativeElement,
+        'transform',
+        'translateY(' + value + ')'
+      );
     });
   }
 

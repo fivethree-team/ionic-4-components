@@ -8,9 +8,8 @@ describe('RouterItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivRouterItem ]
-    })
-    .compileComponents();
+      declarations: [FivRouterItem]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

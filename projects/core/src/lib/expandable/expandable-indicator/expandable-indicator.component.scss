@@ -1,11 +1,11 @@
 :host {
-    display: flex;
+  display: flex;
 }
 
 .indicator {
-    transition: 125ms ease;
+  transition: 125ms ease;
 }
 
 .indicator.rotate {
-    transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
 }

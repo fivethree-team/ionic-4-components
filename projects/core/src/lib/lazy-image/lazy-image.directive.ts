@@ -1,23 +1,31 @@
 import { FivGalleryImage } from '../gallery/gallery-image/gallery-image.component';
-import { Directive, OnInit, Input, EventEmitter, Output, Host, Self, Optional, ElementRef } from '@angular/core';
+import {
+  Directive,
+  OnInit,
+  Input,
+  EventEmitter,
+  Output,
+  Host,
+  Self,
+  Optional,
+  ElementRef
+} from '@angular/core';
 
 @Directive({
   selector: '[fivLazyImage]'
 })
 export class FivLazyImage implements OnInit {
-
   @Input() fivLazyImage: string;
   @Output() willShow = new EventEmitter<FivGalleryImage | HTMLImageElement>();
 
   constructor(
     @Host() @Self() @Optional() public fivImage: FivGalleryImage,
-    public image: ElementRef,
-  ) { }
+    public image: ElementRef
+  ) {}
 
   ngOnInit(): void {
     const io = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-
         if (entry.isIntersecting) {
           this.handleIntersection();
 
@@ -31,10 +39,6 @@ export class FivLazyImage implements OnInit {
     } else {
       io.observe(this.image.nativeElement);
     }
-
-
-
-
   }
   handleIntersection() {
     if (this.fivLazyImage) {
@@ -48,8 +52,5 @@ export class FivLazyImage implements OnInit {
     } else {
       this.willShow.emit(this.fivImage || this.image.nativeElement);
     }
-
   }
-
-
 }

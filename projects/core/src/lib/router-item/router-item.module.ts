@@ -7,14 +7,14 @@ import { CommonModule } from '@angular/common';
 import { FivRouterItem } from './router-item.component';
 
 @NgModule({
-    declarations: [FivRouterItem],
-    imports: [
-        CommonModule,
-        IonicModule,
-        FivExpandableModule,
-        FivIconModule,
-        FivRippleModule
-    ],
-    exports: [FivRouterItem],
+  declarations: [FivRouterItem],
+  imports: [
+    CommonModule,
+    IonicModule,
+    FivExpandableModule,
+    FivIconModule,
+    FivRippleModule
+  ],
+  exports: [FivRouterItem]
 })
-export class FivRouterItemModule { }
+export class FivRouterItemModule {}

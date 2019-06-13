@@ -1,58 +1,58 @@
 :host {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
 }
 
 :host:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 :host.hover:hover {
-    background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 :host.round {
-    border-radius: 100%;
+  border-radius: 100%;
 }
 
 .rippleWrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    border-radius: inherit;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
 }
 
 .rippleWrapper::before {
-    content: '';
-    display: block;
-    height: 100%;
-    width: 100%; // background-color: rgba(0, 0, 0, .1);
-    transform: scale(0);
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%; // background-color: rgba(0, 0, 0, .1);
+  transform: scale(0);
 }
 
 .rippleWrapper.show::before {
-    transition: opacity 1.5s;
-    transform: scale(2);
-    opacity: 0;
+  transition: opacity 1.5s;
+  transform: scale(2);
+  opacity: 0;
 }
 
 .ripple {
-    position: absolute;
-    background: rgba(0, 0, 0, .1);
-    border-radius: 100%;
-    transform: scale(0);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  transform: scale(0);
 }
 
 .ripple.show {
-    animation: ripple .75s ease-out;
+  animation: ripple 0.75s ease-out;
 }
 
 @keyframes ripple {
-    to {
-        transform: scale(2);
-        opacity: 0;
-    }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
 }

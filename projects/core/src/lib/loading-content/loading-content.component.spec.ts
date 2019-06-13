@@ -8,9 +8,8 @@ describe('LoadingContentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivLoadingContent ]
-    })
-    .compileComponents();
+      declarations: [FivLoadingContent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

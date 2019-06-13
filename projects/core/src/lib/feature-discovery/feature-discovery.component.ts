@@ -9,7 +9,13 @@ import {
   Output,
   EventEmitter
 } from '@angular/core';
-import { AnimationEvent, trigger, transition, animate, style } from '@angular/animations';
+import {
+  AnimationEvent,
+  trigger,
+  transition,
+  animate,
+  style
+} from '@angular/animations';
 import { FeaturePosition } from '../interfaces';
 import { FivIcon } from '../icon/icon.component';
 
@@ -21,7 +27,10 @@ import { FivIcon } from '../icon/icon.component';
     trigger('scale', [
       transition('* => visible', [
         style({ transform: 'scale(0)', opacity: '0' }),
-        animate('240ms ease-out', style({ transform: 'scale(1)', opacity: '1' }))
+        animate(
+          '240ms ease-out',
+          style({ transform: 'scale(1)', opacity: '1' })
+        )
       ]),
       transition('visible => hidden', [
         style({ transform: 'scale(1)', opacity: '1' }),
@@ -29,28 +38,40 @@ import { FivIcon } from '../icon/icon.component';
       ]),
       transition('visible => execute', [
         style({ transform: 'scale(1)', opacity: '1' }),
-        animate('215ms 0.15s ease-in', style({ transform: 'scale(1.4)', opacity: '0' }))
-      ]),
+        animate(
+          '215ms 0.15s ease-in',
+          style({ transform: 'scale(1.4)', opacity: '0' })
+        )
+      ])
     ]),
     trigger('pulse', [
       transition('small => big', [
         style({ transform: 'scale(1) translate(-50%,-50%)' }),
-        animate('1000ms', style({ transform: 'scale(1.1) translate(-45%,-45%)' }))
+        animate(
+          '1000ms',
+          style({ transform: 'scale(1.1) translate(-45%,-45%)' })
+        )
       ]),
       transition('big => small', [
         style({ transform: 'scale(1.1) translate(-45%,-45%)' }),
         animate('400ms', style({ transform: 'scale(1) translate(-50%,-50%)' }))
-      ]),
+      ])
     ]),
     trigger('pulseFade', [
       transition('small => big', [
         style({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0.8 }),
-        animate('1000ms', style({ transform: 'scale(1.6) translate(-28%,-28%)', opacity: 0 }))
+        animate(
+          '1000ms',
+          style({ transform: 'scale(1.6) translate(-28%,-28%)', opacity: 0 })
+        )
       ]),
       transition('big => small', [
         style({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0 }),
-        animate('400ms', style({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0 }))
-      ]),
+        animate(
+          '400ms',
+          style({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0 })
+        )
+      ])
     ]),
     trigger('contentAnim', [
       transition('void => *', [
@@ -88,39 +109,53 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
   @Output() fivOpen = new EventEmitter<any>();
   @Output() fivAnimation = new EventEmitter<AnimationEvent>();
 
-  constructor(
-    private renderer: Renderer2,
-    private platform: Platform
-  ) {
-  }
+  constructor(private renderer: Renderer2, private platform: Platform) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
-  ngAfterContentInit(): void {
-  }
-
+  ngAfterContentInit(): void {}
 
   setBounds(bounds: FeaturePosition) {
     this.bounds = bounds;
-    this.innerDiameter = bounds.height > bounds.width ? bounds.height : bounds.width;
+    this.innerDiameter =
+      bounds.height > bounds.width ? bounds.height : bounds.width;
     this.top = bounds.top + bounds.height / 2 - this.height / 2;
     this.left = bounds.left + bounds.width / 2 - this.width / 2;
     this.calculateContentBounds();
     if (!this.icon) {
       // tslint:disable-next-line:max-line-length
-      const gradient = `-webkit-radial-gradient(transparent ${this.innerDiameter / 2 + 5}px, var(--fiv-color-feature) ${this.innerDiameter / 2 + 5}px)`;
+      const gradient = `-webkit-radial-gradient(transparent ${this
+        .innerDiameter /
+        2 +
+        5}px, var(--fiv-color-feature) ${this.innerDiameter / 2 + 5}px)`;
       // tslint:disable-next-line:max-line-length
-      const pulseGradient = `-webkit-radial-gradient(transparent ${this.innerDiameter / 2 + 5}px, var(--fiv-color-pulse) ${this.innerDiameter / 2 + 5}px)`;
+      const pulseGradient = `-webkit-radial-gradient(transparent ${this
+        .innerDiameter /
+        2 +
+        5}px, var(--fiv-color-pulse) ${this.innerDiameter / 2 + 5}px)`;
       this.renderer.setStyle(this.circle.nativeElement, 'background', gradient);
-      this.renderer.setStyle(this.innerPulse.nativeElement, 'background', pulseGradient);
-      this.renderer.setStyle(this.outerPulse.nativeElement, 'background', pulseGradient);
+      this.renderer.setStyle(
+        this.innerPulse.nativeElement,
+        'background',
+        pulseGradient
+      );
+      this.renderer.setStyle(
+        this.outerPulse.nativeElement,
+        'background',
+        pulseGradient
+      );
     }
-
   }
   calculateContentBounds() {
-    const absoluteCenter: { x: number, y: number } = { x: this.platform.width() / 2, y: this.platform.height() / 2 };
-    const center: { x: number, y: number } = { x: this.left + this.width / 2, y: this.top + this.width / 2 };
-    const rectWidth = Math.sqrt((Math.pow(this.width, 2) / 2));
+    const absoluteCenter: { x: number; y: number } = {
+      x: this.platform.width() / 2,
+      y: this.platform.height() / 2
+    };
+    const center: { x: number; y: number } = {
+      x: this.left + this.width / 2,
+      y: this.top + this.width / 2
+    };
+    const rectWidth = Math.sqrt(Math.pow(this.width, 2) / 2);
     const isTop = center.y < absoluteCenter.y;
     const isLeft = center.x < absoluteCenter.x;
     const innerRadius = this.innerDiameter / 2;
@@ -129,9 +164,15 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
     let contentBottom = 0;
     if (isLeft) {
       this.contentLeft = center.x - innerRadius;
-      contentRight = Math.min(center.x + rectWidth / 2 + this.contentOffset, this.platform.width());
+      contentRight = Math.min(
+        center.x + rectWidth / 2 + this.contentOffset,
+        this.platform.width()
+      );
     } else {
-      this.contentLeft = Math.max(center.x - rectWidth / 2 - this.contentOffset, 0);
+      this.contentLeft = Math.max(
+        center.x - rectWidth / 2 - this.contentOffset,
+        0
+      );
       contentRight = center.x + innerRadius;
     }
     if (isTop) {
@@ -144,7 +185,6 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
 
     this.contentWidth = Math.abs(this.contentLeft - contentRight);
     this.contentHeight = Math.abs(this.contentTop - contentBottom);
-
   }
   handleCircleAnimation(event: AnimationEvent) {
     this.fivAnimation.emit(event);
@@ -165,7 +205,6 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
     if (event.toState === 'small') {
       this.pulse = 'big';
     }
-
   }
 
   show() {
@@ -185,5 +224,4 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
       this.icon = icon.name;
     }
   }
-
 }

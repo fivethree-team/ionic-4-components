@@ -12,18 +12,16 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   selector: 'fiv-password-input',
   templateUrl: './password-input.component.html',
   styleUrls: ['./password-input.component.scss'],
-  providers: [
-    CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR
-  ],
+  providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
 export class FivPasswordInput implements ControlValueAccessor {
-
   @Input() clearOnEdit = false;
 
   @Input() color: Color;
 
   @HostBinding('class.password-disabled')
-  @Input() disabled = false;
+  @Input()
+  disabled = false;
 
   @Input() hideIcon = 'eye-off';
 
@@ -41,7 +39,7 @@ export class FivPasswordInput implements ControlValueAccessor {
   private onTouchedCallback: () => {};
   private onChangeCallback: (_: any) => {};
 
-  constructor() { }
+  constructor() {}
 
   toggleShowPassword() {
     this.show = !this.show;
@@ -79,5 +77,4 @@ export class FivPasswordInput implements ControlValueAccessor {
   registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
   }
-
 }

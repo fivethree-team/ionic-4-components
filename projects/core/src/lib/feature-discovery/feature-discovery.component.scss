@@ -1,42 +1,43 @@
 :host {
-    display: block;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    --fiv-color-feature: rgba(56, 128, 255, 0.97);
-    --fiv-color-pulse: var(--ion-color-light);
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  --fiv-color-feature: rgba(56, 128, 255, 0.97);
+  --fiv-color-pulse: var(--ion-color-light);
 }
 
-.backdrop{
-    display: block;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
+.backdrop {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
 }
 
 fiv-icon {
-    --fiv-color-icon: var(--ion-color-primary);
+  --fiv-color-icon: var(--ion-color-primary);
 }
 
 .circle {
-    position: absolute;
-    border-radius: 100%;
-    background: var(--fiv-color-feature);
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  position: absolute;
+  border-radius: 100%;
+  background: var(--fiv-color-feature);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 .feature {
-    border-radius: 100%;
-    background: var(--fiv-color-pulse);
+  border-radius: 100%;
+  background: var(--fiv-color-pulse);
 }
 
 .content {
-    position: absolute;
+  position: absolute;
 }
 
 .center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

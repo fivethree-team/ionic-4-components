@@ -7,19 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { FivLoadingRefresherContent } from './loading-refresher-content/loading-refresher-content.component';
 
 @NgModule({
-    declarations: [
-        FivLoadingContent,
-        FivLoadingRefresherContent
-    ],
-    imports: [
-        CommonModule,
-        FivLoadingSpinnerModule,
-        FivPullModule,
-        IonicModule
-    ],
-    exports: [
-        FivLoadingContent,
-        FivLoadingRefresherContent
-    ],
+  declarations: [FivLoadingContent, FivLoadingRefresherContent],
+  imports: [CommonModule, FivLoadingSpinnerModule, FivPullModule, IonicModule],
+  exports: [FivLoadingContent, FivLoadingRefresherContent]
 })
-export class FivLoadingContentModule { }
+export class FivLoadingContentModule {}

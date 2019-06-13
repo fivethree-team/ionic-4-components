@@ -8,9 +8,8 @@ describe('AppBarTabComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivAppBarTab ]
-    })
-    .compileComponents();
+      declarations: [FivAppBarTab]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -5,17 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FivCenterModule } from '../center/center.module';
 
 @NgModule({
-    declarations: [
-        FivBottomSheet,
-        FivBottomSheetContent
-    ],
-    imports: [
-        CommonModule,
-        FivCenterModule
-    ],
-    exports: [
-        FivBottomSheet,
-        FivBottomSheetContent
-    ]
+  declarations: [FivBottomSheet, FivBottomSheetContent],
+  imports: [CommonModule, FivCenterModule],
+  exports: [FivBottomSheet, FivBottomSheetContent]
 })
-export class FivBottomSheetModule { }
+export class FivBottomSheetModule {}

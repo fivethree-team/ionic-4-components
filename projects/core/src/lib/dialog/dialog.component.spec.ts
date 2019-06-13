@@ -8,9 +8,8 @@ describe('DialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivDialog ]
-    })
-    .compileComponents();
+      declarations: [FivDialog]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

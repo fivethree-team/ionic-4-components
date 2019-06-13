@@ -1,5 +1,21 @@
-import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
-import { animate, style, transition, trigger, AnimationBuilder, AnimationPlayer } from '@angular/animations';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Input,
+  Output,
+  EventEmitter,
+  ElementRef,
+  ViewChild
+} from '@angular/core';
+import {
+  animate,
+  style,
+  transition,
+  trigger,
+  AnimationBuilder,
+  AnimationPlayer
+} from '@angular/animations';
 import { timer } from 'rxjs';
 import { FivLoadingService } from './loading.service';
 
@@ -32,20 +48,23 @@ import { FivLoadingService } from './loading.service';
           width: '0px'
         }),
         animate('850ms ease-out', style({ width: '100%' }))
-      ]),
+      ])
     ])
   ]
 })
 export class FivLoadingProgressBar implements OnInit, OnDestroy {
-
   loading = false;
   @Input() global = false;
   @Input() isComplete = false;
   progress = 0;
   @Input() verticalAlign: 'top' | 'bottom' = 'top';
   @Output() fivComplete: EventEmitter<any> = new EventEmitter<any>();
-  @Output() fivDoneShrinking: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() fivRefresh: EventEmitter<FivLoadingProgressBar> = new EventEmitter<FivLoadingProgressBar>();
+  @Output() fivDoneShrinking: EventEmitter<boolean> = new EventEmitter<
+    boolean
+  >();
+  @Output() fivRefresh: EventEmitter<FivLoadingProgressBar> = new EventEmitter<
+    FivLoadingProgressBar
+  >();
 
   @ViewChild('bar') bar: ElementRef;
   @ViewChild('linear') linear: ElementRef;
@@ -55,9 +74,10 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
   _progressPlayer: AnimationPlayer;
   private animating = false;
 
-  constructor(public loadingService: FivLoadingService,
-    private builder: AnimationBuilder) {
-  }
+  constructor(
+    public loadingService: FivLoadingService,
+    private builder: AnimationBuilder
+  ) {}
 
   ngOnInit() {
     if (this.global) {
@@ -99,7 +119,6 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
 
   fillAnimationComplete(isComplete: boolean) {
     if (isComplete) {
-
       this.fivComplete.emit(this.param);
       this.isComplete = false;
       this.param = null;
@@ -121,10 +140,7 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
       return;
     }
     this.progress = progress;
-
-
   }
-
 
   fillIn(ms: number) {
     // first define a reusable animation
@@ -137,14 +153,12 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
     // use the returned factory object to create a player
     const player = myAnimation.create(this.linear.nativeElement);
 
-    const t = timer(0, ms / (100))
-      .subscribe(() => {
-        if (this.progress <= 0) {
-          return t.unsubscribe();
-        }
-        this.progress++;
-
-      });
+    const t = timer(0, ms / 100).subscribe(() => {
+      if (this.progress <= 0) {
+        return t.unsubscribe();
+      }
+      this.progress++;
+    });
 
     player.play();
     player.onDone(() => {
@@ -170,14 +184,12 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
     // use the returned factory object to create a player
     const player = myAnimation.create(this.linear.nativeElement);
 
-    const t = timer(0, ms / (100))
-      .subscribe(() => {
-        if (this.progress <= 0) {
-          return t.unsubscribe();
-        }
-        this.progress--;
-
-      });
+    const t = timer(0, ms / 100).subscribe(() => {
+      if (this.progress <= 0) {
+        return t.unsubscribe();
+      }
+      this.progress--;
+    });
 
     player.play();
     player.onDone(() => {
@@ -199,5 +211,4 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
       this.animating = false;
     }
   }
-
 }

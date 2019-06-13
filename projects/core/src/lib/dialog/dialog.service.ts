@@ -14,8 +14,7 @@ export interface DialogOptions {
   providedIn: 'root'
 })
 export class FivDialogService {
-
-  constructor(private overlay: FivOverlayService) { }
+  constructor(private overlay: FivOverlayService) {}
 
   openDialog(content: NgContent<any>, options?: DialogOptions) {
     const c = this.overlay.createOverlay<FivDialog>(FivDialog, content);

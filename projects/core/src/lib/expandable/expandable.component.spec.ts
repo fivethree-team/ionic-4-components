@@ -8,9 +8,8 @@ describe('ExpandableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivExpandable ]
-    })
-    .compileComponents();
+      declarations: [FivExpandable]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

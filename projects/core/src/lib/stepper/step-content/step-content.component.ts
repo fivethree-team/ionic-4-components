@@ -16,7 +16,6 @@ import { FivExpandable } from '../../expandable/expandable.component';
   styleUrls: ['./step-content.component.scss']
 })
 export class FivStepContent implements OnInit {
-
   @Input() index: number;
   @Input() icon: string;
   @Input() isLast = false;
@@ -30,10 +29,9 @@ export class FivStepContent implements OnInit {
   @ViewChild('self') step: FivExpandable;
   @ViewChild('header') header: FivStepHeader;
 
-  constructor(private change: ChangeDetectorRef) {
-  }
+  constructor(private change: ChangeDetectorRef) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   open() {
     this.isOpen = true;
@@ -69,5 +67,4 @@ export class FivStepContent implements OnInit {
   click() {
     this.fivClick.emit(this);
   }
-
 }

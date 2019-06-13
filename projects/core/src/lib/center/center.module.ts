@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FivCenter } from './center.directive';
 
 @NgModule({
-    declarations: [FivCenter],
-    imports: [CommonModule],
-    exports: [FivCenter],
+  declarations: [FivCenter],
+  imports: [CommonModule],
+  exports: [FivCenter]
 })
-export class FivCenterModule { }
+export class FivCenterModule {}

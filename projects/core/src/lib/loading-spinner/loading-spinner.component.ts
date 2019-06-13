@@ -1,9 +1,21 @@
 import { DomSanitizer } from '@angular/platform-browser';
 import { AnimationBuilder, style, animate } from '@angular/animations';
-import { takeUntil} from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 import {
-  Component, OnInit, Input, Optional,
-  Inject, ChangeDetectionStrategy, ViewEncapsulation, ElementRef, ChangeDetectorRef, EventEmitter, Output, ViewChild, HostBinding, Renderer2
+  Component,
+  OnInit,
+  Input,
+  Optional,
+  Inject,
+  ChangeDetectionStrategy,
+  ViewEncapsulation,
+  ElementRef,
+  ChangeDetectorRef,
+  EventEmitter,
+  Output,
+  ViewChild,
+  HostBinding,
+  Renderer2
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { timer, interval } from 'rxjs';
@@ -19,16 +31,14 @@ const BASE_SIZE = 100;
     '[style.height.px]': 'diameter'
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class FivLoadingSpinner implements OnInit {
-
   private static diameters = new Set<number>([BASE_SIZE]);
   private static styleTag: HTMLStyleElement | null = null;
   private _diameter = BASE_SIZE;
   _strokeWidth = 10;
   _value = 0;
-
 
   @Output() fivProgress = new EventEmitter<number>();
   @Output() fivComplete = new EventEmitter<FivLoadingSpinner>();
@@ -37,15 +47,22 @@ export class FivLoadingSpinner implements OnInit {
   @Input() circleRadius = 45;
 
   @HostBinding('class') get class() {
-    return this.mode + ' mat-spinner mat-progress-spinner mat-progress-spinner-indeterminate-animation';
+    return (
+      this.mode +
+      ' mat-spinner mat-progress-spinner mat-progress-spinner-indeterminate-animation'
+    );
   }
 
-  constructor(@Optional() @Inject(DOCUMENT) private _document: any, public _elementRef: ElementRef,
-    public change: ChangeDetectorRef, private builder: AnimationBuilder, public sanitizer: DomSanitizer, private renderer: Renderer2) {
-  }
+  constructor(
+    @Optional() @Inject(DOCUMENT) private _document: any,
+    public _elementRef: ElementRef,
+    public change: ChangeDetectorRef,
+    private builder: AnimationBuilder,
+    public sanitizer: DomSanitizer,
+    private renderer: Renderer2
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   get viewBox() {
     const viewBox = this.circleRadius * 2 + this.strokeWidth;
@@ -60,7 +77,7 @@ export class FivLoadingSpinner implements OnInit {
   /** The dash offset of the svg circle. */
   get strokeDashOffset() {
     if (this.mode === 'determinate') {
-      return this.strokeCircumference * (100 - this._value) / 100;
+      return (this.strokeCircumference * (100 - this._value)) / 100;
     }
 
     return null;
@@ -68,7 +85,7 @@ export class FivLoadingSpinner implements OnInit {
 
   /** Stroke width of the circle in percent. */
   get circleStrokeWidth() {
-    return this.strokeWidth / this.diameter * 100;
+    return (this.strokeWidth / this.diameter) * 100;
   }
 
   /** Value of the progress circle. */
@@ -77,11 +94,13 @@ export class FivLoadingSpinner implements OnInit {
     return this.mode === 'determinate' ? this._value : 0;
   }
   set value(newValue: number) {
-    this._value = Math.max(0, Math.min(100, (newValue)));
+    this._value = Math.max(0, Math.min(100, newValue));
   }
 
   @Input()
-  get diameter(): number { return this._diameter; }
+  get diameter(): number {
+    return this._diameter;
+  }
   set diameter(size: number) {
     this._diameter = size;
 
@@ -99,7 +118,6 @@ export class FivLoadingSpinner implements OnInit {
     this._strokeWidth = value;
   }
 
-
   /** Dynamically generates a style tag containing the correct animation for this diameter. */
   private _attachStyleNode(): void {
     let styleTag = FivLoadingSpinner.styleTag;
@@ -116,7 +134,6 @@ export class FivLoadingSpinner implements OnInit {
 
     FivLoadingSpinner.diameters.add(this.diameter);
   }
-
 
   /** Generates animation styles adjusted for the spinner's diameter. */
   private _getAnimationText(): string {
@@ -140,13 +157,14 @@ export class FivLoadingSpinner implements OnInit {
        100%    { stroke-dashoffset: START_VALUE;  transform: rotateX(180deg) rotate(341.5deg); }
      }
    `;
-    return INDETERMINATE_ANIMATION_TEMPLATE
-      // Animation should begin at 5% and end at 80%
-      .replace(/START_VALUE/g, `${0.95 * this.strokeCircumference}`)
-      .replace(/END_VALUE/g, `${0.2 * this.strokeCircumference}`)
-      .replace(/DIAMETER/g, `${this.diameter}`);
+    return (
+      INDETERMINATE_ANIMATION_TEMPLATE
+        // Animation should begin at 5% and end at 80%
+        .replace(/START_VALUE/g, `${0.95 * this.strokeCircumference}`)
+        .replace(/END_VALUE/g, `${0.2 * this.strokeCircumference}`)
+        .replace(/DIAMETER/g, `${this.diameter}`)
+    );
   }
-
 
   completeIn(duration: number) {
     this.mode = 'determinate';
@@ -156,16 +174,19 @@ export class FivLoadingSpinner implements OnInit {
       style({
         'stroke-dasharray': 180,
         'stroke-dashoffset': 90,
-        'transformOrigin': 'center',
-        'stroke': '#DE3E35'
+        transformOrigin: 'center',
+        stroke: '#DE3E35'
       }),
-      animate(`${duration}ms ease-out`, style({
-        'stroke-dasharray': 315,
-        'stroke-dashoffset': 0,
-        'transformOrigin': 'center',
-        'stroke': '#1B9A59',
-        'opacity': 0
-      }))
+      animate(
+        `${duration}ms ease-out`,
+        style({
+          'stroke-dasharray': 315,
+          'stroke-dashoffset': 0,
+          transformOrigin: 'center',
+          stroke: '#1B9A59',
+          opacity: 0
+        })
+      )
     ]);
 
     const player = animation.create(this.determinateCircle.nativeElement);
@@ -175,7 +196,6 @@ export class FivLoadingSpinner implements OnInit {
       this._value = 0;
     });
 
-
     const i = interval(duration / 100);
     const t = timer(duration + duration / 50);
     const progress = i.pipe(takeUntil(t));
@@ -183,7 +203,6 @@ export class FivLoadingSpinner implements OnInit {
     progress.subscribe(p => {
       this.fivProgress.emit(p);
     });
-
   }
   setValue(progress: number): any {
     this.mode = 'determinate';
@@ -206,5 +225,3 @@ export class FivLoadingSpinner implements OnInit {
     this.change.detectChanges();
   }
 }
-
-

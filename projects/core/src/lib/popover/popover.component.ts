@@ -8,15 +8,16 @@ import { NavParams, PopoverController } from '@ionic/angular';
   styleUrls: ['./popover.component.scss']
 })
 export class FivPopover implements OnInit {
-
   public buttons: FivButton[] = [];
 
-  constructor(public navParams: NavParams, public popoverController: PopoverController) {
+  constructor(
+    public navParams: NavParams,
+    public popoverController: PopoverController
+  ) {
     this.buttons = navParams.get('buttons');
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onItemClicked(i: number) {
     this.popoverController.dismiss({ index: i });

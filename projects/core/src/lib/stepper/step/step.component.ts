@@ -1,4 +1,10 @@
-import { Component, OnInit, Input, ViewChild, TemplateRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewChild,
+  TemplateRef
+} from '@angular/core';
 
 @Component({
   selector: 'fiv-step',
@@ -6,7 +12,6 @@ import { Component, OnInit, Input, ViewChild, TemplateRef } from '@angular/core'
   styleUrls: ['./step.component.scss']
 })
 export class FivStep implements OnInit {
-
   @Input() index: number;
   @Input() icon: string;
   @Input() isLast = false;
@@ -16,9 +21,7 @@ export class FivStep implements OnInit {
 
   @ViewChild(TemplateRef) content: TemplateRef<any>;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

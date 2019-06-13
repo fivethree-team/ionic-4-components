@@ -6,15 +6,14 @@ import { Platforms } from '@ionic/core';
   selector: '[fivIf]'
 })
 export class FivIfPlatform {
-
-  constructor(private platform: Platform, private viewContainer: ViewContainerRef, private templateRef: TemplateRef<any>) {
-
-  }
+  constructor(
+    private platform: Platform,
+    private viewContainer: ViewContainerRef,
+    private templateRef: TemplateRef<any>
+  ) {}
 
   @Input()
   set fivIf(platforms: Platforms[]) {
-
-
     let show = true;
     platforms.forEach(p => {
       if (!this.platform.is(p)) {
@@ -22,13 +21,10 @@ export class FivIfPlatform {
       }
     });
 
-
-
     if (show) {
       this.viewContainer.createEmbeddedView(this.templateRef);
     } else {
       this.viewContainer.clear();
     }
   }
-
 }

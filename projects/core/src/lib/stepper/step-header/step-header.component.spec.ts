@@ -8,9 +8,8 @@ describe('StepHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivStepHeader ]
-    })
-    .compileComponents();
+      declarations: [FivStepHeader]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

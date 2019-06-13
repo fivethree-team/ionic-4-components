@@ -1,28 +1,28 @@
 :host {
-    display: block;
-    width: 100%;
-    height: 72px;
-    align-items: center;
-    position: relative;
-    padding-top: 8px;
+  display: block;
+  width: 100%;
+  height: 72px;
+  align-items: center;
+  position: relative;
+  padding-top: 8px;
 }
 
 .number-container {
-    width: 24px;
-    height: 24px;
-    border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  position: absolute;
+  left: 16px;
+  background: var(--fiv-color-circle, var(--ion-color-primary));
+  color: var(--fiv-color-circle-color, var(--ion-color-light));
+  * {
     position: absolute;
-    left: 16px;
-    background: var(--fiv-color-circle, var(--ion-color-primary));
-    color: var(--fiv-color-circle-color, var(--ion-color-light));
-    * {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) rotateZ(0deg);
-    }
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
 }
 
 .step-content {
-    padding-left: 56px
+  padding-left: 56px;
 }

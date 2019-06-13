@@ -2,8 +2,10 @@ import { FivAppBarTabContent } from './app-bar-tab-content/app-bar-tab-content.c
 import { FivLoadingFab } from './../loading-fab/loading-fab.component';
 import {
   Component,
-  OnInit, Input,
-  ViewChild, Output,
+  OnInit,
+  Input,
+  ViewChild,
+  Output,
   EventEmitter,
   ContentChildren,
   QueryList,
@@ -24,7 +26,6 @@ import { TabButtonClickEventDetail } from '@ionic/core';
   styleUrls: ['./app-bar.component.scss']
 })
 export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
-
   _fabVisible = true;
   cutoutVisible = true;
   _position: AppBarFabPosition;
@@ -44,7 +45,6 @@ export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
 
   @Input()
   set position(position: AppBarFabPosition) {
-
     if (!position) {
       return;
     }
@@ -72,7 +72,6 @@ export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
   @Input()
   set fabVisible(fabVisible: boolean) {
     if (this._fabVisible === true && fabVisible === false) {
-
       this._fabVisible = false;
     } else if (this._fabVisible === false && fabVisible === true) {
       this.cutoutVisible = true;
@@ -85,34 +84,24 @@ export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
     return this._fabVisible;
   }
 
+  constructor(public router: Router, @Host() public tabs: IonTabs) {}
 
+  ngOnInit() {}
 
-  constructor(public router: Router, @Host() public tabs: IonTabs) { }
-
-  ngOnInit() {
-  }
-
-  ngAfterViewInit(): void {
-  }
+  ngAfterViewInit(): void {}
 
   ngAfterContentInit() {
     this.prepareTabs(this.position);
   }
 
   onFabHidden() {
-
-
-
     if (this.transitioning) {
-
       this.setPosition();
 
       this.cutoutVisible = false;
       setTimeout(() => {
-
         this.cutoutVisible = true;
         setTimeout(() => {
-
           this._fabVisible = true;
           this.transitioning = false;
         }, 225);

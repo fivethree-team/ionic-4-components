@@ -8,9 +8,8 @@ describe('RippleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivRipple ]
-    })
-    .compileComponents();
+      declarations: [FivRipple]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

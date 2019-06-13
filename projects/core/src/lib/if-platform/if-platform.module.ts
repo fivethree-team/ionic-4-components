@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FivIfPlatform } from './if-platform.directive';
 
 @NgModule({
-    declarations: [FivIfPlatform],
-    imports: [CommonModule],
-    exports: [FivIfPlatform],
+  declarations: [FivIfPlatform],
+  imports: [CommonModule],
+  exports: [FivIfPlatform]
 })
-export class FivIfModule { }
+export class FivIfModule {}

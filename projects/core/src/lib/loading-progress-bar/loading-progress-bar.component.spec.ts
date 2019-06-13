@@ -8,9 +8,8 @@ describe('LoadingProgressBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivLoadingProgressBar ]
-    })
-    .compileComponents();
+      declarations: [FivLoadingProgressBar]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

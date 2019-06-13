@@ -5,7 +5,8 @@ import {
   OnInit,
   ViewChildren,
   ContentChildren,
-  QueryList, Input,
+  QueryList,
+  Input,
   ViewChild,
   Output
 } from '@angular/core';
@@ -18,22 +19,20 @@ import { FivStepperHorizontal } from './stepper-horizontal/stepper-horizontal.co
   styleUrls: ['./stepper.component.scss']
 })
 export class FivStepper implements OnInit {
-
   @ContentChildren(FivStep) contents: QueryList<FivStep>;
   @ViewChildren(FivStepContent) steps: QueryList<FivStepContent>;
   @ViewChild(FivStepperHorizontal) horizontal: FivStepperHorizontal;
   @Input() mode: 'horizontal' | 'vertical' = 'vertical';
   @Output() fivClick = new EventEmitter<number>();
-  @Output() fivClose = new EventEmitter<{ index: number, param: any }>();
+  @Output() fivClose = new EventEmitter<{ index: number; param: any }>();
 
   currentIndex = 0;
 
   param: any;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   open(index: number) {
     if (this.mode === 'horizontal') {
@@ -49,7 +48,6 @@ export class FivStepper implements OnInit {
         }
       } else {
       }
-
     }
   }
 
@@ -67,7 +65,7 @@ export class FivStepper implements OnInit {
       this.currentIndex = 0;
       this.horizontal.close();
     } else {
-      this.currentIndex = - 1;
+      this.currentIndex = -1;
       this.steps.toArray()[index].close();
     }
   }
@@ -101,7 +99,8 @@ export class FivStepper implements OnInit {
   }
 
   next() {
-    const next = this.currentIndex < this.steps.length ? this.currentIndex + 1 : -1;
+    const next =
+      this.currentIndex < this.steps.length ? this.currentIndex + 1 : -1;
     this.select(next);
   }
 
@@ -133,5 +132,4 @@ export class FivStepper implements OnInit {
       this.steps.toArray()[index].reset();
     }
   }
-
 }

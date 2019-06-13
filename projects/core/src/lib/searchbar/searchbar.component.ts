@@ -1,5 +1,18 @@
-import { Component, OnInit, Input, EventEmitter, Output, Renderer2 } from '@angular/core';
-import { trigger, transition, style, animate, state } from '@angular/animations';
+import {
+  Component,
+  OnInit,
+  Input,
+  EventEmitter,
+  Output,
+  Renderer2
+} from '@angular/core';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  state
+} from '@angular/animations';
 import { IonInput } from '@ionic/angular';
 
 @Component({
@@ -8,25 +21,25 @@ import { IonInput } from '@ionic/angular';
   styleUrls: ['./searchbar.component.scss'],
   animations: [
     trigger('searchbarAnim', [
-      transition('small => normal', [
-        animate('125ms ease-out')
-      ]),
-      transition('normal => small', [
-        animate('95ms ease-in')
-      ]),
-      state('small', style({ width: '{{width}}px' }), { params: { width: 120 } }),
+      transition('small => normal', [animate('125ms ease-out')]),
+      transition('normal => small', [animate('95ms ease-in')]),
+      state('small', style({ width: '{{width}}px' }), {
+        params: { width: 120 }
+      }),
       state('normal', style({ width: '100%' }))
     ]),
     trigger('titleAnim', [
       transition('void => *', [
         style({ opacity: '0', transform: 'translateY(-20%)' }),
-        animate('175ms ease-out', style({ opacity: '1', transform: 'translateY(0)' }))
-      ]),
-    ]),
+        animate(
+          '175ms ease-out',
+          style({ opacity: '1', transform: 'translateY(0)' })
+        )
+      ])
+    ])
   ]
 })
 export class FivSearchbar implements OnInit {
-
   searching = false;
   titleVisible = true;
   closeButtonVisible = false;
@@ -52,23 +65,20 @@ export class FivSearchbar implements OnInit {
 
   state: 'small' | 'normal' = 'normal';
 
-  constructor(public renderer: Renderer2) { }
+  constructor(public renderer: Renderer2) {}
 
   ngOnInit() {
     this.state = this._small ? 'small' : 'normal';
   }
 
   shrink() {
-
     this.state = 'small';
   }
   grow() {
-
     this.state = 'normal';
   }
 
   openSearchbar() {
-
     if (this._small) {
       this.state = 'normal';
     }
@@ -83,16 +93,12 @@ export class FivSearchbar implements OnInit {
     }
   }
 
-
   searchBarStateChange(event) {
-
     if (event.fromState === 'normal' && event.toState === 'small') {
-
     }
 
     if (event.fromState === 'small' && event.toState === 'normal') {
     }
-
   }
 
   private _open() {
@@ -107,19 +113,15 @@ export class FivSearchbar implements OnInit {
     }
     this.searching = false;
     this.fivClose.emit();
-
   }
 
-
   searchAnimDone(event) {
-
     if (event.fromState !== 'void') {
       this.closeButtonVisible = true;
     }
   }
 
   closeAnimDone(event) {
-
     if (event.fromState !== 'void') {
       this.searching = false;
     }
@@ -132,5 +134,4 @@ export class FivSearchbar implements OnInit {
       input.setFocus();
     }
   }
-
 }

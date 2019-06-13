@@ -5,30 +5,24 @@ import {
   Input,
   OnInit,
   Output,
-  OnDestroy,
+  OnDestroy
 } from '@angular/core';
-
 
 @Directive({
   selector: '[fivViewport]',
   exportAs: 'viewport'
 })
 export class FivViewport implements OnInit, OnDestroy {
-
   @Output() fivAppear = new EventEmitter<any>();
   @Output() fivDisappear = new EventEmitter<any>();
   private visible = false;
   private io: IntersectionObserver;
 
-  constructor(
-    private readonly elementRef: ElementRef
-  ) { }
-
+  constructor(private readonly elementRef: ElementRef) {}
 
   ngOnInit() {
     this.io = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-
         if (entry.isIntersecting) {
           this.handleIntersection();
         } else {
@@ -56,7 +50,6 @@ export class FivViewport implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.io.disconnect();
   }
-
 
   isVisible() {
     return this.visible;

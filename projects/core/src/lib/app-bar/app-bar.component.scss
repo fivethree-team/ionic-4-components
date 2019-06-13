@@ -1,143 +1,143 @@
 :host {
-    --fiv-color-appbar: var(--ion-color-light);
-    --fiv-color-fab: var(--ion-color-primary);
+  --fiv-color-appbar: var(--ion-color-light);
+  --fiv-color-fab: var(--ion-color-primary);
 }
 
 .appbar {
-    width: 100%;
-    position: fixed;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: calc(84px + env(safe-area-inset-bottom));
+  background: rgba(0, 0, 0, 0);
+  z-index: 5000;
+  .appbar-rect {
+    position: absolute;
+    width: calc(50% - 34px);
+    height: calc(56px + env(safe-area-inset-bottom));
     bottom: 0;
+    box-shadow: 3px -4px 5px 0px rgba(0, 0, 0, 0.1);
+    transition: all 350ms ease;
+  }
+  .appbar-rect.left {
     left: 0;
-    height: calc(84px + env(safe-area-inset-bottom));
-    background: rgba(0, 0, 0, 0);
-    z-index: 5000;
-    .appbar-rect {
-        position: absolute;
-        width: calc(50% - 34px);
-        height: calc(56px + env(safe-area-inset-bottom));
-        bottom: 0;
-        box-shadow: 3px -4px 5px 0px rgba(0, 0, 0, 0.1);
-        transition: all 350ms ease;
+    background: var(--fiv-color-appbar);
+    border-top-right-radius: 12px;
+  }
+  .appbar-rect.right {
+    right: 0;
+    background: var(--fiv-color-appbar);
+    border-top-left-radius: 12px;
+  }
+  fiv-loading-fab {
+    width: 56px;
+    height: 56px;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    z-index: 14;
+    fiv-icon {
+      --fiv-color-icon: var(--fiv-color-fab-icon);
     }
-    .appbar-rect.left {
-        left: 0;
-        background: var(--fiv-color-appbar);
-        border-top-right-radius: 12px;
-    }
-    .appbar-rect.right {
-        right: 0;
-        background: var(--fiv-color-appbar);
-        border-top-left-radius: 12px;
-    }
-    fiv-loading-fab {
-        width: 56px;
-        height: 56px;
-        transform: translateX(-50%);
-        left: 50%;
-        position: absolute;
-        z-index: 14;
-        fiv-icon {
-            --fiv-color-icon: var(--fiv-color-fab-icon);
-        }
-    }
-    .rect {
-        display: inline-block;
-        width: 68px;
-        height: 48px;
-        position: absolute;
-        overflow: hidden;
-        bottom: env(safe-area-inset-bottom);
-        left: 50%;
-        transform: translateX(-50%);
-        transition: all 350ms ease;
-    }
-    .rect-filler {
-        display: inline-block;
-        width: 72px;
-        height: env(safe-area-inset-bottom);
-        position: absolute;
-        overflow: hidden;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: all 350ms ease;
-        background: var(--fiv-color-appbar);
-    }
-    .rect:before {
-        content: '';
-        position: absolute;
-        bottom: 50%;
-        width: 100%;
-        height: 100%;
-        border-radius: 100%;
-        box-shadow: 0px 300px 0px 300px var(--fiv-color-appbar);
-        transition: all 350ms ease;
-    }
+  }
+  .rect {
+    display: inline-block;
+    width: 68px;
+    height: 48px;
+    position: absolute;
+    overflow: hidden;
+    bottom: env(safe-area-inset-bottom);
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 350ms ease;
+  }
+  .rect-filler {
+    display: inline-block;
+    width: 72px;
+    height: env(safe-area-inset-bottom);
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 350ms ease;
+    background: var(--fiv-color-appbar);
+  }
+  .rect:before {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow: 0px 300px 0px 300px var(--fiv-color-appbar);
+    transition: all 350ms ease;
+  }
 }
 
 .appbar:not(.cutout) {
-    .appbar-rect.left {
-        border-top-right-radius: 0px;
-    }
-    .appbar-rect.right {
-        border-top-left-radius: 0px;
-    }
-    .rect {
-        height: 56px;
-        box-shadow: 3px -4px 5px 0px rgba(0, 0, 0, 0.1);
-        background: var(--fiv-color-appbar);
-    }
-    .rect:before {
-        border-radius: 0;
-        bottom: 100%;
-    }
+  .appbar-rect.left {
+    border-top-right-radius: 0px;
+  }
+  .appbar-rect.right {
+    border-top-left-radius: 0px;
+  }
+  .rect {
+    height: 56px;
+    box-shadow: 3px -4px 5px 0px rgba(0, 0, 0, 0.1);
+    background: var(--fiv-color-appbar);
+  }
+  .rect:before {
+    border-radius: 0;
+    bottom: 100%;
+  }
 }
 
 .appbar.left {
-    .appbar-rect.left {
-        width: 4px;
-    }
-    .appbar-rect.right {
-        width: calc(100% - 70px);
-    }
-    .rect {
-        left: 4px;
-        transform: translateX(0);
-        width: 66px;
-    }
-    fiv-loading-fab {
-        width: 56px;
-        height: 56px;
-        transform: translateX(0);
-        left: 10px;
-        position: absolute;
-    }
+  .appbar-rect.left {
+    width: 4px;
+  }
+  .appbar-rect.right {
+    width: calc(100% - 70px);
+  }
+  .rect {
+    left: 4px;
+    transform: translateX(0);
+    width: 66px;
+  }
+  fiv-loading-fab {
+    width: 56px;
+    height: 56px;
+    transform: translateX(0);
+    left: 10px;
+    position: absolute;
+  }
 }
 
 .appbar.right {
-    .appbar-rect.left {
-        width: calc(100% - 70px);
-    }
-    .appbar-rect.right {
-        width: 4px;
-    }
-    .rect {
-        left: calc(100% - 37px);
-        width: 67px;
-    }
-    fiv-loading-fab {
-        width: 56px;
-        height: 56px;
-        transform: translateX(0);
-        left: calc(100% - 64px);
-        position: absolute;
-        --fiv-spinner-size: 68px;
-    }
+  .appbar-rect.left {
+    width: calc(100% - 70px);
+  }
+  .appbar-rect.right {
+    width: 4px;
+  }
+  .rect {
+    left: calc(100% - 37px);
+    width: 67px;
+  }
+  fiv-loading-fab {
+    width: 56px;
+    height: 56px;
+    transform: translateX(0);
+    left: calc(100% - 64px);
+    position: absolute;
+    --fiv-spinner-size: 68px;
+  }
 }
 
 .tabs {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }

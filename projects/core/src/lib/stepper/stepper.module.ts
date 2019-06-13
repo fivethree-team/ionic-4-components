@@ -10,25 +10,20 @@ import { FivRippleModule } from '../ripple/ripple.module';
 import { FivExpandableModule } from './../expandable/expandable.module';
 
 @NgModule({
-    declarations: [
-        FivStepper,
-        FivStepContent,
-        FivStepperHorizontal,
-        FivStep,
-        FivStepHeader
-    ],
-    imports: [
-        CommonModule,
-        IonicModule,
-        FivExpandableModule,
-        FivRippleModule
-    ],
-    exports: [
-        FivStepper,
-        FivStepContent,
-        FivStepperHorizontal,
-        FivStep,
-        FivStepHeader
-    ],
+  declarations: [
+    FivStepper,
+    FivStepContent,
+    FivStepperHorizontal,
+    FivStep,
+    FivStepHeader
+  ],
+  imports: [CommonModule, IonicModule, FivExpandableModule, FivRippleModule],
+  exports: [
+    FivStepper,
+    FivStepContent,
+    FivStepperHorizontal,
+    FivStep,
+    FivStepHeader
+  ]
 })
-export class FivStepperModule { }
+export class FivStepperModule {}

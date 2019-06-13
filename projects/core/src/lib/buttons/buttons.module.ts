@@ -5,17 +5,13 @@ import { FivButtonModule } from '../button/button.module';
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
-    declarations: [FivButtons],
-    imports: [
-        CommonModule,
-        FivButtonModule,
-        IonicModule
-    ],
-    exports: [
-        FivButtons,
-        // Re-export `FivButtonModule` as `FivButton` will be used
-        // inside of `FivButtons`
-        FivButtonModule
-    ]
+  declarations: [FivButtons],
+  imports: [CommonModule, FivButtonModule, IonicModule],
+  exports: [
+    FivButtons,
+    // Re-export `FivButtonModule` as `FivButton` will be used
+    // inside of `FivButtons`
+    FivButtonModule
+  ]
 })
-export class FivButtonsModule { }
+export class FivButtonsModule {}

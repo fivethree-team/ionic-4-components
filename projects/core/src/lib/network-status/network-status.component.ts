@@ -14,7 +14,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
       transition('* => void', [
         style({ opacity: 1 }),
         animate('550ms 200ms ease-in', style({ opacity: 0 }))
-      ]),
+      ])
     ])
   ]
 })
@@ -24,11 +24,9 @@ export class FivNetworkStatus implements OnInit {
 
   onClick = new EventEmitter<FivNetworkStatus>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   show() {
     this.visible = true;
@@ -45,5 +43,4 @@ export class FivNetworkStatus implements OnInit {
   FivNetworkStatusClicked() {
     this.onClick.emit(this);
   }
-
 }

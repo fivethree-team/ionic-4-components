@@ -1,6 +1,16 @@
 import { FivIcon } from '../icon/icon.component';
 import { FeaturePosition } from '../interfaces';
-import { Directive, Host, ElementRef, Input, Optional, ComponentRef, TemplateRef, Output, EventEmitter } from '@angular/core';
+import {
+  Directive,
+  Host,
+  ElementRef,
+  Input,
+  Optional,
+  ComponentRef,
+  TemplateRef,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { FivOverlayService } from '../overlay/overlay.service';
 import { FivFeatureDiscovery } from './feature-discovery.component';
 import { first, filter } from 'rxjs/operators';
@@ -11,7 +21,6 @@ import { Platform } from '@ionic/angular';
   exportAs: 'fivFeature'
 })
 export class FivFeature {
-
   @Input() maxDiameter = 1080;
   @Input() diameter = Math.min(this.platform.width() * 2, this.maxDiameter);
   @Input() contentOffset = 20;
@@ -32,9 +41,8 @@ export class FivFeature {
     @Host() private host: ElementRef,
     @Host() @Optional() private icon: FivIcon,
     private overlay: FivOverlayService,
-    private platform: Platform,
-  ) {
-  }
+    private platform: Platform
+  ) {}
 
   private getBounds(nativeElement: any): FeaturePosition {
     const bounds = nativeElement.getBoundingClientRect();
@@ -47,9 +55,14 @@ export class FivFeature {
   }
 
   show() {
-    const bounds = this.icon ? this.getBounds(this.host.nativeElement.parentElement) : this.getBounds(this.host.nativeElement);
-    
-    this.overlayRef = this.overlay.createOverlay(FivFeatureDiscovery, this.fivFeature);
+    const bounds = this.icon
+      ? this.getBounds(this.host.nativeElement.parentElement)
+      : this.getBounds(this.host.nativeElement);
+
+    this.overlayRef = this.overlay.createOverlay(
+      FivFeatureDiscovery,
+      this.fivFeature
+    );
     const featureOverlay = this.overlayRef.instance;
     featureOverlay.height = this.diameter;
     featureOverlay.width = this.diameter;
@@ -64,29 +77,27 @@ export class FivFeature {
         filter(event => event.toState === 'visible'),
         first()
       )
-      .subscribe(() => { this.didOpen(); });
-    featureOverlay.fivClick
-      .pipe(first())
-      .subscribe(() => { this.featureClick(); });
-    featureOverlay.fivBackdropClick
-      .pipe(first())
-      .subscribe(() => { this.hide(); });
+      .subscribe(() => {
+        this.didOpen();
+      });
+    featureOverlay.fivClick.pipe(first()).subscribe(() => {
+      this.featureClick();
+    });
+    featureOverlay.fivBackdropClick.pipe(first()).subscribe(() => {
+      this.hide();
+    });
   }
 
   hide() {
     this.fivWillClose.emit();
     if (this.overlayRef) {
       this.overlayRef.instance.hide();
-      this.overlayRef
-        .instance
-        .fivClose
-        .pipe(first())
-        .subscribe(() => {
-          this.fivClose.emit();
-          this.isOpen = false;
-          this.overlayRef.destroy();
-          this.overlayRef = null;
-        });
+      this.overlayRef.instance.fivClose.pipe(first()).subscribe(() => {
+        this.fivClose.emit();
+        this.isOpen = false;
+        this.overlayRef.destroy();
+        this.overlayRef = null;
+      });
     }
   }
 
@@ -100,22 +111,14 @@ export class FivFeature {
       this.fivFeatureClick.emit();
       this.fivWillClose.emit();
       this.overlayRef.instance.featureClick();
-      this.overlayRef
-        .instance
-        .fivClose
-        .pipe(first())
-        .subscribe(() => {
-          this.fivClose.emit();
-          this.overlayRef.destroy();
-          this.overlayRef = null;
-          if (this.clickEnabled) {
-            this.host.nativeElement.click();
-          }
-        });
+      this.overlayRef.instance.fivClose.pipe(first()).subscribe(() => {
+        this.fivClose.emit();
+        this.overlayRef.destroy();
+        this.overlayRef = null;
+        if (this.clickEnabled) {
+          this.host.nativeElement.click();
+        }
+      });
     }
   }
-
-
-
 }
-

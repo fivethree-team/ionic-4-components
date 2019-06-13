@@ -35,10 +35,9 @@ import { FivLazyImageModule } from './lazy-image/lazy-image.module';
 import { FivFeatureDiscoveryModule } from './feature-discovery/feature-discovery.module';
 import { FivSearchbarModule } from './searchbar/searchbar.module';
 
-
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any>{
-    pan: { direction: Hammer.DIRECTION_VERTICAL, threshold: 3 },
+    pan: { direction: Hammer.DIRECTION_VERTICAL, threshold: 3 }
   };
 }
 
@@ -84,11 +83,8 @@ const directiveModules = [
     FormsModule,
     IonicModule,
     ...componentModules,
-    ...directiveModules,
+    ...directiveModules
   ],
-  exports: [
-    ...componentModules,
-    ...directiveModules,
-  ]
+  exports: [...componentModules, ...directiveModules]
 })
-export class FivethreeCoreModule { }
+export class FivethreeCoreModule {}

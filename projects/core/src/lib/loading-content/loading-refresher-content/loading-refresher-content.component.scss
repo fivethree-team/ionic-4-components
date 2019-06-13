@@ -1,100 +1,101 @@
 $size: 40px !default;
 :host {
-    position: absolute;
-    width: $size;
-    height: $size;
-    top: env(safe-area-inset-top);
-    left: calc(50% - 20px);
-    z-index: 9;
+  position: absolute;
+  width: $size;
+  height: $size;
+  top: env(safe-area-inset-top);
+  left: calc(50% - 20px);
+  z-index: 9;
 }
 
 $offset: 187;
 $duration: 1.4s;
 .spinner-background {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: var(--ion-color-light);
-    border-radius: 50%;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: var(--ion-color-light);
+  border-radius: 50%;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
 
-    fiv-loading-spinner{
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    }
+  fiv-loading-spinner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
 }
 
 .rotate {
-    animation: rotator $duration linear infinite;
+  animation: rotator $duration linear infinite;
 }
 
 @keyframes rotator {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(270deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
 }
 
 .path {
-    stroke-dasharray: $offset;
-    stroke-dashoffset: 0;
-    transform-origin: center;
-    animation: dash $duration ease-in-out infinite, colors ($duration*4) ease-in-out infinite;
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash $duration ease-in-out infinite,
+    colors ($duration * 4) ease-in-out infinite;
 }
 
 .fill {
-    stroke-dasharray: 360;
-    stroke-dashoffset: 0;
-    transform-origin: center;
-    animation: fill $duration ease-out;
-    stroke: #1B9A59;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: fill $duration ease-out;
+  stroke: #1b9a59;
 }
 
 @keyframes colors {
-    0% {
-        stroke: #4285F4;
-    }
-    25% {
-        stroke: #DE3E35;
-    }
-    50% {
-        stroke: #F7C223;
-    }
-    75% {
-        stroke: #1B9A59;
-    }
-    100% {
-        stroke: #4285F4;
-    }
+  0% {
+    stroke: #4285f4;
+  }
+  25% {
+    stroke: #de3e35;
+  }
+  50% {
+    stroke: #f7c223;
+  }
+  75% {
+    stroke: #1b9a59;
+  }
+  100% {
+    stroke: #4285f4;
+  }
 }
 
 @keyframes dash {
-    0% {
-        stroke-dashoffset: $offset;
-    }
-    50% {
-        stroke-dashoffset: $offset/4;
-        transform: rotate(135deg);
-    }
-    100% {
-        stroke-dashoffset: $offset;
-        transform: rotate(450deg);
-    }
+  0% {
+    stroke-dashoffset: $offset;
+  }
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
 }
 
 @keyframes fill {
-    0% {
-        stroke-dashoffset: 360;
-    }
-    80% {
-        stroke-dashoffset: 180;
-        transform: rotate(135deg);
-    }
-    100% {
-        stroke-dashoffset: 0;
-        transform: rotate(450deg);
-    }
+  0% {
+    stroke-dashoffset: 360;
+  }
+  80% {
+    stroke-dashoffset: 180;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    transform: rotate(450deg);
+  }
 }

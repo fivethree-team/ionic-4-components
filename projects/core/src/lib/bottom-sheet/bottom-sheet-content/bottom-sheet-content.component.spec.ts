@@ -8,9 +8,8 @@ describe('BottomSheetContentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivBottomSheetContent ]
-    })
-    .compileComponents();
+      declarations: [FivBottomSheetContent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

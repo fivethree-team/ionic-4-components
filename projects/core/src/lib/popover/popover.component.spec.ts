@@ -8,9 +8,8 @@ describe('PopoverComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivPopover ]
-    })
-    .compileComponents();
+      declarations: [FivPopover]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

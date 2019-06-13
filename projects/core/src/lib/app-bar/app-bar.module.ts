@@ -9,22 +9,15 @@ import { FivRippleModule } from '../ripple/ripple.module';
 import { FivLoadingFabModule } from '../loading-fab/loading-fab.module';
 
 @NgModule({
-    declarations: [
-        FivAppBar,
-        FivAppBarTabContent,
-        FivAppBarTab
-    ],
-    imports: [CommonModule,
-        FivIconModule,
-        FivLoadingFabModule,
-        FivRippleModule,
-        IonicModule
-    ],
-    exports: [
-        FivAppBar,
-        FivAppBarTabContent,
-        FivAppBarTab
-    ],
-    providers: [],
+  declarations: [FivAppBar, FivAppBarTabContent, FivAppBarTab],
+  imports: [
+    CommonModule,
+    FivIconModule,
+    FivLoadingFabModule,
+    FivRippleModule,
+    IonicModule
+  ],
+  exports: [FivAppBar, FivAppBarTabContent, FivAppBarTab],
+  providers: []
 })
-export class FivAppBarModule { }
+export class FivAppBarModule {}

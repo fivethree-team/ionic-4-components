@@ -1,5 +1,5 @@
 export enum DrawerState {
-    Bottom,
-    Docked,
-    Top
+  Bottom,
+  Docked,
+  Top
 }

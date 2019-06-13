@@ -4,9 +4,9 @@ import { FivLoadingProgressBar } from './loading-progress-bar.component';
 import { FivLoadingService } from './loading.service';
 
 @NgModule({
-    declarations: [FivLoadingProgressBar],
-    imports: [CommonModule],
-    exports: [FivLoadingProgressBar],
-    providers: [FivLoadingService],
+  declarations: [FivLoadingProgressBar],
+  imports: [CommonModule],
+  exports: [FivLoadingProgressBar],
+  providers: [FivLoadingService]
 })
-export class FivLoadingProgressBarModule { }
+export class FivLoadingProgressBarModule {}

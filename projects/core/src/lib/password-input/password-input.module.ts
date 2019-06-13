@@ -5,12 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FivPasswordInput } from './password-input.component';
 
 @NgModule({
-    declarations: [FivPasswordInput],
-    imports: [
-        CommonModule,
-        FormsModule,
-        IonicModule
-    ],
-    exports: [FivPasswordInput],
+  declarations: [FivPasswordInput],
+  imports: [CommonModule, FormsModule, IonicModule],
+  exports: [FivPasswordInput]
 })
-export class FivPasswordInputModule { }
+export class FivPasswordInputModule {}

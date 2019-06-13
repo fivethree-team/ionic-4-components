@@ -12,7 +12,6 @@ export interface RoutingStateConfig {
   providedIn: 'root'
 })
 export class FivRoutingStateService {
-
   private history: string[] = [];
   private config: RoutingStateConfig;
 
@@ -20,19 +19,15 @@ export class FivRoutingStateService {
     private router: Router,
     private navCtrl: NavController,
     private platform: Platform
-  ) {
-  }
+  ) {}
 
   public loadRouting(config?: RoutingStateConfig): void {
     this.config = config;
     this.handleAndroidBackButton();
     this.router.events
-      .pipe(
-        filter(event => event instanceof NavigationEnd),
-      )
+      .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(({ urlAfterRedirects }: NavigationEnd) => {
         if (urlAfterRedirects === this.getPreviousUrl(this.config.root)) {
-          
           this.pop();
           this.pop();
         }
@@ -43,22 +38,20 @@ export class FivRoutingStateService {
           if (clear) {
             this.clearHistory(urlAfterRedirects);
           }
-          
         }
       });
   }
 
   handleAndroidBackButton() {
-    this.platform.backButton
-      .subscribeWithPriority(9999, () => {
-        if (this.getHistory().length <= 1) {
-          // close the app because we are at root level
-          navigator['app'].exitApp();
-        } else {
-          // go back
-          this.goBack();
-        }
-      });
+    this.platform.backButton.subscribeWithPriority(9999, () => {
+      if (this.getHistory().length <= 1) {
+        // close the app because we are at root level
+        navigator['app'].exitApp();
+      } else {
+        // go back
+        this.goBack();
+      }
+    });
   }
 
   public getHistory(): string[] {
@@ -74,14 +67,15 @@ export class FivRoutingStateService {
   }
 
   public clearHistory(fromUrl: string) {
-    
-    this.history = this.history.filter(h => this.config.clearOn.some(s => s === h));
+    this.history = this.history.filter(h =>
+      this.config.clearOn.some(s => s === h)
+    );
     if (fromUrl !== this.config.root) {
       this.history.push(fromUrl);
     }
     this.history = this.history
       .reverse()
-      .filter(function (item, pos, self) {
+      .filter(function(item, pos, self) {
         return self.indexOf(item) === pos;
       })
       .reverse();

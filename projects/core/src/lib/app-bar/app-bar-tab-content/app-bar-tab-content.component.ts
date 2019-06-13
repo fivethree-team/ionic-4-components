@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, HostBinding, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  HostBinding,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { AppBarTitleLayout } from '../../interfaces';
 import { TabButtonClickEventDetail } from '@ionic/core';
 
@@ -8,7 +15,6 @@ import { TabButtonClickEventDetail } from '@ionic/core';
   styleUrls: ['./app-bar-tab-content.component.scss']
 })
 export class FivAppBarTabContent implements OnInit {
-
   @Input() name: string;
   @Input() icon: string;
   @Input() tab: string;
@@ -25,11 +31,9 @@ export class FivAppBarTabContent implements OnInit {
 
   @Output() ionTabButtonClick = new EventEmitter<TabButtonClickEventDetail>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   onClick() {
     // this.nav.navigateRoot(this.href);

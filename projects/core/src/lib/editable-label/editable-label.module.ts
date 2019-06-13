@@ -5,12 +5,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-    declarations: [FivEditableLabel],
-    imports: [
-        CommonModule,
-        FormsModule,
-        IonicModule
-    ],
-    exports: [FivEditableLabel],
+  declarations: [FivEditableLabel],
+  imports: [CommonModule, FormsModule, IonicModule],
+  exports: [FivEditableLabel]
 })
-export class FivEditableLabelModule { }
+export class FivEditableLabelModule {}

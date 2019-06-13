@@ -27,16 +27,17 @@ export const CUSTOM_EDITIABLE_LABEL_CONTROL_VALUE_ACCESSOR: any = {
     trigger('titleAnim', [
       transition('void => *', [
         style({ opacity: '0', transform: 'translateY(-20%)' }),
-        animate('175ms ease-out', style({ opacity: '1', transform: 'translateY(0)' }))
-      ]),
-    ]),
+        animate(
+          '175ms ease-out',
+          style({ opacity: '1', transform: 'translateY(0)' })
+        )
+      ])
+    ])
   ],
-  providers: [
-    CUSTOM_EDITIABLE_LABEL_CONTROL_VALUE_ACCESSOR
-  ],
+  providers: [CUSTOM_EDITIABLE_LABEL_CONTROL_VALUE_ACCESSOR]
 })
-export class FivEditableLabel implements AfterContentInit, ControlValueAccessor {
-
+export class FivEditableLabel
+  implements AfterContentInit, ControlValueAccessor {
   @Input()
   get editing(): boolean {
     return this._editing;
@@ -48,7 +49,8 @@ export class FivEditableLabel implements AfterContentInit, ControlValueAccessor 
   @Input() value: string;
   @Input() type: 'title' | 'label' = 'label';
   @HostBinding('class.editable-label-disabled')
-  @Input() disabled = false;
+  @Input()
+  disabled = false;
 
   @Output() blur = new EventEmitter();
 
@@ -59,12 +61,10 @@ export class FivEditableLabel implements AfterContentInit, ControlValueAccessor 
   private onTouchedCallback: () => {};
   private onChangeCallback: (_: any) => {};
 
-  constructor() {
-
-  }
+  constructor() {}
 
   ngAfterContentInit() {
-    timer(0).subscribe(() => this.internalValue = this.value);
+    timer(0).subscribe(() => (this.internalValue = this.value));
   }
 
   set internalValue(value: string) {

@@ -4,9 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ImageService {
-
-  constructor() { }
-
+  constructor() {}
 
   getAverageRGB(imgEl) {
     const blockSize = 5, // only visit every 5 pixels
@@ -15,14 +13,21 @@ export class ImageService {
       context = canvas.getContext && canvas.getContext('2d'),
       rgb = { r: 0, g: 0, b: 0 };
 
-    let data, width, height, length, i = -4, count = 0;
+    let data,
+      width,
+      height,
+      length,
+      i = -4,
+      count = 0;
 
     if (!context) {
       return `rgb(${defaultRGB.r},${defaultRGB.g},${defaultRGB.b})`;
     }
 
-    height = canvas.height = imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height;
-    width = canvas.width = imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width;
+    height = canvas.height =
+      imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height;
+    width = canvas.width =
+      imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width;
 
     context.drawImage(imgEl, 0, 0);
 

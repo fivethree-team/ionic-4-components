@@ -1,44 +1,44 @@
 :host {
-    display: block;
-    --max-height: 100%;
-    --border-radius: 0px;
-    min-height: var(--max-height);
-    --background: var(--ion-color-light);
-    background: var(--background);
+  display: block;
+  --max-height: 100%;
+  --border-radius: 0px;
+  min-height: var(--max-height);
+  --background: var(--ion-color-light);
+  background: var(--background);
 }
 
 .backdrop {
-    width: 100vw;
-    height: 100vh;
-    opacity: 0.97;
-    position: absolute;
-    transition: background-color 300ms;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.97;
+  position: absolute;
+  transition: background-color 300ms;
 }
 
 .thumbnail {
-    object-position: center;
-    object-fit: cover;
-    display: block;
-    height: var(--height, auto);
-    max-height: var(--max-height);
-    width: var(--width, 100%);
-    border-radius: var(--border-radius);
+  object-position: center;
+  object-fit: cover;
+  display: block;
+  height: var(--height, auto);
+  max-height: var(--max-height);
+  width: var(--width, 100%);
+  border-radius: var(--border-radius);
 }
 
 .hidden {
-    opacity: 0;
+  opacity: 0;
 }
 
 .viewer-image {
-    object-position: center;
-    object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: auto;
-    max-height: 100%;
-    width: auto;
-    max-width: 100%;
-    border-radius: var(--border-radius);
+  object-position: center;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  border-radius: var(--border-radius);
 }

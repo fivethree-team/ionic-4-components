@@ -8,9 +8,8 @@ describe('StepperComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivStepper ]
-    })
-    .compileComponents();
+      declarations: [FivStepper]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

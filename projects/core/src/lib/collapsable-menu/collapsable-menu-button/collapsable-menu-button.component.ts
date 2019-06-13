@@ -7,18 +7,14 @@ import { FivCollapsableMenu } from '../collapsable-menu.directive';
   styleUrls: ['./collapsable-menu-button.component.scss']
 })
 export class FivCollapsableMenuButton implements OnInit {
-
   @Input() menu: FivCollapsableMenu;
   @Input() icon = 'menu';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onClick() {
-
     this.menu.toggleMenu();
   }
-
 }

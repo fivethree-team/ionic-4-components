@@ -8,9 +8,8 @@ describe('LoadingSpinnerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivLoadingSpinner ]
-    })
-    .compileComponents();
+      declarations: [FivLoadingSpinner]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

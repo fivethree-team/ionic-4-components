@@ -8,9 +8,8 @@ describe('CollapsableMenuButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FivCollapsableMenuButton ]
-    })
-    .compileComponents();
+      declarations: [FivCollapsableMenuButton]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
