@@ -4,7 +4,7 @@
     [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}" (click)="backdropClick()" class="backdrop">
 </ion-content>
   <div #dialog [@fade]="{value: dialogState, params: { opacity: 0, inDuration: '120ms' }}"
-  [@slide]="{value: dialogState, params: {top: outPosition, inDuration: inDuration + 'ms',outDuration: outDuration + 'ms', toPosition: toPosition, translate: translate}}"
+  [@slide]="{value: dialogState, params: {top: outPosition, inDuration: inDuration + 'ms',outDuration: outDuration + 'ms', toPosition: toPosition, translate: translate,translateX: horizontalAlign === 'middle' ? 'translateX(-50%)' :  '' }}"
   (@slide.done)="animationDone($event)" class="dialog" [ngClass]="[verticalAlign, horizontalAlign, shape]">
     <ng-container>
       <ng-container *ngTemplateOutlet="card"></ng-container>
