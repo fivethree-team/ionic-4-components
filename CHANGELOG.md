@@ -1,3 +1,16 @@
+<a name="0.8.11"></a>
+## [0.8.11](https://github.com/fivethree-team/component-library/compare/v0.8.9...v0.8.11) (2019-06-24)
+
+
+### Bug Fixes
+
+* **dialog:** fix horizontal middle position animations ([4083f45](https://github.com/fivethree-team/component-library/commit/4083f45))
+* **refresher:** add content min-height ([4680e25](https://github.com/fivethree-team/component-library/commit/4680e25))
+* **refresher:** make touchmove listeners passive ([d10a227](https://github.com/fivethree-team/component-library/commit/d10a227))
+* **tests:** enable tests ([72c0f4b](https://github.com/fivethree-team/component-library/commit/72c0f4b))
+
+
+
 <a name="0.8.10"></a>
 ## [0.8.10](https://github.com/fivethree-team/component-library/compare/v0.8.9...v0.8.10) (2019-06-10)
 
