@@ -6,10 +6,11 @@
   <ion-grid class="page-content" fixed>
     <ion-row>
       <ion-col size="12">
-        <app-example [api]="'assets/docs/snippets/expandable/api.md'" [typescript]="'assets/docs/snippets/expandable/ts.md'"
-          [css]="'assets/docs/snippets/expandable/css.md'" [html]="'assets/docs/snippets/expandable/html.md'" [title]="'Pull to Refresh'"
+        <app-example [api]="'assets/docs/snippets/expandable/api.md'"
+          [typescript]="'assets/docs/snippets/expandable/ts.md'" [css]="'assets/docs/snippets/expandable/css.md'"
+          [html]="'assets/docs/snippets/expandable/html.md'" [title]="'Pull to Refresh'"
           [subtitle]="'Material Design Pull to Refresh Layout component (gestures only supported on mobile).'">
-        
+
           <ion-button (click)="content.showHint()">
             Show hint
           </ion-button>
@@ -21,6 +22,17 @@
           </ion-button>
 
         </app-example>
+        <div class="flex-scroll">
+          <ion-card *ngFor="let i of [1,2,3,4,5]">
+            <ion-card-header>
+              <ion-card-subtitle>Awesome Flex</ion-card-subtitle>
+              <ion-card-title>Awesome Title</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Awesome content
+            </ion-card-content>
+          </ion-card>
+        </div>
         <ion-card>
           <ion-card-header>
             <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
@@ -29,7 +41,8 @@
           <ion-card-content>
             Awesome content
           </ion-card-content>
-        </ion-card><ion-card>
+        </ion-card>
+        <ion-card>
           <ion-card-header>
             <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
             <ion-card-title>Awesome Title</ion-card-title>
@@ -86,5 +99,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  
+
 </fiv-loading-content>
