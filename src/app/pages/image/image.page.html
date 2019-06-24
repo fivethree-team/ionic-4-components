@@ -13,9 +13,9 @@
           <fiv-gallery-image [src]="'assets/images/photo_2.jpeg'"></fiv-gallery-image>
         </ion-col>
         <ion-col size="6">
-          <fiv-gallery-image>
+          <fiv-gallery-image [src]="'assets/images/photo_1.jpeg'">
             <div [fivCenter]>
-                <fiv-loading-spinner [circleRadius]="8" [diameter]="20" [strokeWidth]="2"></fiv-loading-spinner>
+              <fiv-loading-spinner [circleRadius]="8" [diameter]="20" [strokeWidth]="2"></fiv-loading-spinner>
             </div>
           </fiv-gallery-image>
         </ion-col>
@@ -55,4 +55,35 @@
     </fiv-gallery-toolbar>
 
   </fiv-gallery>
+
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>ngfor example</ion-label>
+    </ion-item-divider>
+    <fiv-gallery class="loop">
+      <fiv-gallery-image *ngFor="let pic of picsum" [src]="pic"></fiv-gallery-image>
+    </fiv-gallery>
+    <ion-item-divider>
+      <ion-label>ngfor example async</ion-label>
+    </ion-item-divider>
+    <fiv-gallery class="loop">
+      <fiv-gallery-image *ngFor="let pic of picsumAsync | async" [src]="pic"></fiv-gallery-image>
+    </fiv-gallery>
+
+    <ion-item-divider>
+      <ion-label>ngfor example grid</ion-label>
+    </ion-item-divider>
+    <fiv-gallery>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col *ngFor="let pic of picsum" size="6">
+            <fiv-gallery-image [src]="pic"></fiv-gallery-image>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </fiv-gallery>
+
+  </ion-item-group>
+
+
 </ion-content>
