@@ -1,3 +1,13 @@
+<a name="0.8.12"></a>
+## [0.8.12](https://github.com/fivethree-team/component-library/compare/v0.8.11...v0.8.12) (2019-06-24)
+
+
+### Bug Fixes
+
+* **pull:** mark all touch event handlers as passive ([9c94409](https://github.com/fivethree-team/component-library/commit/9c94409))
+
+
+
 <a name="0.8.11"></a>
 ## [0.8.11](https://github.com/fivethree-team/component-library/compare/v0.8.9...v0.8.11) (2019-06-24)
 
