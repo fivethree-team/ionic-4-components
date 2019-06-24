@@ -7,14 +7,13 @@ import {
   EventEmitter
 } from '@angular/core';
 import { IonContent, Platform } from '@ionic/angular';
-import { fromEvent, merge, fromEventPattern } from 'rxjs';
+import { fromEvent, merge } from 'rxjs';
 import {
   filter,
   map,
   skipWhile,
   takeUntil,
-  takeLast,
-  tap
+  takeLast
 } from 'rxjs/operators';
 
 @Directive({
@@ -48,10 +47,10 @@ export class FivPull implements OnInit {
   }
 
   private setupPanListener() {
-    const touchstart$ = fromEvent(this.element.nativeElement, 'touchstart');
+    const touchstart$ = fromEvent(this.element.nativeElement, 'touchstart', { passive: true });
     const touchmove$ = fromEvent(this.element.nativeElement, 'touchmove', { passive: true });
-    const touchend$ = fromEvent(this.element.nativeElement, 'touchend');
-    const touchcancel$ = fromEvent(this.element.nativeElement, 'touchcancel');
+    const touchend$ = fromEvent(this.element.nativeElement, 'touchend', { passive: true });
+    const touchcancel$ = fromEvent(this.element.nativeElement, 'touchcancel', { passive: true });
     const end$ = merge(touchend$, touchcancel$);
 
     const dragAtTop = touchstart$.pipe(
