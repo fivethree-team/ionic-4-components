@@ -7,7 +7,7 @@ import {
   EventEmitter
 } from '@angular/core';
 import { IonContent, Platform } from '@ionic/angular';
-import { fromEvent, merge } from 'rxjs';
+import { fromEvent, merge, fromEventPattern } from 'rxjs';
 import {
   filter,
   map,
@@ -37,7 +37,7 @@ export class FivPull implements OnInit {
     private element: ElementRef,
     private platform: Platform,
     private content: IonContent
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.content.scrollEvents = true;
@@ -49,7 +49,7 @@ export class FivPull implements OnInit {
 
   private setupPanListener() {
     const touchstart$ = fromEvent(this.element.nativeElement, 'touchstart');
-    const touchmove$ = fromEvent(this.element.nativeElement, 'touchmove');
+    const touchmove$ = fromEvent(this.element.nativeElement, 'touchmove', { passive: true });
     const touchend$ = fromEvent(this.element.nativeElement, 'touchend');
     const touchcancel$ = fromEvent(this.element.nativeElement, 'touchcancel');
     const end$ = merge(touchend$, touchcancel$);
@@ -96,7 +96,6 @@ export class FivPull implements OnInit {
 
     dragTopDown.forEach(drags => {
       drags.forEach(drag => {
-        drag.moveEvent.preventDefault();
         const offset = drag.offset / 2;
         if (offset < 0 || offset > this.maxPullHeight) {
           return;
@@ -139,7 +138,6 @@ export class FivPull implements OnInit {
 
     dragBottomUp.forEach(drags => {
       drags.forEach(drag => {
-        drag.moveEvent.preventDefault();
         const offset = drag.offset / 2;
         if (offset < 0 || offset > this.maxPullHeight) {
           return;
