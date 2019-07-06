@@ -87,6 +87,7 @@ const routes: Routes = [
     loadChildren:
       './pages/developer-tools/developer-tools.module#DeveloperToolsPageModule'
   },
+  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
   {
     path: '**',
     loadChildren:

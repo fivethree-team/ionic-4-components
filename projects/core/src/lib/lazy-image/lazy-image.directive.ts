@@ -16,7 +16,9 @@ import {
 })
 export class FivLazyImage implements OnInit {
   @Input() fivLazyImage: string;
+  @Input() virtual = false;
   @Output() willShow = new EventEmitter<FivGalleryImage | HTMLImageElement>();
+  @Output() willHide = new EventEmitter<FivGalleryImage | HTMLImageElement>();
 
   constructor(
     @Host() @Self() @Optional() public fivImage: FivGalleryImage,
@@ -28,8 +30,9 @@ export class FivLazyImage implements OnInit {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           this.handleIntersection();
-
-          observer.disconnect();
+          if (!this.virtual) {
+            io.disconnect();
+          }
         }
       });
     });

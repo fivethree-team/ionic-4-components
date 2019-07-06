@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-virtual-scroll [items]="picsum">
+    <div *virtualItem="let item" approxItemHeight="56px">
+      <ion-item>
+        <img slot="start" fivLazyImage (willShow)="setSource($event,item)">
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+    </div>
+  </ion-virtual-scroll>
+
+
+</ion-content>
