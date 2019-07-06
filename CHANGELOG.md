@@ -1,3 +1,13 @@
+<a name="0.8.13"></a>
+## [0.8.13](https://github.com/fivethree-team/component-library/compare/v0.8.12...v0.8.13) (2019-07-06)
+
+
+### Features
+
+* **fivLazyImage:** add virtual input to lazy image ([fed25ad](https://github.com/fivethree-team/component-library/commit/fed25ad))
+
+
+
 <a name="0.8.12"></a>
 ## [0.8.12](https://github.com/fivethree-team/component-library/compare/v0.8.11...v0.8.12) (2019-06-24)
 
