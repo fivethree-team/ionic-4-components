@@ -1,3 +1,13 @@
+<a name="0.8.14"></a>
+## [0.8.14](https://github.com/fivethree-team/component-library/compare/v0.8.13...v0.8.14) (2019-07-09)
+
+
+### Features
+
+* **gallery:** ambient backdrop color input ([fe199a8](https://github.com/fivethree-team/component-library/commit/fe199a8))
+
+
+
 <a name="0.8.13"></a>
 ## [0.8.13](https://github.com/fivethree-team/component-library/compare/v0.8.12...v0.8.13) (2019-07-06)
 
