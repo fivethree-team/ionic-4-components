@@ -144,9 +144,9 @@ export class FivGalleryImage implements OnInit {
     this.animationParams = this.getThumbnailPosition(this.image);
 
     this.overlay.show(49999);
-    this.backdropColor = this.imageService.getAverageRGB(
-      this.image.nativeElement
-    );
+    this.backdropColor = this.gallery.ambient
+      ? this.imageService.getAverageRGB(this.image.nativeElement)
+      : '#000';
   }
 
   close(position: Position) {

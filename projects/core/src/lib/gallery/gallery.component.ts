@@ -94,7 +94,9 @@ export class FivGallery implements OnInit, AfterContentInit {
   zoomedIn: boolean;
   controlsVisible = true;
   @Input() pagerVisible = true;
+  @Input() ambient = true;
   private slidesLoaded;
+  pullEnabled = false;
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
@@ -179,6 +181,7 @@ export class FivGallery implements OnInit, AfterContentInit {
     this.overlay.show(50000);
     this.initialImage = initial;
     this.showControls();
+    this.pullEnabled = true
   }
 
   close() {

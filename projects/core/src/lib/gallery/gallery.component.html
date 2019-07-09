@@ -7,7 +7,8 @@
   </div>
 
   <ng-container *fivIf="['desktop']">
-    <ion-fab [@scale] *ngIf="controlsVisible && images?.length > 0 && pagerVisible" vertical="center" horizontal="start" slot="fixed">
+    <ion-fab [@scale] *ngIf="controlsVisible && images?.length > 0 && pagerVisible" vertical="center" horizontal="start"
+      slot="fixed">
       <ion-fab-button color="light" (click)="prev()" [disabled]="activeIndex === 0">
         <ion-icon name="arrow-back"></ion-icon>
       </ion-fab-button>
@@ -15,7 +16,8 @@
   </ng-container>
 
   <div #viewer class="viewer" fivPull [maxPullHeight]="160" [minPullHeight]="120" (fivPull)="transformSlides($event)"
-    (fivRefresh)="closeFromPullDown($event)" (fivCancel)="resetPan($event)" [enableScroll]="true">
+    (fivRefresh)="closeFromPullDown($event)" [enabled]="pullEnabled" (fivCancel)="resetPan($event)"
+    [enableScroll]="true">
     <ion-slides #slider *ngIf="overlay.open" [ngClass]="[initialImage?.viewerState]"
       (ionSlideDidChange)="slideDidChange()" (ionSlideNextStart)="ionSlideNextStart()"
       (ionSlidePrevStart)="ionSlidePrevStart()" (ionSlidesDidLoad)="onSlidesLoad()" [options]="options">
