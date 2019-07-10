@@ -1,3 +1,19 @@
+<a name="0.8.18"></a>
+## [0.8.18](https://github.com/fivethree-team/component-library/compare/v0.8.15...v0.8.18) (2019-07-10)
+
+
+### Bug Fixes
+
+* **FivLazyImage:** export FivLazyImage from [@fivethree](https://github.com/fivethree)/core ([c88b500](https://github.com/fivethree-team/component-library/commit/c88b500))
+* **gallery:** fix will close output not emitting on pull down ([5600335](https://github.com/fivethree-team/component-library/commit/5600335))
+
+
+### Features
+
+* **FivLazyImage:** added inViewport boolean to directive ([cf62cb6](https://github.com/fivethree-team/component-library/commit/cf62cb6))
+
+
+
 <a name="0.8.17"></a>
 ## [0.8.17](https://github.com/fivethree-team/component-library/compare/v0.8.15...v0.8.17) (2019-07-10)
 
