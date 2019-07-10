@@ -1,3 +1,13 @@
+<a name="0.8.19"></a>
+## [0.8.19](https://github.com/fivethree-team/component-library/compare/v0.8.18...v0.8.19) (2019-07-10)
+
+
+### Features
+
+* **Gallery:** Slide out image when pulled image is not the initial image ([25d95a3](https://github.com/fivethree-team/component-library/commit/25d95a3))
+
+
+
 <a name="0.8.18"></a>
 ## [0.8.18](https://github.com/fivethree-team/component-library/compare/v0.8.15...v0.8.18) (2019-07-10)
 
