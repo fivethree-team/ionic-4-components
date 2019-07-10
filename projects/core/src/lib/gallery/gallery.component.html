@@ -16,8 +16,7 @@
   </ng-container>
 
   <div #viewer class="viewer" fivPull [maxPullHeight]="160" [minPullHeight]="120" (fivPull)="transformSlides($event)"
-    (fivRefresh)="closeFromPullDown($event)" [enabled]="pullEnabled" (fivCancel)="resetPan($event)"
-    [enableScroll]="true">
+    (fivRefresh)="closeFromPullDown($event)" (fivCancel)="resetPan($event)" [enableScroll]="true">
     <ion-slides #slider *ngIf="overlay.open" [ngClass]="[initialImage?.viewerState]"
       (ionSlideDidChange)="slideDidChange()" (ionSlideNextStart)="ionSlideNextStart()"
       (ionSlidePrevStart)="ionSlidePrevStart()" (ionSlidesDidLoad)="onSlidesLoad()" [options]="options">

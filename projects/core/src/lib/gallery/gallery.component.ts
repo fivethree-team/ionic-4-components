@@ -21,7 +21,9 @@ import {
   ChangeDetectorRef,
   TemplateRef,
   ViewChildren,
-  Input
+  Input,
+  Output,
+  EventEmitter
 } from '@angular/core';
 import {
   style,
@@ -93,10 +95,14 @@ export class FivGallery implements OnInit, AfterContentInit {
   inFullscreen: boolean;
   zoomedIn: boolean;
   controlsVisible = true;
+  private slidesLoaded;
   @Input() pagerVisible = true;
   @Input() ambient = true;
-  private slidesLoaded;
-  pullEnabled = false;
+  @Input() openTiming = '300ms';
+  @Input() closeTiming = '340ms';
+  @Output() willOpen = new EventEmitter<FivGalleryImage>();
+  @Output() willClose = new EventEmitter<FivGalleryImage>();
+  @Output() backdropChange = new EventEmitter<FivGalleryImage>();
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
@@ -128,7 +134,9 @@ export class FivGallery implements OnInit, AfterContentInit {
   }
 
   updateImages() {
-    this.images.forEach((img, i) => (img.index = i));
+    this.images.forEach((img, i) => {
+      img.index = i;
+    });
   }
   updateToolbars() {
     this.toolbars.forEach(toolbar => {
@@ -177,14 +185,22 @@ export class FivGallery implements OnInit, AfterContentInit {
   }
 
   open(index: number, initial: FivGalleryImage) {
+    this.willOpen.emit(initial);
     this.options.initialSlide = index;
     this.overlay.show(50000);
     this.initialImage = initial;
+    this.initialImage.openTiming = this.openTiming;
+    this.initialImage.closeTiming = this.closeTiming;
+    this.initialImage.backdropColor = this.ambient
+      ? this.imageService.getAverageRGB(
+          this.images.toArray()[index].image.nativeElement
+        )
+      : '#000';
     this.showControls();
-    this.pullEnabled = true
   }
 
   close() {
+    this.willClose.emit(this.initialImage);
     this.closeFromPullDown(0);
   }
 
@@ -261,9 +277,12 @@ export class FivGallery implements OnInit, AfterContentInit {
   }
 
   updateBackdrop(index: number) {
-    this.initialImage.backdropColor = this.imageService.getAverageRGB(
-      this.images.toArray()[index].image.nativeElement
-    );
+    this.initialImage.backdropColor = this.ambient
+      ? this.imageService.getAverageRGB(
+          this.images.toArray()[index].image.nativeElement
+        )
+      : '#000';
+    this.backdropChange.emit(this.initialImage);
   }
 
   onSlidesLoad() {
