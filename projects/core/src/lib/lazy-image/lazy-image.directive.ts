@@ -17,6 +17,7 @@ import {
 export class FivLazyImage implements OnInit {
   @Input() fivLazyImage: string;
   @Input() virtual = false;
+  inViewport = false;
   @Output() willShow = new EventEmitter<FivGalleryImage | HTMLImageElement>();
   @Output() willHide = new EventEmitter<FivGalleryImage | HTMLImageElement>();
 
@@ -29,9 +30,20 @@ export class FivLazyImage implements OnInit {
     const io = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          this.handleIntersection();
-          if (!this.virtual) {
-            io.disconnect();
+          if (!this.inViewport) {
+            this.handleIntersection();
+            if (!this.virtual) {
+              io.disconnect();
+            }
+          }
+        } else {
+          if (this.inViewport) {
+            this.inViewport = false;
+            if (this.fivImage) {
+              this.willHide.emit(this.fivImage);
+            } else {
+              this.willHide.emit(this.image.nativeElement);
+            }
           }
         }
       });
@@ -44,6 +56,7 @@ export class FivLazyImage implements OnInit {
     }
   }
   handleIntersection() {
+    this.inViewport = true;
     if (this.fivLazyImage) {
       if (this.fivImage) {
         this.fivImage.src = this.fivLazyImage;
