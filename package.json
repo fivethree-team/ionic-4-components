@@ -29,7 +29,7 @@
   "scripts": {
     "build": "ng build core",
     "build:prod": "ng build core --prod",
-    "format:core": "prettier --write \"projects/**/*{.ts,.scss}\"",
+    "format:lib": "prettier --write \"projects/**/*{.ts,.scss}\"",
     "format:docs": "prettier --write \"src/**/*{.ts,.scss}\"",
     "gh-pages": "ng build core --prod && ng build --prod --base-href 'https://fivethree-team.github.io/ionic-4-components/' && npx ngh --dir=www",
     "publish": "npm publish dist/@fivethree/core",

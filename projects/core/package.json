@@ -28,8 +28,14 @@
   "author": "Fivethree Team",
   "license": "MIT",
   "contributors": [
-    "Gary Großgarten",
-    "Marc Stammerjohann"
+    {
+      "name": "Gary Großgarten",
+      "email": "gary@fivethree.io"
+    },
+    {
+      "name": "Marc Stammerjohann",
+      "email": "marc@fivethree.io"
+    }
   ],
   "repository": {
     "type": "git",
