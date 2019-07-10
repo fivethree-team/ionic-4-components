@@ -53,21 +53,21 @@ import { DOCUMENT } from '@angular/common';
     trigger('slideUp', [
       transition('void => *', [
         style({ opacity: 0, transform: 'translateY(100%)' }),
-        animate('125ms', style({ opacity: 1, transform: 'translateY(0%)' }))
+        animate('75ms', style({ opacity: 1, transform: 'translateY(0%)' }))
       ]),
       transition('* => void', [
         style({ opacity: 1, transform: 'translateY(0%)' }),
-        animate('125ms', style({ opacity: 0, transform: 'translateY(100%)' }))
+        animate('75ms', style({ opacity: 0, transform: 'translateY(100%)' }))
       ])
     ]),
     trigger('slideDown', [
       transition('* => void', [
         style({ opacity: 0, transform: 'translateY(0%)' }),
-        animate('125ms', style({ opacity: 1, transform: 'translateY(-100%)' }))
+        animate('75ms', style({ opacity: 1, transform: 'translateY(-100%)' }))
       ]),
       transition('void => *', [
         style({ opacity: 1, transform: 'translateY(-100%)' }),
-        animate('125ms', style({ opacity: 0, transform: 'translateY(0%)' }))
+        animate('75ms', style({ opacity: 0, transform: 'translateY(0%)' }))
       ])
     ])
   ]
@@ -102,6 +102,8 @@ export class FivGallery implements OnInit, AfterContentInit {
   @Input() closeTiming = '340ms';
   @Output() willOpen = new EventEmitter<FivGalleryImage>();
   @Output() willClose = new EventEmitter<FivGalleryImage>();
+  @Output() didOpen = new EventEmitter<FivGalleryImage>();
+  @Output() didClose = new EventEmitter<FivGalleryImage>();
   @Output() backdropChange = new EventEmitter<FivGalleryImage>();
 
   @HostListener('window:keyup', ['$event'])
@@ -185,7 +187,6 @@ export class FivGallery implements OnInit, AfterContentInit {
   }
 
   open(index: number, initial: FivGalleryImage) {
-    this.willOpen.emit(initial);
     this.options.initialSlide = index;
     this.overlay.show(50000);
     this.initialImage = initial;
@@ -204,18 +205,27 @@ export class FivGallery implements OnInit, AfterContentInit {
   }
 
   closeFromPullDown(progress: number) {
+    this.willClose.emit(this.initialImage);
     this.transformSlides(0);
+
+    const sameAsInitial =
+      this.images.toArray()[this.activeIndex].index === this.initialImage.index;
     const position = this.getImagePosition(
       this.images.toArray()[this.activeIndex].image,
       progress
     );
-    this.initialImage.close(position);
+    if (sameAsInitial) {
+      this.initialImage.close(position);
+    } else {
+      const src = this.initialImage.src;
+      this.initialImage.src = this.images.toArray()[this.activeIndex].src;
+      this.initialImage.slideOut(position, src);
+    }
     if (this.inFullscreen) {
       this.closeFullscreen();
     }
     this.slidesLoaded = false;
     this.overlay.hide();
-    this.willClose.emit(this.initialImage);
   }
 
   resetPan(progress: number) {
@@ -287,6 +297,7 @@ export class FivGallery implements OnInit, AfterContentInit {
 
   onSlidesLoad() {
     this.slidesLoaded = true;
+    this.didOpen.emit(this.initialImage);
     this.activeIndex = this.swiper.nativeElement.swiper.activeIndex;
     this.initialImage.viewerState = 'hidden';
     this.swiper.nativeElement.swiper.on('click', () => {

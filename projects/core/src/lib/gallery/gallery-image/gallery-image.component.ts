@@ -102,10 +102,41 @@ import { ImageService } from '../image.service';
           }
         }
       ),
-      state('hidden', style({ opacity: 0 }))
+      state('hidden', style({ opacity: 0 })),
+      transition(
+        '* => slideout',
+        [
+          style({
+            position: 'absolute',
+            top: '{{translate}}px',
+            left: '50%',
+            transform: 'translate(-50%,-50%)',
+            opacity: 1,
+            borderRadius: '0'
+          }),
+          animate(
+            '{{timing}}',
+            style({
+              transform: 'translate(-50%,100%)',
+              opacity: 0.2,
+              borderRadius: '0'
+            })
+          )
+        ],
+        {
+          params: {
+            top: '0',
+            left: '0',
+            height: '*',
+            width: '*',
+            translate: '0',
+            timing: '340ms'
+          }
+        }
+      )
     ]),
     trigger('fade', [
-      transition(':enter', [
+      transition('void => *', [
         style({ opacity: 0 }),
         animate(
           '180ms',
@@ -132,6 +163,7 @@ import { ImageService } from '../image.service';
 })
 export class FivGalleryImage implements OnInit {
   @Input() src: string | SafeResourceUrl;
+  originalSrc: string | SafeResourceUrl;
   index: number;
 
   @ViewChild('thumbnail') image: ElementRef;
@@ -145,13 +177,14 @@ export class FivGalleryImage implements OnInit {
   closeTiming = '340ms';
 
   constructor(
-    @Optional() @Host() private gallery: FivGallery,
+    @Optional() @Host() public gallery: FivGallery,
     private imageService: ImageService
   ) {}
 
   ngOnInit() {}
 
   open() {
+    this.gallery.willOpen.emit(this);
     const p = this.getThumbnailPosition(this.image);
     this.animationParams = {
       translate: p.translate,
@@ -181,16 +214,34 @@ export class FivGalleryImage implements OnInit {
     this.viewerState = 'out';
   }
 
+  slideOut(position: Position, src) {
+    this.originalSrc = src;
+    const p = this.getThumbnailPosition(this.image);
+    this.animationParams = {
+      translate: position.translate,
+      timing: this.closeTiming,
+      height: p.height,
+      width: p.width,
+      top: p.top,
+      left: p.left
+    };
+    this.viewerState = 'slideout';
+  }
+
   handleViewerAnimation(event: AnimationEvent) {
     if (event.fromState === 'void' && event.toState === 'in') {
       this.gallery.open(this.index, this);
     }
     if (
       (event.fromState === 'in' || event.fromState === 'hidden') &&
-      event.toState === 'out'
+      (event.toState === 'out' || event.toState === 'slideout')
     ) {
       this.overlay.hide();
+      this.gallery.didClose.emit(this);
       this.viewerState = 'in';
+    }
+    if (event.toState === 'slideout') {
+      this.src = this.originalSrc;
     }
   }
 

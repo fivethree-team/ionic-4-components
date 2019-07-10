@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestPage implements OnInit {
   picsum: string[] = Array.from(
-    new Array(500),
+    new Array(30),
     (x, i) => `https://picsum.photos/500/?${i + 10}`
   );
 
@@ -18,5 +18,9 @@ export class TestPage implements OnInit {
   setSource(img, src) {
     console.log(img, src);
     img.src = src;
+  }
+
+  log(s: string) {
+    console.log(s);
   }
 }

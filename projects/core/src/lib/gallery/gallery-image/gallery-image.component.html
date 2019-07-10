@@ -2,10 +2,11 @@
   <ng-content></ng-content>
 </ng-container>
 
-<img #thumbnail [ngClass]="{'hidden': overlay.open || !src}" class="thumbnail" [src]="src" (click)="open()">
+<img #thumbnail [ngClass]="{'hidden': (overlay.open || !src)}" class="thumbnail" [src]="src" (click)="open()">
 <fiv-overlay #overlay>
 
-  <div [style.backgroundColor]="backdropColor" *ngIf="overlay.open && viewerState !== 'out'" [@fade] class="backdrop">
+  <div [style.backgroundColor]="backdropColor"
+    *ngIf="overlay.open && viewerState !== 'out' && viewerState !== 'slideout'" [@fade]="viewerState" class="backdrop">
   </div>
 
   <img *ngIf="overlay.open" class="viewer-image" (@image.done)="handleViewerAnimation($event)"
