@@ -200,7 +200,6 @@ export class FivGallery implements OnInit, AfterContentInit {
   }
 
   close() {
-    this.willClose.emit(this.initialImage);
     this.closeFromPullDown(0);
   }
 
@@ -216,6 +215,7 @@ export class FivGallery implements OnInit, AfterContentInit {
     }
     this.slidesLoaded = false;
     this.overlay.hide();
+    this.willClose.emit(this.initialImage);
   }
 
   resetPan(progress: number) {
