@@ -1,3 +1,13 @@
+<a name="0.8.15"></a>
+## [0.8.15](https://github.com/fivethree-team/component-library/compare/v0.8.14...v0.8.15) (2019-07-10)
+
+
+### Bug Fixes
+
+* **gallery:** fix a bug that crashed the gallery while pulling down before the gallery has fully been loaded, configuration options ([f0aa619](https://github.com/fivethree-team/component-library/commit/f0aa619))
+
+
+
 <a name="0.8.14"></a>
 ## [0.8.14](https://github.com/fivethree-team/component-library/compare/v0.8.13...v0.8.14) (2019-07-09)
 
