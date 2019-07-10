@@ -1,3 +1,13 @@
+<a name="0.8.16"></a>
+## [0.8.16](https://github.com/fivethree-team/component-library/compare/v0.8.15...v0.8.16) (2019-07-10)
+
+
+### Bug Fixes
+
+* **gallery:** fix will close output not emitting on pull down ([5600335](https://github.com/fivethree-team/component-library/commit/5600335))
+
+
+
 <a name="0.8.15"></a>
 ## [0.8.15](https://github.com/fivethree-team/component-library/compare/v0.8.14...v0.8.15) (2019-07-10)
 
