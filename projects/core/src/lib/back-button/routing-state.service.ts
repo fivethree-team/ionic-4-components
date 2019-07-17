@@ -43,7 +43,7 @@ export class FivRoutingStateService {
   }
 
   handleAndroidBackButton() {
-    this.platform.backButton.subscribeWithPriority(9999, () => {
+    this.platform.backButton.subscribe(() => {
       if (this.getHistory().length <= 1) {
         // close the app because we are at root level
         navigator['app'].exitApp();
