@@ -1,3 +1,13 @@
+<a name="0.8.20"></a>
+## [0.8.20](https://github.com/fivethree-team/component-library/compare/v0.8.19...v0.8.20) (2019-07-17)
+
+
+### Bug Fixes
+
+* **back-button:** fix android backbutton blurring out of window when goBack ([5920790](https://github.com/fivethree-team/component-library/commit/5920790))
+
+
+
 <a name="0.8.19"></a>
 ## [0.8.19](https://github.com/fivethree-team/component-library/compare/v0.8.18...v0.8.19) (2019-07-10)
 
