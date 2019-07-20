@@ -1,3 +1,18 @@
+<a name="0.8.21"></a>
+## [0.8.21](https://github.com/fivethree-team/component-library/compare/v0.8.20...v0.8.21) (2019-07-20)
+
+
+### Bug Fixes
+
+* **FivGallery:** Fix circular dependency in FivGallery and FivGalleryImage ([e1dec01](https://github.com/fivethree-team/component-library/commit/e1dec01))
+
+
+### Features
+
+* **back-button:** add example page and modal to test the back button functionality ([afcfc88](https://github.com/fivethree-team/component-library/commit/afcfc88))
+
+
+
 <a name="0.8.20"></a>
 ## [0.8.20](https://github.com/fivethree-team/component-library/compare/v0.8.19...v0.8.20) (2019-07-17)
 
