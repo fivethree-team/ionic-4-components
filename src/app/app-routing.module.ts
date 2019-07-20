@@ -87,7 +87,10 @@ const routes: Routes = [
     loadChildren:
       './pages/developer-tools/developer-tools.module#DeveloperToolsPageModule'
   },
-  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
+  {
+    path: 'backbutton',
+    loadChildren: './pages/backbutton/backbutton.module#BackButtonPageModule'
+  },
   {
     path: '**',
     loadChildren:

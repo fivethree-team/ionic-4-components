@@ -1,3 +1,4 @@
+import { ComponentsModule } from '@components/components.module';
 import { FivethreeCoreModule } from '@fivethree/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,12 +7,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TestPage } from './test.page';
+import { BackButtonPage } from './backbutton.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: TestPage
+    component: BackButtonPage
   }
 ];
 
@@ -21,8 +22,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    FivethreeCoreModule
+    FivethreeCoreModule,
+    ComponentsModule
   ],
-  declarations: [TestPage]
+  declarations: [BackButtonPage]
 })
-export class TestPageModule {}
+export class BackButtonPageModule {}

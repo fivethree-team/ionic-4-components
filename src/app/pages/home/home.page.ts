@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
+  production = environment.production;
   constructor(private nav: NavController) {}
 
   ngOnInit() {}

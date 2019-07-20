@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { filter, tap, takeWhile } from 'rxjs/operators';
 import { NavController, Platform } from '@ionic/angular';
+import { Navigateable } from '../interfaces';
+import { fromEvent, zip, race, from } from 'rxjs';
 
 export interface RoutingStateConfig {
   clearOn: string[];
@@ -12,7 +14,7 @@ export interface RoutingStateConfig {
   providedIn: 'root'
 })
 export class FivRoutingStateService {
-  private history: string[] = [];
+  private history: (string | Navigateable)[] = [];
   private config: RoutingStateConfig;
 
   constructor(
@@ -32,7 +34,7 @@ export class FivRoutingStateService {
           this.pop();
         }
         // add url to history
-        this.history = [...this.history, urlAfterRedirects];
+        this.history.push(urlAfterRedirects);
         if (this.config && this.config.clearOn) {
           const clear = this.config.clearOn.some(s => s === urlAfterRedirects);
           if (clear) {
@@ -42,27 +44,40 @@ export class FivRoutingStateService {
       });
   }
 
-  handleAndroidBackButton() {
-    this.platform.backButton.subscribe(() => {
-      if (this.getHistory().length <= 1) {
-        // close the app because we are at root level
-        navigator['app'].exitApp();
-      } else {
-        // go back
-        this.goBack();
-      }
-    });
+  registerNavigateable(target: Navigateable) {
+    if (isNavigateable(target)) {
+      this.history.push(target);
+    }
   }
 
-  public getHistory(): string[] {
+  handleAndroidBackButton() {
+    this.platform.backButton
+      .pipe(filter(() => !isNavigateable(this.getCurrentUrl())))
+      .subscribe(event => {
+        this.goBack();
+      });
+
+    this.platform.backButton
+      .pipe(filter(() => isNavigateable(this.getCurrentUrl())))
+      .subscribe(event => {
+        event.register(99999, () => {
+          this.goBack('/');
+        });
+      });
+  }
+
+  public getHistory(): (string | Navigateable)[] {
     return this.history;
   }
 
-  public getPreviousUrl(defaultHref = '/'): string {
-    return this.history[this.history.length - 2] || defaultHref;
+  public getPreviousUrl(defaultHref = '/'): string | Navigateable {
+    if (this.history.length > 2) {
+      return this.history[this.history.length - 2];
+    }
+    return defaultHref;
   }
 
-  public pop(): string {
+  public pop(): string | Navigateable {
     return this.history.pop();
   }
 
@@ -84,11 +99,40 @@ export class FivRoutingStateService {
     }
   }
 
-  public getCurrentUrl(): string {
+  public getCurrentUrl(): string | Navigateable {
     return this.history[this.history.length - 1];
   }
 
   goBack(defaultHref = '/') {
-    this.navCtrl.navigateBack(this.getPreviousUrl(defaultHref));
+    if (this.getHistory().length <= 1) {
+      // close the app because we are at root level
+      return navigator['app'].exitApp();
+    }
+    const current = this.getCurrentUrl();
+    if (typeof current !== 'string' && isNavigateable(current)) {
+      current.dismiss();
+      return this.pop();
+    }
+
+    const previous = this.getPreviousUrl(defaultHref);
+    if (typeof previous === 'string') {
+      return this.navCtrl.navigateBack(previous);
+    }
+    if (isNavigateable(previous)) {
+      return this.navCtrl.navigateBack(this.getLatestUrl(defaultHref));
+    }
   }
+
+  getLatestUrl(defaultHref: string): string {
+    const urls = this.history.filter(e => !!(typeof e === 'string'));
+    const latest = urls[urls.length - 1];
+    if (urls.length > 0 && latest && typeof latest === 'string') {
+      return latest;
+    }
+    return defaultHref;
+  }
+}
+
+export function isNavigateable(object: any): boolean {
+  return !!object && object.dismiss !== undefined;
 }

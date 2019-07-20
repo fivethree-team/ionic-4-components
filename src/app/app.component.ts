@@ -17,6 +17,11 @@ export class AppComponent {
       icon: 'git-commit'
     },
     {
+      title: 'Back Button',
+      url: '/backbutton',
+      icon: 'md-arrow-back'
+    },
+    {
       title: 'Bottom Sheet',
       url: '/bottom-sheet',
       icon: 'ios-arrow-up'
