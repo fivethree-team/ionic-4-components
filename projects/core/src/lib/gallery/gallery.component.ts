@@ -1,8 +1,4 @@
 import { FivGalleryToolbar } from './gallery-toolbar/gallery-toolbar.component';
-import {
-  FivGalleryImage,
-  Position
-} from './gallery-image/gallery-image.component';
 import { ImageService } from './image.service';
 import { IonSlides, DomController, Platform } from '@ionic/angular';
 import { FivOverlay } from './../overlay/overlay.component';
@@ -20,10 +16,10 @@ import {
   Inject,
   ChangeDetectorRef,
   TemplateRef,
-  ViewChildren,
   Input,
   Output,
-  EventEmitter
+  EventEmitter,
+  OnDestroy
 } from '@angular/core';
 import {
   style,
@@ -34,6 +30,13 @@ import {
 } from '@angular/animations';
 import { Key } from './keycodes.enum';
 import { DOCUMENT } from '@angular/common';
+import { Navigateable } from '../interfaces';
+import {
+  FivGalleryImage,
+  Position
+} from './gallery-image/gallery-image.component';
+import { from, Subject } from 'rxjs';
+import { mergeMap, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'fiv-gallery',
@@ -72,7 +75,8 @@ import { DOCUMENT } from '@angular/common';
     ])
   ]
 })
-export class FivGallery implements OnInit, AfterContentInit {
+export class FivGallery
+  implements OnInit, AfterContentInit, OnDestroy, Navigateable {
   @ViewChild('overlay') overlay: FivOverlay;
   @ViewChild('viewer') viewer: ElementRef;
   @ViewChild('slider', { read: ElementRef }) swiper: ElementRef;
@@ -106,6 +110,8 @@ export class FivGallery implements OnInit, AfterContentInit {
   @Output() didClose = new EventEmitter<FivGalleryImage>();
   @Output() backdropChange = new EventEmitter<FivGalleryImage>();
 
+  $onDestroy = new Subject();
+
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (
@@ -133,6 +139,33 @@ export class FivGallery implements OnInit, AfterContentInit {
   ngAfterContentInit(): void {
     this.updateImages();
     this.updateToolbars();
+    this.subscribeToImageEvents();
+  }
+
+  ngOnDestroy(): void {
+    this.$onDestroy.next();
+  }
+
+  subscribeToImageEvents() {
+    from(this.images.map(image => image.didOpen))
+      .pipe(
+        mergeMap((value: EventEmitter<FivGalleryImage>) => value),
+        takeUntil<FivGalleryImage>(this.$onDestroy)
+      )
+      .subscribe(image => this.open(image));
+    from(this.images.map(image => image.willOpen))
+      .pipe(
+        mergeMap((value: EventEmitter<FivGalleryImage>) => value),
+        takeUntil<FivGalleryImage>(this.$onDestroy)
+      )
+      .subscribe(image => this.willOpen.emit(image));
+
+    from(this.images.map(image => image.didClose))
+      .pipe(
+        mergeMap((value: EventEmitter<FivGalleryImage>) => value),
+        takeUntil<FivGalleryImage>(this.$onDestroy)
+      )
+      .subscribe(image => this.didClose.emit(image));
   }
 
   updateImages() {
@@ -186,15 +219,16 @@ export class FivGallery implements OnInit, AfterContentInit {
     }
   }
 
-  open(index: number, initial: FivGalleryImage) {
-    this.options.initialSlide = index;
+  open(initial: FivGalleryImage) {
+    this.activeIndex = initial.index;
+    this.options.initialSlide = this.activeIndex;
     this.overlay.show(50000);
     this.initialImage = initial;
     this.initialImage.openTiming = this.openTiming;
     this.initialImage.closeTiming = this.closeTiming;
     this.initialImage.backdropColor = this.ambient
       ? this.imageService.getAverageRGB(
-          this.images.toArray()[index].image.nativeElement
+          this.images.toArray()[this.activeIndex].image.nativeElement
         )
       : '#000';
     this.showControls();
@@ -203,9 +237,14 @@ export class FivGallery implements OnInit, AfterContentInit {
   close() {
     this.closeFromPullDown(0);
   }
+  dismiss() {
+    this.closeFromPullDown(0, false);
+  }
 
-  closeFromPullDown(progress: number) {
-    this.willClose.emit(this.initialImage);
+  closeFromPullDown(progress: number, emit = true) {
+    if (emit) {
+      this.willClose.emit(this.initialImage);
+    }
     this.transformSlides(0);
 
     const sameAsInitial =

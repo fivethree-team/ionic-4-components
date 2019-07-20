@@ -6,3 +6,7 @@ export class FeaturePosition {
   height: number;
   width: number;
 }
+
+export interface Navigateable {
+  dismiss();
+}

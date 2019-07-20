@@ -1,12 +1,11 @@
-import { FivGallery } from '../gallery.component';
 import {
   Component,
   OnInit,
   Input,
   ElementRef,
   ViewChild,
-  Host,
-  Optional
+  Output,
+  EventEmitter
 } from '@angular/core';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import {
@@ -19,7 +18,6 @@ import {
   keyframes
 } from '@angular/animations';
 import { FivOverlay } from '../../overlay/overlay.component';
-import { ImageService } from '../image.service';
 
 @Component({
   selector: 'fiv-gallery-image',
@@ -176,15 +174,16 @@ export class FivGalleryImage implements OnInit {
   openTiming = '300ms';
   closeTiming = '340ms';
 
-  constructor(
-    @Optional() @Host() public gallery: FivGallery,
-    private imageService: ImageService
-  ) {}
+  @Output() willOpen = new EventEmitter<FivGalleryImage>();
+  @Output() didOpen = new EventEmitter<FivGalleryImage>();
+  @Output() didClose = new EventEmitter<FivGalleryImage>();
+
+  constructor() {}
 
   ngOnInit() {}
 
   open() {
-    this.gallery.willOpen.emit(this);
+    this.willOpen.emit(this);
     const p = this.getThumbnailPosition(this.image);
     this.animationParams = {
       translate: p.translate,
@@ -196,9 +195,6 @@ export class FivGalleryImage implements OnInit {
     };
 
     this.overlay.show(49999);
-    this.backdropColor = this.gallery.ambient
-      ? this.imageService.getAverageRGB(this.image.nativeElement)
-      : '#000';
   }
 
   close(position: Position) {
@@ -230,14 +226,14 @@ export class FivGalleryImage implements OnInit {
 
   handleViewerAnimation(event: AnimationEvent) {
     if (event.fromState === 'void' && event.toState === 'in') {
-      this.gallery.open(this.index, this);
+      this.didOpen.emit(this);
     }
     if (
       (event.fromState === 'in' || event.fromState === 'hidden') &&
       (event.toState === 'out' || event.toState === 'slideout')
     ) {
       this.overlay.hide();
-      this.gallery.didClose.emit(this);
+      this.didClose.emit(this);
       this.viewerState = 'in';
     }
     if (event.toState === 'slideout') {
@@ -246,8 +242,7 @@ export class FivGalleryImage implements OnInit {
   }
 
   private getThumbnailPosition(
-    element: ElementRef,
-    progress?: number
+    element: ElementRef
   ): Position {
     const bounds = element.nativeElement.getBoundingClientRect();
     return {
