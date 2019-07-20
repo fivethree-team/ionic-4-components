@@ -1,3 +1,132 @@
+<a name="0.8.21"></a>
+## [0.8.21](https://github.com/fivethree-team/component-library/compare/v0.8.20...v0.8.21) (2019-07-20)
+
+
+### Bug Fixes
+
+* **FivGallery:** Fix circular dependency in FivGallery and FivGalleryImage ([e1dec01](https://github.com/fivethree-team/component-library/commit/e1dec01))
+
+
+### Features
+
+* **back-button:** add example page and modal to test the back button functionality ([afcfc88](https://github.com/fivethree-team/component-library/commit/afcfc88))
+
+
+
+<a name="0.8.20"></a>
+## [0.8.20](https://github.com/fivethree-team/component-library/compare/v0.8.19...v0.8.20) (2019-07-17)
+
+
+### Bug Fixes
+
+* **back-button:** fix android backbutton blurring out of window when goBack ([5920790](https://github.com/fivethree-team/component-library/commit/5920790))
+
+
+
+<a name="0.8.19"></a>
+## [0.8.19](https://github.com/fivethree-team/component-library/compare/v0.8.18...v0.8.19) (2019-07-10)
+
+
+### Features
+
+* **Gallery:** Slide out image when pulled image is not the initial image ([25d95a3](https://github.com/fivethree-team/component-library/commit/25d95a3))
+
+
+
+<a name="0.8.18"></a>
+## [0.8.18](https://github.com/fivethree-team/component-library/compare/v0.8.15...v0.8.18) (2019-07-10)
+
+
+### Bug Fixes
+
+* **FivLazyImage:** export FivLazyImage from [@fivethree](https://github.com/fivethree)/core ([c88b500](https://github.com/fivethree-team/component-library/commit/c88b500))
+* **gallery:** fix will close output not emitting on pull down ([5600335](https://github.com/fivethree-team/component-library/commit/5600335))
+
+
+### Features
+
+* **FivLazyImage:** added inViewport boolean to directive ([cf62cb6](https://github.com/fivethree-team/component-library/commit/cf62cb6))
+
+
+
+<a name="0.8.17"></a>
+## [0.8.17](https://github.com/fivethree-team/component-library/compare/v0.8.15...v0.8.17) (2019-07-10)
+
+
+### Bug Fixes
+
+* **gallery:** fix will close output not emitting on pull down ([5600335](https://github.com/fivethree-team/component-library/commit/5600335))
+
+
+### Features
+
+* **FivLazyImage:** added inViewport boolean to directive ([cf62cb6](https://github.com/fivethree-team/component-library/commit/cf62cb6))
+
+
+
+<a name="0.8.16"></a>
+## [0.8.16](https://github.com/fivethree-team/component-library/compare/v0.8.15...v0.8.16) (2019-07-10)
+
+
+### Bug Fixes
+
+* **gallery:** fix will close output not emitting on pull down ([5600335](https://github.com/fivethree-team/component-library/commit/5600335))
+
+
+
+<a name="0.8.15"></a>
+## [0.8.15](https://github.com/fivethree-team/component-library/compare/v0.8.14...v0.8.15) (2019-07-10)
+
+
+### Bug Fixes
+
+* **gallery:** fix a bug that crashed the gallery while pulling down before the gallery has fully been loaded, configuration options ([f0aa619](https://github.com/fivethree-team/component-library/commit/f0aa619))
+
+
+
+<a name="0.8.14"></a>
+## [0.8.14](https://github.com/fivethree-team/component-library/compare/v0.8.13...v0.8.14) (2019-07-09)
+
+
+### Features
+
+* **gallery:** ambient backdrop color input ([fe199a8](https://github.com/fivethree-team/component-library/commit/fe199a8))
+
+
+
+<a name="0.8.13"></a>
+## [0.8.13](https://github.com/fivethree-team/component-library/compare/v0.8.12...v0.8.13) (2019-07-06)
+
+
+### Features
+
+* **fivLazyImage:** add virtual input to lazy image ([fed25ad](https://github.com/fivethree-team/component-library/commit/fed25ad))
+
+
+
+<a name="0.8.12"></a>
+## [0.8.12](https://github.com/fivethree-team/component-library/compare/v0.8.11...v0.8.12) (2019-06-24)
+
+
+### Bug Fixes
+
+* **pull:** mark all touch event handlers as passive ([9c94409](https://github.com/fivethree-team/component-library/commit/9c94409))
+
+
+
+<a name="0.8.11"></a>
+## [0.8.11](https://github.com/fivethree-team/component-library/compare/v0.8.9...v0.8.11) (2019-06-24)
+
+
+### Bug Fixes
+
+* **dialog:** fix horizontal middle position animations ([4083f45](https://github.com/fivethree-team/component-library/commit/4083f45))
+* **refresher:** add content min-height ([4680e25](https://github.com/fivethree-team/component-library/commit/4680e25))
+* **refresher:** make touchmove listeners passive ([d10a227](https://github.com/fivethree-team/component-library/commit/d10a227))
+* **tests:** enable tests ([72c0f4b](https://github.com/fivethree-team/component-library/commit/72c0f4b))
+
+
+
 <a name="0.8.10"></a>
 ## [0.8.10](https://github.com/fivethree-team/component-library/compare/v0.8.9...v0.8.10) (2019-06-10)
 

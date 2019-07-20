@@ -1,12 +1,11 @@
-import { FivGallery } from '../gallery.component';
 import {
   Component,
   OnInit,
   Input,
   ElementRef,
   ViewChild,
-  Host,
-  Optional
+  Output,
+  EventEmitter
 } from '@angular/core';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import {
@@ -19,7 +18,6 @@ import {
   keyframes
 } from '@angular/animations';
 import { FivOverlay } from '../../overlay/overlay.component';
-import { ImageService } from '../image.service';
 
 @Component({
   selector: 'fiv-gallery-image',
@@ -41,7 +39,7 @@ import { ImageService } from '../image.service';
             borderRadius: '*'
           }),
           animate(
-            '200ms',
+            '{{timing}}',
             style({
               position: 'absolute',
               top: '50%',
@@ -54,7 +52,15 @@ import { ImageService } from '../image.service';
             })
           )
         ],
-        { params: { top: '0', left: '0', height: '*', width: '*' } }
+        {
+          params: {
+            top: '0',
+            left: '0',
+            height: '*',
+            width: '*',
+            timing: '300ms'
+          }
+        }
       ),
       transition(
         '* => out',
@@ -70,7 +76,7 @@ import { ImageService } from '../image.service';
             borderRadius: '0'
           }),
           animate(
-            '275ms',
+            '{{timing}}',
             style({
               position: 'absolute',
               top: '{{top}}px',
@@ -89,14 +95,46 @@ import { ImageService } from '../image.service';
             left: '0',
             height: '*',
             width: '*',
-            translate: '0'
+            translate: '0',
+            timing: '340ms'
           }
         }
       ),
-      state('hidden', style({ opacity: 0 }))
+      state('hidden', style({ opacity: 0 })),
+      transition(
+        '* => slideout',
+        [
+          style({
+            position: 'absolute',
+            top: '{{translate}}px',
+            left: '50%',
+            transform: 'translate(-50%,-50%)',
+            opacity: 1,
+            borderRadius: '0'
+          }),
+          animate(
+            '{{timing}}',
+            style({
+              transform: 'translate(-50%,100%)',
+              opacity: 0.2,
+              borderRadius: '0'
+            })
+          )
+        ],
+        {
+          params: {
+            top: '0',
+            left: '0',
+            height: '*',
+            width: '*',
+            translate: '0',
+            timing: '340ms'
+          }
+        }
+      )
     ]),
     trigger('fade', [
-      transition(':enter', [
+      transition('void => *', [
         style({ opacity: 0 }),
         animate(
           '180ms',
@@ -123,53 +161,88 @@ import { ImageService } from '../image.service';
 })
 export class FivGalleryImage implements OnInit {
   @Input() src: string | SafeResourceUrl;
+  originalSrc: string | SafeResourceUrl;
   index: number;
 
   @ViewChild('thumbnail') image: ElementRef;
   @ViewChild('overlay') overlay: FivOverlay;
 
   viewerState = 'in';
-  animationParams: Position;
+  animationParams: AnimationParams;
 
   backdropColor = 'rgb(0,0,0)';
+  openTiming = '300ms';
+  closeTiming = '340ms';
 
-  constructor(
-    @Optional() @Host() private gallery: FivGallery,
-    private imageService: ImageService
-  ) {}
+  @Output() willOpen = new EventEmitter<FivGalleryImage>();
+  @Output() didOpen = new EventEmitter<FivGalleryImage>();
+  @Output() didClose = new EventEmitter<FivGalleryImage>();
+
+  constructor() {}
 
   ngOnInit() {}
 
   open() {
-    this.animationParams = this.getThumbnailPosition(this.image);
+    this.willOpen.emit(this);
+    const p = this.getThumbnailPosition(this.image);
+    this.animationParams = {
+      translate: p.translate,
+      timing: this.openTiming,
+      height: p.height,
+      width: p.width,
+      top: p.top,
+      left: p.left
+    };
 
     this.overlay.show(49999);
-    this.backdropColor = this.imageService.getAverageRGB(
-      this.image.nativeElement
-    );
   }
 
   close(position: Position) {
-    this.animationParams = this.animationParams = this.getThumbnailPosition(
-      this.image
-    );
-    this.animationParams.translate = position.translate;
+    const p = this.getThumbnailPosition(this.image);
+    this.animationParams = {
+      translate: position.translate,
+      timing: this.closeTiming,
+      height: p.height,
+      width: p.width,
+      top: p.top,
+      left: p.left
+    };
     this.viewerState = 'out';
+  }
+
+  slideOut(position: Position, src) {
+    this.originalSrc = src;
+    const p = this.getThumbnailPosition(this.image);
+    this.animationParams = {
+      translate: position.translate,
+      timing: this.closeTiming,
+      height: p.height,
+      width: p.width,
+      top: p.top,
+      left: p.left
+    };
+    this.viewerState = 'slideout';
   }
 
   handleViewerAnimation(event: AnimationEvent) {
     if (event.fromState === 'void' && event.toState === 'in') {
-      this.gallery.open(this.index, this);
+      this.didOpen.emit(this);
     }
-    if (event.fromState === 'hidden' && event.toState === 'out') {
+    if (
+      (event.fromState === 'in' || event.fromState === 'hidden') &&
+      (event.toState === 'out' || event.toState === 'slideout')
+    ) {
       this.overlay.hide();
+      this.didClose.emit(this);
       this.viewerState = 'in';
+    }
+    if (event.toState === 'slideout') {
+      this.src = this.originalSrc;
     }
   }
 
   private getThumbnailPosition(
-    element: ElementRef,
-    progress?: number
+    element: ElementRef
   ): Position {
     const bounds = element.nativeElement.getBoundingClientRect();
     return {
@@ -187,4 +260,8 @@ export class Position {
   height: number;
   width: number;
   translate?: number;
+}
+
+export interface AnimationParams extends Position {
+  timing: string;
 }

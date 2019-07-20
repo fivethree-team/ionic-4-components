@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <fiv-back-button [icon]="'ios-arrow-down'"></fiv-back-button>
+    </ion-buttons>
+    <ion-title>modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button (click)="presentModal()">
+    ADD MODAL
+  </ion-button>
+
+  <fiv-gallery #gallery (willClose)="unregister()" (willOpen)="register(gallery)">
+    <fiv-gallery-toolbar position="top">
+      <ion-toolbar color="transparent">
+        <ion-buttons slot="start">
+          <fiv-back-button icon="close"></fiv-back-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </fiv-gallery-toolbar>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col *ngFor="let pic of picsum" size="6" sizeMd="4">
+          <fiv-gallery-image [src]="pic"></fiv-gallery-image>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </fiv-gallery>
+
+</ion-content>

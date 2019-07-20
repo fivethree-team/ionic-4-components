@@ -88,6 +88,10 @@ const routes: Routes = [
       './pages/developer-tools/developer-tools.module#DeveloperToolsPageModule'
   },
   {
+    path: 'backbutton',
+    loadChildren: './pages/backbutton/backbutton.module#BackButtonPageModule'
+  },
+  {
     path: '**',
     loadChildren:
       './pages/page-not-found/page-not-found.module#PageNotFoundPageModule'

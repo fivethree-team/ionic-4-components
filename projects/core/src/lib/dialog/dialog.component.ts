@@ -28,60 +28,60 @@ export type Content<T> = TemplateRef<T> | Type<T>;
   animations: [
     trigger('slide', [
       transition('out => top', [
-        style({ top: '0', transform: 'translateY(-100%)' }),
+        style({ top: '0', transform: 'translateY(-100%) {{translateX}}' }),
         animate('220ms ease-out')
       ]),
       transition('out => center', [
         style({
           top: '50%',
-          transform: 'translateY(-50%) scale(0)',
+          transform: 'translateY(-50%) {{translateX}} scale(0)',
           opacity: 0
         }),
         animate(
           '220ms ease-out',
           style({
             top: '50%',
-            transform: 'translateY(-50%) scale(1)',
+            transform: 'translateY(-50%) {{translateX}} scale(1)',
             opacity: 1
           })
         )
       ]),
       transition('out => bottom', [
-        style({ bottom: '0', transform: 'translateY(100%)' }),
+        style({ bottom: '0', transform: 'translateY(100%) {{translateX}}' }),
         animate('220ms ease-out')
       ]),
       transition('top => out', [
-        style({ top: '0', transform: 'translateY(0)' }),
+        style({ top: '0', transform: '*' }),
         animate(
           '140ms ease-in',
-          style({ top: '0', transform: 'translateY(-100%)' })
+          style({ top: '0', transform: 'translateY(-100%) {{translateX}}' })
         )
       ]),
       transition('center => out', [
         style({
           top: '50%',
-          transform: 'translateY(-50%) scale(1)',
+          transform: '*',
           opacity: 1
         }),
         animate(
           '140ms ease-in',
           style({
             top: '50%',
-            transform: 'translateY(-50%) scale(0)',
+            transform: 'translateY(-50%) {{translateX}} scale(0)',
             opacity: 0
           })
         )
       ]),
       transition('bottom => out', [
-        style({ bottom: '0', transform: 'translateY(0)' }),
+        style({ bottom: '0', transform: '*' }),
         animate(
           '140ms ease-in',
-          style({ bottom: '0', transform: 'translateY(100%)' })
+          style({ bottom: '0', transform: 'translateY(100%) {{translateX}}' })
         )
       ]),
-      state('bottom', style({ bottom: '0', transform: 'translateY(0)' })),
-      state('top', style({ top: '0', transform: 'translateY(0)' })),
-      state('center', style({ top: '50%', transform: 'translateY(-50%)' }))
+      // state('bottom', style({ bottom: '0', transform: '*' })),
+      // state('top', style({ top: '0', transform: '*' })),
+      // state('center', style({ top: '50%', transform: 'translateY(-50%) {{translateX}}' }))
     ]),
     trigger('fade', [
       transition(
@@ -131,13 +131,13 @@ export class FivDialog implements OnInit {
   dialogState: 'top' | 'center' | 'bottom' | 'out' = 'out';
   currentPullProgress: number;
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   constructor(
     private renderer: Renderer2,
     private domCtrl: DomController,
     private animation: AnimationBuilder
-  ) {}
+  ) { }
 
   open() {
     this.overlay.show(this.priority);

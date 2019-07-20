@@ -13,8 +13,7 @@ import {
   map,
   skipWhile,
   takeUntil,
-  takeLast,
-  tap
+  takeLast
 } from 'rxjs/operators';
 
 @Directive({
@@ -37,7 +36,7 @@ export class FivPull implements OnInit {
     private element: ElementRef,
     private platform: Platform,
     private content: IonContent
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.content.scrollEvents = true;
@@ -48,10 +47,10 @@ export class FivPull implements OnInit {
   }
 
   private setupPanListener() {
-    const touchstart$ = fromEvent(this.element.nativeElement, 'touchstart');
-    const touchmove$ = fromEvent(this.element.nativeElement, 'touchmove');
-    const touchend$ = fromEvent(this.element.nativeElement, 'touchend');
-    const touchcancel$ = fromEvent(this.element.nativeElement, 'touchcancel');
+    const touchstart$ = fromEvent(this.element.nativeElement, 'touchstart', { passive: true });
+    const touchmove$ = fromEvent(this.element.nativeElement, 'touchmove', { passive: true });
+    const touchend$ = fromEvent(this.element.nativeElement, 'touchend', { passive: true });
+    const touchcancel$ = fromEvent(this.element.nativeElement, 'touchcancel', { passive: true });
     const end$ = merge(touchend$, touchcancel$);
 
     const dragAtTop = touchstart$.pipe(
@@ -96,7 +95,6 @@ export class FivPull implements OnInit {
 
     dragTopDown.forEach(drags => {
       drags.forEach(drag => {
-        drag.moveEvent.preventDefault();
         const offset = drag.offset / 2;
         if (offset < 0 || offset > this.maxPullHeight) {
           return;
@@ -139,7 +137,6 @@ export class FivPull implements OnInit {
 
     dragBottomUp.forEach(drags => {
       drags.forEach(drag => {
-        drag.moveEvent.preventDefault();
         const offset = drag.offset / 2;
         if (offset < 0 || offset > this.maxPullHeight) {
           return;

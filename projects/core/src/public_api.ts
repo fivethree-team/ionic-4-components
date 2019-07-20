@@ -77,6 +77,7 @@ export * from './lib/gallery/gallery-image/gallery-image.component';
  * Directives
  */
 export * from './lib/feature-discovery/feature.directive';
+export * from './lib/lazy-image/lazy-image.directive';
 
 // export services
 export * from './lib/loading-progress-bar/loading.service';
