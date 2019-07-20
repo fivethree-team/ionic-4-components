@@ -9,7 +9,7 @@
 export * from './lib/fivethree.core.module';
 // Components
 export * from './lib/app-bar/app-bar.module';
-export * from './lib/back-button/back-button.module';
+export * from './lib/back-button/router-state.module';
 export * from './lib/bottom-sheet/bottom-sheet.module';
 export * from './lib/button/button.module';
 export * from './lib/buttons/buttons.module';
@@ -84,6 +84,6 @@ export * from './lib/loading-progress-bar/loading.service';
 export * from './lib/gallery/image.service';
 export * from './lib/overlay/overlay.service';
 export * from './lib/dialog/dialog.service';
-export * from './lib/back-button/routing-state.service';
+export * from './lib/back-button/router-state.service';
 
 export * from './lib/bottom-sheet/drawer-state';

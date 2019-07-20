@@ -20,7 +20,7 @@ import { FivCenterModule } from './center/center.module';
 import { FivAppBarModule } from './app-bar/app-bar.module';
 import { FivLoadingFabModule } from './loading-fab/loading-fab.module';
 import { FivLoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
-import { FivBackButtonModule } from './back-button/back-button.module';
+import { FivRouterStateModule } from './back-button/router-state.module';
 import { FivButtonsModule } from './buttons/buttons.module';
 import { FivCollapsableModule } from './collapsable-menu/collapsable-menu.module';
 import { FivDialogModule } from './dialog/dialog.module';
@@ -43,7 +43,7 @@ export class MyHammerConfig extends HammerGestureConfig {
 
 const componentModules = [
   FivAppBarModule,
-  FivBackButtonModule,
+  FivRouterStateModule,
   FivBottomSheetModule,
   FivButtonModule,
   FivButtonsModule,

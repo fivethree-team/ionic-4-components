@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { FivRoutingStateService } from '@fivethree/core';
 
 @Component({
   selector: 'app-root',
@@ -100,7 +99,6 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private routing: FivRoutingStateService,
     private navCtrl: NavController
   ) {
     this.initializeApp();
@@ -108,8 +106,6 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.routing.loadRouting({ clearOn: ['/'], root: '/' });
-
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

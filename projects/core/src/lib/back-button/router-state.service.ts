@@ -1,42 +1,44 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter, tap, takeWhile } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 import { NavController, Platform } from '@ionic/angular';
 import { Navigateable } from '../interfaces';
-import { fromEvent, zip, race, from } from 'rxjs';
+import { FIV_ROUTER_STATE_OPTIONS, FivRouterStateOptions } from './symbols';
 
 export interface RoutingStateConfig {
   clearOn: string[];
   root: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
-export class FivRoutingStateService {
+@Injectable()
+export class FivRouterStateService {
   private history: (string | Navigateable)[] = [];
-  private config: RoutingStateConfig;
 
   constructor(
+    @Inject(FIV_ROUTER_STATE_OPTIONS) private _options: FivRouterStateOptions,
     private router: Router,
     private navCtrl: NavController,
     private platform: Platform
-  ) {}
+  ) {
+    console.log(_options);
+    console.log(this.history);
 
-  public loadRouting(config?: RoutingStateConfig): void {
-    this.config = config;
-    this.handleAndroidBackButton();
+    this.setUpAndroidBackButtonListener();
+    this.setUpRouterStateListener(_options);
+  }
+
+  private setUpRouterStateListener(options: FivRouterStateOptions) {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(({ urlAfterRedirects }: NavigationEnd) => {
-        if (urlAfterRedirects === this.getPreviousUrl(this.config.root)) {
+        if (urlAfterRedirects === this.getPreviousUrl(options.root)) {
           this.pop();
           this.pop();
         }
         // add url to history
         this.history.push(urlAfterRedirects);
-        if (this.config && this.config.clearOn) {
-          const clear = this.config.clearOn.some(s => s === urlAfterRedirects);
+        if (options.clearOn) {
+          const clear = options.clearOn.some(s => s === urlAfterRedirects);
           if (clear) {
             this.clearHistory(urlAfterRedirects);
           }
@@ -44,13 +46,7 @@ export class FivRoutingStateService {
       });
   }
 
-  registerNavigateable(target: Navigateable) {
-    if (isNavigateable(target)) {
-      this.history.push(target);
-    }
-  }
-
-  handleAndroidBackButton() {
+  private setUpAndroidBackButtonListener() {
     this.platform.backButton
       .pipe(filter(() => !isNavigateable(this.getCurrentUrl())))
       .subscribe(event => {
@@ -64,6 +60,12 @@ export class FivRoutingStateService {
           this.goBack('/');
         });
       });
+  }
+
+  registerNavigateable(target: Navigateable) {
+    if (isNavigateable(target)) {
+      this.history.push(target);
+    }
   }
 
   public getHistory(): (string | Navigateable)[] {
@@ -83,9 +85,9 @@ export class FivRoutingStateService {
 
   public clearHistory(fromUrl: string) {
     this.history = this.history.filter(h =>
-      this.config.clearOn.some(s => s === h)
+      this._options.clearOn.some(s => s === h)
     );
-    if (fromUrl !== this.config.root) {
+    if (fromUrl !== this._options.root) {
       this.history.push(fromUrl);
     }
     this.history = this.history
@@ -94,8 +96,8 @@ export class FivRoutingStateService {
         return self.indexOf(item) === pos;
       })
       .reverse();
-    if (this.history[0] !== this.config.root) {
-      this.history = [this.config.root, ...this.history];
+    if (this.history[0] !== this._options.root) {
+      this.history = [this._options.root, ...this.history];
     }
   }
 
@@ -104,6 +106,7 @@ export class FivRoutingStateService {
   }
 
   goBack(defaultHref = '/') {
+    console.log(this.getHistory());
     if (this.getHistory().length <= 1) {
       // close the app because we are at root level
       return navigator['app'].exitApp();

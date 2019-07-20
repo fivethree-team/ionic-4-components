@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
-import { FivRoutingStateService, FivGallery } from '@fivethree/core';
+import { FivRouterStateService, FivGallery } from '@fivethree/core';
 
 @Component({
   selector: 'app-modal',
@@ -16,7 +16,7 @@ export class ModalPage implements OnInit {
   constructor(
     public modalController: ModalController,
     private nav: NavController,
-    private routing: FivRoutingStateService
+    private routing: FivRouterStateService
   ) {}
 
   ngOnInit() {}

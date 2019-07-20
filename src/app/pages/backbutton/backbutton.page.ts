@@ -1,7 +1,7 @@
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { ModalPage } from '@components/modal/modal.page';
-import { FivRoutingStateService, FivGallery } from '@fivethree/core';
+import { FivRouterStateService, FivGallery } from '@fivethree/core';
 
 @Component({
   selector: 'app-backbutton',
@@ -15,7 +15,7 @@ export class BackButtonPage implements OnInit {
   );
 
   constructor(
-    public routing: FivRoutingStateService,
+    public routing: FivRouterStateService,
     private modal: ModalController
   ) {}
 

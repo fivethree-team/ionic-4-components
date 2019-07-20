@@ -4,9 +4,8 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { MarkdownModule } from 'ngx-markdown';
 import {
-  FivethreeCoreModule,
   FivIconModule,
-  FivBackButtonModule,
+  FivRouterStateModule,
   FivGalleryModule
 } from '@fivethree/core';
 import { MatTooltipModule, MatTabsModule } from '@angular/material';
@@ -37,7 +36,7 @@ const components = [
     MatTabsModule,
     LottieAnimationViewModule,
     FivIconModule,
-    FivBackButtonModule,
+    FivRouterStateModule,
     FivGalleryModule
   ],
   exports: [...components, LottieAnimationViewModule, MarkdownModule],
