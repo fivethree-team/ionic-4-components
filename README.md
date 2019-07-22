@@ -8,12 +8,11 @@ Costumizable UI Components for Ionic 4.
 [Component Demos](https://fivethree-team.github.io/ionic-4-components/components) |
 [Getting Started](https://fivethree-team.github.io/ionic-4-components/getting-started) |
 [Get In Touch](https://fivethree.io/)
-
-![gallery](src/assets/gif/gallery.gif)
-![pull-to-refresh](src/assets/gif/pulltorefresh.gif)
-![feature discovery](src/assets/gif/feature-discovery.gif)
-![dialog](src/assets/gif/dialog.gif)
-![bottom-sheet](src/assets/gif/bottom-sheet.gif)
+<img src="src/assets/gif/gallery.gif" alt="gallery" width="160"/>
+<img src="src/assets/gif/pulltorefresh.gif" alt="pullto refresh" width="160"/>
+<img src="src/assets/gif/feature.gif" alt="feature discovery" width="160"/>
+<img src="src/assets/gif/dialog.gif" alt="dialog" width="160"/>
+<img src="src/assets/gif/bottom.gif" alt="bottom sheet" width="160"/>
 
 # ✨ Features
 * Twitter inspired Image Gallery
