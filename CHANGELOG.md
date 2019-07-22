@@ -1,3 +1,13 @@
+<a name="0.8.22"></a>
+## [0.8.22](https://github.com/fivethree-team/component-library/compare/v0.8.21...v0.8.22) (2019-07-22)
+
+
+### Features
+
+* **bottom-sheet:** remove hammer js dependency from library ([d68bc78](https://github.com/fivethree-team/component-library/commit/d68bc78))
+
+
+
 <a name="0.8.21"></a>
 ## [0.8.21](https://github.com/fivethree-team/component-library/compare/v0.8.20...v0.8.21) (2019-07-20)
 
