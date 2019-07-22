@@ -1,3 +1,4 @@
+import { IonContent } from '@ionic/angular';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import {
   Component,
@@ -5,7 +6,9 @@ import {
   Input,
   HostBinding,
   EventEmitter,
-  Output
+  Output,
+  ViewChild,
+  AfterViewInit
 } from '@angular/core';
 import { DrawerState } from '../drawer-state';
 
@@ -14,15 +17,19 @@ import { DrawerState } from '../drawer-state';
   templateUrl: './bottom-sheet-content.component.html',
   styleUrls: ['./bottom-sheet-content.component.scss']
 })
-export class FivBottomSheetContent implements OnInit {
+export class FivBottomSheetContent implements OnInit, AfterViewInit {
   @Input() rounded = true;
   @Input() handle = true;
   @Input() float = true;
 
-  @Output() fivHandleClick: EventEmitter<any> = new EventEmitter();
+  @Output() fivClick: EventEmitter<any> = new EventEmitter();
+
+  @ViewChild(IonContent) content: IonContent;
 
   currentState: DrawerState;
   states = DrawerState;
+  shouldBounce = true;
+  panning: boolean = false;
 
   @HostBinding('class.rounded') get isRounded(): boolean {
     switch (this.currentState) {
@@ -48,11 +55,15 @@ export class FivBottomSheetContent implements OnInit {
 
   ngOnInit() {}
 
+  ngAfterViewInit(): void {
+    this.content.scrollEvents = true;
+  }
+
   updateState(state: DrawerState): any {
     this.currentState = state;
   }
 
   click() {
-    this.fivHandleClick.emit();
+    this.fivClick.emit();
   }
 }

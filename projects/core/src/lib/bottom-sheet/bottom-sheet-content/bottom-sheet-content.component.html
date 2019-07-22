@@ -1,12 +1,12 @@
 <div class="bsc-wrapper">
-  <span (click)="click()" *ngIf="currentState !== states.Top && handle" [fivCenter]="{vertical: false, horizontal: true}" class="handle"></span>
+  <span (click)="click()" *ngIf="currentState !== states.Top && handle"
+    [fivCenter]="{vertical: false, horizontal: true}" class="handle"></span>
   <div [ngClass]="{'margin': handle}" class="content">
-    <ng-content>
-  
-    </ng-content>
+    <ion-content [scrollY]="currentState === 2 && shouldBounce && !panning">
+      <ng-content>
+
+      </ng-content>
+    </ion-content>
+
   </div>
 </div>
-
-
-
-

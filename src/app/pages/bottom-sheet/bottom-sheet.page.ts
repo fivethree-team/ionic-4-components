@@ -8,11 +8,10 @@ import { DrawerState } from '@fivethree/core';
 })
 export class BottomSheetPage implements OnInit {
   shouldBounce = true;
-  dockedHeight = 170;
-  distanceTop = 56;
+  dockedHeight = 204;
+  distanceTop = 0;
   drawerState = DrawerState.Docked;
   states = DrawerState;
-  minimumHeight = 24;
 
   handle = true;
   float = true;

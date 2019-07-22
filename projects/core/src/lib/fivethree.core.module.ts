@@ -7,7 +7,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { HammerGestureConfig } from '@angular/platform-browser';
-import { Hammer } from 'hammerjs';
 import { FivPasswordInputModule } from './password-input/password-input.module';
 import { FivExpandableModule } from './expandable/expandable.module';
 import { FivStepperModule } from './stepper/stepper.module';
@@ -34,12 +33,6 @@ import { FivViewportModule } from './viewport/viewport.module';
 import { FivLazyImageModule } from './lazy-image/lazy-image.module';
 import { FivFeatureDiscoveryModule } from './feature-discovery/feature-discovery.module';
 import { FivSearchbarModule } from './searchbar/searchbar.module';
-
-export class MyHammerConfig extends HammerGestureConfig {
-  overrides = <any>{
-    pan: { direction: Hammer.DIRECTION_VERTICAL, threshold: 3 }
-  };
-}
 
 const componentModules = [
   FivAppBarModule,

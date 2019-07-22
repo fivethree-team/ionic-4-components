@@ -32,7 +32,7 @@ To get started, install the package from npm. The latest version supports Ionic 
 You can use either npm or yarn to install `@fivethree/core` from npm.
 
 ```bash
-npm install --save @fivethree/core @angular/animations hammerjs
+npm install --save @fivethree/core @angular/animations
 ```
 
 ## Step 2. Configure your Ionic App 
