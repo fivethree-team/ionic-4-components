@@ -17,7 +17,7 @@ import { FivIfModule } from './if-platform/if-platform.module';
 import { FivPullModule } from './pull/pull.module';
 import { FivCenterModule } from './center/center.module';
 import { FivAppBarModule } from './app-bar/app-bar.module';
-import { FivLoadingFabModule } from './loading-fab/loading-fab.module';
+import { FivFabModule } from './fab/fab.module';
 import { FivLoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
 import { FivBackButtonModule } from './back-button/back-button.module';
 import { FivButtonsModule } from './buttons/buttons.module';
@@ -48,7 +48,7 @@ const componentModules = [
   FivGalleryModule,
   FivIconModule,
   FivLoadingContentModule,
-  FivLoadingFabModule,
+  FivFabModule,
   FivLoadingProgressBarModule,
   FivLoadingSpinnerModule,
   FivNetworkStatusModule,

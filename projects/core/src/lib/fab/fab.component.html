@@ -1,0 +1,17 @@
+<ion-fab *ngIf="visible" (@fabAnim.done)="fabAnimDone($event)" [@fabAnim]="{value: '*',params: params}"
+  [ngClass]="[mode,horizontal,vertical]" [slot]="slot">
+  <fiv-loading-spinner [color]="spinColor" *ngIf="!extended && loading" (fivProgress)="rotate($event)" #spinner
+    (fivComplete)="fillAnimationDone()" class="spinner" [circleRadius]="30" [diameter]="68" [strokeWidth]="4"
+    [mode]="'indeterminate'">
+  </fiv-loading-spinner>
+
+  <ion-button [ngClass]="{'pulse': pulse}" [color]="color" [disabled]="disabled">
+    <fiv-loading-progress-bar *ngIf="extended" [loading]="loading" (fivComplete)="fillAnimationDone()" #bar>
+    </fiv-loading-progress-bar>
+    <fiv-icon #feature="fivFeature" [fivFeature]="feature" *ngIf="iconComp" [color]="iconComp.color"
+      [name]="iconComp.name">
+    </fiv-icon>
+    <ion-label [@labelAnim] [color]="labelComp.color" *ngIf="labelComp && extended">{{labelComp.el.innerHTML}}
+    </ion-label>
+  </ion-button>
+</ion-fab>

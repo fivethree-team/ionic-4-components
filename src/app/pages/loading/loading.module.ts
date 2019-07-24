@@ -1,7 +1,6 @@
 import { ComponentsModule } from './../../components/components.module';
 import {
   FivLoadingProgressBarModule,
-  FivLoadingFabModule,
   FivLoadingSpinnerModule,
   FivCenterModule
 } from '@fivethree/core';
@@ -29,7 +28,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ComponentsModule,
     FivLoadingProgressBarModule,
-    FivLoadingFabModule,
     FivLoadingSpinnerModule,
     FivCenterModule
   ],

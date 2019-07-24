@@ -29,7 +29,7 @@
     background: var(--fiv-color-appbar);
     border-top-left-radius: 12px;
   }
-  fiv-loading-fab {
+  fiv-fab {
     width: 56px;
     height: 56px;
     transform: translateX(-50%);
@@ -105,7 +105,7 @@
     transform: translateX(0);
     width: 66px;
   }
-  fiv-loading-fab {
+  fiv-fab {
     width: 56px;
     height: 56px;
     transform: translateX(0);
@@ -125,7 +125,7 @@
     left: calc(100% - 37px);
     width: 67px;
   }
-  fiv-loading-fab {
+  fiv-fab {
     width: 56px;
     height: 56px;
     transform: translateX(0);

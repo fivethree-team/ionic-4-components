@@ -1,5 +1,5 @@
 import { FivAppBarTabContent } from './app-bar-tab-content/app-bar-tab-content.component';
-import { FivLoadingFab } from './../loading-fab/loading-fab.component';
+import { FivFab } from './../fab/fab.component';
 import {
   Component,
   OnInit,
@@ -35,7 +35,7 @@ export class FivAppBar implements OnInit, AfterViewInit, AfterContentInit {
   tabsRight: FivAppBarTab[];
   tabsLeft: FivAppBarTab[];
 
-  @ViewChild('fab') fab: FivLoadingFab;
+  @ViewChild('fab') fab: FivFab;
   @Input() icon = 'md-add';
   @Input() titleLayout: AppBarTitleLayout = 'hide';
   @Output() fivFabClick = new EventEmitter<FivAppBar>();

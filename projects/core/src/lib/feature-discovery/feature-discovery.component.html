@@ -10,6 +10,7 @@
     <fiv-icon class="center" *ngIf="icon" [name]="icon"></fiv-icon>
   </fiv-ripple>
 </div>
-<div class="content" *ngIf="animationState === 'visible'" [@contentAnim] [style.width]="contentWidth + 'px'" [style.height]="contentHeight + 'px'" [style.top]="contentTop + 'px'" [style.left]="contentLeft + 'px'">
-    <ng-content></ng-content>
-  </div>
+<div class="content" *ngIf="animationState === 'visible'" [@contentAnim] [style.width]="contentWidth + 'px'"
+  [style.height]="contentHeight + 'px'" [style.top]="contentTop + 'px'" [style.left]="contentLeft + 'px'">
+  <ng-content></ng-content>
+</div>

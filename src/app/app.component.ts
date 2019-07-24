@@ -42,6 +42,11 @@ export class AppComponent {
       icon: 'resize'
     },
     {
+      title: 'FAB',
+      url: '/fab',
+      icon: 'add-circle'
+    },
+    {
       title: 'Icon',
       url: '/icon',
       icon: 'mail-unread'

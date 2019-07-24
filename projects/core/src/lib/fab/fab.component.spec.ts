@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FivLoadingFab } from './loading-fab.component';
+import { FivFab } from './fab.component';
 
 describe('LoadingFabComponent', () => {
-  let component: FivLoadingFab;
-  let fixture: ComponentFixture<FivLoadingFab>;
+  let component: FivFab;
+  let fixture: ComponentFixture<FivFab>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FivLoadingFab]
+      declarations: [FivFab]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FivLoadingFab);
+    fixture = TestBed.createComponent(FivFab);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

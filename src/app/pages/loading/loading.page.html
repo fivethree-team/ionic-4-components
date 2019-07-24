@@ -30,39 +30,14 @@
             </div>
           </div>
         </app-example>
-        <app-example [html]="'assets/docs/snippets/loading-fab/loading.html.md'" [title]="'FAB'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
-       labore et dolore magna aliqua.'">
-          <ion-item-divider>
-            <ion-label>Floating Action Button</ion-label>
-          </ion-item-divider>
-          <ion-item line="none">
-            Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor.
-          </ion-item>
-          <ion-button [disabled]="fab.loading || fab.icon === 'md-checkmark'" (click)="fab.load()">
-            load
-          </ion-button>
-          <ion-button [disabled]="!fab.loading" (click)="fab.unload()">
-            unload
-          </ion-button>
-          <ion-button [disabled]="!fab.loading" (click)="fab.complete()">
-            complete
-          </ion-button>
-          <ion-button [disabled]="fab.icon !== 'md-checkmark'" (click)="fab.icon = 'md-add'">
-            reset
-          </ion-button>
-          <div class="wrapper">
-            <fiv-loading-fab [disabled]="fab.loading" [icon]="'md-add'" [iconColor]="'dark'" [fivCenter] #fab>
-            </fiv-loading-fab>
-          </div>
-        </app-example>
         <app-example [title]="'Spinner'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
        labore et dolore magna aliqua.'">
-       <div class="wrapper">
-          <div [fivCenter]>
+          <div class="wrapper">
+            <div [fivCenter]>
               <fiv-loading-spinner></fiv-loading-spinner>
-           </div>
-       </div>
-       
+            </div>
+          </div>
+
         </app-example>
       </ion-col>
     </ion-row>

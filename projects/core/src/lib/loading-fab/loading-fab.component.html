@@ -1,8 +1,0 @@
-<ion-fab *ngIf="visible" (@fabAnim.done)="fabAnimDone($event)" [@fabAnim] [vertical]="vertical" [horizontal]="horizontal" [slot]="slot" [edge]="edge">
-  <!-- <fiv-loading-spinner (fivProgress)="rotate($event)" #spinner (fivComplete)="fillAnimationDone()" *ngIf="loading" class="spinner" [circleRadius]="32" [diameter]="72" [strokeWidth]="4" [mode]="'indeterminate'"></fiv-loading-spinner> -->
-  <fiv-loading-spinner (fivProgress)="rotate($event)" #spinner (fivComplete)="fillAnimationDone()" *ngIf="loading" class="spinner" [circleRadius]="30" [diameter]="68" [strokeWidth]="4" [mode]="'indeterminate'"></fiv-loading-spinner>
-
-  <ion-fab-button [disabled]="disabled">
-    <fiv-icon (transitionDone)="postComplete()" [fivCenter]="{horizontal: true, vertical: true}" [name]="icon" [color]="iconColor"></fiv-icon>
-  </ion-fab-button>
-</ion-fab>
