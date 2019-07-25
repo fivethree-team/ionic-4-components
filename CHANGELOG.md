@@ -1,3 +1,13 @@
+<a name="0.8.23"></a>
+## [0.8.23](https://github.com/fivethree-team/component-library/compare/v0.8.22...v0.8.23) (2019-07-25)
+
+
+### Features
+
+* **FAB:** add missing icon parameters and project label to fix prod build ([5b30751](https://github.com/fivethree-team/component-library/commit/5b30751))
+* **FAB:** Rebuild FAB Component ([18cd3b5](https://github.com/fivethree-team/component-library/commit/18cd3b5))
+
+
 <a name="0.8.22"></a>
 ## [0.8.22](https://github.com/fivethree-team/component-library/compare/v0.8.21...v0.8.22) (2019-07-22)
 
