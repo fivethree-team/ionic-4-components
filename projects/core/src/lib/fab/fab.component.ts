@@ -92,8 +92,8 @@ import {
   ]
 })
 export class FivFab implements OnInit, OnDestroy, AfterContentInit {
-  @Input() vertical?: 'top' | 'middle' | 'bottom';
-  @Input() horizontal?: 'center' | 'start' | 'end';
+  @Input() vertical?: 'top' | 'middle' | 'bottom' | 'none' = 'none';
+  @Input() horizontal?: 'center' | 'start' | 'end' | 'none' = 'none';
   @Input() mode?: 'normal' | 'edge' = 'normal';
   @Input() slot: string;
   @Input() icon: string;
@@ -160,7 +160,6 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
 
   ngOnInit() {
     if (!this.content) {
-      console.error('Put the FAB inside an ion-content');
       return;
     }
 
