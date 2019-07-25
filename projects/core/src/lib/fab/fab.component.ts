@@ -14,7 +14,8 @@ import {
   OnDestroy,
   ContentChild,
   AfterContentInit,
-  TemplateRef
+  TemplateRef,
+  Optional
 } from '@angular/core';
 import {
   animate,
@@ -91,8 +92,8 @@ import {
   ]
 })
 export class FivFab implements OnInit, OnDestroy, AfterContentInit {
-  @Input() vertical?: 'top' | 'middle' | 'bottom' = 'bottom';
-  @Input() horizontal?: 'center' | 'start' | 'end' = 'end';
+  @Input() vertical?: 'top' | 'middle' | 'bottom';
+  @Input() horizontal?: 'center' | 'start' | 'end';
   @Input() mode?: 'normal' | 'edge' = 'normal';
   @Input() slot: string;
   @Input() icon: string;
@@ -147,7 +148,10 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
       : 'scale(1)';
   }
 
-  constructor(private renderer: Renderer2, private content: IonContent) {
+  constructor(
+    private renderer: Renderer2,
+    @Optional() private content: IonContent
+  ) {
     this.params = {
       toTransform: this.toTransform,
       fromTransform: this.fromTransform

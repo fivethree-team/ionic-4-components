@@ -6,7 +6,9 @@
         [titleLayout]="titleLayout" *ngFor="let tab of tabsLeft"></fiv-app-bar-tab-content>
     </div>
   </div>
-  <fiv-fab (fivHidden)="onFabHidden()" [icon]="icon" [visible]="_fabVisible" #fab (click)="fabClick()"></fiv-fab>
+  <fiv-fab [scroll]="false" (fivHidden)="onFabHidden()" [visible]="_fabVisible" #fab (click)="fabClick()">
+    <fiv-icon [name]="icon"></fiv-icon>
+  </fiv-fab>
   <div class="rect"></div>
   <div class="rect-filler"></div>
   <div class="appbar-rect right">
