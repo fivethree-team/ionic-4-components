@@ -9,9 +9,10 @@
     <fiv-loading-progress-bar *ngIf="extended" [loading]="loading" (fivComplete)="fillAnimationDone()" #bar>
     </fiv-loading-progress-bar>
     <fiv-icon #feature="fivFeature" [fivFeature]="feature" *ngIf="iconComp" [color]="iconComp.color"
-      [name]="iconComp.name">
+      [name]="iconComp.name" [dotVisible]="iconComp.dotVisible" [indicatorValue]="iconComp.indicatorValue">
     </fiv-icon>
-    <ion-label [@labelAnim] [color]="labelComp.color" *ngIf="labelComp && extended">{{labelComp.el.innerHTML}}
-    </ion-label>
+    <div [@labelAnim] *ngIf="labelComp && extended">
+      <ng-content select="ion-label"></ng-content>
+    </div>
   </ion-button>
 </ion-fab>
