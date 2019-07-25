@@ -1,3 +1,14 @@
+<a name="0.8.25"></a>
+## [0.8.25](https://github.com/fivethree-team/component-library/compare/v0.8.23...v0.8.25) (2019-07-25)
+
+
+### Bug Fixes
+
+* **app-bar:** fix with new fab ([46d419e](https://github.com/fivethree-team/component-library/commit/46d419e))
+* **fab:** default align to none ([dea6469](https://github.com/fivethree-team/component-library/commit/dea6469))
+
+
+
 <a name="0.8.24"></a>
 ## [0.8.24](https://github.com/fivethree-team/component-library/compare/v0.8.23...v0.8.24) (2019-07-25)
 
