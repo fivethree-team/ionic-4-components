@@ -1,3 +1,13 @@
+<a name="0.8.24"></a>
+## [0.8.24](https://github.com/fivethree-team/component-library/compare/v0.8.23...v0.8.24) (2019-07-25)
+
+
+### Bug Fixes
+
+* **app-bar:** fix with new fab ([46d419e](https://github.com/fivethree-team/component-library/commit/46d419e))
+
+
+
 <a name="0.8.23"></a>
 ## [0.8.23](https://github.com/fivethree-team/component-library/compare/v0.8.22...v0.8.23) (2019-07-25)
 
