@@ -1,4 +1,4 @@
-<ion-fab *ngIf="visible" (@fabAnim.done)="fabAnimDone($event)" [@fabAnim]="{value: '*',params: params}"
+<ion-fab *ngIf="visible" (@fabAnim.done)="fabAnimDone($event)" [@fabAnim]="horizontal"
   [ngClass]="[mode,horizontal,vertical]" [slot]="slot">
   <fiv-loading-spinner [color]="spinColor" *ngIf="!extended && loading" (fivProgress)="rotate($event)" #spinner
     (fivComplete)="fillAnimationDone()" class="spinner" [circleRadius]="30" [diameter]="68" [strokeWidth]="4"

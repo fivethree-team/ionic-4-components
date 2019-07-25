@@ -43,41 +43,43 @@ import {
   styleUrls: ['./fab.component.scss'],
   animations: [
     trigger('fabAnim', [
-      transition(
-        'void => *',
-        [
+      transition('void => center', [
+        style({
+          transform: 'translateX(-50%) scale(0) '
+        }),
+        animate('250ms ease', style({ transform: 'translateX(-50%) scale(1)' }))
+      ]),
+      transition('center => void', [
+        style({
+          transform: 'translateX(-50%) scale(1) '
+        }),
+        animate(
+          '250ms ease',
+          style({ transform: ' translateX(-50%) scale(0)' })
+        )
+      ]),
+      transition('void => *', [
+        style({
+          transform: 'scale(0)'
+        }),
+        animate(
+          '250ms ease',
           style({
-            transform: '{{fromTransform}}'
-          }),
-          animate(
-            '250ms ease-out',
-            style({
-              transform: '{{toTransform}}'
-            })
-          )
-        ],
-        {
-          params: {
-            fromTransform: 'scale(0) translateX(-50%)',
-            toTransform: 'translateX(-50%) scale(1)'
-          }
-        }
-      ),
-      transition(
-        '* => void',
-        [
+            transform: 'scale(1)'
+          })
+        )
+      ]),
+      transition('* => void', [
+        style({
+          transform: 'scale(1)'
+        }),
+        animate(
+          '250ms ease',
           style({
-            transform: '{{toTransform}}'
-          }),
-          animate('250ms ease-in', style({ transform: '{{fromTransform}}' }))
-        ],
-        {
-          params: {
-            fromTransform: 'scale(0) translateX(-50%)',
-            toTransform: 'translateX(-50%) scale(1)'
-          }
-        }
-      )
+            transform: 'scale(0)'
+          })
+        )
+      ])
     ]),
     trigger('labelAnim', [
       transition('void => *', [
@@ -131,32 +133,10 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   currentDeltaY = 0;
   $onDestroy = new Subject();
 
-  params: { fromTransform: string; toTransform: string } = {
-    fromTransform: 'translateX(-50%) scale(0)',
-    toTransform: 'translateX(-50%) scale(1)'
-  };
-
-  get fromTransform() {
-    return this.horizontal === 'center'
-      ? 'scale(0) translateX(-50%)'
-      : 'scale(0)';
-  }
-
-  get toTransform() {
-    return this.horizontal === 'center'
-      ? 'translateX(-50%) scale(1)'
-      : 'scale(1)';
-  }
-
   constructor(
     private renderer: Renderer2,
     @Optional() private content: IonContent
-  ) {
-    this.params = {
-      toTransform: this.toTransform,
-      fromTransform: this.fromTransform
-    };
-  }
+  ) {}
 
   ngOnInit() {
     if (!this.content) {
