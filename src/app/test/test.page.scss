@@ -1,0 +1,13 @@
+div {
+  height: 240px;
+  width: 240px;
+  background: red;
+  position: absolute;
+}
+
+.morph {
+  top: calc(50% - 120px);
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}

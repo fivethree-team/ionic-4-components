@@ -220,6 +220,7 @@ export class FivGallery
   }
 
   open(initial: FivGalleryImage) {
+    console.log('open gallery', initial, initial.src);
     this.activeIndex = initial.index;
     this.options.initialSlide = this.activeIndex;
     this.overlay.show(50000);

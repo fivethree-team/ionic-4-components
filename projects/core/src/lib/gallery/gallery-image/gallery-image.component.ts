@@ -183,6 +183,7 @@ export class FivGalleryImage implements OnInit {
   ngOnInit() {}
 
   open() {
+    console.log('open', this.src, this.image);
     this.willOpen.emit(this);
     const p = this.getThumbnailPosition(this.image);
     this.animationParams = {
@@ -193,6 +194,8 @@ export class FivGalleryImage implements OnInit {
       top: p.top,
       left: p.left
     };
+
+    console.log('open animation params', this.animationParams);
 
     this.overlay.show(49999);
   }
@@ -207,6 +210,8 @@ export class FivGalleryImage implements OnInit {
       top: p.top,
       left: p.left
     };
+
+    console.log('animation params', this.animationParams);
     this.viewerState = 'out';
   }
 
@@ -241,10 +246,9 @@ export class FivGalleryImage implements OnInit {
     }
   }
 
-  private getThumbnailPosition(
-    element: ElementRef
-  ): Position {
+  private getThumbnailPosition(element: ElementRef): Position {
     const bounds = element.nativeElement.getBoundingClientRect();
+    console.log('bounds', bounds, element);
     return {
       top: bounds.top,
       left: bounds.left,
