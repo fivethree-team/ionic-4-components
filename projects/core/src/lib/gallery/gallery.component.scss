@@ -19,13 +19,6 @@
   }
 }
 
-.backdrop {
-  background: rgba(0, 0, 0, 0.97);
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-}
-
 .gallery-toolbar {
   width: 100%;
   --fiv-gallery-toolbar-color: #fff;
@@ -41,11 +34,6 @@
   bottom: env(safe-area-inset-bottom);
 }
 
-ion-slides.in,
-ion-slides.out {
-  visibility: hidden;
-}
-
 .morph {
   position: absolute;
   object-position: center;
@@ -57,5 +45,5 @@ ion-slides.out {
   height: 100vh;
   width: 100vw;
   position: absolute;
-  background: #000000ee;
+  transition: background-color 200ms ease;
 }

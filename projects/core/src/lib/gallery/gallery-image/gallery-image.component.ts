@@ -20,13 +20,12 @@ export class FivGalleryImage implements OnInit {
   index: number;
 
   @ViewChild('thumbnail') thumbnail: ElementRef;
-  @Output() willOpen = new EventEmitter<FivGalleryImage>();
+  @Output() click = new EventEmitter<FivGalleryImage>();
 
+  open() {
+    this.click.emit(this);
+  }
   constructor() {}
 
   ngOnInit() {}
-
-  open() {
-    this.willOpen.emit(this);
-  }
 }

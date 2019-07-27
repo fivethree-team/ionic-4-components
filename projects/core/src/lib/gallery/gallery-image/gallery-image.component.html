@@ -1,6 +1,6 @@
 <ng-container *ngIf="!src">
   <ng-content></ng-content>
 </ng-container>
-<fiv-ripple (click)="open()">
+<fiv-ripple (fivClick)="open()">
   <img #thumbnail class="thumbnail" [src]="src">
 </fiv-ripple>

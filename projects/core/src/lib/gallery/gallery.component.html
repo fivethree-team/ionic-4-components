@@ -1,8 +1,8 @@
 <ng-content></ng-content>
 <fiv-overlay #overlay>
-  <div [@fade] class="backdrop" *ngIf="overlay.open && backdrop"></div>
+  <div [style.background]="backdropColor" [@fade] class="backdrop" *ngIf="overlay.open && backdrop"></div>
 
-  <div [style.visibility]="visible ? 'visible' : 'hidden'">
+  <div [style.visibility]="!morphing ? 'visible' : 'hidden'">
     <div [@slideDown] *ngIf="controlsVisible && topToolbar" class="gallery-toolbar header" color="transparent">
       <ng-container [ngTemplateOutlet]="topToolbar">
       </ng-container>
@@ -18,10 +18,10 @@
     </ng-container>
 
     <div #viewer class="viewer" fivPull [maxPullHeight]="160" [minPullHeight]="120" (fivPull)="transformSlides($event)"
-      (fivRefresh)="close()" (fivCancel)="resetPan($event)" [enableScroll]="true">
+      (fivRefresh)="close()" (fivCancel)="resetSlides($event)" [enableScroll]="true">
       <ion-slides #slider *ngIf="overlay.open" (ionSlideDidChange)="slideDidChange()"
         (ionSlideNextStart)="ionSlideNextStart()" (ionSlidePrevStart)="ionSlidePrevStart()"
-        (ionSlidesDidLoad)="onSlidesLoad()" [options]="options">
+        (ionSlidesDidLoad)="onSlidesLoad()" [options]="{ zoom: true, initialSlide: initialImage?.index}">
         <ion-slide *ngFor="let image of images; let i = index">
           <div class="swiper-zoom-container">
             <img #slideImage [ngClass]="{'instant': activeIndex !== i}" [src]="image.src">
