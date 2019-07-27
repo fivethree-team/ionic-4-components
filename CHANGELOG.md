@@ -1,3 +1,15 @@
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/fivethree-team/component-library/compare/v0.8.25...v0.9.0) (2019-07-27)
+
+
+### Bug Fixes
+
+* **FAB:** Fix center leave and enter animations ([63594da](https://github.com/fivethree-team/component-library/commit/63594da))
+* **gallery:** replace anuglar morph animations with own implementation to make everything work on ios ([95a6887](https://github.com/fivethree-team/component-library/commit/95a6887))
+* **spinner:** fix spin color ([1f57b56](https://github.com/fivethree-team/component-library/commit/1f57b56))
+
+
+
 <a name="0.8.25"></a>
 ## [0.8.25](https://github.com/fivethree-team/component-library/compare/v0.8.23...v0.8.25) (2019-07-25)
 
