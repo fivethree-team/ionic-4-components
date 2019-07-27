@@ -1,7 +1,7 @@
 
 Example implementation Floating Action Button
 ```html
-<fiv-loading-fab [disabled]="fab.loading" [icon]="'md-add'" #fab></fiv-loading-fab>
+<fiv-fab [disabled]="fab.loading" [icon]="'md-add'" #fab></fiv-fab>
 ...
 <ion-button [disabled]="fab.loading || fab.icon === 'md-checkmark'" (click)="fab.load()">
   load
