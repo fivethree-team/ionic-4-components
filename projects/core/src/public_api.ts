@@ -90,3 +90,5 @@ export * from './lib/back-button/routing-state.service';
 export * from './lib/bottom-sheet/drawer-state';
 
 export * from './lib/animations/tween';
+export * from './lib/animations/easing-functions';
+export * from './lib/animations/animations';

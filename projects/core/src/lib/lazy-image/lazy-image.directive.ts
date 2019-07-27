@@ -50,7 +50,7 @@ export class FivLazyImage implements OnInit {
     });
     io['POLL_INTERVAL'] = 100;
     if (this.fivImage) {
-      io.observe(this.fivImage.image.nativeElement);
+      io.observe(this.fivImage.thumbnail.nativeElement);
     } else {
       io.observe(this.image.nativeElement);
     }

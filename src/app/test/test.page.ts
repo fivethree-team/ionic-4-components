@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { tween, fromTo, morph } from '@fivethree/core';
+import { tween, fromTo, morph, linear } from '@fivethree/core';
 import { IonContent } from '@ionic/angular';
 import { FivOverlay } from '@fivethree/core';
 
@@ -45,7 +45,7 @@ export class TestPage implements OnInit {
 
     const left =
       Math.random() * (this.content.nativeElement.clientWidth - width);
-    tween(this.linear, 200)
+    tween(linear, 200)
       .pipe(
         fromTo(this.morphElement, 'left', startPosition.left, left),
         fromTo(this.morphElement, 'top', startPosition.top, top),
@@ -59,7 +59,7 @@ export class TestPage implements OnInit {
 
   morph() {
     this.overlay.show();
-    tween(this.linear, 200)
+    tween(linear, 200)
       .pipe(morph(this.element, this.morphElement))
       .subscribe({ complete: () => console.log('morph complete') });
   }
@@ -72,56 +72,5 @@ export class TestPage implements OnInit {
       this.element.nativeElement.style.width = width + 'px';
       this.element.nativeElement.style.height = height + 'px';
     }
-  }
-
-  linear(t, from, to, duration) {
-    const c = to - from;
-    return (c * t) / duration + from;
-  }
-
-  easeInQuad(t, from, to, duration) {
-    const c = to - from;
-    return c * (t /= duration) * t + from;
-  }
-
-  easeOutSine(t, from, to, duration) {
-    const c = to - from;
-    return c * Math.sin((t / duration) * (Math.PI / 2)) + from;
-  }
-
-  easeInOutQuad(t, from, to, duration) {
-    const c = to - from;
-    if ((t /= duration / 2) < 1) {
-      return (c / 2) * t * t + from;
-    } else {
-      return (-c / 2) * (--t * (t - 2) - 1) + from;
-    }
-  }
-
-  easeOutElastic(t, b, _c, d) {
-    let c = _c - b;
-    let a, p, s;
-    s = 1.20158;
-    p = 0;
-    a = c;
-    if (t === 0) {
-      return b;
-    } else if ((t /= d) === 1) {
-      return b + c;
-    }
-    if (!p) {
-      p = d * 0.54;
-    }
-    if (a < Math.abs(c)) {
-      a = c;
-      s = p / 4;
-    } else {
-      s = (p / (2 * Math.PI)) * Math.asin(c / a);
-    }
-    return (
-      a * Math.pow(2, -10 * t) * Math.sin(((t * d - s) * (2 * Math.PI)) / p) +
-      c +
-      b
-    );
   }
 }

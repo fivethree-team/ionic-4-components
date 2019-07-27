@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { ElementRef } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 
 export function tween(
   easingFunction: Function,
@@ -33,10 +33,14 @@ export const fromTo = (
   el: ElementRef,
   style: string,
   from: number,
-  to: number
+  to: number,
+  m?: (t: number) => string
 ) => <T>(source: Observable<number>) =>
   source.pipe(
-    tap(t => (el.nativeElement.style[style] = t * (to - from) + from + 'px'))
+    tap(t => {
+      const te = t * (to - from) + from;
+      el.nativeElement.style[style] = m ? m(te) : te + 'px';
+    })
   );
 
 export const morph = (fromEl: ElementRef, toEl: ElementRef) => <T>(
@@ -52,7 +56,7 @@ export const morph = (fromEl: ElementRef, toEl: ElementRef) => <T>(
   );
 };
 
-export function getPosition(el: ElementRef) {
+export function getPosition(el: ElementRef): RectPosition {
   const bounds = el.nativeElement.getBoundingClientRect();
   return {
     top: bounds.top,
@@ -60,4 +64,18 @@ export function getPosition(el: ElementRef) {
     height: el.nativeElement.clientHeight,
     width: el.nativeElement.clientWidth
   };
+}
+export function setPosition(el: ElementRef, r: RectPosition): ElementRef {
+  el.nativeElement.style.top = r.top + 'px';
+  el.nativeElement.style.left = r.left + 'px';
+  el.nativeElement.style.height = r.height + 'px';
+  el.nativeElement.style.width = r.width + 'px';
+  return el;
+}
+
+export interface RectPosition {
+  top: number;
+  left: number;
+  height: number;
+  width: number;
 }
