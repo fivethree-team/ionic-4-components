@@ -1,10 +1,8 @@
 import { FivGalleryToolbar } from './gallery-toolbar/gallery-toolbar.component';
-import { ImageService } from './image.service';
 import { IonSlides, DomController, Platform } from '@ionic/angular';
 import { FivOverlay } from './../overlay/overlay.component';
 import {
   Component,
-  OnInit,
   ViewChild,
   ElementRef,
   Renderer2,
@@ -19,24 +17,33 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnDestroy
+  OnDestroy,
+  ViewChildren
 } from '@angular/core';
 import {
   style,
   animate,
   AnimationBuilder,
   trigger,
-  transition
+  transition,
+  useAnimation
 } from '@angular/animations';
 import { Key } from './keycodes.enum';
 import { DOCUMENT } from '@angular/common';
 import { Navigateable } from '../interfaces';
+import { FivGalleryImage } from './gallery-image/gallery-image.component';
+import { from, Subject, zip, of } from 'rxjs';
+import { mergeMap, takeUntil, tap } from 'rxjs/operators';
 import {
-  FivGalleryImage,
-  Position
-} from './gallery-image/gallery-image.component';
-import { from, Subject } from 'rxjs';
-import { mergeMap, takeUntil } from 'rxjs/operators';
+  tween,
+  fromTo,
+  getPosition,
+  setPosition,
+  RectPosition
+} from '../animations/tween';
+import { easeOutSine } from '../animations/easing-functions';
+import { fade } from '../animations/animations';
+import { ImageService } from './image.service';
 
 @Component({
   selector: 'fiv-gallery',
@@ -72,15 +79,39 @@ import { mergeMap, takeUntil } from 'rxjs/operators';
         style({ opacity: 1, transform: 'translateY(-100%)' }),
         animate('75ms', style({ opacity: 0, transform: 'translateY(0%)' }))
       ])
+    ]),
+    trigger('fade', [
+      transition(
+        '* => void',
+        useAnimation(fade, {
+          params: {
+            fromOpacity: 1,
+            toOpacity: 0,
+            time: '240ms'
+          }
+        })
+      ),
+      transition(
+        'void => *',
+        useAnimation(fade, {
+          params: {
+            fromOpacity: 0,
+            toOpacity: 1,
+            time: '240ms'
+          }
+        })
+      )
     ])
   ]
 })
-export class FivGallery
-  implements OnInit, AfterContentInit, OnDestroy, Navigateable {
+export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
   @ViewChild('overlay') overlay: FivOverlay;
+  @ViewChild('morphOverlay') morphOverlay: FivOverlay;
   @ViewChild('viewer') viewer: ElementRef;
+  @ViewChild('morph') morphImage: ElementRef;
   @ViewChild('slider', { read: ElementRef }) swiper: ElementRef;
   @ViewChild('slider') slides: IonSlides;
+  @ViewChildren('slideImage') slideImages: QueryList<ElementRef>;
 
   @ContentChildren(forwardRef(() => FivGalleryImage), { descendants: true })
   images: QueryList<FivGalleryImage>;
@@ -90,20 +121,19 @@ export class FivGallery
   bottomToolbar: TemplateRef<any>;
 
   // properties for the slides
-  activeIndex = 0;
-  options = {
-    zoom: true,
-    initialSlide: 0
-  };
   initialImage: FivGalleryImage;
-  inFullscreen: boolean;
-  zoomedIn: boolean;
+  activeIndex = 0;
+  inFullscreen = false;
+  zoomedIn = false;
   controlsVisible = true;
-  private slidesLoaded;
+  slidesLoaded = false;
+  morphing = false;
+  backdrop = false;
+  backdropColor = '#000000ee';
+
   @Input() pagerVisible = true;
-  @Input() ambient = true;
-  @Input() openTiming = '300ms';
-  @Input() closeTiming = '340ms';
+  @Input() ambient = false;
+
   @Output() willOpen = new EventEmitter<FivGalleryImage>();
   @Output() willClose = new EventEmitter<FivGalleryImage>();
   @Output() didOpen = new EventEmitter<FivGalleryImage>();
@@ -112,33 +142,19 @@ export class FivGallery
 
   $onDestroy = new Subject();
 
-  @HostListener('window:keyup', ['$event'])
-  keyEvent(event: KeyboardEvent) {
-    if (
-      this.overlay &&
-      this.overlay.open &&
-      this.initialImage &&
-      this.initialImage.viewerState === 'hidden'
-    ) {
-      this.handleKeyboardEvents(event);
-    }
-  }
-
   constructor(
     private domCtrl: DomController,
     private renderer: Renderer2,
     private animation: AnimationBuilder,
     private change: ChangeDetectorRef,
     private platform: Platform,
-    @Inject(DOCUMENT) private document: any,
-    private imageService: ImageService
+    private imageService: ImageService,
+    @Inject(DOCUMENT) private document: any
   ) {}
 
-  ngOnInit() {}
-
   ngAfterContentInit(): void {
-    this.updateImages();
-    this.updateToolbars();
+    this.updateImagesIndex();
+    this.setupToolbars();
     this.subscribeToImageEvents();
   }
 
@@ -147,33 +163,23 @@ export class FivGallery
   }
 
   subscribeToImageEvents() {
-    from(this.images.map(image => image.didOpen))
+    from(this.images.map(image => image.click))
       .pipe(
         mergeMap((value: EventEmitter<FivGalleryImage>) => value),
         takeUntil<FivGalleryImage>(this.$onDestroy)
       )
-      .subscribe(image => this.open(image));
-    from(this.images.map(image => image.willOpen))
-      .pipe(
-        mergeMap((value: EventEmitter<FivGalleryImage>) => value),
-        takeUntil<FivGalleryImage>(this.$onDestroy)
-      )
-      .subscribe(image => this.willOpen.emit(image));
-
-    from(this.images.map(image => image.didClose))
-      .pipe(
-        mergeMap((value: EventEmitter<FivGalleryImage>) => value),
-        takeUntil<FivGalleryImage>(this.$onDestroy)
-      )
-      .subscribe(image => this.didClose.emit(image));
+      .subscribe(image => {
+        this.open(image);
+      });
   }
 
-  updateImages() {
+  updateImagesIndex() {
     this.images.forEach((img, i) => {
       img.index = i;
     });
   }
-  updateToolbars() {
+
+  setupToolbars() {
     this.toolbars.forEach(toolbar => {
       if (toolbar.position === 'top') {
         this.topToolbar = toolbar.content;
@@ -183,103 +189,126 @@ export class FivGallery
     });
   }
 
-  handleKeyboardEvents(event: KeyboardEvent) {
-    if (event.keyCode === Key.RightArrow) {
-      this.next();
-      return;
-    }
-    if (event.keyCode === Key.LeftArrow) {
-      this.prev();
-      return;
-    }
-    if (event.keyCode === Key.DownArrow || event.keyCode === Key.Escape) {
-      this.close();
-      return;
-    }
-  }
-
-  next() {
-    if (
-      this.overlay &&
-      this.overlay.open &&
-      this.initialImage &&
-      this.initialImage.viewerState === 'hidden'
-    ) {
-      this.slides.slideNext();
-    }
-  }
-  prev() {
-    if (
-      this.overlay &&
-      this.overlay.open &&
-      this.initialImage &&
-      this.initialImage.viewerState === 'hidden'
-    ) {
-      this.slides.slidePrev();
-    }
-  }
-
   open(initial: FivGalleryImage) {
+    this.willOpen.emit(initial);
     this.activeIndex = initial.index;
-    this.options.initialSlide = this.activeIndex;
+    this.morphing = true;
     this.overlay.show(50000);
     this.initialImage = initial;
-    this.initialImage.openTiming = this.openTiming;
-    this.initialImage.closeTiming = this.closeTiming;
-    this.initialImage.backdropColor = this.ambient
-      ? this.imageService.getAverageRGB(
-          this.images.toArray()[this.activeIndex].image.nativeElement
-        )
-      : '#000';
-    this.showControls();
+    this.updateBackdrop(this.activeIndex);
+    this.initialImage.originalSrc = initial.src;
+    setTimeout(() => {
+      //wait a little for ripple
+      this.backdrop = true;
+      this.showControls();
+      this.morphIn();
+    }, 300);
   }
 
-  close() {
-    this.closeFromPullDown(0);
+  morphIn() {
+    this.morphOverlay.show(49999);
+    const f = getPosition(this.initialImage.thumbnail);
+    const t = this.calculateImagePosition();
+    const tweenDone = new Subject();
+    tween(easeOutSine, 320)
+      .pipe(
+        fromTo(this.morphImage, 'top', f.top, t.top),
+        fromTo(this.morphImage, 'left', f.left, t.left),
+        fromTo(this.morphImage, 'height', f.height, t.height),
+        fromTo(this.morphImage, 'width', f.width, t.width)
+      )
+      .subscribe({
+        complete: () => {
+          tweenDone.next();
+        }
+      });
+
+    zip(tweenDone, !this.slidesLoaded ? this.slides.ionSlidesDidLoad : of(true))
+      .pipe(
+        tap(() => {
+          this.morphing = false;
+          this.morphOverlay.hide();
+          this.didOpen.emit(this.initialImage);
+          this.swiper.nativeElement.swiper.on('click', () => {
+            this.handleSingleTap();
+          });
+        }),
+        takeUntil(this.$onDestroy)
+      )
+      .subscribe();
   }
+
   dismiss() {
-    this.closeFromPullDown(0, false);
+    this.close(false);
   }
 
-  closeFromPullDown(progress: number, emit = true) {
+  close(emit = true) {
     if (emit) {
       this.willClose.emit(this.initialImage);
     }
-    this.transformSlides(0);
-
+    this.backdrop = false;
     const sameAsInitial =
       this.images.toArray()[this.activeIndex].index === this.initialImage.index;
-    const position = this.getImagePosition(
-      this.images.toArray()[this.activeIndex].image,
-      progress
-    );
     if (sameAsInitial) {
-      this.initialImage.close(position);
+      this.morphBack();
     } else {
-      const src = this.initialImage.src;
-      this.initialImage.src = this.images.toArray()[this.activeIndex].src;
-      this.initialImage.slideOut(position, src);
+      this.slideOut();
     }
+    this.resetSlides(0);
     if (this.inFullscreen) {
       this.closeFullscreen();
     }
     this.slidesLoaded = false;
+  }
+
+  morphBack() {
+    const f = getPosition(this.getActiveImage());
+    const t = getPosition(this.initialImage.thumbnail);
     this.overlay.hide();
+    this.morphOverlay.show();
+    tween(easeOutSine, 240)
+      .pipe(
+        fromTo(this.morphImage, 'top', f.top, t.top),
+        fromTo(this.morphImage, 'left', f.left, t.left),
+        fromTo(this.morphImage, 'height', f.height, t.height),
+        fromTo(this.morphImage, 'width', f.width, t.width)
+      )
+      .subscribe({
+        complete: () => {
+          this.morphOverlay.hide();
+          this.didClose.emit(this.initialImage);
+          this.initialImage = null;
+        }
+      });
   }
 
-  resetPan(progress: number) {
-    this.resetSlides(progress);
+  slideOut() {
+    this.overlay.hide();
+    this.morphOverlay.show();
+    this.morphImage.nativeElement.src = this.getActiveImage().nativeElement.src;
+    setPosition(this.morphImage, getPosition(this.getActiveImage()));
+    tween(easeOutSine, 240)
+      .pipe(
+        fromTo(
+          this.morphImage,
+          'transform',
+          0,
+          100,
+          (t: number) => `translateY(${t}%)`
+        )
+      )
+      .subscribe({
+        complete: () => {
+          this.morphImage.nativeElement.style.transform = '';
+          this.morphOverlay.hide();
+          this.didClose.emit(this.initialImage);
+          this.initialImage = null;
+        }
+      });
   }
 
-  private getImagePosition(element: ElementRef, offset: number = 0): Position {
-    const bounds = element.nativeElement.getBoundingClientRect();
-    return {
-      top: bounds.top,
-      left: bounds.left,
-      height: element.nativeElement.clientHeight,
-      width: element.nativeElement.clientWidth,
-      translate: this.platform.height() / 2 + offset * 120
-    };
+  getActiveImage() {
+    return this.slideImages.toArray()[this.activeIndex];
   }
 
   transformSlides(progress: number) {
@@ -326,22 +355,39 @@ export class FivGallery
   }
 
   updateBackdrop(index: number) {
-    this.initialImage.backdropColor = this.ambient
+    this.backdropColor = this.ambient
       ? this.imageService.getAverageRGB(
-          this.images.toArray()[index].image.nativeElement
+          this.images.toArray()[index].thumbnail.nativeElement
         )
-      : '#000';
-    this.backdropChange.emit(this.initialImage);
+      : '#000000ee';
+
+    this.backdropChange.emit();
   }
 
   onSlidesLoad() {
     this.slidesLoaded = true;
-    this.didOpen.emit(this.initialImage);
-    this.activeIndex = this.swiper.nativeElement.swiper.activeIndex;
-    this.initialImage.viewerState = 'hidden';
-    this.swiper.nativeElement.swiper.on('click', () => {
-      this.handleSingleTap();
-    });
+  }
+  calculateImagePosition(): RectPosition {
+    const nH = this.initialImage.thumbnail.nativeElement.naturalHeight;
+    const nW = this.initialImage.thumbnail.nativeElement.naturalWidth;
+    let height = Math.min(nH, this.platform.height());
+    let width = Math.min(nW, this.platform.width());
+    const ratio = nW / nH;
+    if (ratio * height < width) {
+      width = height * ratio;
+    } else {
+      height = width / ratio;
+    }
+
+    const top = this.platform.height() / 2 - height / 2;
+    const left = this.platform.width() / 2 - width / 2;
+    const p = {
+      height: height,
+      width: width,
+      left: left,
+      top: top
+    };
+    return p;
   }
 
   fullscreen() {
@@ -418,4 +464,45 @@ export class FivGallery
     this.controlsVisible = true;
     this.change.detectChanges();
   }
+
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (this.slidesLoaded && !this.morphing) {
+      this.handleKeyboardEvents(event);
+    }
+  }
+
+  handleKeyboardEvents(event: KeyboardEvent) {
+    if (event.keyCode === Key.RightArrow) {
+      this.next();
+      return;
+    }
+    if (event.keyCode === Key.LeftArrow) {
+      this.prev();
+      return;
+    }
+    if (event.keyCode === Key.DownArrow || event.keyCode === Key.Escape) {
+      this.close();
+      return;
+    }
+  }
+
+  next() {
+    if (this.slides && this.slidesLoaded) {
+      this.slides.slideNext();
+    }
+  }
+  prev() {
+    if (this.slides && this.slidesLoaded) {
+      this.slides.slidePrev();
+    }
+  }
+}
+
+export class Position {
+  top: number;
+  left: number;
+  height: number;
+  width: number;
+  translate?: number;
 }

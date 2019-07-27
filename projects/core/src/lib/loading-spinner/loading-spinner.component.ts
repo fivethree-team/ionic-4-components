@@ -64,9 +64,7 @@ export class FivLoadingSpinner implements OnInit {
     private builder: AnimationBuilder,
     public sanitizer: DomSanitizer,
     private renderer: Renderer2
-  ) {
-    console.log('spin color', 'var(--ion-color-' + this.color + ')');
-  }
+  ) {}
 
   ngOnInit() {}
 

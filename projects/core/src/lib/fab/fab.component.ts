@@ -1,4 +1,3 @@
-import { AnimationParams } from './../gallery/gallery-image/gallery-image.component';
 import { FivFeatureDiscovery } from './../feature-discovery/feature-discovery.component';
 import { FivLoadingProgressBar } from './../loading-progress-bar/loading-progress-bar.component';
 import { FivIcon } from './../icon/icon.component';

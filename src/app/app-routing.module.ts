@@ -92,6 +92,7 @@ const routes: Routes = [
     loadChildren: './pages/backbutton/backbutton.module#BackButtonPageModule'
   },
   { path: 'fab', loadChildren: './pages/fab/fab.module#FabPageModule' },
+  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
   {
     path: '**',
     loadChildren:

@@ -1,4 +1,3 @@
-
 .viewer {
   width: 100vw;
   height: 100vh;
@@ -20,13 +19,6 @@
   }
 }
 
-.backdrop {
-  background: rgba(0, 0, 0, 0.97);
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-}
-
 .gallery-toolbar {
   width: 100%;
   --fiv-gallery-toolbar-color: #fff;
@@ -42,7 +34,16 @@
   bottom: env(safe-area-inset-bottom);
 }
 
-ion-slides.in,
-ion-slides.out {
-  visibility: hidden;
+.morph {
+  position: absolute;
+  object-position: center;
+  object-fit: cover;
+  display: block;
+}
+
+.backdrop {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  transition: background-color 200ms ease;
 }
