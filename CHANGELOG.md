@@ -1,3 +1,13 @@
+<a name="0.9.1"></a>
+## [0.9.1](https://github.com/fivethree-team/component-library/compare/v0.9.0...v0.9.1) (2019-08-05)
+
+
+### Features
+
+* **FAB:** added ios safe areas ([3d4efba](https://github.com/fivethree-team/component-library/commit/3d4efba))
+
+
+
 <a name="0.9.0"></a>
 # [0.9.0](https://github.com/fivethree-team/component-library/compare/v0.8.25...v0.9.0) (2019-07-27)
 
