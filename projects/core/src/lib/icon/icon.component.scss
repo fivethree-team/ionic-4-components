@@ -3,7 +3,7 @@
   --fiv-padding-start: 0;
   --fiv-dot-right: -6px;
   --fiv-dot-top: -2px;
-  --fiv-color-icon: inherit;
+  --fiv-color-icon: var(--ion-color-dark);
   --fiv-icon-height: inherit;
   --fiv-icon-width: inherit;
   position: relative;
@@ -16,8 +16,8 @@ ion-icon {
   color: var(--fiv-color-icon);
   padding-right: var(--fiv-padding-end);
   padding-left: var(--fiv-padding-start);
-  height: var(--fiv-icon-height);
-  width: var(--fiv-icon-width);
+  height: var(--fiv-icon-height, 28px);
+  width: var(--fiv-icon-width, 28px);
 }
 
 .indicator {
