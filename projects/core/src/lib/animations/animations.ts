@@ -11,3 +11,12 @@ export const fade = animation([
     })
   )
 ]);
+
+export const translate = animation([
+  animate(
+    '{{ time }}',
+    style({
+      transform: 'translate({{toX}},{{toY}})'
+    })
+  )
+]);

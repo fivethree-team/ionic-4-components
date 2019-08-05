@@ -3,10 +3,14 @@ import {
   ViewChild,
   ComponentRef,
   TemplateRef,
-  Input
+  Input,
+  Output,
+  EventEmitter
 } from '@angular/core';
 import { FivOverlayContent } from './overlay-content/overlay-content.component';
 import { FivOverlayService } from './overlay.service';
+import { tap, first } from 'rxjs/operators';
+import { zip } from 'rxjs';
 
 @Component({
   selector: 'fiv-overlay',
@@ -18,11 +22,12 @@ export class FivOverlay {
 
   @ViewChild('content') ngContent: TemplateRef<any>;
   @Input() priority;
+  @Output() afterInit = new EventEmitter();
   private _open = false;
 
   constructor(private overlay: FivOverlayService) {}
 
-  show(priority?: number) {
+  show(priority?: number, data?: any) {
     if (!this.componentRef) {
       this.componentRef = this.overlay.createOverlay(
         FivOverlayContent,
@@ -30,6 +35,10 @@ export class FivOverlay {
       );
       this._open = true;
       this.componentRef.instance.priority = priority;
+      setTimeout(() => {
+        this.afterInit.emit(data);
+      }, 0);
+
       return this.componentRef.instance;
     }
   }

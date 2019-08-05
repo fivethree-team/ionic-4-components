@@ -24,7 +24,7 @@ import {
   state
 } from '@angular/animations';
 import { FivLoadingSpinner } from '../loading-spinner/loading-spinner.component';
-import { IonContent, IonLabel } from '@ionic/angular';
+import { IonContent, IonLabel, Platform } from '@ionic/angular';
 import { Subject } from 'rxjs';
 import {
   takeUntil,
@@ -134,6 +134,7 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
 
   constructor(
     private renderer: Renderer2,
+    public platform: Platform,
     @Optional() private content: IonContent
   ) {}
 

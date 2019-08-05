@@ -5,10 +5,10 @@
     [mode]="'indeterminate'">
   </fiv-loading-spinner>
 
-  <ion-button [ngClass]="{'pulse': pulse}" [color]="color" [disabled]="disabled">
+  <ion-button [ngClass]="{'pulse': pulse, 'small':!labelComp || !extended}" [color]="color" [disabled]="disabled">
     <fiv-loading-progress-bar *ngIf="extended" [loading]="loading" (fivComplete)="fillAnimationDone()" #bar>
     </fiv-loading-progress-bar>
-    <fiv-icon #feature="fivFeature" [fivFeature]="feature" *ngIf="iconComp" [color]="iconComp.color"
+    <fiv-icon [ngClass]="{'ios': platform.is('ios')}" #feature="fivFeature" slot="start" [fivFeature]="feature" *ngIf="iconComp" [color]="iconComp.color"
       [name]="iconComp.name" [dotVisible]="iconComp.dotVisible" [indicatorValue]="iconComp.indicatorValue">
     </fiv-icon>
     <div [@labelAnim] *ngIf="labelComp && extended">

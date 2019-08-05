@@ -1,10 +1,21 @@
 :host {
   --fiv-spinner-size: 68px;
   display: contents;
+  --fiv-fab-bottom: calc(10px + env(safe-area-inset-bottom));
+  --fiv-fab-top: calc(10px + env(safe-area-inset-top));
 }
 
 :host(.button-disabled) {
   pointer-events: none;
+}
+
+fiv-icon.ios {
+  --fiv-icon-height: 24px;
+  --fiv-icon-width: 24px;
+}
+fiv-icon:not(.ios) {
+  --fiv-icon-height: 25px;
+  --fiv-icon-width: 25px;
 }
 
 ion-button {
@@ -20,19 +31,19 @@ ion-button {
 }
 
 ion-fab.top {
-  top: 10px;
+  top: var(--fiv-fab-top);
 }
 ion-fab.top.edge {
-  top: -28px;
+  top: calc(var(--fiv-fab-top) - 38px);
 }
 ion-fab.middle {
   top: calc(50% - 28px);
 }
 ion-fab.bottom.edge {
-  bottom: -28px;
+  bottom: calc(var(--fiv-fab-bottom) - 38px);
 }
 ion-fab.bottom {
-  bottom: 10px;
+  bottom: var(--fiv-fab-bottom);
 }
 ion-fab.center {
   left: 50%;
