@@ -1,3 +1,14 @@
+<a name="0.9.3"></a>
+## [0.9.3](https://github.com/fivethree-team/component-library/compare/v0.9.1...v0.9.3) (2019-08-05)
+
+
+### Bug Fixes
+
+* **icon:** color default ([4139a4d](https://github.com/fivethree-team/component-library/commit/4139a4d))
+* **icon:** fix default height, width and color ([1951f2c](https://github.com/fivethree-team/component-library/commit/1951f2c))
+
+
+
 <a name="0.9.2"></a>
 ## [0.9.2](https://github.com/fivethree-team/component-library/compare/v0.9.1...v0.9.2) (2019-08-05)
 
