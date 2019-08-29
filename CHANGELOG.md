@@ -1,3 +1,12 @@
+## [0.9.5](https://github.com/fivethree-team/fivethree/compare/v0.9.4...v0.9.5) (2019-08-29)
+
+
+### Bug Fixes
+
+* **routing-state:** get previous url for two history items ([d3c09f2](https://github.com/fivethree-team/fivethree/commit/d3c09f2))
+
+
+
 ## [0.9.4](https://github.com/fivethree-team/fivethree/compare/v0.9.1...v0.9.4) (2019-08-22)
 
 
