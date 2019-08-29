@@ -71,7 +71,7 @@ export class FivRoutingStateService {
   }
 
   public getPreviousUrl(defaultHref = '/'): string | Navigateable {
-    if (this.history.length > 2) {
+    if (this.history.length >= 2) {
       return this.history[this.history.length - 2];
     }
     return defaultHref;
