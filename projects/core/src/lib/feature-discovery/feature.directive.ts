@@ -9,7 +9,8 @@ import {
   ComponentRef,
   TemplateRef,
   Output,
-  EventEmitter
+  EventEmitter,
+  ViewContainerRef
 } from '@angular/core';
 import { FivOverlayService } from '../overlay/overlay.service';
 import { FivFeatureDiscovery } from './feature-discovery.component';
@@ -39,6 +40,7 @@ export class FivFeature {
 
   constructor(
     @Host() private host: ElementRef,
+    private viewContainer: ViewContainerRef,
     @Host() @Optional() private icon: FivIcon,
     private overlay: FivOverlayService,
     private platform: Platform
@@ -60,6 +62,7 @@ export class FivFeature {
       : this.getBounds(this.host.nativeElement);
 
     this.overlayRef = this.overlay.createOverlay(
+      this.viewContainer,
       FivFeatureDiscovery,
       this.fivFeature
     );
