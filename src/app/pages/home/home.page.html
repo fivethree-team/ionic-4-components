@@ -4,16 +4,10 @@
     <ion-grid fixed no-padding>
         <ion-row>
             <ion-col size="12">
-                <ion-title>Fivethree Ionic 4 Component Library <markdown
-                        (click)="open('https://www.npmjs.com/package/@fivethree/core')">
+                <ion-title>Ionic 4 Components <markdown (click)="open('https://www.npmjs.com/package/@fivethree/core')">
                         ![npm: version](https://flat.badgen.net/npm/v/@fivethree/core)
                     </markdown>
                 </ion-title>
-
-                <ion-chip color="secondary">
-                    <ion-icon name="alert"></ion-icon>
-                    <ion-label>preparing documentation and project site...</ion-label>
-                </ion-chip>
 
             </ion-col>
             <ion-col padding size="12" sizeMd="8">
@@ -50,7 +44,7 @@
                             <ion-card class="small">
                                 <fiv-ripple (fivClick)="navigate('/getting-started')">
                                     <ion-card-header>
-                                        <ion-card-subtitle>Learn more about the UI Library</ion-card-subtitle>
+                                        <ion-card-subtitle>Learn how to use the library</ion-card-subtitle>
                                         <ion-card-title>Getting Started</ion-card-title>
                                     </ion-card-header>
                                     <ion-card-content>
@@ -61,33 +55,20 @@
                         </ion-col>
                         <ion-col size="12" sizeMd="6">
                             <ion-card class="small">
-
-                                <fiv-ripple (fivClick)="navigate('/installation')">
+                                <fiv-ripple (click)="open('https://github.com/fivethree-team/ionic-4-components')">
                                     <ion-card-header>
-                                        <ion-card-subtitle>First Steps</ion-card-subtitle>
-                                        <ion-card-title>Installation</ion-card-title>
+                                        <ion-card-subtitle>Contributions Welcome</ion-card-subtitle>
+                                        <ion-card-title>Contributing</ion-card-title>
                                     </ion-card-header>
                                     <ion-card-content>
-                                        Awesome content
+                                        If you want to add a component or found a bug, create a pull request or file an
+                                        issue!
                                     </ion-card-content>
                                 </fiv-ripple>
                             </ion-card>
                         </ion-col>
                     </ion-row>
                     <ion-row>
-                        <ion-col size="12" sizeMd="6">
-                            <ion-card class="small">
-                                <fiv-ripple (fivClick)="navigate('/developer-tools')">
-                                    <ion-card-header>
-                                        <ion-card-subtitle>Discover our VS Code Plugins</ion-card-subtitle>
-                                        <ion-card-title>Developer Tools</ion-card-title>
-                                    </ion-card-header>
-                                    <ion-card-content>
-
-                                    </ion-card-content>
-                                </fiv-ripple>
-                            </ion-card>
-                        </ion-col>
                         <ion-col size="12" sizeMd="6">
                             <ion-card class="small">
                                 <fiv-ripple>
@@ -103,6 +84,19 @@
                                     </ion-card-content>
                                 </fiv-ripple>
 
+                            </ion-card>
+                        </ion-col>
+                        <ion-col size="12" sizeMd="6">
+                            <ion-card class="small">
+                                <fiv-ripple (fivClick)="navigate('/developer-tools')">
+                                    <ion-card-header>
+                                        <ion-card-subtitle>Discover our VS Code Plugins</ion-card-subtitle>
+                                        <ion-card-title>Developer Tools</ion-card-title>
+                                    </ion-card-header>
+                                    <ion-card-content>
+
+                                    </ion-card-content>
+                                </fiv-ripple>
                             </ion-card>
                         </ion-col>
                     </ion-row>
@@ -123,19 +117,6 @@
                                 class="twitter">@garygrossgarten</a> and <a target="blank"
                                 href="https://twitter.com/mrcjln" class="twitter">@mrcjln</a> or on <a target="blank"
                                 href="https://fivethree.io">fivethree.io</a>.
-                        </ion-card-content>
-                    </fiv-ripple>
-                </ion-card>
-            </ion-col>
-            <ion-col size="12" sizeSm="6" sizeMd="4">
-                <ion-card class="small">
-                    <fiv-ripple (click)="open('https://github.com/fivethree-team/ionic-4-components')">
-                        <ion-card-header>
-                            <ion-card-subtitle>Contributions Welcome</ion-card-subtitle>
-                            <ion-card-title>Contributing</ion-card-title>
-                        </ion-card-header>
-                        <ion-card-content>
-                            If you want to add a component or found a bug, create a pull request or file an issue!
                         </ion-card-content>
                     </fiv-ripple>
                 </ion-card>
@@ -163,6 +144,9 @@
 
                     </fiv-ripple>
                 </ion-card>
+            </ion-col>
+            <ion-col size="12" sizeSm="6" sizeMd="4">
+
             </ion-col>
         </ion-row>
     </ion-grid>

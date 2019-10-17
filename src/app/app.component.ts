@@ -10,93 +10,70 @@ import { FivRoutingStateService } from '@fivethree/core';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  public components = [
+  public docs = [
     {
       title: 'App Bar',
       url: '/app-bar',
-      icon: 'git-commit'
-    },
-    {
-      title: 'Back Button',
-      url: '/backbutton',
-      icon: 'md-arrow-back'
     },
     {
       title: 'Bottom Sheet',
       url: '/bottom-sheet',
-      icon: 'ios-arrow-up'
     },
     {
       title: 'Dialog',
       url: '/dialog',
-      icon: 'notifications'
     },
     {
       title: 'Editable Label',
       url: '/editable-label',
-      icon: 'create'
     },
     {
       title: 'Expandable',
       url: '/expandable',
-      icon: 'resize'
     },
     {
-      title: 'FAB',
+      title: 'Feature Discovery',
+      url: '/feature-discovery',
+    },
+    {
+      title: 'Floating Action Button',
       url: '/fab',
-      icon: 'add-circle'
     },
     {
       title: 'Icon',
       url: '/icon',
-      icon: 'mail-unread'
     },
     {
       title: 'Image Gallery',
       url: '/image',
-      icon: 'image'
     },
     {
       title: 'Loading Indicators',
       url: '/loading',
-      icon: 'time'
     },
     {
       title: 'Overflow Buttons',
       url: '/buttons',
-      icon: 'more'
     },
     {
       title: 'Password Reveal Input',
       url: '/password',
-      icon: 'key'
     },
     {
       title: 'Refresher',
       url: '/refresh',
-      icon: 'refresh'
     },
     {
       title: 'Searchbar',
       url: '/toolbar-search',
-      icon: 'search'
     },
     {
       title: 'Stepper',
       url: '/stepper',
-      icon: 'share'
-    }
-  ];
-  public directives = [
-    {
-      title: 'Feature Discovery',
-      url: '/feature-discovery',
-      icon: 'resize'
     },
     {
       title: 'Viewport',
       url: '/viewport',
-      icon: 'share'
     }
   ];
   public services = [];

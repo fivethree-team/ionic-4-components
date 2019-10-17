@@ -7,11 +7,6 @@ const routes: Routes = [
     loadChildren: './pages/home/home.module#HomePageModule'
   },
   {
-    path: 'getting-started',
-    loadChildren:
-      './pages/getting-started/getting-started.module#GettingStartedPageModule'
-  },
-  {
     path: 'buttons',
     loadChildren: './pages/buttons/buttons.module#ButtonsPageModule'
   },
@@ -78,7 +73,7 @@ const routes: Routes = [
       './pages/feature-discovery/feature-discovery.module#FeatureDirectoryPageModule'
   },
   {
-    path: 'installation',
+    path: 'getting-started',
     loadChildren:
       './pages/installation/installation.module#InstallationPageModule'
   },
@@ -87,12 +82,7 @@ const routes: Routes = [
     loadChildren:
       './pages/developer-tools/developer-tools.module#DeveloperToolsPageModule'
   },
-  {
-    path: 'backbutton',
-    loadChildren: './pages/backbutton/backbutton.module#BackButtonPageModule'
-  },
   { path: 'fab', loadChildren: './pages/fab/fab.module#FabPageModule' },
-  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
   {
     path: '**',
     loadChildren:

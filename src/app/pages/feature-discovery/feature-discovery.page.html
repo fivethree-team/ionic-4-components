@@ -1,21 +1,5 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button>
-        <fiv-icon #back="fivFeature" [fivFeature]="backContent" [featurePadding]="fp" [contentOffset]="co"
-          slot="icon-only" [name]="'arrow-back'" (click)="navigateBack()">
-        </fiv-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button fill="outline" shape="round" color="secondary" #tour="fivFeature" [fivFeature]="tourContent"
-        [featurePadding]="fp" [contentOffset]="co" (click)="fab.show()">
-        TOUR
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Feature Discovery</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="Feature Discovery">
+</app-header>
 
 <ion-content padding>
   <ion-grid fixed>
@@ -25,7 +9,7 @@
         <ion-item-divider>
           <ion-label>Example</ion-label>
         </ion-item-divider>
-        <ion-button shape="round" (click)="tour.show()">
+        <ion-button shape="round" (click)="fab.show()">
           Open Feature
         </ion-button>
         <ion-list>
@@ -71,24 +55,6 @@
   </ion-fab>
 </ion-content>
 
-<ng-template #backContent>
-  <div padding>
-    <ion-text color="light">
-      <h1>Go Back</h1>
-      <p>{{'Leave this page by clicking the back arrow.' | uppercase}}</p>
-    </ion-text>
-    <ion-buttons>
-      <ion-button (click)="back.hide(); fab.show()" color="light" shape="round" fill="outline">
-        <ion-icon slot="start" name="arrow-back"></ion-icon>
-        PREVIOUS
-      </ion-button>
-      <ion-button color="light" shape="round" fill="outline" (click)="back.hide()">
-        FINISH
-      </ion-button>
-    </ion-buttons>
-  </div>
-</ng-template>
-
 <ng-template #fabContent>
   <div padding>
     <ion-text color="light">
@@ -96,19 +62,10 @@
       <p>Click this Button to do some cool stuff.</p>
     </ion-text>
     <ion-buttons>
-      <ion-button color="light" shape="round" fill="outline" (click)="fab.hide(); back.show()">
-        <ion-icon slot="end" name="arrow-forward"></ion-icon>
-        NEXT
+      <ion-button color="light" shape="round" fill="outline" (click)="fab.hide();">
+        <ion-icon slot="end" name="close"></ion-icon>
+        Close
       </ion-button>
     </ion-buttons>
-  </div>
-</ng-template>
-
-<ng-template #tourContent>
-  <div padding>
-    <ion-text color="light">
-      <h1>Take the Tour</h1>
-      <p>You can also build a little feature tour.</p>
-    </ion-text>
   </div>
 </ng-template>

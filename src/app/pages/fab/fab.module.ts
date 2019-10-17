@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { FabPage } from './fab.page';
 import { FivFabModule, FivIconModule } from '@fivethree/core';
+import { ComponentsModule } from '@components/components.module';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     FivFabModule,
+    ComponentsModule,
     FivIconModule
   ],
   declarations: [FabPage]

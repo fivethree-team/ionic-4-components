@@ -1,19 +1,16 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
       <!-- <ion-menu-button></ion-menu-button> -->
       <ng-container *ngIf="backbutton">
         <fiv-back-button></fiv-back-button>
       </ng-container>
+      <ng-container *ngIf="!backbutton">
+        <ion-menu-button></ion-menu-button>
+      </ng-container>
     </ion-buttons>
     <ion-title (click)="onTitleClicked()">{{title}}</ion-title>
     <ion-buttons slot="end">
-      <a href="https://fivethree.io" target="blank">
-        <ion-button color="secondary" fill="outline" shape="round">
-          <ion-icon slot="start" name="globe"></ion-icon>
-          fivethree.io
-        </ion-button>
-      </a>
       <ng-content></ng-content>
     </ion-buttons>
   </ion-toolbar>
