@@ -1,0 +1,17 @@
+```html
+<fiv-bottom-sheet
+  #fbs
+  [(state)]="drawerState"
+  [dockedHeight]="dockedHeight"
+  [shouldBounce]="shouldBounce"
+  [distanceTop]="distanceTop"
+>
+  <fiv-bottom-sheet-content
+    [float]="float"
+    [rounded]="rounded"
+    [handle]="handle"
+  >
+    ...
+  </fiv-bottom-sheet-content>
+</fiv-bottom-sheet>
+```
