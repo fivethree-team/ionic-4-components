@@ -62,10 +62,6 @@ const routes: Routes = [
     loadChildren: './pages/stepper/stepper.module#StepperPageModule'
   },
   {
-    path: 'directives',
-    loadChildren: './pages/directives/directives.module#DirectivesPageModule'
-  },
-  {
     path: 'editable-label',
     loadChildren:
       './pages/editable-label/editable-label.module#EditableLabelPageModule'

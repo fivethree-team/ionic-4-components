@@ -5,8 +5,7 @@
   <ion-grid class="page-content" fixed>
     <ion-row>
       <ion-col size="12">
-        <app-example [html]="'assets/docs/snippets/loading-bar/loading.html.md'" [title]="'Bar'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
-          labore et dolore magna aliqua.'">
+        <app-example>
 
           <ion-button [disabled]="bar.loading" (click)="bar.fillIn(2000)">
             fill
@@ -30,8 +29,7 @@
             </div>
           </div>
         </app-example>
-        <app-example [title]="'Spinner'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
-       labore et dolore magna aliqua.'">
+        <app-example>
           <div class="wrapper">
             <div [fivCenter]>
               <fiv-loading-spinner></fiv-loading-spinner>
