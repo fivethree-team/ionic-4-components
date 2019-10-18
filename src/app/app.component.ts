@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { FivRoutingStateService } from '@fivethree/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -67,7 +68,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private routing: FivRoutingStateService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.initializeApp();
   }
@@ -75,7 +77,7 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.routing.loadRouting({ clearOn: ['/'], root: '/' });
-
+      this.setupThemeListener();
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
@@ -86,5 +88,19 @@ export class AppComponent {
   }
   navigate(url: string) {
     this.navCtrl.navigateForward(url);
+  }
+
+  private setupThemeListener() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    this.toggleTheme(prefersDark.matches);
+
+    prefersDark.addEventListener('change', mediaQuery =>
+      this.toggleTheme(mediaQuery.matches)
+    );
+  }
+
+  private toggleTheme(shouldAdd: boolean) {
+    this.document.body.classList.toggle('dark', shouldAdd);
   }
 }
