@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { MarkdownModule } from 'ngx-markdown';
 import {
-  FivethreeCoreModule,
   FivIconModule,
   FivBackButtonModule,
   FivGalleryModule
