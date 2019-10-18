@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1571371073807,
+  "timestamp": 1571371314798,
   "index": "https://fivethree-team.github.io/ionic-4-components/index.html",
   "assetGroups": [
     {
@@ -147,6 +147,7 @@
         "https://fivethree-team.github.io/ionic-4-components/assets/banners/gallery.svg",
         "https://fivethree-team.github.io/ionic-4-components/assets/banners/refresher.svg",
         "https://fivethree-team.github.io/ionic-4-components/assets/banners/tools.svg",
+        "https://fivethree-team.github.io/ionic-4-components/assets/components.png",
         "https://fivethree-team.github.io/ionic-4-components/assets/docs/components/app-bar.md",
         "https://fivethree-team.github.io/ionic-4-components/assets/docs/components/bottom-sheet.md",
         "https://fivethree-team.github.io/ionic-4-components/assets/docs/components/dialog.md",
@@ -338,13 +339,14 @@
     "https://fivethree-team.github.io/ionic-4-components/97.42d74cf37c919377e26e.js": "c8849956b1931e23703a77ae92bf32479f979c92",
     "https://fivethree-team.github.io/ionic-4-components/98.91b99f973769bfb0f5ed.js": "7d70b62b112b8c6ed010c0ee43f6b69a5d05317e",
     "https://fivethree-team.github.io/ionic-4-components/99.ada6b2a3fcb1da92ad1e.js": "47ca19d15b7f4946ba251dc5a2addd7cf8d8246b",
-    "https://fivethree-team.github.io/ionic-4-components/assets/banners/banner.png": "b98931a1f7ad4d847beba5df1d04035b1a0ceb0a",
+    "https://fivethree-team.github.io/ionic-4-components/assets/banners/banner.png": "b51fe63d6d7cc5a64e93caf0d1fdb07dc923e5d3",
     "https://fivethree-team.github.io/ionic-4-components/assets/banners/bottom-sheet.svg": "e9a0c10d827e7389234f23c55080b3f6d07bb035",
     "https://fivethree-team.github.io/ionic-4-components/assets/banners/components.svg": "4076cfdda124cb777ddc67d546c5346a503c5618",
     "https://fivethree-team.github.io/ionic-4-components/assets/banners/feature-discovery.svg": "8a2f4dfa186244eec49766ecae1abe8f51b6d235",
     "https://fivethree-team.github.io/ionic-4-components/assets/banners/gallery.svg": "5cee2937b39850492e46fa1d60c033563de4479f",
     "https://fivethree-team.github.io/ionic-4-components/assets/banners/refresher.svg": "1630da6e54aab712d113c49b7362e89c2f517d82",
     "https://fivethree-team.github.io/ionic-4-components/assets/banners/tools.svg": "7cef76205a374c47e9ef0c0e6a9a1edaa6aae496",
+    "https://fivethree-team.github.io/ionic-4-components/assets/components.png": "b51fe63d6d7cc5a64e93caf0d1fdb07dc923e5d3",
     "https://fivethree-team.github.io/ionic-4-components/assets/docs/components/app-bar.md": "3ca30579b1ae2822d4c15c7601a228af0c35faa0",
     "https://fivethree-team.github.io/ionic-4-components/assets/docs/components/bottom-sheet.md": "470214e58b4ca3fcfd14c69e12ebbcef4d9c85af",
     "https://fivethree-team.github.io/ionic-4-components/assets/docs/components/dialog.md": "a960d23b1364f97f0bc84fb7f22c46f96adee0db",
