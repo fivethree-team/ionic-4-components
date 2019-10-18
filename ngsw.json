@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1571372919165,
+  "timestamp": 1571388502606,
   "index": "https://fivethree-team.github.io/ionic-4-components/index.html",
   "assetGroups": [
     {
@@ -127,11 +127,11 @@
         "https://fivethree-team.github.io/ionic-4-components/99.ada6b2a3fcb1da92ad1e.js",
         "https://fivethree-team.github.io/ionic-4-components/common.448799bf5f2470f8a0d2.js",
         "https://fivethree-team.github.io/ionic-4-components/index.html",
-        "https://fivethree-team.github.io/ionic-4-components/main.1c991363bdff6da9ebdc.js",
+        "https://fivethree-team.github.io/ionic-4-components/main.625fa4fe21a47def0ed7.js",
         "https://fivethree-team.github.io/ionic-4-components/polyfills.7b0e0fa811e711c249d4.js",
         "https://fivethree-team.github.io/ionic-4-components/runtime.c8cf8a61181e272ef545.js",
         "https://fivethree-team.github.io/ionic-4-components/scripts.a428966bffcd868cd2d4.js",
-        "https://fivethree-team.github.io/ionic-4-components/styles.52b1b6c908b5a24dacb3.css"
+        "https://fivethree-team.github.io/ionic-4-components/styles.49bbd551e1fd1e110ee3.css"
       ],
       "patterns": []
     },
@@ -416,12 +416,12 @@
     "https://fivethree-team.github.io/ionic-4-components/assets/logo.svg": "0ee74138059408afc56eb6101098909ad27af44f",
     "https://fivethree-team.github.io/ionic-4-components/assets/lottie/empty_box.json": "bf9659f85bd9fa2fd7f4c469666a69d9961e9c9b",
     "https://fivethree-team.github.io/ionic-4-components/common.448799bf5f2470f8a0d2.js": "e39c5815dcf3365a0b93b4ffbc566a1da6923cfa",
-    "https://fivethree-team.github.io/ionic-4-components/index.html": "49a52dad703a3be2c41293a4e3571eb037970533",
-    "https://fivethree-team.github.io/ionic-4-components/main.1c991363bdff6da9ebdc.js": "f09c47dfcf0632213ec18f3e2083629f64b05ff8",
+    "https://fivethree-team.github.io/ionic-4-components/index.html": "52d7010b2ff102ceb59e62ac9dd1363cd1f6e839",
+    "https://fivethree-team.github.io/ionic-4-components/main.625fa4fe21a47def0ed7.js": "280d374f5d6ef14b1db0ab033ffe7374de361b2f",
     "https://fivethree-team.github.io/ionic-4-components/polyfills.7b0e0fa811e711c249d4.js": "3fca9790df366b76a37002172260df513355e908",
     "https://fivethree-team.github.io/ionic-4-components/runtime.c8cf8a61181e272ef545.js": "c3b58f1a974dc8e44eb71377e41a37947db86021",
     "https://fivethree-team.github.io/ionic-4-components/scripts.a428966bffcd868cd2d4.js": "fd17d390ef72e1668fbce21f9a506f40f43949dd",
-    "https://fivethree-team.github.io/ionic-4-components/styles.52b1b6c908b5a24dacb3.css": "bb9303f1bcaf75f90257ee704b32dc9cb7743065"
+    "https://fivethree-team.github.io/ionic-4-components/styles.49bbd551e1fd1e110ee3.css": "ab8f4849d9bf2114a0688e7792c0115c05005cfa"
   },
   "navigationUrls": [
     {
