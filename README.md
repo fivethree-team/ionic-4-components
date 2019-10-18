@@ -1,4 +1,4 @@
-<img src="banner.svg">
+<img alt="project banner" href="https://fivethree-team.github.io/ionic-4-components" src="banner.svg">
 
 # Ionic 4 Components
 
