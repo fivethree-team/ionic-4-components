@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1571371314798,
+  "timestamp": 1571371394101,
   "index": "https://fivethree-team.github.io/ionic-4-components/index.html",
   "assetGroups": [
     {
@@ -416,7 +416,7 @@
     "https://fivethree-team.github.io/ionic-4-components/assets/logo.svg": "0ee74138059408afc56eb6101098909ad27af44f",
     "https://fivethree-team.github.io/ionic-4-components/assets/lottie/empty_box.json": "bf9659f85bd9fa2fd7f4c469666a69d9961e9c9b",
     "https://fivethree-team.github.io/ionic-4-components/common.448799bf5f2470f8a0d2.js": "e39c5815dcf3365a0b93b4ffbc566a1da6923cfa",
-    "https://fivethree-team.github.io/ionic-4-components/index.html": "6f0c5b5165f5553aee8c8812406c5b96a3f99b9b",
+    "https://fivethree-team.github.io/ionic-4-components/index.html": "0e632368ace891f50effcf3560a1c51fa6cfd904",
     "https://fivethree-team.github.io/ionic-4-components/main.1c991363bdff6da9ebdc.js": "f09c47dfcf0632213ec18f3e2083629f64b05ff8",
     "https://fivethree-team.github.io/ionic-4-components/polyfills.7b0e0fa811e711c249d4.js": "3fca9790df366b76a37002172260df513355e908",
     "https://fivethree-team.github.io/ionic-4-components/runtime.ad1b0cb4cd917128a264.js": "0b750ed4140bf1ea02a2a30e4d29bf86b25fbe91",
