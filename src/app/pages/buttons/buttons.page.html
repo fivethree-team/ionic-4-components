@@ -10,49 +10,44 @@
             <ion-label>Example</ion-label>
           </ion-item-divider>
 
-          <ion-card>
-            <ion-toolbar>
-              <fiv-buttons [iconsOnly]="iconsOnly" [forceActionsheet]="forceActionsheet" [forcePopover]="forcePopover"
-                [header]="header" [subHeader]="subHeader" [count]="count" slot="end">
-                <fiv-button [color]="'primary'" (click)="presentToast('add clicked')" [text]="'Add'">
-                </fiv-button>
-                <fiv-button (click)="presentToast('delete clicked')" [icon]="'md-trash'" [text]="'Delete'">
-                </fiv-button>
-                <fiv-button (click)="presentToast('select image clicked')" [icon]="'md-image'" [text]="'Select Image'">
-                </fiv-button>
-                <fiv-button (click)="presentToast('take photo clicked')" [icon]="'md-camera'" [text]="'Take Photo'">
-                </fiv-button>
-              </fiv-buttons>
-            </ion-toolbar>
-            <ion-card-content>
-              Parameters:
+          <ion-toolbar>
+            <fiv-buttons [iconsOnly]="iconsOnly" [forceActionsheet]="forceActionsheet" [forcePopover]="forcePopover"
+              [header]="header" [subHeader]="subHeader" [count]="count" slot="end">
+              <fiv-button [color]="'primary'" (click)="presentToast('add clicked')" [text]="'Add'">
+              </fiv-button>
+              <fiv-button (click)="presentToast('delete clicked')" [icon]="'md-trash'" [text]="'Delete'">
+              </fiv-button>
+              <fiv-button (click)="presentToast('select image clicked')" [icon]="'md-image'" [text]="'Select Image'">
+              </fiv-button>
+              <fiv-button (click)="presentToast('take photo clicked')" [icon]="'md-camera'" [text]="'Take Photo'">
+              </fiv-button>
+            </fiv-buttons>
+          </ion-toolbar>
 
-              <ion-item>
-                <ion-label position="floating">Number of visible icons outside of popover / actionsheet</ion-label>
-                <ion-input min="0" max="4" type="number" placeholder="0 - 4" [(ngModel)]="count"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Header Text (Actionsheet only)</ion-label>
-                <ion-input type="text" placeholder="header" [(ngModel)]="header"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Subheader Text (Actionsheet only)</ion-label>
-                <ion-input type="text" placeholder="subHeader" [(ngModel)]="subHeader"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Force Actionsheet</ion-label>
-                <ion-checkbox [checked]="forceActionsheet" [(ngModel)]="forceActionsheet" slot="end"></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <ion-label>Force Popover</ion-label>
-                <ion-checkbox [checked]="forcePopover" [(ngModel)]="forcePopover" slot="end"></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <ion-label>Show icons only (Toolbar only)</ion-label>
-                <ion-checkbox [checked]="iconsOnly" [(ngModel)]="iconsOnly" slot="end"></ion-checkbox>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
+          <ion-item>
+            <ion-label position="floating">Number of visible icons outside of popover / actionsheet</ion-label>
+            <ion-input min="0" max="4" type="number" placeholder="0 - 4" [(ngModel)]="count"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Header Text (Actionsheet only)</ion-label>
+            <ion-input type="text" placeholder="header" [(ngModel)]="header"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Subheader Text (Actionsheet only)</ion-label>
+            <ion-input type="text" placeholder="subHeader" [(ngModel)]="subHeader"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Force Actionsheet</ion-label>
+            <ion-checkbox [checked]="forceActionsheet" [(ngModel)]="forceActionsheet" slot="end"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Force Popover</ion-label>
+            <ion-checkbox [checked]="forcePopover" [(ngModel)]="forcePopover" slot="end"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Show icons only (Toolbar only)</ion-label>
+            <ion-checkbox [checked]="iconsOnly" [(ngModel)]="iconsOnly" slot="end"></ion-checkbox>
+          </ion-item>
 
         </app-example>
       </ion-col>
