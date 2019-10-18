@@ -1,17 +1,3 @@
-```typescript
-...
-import { FivBottomSheetModule } from '@fivethree/core';
-
-@NgModule({
-  imports: [
-    ...
-    FivBottomSheetModule
-  ],
-    ...
-})
-export class HomePageModule {}
-```
-
 ```html
 <fiv-bottom-sheet
   #fbs
@@ -28,6 +14,20 @@ export class HomePageModule {}
     ...
   </fiv-bottom-sheet-content>
 </fiv-bottom-sheet>
+```
+
+```typescript
+...
+import { FivBottomSheetModule } from '@fivethree/core';
+
+@NgModule({
+  imports: [
+    ...
+    FivBottomSheetModule
+  ],
+    ...
+})
+export class HomePageModule {}
 ```
 
 ```typescript

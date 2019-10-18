@@ -16,7 +16,7 @@
     </defs>
     <g id="Ionic-Component-Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="feature-discovery">
-            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="515" height="339"></rect>
+            <rect id="Rectangle" fill="#FAFAFA" x="0" y="0" width="515" height="339"></rect>
             <g id="Combined-Shape" filter="url(#filter-2)">
                 <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
                 <use fill="#6068DA" fill-rule="evenodd" xlink:href="#path-1"></use>
