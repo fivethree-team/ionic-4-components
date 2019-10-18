@@ -13,67 +13,51 @@ export class AppComponent {
   public docs = [
     {
       title: 'App Bar',
-      url: '/app-bar',
+      url: '/app-bar'
     },
     {
       title: 'Bottom Sheet',
-      url: '/bottom-sheet',
+      url: '/bottom-sheet'
     },
     {
       title: 'Dialog',
-      url: '/dialog',
-    },
-    {
-      title: 'Editable Label',
-      url: '/editable-label',
-    },
-    {
-      title: 'Expandable',
-      url: '/expandable',
-    },
-    {
-      title: 'Feature Discovery',
-      url: '/feature-discovery',
+      url: '/dialog'
     },
     {
       title: 'Floating Action Button',
-      url: '/fab',
+      url: '/fab'
+    },
+    {
+      title: 'Feature Discovery',
+      url: '/feature-discovery'
+    },
+    {
+      title: 'Gallery',
+      url: '/gallery'
     },
     {
       title: 'Icon',
-      url: '/icon',
-    },
-    {
-      title: 'Image Gallery',
-      url: '/image',
-    },
-    {
-      title: 'Loading Indicators',
-      url: '/loading',
+      url: '/icon'
     },
     {
       title: 'Overflow Buttons',
-      url: '/buttons',
+      url: '/overflow-buttons'
     },
     {
-      title: 'Password Reveal Input',
-      url: '/password',
+      title: 'Password Input',
+      url: '/password'
     },
     {
       title: 'Refresher',
-      url: '/refresh',
+      url: '/refresher'
     },
     {
       title: 'Searchbar',
-      url: '/toolbar-search',
+      url: '/searchbar'
     },
     {
       title: 'Stepper',
-      url: '/stepper',
-    },
-    {
-      title: 'Viewport',
-      url: '/viewport',
+      url: '/stepper'
     }
   ];
   public services = [];

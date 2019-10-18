@@ -1,5 +1,36 @@
 ```typescript
+...
+import { FivBottomSheetModule } from '@fivethree/core';
 
+@NgModule({
+  imports: [
+    ...
+    FivBottomSheetModule
+  ],
+    ...
+})
+export class HomePageModule {}
+```
+
+```html
+<fiv-bottom-sheet
+  #fbs
+  [(state)]="drawerState"
+  [dockedHeight]="dockedHeight"
+  [shouldBounce]="shouldBounce"
+  [distanceTop]="distanceTop"
+>
+  <fiv-bottom-sheet-content
+    [float]="float"
+    [rounded]="rounded"
+    [handle]="handle"
+  >
+    ...
+  </fiv-bottom-sheet-content>
+</fiv-bottom-sheet>
+```
+
+```typescript
 import { Component, OnInit } from '@angular/core';
 import { DrawerState } from '@fivethree/core';
 
@@ -23,6 +54,4 @@ export class BottomSheetPage implements OnInit {
 
   ngOnInit() {}
 }
-
-
 ```

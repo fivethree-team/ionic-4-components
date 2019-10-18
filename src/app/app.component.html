@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane>
-    <ion-menu menuId="menuId" [fivCollapseMenu]="false" [minWidth]="240" [maxWidth]="240" #menu=menuCollapse>
+    <ion-menu menuId="menuId" [fivCollapseMenu]="false" [minWidth]="220" [maxWidth]="220" #menu=menuCollapse>
       <ion-header no-border>
         <ion-toolbar>
           <a style="text-decoration: none;" href="/">
@@ -24,14 +24,11 @@
               </ion-item>
             </fiv-ripple>
             <div content>
-              <fiv-router-item [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'" [position]="'left'"
+              <fiv-router-item #exps [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'" [position]="'left'"
                 [pageUrl]="p.url" *ngFor="let p of docs">
               </fiv-router-item>
             </div>
           </fiv-expandable>
-          <ion-item-divider>
-            <ion-label>More</ion-label>
-          </ion-item-divider>
           <fiv-router-item [pageUrl]="'/developer-tools'" [text]="'Developer Tools'" [matchChildUrl]="true"
             [shape]="'rounded'">
           </fiv-router-item>

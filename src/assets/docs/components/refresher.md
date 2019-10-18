@@ -1,3 +1,17 @@
+```typescript
+...
+import { FivLoadingContentModule } from '@fivethree/core';
+
+@NgModule({
+  imports: [
+    ...
+    FivLoadingContentModule
+  ],
+  declarations: [HomePage]
+})
+export class HomePageModule {}
+```
+
 ```html
 <fiv-loading-content spinColor="dark" #content>
   ...

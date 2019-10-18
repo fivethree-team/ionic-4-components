@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: './pages/home/home.module#HomePageModule'
   },
   {
-    path: 'buttons',
+    path: 'overflow-buttons',
     loadChildren: './pages/buttons/buttons.module#ButtonsPageModule'
   },
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
       './pages/bottom-sheet/bottom-sheet.module#BottomSheetPageModule'
   },
   {
-    path: 'loading',
+    path: 'progress-bar',
     loadChildren: './pages/loading/loading.module#LoadingPageModule'
   },
   {
@@ -28,7 +28,7 @@ const routes: Routes = [
     loadChildren: './pages/password/password.module#PasswordPageModule'
   },
   {
-    path: 'toolbar-search',
+    path: 'searchbar',
     loadChildren:
       './pages/toolbar-search/toolbar-search.module#ToolbarSearchPageModule'
   },
@@ -45,9 +45,12 @@ const routes: Routes = [
     path: 'dialog',
     loadChildren: './pages/dialog/dialog.module#DialogPageModule'
   },
-  { path: 'image', loadChildren: './pages/image/image.module#ImagePageModule' },
   {
-    path: 'refresh',
+    path: 'gallery',
+    loadChildren: './pages/image/image.module#ImagePageModule'
+  },
+  {
+    path: 'refresher',
     loadChildren: './pages/refresh/refresh.module#RefreshPageModule'
   },
   {

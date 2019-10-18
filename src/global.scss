@@ -25,10 +25,6 @@
   min-height: var(--example-min-height);
 }
 
-:root {
-  // --ion-font-family: 'Roboto Slab', serif;
-}
-
 .avatar {
   width: 24px;
   height: 24px;
@@ -36,4 +32,14 @@
 }
 ion-item-divider {
   border: none;
+}
+
+ion-card {
+  transition: box-shadow 140ms;
+}
+
+ion-card:hover {
+  box-shadow: 0 0.35em 1.175em rgba(0, 0, 0, 0.1),
+    0 0.175em 0.5em rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }

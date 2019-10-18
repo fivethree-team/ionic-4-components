@@ -1,4 +1,8 @@
 ```html
+<fiv-password></fiv-password>
+```
+
+```html
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <ion-item>
     <ion-label position="floating">Email</ion-label>
@@ -7,19 +11,28 @@
 
   <ion-item *ngIf="email.invalid && email.touched" lines="none">
     <ion-text color="danger" class="form-error">
-        Please enter a valid email.
+      Please enter a valid email.
     </ion-text>
   </ion-item>
 
-  <fiv-password placeholder="Password" formControlName="password"></fiv-password>
+  <fiv-password
+    placeholder="Password"
+    formControlName="password"
+  ></fiv-password>
 
   <ion-item *ngIf="password.invalid && password.touched" lines="none">
     <ion-text color="danger" class="form-error">
-        Please enter a valid password with atleast 4 characters.
+      Please enter a valid password with atleast 4 characters.
     </ion-text>
   </ion-item>
 
-  <ion-button block shape="round" color="primary" type="submit" [disabled]="loginForm.invalid">
+  <ion-button
+    block
+    shape="round"
+    color="primary"
+    type="submit"
+    [disabled]="loginForm.invalid"
+  >
     Login
   </ion-button>
 </form>
@@ -27,18 +40,22 @@
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  AbstractControl
+} from '@angular/forms';
 
 @Component({
   selector: 'app-password',
   templateUrl: './password.page.html',
-  styleUrls: ['./password.page.scss'],
+  styleUrls: ['./password.page.scss']
 })
 export class PasswordExample implements OnInit {
-
   loginForm: FormGroup;
 
-  constructor(public formBuilder: FormBuilder) { }
+  constructor(public formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.setupForm();
@@ -47,13 +64,11 @@ export class PasswordExample implements OnInit {
   setupForm() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
-      password: ['', [Validators.minLength(4), Validators.required]],
+      password: ['', [Validators.minLength(4), Validators.required]]
     });
   }
 
-  onSubmit() {
-    
-  }
+  onSubmit() {}
 
   get email(): AbstractControl {
     return this.loginForm.get('email');
@@ -62,6 +77,5 @@ export class PasswordExample implements OnInit {
   get password(): AbstractControl {
     return this.loginForm.get('password');
   }
-
 }
 ```
