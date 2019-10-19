@@ -8,7 +8,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ComponentsPage } from './components.page';
-import { FivethreeCoreModule } from '@fivethree/core';
 
 const routes: Routes = [
   {

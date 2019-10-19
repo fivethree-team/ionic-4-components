@@ -1,10 +1,10 @@
-$size: 40px !default;
 :host {
+  --fiv-spinner-size: 40px;
   position: absolute;
-  width: $size;
-  height: $size;
-  top: env(safe-area-inset-top);
-  left: calc(50% - 20px);
+  width: var(--fiv-spinner-size);
+  height: var(--fiv-spinner-size);
+  top: calc(-1 * var(--fiv-spinner-size));
+  left: calc(50% - var(--fiv-spinner-size) / 2);
   z-index: 9;
 }
 

@@ -1,19 +1,21 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FivButtons } from './buttons.component';
+import { ButtonsPage } from './overflow-buttons.page';
 
-describe('FivButtonsComponent', () => {
-  let component: FivButtons;
-  let fixture: ComponentFixture<FivButtons>;
+describe('ButtonsPage', () => {
+  let component: ButtonsPage;
+  let fixture: ComponentFixture<ButtonsPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FivButtons]
+      declarations: [ButtonsPage],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FivButtons);
+    fixture = TestBed.createComponent(ButtonsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

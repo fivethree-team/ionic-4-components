@@ -1,4 +1,6 @@
-import { FivLoadingRefresherContent } from './loading-refresher-content/loading-refresher-content.component';
+import { takeUntil, tap, filter } from 'rxjs/operators';
+import { FivPull } from './../pull/pull.directive';
+import { FivRefresherContent } from './refresher-content/refresher-content.component';
 import {
   Component,
   OnInit,
@@ -7,7 +9,9 @@ import {
   ViewChild,
   ElementRef,
   Input,
-  Renderer2
+  Renderer2,
+  Host,
+  OnDestroy
 } from '@angular/core';
 import {
   animate,
@@ -15,14 +19,15 @@ import {
   transition,
   trigger,
   state,
-  AnimationBuilder,
-  AnimationPlayer
+  AnimationBuilder
 } from '@angular/animations';
+import { IonContent, Platform } from '@ionic/angular';
+import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'fiv-loading-content',
-  templateUrl: './loading-content.component.html',
-  styleUrls: ['./loading-content.component.scss'],
+  selector: 'fiv-refresher',
+  templateUrl: './refresher.component.html',
+  styleUrls: ['./refresher.component.scss'],
   animations: [
     trigger('fillAnim', [
       transition('* => fill', [
@@ -80,32 +85,83 @@ import {
     ])
   ]
 })
-export class FivLoadingContent implements OnInit {
+export class FivRefresher implements OnInit, OnDestroy {
   @Input() hintText = 'new posts';
   @Input() spinColor = 'light';
   @Input() maxPullHeight = 168;
   @Input() minPullHeight = 112;
   @Output() fivProgressChanged: EventEmitter<number> = new EventEmitter();
-  @Output() fivRefresh: EventEmitter<FivLoadingContent> = new EventEmitter();
-  @ViewChild('content') content: ElementRef;
-  @ViewChild('spinner') spinner: FivLoadingRefresherContent;
+  @Output() fivRefresh: EventEmitter<FivRefresher> = new EventEmitter();
+  @ViewChild('spinner') spinner: FivRefresherContent;
   hintVisible = false;
   currentProgress = 0;
 
   refreshing = false;
 
-  ngOnInit() {}
+  $onDestroy = new Subject();
 
-  constructor(private builder: AnimationBuilder, private renderer: Renderer2) {}
+  constructor(
+    private builder: AnimationBuilder,
+    private refresher: ElementRef,
+    private renderer: Renderer2,
+    private platform: Platform
+  ) {}
+
+  ngOnInit() {
+    this.attachPullDirective();
+  }
+
+  ngOnDestroy(): void {
+    this.$onDestroy.next();
+  }
+  attachPullDirective() {
+    const content: IonContent = this.refresher.nativeElement.closest(
+      'ion-content'
+    );
+
+    if (!content) {
+      throw new Error(
+        'The fiv-refresher component needs to be inside of an ion-content.'
+      );
+    }
+    content.scrollEvents = true;
+    const pull = new FivPull(new ElementRef(content), this.platform, content);
+    pull.init();
+
+    pull.fivPull
+      .pipe(
+        filter(() => !this.refreshing && !this.hintVisible),
+        tap(progress => this.fivPull(progress)),
+        takeUntil(this.$onDestroy)
+      )
+      .subscribe();
+
+    pull.fivRefresh
+      .pipe(
+        tap(() => this.onRefresh()),
+        takeUntil(this.$onDestroy)
+      )
+      .subscribe();
+
+    pull.fivCancel
+      .pipe(
+        tap(() => this.fivCancel()),
+        takeUntil(this.$onDestroy)
+      )
+      .subscribe();
+  }
 
   refresh() {
+    if (!this.refreshing) {
+      return;
+    }
     this.refreshing = true;
     this.changeAnimationToProgress(112 / 168);
     this.spinner.load();
     this.fivRefresh.emit(this);
   }
 
-  completeRefresh() {
+  complete() {
     this.spinner.complete();
   }
 
@@ -137,7 +193,7 @@ export class FivLoadingContent implements OnInit {
       this.renderer.setStyle(
         this.spinner.element.nativeElement,
         'transform',
-        `translateY(${168 * progress}px)`
+        `translateY(${this.minPullHeight * progress}px)`
       );
     }
   }
@@ -146,13 +202,13 @@ export class FivLoadingContent implements OnInit {
     return new Promise(resolve => {
       const animation = this.builder.build([
         style({
-          transform: `translateY(${this.currentProgress *
-            168}px) rotateZ(${360 * this.currentProgress}deg)`
+          transform: `translateY(${100 *
+            this.currentProgress}px) rotateZ(${360 * this.currentProgress}deg)`
         }),
         animate(
           '85ms ease-in',
           style({
-            transform: `translateY(${progress * 168}px) rotateZ(${360 *
+            transform: `translateY(${100 * progress}px) rotateZ(${360 *
               progress}deg)`
           })
         )

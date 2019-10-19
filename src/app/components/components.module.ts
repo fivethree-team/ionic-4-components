@@ -1,3 +1,4 @@
+import { AppBarComponent } from './app-bar/app-bar.component';
 import { ExampleComponent } from './example/example.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -22,7 +23,8 @@ const components = [
   HeaderComponent,
   FooterComponent,
   DocsFooterComponent,
-  ModalPage
+  ModalPage,
+  AppBarComponent
 ];
 @NgModule({
   declarations: components,

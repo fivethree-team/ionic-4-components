@@ -15,11 +15,11 @@ import {
 import { FivButton } from '../button/button.component';
 
 @Component({
-  selector: 'fiv-buttons',
-  templateUrl: './buttons.component.html',
-  styleUrls: ['./buttons.component.scss']
+  selector: 'fiv-overflow-buttons',
+  templateUrl: './overflow-buttons.component.html',
+  styleUrls: ['./overflow-buttons.component.scss']
 })
-export class FivButtons implements OnInit, AfterContentInit {
+export class FivOverflowButtons implements OnInit, AfterContentInit {
   @Input() slot = 'end';
   @Input() subHeader: string;
   @Input() header: string;

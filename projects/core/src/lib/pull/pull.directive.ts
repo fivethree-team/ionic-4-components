@@ -8,13 +8,7 @@ import {
 } from '@angular/core';
 import { IonContent, Platform } from '@ionic/angular';
 import { fromEvent, merge } from 'rxjs';
-import {
-  filter,
-  map,
-  skipWhile,
-  takeUntil,
-  takeLast
-} from 'rxjs/operators';
+import { filter, map, skipWhile, takeUntil, takeLast } from 'rxjs/operators';
 
 @Directive({
   selector: '[fivPull]'
@@ -36,9 +30,19 @@ export class FivPull implements OnInit {
     private element: ElementRef,
     private platform: Platform,
     private content: IonContent
-  ) { }
+  ) {}
 
   ngOnInit(): void {
+    this.init();
+  }
+  init(
+    minPullHeight = 112,
+    maxPullHeight = 168,
+    direction: 'up' | 'down' = 'down'
+  ) {
+    this.minPullHeight = minPullHeight;
+    this.maxPullHeight = maxPullHeight;
+    this.direction = direction;
     this.content.scrollEvents = true;
     this.content.getScrollElement().then(s => {
       this.scrollY = s; // needed for scrollTop
@@ -47,10 +51,18 @@ export class FivPull implements OnInit {
   }
 
   private setupPanListener() {
-    const touchstart$ = fromEvent(this.element.nativeElement, 'touchstart', { passive: true });
-    const touchmove$ = fromEvent(this.element.nativeElement, 'touchmove', { passive: true });
-    const touchend$ = fromEvent(this.element.nativeElement, 'touchend', { passive: true });
-    const touchcancel$ = fromEvent(this.element.nativeElement, 'touchcancel', { passive: true });
+    const touchstart$ = fromEvent(this.element.nativeElement, 'touchstart', {
+      passive: true
+    });
+    const touchmove$ = fromEvent(this.element.nativeElement, 'touchmove', {
+      passive: true
+    });
+    const touchend$ = fromEvent(this.element.nativeElement, 'touchend', {
+      passive: true
+    });
+    const touchcancel$ = fromEvent(this.element.nativeElement, 'touchcancel', {
+      passive: true
+    });
     const end$ = merge(touchend$, touchcancel$);
 
     const dragAtTop = touchstart$.pipe(

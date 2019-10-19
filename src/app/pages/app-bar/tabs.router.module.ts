@@ -22,7 +22,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../buttons/buttons.module#ButtonsPageModule'
+            loadChildren:
+              '../overflow-buttons/overflow-buttons.module#ButtonsPageModule'
           }
         ]
       },

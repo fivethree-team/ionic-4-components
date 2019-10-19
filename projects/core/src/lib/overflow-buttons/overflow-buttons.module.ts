@@ -1,17 +1,17 @@
-import { FivButtons } from './buttons.component';
+import { FivOverflowButtons } from './overflow-buttons.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FivButtonModule } from '../button/button.module';
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
-  declarations: [FivButtons],
+  declarations: [FivOverflowButtons],
   imports: [CommonModule, FivButtonModule, IonicModule],
   exports: [
-    FivButtons,
+    FivOverflowButtons,
     // Re-export `FivButtonModule` as `FivButton` will be used
     // inside of `FivButtons`
     FivButtonModule
   ]
 })
-export class FivButtonsModule {}
+export class FivOverflowButtonsModule {}

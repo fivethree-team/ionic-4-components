@@ -11,8 +11,8 @@
           </ion-item-divider>
 
           <ion-toolbar>
-            <fiv-buttons [iconsOnly]="iconsOnly" [forceActionsheet]="forceActionsheet" [forcePopover]="forcePopover"
-              [header]="header" [subHeader]="subHeader" [count]="count" slot="end">
+            <fiv-overflow-buttons [iconsOnly]="iconsOnly" [forceActionsheet]="forceActionsheet"
+              [forcePopover]="forcePopover" [header]="header" [subHeader]="subHeader" [count]="count" slot="end">
               <fiv-button [color]="'primary'" (click)="presentToast('add clicked')" [text]="'Add'">
               </fiv-button>
               <fiv-button (click)="presentToast('delete clicked')" [icon]="'md-trash'" [text]="'Delete'">
@@ -21,7 +21,7 @@
               </fiv-button>
               <fiv-button (click)="presentToast('take photo clicked')" [icon]="'md-camera'" [text]="'Take Photo'">
               </fiv-button>
-            </fiv-buttons>
+            </fiv-overflow-buttons>
           </ion-toolbar>
 
           <ion-item>

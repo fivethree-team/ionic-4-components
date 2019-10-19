@@ -6,13 +6,13 @@
  * Modules
  */
 // Core
-export * from './lib/fivethree.core.module';
+export * from './lib/core.module';
 // Components
 export * from './lib/app-bar/app-bar.module';
 export * from './lib/back-button/back-button.module';
 export * from './lib/bottom-sheet/bottom-sheet.module';
 export * from './lib/button/button.module';
-export * from './lib/buttons/buttons.module';
+export * from './lib/overflow-buttons/overflow-buttons.module';
 export * from './lib/center/center.module';
 export * from './lib/collapsable-menu/collapsable-menu.module';
 export * from './lib/dialog/dialog.module';
@@ -21,7 +21,7 @@ export * from './lib/expandable/expandable.module';
 export * from './lib/feature-discovery/feature-discovery.module';
 export * from './lib/gallery/gallery.module';
 export * from './lib/icon/icon.module';
-export * from './lib/loading-content/loading-content.module';
+export * from './lib/refresher/refresher.module';
 export * from './lib/fab/fab.module';
 export * from './lib/loading-progress-bar/loading-progress-bar.module';
 export * from './lib/loading-progress-bar/loading-progress-bar.module';
@@ -53,7 +53,7 @@ export * from './lib/dialog/dialog.component';
 export * from './lib/editable-label/editable-label.component';
 export * from './lib/expandable/expandable.component';
 export * from './lib/expandable/expandable-indicator/expandable-indicator.component';
-export * from './lib/loading-content/loading-content.component';
+export * from './lib/refresher/refresher.component';
 export * from './lib/fab/fab.component';
 export * from './lib/loading-progress-bar/loading-progress-bar.component';
 export * from './lib/password-input/password-input.component';
@@ -66,7 +66,7 @@ export * from './lib/stepper/stepper-horizontal/stepper-horizontal.component';
 export * from './lib/searchbar/searchbar.component';
 export * from './lib/app-bar/app-bar-tab/app-bar-tab.component';
 export * from './lib/app-bar/app-bar-tab-content/app-bar-tab-content.component';
-export * from './lib/buttons/buttons.component';
+export * from './lib/overflow-buttons/overflow-buttons.component';
 export * from './lib/button/button.component';
 export * from './lib/network-status/network-status.component';
 export * from './lib/back-button/back-button.component';

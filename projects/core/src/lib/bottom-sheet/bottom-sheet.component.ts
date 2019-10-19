@@ -71,6 +71,7 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
   @Output() fivClose: EventEmitter<FivBottomSheet> = new EventEmitter<
     FivBottomSheet
   >();
+  @Output() fivProgress: EventEmitter<number> = new EventEmitter<number>();
 
   @ContentChild(FivBottomSheetContent) content: FivBottomSheetContent;
 
@@ -210,10 +211,10 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
         break;
       case DrawerState.Docked:
         this.content.content.scrollToTop(0);
-        this._setTranslateY(this._platform.height() - this.dockedHeight + 'px');
+        this._setTranslateY(this._platform.height() - this.dockedHeight);
         break;
       default:
-        this._setTranslateY(this.distanceTop + 'px');
+        this._setTranslateY(this.distanceTop);
     }
   }
 
@@ -255,7 +256,7 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
         this.fivDocked.emit(this);
       }
     } else {
-      this._setTranslateY(this.distanceTop + 'px');
+      this._setTranslateY(this.distanceTop);
     }
   }
 
@@ -272,7 +273,7 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
         this.fivClose.emit();
       }
     } else {
-      this._setTranslateY(this._platform.height() - this.dockedHeight + 'px');
+      this._setTranslateY(this._platform.height() - this.dockedHeight);
     }
   }
 
@@ -303,9 +304,9 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
     if (event.currentTop >= 0 && event.currentTop <= this._platform.height()) {
       const newTop = this._startPositionTop + event.distance;
       if (newTop >= this.distanceTop) {
-        this._setTranslateY(newTop + 'px');
+        this._setTranslateY(newTop);
       } else if (newTop <= this.distanceTop && this.content.panning) {
-        this._setTranslateY(this.distanceTop + 'px');
+        this._setTranslateY(this.distanceTop);
         this.content.content.scrollToPoint(0, 0 - newTop, 0);
       }
       return event;
@@ -313,11 +314,14 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   private _setTranslateY(value) {
+    this.fivProgress.emit(
+      1 - value / (this._platform.height() - this.dockedHeight)
+    );
     this._domCtrl.write(() => {
       this._renderer.setStyle(
         this._element.nativeElement,
         'transform',
-        'translateY(' + value + ')'
+        'translateY(' + value + 'px)'
       );
     });
   }

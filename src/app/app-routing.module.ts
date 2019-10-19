@@ -8,7 +8,8 @@ const routes: Routes = [
   },
   {
     path: 'overflow-buttons',
-    loadChildren: './pages/buttons/buttons.module#ButtonsPageModule'
+    loadChildren:
+      './pages/overflow-buttons/overflow-buttons.module#ButtonsPageModule'
   },
   {
     path: 'components',
@@ -75,6 +76,10 @@ const routes: Routes = [
     path: 'getting-started',
     loadChildren:
       './pages/installation/installation.module#InstallationPageModule'
+  },
+  {
+    path: 'test',
+    loadChildren: './test/test.module#TestPageModule'
   },
   {
     path: 'developer-tools',

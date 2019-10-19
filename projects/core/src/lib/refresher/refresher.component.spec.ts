@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FivLoadingContent } from './loading-content.component';
+import { FivRefresher } from './refresher.component';
 
 describe('LoadingContentComponent', () => {
-  let component: FivLoadingContent;
-  let fixture: ComponentFixture<FivLoadingContent>;
+  let component: FivRefresher;
+  let fixture: ComponentFixture<FivRefresher>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FivLoadingContent]
+      declarations: [FivRefresher]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FivLoadingContent);
+    fixture = TestBed.createComponent(FivRefresher);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

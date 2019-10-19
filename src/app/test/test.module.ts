@@ -1,3 +1,4 @@
+import { ComponentsModule } from '@components/components.module';
 import { FivRippleModule } from './../../../projects/core/src/lib/ripple/ripple.module';
 import { FivOverlayModule } from '@fivethree/core';
 import { NgModule } from '@angular/core';
@@ -23,7 +24,8 @@ const routes: Routes = [
     IonicModule,
     FivOverlayModule,
     FivRippleModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ComponentsModule
   ],
   declarations: [TestPage]
 })

@@ -19,9 +19,9 @@ import {
 import { FivLoadingSpinner } from '../../loading-spinner/loading-spinner.component';
 
 @Component({
-  selector: 'fiv-loading-refresher-content',
-  templateUrl: './loading-refresher-content.component.html',
-  styleUrls: ['./loading-refresher-content.component.scss'],
+  selector: 'fiv-refresher-content',
+  templateUrl: './refresher-content.component.html',
+  styleUrls: ['./refresher-content.component.scss'],
   animations: [
     trigger('fabAnim', [
       transition('void => *', [
@@ -70,7 +70,7 @@ import { FivLoadingSpinner } from '../../loading-spinner/loading-spinner.compone
     ])
   ]
 })
-export class FivLoadingRefresherContent implements OnInit {
+export class FivRefresherContent implements OnInit {
   @Input() icon: string;
   @Input() spinColor: string;
   @Input() fabColor: string;
@@ -93,18 +93,18 @@ export class FivLoadingRefresherContent implements OnInit {
     return this._progress;
   }
 
-  @Output() fivComplete: EventEmitter<
-    FivLoadingRefresherContent
-  > = new EventEmitter<FivLoadingRefresherContent>();
-  @Output() fivRefresh: EventEmitter<
-    FivLoadingRefresherContent
-  > = new EventEmitter<FivLoadingRefresherContent>();
-  @Output() fivHidden: EventEmitter<
-    FivLoadingRefresherContent
-  > = new EventEmitter<FivLoadingRefresherContent>();
-  @Output() fivShowed: EventEmitter<
-    FivLoadingRefresherContent
-  > = new EventEmitter<FivLoadingRefresherContent>();
+  @Output() fivComplete: EventEmitter<FivRefresherContent> = new EventEmitter<
+    FivRefresherContent
+  >();
+  @Output() fivRefresh: EventEmitter<FivRefresherContent> = new EventEmitter<
+    FivRefresherContent
+  >();
+  @Output() fivHidden: EventEmitter<FivRefresherContent> = new EventEmitter<
+    FivRefresherContent
+  >();
+  @Output() fivShowed: EventEmitter<FivRefresherContent> = new EventEmitter<
+    FivRefresherContent
+  >();
   @Output() fivProgress: EventEmitter<number> = new EventEmitter<number>();
 
   @ViewChild('spinner') spinner: FivLoadingSpinner;

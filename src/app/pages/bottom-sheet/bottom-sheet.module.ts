@@ -1,4 +1,3 @@
-import { FivIfModule } from './../../../../projects/core/src/lib/if-platform/if-platform.module';
 import { ComponentsModule } from '@components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,7 +7,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { BottomSheetPage } from './bottom-sheet.page';
-import { FivBottomSheetModule, FivIconModule } from '@fivethree/core';
+import {
+  FivIfModule,
+  FivBottomSheetModule,
+  FivIconModule
+} from '@fivethree/core';
 
 const routes: Routes = [
   {

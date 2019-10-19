@@ -2,13 +2,13 @@ import { FivLoadingSpinnerModule } from './../loading-spinner/loading-spinner.mo
 import { FivPullModule } from '../pull/pull.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FivLoadingContent } from './loading-content.component';
+import { FivRefresher } from './refresher.component';
 import { IonicModule } from '@ionic/angular';
-import { FivLoadingRefresherContent } from './loading-refresher-content/loading-refresher-content.component';
+import { FivRefresherContent } from './refresher-content/refresher-content.component';
 
 @NgModule({
-  declarations: [FivLoadingContent, FivLoadingRefresherContent],
+  declarations: [FivRefresher, FivRefresherContent],
   imports: [CommonModule, FivLoadingSpinnerModule, FivPullModule, IonicModule],
-  exports: [FivLoadingContent, FivLoadingRefresherContent]
+  exports: [FivRefresher, FivRefresherContent]
 })
-export class FivLoadingContentModule {}
+export class FivRefresherModule {}
