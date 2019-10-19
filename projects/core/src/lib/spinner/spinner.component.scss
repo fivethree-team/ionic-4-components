@@ -10,7 +10,7 @@ $pi: 3.14159265359;
 $_fiv-progress-spinner-default-radius: 45px;
 $_fiv-progress-spinner-default-circumference: $pi *
   $_fiv-progress-spinner-default-radius * 2;
-fiv-loading-spinner {
+fiv-spinner {
   display: block;
   position: relative;
   svg {
@@ -39,9 +39,8 @@ fiv-loading-spinner {
   &.fiv-progress-spinner-indeterminate-animation.indeterminate {
     $swift-ease-in-out-duration: 0.5s !default;
     $colorDur: 1.4s;
-    animation:
-      fiv-progress-spinner-linear-rotate $swift-ease-in-out-duration * 4 linear
-        infinite;
+    animation: fiv-progress-spinner-linear-rotate $swift-ease-in-out-duration *
+      4 linear infinite;
     circle {
       transition-property: stroke; // Note: we multiply the duration by 8, because the animation is spread out in 8 stages.
       animation-duration: $swift-ease-in-out-duration * 8;

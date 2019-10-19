@@ -1,9 +1,9 @@
 <ion-fab *ngIf="visible" (@fabAnim.done)="fabAnimDone($event)" [@fabAnim]="horizontal"
   [ngClass]="[mode,horizontal,vertical]" [slot]="slot">
-  <fiv-loading-spinner [color]="spinColor" *ngIf="!extended && loading" (fivProgress)="rotate($event)" #spinner
+  <fiv-spinner [color]="spinColor" *ngIf="!extended && loading" (fivProgress)="rotate($event)" #spinner
     (fivComplete)="fillAnimationDone()" class="spinner" [circleRadius]="30" [diameter]="68" [strokeWidth]="4"
     [mode]="'indeterminate'">
-  </fiv-loading-spinner>
+  </fiv-spinner>
 
   <ion-button [ngClass]="{'pulse': pulse, 'small':!labelComp || !extended}" [color]="color" [disabled]="disabled">
     <fiv-loading-progress-bar *ngIf="extended" [loading]="loading" (fivComplete)="fillAnimationDone()" #bar>

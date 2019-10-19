@@ -1,4 +1,4 @@
-import { takeUntil, tap, filter } from 'rxjs/operators';
+import { takeUntil, tap, filter, map } from 'rxjs/operators';
 import { FivPull } from './../pull/pull.directive';
 import { FivRefresherContent } from './refresher-content/refresher-content.component';
 import {
@@ -10,7 +10,6 @@ import {
   ElementRef,
   Input,
   Renderer2,
-  Host,
   OnDestroy
 } from '@angular/core';
 import {
@@ -18,42 +17,18 @@ import {
   style,
   transition,
   trigger,
-  state,
   AnimationBuilder
 } from '@angular/animations';
 import { IonContent, Platform } from '@ionic/angular';
 import { Subject } from 'rxjs';
+import { easeOutSine } from '../animations/easing-functions';
+import { tween, reverse } from '../animations/tween';
 
 @Component({
   selector: 'fiv-refresher',
   templateUrl: './refresher.component.html',
   styleUrls: ['./refresher.component.scss'],
   animations: [
-    trigger('fillAnim', [
-      transition('* => fill', [
-        style({
-          'stroke-dasharray': 180,
-          'stroke-dashoffset': 90,
-          transformOrigin: 'center',
-          stroke: '#DE3E35'
-        }),
-        animate('360ms ease-out')
-      ]),
-      state(
-        'fill',
-        style({
-          'stroke-dasharray': 315,
-          'stroke-dashoffset': 0,
-          transformOrigin: 'center',
-          stroke: '#1B9A59'
-        })
-      )
-    ]),
-    trigger('spinnerAnim', [
-      transition('* => void', [
-        animate('250ms ease-out', style({ opacity: 0 }))
-      ])
-    ]),
     trigger('hintAnim', [
       transition('void => *', [
         style({ transform: 'translateY(0px) translateX(-50%)' }),
@@ -61,24 +36,21 @@ import { Subject } from 'rxjs';
           '150ms ease-in',
           style({
             opacity: 1,
-            transform:
-              'translateY(calc(112px + env(safe-area-inset-top))) translateX(-50%)'
+            transform: 'translateY(72px) translateX(-50%)'
           })
         )
       ]),
       transition('* => void', [
         style({
-          width: '112px',
+          width: '*',
           opacity: 1,
-          transform:
-            'translateY(calc(112px + env(safe-area-inset-top))) translateX(-50%)'
+          transform: 'translateY(72px) translateX(-50%)'
         }),
         animate(
           '125ms ease-out',
           style({
             width: '40px',
-            transform:
-              'translateY(calc(112px + env(safe-area-inset-top))) translateX(-50%)'
+            transform: 'translateY(72px) translateX(-50%)'
           })
         )
       ])
@@ -90,6 +62,7 @@ export class FivRefresher implements OnInit, OnDestroy {
   @Input() spinColor = 'light';
   @Input() maxPullHeight = 168;
   @Input() minPullHeight = 112;
+  @Input() checkmark = false;
   @Output() fivProgressChanged: EventEmitter<number> = new EventEmitter();
   @Output() fivRefresh: EventEmitter<FivRefresher> = new EventEmitter();
   @ViewChild('spinner') spinner: FivRefresherContent;
@@ -114,6 +87,7 @@ export class FivRefresher implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.$onDestroy.next();
   }
+
   attachPullDirective() {
     const content: IonContent = this.refresher.nativeElement.closest(
       'ion-content'
@@ -138,35 +112,43 @@ export class FivRefresher implements OnInit, OnDestroy {
 
     pull.fivRefresh
       .pipe(
-        tap(() => this.onRefresh()),
+        tap(() => this.refresh()),
         takeUntil(this.$onDestroy)
       )
       .subscribe();
 
     pull.fivCancel
       .pipe(
-        tap(() => this.fivCancel()),
+        tap(() => this.moveBack()),
         takeUntil(this.$onDestroy)
       )
       .subscribe();
   }
 
   refresh() {
-    if (!this.refreshing) {
+    if (this.refreshing) {
       return;
     }
     this.refreshing = true;
-    this.changeAnimationToProgress(112 / 168);
     this.spinner.load();
+    this.setPullAnimationProgress(112 / 168);
     this.fivRefresh.emit(this);
   }
 
   complete() {
+    if (!this.refreshing) {
+      return;
+    }
     this.spinner.complete();
   }
 
-  fillAnimationDone() {
+  onDone() {
     this.spinner.hide();
+  }
+
+  onHidden() {
+    this.refreshing = false;
+    this.setPullAnimationProgress(0);
   }
 
   showHint() {
@@ -179,10 +161,7 @@ export class FivRefresher implements OnInit, OnDestroy {
 
   postHint(event) {
     if (!event.fromState && event.toState === 'void') {
-      this.setPullAnimationProgress(112 / 168);
-      this.spinner.load();
-      this.refreshing = true;
-      this.fivRefresh.emit(this);
+      this.refresh();
     }
   }
 
@@ -234,31 +213,32 @@ export class FivRefresher implements OnInit, OnDestroy {
     this.spinner.setValue(value * 0.84);
   }
 
-  onRefresh() {
-    this.refresh();
-    this.spinner.load();
-  }
-
-  fivCancel() {
-    this.moveBack();
-  }
-
-  afterSpinnerHide() {
-    this.setPullAnimationProgress(0);
-    this.refreshing = false;
-    this.spinner.reset();
-  }
-
   moveBack() {
     const animation = this.builder.build([
       style({
-        transform: `translateY(${this.currentProgress * 168}px) rotateZ(${360 *
-          this.currentProgress}deg)`
+        transform: `translateY(${this.currentProgress *
+          this.minPullHeight}px) rotateZ(${360 * this.currentProgress}deg)`
       }),
-      animate('145ms ease-in', style({ transform: 'translateY(0) rotateZ(0)' }))
+      animate('205ms ease-in', style({ transform: 'translateY(0) rotateZ(0)' }))
     ]);
-
     const player = animation.create(this.spinner.element.nativeElement);
+
+    tween(easeOutSine, 145)
+      .pipe(
+        reverse(),
+        map(n =>
+          Math.max(
+            0,
+            Math.min(
+              100,
+              (this.currentProgress * n * 100 * this.maxPullHeight) /
+                this.minPullHeight
+            )
+          )
+        ),
+        tap(value => this.spinner.setValue(value))
+      )
+      .subscribe();
     player.play();
     player.onDone(() => {
       this.setPullAnimationProgress(0);
@@ -274,9 +254,8 @@ export class FivRefresher implements OnInit, OnDestroy {
       .setStyle(
         this.spinner.element.nativeElement,
         'transform',
-        `translateY(${168 * this.currentProgress}px) rotateZ(${(360 *
-          progress) /
-          200}deg)`
+        `translateY(${this.maxPullHeight *
+          this.currentProgress}px) rotateZ(${(360 * progress) / 200}deg)`
       );
   }
 }

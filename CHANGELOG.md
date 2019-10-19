@@ -395,7 +395,7 @@
 
 ### Features
 
-* **app-bar,loading-fab,loading-spinner,center:** add module ([f2e0812](https://github.com/fivethree-team/component-library/commit/f2e0812))
+* **app-bar,loading-fab,spinner,center:** add module ([f2e0812](https://github.com/fivethree-team/component-library/commit/f2e0812))
 * **back-button:** add module ([d3d43b0](https://github.com/fivethree-team/component-library/commit/d3d43b0))
 * **back-button:** configurable root url ([5a46e6d](https://github.com/fivethree-team/component-library/commit/5a46e6d))
 * **back-button:** handle android back button ([1fbdc42](https://github.com/fivethree-team/component-library/commit/1fbdc42))

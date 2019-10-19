@@ -2,7 +2,7 @@
 
 <ion-content>
 
-  <fiv-refresher spinColor="dark" #content></fiv-refresher>
+  <fiv-refresher spinColor="dark" #refresher></fiv-refresher>
 
   <ion-grid class="page-content" fixed>
     <ion-row>
@@ -12,13 +12,13 @@
             <ion-label>Show Header</ion-label>
             <ion-checkbox slot="end" [(ngModel)]="header"></ion-checkbox>
           </ion-item>
-          <ion-button (click)="content.showHint()">
+          <ion-button (click)="refresher.showHint()">
             Show hint
           </ion-button>
-          <ion-button (click)="content.refresh()">
+          <ion-button (click)="refresher.refresh()">
             Refresh
           </ion-button>
-          <ion-button (click)="content.complete()">
+          <ion-button (click)="refresher.complete()">
             complete
           </ion-button>
 

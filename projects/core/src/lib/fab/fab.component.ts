@@ -23,7 +23,7 @@ import {
   trigger,
   state
 } from '@angular/animations';
-import { FivLoadingSpinner } from '../loading-spinner/loading-spinner.component';
+import { FivSpinner } from '../spinner/spinner.component';
 import { IonContent, IonLabel, Platform } from '@ionic/angular';
 import { Subject } from 'rxjs';
 import {
@@ -120,7 +120,7 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   @Output() fivShow: EventEmitter<FivFab> = new EventEmitter<FivFab>();
   @Output() fivTransition: EventEmitter<FivFab> = new EventEmitter<FivFab>();
 
-  @ViewChild('spinner') spinner: FivLoadingSpinner;
+  @ViewChild('spinner') spinner: FivSpinner;
   @ViewChild('feature') featureDiscovery: FivFeatureDiscovery;
   @ViewChild('bar') bar: FivLoadingProgressBar;
   @ContentChild(FivIcon) iconComp: FivIcon;

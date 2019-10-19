@@ -17,7 +17,7 @@ import { FivPullModule } from './pull/pull.module';
 import { FivCenterModule } from './center/center.module';
 import { FivAppBarModule } from './app-bar/app-bar.module';
 import { FivFabModule } from './fab/fab.module';
-import { FivLoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
+import { FivSpinnerModule } from './spinner/spinner.module';
 import { FivBackButtonModule } from './back-button/back-button.module';
 import { FivOverflowButtonsModule } from './overflow-buttons/overflow-buttons.module';
 import { FivCollapsableModule } from './collapsable-menu/collapsable-menu.module';
@@ -49,7 +49,7 @@ const componentModules = [
   FivRefresherModule,
   FivFabModule,
   FivLoadingProgressBarModule,
-  FivLoadingSpinnerModule,
+  FivSpinnerModule,
   FivNetworkStatusModule,
   FivOverlayModule,
   FivPasswordInputModule,

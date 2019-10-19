@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FivFab } from './fab.component';
-import { FivLoadingSpinnerModule } from '../loading-spinner/loading-spinner.module';
+import { FivSpinnerModule } from '../spinner/spinner.module';
 
 @NgModule({
   declarations: [FivFab],
@@ -15,7 +15,7 @@ import { FivLoadingSpinnerModule } from '../loading-spinner/loading-spinner.modu
     FivCenterModule,
     FivIconModule,
     FivFeatureDiscoveryModule,
-    FivLoadingSpinnerModule,
+    FivSpinnerModule,
     IonicModule,
 
     FivLoadingProgressBarModule

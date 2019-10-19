@@ -22,9 +22,9 @@ import { timer, interval } from 'rxjs';
 const BASE_SIZE = 100;
 
 @Component({
-  selector: 'fiv-loading-spinner',
-  templateUrl: './loading-spinner.component.html',
-  styleUrls: ['./loading-spinner.component.scss'],
+  selector: 'fiv-spinner',
+  templateUrl: './spinner.component.html',
+  styleUrls: ['./spinner.component.scss'],
   // tslint:disable-next-line:use-host-property-decorator
   host: {
     '[style.width.px]': 'diameter',
@@ -33,7 +33,7 @@ const BASE_SIZE = 100;
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
-export class FivLoadingSpinner implements OnInit {
+export class FivSpinner implements OnInit {
   private static diameters = new Set<number>([BASE_SIZE]);
   private static styleTag: HTMLStyleElement | null = null;
   private _diameter = BASE_SIZE;
@@ -41,7 +41,7 @@ export class FivLoadingSpinner implements OnInit {
   _value = 0;
 
   @Output() fivProgress = new EventEmitter<number>();
-  @Output() fivComplete = new EventEmitter<FivLoadingSpinner>();
+  @Output() fivComplete = new EventEmitter<FivSpinner>();
   @ViewChild('determinateCircle') determinateCircle: ElementRef;
   @Input() mode: 'indeterminate' | 'determinate' = 'indeterminate';
   @Input() circleRadius = 45;
@@ -108,7 +108,7 @@ export class FivLoadingSpinner implements OnInit {
   set diameter(size: number) {
     this._diameter = size;
 
-    if (!FivLoadingSpinner.diameters.has(this._diameter)) {
+    if (!FivSpinner.diameters.has(this._diameter)) {
       this._attachStyleNode();
     }
   }
@@ -124,19 +124,19 @@ export class FivLoadingSpinner implements OnInit {
 
   /** Dynamically generates a style tag containing the correct animation for this diameter. */
   private _attachStyleNode(): void {
-    let styleTag = FivLoadingSpinner.styleTag;
+    let styleTag = FivSpinner.styleTag;
 
     if (!styleTag) {
       styleTag = this._document.createElement('style');
       this._document.head.appendChild(styleTag);
-      FivLoadingSpinner.styleTag = styleTag;
+      FivSpinner.styleTag = styleTag;
     }
 
     if (styleTag && styleTag.sheet) {
       (styleTag.sheet as CSSStyleSheet).insertRule(this._getAnimationText(), 0);
     }
 
-    FivLoadingSpinner.diameters.add(this.diameter);
+    FivSpinner.diameters.add(this.diameter);
   }
 
   /** Generates animation styles adjusted for the spinner's diameter. */
@@ -219,7 +219,7 @@ export class FivLoadingSpinner implements OnInit {
     this.change.detectChanges();
   }
 
-  stopSpinning() {
+  stop() {
     this._value = 0;
     this.change.detectChanges();
   }

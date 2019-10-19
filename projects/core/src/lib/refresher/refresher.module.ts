@@ -1,4 +1,4 @@
-import { FivLoadingSpinnerModule } from './../loading-spinner/loading-spinner.module';
+import { FivSpinnerModule } from './../spinner/spinner.module';
 import { FivPullModule } from '../pull/pull.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,7 +8,7 @@ import { FivRefresherContent } from './refresher-content/refresher-content.compo
 
 @NgModule({
   declarations: [FivRefresher, FivRefresherContent],
-  imports: [CommonModule, FivLoadingSpinnerModule, FivPullModule, IonicModule],
+  imports: [CommonModule, FivSpinnerModule, FivPullModule, IonicModule],
   exports: [FivRefresher, FivRefresherContent]
 })
 export class FivRefresherModule {}

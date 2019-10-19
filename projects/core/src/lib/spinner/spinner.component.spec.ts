@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FivLoadingSpinner } from './loading-spinner.component';
+import { FivSpinner } from './spinner.component';
 
 describe('LoadingSpinnerComponent', () => {
-  let component: FivLoadingSpinner;
-  let fixture: ComponentFixture<FivLoadingSpinner>;
+  let component: FivSpinner;
+  let fixture: ComponentFixture<FivSpinner>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FivLoadingSpinner]
+      declarations: [FivSpinner]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FivLoadingSpinner);
+    fixture = TestBed.createComponent(FivSpinner);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

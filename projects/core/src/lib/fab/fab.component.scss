@@ -62,7 +62,7 @@ ion-fab.end {
 
 $offset: 187;
 $duration: 1.4s;
-fiv-loading-spinner {
+fiv-spinner {
   position: absolute;
   left: calc((var(--fiv-spinner-size) - 56px) / -2);
   top: calc((var(--fiv-spinner-size) - 56px) / -2);

@@ -21,7 +21,7 @@ export class FivPull implements OnInit {
   @Input() direction: 'up' | 'down' = 'down';
 
   @Output() fivRefresh = new EventEmitter<any>();
-  @Output() fivCancel = new EventEmitter<any>();
+  @Output() fivCancel = new EventEmitter<number>();
   @Output() fivPull = new EventEmitter<number>();
 
   scrollY: HTMLElement;
