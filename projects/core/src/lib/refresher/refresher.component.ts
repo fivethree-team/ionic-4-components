@@ -62,7 +62,6 @@ export class FivRefresher implements OnInit, OnDestroy {
   @Input() spinColor = 'light';
   @Input() maxPullHeight = 168;
   @Input() minPullHeight = 112;
-  @Input() checkmark = false;
   @Output() fivProgressChanged: EventEmitter<number> = new EventEmitter();
   @Output() fivRefresh: EventEmitter<FivRefresher> = new EventEmitter();
   @ViewChild('spinner') spinner: FivRefresherContent;
