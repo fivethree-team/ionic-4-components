@@ -2,7 +2,7 @@
 
 <ion-content>
 
-  <fiv-refresher spinColor="dark" #refresher></fiv-refresher>
+  <fiv-refresher #refresher></fiv-refresher>
 
   <ion-grid class="page-content" fixed>
     <ion-row>
@@ -21,7 +21,7 @@
           <ion-button (click)="refresher.complete()">
             complete
           </ion-button>
-
+          <div class="scroll"></div>
         </app-example>
       </ion-col>
     </ion-row>

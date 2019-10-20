@@ -10,6 +10,7 @@ $pi: 3.14159265359;
 $_fiv-progress-spinner-default-radius: 45px;
 $_fiv-progress-spinner-default-circumference: $pi *
   $_fiv-progress-spinner-default-radius * 2;
+
 fiv-spinner {
   display: block;
   position: relative;

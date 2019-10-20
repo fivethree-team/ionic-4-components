@@ -14,3 +14,8 @@ ion-grid {
 .scroll {
   height: 100vh;
 }
+
+fiv-refresher {
+  --fiv-spin-color: var(--ion-color-secondary);
+  --fiv-spin-background: var(--ion-color-dark);
+}

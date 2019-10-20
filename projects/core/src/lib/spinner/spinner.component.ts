@@ -45,10 +45,7 @@ export class FivSpinner implements OnInit {
   @ViewChild('determinateCircle') determinateCircle: ElementRef;
   @Input() mode: 'indeterminate' | 'determinate' = 'indeterminate';
   @Input() circleRadius = 45;
-  _color: string;
-  @Input() set color(color: string) {
-    this._color = `var(--ion-color-${color})`;
-  }
+  _color = 'var(--fiv-spin-color)';
 
   @HostBinding('class') get class() {
     return (
@@ -62,8 +59,7 @@ export class FivSpinner implements OnInit {
     public _elementRef: ElementRef,
     public change: ChangeDetectorRef,
     private builder: AnimationBuilder,
-    public sanitizer: DomSanitizer,
-    private renderer: Renderer2
+    public sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {}
@@ -179,7 +175,7 @@ export class FivSpinner implements OnInit {
         'stroke-dasharray': 180,
         'stroke-dashoffset': 90,
         transformOrigin: 'center',
-        stroke: '#DE3E35'
+        stroke: 'var(--fiv-spin-color)'
       }),
       animate(
         `${duration}ms ease-out`,
@@ -187,7 +183,7 @@ export class FivSpinner implements OnInit {
           'stroke-dasharray': 315,
           'stroke-dashoffset': 0,
           transformOrigin: 'center',
-          stroke: '#1B9A59',
+          stroke: 'var(--fiv-spin-color)',
           opacity: 0
         })
       )

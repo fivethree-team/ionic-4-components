@@ -59,7 +59,6 @@ import { tween, reverse } from '../animations/tween';
 })
 export class FivRefresher implements OnInit, OnDestroy {
   @Input() hintText = 'new posts';
-  @Input() spinColor = 'light';
   @Input() maxPullHeight = 168;
   @Input() minPullHeight = 112;
   @Output() fivProgressChanged: EventEmitter<number> = new EventEmitter();
@@ -70,7 +69,7 @@ export class FivRefresher implements OnInit, OnDestroy {
 
   refreshing = false;
 
-  $onDestroy = new Subject();
+  private $onDestroy = new Subject();
 
   constructor(
     private builder: AnimationBuilder,
@@ -79,15 +78,15 @@ export class FivRefresher implements OnInit, OnDestroy {
     private platform: Platform
   ) {}
 
-  ngOnInit() {
-    this.attachPullDirective();
+  async ngOnInit() {
+    await this.attachPullDirective();
   }
 
   ngOnDestroy(): void {
     this.$onDestroy.next();
   }
 
-  attachPullDirective() {
+  private async attachPullDirective() {
     const content: IonContent = this.refresher.nativeElement.closest(
       'ion-content'
     );
@@ -98,12 +97,15 @@ export class FivRefresher implements OnInit, OnDestroy {
       );
     }
     content.scrollEvents = true;
+    const scroll = await content.getScrollElement();
+    const overflow = scroll.style.overflow;
     const pull = new FivPull(new ElementRef(content), this.platform, content);
     pull.init();
 
     pull.fivPull
       .pipe(
         filter(() => !this.refreshing && !this.hintVisible),
+        tap(() => (scroll.style.overflow = 'hidden')),
         tap(progress => this.fivPull(progress)),
         takeUntil(this.$onDestroy)
       )
@@ -118,7 +120,23 @@ export class FivRefresher implements OnInit, OnDestroy {
 
     pull.fivCancel
       .pipe(
+        tap(() => (scroll.style.overflow = overflow)),
         tap(() => this.moveBack()),
+        takeUntil(this.$onDestroy)
+      )
+      .subscribe();
+
+    this.spinner.fivComplete
+      .pipe(
+        tap(() => (scroll.style.overflow = overflow)),
+        takeUntil(this.$onDestroy)
+      )
+      .subscribe();
+
+    this.fivRefresh
+      .pipe(
+        tap(() => scroll.scrollTo({ top: 0, behavior: 'smooth' })),
+        tap(() => (scroll.style.overflow = 'hidden')),
         takeUntil(this.$onDestroy)
       )
       .subscribe();

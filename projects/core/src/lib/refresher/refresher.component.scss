@@ -1,3 +1,8 @@
+:host {
+  --fiv-spin-color: var(--ion-color-primary);
+  --fiv-spin-background: var(--ion-color-light);
+}
+
 .icon {
   height: 20px;
   width: 20px;
@@ -20,7 +25,7 @@
   height: 40px;
   padding-left: 8px;
   padding-right: 8px;
-  background: var(--ion-color-light);
+  background: var(--fiv-spin-background);
   border-radius: 40px;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
   margin: 0;

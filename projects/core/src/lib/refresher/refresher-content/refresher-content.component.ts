@@ -17,11 +17,6 @@ import { FivSpinner } from '../../spinner/spinner.component';
   styleUrls: ['./refresher-content.component.scss']
 })
 export class FivRefresherContent implements OnInit {
-  @Input() icon: string;
-  @Input() spinColor: string;
-  @Input() fabColor: string;
-  @Input() iconColor = '#000';
-  @Input() disabled = false;
   _progress = 0;
   @Input() set progress(progress) {
     this._progress = progress;
@@ -57,7 +52,6 @@ export class FivRefresherContent implements OnInit {
   @ViewChild('background') background: ElementRef;
 
   visible = false;
-  iconState = 'normal';
 
   constructor(
     public element: ElementRef,
