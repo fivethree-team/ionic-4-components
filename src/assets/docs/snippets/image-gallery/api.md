@@ -1,11 +1,11 @@
 ```typescript
 ...
-import { FivExpandableModule } from '@fivethree/core';
+import { FivGalleryModule } from '@fivethree/core';
 
 @NgModule({
   imports: [
     ...
-    FivExpandableModule
+    FivGalleryModule
   ],
     ...
 })

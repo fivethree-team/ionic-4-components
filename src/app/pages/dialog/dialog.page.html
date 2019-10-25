@@ -7,6 +7,13 @@
     <ion-row>
       <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
         offsetMd="0" sizeSm="12" sizeMd="12">
+        <app-example 
+        [api]="'assets/docs/snippets/dialog/api.md'" 
+        [typescript]="'assets/docs/snippets/dialog/ts.md'" 
+        [css]="'assets/docs/snippets/dialog/css.md'"
+        [html]="'assets/docs/snippets/dialog/html.md'" 
+        [title]="'Dialog Component'" 
+        [subtitle]="''">
         <ion-list>
           <ion-item>
             <ion-label>Backdrop</ion-label>
@@ -47,8 +54,8 @@
           <ion-button (click)="dialog.open()">
             Show Dialog
           </ion-button>
-
         </ion-list>
+      </app-example>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -56,9 +63,18 @@
 
 
 </ion-content>
-<fiv-dialog (fivClose)="close()" [pullEnabled]="pull" (fivDurationOver)="dialog.close()" [inDuration]="inDuration"
-  [outDuration]="outDuration" #dialog [duration]="duration" [shape]="shape" [horizontalAlign]="horizontalAlign"
-  [verticalAlign]="verticalAlign" [backdrop]="backdrop">
+<fiv-dialog 
+(fivClose)="close()" 
+[pullEnabled]="pull" 
+(fivDurationOver)="dialog.close()" 
+[inDuration]="inDuration"
+[outDuration]="outDuration" 
+#dialog 
+[duration]="duration" 
+[shape]="shape" 
+[horizontalAlign]="horizontalAlign"
+[verticalAlign]="verticalAlign" 
+[backdrop]="backdrop">
 
   <ion-card-header>
     <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
