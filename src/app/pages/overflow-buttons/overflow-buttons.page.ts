@@ -7,12 +7,8 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./overflow-buttons.page.scss']
 })
 export class ButtonsPage implements OnInit {
-  subHeader = 'subheader here';
-  header = 'More Actions';
-  count = 1;
-  forceActionsheet = false;
-  forcePopover = false;
-  iconsOnly = true;
+  count = 0;
+  mode: 'popover' | 'bottom-sheet' | 'action-sheet' = 'popover';
 
   constructor(public toastController: ToastController) {}
 
@@ -24,5 +20,10 @@ export class ButtonsPage implements OnInit {
       duration: 2000
     });
     toast.present();
+  }
+
+  change(event: CustomEvent) {
+    console.log(event);
+    this.mode = event.detail.value;
   }
 }

@@ -4,8 +4,7 @@
   <div #pOuter class="feature center pulse" [style.height]="(innerDiameter + featurePadding) + 'px'"
     [style.width]="(innerDiameter + featurePadding) + 'px'">
   </div>
-  <fiv-ripple #pInner class="feature center" (fivClick)="fivClick.emit()" [@pulse]="pulse"
-    (@pulse.done)="handleFeatureAnimation($event)" [style.height]="(innerDiameter + (icon ? featurePadding : 0)) + 'px'"
+  <fiv-ripple #pInner class="feature center inner" (fivClick)="fivClick.emit()" [style.height]="(innerDiameter + (icon ? featurePadding : 0)) + 'px'"
     [style.width]="(innerDiameter + (icon ? featurePadding : 0)) + 'px'">
     <fiv-icon class="center" *ngIf="icon" [name]="icon"></fiv-icon>
   </fiv-ripple>

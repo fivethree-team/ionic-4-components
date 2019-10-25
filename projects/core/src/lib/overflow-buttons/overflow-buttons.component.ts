@@ -21,15 +21,11 @@ import { FivButton } from '../button/button.component';
 })
 export class FivOverflowButtons implements OnInit, AfterContentInit {
   @Input() slot = 'end';
-  @Input() subHeader: string;
-  @Input() header: string;
   @Input() icon = 'more';
   @Input() text: string;
+  @Input() mode: 'popover' | 'action-sheet' | 'bottom-sheet' = 'popover';
   @Input() color: string;
   @Input() count = 0;
-  @Input() forceActionsheet = false;
-  @Input() forcePopover = false;
-  @Input() iconsOnly = true;
   @ContentChildren(FivButton) buttons: QueryList<FivButton>;
 
   constructor(
@@ -43,13 +39,12 @@ export class FivOverflowButtons implements OnInit, AfterContentInit {
   ngAfterContentInit(): void {}
 
   onMenuClicked(event) {
-    if (this.forceActionsheet) {
-      this.presentActionSheet(event);
-      return;
+    console.log('menu clicked', this.mode);
+    if (this.mode === 'action-sheet') {
+      return this.presentActionSheet(event);
     }
-    if (this.forcePopover) {
-      this.presentPopover(event);
-      return;
+    if (this.mode === 'popover') {
+      return this.presentPopover(event);
     }
     if (this.platform.is('mobile')) {
       this.presentActionSheet(event);
@@ -99,8 +94,6 @@ export class FivOverflowButtons implements OnInit, AfterContentInit {
         }
       });
     const actionSheet = await this.actionSheetController.create({
-      header: this.header,
-      subHeader: this.subHeader,
       buttons: buttons
     });
     await actionSheet.present();

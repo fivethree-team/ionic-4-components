@@ -19,3 +19,7 @@ fiv-refresher {
   --fiv-spin-color: var(--ion-color-secondary);
   --fiv-spin-background: var(--ion-color-dark);
 }
+ion-item,
+ion-list {
+  --background: var(--ion-item-background);
+}

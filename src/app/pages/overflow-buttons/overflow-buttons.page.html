@@ -6,48 +6,47 @@
       <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
         offsetMd="0" sizeSm="12" sizeMd="12">
         <app-example docs="assets/docs/components/overflow-buttons.md">
-          <ion-item-divider>
-            <ion-label>Example</ion-label>
-          </ion-item-divider>
+          <ion-item>
+            <ion-label position="stacked">Number of visible icons</ion-label>
+            <ion-input min="0" max="4" type="number" placeholder="0 - 4" [(ngModel)]="count">
+            </ion-input>
+          </ion-item>
+          <ion-list>
+            <ion-radio-group name="mode" (ionChange)="change($event)">
+              <ion-list-header>Mode</ion-list-header>
+              <ion-item>
+                <ion-label>Popover</ion-label>
+                <ion-radio checked value="popover"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Action Sheet</ion-label>
+                <ion-radio value="action-sheet"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Bottom Sheet</ion-label>
+                <ion-radio value="bottom-sheet"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
 
-          <ion-toolbar>
-            <fiv-overflow-buttons [iconsOnly]="iconsOnly" [forceActionsheet]="forceActionsheet"
-              [forcePopover]="forcePopover" [header]="header" [subHeader]="subHeader" [count]="count" slot="end">
-              <fiv-button [color]="'primary'" (click)="presentToast('add clicked')" [text]="'Add'">
+          <ion-item-divider>
+          </ion-item-divider>
+          <ion-toolbar color="light">
+            <ion-title color="primary">Example Toolbar</ion-title>
+            <fiv-overflow-buttons color="primary" [mode]="mode" [count]="count" slot="end">
+              <fiv-button [color]="'primary'" [icon]="'md-add'" (click)="presentToast('add clicked')" [text]="'Add'">
               </fiv-button>
-              <fiv-button (click)="presentToast('delete clicked')" [icon]="'md-trash'" [text]="'Delete'">
+              <fiv-button color="primary" (click)="presentToast('delete clicked')" [icon]="'md-trash'"
+                [text]="'Delete'">
               </fiv-button>
-              <fiv-button (click)="presentToast('select image clicked')" [icon]="'md-image'" [text]="'Select Image'">
+              <fiv-button color="primary" (click)="presentToast('select image clicked')" [icon]="'md-image'"
+                [text]="'Select Image'">
               </fiv-button>
-              <fiv-button (click)="presentToast('take photo clicked')" [icon]="'md-camera'" [text]="'Take Photo'">
+              <fiv-button color="primary" (click)="presentToast('take photo clicked')" [icon]="'md-camera'"
+                [text]="'Take Photo'">
               </fiv-button>
             </fiv-overflow-buttons>
           </ion-toolbar>
-
-          <ion-item>
-            <ion-label position="floating">Number of visible icons outside of popover / actionsheet</ion-label>
-            <ion-input min="0" max="4" type="number" placeholder="0 - 4" [(ngModel)]="count"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Header Text (Actionsheet only)</ion-label>
-            <ion-input type="text" placeholder="header" [(ngModel)]="header"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Subheader Text (Actionsheet only)</ion-label>
-            <ion-input type="text" placeholder="subHeader" [(ngModel)]="subHeader"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Force Actionsheet</ion-label>
-            <ion-checkbox [checked]="forceActionsheet" [(ngModel)]="forceActionsheet" slot="end"></ion-checkbox>
-          </ion-item>
-          <ion-item>
-            <ion-label>Force Popover</ion-label>
-            <ion-checkbox [checked]="forcePopover" [(ngModel)]="forcePopover" slot="end"></ion-checkbox>
-          </ion-item>
-          <ion-item>
-            <ion-label>Show icons only (Toolbar only)</ion-label>
-            <ion-checkbox [checked]="iconsOnly" [(ngModel)]="iconsOnly" slot="end"></ion-checkbox>
-          </ion-item>
 
         </app-example>
       </ion-col>

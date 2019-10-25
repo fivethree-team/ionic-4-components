@@ -16,7 +16,8 @@
 
   display: block;
   position: relative;
-  --fiv-background: unset;
+  --fiv-background: var(--ion-color-light);
+  --fiv-background-shade: var(--ion-color-light-shade);
   width: 100%;
 }
 
@@ -91,6 +92,7 @@
 
   ion-item {
     --border-radius: var(--border-radius-rounded-left);
+    --background: var(--fiv-background);
   }
 }
 
@@ -99,6 +101,7 @@
 
   ion-item {
     --border-radius: var(--border-radius-rounded-right);
+    --background: var(--fiv-background);
   }
 }
 
@@ -129,10 +132,11 @@ fiv-icon {
 }
 
 ion-item:hover {
-  --background-hover: var(--ion-color-light);
-
   cursor: pointer;
-  --background: var(--background-hover);
+  --background: var(--background-hover) !important;
+  ion-label {
+    --color: var(--ion-color-primary);
+  }
 }
 
 :host(.router-item-disabled) {

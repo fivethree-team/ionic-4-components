@@ -8,48 +8,51 @@
       <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
         offsetMd="0" sizeSm="12" sizeMd="12">
         <app-example docs="assets/docs/components/dialog.md">
-          <ion-list>
-            <ion-item>
-              <ion-label>Backdrop</ion-label>
-              <ion-toggle slot="end" [(ngModel)]="backdrop"></ion-toggle>
-            </ion-item>
-            <ion-item>
-              <ion-label>Pull Enabled</ion-label>
-              <ion-toggle slot="end" [(ngModel)]="pull"></ion-toggle>
-            </ion-item>
-            <ion-item>
-              <ion-label>Vertical Alignment</ion-label>
-              <ion-select slot="end" [(ngModel)]="verticalAlign">
-                <ion-select-option value="top">top</ion-select-option>
-                <ion-select-option value="center">center</ion-select-option>
-                <ion-select-option value="bottom">bottom</ion-select-option>
-              </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-label>Horizontal Alignment</ion-label>
-              <ion-select slot="end" [(ngModel)]="horizontalAlign">
-                <ion-select-option value="left">left</ion-select-option>
-                <ion-select-option value="middle">middle</ion-select-option>
-                <ion-select-option value="right">right</ion-select-option>
-              </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-label>Shape</ion-label>
-              <ion-select slot="end" [(ngModel)]="shape">
-                <ion-select-option value="card">card</ion-select-option>
-                <ion-select-option value="fill">fill</ion-select-option>
-              </ion-select>
-            </ion-item>
+          <ion-item>
+            <ion-label>Backdrop</ion-label>
+            <ion-toggle slot="end" [(ngModel)]="backdrop"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>Pull Enabled</ion-label>
+            <ion-toggle slot="end" [(ngModel)]="pull"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>Vertical Alignment</ion-label>
+            <ion-select slot="end" [(ngModel)]="verticalAlign">
+              <ion-select-option value="top">top</ion-select-option>
+              <ion-select-option value="center">center</ion-select-option>
+              <ion-select-option value="bottom">bottom</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Horizontal Alignment</ion-label>
+            <ion-select slot="end" [(ngModel)]="horizontalAlign">
+              <ion-select-option value="left">left</ion-select-option>
+              <ion-select-option value="middle">middle</ion-select-option>
+              <ion-select-option value="right">right</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Shape</ion-label>
+            <ion-select slot="end" [(ngModel)]="shape">
+              <ion-select-option value="card">card</ion-select-option>
+              <ion-select-option value="fill">fill</ion-select-option>
+            </ion-select>
+          </ion-item>
 
-            <ion-item>
-              <ion-label>Duration</ion-label>
-              <ion-input [(ngModel)]="duration" type="number"></ion-input>
-            </ion-item>
-            <ion-button (click)="dialog.open()">
-              Show Dialog
-            </ion-button>
+          <ion-item>
+            <ion-label>Duration</ion-label>
+            <ion-input [(ngModel)]="duration" type="number"></ion-input>
+          </ion-item>
+          <ion-toolbar color="translucent">
+            <ion-buttons slot="end">
+              <ion-button shape="round" fill="outline" color="primary" (click)="dialog.open()">
+                Show Example Dialog
+              </ion-button>
+            </ion-buttons>
 
-          </ion-list>
+          </ion-toolbar>
+
         </app-example>
       </ion-col>
     </ion-row>
@@ -69,7 +72,7 @@
   <ion-card-content>
     <p>The content for this dialog</p>
   </ion-card-content>
-  <ion-toolbar>
+  <ion-toolbar color="translucent">
     <ion-buttons slot="end">
       <ion-button (click)="dialog.close()">
         Cancel

@@ -12,15 +12,20 @@
             <ion-label>Show Header</ion-label>
             <ion-checkbox slot="end" [(ngModel)]="header"></ion-checkbox>
           </ion-item>
-          <ion-button (click)="refresher.showHint()">
-            Show hint
-          </ion-button>
-          <ion-button (click)="refresher.refresh()">
-            Refresh
-          </ion-button>
-          <ion-button (click)="refresher.complete()">
-            complete
-          </ion-button>
+          <ion-toolbar color="translucent">
+            <ion-buttons slot="end">
+              <ion-button shape="round" fill="outline" color="primary" (click)="refresher.showHint()">
+                Show hint
+              </ion-button>
+              <ion-button shape="round" fill="outline" color="primary" (click)="refresher.refresh()">
+                Refresh
+              </ion-button>
+              <ion-button shape="round" fill="outline" color="primary" (click)="refresher.complete()">
+                complete
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+
           <div class="scroll"></div>
         </app-example>
       </ion-col>

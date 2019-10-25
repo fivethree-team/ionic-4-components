@@ -98,14 +98,12 @@ export class FivRefresher implements OnInit, OnDestroy {
     }
     content.scrollEvents = true;
     const scroll = await content.getScrollElement();
-    const overflow = scroll.style.overflow;
     const pull = new FivPull(new ElementRef(content), this.platform, content);
     pull.init();
 
     pull.fivPull
       .pipe(
         filter(() => !this.refreshing && !this.hintVisible),
-        tap(() => (scroll.style.overflow = 'hidden')),
         tap(progress => this.fivPull(progress)),
         takeUntil(this.$onDestroy)
       )
@@ -120,23 +118,16 @@ export class FivRefresher implements OnInit, OnDestroy {
 
     pull.fivCancel
       .pipe(
-        tap(() => (scroll.style.overflow = overflow)),
         tap(() => this.moveBack()),
         takeUntil(this.$onDestroy)
       )
       .subscribe();
 
-    this.spinner.fivComplete
-      .pipe(
-        tap(() => (scroll.style.overflow = overflow)),
-        takeUntil(this.$onDestroy)
-      )
-      .subscribe();
+    this.spinner.fivComplete.pipe(takeUntil(this.$onDestroy)).subscribe();
 
     this.fivRefresh
       .pipe(
         tap(() => scroll.scrollTo({ top: 0, behavior: 'smooth' })),
-        tap(() => (scroll.style.overflow = 'hidden')),
         takeUntil(this.$onDestroy)
       )
       .subscribe();

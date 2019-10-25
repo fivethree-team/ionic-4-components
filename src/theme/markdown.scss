@@ -1,0 +1,29 @@
+markdown {
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background: var(--ion-item-background);
+  }
+
+  .token.function,
+  .token.class-name {
+    color: var(--ion-color-secondary);
+  }
+
+  .token.string {
+    color: var(--ion-color-tertiary);
+  }
+
+  .token.attr-name {
+    color: var(--ion-color-tertiary);
+  }
+  .token.attr-value {
+    color: var(--ion-color-tertiary);
+  }
+  .token.tag {
+    color: var(--ion-color-secondary);
+  }
+
+  h1 {
+    color: var(--ion-color-primary);
+  }
+}

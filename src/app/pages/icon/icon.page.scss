@@ -1,5 +1,5 @@
 :host {
-  --fiv-dot-color-background: var(--ion-color-light);
+  --fiv-dot-color-background: var(--ion-background-color);
   --fiv-dot-color: var(--ion-color-primary);
 }
 
@@ -7,4 +7,8 @@
   --fiv-color-icon: var(--ion-color-dark);
   position: relative;
   height: 120px;
+}
+
+ion-item {
+  --background: var(--ion-item-background);
 }

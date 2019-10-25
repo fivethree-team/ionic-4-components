@@ -1,3 +1,6 @@
 .scroll {
   height: 100vh;
 }
+ion-item {
+  --background: var(--ion-item-background);
+}
