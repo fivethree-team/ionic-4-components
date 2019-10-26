@@ -43,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/fivethree-team/fivethree/issues"
   },
-  "homepage": "https://github.com/fivethree-team/fivethree#readme"
+  "homepage": "https://github.com/fivethree-team/fivethree#readme",
+  "dependencies": {
+    "@fivethree/ngx-rxjs-animations": "0.0.2"
+  }
 }

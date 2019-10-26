@@ -32,6 +32,7 @@ import { FivViewportModule } from './viewport/viewport.module';
 import { FivLazyImageModule } from './lazy-image/lazy-image.module';
 import { FivFeatureDiscoveryModule } from './feature-discovery/feature-discovery.module';
 import { FivSearchbarModule } from './searchbar/searchbar.module';
+import { AnimationsModule } from '@fivethree/ngx-rxjs-animations';
 
 const componentModules = [
   FivAppBarModule,
@@ -74,6 +75,7 @@ const directiveModules = [
     CommonModule,
     FormsModule,
     IonicModule,
+    AnimationsModule,
     ...componentModules,
     ...directiveModules
   ],

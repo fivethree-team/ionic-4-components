@@ -1,4 +1,8 @@
 .container.min {
-  min-height: 50vh;
+  min-height: 70vh;
   max-width: 411px;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  border: 2px solid var(--ion-color-dark);
 }

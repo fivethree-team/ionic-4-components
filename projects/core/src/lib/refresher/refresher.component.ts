@@ -21,8 +21,7 @@ import {
 } from '@angular/animations';
 import { IonContent, Platform } from '@ionic/angular';
 import { Subject } from 'rxjs';
-import { easeOutSine } from '../animations/easing-functions';
-import { tween, reverse } from '../animations/tween';
+import { easeOutSine, tween, reverse } from '@fivethree/ngx-rxjs-animations';
 
 @Component({
   selector: 'fiv-refresher',

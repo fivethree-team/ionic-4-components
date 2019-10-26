@@ -207,7 +207,7 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
     switch (state) {
       case DrawerState.Bottom:
         this.content.content.scrollToTop(0);
-        this._setTranslateY('100vh');
+        this._setTranslateY(this._platform.height());
         break;
       case DrawerState.Docked:
         this.content.content.scrollToTop(0);
@@ -269,8 +269,7 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
       }
     } else if (absDeltaY > this.bounceThreshold && ev.distance > 0) {
       if (this.state !== DrawerState.Bottom) {
-        this.state = DrawerState.Bottom;
-        this.fivClose.emit();
+        this.close();
       }
     } else {
       this._setTranslateY(this._platform.height() - this.dockedHeight);
@@ -333,9 +332,11 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   close() {
+    console.log('close');
     this.state = DrawerState.Bottom;
     this._setDrawerState(this.state);
     this.updateContent(this.state);
+    this.fivClose.emit();
   }
 
   dock() {

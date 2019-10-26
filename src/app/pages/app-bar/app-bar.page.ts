@@ -10,7 +10,7 @@ export class AppBarPage implements OnInit {
   titleLayout = 'hide';
   position = 'center';
   fabVisible = true;
-  icon = 'checkmark';
+  icon = 'color-wand';
 
   customTitleLayoutOptions: any = {
     header: 'Title Layout',

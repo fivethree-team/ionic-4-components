@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FabPage implements OnInit {
   pulse = false;
 
-  icon = 'fitness';
+  icon = 'color-wand';
 
   vertical = 'bottom';
   horizontal = 'end';

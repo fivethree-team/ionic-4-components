@@ -3,6 +3,13 @@
   display: contents;
   --fiv-fab-bottom: calc(10px + env(safe-area-inset-bottom));
   --fiv-fab-top: calc(10px + env(safe-area-inset-top));
+  --background-fab-progress-bar: var(--ion-color-primary);
+  --background-fab-progress: var(--ion-color-primary-shade);
+}
+
+fiv-loading-progress-bar {
+  --background-progress-bar: var(--background-fab-progress-bar);
+  --background-progress: var(--background-fab-progress);
 }
 
 :host(.button-disabled) {

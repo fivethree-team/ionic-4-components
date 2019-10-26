@@ -78,10 +78,6 @@ const routes: Routes = [
       './pages/installation/installation.module#InstallationPageModule'
   },
   {
-    path: 'test',
-    loadChildren: './test/test.module#TestPageModule'
-  },
-  {
     path: 'developer-tools',
     loadChildren:
       './pages/developer-tools/developer-tools.module#DeveloperToolsPageModule'
@@ -91,7 +87,11 @@ const routes: Routes = [
     path: '**',
     loadChildren:
       './pages/page-not-found/page-not-found.module#PageNotFoundPageModule'
-  }
+  },
+  { path: 'one', loadChildren: './pages/app-bar/tabs/one/one.module#OnePageModule' },
+  { path: 'two', loadChildren: './pages/app-bar/tabs/two/two.module#TwoPageModule' },
+  { path: 'three', loadChildren: './pages/app-bar/tabs/three/three.module#ThreePageModule' },
+  { path: 'four', loadChildren: './pages/app-bar/tabs/four/four.module#FourPageModule' }
 ];
 
 @NgModule({
