@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() title = 'Ionic 4 Components';
+  @Input() title = '';
   @Input() backbutton = true;
 
   constructor(private navController: NavController) {}

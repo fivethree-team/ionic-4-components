@@ -1,35 +1,12 @@
-<ion-card class="example">
-  <ion-toolbar color="translucent">
-    <ion-title>{{title}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button *ngIf="html || api || typescript || css" (click)="showApi = !showApi" [matTooltip]="showApi ? 'Close source' : 'View source'">
-        <fiv-icon slot="start" [name]="showApi ? 'md-close' : 'md-code'"></fiv-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-  <ion-card-header>
-    <ion-card-subtitle>{{subtitle}}</ion-card-subtitle>
-  </ion-card-header>
-
-  <ion-card-content>
-    <div [@listAnim]="showApi ? 'open' : 'closed'" class="content-container">
-      <mat-tab-group>
-        <mat-tab *ngIf="html" label="HTML">
-          <markdown [src]="html"></markdown>
-        </mat-tab>
-        <mat-tab *ngIf="css" label="CSS">
-          <markdown [src]="css"></markdown>
-        </mat-tab>
-        <mat-tab *ngIf="typescript" label="TS">
-          <markdown [src]="typescript"></markdown>
-        </mat-tab>
-        <mat-tab *ngIf="api" label="API">
-          <markdown [src]="api"></markdown>
-        </mat-tab>
-      </mat-tab-group>
-    </div>
-    <div class="content-container">
-      <ng-content></ng-content>
-    </div>
-  </ion-card-content>
-</ion-card>
+<div class="content-container">
+  <mat-tab-group [selectedIndex]="0">
+    <mat-tab label="EXAMPLE">
+      <div class="content-container">
+        <ng-content></ng-content>
+      </div>
+    </mat-tab>
+    <mat-tab label="DOCUMENTATION">
+      <markdown [src]="docs"></markdown>
+    </mat-tab>
+  </mat-tab-group>
+</div>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewContainerRef } from '@angular/core';
 import { FivOverlayService, NgContent } from '../overlay/overlay.service';
 import { FivDialog } from '../dialog/dialog.component';
 
@@ -16,8 +16,16 @@ export interface DialogOptions {
 export class FivDialogService {
   constructor(private overlay: FivOverlayService) {}
 
-  openDialog(content: NgContent<any>, options?: DialogOptions) {
-    const c = this.overlay.createOverlay<FivDialog>(FivDialog, content);
+  openDialog(
+    viewContainerRef: ViewContainerRef,
+    content: NgContent<any>,
+    options?: DialogOptions
+  ) {
+    const c = this.overlay.createOverlay<FivDialog>(
+      viewContainerRef,
+      FivDialog,
+      content
+    );
     c.instance.verticalAlign = options ? options.verticalAlign : 'top';
     c.instance.verticalAlign = options ? options.verticalAlign : 'center';
     c.instance.backdrop = options ? options.backdrop : true;

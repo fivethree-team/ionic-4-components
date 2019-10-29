@@ -1,8 +1,8 @@
 {
   "name": "Fivethree Ionic 4 Components",
   "short_name": "Fivethree",
-  "theme_color": "#424242",
-  "background_color": "#424242",
+  "theme_color": "#8e95fd",
+  "background_color": "#8e95fd",
   "display": "standalone",
   "scope": "/",
   "start_url": "https://fivethree-team.github.io/ionic-4-components/",

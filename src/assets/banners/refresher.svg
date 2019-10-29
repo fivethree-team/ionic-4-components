@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="515px" height="339px" viewBox="0 0 515 339" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>refresher</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="257.5" cy="107.5" r="28.5"></circle>
+        <filter x="-23.7%" y="-23.7%" width="147.4%" height="147.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.240493881 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Ionic-Component-Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="refresher">
+            <rect id="Rectangle" fill="#F08D49" x="0" y="0" width="515" height="339"></rect>
+            <g id="Oval">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="md-refresh" transform="translate(247.000000, 97.000000)" fill="#C6753D" fill-rule="nonzero">
+                <path d="M10.5,18.375 C6.16892898,18.375 2.625,14.8309517 2.625,10.5 C2.625,6.16869034 6.16892898,2.625 10.5,2.625 C12.665625,2.625 14.6343153,3.54375 16.012858,4.98755966 L11.8125,9.1875 L21,9.1875 L21,0 L17.9157443,3.08449432 C16.012858,1.18113068 13.387858,0 10.5,0 C4.72517898,0 0,4.72517898 0,10.5 C0,16.274821 4.65901705,21 10.5,21 C15.335071,21 19.3466676,17.7704148 20.6063097,13.3636364 L17.8291193,13.3636364 C16.7108097,16.3204006 13.8237273,18.375 10.5,18.375 Z" id="Path"></path>
+            </g>
+            <path id="Line-2" d="M260,168 L260,228 L270,228 L258,252 L246,228 L256,228 L256,168 L260,168 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

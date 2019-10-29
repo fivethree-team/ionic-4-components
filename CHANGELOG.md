@@ -1,3 +1,14 @@
+<a name="0.9.6"></a>
+## [0.9.6](https://github.com/fivethree-team/component-library/compare/v0.9.5...v0.9.6) (2019-10-09)
+
+
+### Bug Fixes
+
+* **bottom-sheet:** fix border-radius not visible because of missing padding ([7353d20](https://github.com/fivethree-team/component-library/commit/7353d20))
+* **overlay:** fix missing context when creating embeddedView ([e5ecc62](https://github.com/fivethree-team/component-library/commit/e5ecc62))
+
+
+
 ## [0.9.5](https://github.com/fivethree-team/fivethree/compare/v0.9.4...v0.9.5) (2019-08-29)
 
 

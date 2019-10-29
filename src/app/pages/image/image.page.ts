@@ -8,11 +8,8 @@ import { Observable, of } from 'rxjs';
 })
 export class ImagePage implements OnInit {
   picsum: string[] = Array.from(
-    new Array(10),
-    (x, i) => `https://picsum.photos/500/?${i}`
-  );
-  picsumAsync: Observable<string[]> = of(
-    Array.from(new Array(10), (x, i) => `https://picsum.photos/500/?${i + 10}`)
+    new Array(12),
+    (x, i) => `https://picsum.photos/1080/720/?${i}`
   );
 
   constructor() {}

@@ -106,7 +106,9 @@ export class FivRoutingStateService {
   goBack(defaultHref = '/') {
     if (this.getHistory().length <= 1) {
       // close the app because we are at root level
-      return navigator['app'].exitApp();
+      return navigator['app']
+        ? navigator['app'].exitApp()
+        : this.navCtrl.navigateBack(defaultHref);
     }
     const current = this.getCurrentUrl();
     if (typeof current !== 'string' && isNavigateable(current)) {

@@ -5,7 +5,8 @@ import {
   TemplateRef,
   Input,
   Output,
-  EventEmitter
+  EventEmitter,
+  ViewContainerRef
 } from '@angular/core';
 import { FivOverlayContent } from './overlay-content/overlay-content.component';
 import { FivOverlayService } from './overlay.service';
@@ -25,11 +26,15 @@ export class FivOverlay {
   @Output() afterInit = new EventEmitter();
   private _open = false;
 
-  constructor(private overlay: FivOverlayService) {}
+  constructor(
+    private viewContainer: ViewContainerRef,
+    private overlay: FivOverlayService
+  ) {}
 
   show(priority?: number, data?: any) {
     if (!this.componentRef) {
       this.componentRef = this.overlay.createOverlay(
+        this.viewContainer,
         FivOverlayContent,
         this.ngContent
       );

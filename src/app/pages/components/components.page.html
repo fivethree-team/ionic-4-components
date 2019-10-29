@@ -1,7 +1,129 @@
-<app-header [title]="'Ionic 4 UI Components'"></app-header>
+<app-header [title]="'Components Overview'"></app-header>
 
-<ion-content padding>
+<ion-content>
 
-  Component Documentation is coming soon!
+  <ion-grid fixed class="ion-no-padding">
+    <ion-row>
+      <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
+        offsetMd="0" sizeSm="12" sizeMd="12">
+        <p>
+
+        </p>
+        <div class="docs-cards">
+          <ion-card [routerLink]="['/app-bar']">
+            <ion-card-header>
+              <ion-card-title>App Bar</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Enhanced Tab Bar inspired by the latest Material Design Specification.
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="tall" [routerLink]="['/bottom-sheet']">
+            <img alt="bottom sheet banner" src="assets/banners/bottom-sheet.svg">
+            <ion-card-header>
+              <ion-card-title>Bottom Sheet</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Drawable Bottom Sheet to reveal more content by pulling it into the viewport.
+            </ion-card-content>
+          </ion-card>
+          <ion-card [routerLink]="['/dialog']">
+            <ion-card-header>
+              <ion-card-title>Dialog</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Flexible Dialog component with gesture support.
+            </ion-card-content>
+          </ion-card>
+          <ion-card [routerLink]="['/fab']">
+            <ion-card-header>
+              <ion-card-title>Floating Action Button</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              FAB that adds neat features like "hide-on-scroll" and progress-bar.
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="tall" [routerLink]="['/feature-discovery']">
+            <img alt="feature discovery banner" src="assets/banners/feature-discovery.svg">
+
+            <ion-card-header>
+              <ion-card-title>Feature Discovery</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Present new Features with ease, inspired by Material Design.
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="tall" [routerLink]="['/gallery']">
+            <img alt="gallery banner" src="assets/banners/gallery.svg">
+            <ion-card-header>
+              <ion-card-title>Gallery</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Twitter inspired Image Gallery with smooth animations and gesture/ keyboard control.
+            </ion-card-content>
+          </ion-card>
+          <ion-card [routerLink]="['/icon']">
+            <ion-card-header>
+              <ion-card-title>Icon</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Adds badge indicators and change animations to ion-icon.
+            </ion-card-content>
+          </ion-card>
+          <ion-card [routerLink]="['/overflow-buttons']">
+            <ion-card-header>
+              <ion-card-title>Overflow Buttons</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Displays overflowing toolbar buttons in a popover or action sheet.
+            </ion-card-content>
+          </ion-card>
+          <ion-card [routerLink]="['/password']">
+            <ion-card-header>
+              <ion-card-title>Password Input</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              The missing Password Reveal Input Field for your ionic app.
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="tall" [routerLink]="['/refresher']">
+            <img alt="refresher banner" src="assets/banners/refresher.svg">
+            <ion-card-header>
+              <ion-card-title>Refresher</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Material Design Pull-to-refresh component.
+            </ion-card-content>
+          </ion-card>
+          <ion-card [routerLink]="['/searchbar']">
+            <ion-card-header>
+              <ion-card-title>Searchbar</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Alternative to ion-toolbar including a search input.
+            </ion-card-content>
+          </ion-card>
+          <ion-card [routerLink]="['/stepper']">
+            <ion-card-header>
+              <ion-card-title>Stepper</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Material Design Stepper component featuring both horizontal and vertical steppers.
+            </ion-card-content>
+          </ion-card>
+          <ion-card href="https://github.com/fivethree-team/ionic-4-components/tree/master/projects/core/src/lib">
+            <ion-card-header>
+              <ion-card-title>Want more?</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              See our misc components or use the building blocks of this library.
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
 
 </ion-content>
