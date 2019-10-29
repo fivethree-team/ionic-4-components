@@ -1,25 +1,5 @@
-<app-header title="Image Gallery"></app-header>
-
-
-<ion-content padding>
-
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
-        offsetMd="0" sizeSm="12" sizeMd="12">
-        <app-example 
-        [api]="'assets/docs/snippets/image-gallery/api.md'" 
-        [typescript]="'assets/docs/snippets/image-gallery/ts.md'" 
-        [css]="'assets/docs/snippets/image-gallery/css.md'"
-        [html]="'assets/docs/snippets/image-gallery/html.md'" 
-        [title]="'Image Gallery'" 
-        [subtitle]="''">
-      </app-example>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <fiv-gallery ambient="true">
+```html
+<fiv-gallery ambient="true">
     <fiv-gallery-toolbar [position]="'top'">
       <fiv-gallery-toolbar-content></fiv-gallery-toolbar-content>
     </fiv-gallery-toolbar>
@@ -101,9 +81,4 @@
               </ion-row>
             </ion-grid>
           </fiv-gallery>
-
-        </ion-item-group>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+```

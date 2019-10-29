@@ -1,11 +1,11 @@
 ```typescript
 ...
-import { FivIconModule } from '@fivethree/core';
+import { FivBottomSheetModule } from '@fivethree/core';
 
 @NgModule({
   imports: [
     ...
-    FivIconModule
+    FivBottomSheetModule
   ],
     ...
 })
