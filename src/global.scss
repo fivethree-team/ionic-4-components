@@ -9,6 +9,21 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
+:root.dark-theme {
+  --toolbar-min-height: 80px;
+  --footer-min-height: 56px;
+  --ion-default-font: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
+  --ion-background-color: var(--ion-color-medium);
+  --fiv-text: var(--ion-color-light);
+}
+:root:not(.dark-theme) {
+  --toolbar-min-height: 80px;
+  --footer-min-height: 56px;
+  --ion-default-font: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
+  --ion-background-color: var(--ion-color-light);
+  --fiv-text: var(--ion-color-dark);
+}
+
 .wrapper {
   width: 100%;
   min-height: 180px;
@@ -25,12 +40,54 @@
   min-height: var(--example-min-height);
 }
 
-:root {
-  // --ion-font-family: 'Roboto Slab', serif;
-}
-
 .avatar {
   width: 24px;
   height: 24px;
   border-radius: 100%;
+}
+ion-item-divider {
+  border: none;
+}
+
+ion-card {
+  transition: box-shadow 140ms;
+}
+
+ion-card:hover {
+  box-shadow: 0 0.35em 1.175em rgba(0, 0, 0, 0.1),
+    0 0.175em 0.5em rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+markdown {
+  pre[class*='language-'] {
+    border-radius: 4px;
+    background: var(--g-background-activated);
+
+    * {
+      color: var(--fiv-text);
+    }
+  }
+
+  .token.keyword {
+    color: var(--ion-color-secondary);
+  }
+  .token.punctuation {
+    color: var(--fiv-text);
+  }
+  .token.string {
+    color: var(--ion-color-tertiary);
+  }
+  .token.function {
+    color: var(--ion-color-success);
+  }
+  .token.class-name {
+    color: var(--ion-color-primary);
+  }
+}
+
+// theme
+:root {
+  fiv-feature-discovery {
+    --fiv-color-feature: var(--ion-color-primary);
+  }
 }

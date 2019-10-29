@@ -1,0 +1,19 @@
+.docs-cards {
+  display: grid;
+  font-size: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 0.6rem;
+}
+
+.docs-cards > ion-card {
+  font-size: inherit;
+  max-width: none;
+}
+
+.docs-cards > ion-card.tall {
+  grid-row: span 2;
+}
+
+.docs-cards > ion-card.wide {
+  grid-column: span 2;
+}

@@ -8,9 +8,10 @@ import {
   EmbeddedViewRef,
   ComponentRef,
   Renderer2,
-  RendererFactory2
+  RendererFactory2,
+  ViewContainerRef
 } from '@angular/core';
-export type NgContent<T> = TemplateRef<T> | Type<T> | string;
+export type NgContent<T> = TemplateRef<T> | Type<T>;
 
 @Injectable({
   providedIn: 'root'
@@ -28,14 +29,14 @@ export class FivOverlayService {
   }
 
   createOverlay<T>(
+    view: ViewContainerRef,
     component: Type<T>,
     content?: NgContent<T>
   ): ComponentRef<T> {
-    const resolvedContent = this.resolveNgContent(content);
+    const resolvedContent = this.resolveNgContent(view, content);
     const componentRef = this.componentFactoryResolver
       .resolveComponentFactory(component)
       .create(this.injector, resolvedContent);
-
     this.appRef.attachView(componentRef.hostView);
 
     const domElem = (componentRef.hostView as EmbeddedViewRef<any>)
@@ -46,16 +47,15 @@ export class FivOverlayService {
     return componentRef;
   }
 
-  private resolveNgContent<T>(content: NgContent<T>) {
+  private resolveNgContent<T>(
+    viewContainerRef: ViewContainerRef,
+    content: NgContent<T>
+  ) {
     if (!content) {
       return;
     }
-    if (typeof content === 'string') {
-      const element = this.renderer.createText(content);
-      return [[element]];
-    }
     if (content instanceof TemplateRef) {
-      const viewRef = content.createEmbeddedView(null);
+      const viewRef = viewContainerRef.createEmbeddedView(content);
       return [viewRef.rootNodes];
     }
 

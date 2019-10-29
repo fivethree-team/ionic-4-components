@@ -1,102 +1,64 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { FivRoutingStateService } from '@fivethree/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  public components = [
+  public docs = [
     {
       title: 'App Bar',
-      url: '/app-bar',
-      icon: 'git-commit'
-    },
-    {
-      title: 'Back Button',
-      url: '/backbutton',
-      icon: 'md-arrow-back'
+      url: '/app-bar'
     },
     {
       title: 'Bottom Sheet',
-      url: '/bottom-sheet',
-      icon: 'ios-arrow-up'
+      url: '/bottom-sheet'
     },
     {
       title: 'Dialog',
-      url: '/dialog',
-      icon: 'notifications'
+      url: '/dialog'
     },
     {
-      title: 'Editable Label',
-      url: '/editable-label',
-      icon: 'create'
+      title: 'Floating Action Button',
+      url: '/fab'
     },
     {
-      title: 'Expandable',
-      url: '/expandable',
-      icon: 'resize'
+      title: 'Feature Discovery',
+      url: '/feature-discovery'
     },
     {
-      title: 'FAB',
-      url: '/fab',
-      icon: 'add-circle'
+      title: 'Gallery',
+      url: '/gallery'
     },
     {
       title: 'Icon',
-      url: '/icon',
-      icon: 'mail-unread'
-    },
-    {
-      title: 'Image Gallery',
-      url: '/image',
-      icon: 'image'
-    },
-    {
-      title: 'Loading Indicators',
-      url: '/loading',
-      icon: 'time'
+      url: '/icon'
     },
     {
       title: 'Overflow Buttons',
-      url: '/buttons',
-      icon: 'more'
+      url: '/overflow-buttons'
     },
     {
-      title: 'Password Reveal Input',
-      url: '/password',
-      icon: 'key'
+      title: 'Password Input',
+      url: '/password'
     },
     {
       title: 'Refresher',
-      url: '/refresh',
-      icon: 'refresh'
+      url: '/refresher'
     },
     {
       title: 'Searchbar',
-      url: '/toolbar-search',
-      icon: 'search'
+      url: '/searchbar'
     },
     {
       title: 'Stepper',
-      url: '/stepper',
-      icon: 'share'
-    }
-  ];
-  public directives = [
-    {
-      title: 'Feature Discovery',
-      url: '/feature-discovery',
-      icon: 'resize'
-    },
-    {
-      title: 'Viewport',
-      url: '/viewport',
-      icon: 'share'
+      url: '/stepper'
     }
   ];
   public services = [];
@@ -106,7 +68,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private routing: FivRoutingStateService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.initializeApp();
   }
@@ -114,7 +77,7 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.routing.loadRouting({ clearOn: ['/'], root: '/' });
-
+      this.setupThemeListener();
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
@@ -125,5 +88,19 @@ export class AppComponent {
   }
   navigate(url: string) {
     this.navCtrl.navigateForward(url);
+  }
+
+  private setupThemeListener() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    this.toggleTheme(prefersDark.matches);
+
+    prefersDark.addEventListener('change', mediaQuery =>
+      this.toggleTheme(mediaQuery.matches)
+    );
+  }
+
+  private toggleTheme(shouldAdd: boolean) {
+    this.document.body.classList.toggle('dark', shouldAdd);
   }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="517px" height="339px" viewBox="0 0 517 339" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>feature-discovery</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M395,91 C438.53137,91 479.443158,102.215762 515.003286,121.915206 L515,339 L147,339 C147,202.033382 258.033382,91 395,91 Z" id="path-1"></path>
+        <filter x="-2.7%" y="-5.2%" width="103.3%" height="105.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-4.5%" y="-7.9%" width="106.8%" height="110.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="-4" dy="-7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.118853802 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Ionic-Component-Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="feature-discovery">
+            <rect id="Rectangle" fill="#FAFAFA" x="0" y="0" width="515" height="339"></rect>
+            <g id="Combined-Shape" filter="url(#filter-2)">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                <use fill="#6068DA" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <path d="M407,256 C439.5848,256 466,282.4152 466,315 C466,323.546494 464.182812,331.668561 460.913737,339.000902 L353.086263,339.000902 C349.817188,331.668561 348,323.546494 348,315 C348,282.4152 374.4152,256 407,256 Z" id="Combined-Shape" fill="#EFF0FF"></path>
+            <path d="M407,306 L407,326" id="Line" stroke="#6068DA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M407,306 L407,326" id="Line" stroke="#6068DA" stroke-width="4" stroke-linecap="square" transform="translate(407.000000, 316.000000) rotate(90.000000) translate(-407.000000, -316.000000) "></path>
+        </g>
+    </g>
+</svg>
