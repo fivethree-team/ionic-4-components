@@ -8,7 +8,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class AppBarPage implements OnInit {
   titleLayout = 'hide';
-  position = 'center';
+  position = 'right';
   fabVisible = true;
   icon = 'color-wand';
 

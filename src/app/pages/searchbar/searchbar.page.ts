@@ -2,13 +2,13 @@ import { DrawerState, FivSearchbar } from '@fivethree/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-toolbar-search',
-  templateUrl: './toolbar-search.page.html',
-  styleUrls: ['./toolbar-search.page.scss']
+  selector: 'app-searchbar',
+  templateUrl: './searchbar.page.html',
+  styleUrls: ['./searchbar.page.scss']
 })
-export class ToolbarSearchPage implements OnInit {
+export class SearchbarPage implements OnInit {
   searchInput: string;
-  small = true;
+  small = false;
   states = DrawerState;
   state: DrawerState = DrawerState.Bottom;
   @ViewChild('search') search: FivSearchbar;

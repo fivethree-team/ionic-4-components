@@ -9,7 +9,6 @@ import { IonicModule } from '@ionic/angular';
 import { FivPasswordInputModule } from './password-input/password-input.module';
 import { FivExpandableModule } from './expandable/expandable.module';
 import { FivStepperModule } from './stepper/stepper.module';
-import { FivRippleModule } from './ripple/ripple.module';
 import { FivRouterItemModule } from './router-item/router-item.module';
 import { FivOverlayModule } from './overlay/overlay.module';
 import { FivIfModule } from './if-platform/if-platform.module';
@@ -55,7 +54,6 @@ const componentModules = [
   FivOverlayModule,
   FivPasswordInputModule,
   FivPopoverModule,
-  FivRippleModule,
   FivRouterItemModule,
   FivStepperModule,
   FivSearchbarModule

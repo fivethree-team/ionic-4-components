@@ -4,7 +4,7 @@
   display: inline-block;
   position: relative;
 
-  fiv-ripple {
+  .tab {
     width: 100%;
     height: 100%;
     display: flex;
@@ -12,6 +12,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: visible;
   }
 
   fiv-icon {
@@ -40,7 +41,7 @@
 }
 
 :host(.label-active-only) {
-  fiv-ripple:not(.active) {
+  .tab:not(.active) {
     ion-label {
       display: none;
     }

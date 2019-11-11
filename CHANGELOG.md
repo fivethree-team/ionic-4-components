@@ -414,7 +414,7 @@
 * **password-input:** expose password input module ([7227527](https://github.com/fivethree-team/component-library/commit/7227527))
 * **router-item:** add router item module ([3b39e1b](https://github.com/fivethree-team/component-library/commit/3b39e1b))
 * **stepper,ripple:** add stepper and ripple module ([b28d4d1](https://github.com/fivethree-team/component-library/commit/b28d4d1))
-* **toolbar-search:** add toolbar-search module ([4f8a031](https://github.com/fivethree-team/component-library/commit/4f8a031))
+* **searchbar:** add searchbar module ([4f8a031](https://github.com/fivethree-team/component-library/commit/4f8a031))
 
 
 
@@ -505,7 +505,7 @@
 * **password-input:** call touchedCall back only if registered ([076b7b4](https://github.com/fivethree-team/component-library/commit/076b7b4))
 * **router-item:** collapse menu on click, added ripple, bottom sheet example page, fix fiv-buttons positioning ([e486626](https://github.com/fivethree-team/component-library/commit/e486626))
 * **routing:** to getting-started page ([d7f8488](https://github.com/fivethree-team/component-library/commit/d7f8488))
-* **toolbar-search:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/component-library/commit/4175cc7))
+* **searchbar:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/component-library/commit/4175cc7))
 
 
 ### Features
@@ -557,7 +557,7 @@
 * **password-input:** call touchedCall back only if registered ([076b7b4](https://github.com/fivethree-team/fivethree/commit/076b7b4))
 * **router-item:** collapse menu on click, added ripple, bottom sheet example page, fix fiv-buttons positioning ([e486626](https://github.com/fivethree-team/fivethree/commit/e486626))
 * **routing:** to getting-started page ([d7f8488](https://github.com/fivethree-team/fivethree/commit/d7f8488))
-* **toolbar-search:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/fivethree/commit/4175cc7))
+* **searchbar:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/fivethree/commit/4175cc7))
 
 
 ### Features
@@ -615,7 +615,7 @@
 * **password-input:** call touchedCall back only if registered ([076b7b4](https://github.com/fivethree-team/fivethree/commit/076b7b4))
 * **router-item:** collapse menu on click, added ripple, bottom sheet example page, fix fiv-buttons positioning ([e486626](https://github.com/fivethree-team/fivethree/commit/e486626))
 * **routing:** to getting-started page ([d7f8488](https://github.com/fivethree-team/fivethree/commit/d7f8488))
-* **toolbar-search:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/fivethree/commit/4175cc7))
+* **searchbar:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/fivethree/commit/4175cc7))
 * import ([0cfaeef](https://github.com/fivethree-team/fivethree/commit/0cfaeef))
 
 
@@ -662,7 +662,7 @@
 * **loading-content:** fix error message caused by using last() in pull directive, added loading content demo ([8d8ae03](https://github.com/fivethree-team/fivethree/commit/8d8ae03))
 * **router-item:** collapse menu on click, added ripple, bottom sheet example page, fix fiv-buttons positioning ([e486626](https://github.com/fivethree-team/fivethree/commit/e486626))
 * **routing:** to getting-started page ([d7f8488](https://github.com/fivethree-team/fivethree/commit/d7f8488))
-* **toolbar-search:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/fivethree/commit/4175cc7))
+* **searchbar:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/fivethree/commit/4175cc7))
 
 
 ### Features
@@ -706,7 +706,7 @@
 * **loading-content:** fix error message caused by using last() in pull directive, added loading content demo ([8d8ae03](https://github.com/fivethree-team/component-library/commit/8d8ae03))
 * **router-item:** collapse menu on click, added ripple, bottom sheet example page, fix fiv-buttons positioning ([e486626](https://github.com/fivethree-team/component-library/commit/e486626))
 * **routing:** to getting-started page ([d7f8488](https://github.com/fivethree-team/component-library/commit/d7f8488))
-* **toolbar-search:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/component-library/commit/4175cc7))
+* **searchbar:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/component-library/commit/4175cc7))
 
 
 ### Features
@@ -749,7 +749,7 @@
 * **loading-content:** fix error message caused by using last() in pull directive, added loading content demo ([8d8ae03](https://github.com/fivethree-team/component-library/commit/8d8ae03))
 * **router-item:** collapse menu on click, added ripple, bottom sheet example page, fix fiv-buttons positioning ([e486626](https://github.com/fivethree-team/component-library/commit/e486626))
 * **routing:** to getting-started page ([d7f8488](https://github.com/fivethree-team/component-library/commit/d7f8488))
-* **toolbar-search:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/component-library/commit/4175cc7))
+* **searchbar:** request focus on input field after animation is done ([4175cc7](https://github.com/fivethree-team/component-library/commit/4175cc7))
 
 
 ### Features
@@ -910,7 +910,7 @@
 ### Features
 
 * **loading-content:** add arrow draw animation ([6faa30c](https://github.com/fivethree-team/fivethree/commit/6faa30c))
-* **toolbar-search:** added small toolbar, changed animations, ([59e802b](https://github.com/fivethree-team/fivethree/commit/59e802b))
+* **searchbar:** added small toolbar, changed animations, ([59e802b](https://github.com/fivethree-team/fivethree/commit/59e802b))
 
 
 
@@ -975,8 +975,8 @@
 * **password:** add password component to show and hide input ([e83b17d](https://github.com/fivethree-team/fivethree/commit/e83b17d))
 * **router-item:** add router-item component ([6749bc8](https://github.com/fivethree-team/fivethree/commit/6749bc8))
 * **stepper:** add stepper component ([d295ff9](https://github.com/fivethree-team/fivethree/commit/d295ff9))
-* **toolbar-search:** add toolbar-search component ([342fdd9](https://github.com/fivethree-team/fivethree/commit/342fdd9))
-* **toolbar-search:** expose color property of toolbar ([702d722](https://github.com/fivethree-team/fivethree/commit/702d722))
+* **searchbar:** add searchbar component ([342fdd9](https://github.com/fivethree-team/fivethree/commit/342fdd9))
+* **searchbar:** expose color property of toolbar ([702d722](https://github.com/fivethree-team/fivethree/commit/702d722))
 
 
 

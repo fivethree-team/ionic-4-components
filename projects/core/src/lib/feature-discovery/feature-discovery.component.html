@@ -4,10 +4,12 @@
   <div #pOuter class="feature center pulse" [style.height]="(innerDiameter + featurePadding) + 'px'"
     [style.width]="(innerDiameter + featurePadding) + 'px'">
   </div>
-  <fiv-ripple #pInner class="feature center inner" (fivClick)="fivClick.emit()" [style.height]="(innerDiameter + (icon ? featurePadding : 0)) + 'px'"
+  <div #pInner class="feature center inner  ion-activatable" (click)="fivClick.emit()"
+    [style.height]="(innerDiameter + (icon ? featurePadding : 0)) + 'px'"
     [style.width]="(innerDiameter + (icon ? featurePadding : 0)) + 'px'">
     <fiv-icon class="center" *ngIf="icon" [name]="icon"></fiv-icon>
-  </fiv-ripple>
+    <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+  </div>
 </div>
 <div class="content" *ngIf="animationState === 'visible'" [@contentAnim] [style.width]="contentWidth + 'px'"
   [style.height]="contentHeight + 'px'" [style.top]="contentTop + 'px'" [style.left]="contentLeft + 'px'">

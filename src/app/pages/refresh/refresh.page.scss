@@ -17,7 +17,8 @@ ion-grid {
 
 fiv-refresher {
   --fiv-spin-color: var(--ion-color-secondary);
-  --fiv-spin-background: var(--ion-color-dark);
+  --fiv-hint-color: var(--ion-color-secondary);
+  --fiv-spin-background: var(--ion-item-background);
 }
 ion-item,
 ion-list {

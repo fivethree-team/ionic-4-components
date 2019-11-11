@@ -1,19 +1,21 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FivRipple } from './ripple.component';
+import { SearchbarPage } from './searchbar.page';
 
-describe('RippleComponent', () => {
-  let component: FivRipple;
-  let fixture: ComponentFixture<FivRipple>;
+describe('SearchbarPage', () => {
+  let component: SearchbarPage;
+  let fixture: ComponentFixture<SearchbarPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FivRipple]
+      declarations: [SearchbarPage],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FivRipple);
+    fixture = TestBed.createComponent(SearchbarPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

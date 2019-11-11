@@ -6,7 +6,6 @@ import { FivStepHeader } from './step-header/step-header.component';
 import { FivStepperHorizontal } from './stepper-horizontal/stepper-horizontal.component';
 import { FivStepContent } from './step-content/step-content.component';
 import { FivStep } from './step/step.component';
-import { FivRippleModule } from '../ripple/ripple.module';
 import { FivExpandableModule } from './../expandable/expandable.module';
 
 @NgModule({
@@ -17,7 +16,7 @@ import { FivExpandableModule } from './../expandable/expandable.module';
     FivStep,
     FivStepHeader
   ],
-  imports: [CommonModule, IonicModule, FivExpandableModule, FivRippleModule],
+  imports: [CommonModule, IonicModule, FivExpandableModule],
   exports: [
     FivStepper,
     FivStepContent,

@@ -1,6 +1,6 @@
 :host {
-  --fiv-spinner-size: 68px;
-  display: contents;
+  --fiv-fab-size: 56px;
+  --fiv-spinner-size: calc(var(--fiv-fab-size) + 12px);
   --fiv-fab-bottom: calc(10px + env(safe-area-inset-bottom));
   --fiv-fab-top: calc(10px + env(safe-area-inset-top));
   --background-fab-progress-bar: var(--ion-color-primary);
@@ -26,9 +26,9 @@ fiv-icon:not(.ios) {
 }
 
 ion-button {
-  --border-radius: 28px;
-  height: 56px;
-  min-width: 56px;
+  --border-radius: calc(var(--fiv-fab-size) / 2);
+  height: var(--fiv-fab-size);
+  min-width: var(--fiv-fab-size);
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   margin-top: 0px;
@@ -44,7 +44,7 @@ ion-fab.top.edge {
   top: calc(var(--fiv-fab-top) - 38px);
 }
 ion-fab.middle {
-  top: calc(50% - 28px);
+  top: calc(50% - var(--fiv-spinner-size));
 }
 ion-fab.bottom.edge {
   bottom: calc(var(--fiv-fab-bottom) - 38px);
@@ -71,17 +71,17 @@ $offset: 187;
 $duration: 1.4s;
 fiv-spinner {
   position: absolute;
-  left: calc((var(--fiv-spinner-size) - 56px) / -2);
-  top: calc((var(--fiv-spinner-size) - 56px) / -2);
+  left: calc((var(--fiv-spinner-size) - var(--fiv-fab-size)) / -2);
+  top: calc((var(--fiv-spinner-size) - var(--fiv-fab-size)) / -2);
 }
 
 @keyframes shadow-pulse {
   0% {
-    border-radius: 28px;
+    border-radius: calc(var(--fiv-spinner-size) / 2);
     box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
   }
   100% {
-    border-radius: 28px;
+    border-radius: calc(var(--fiv-spinner-size) / 2);
     box-shadow: 0 0 0 28px rgba(0, 0, 0, 0);
   }
 }

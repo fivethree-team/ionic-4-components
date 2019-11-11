@@ -10,6 +10,7 @@ export class FivAppBarTab implements OnInit {
   @Input() icon: string;
   @Input() tab: string;
   @Input() href: string;
+  @Input() type: 'bounded' | 'unbounded' = 'unbounded';
   @Input() badge = -1;
 
   constructor() {}

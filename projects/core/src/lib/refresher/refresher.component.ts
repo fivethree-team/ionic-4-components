@@ -46,7 +46,7 @@ import { easeOutSine, tween, reverse } from '@fivethree/ngx-rxjs-animations';
           transform: 'translateY(72px) translateX(-50%)'
         }),
         animate(
-          '125ms ease-out',
+          '150ms 125ms ease-out',
           style({
             width: '40px',
             transform: 'translateY(72px) translateX(-50%)'

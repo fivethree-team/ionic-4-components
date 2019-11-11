@@ -1,5 +1,4 @@
 import { FivCenterModule } from './../../../../projects/core/src/lib/center/center.module';
-import { FivRippleModule } from './../../../../projects/core/src/lib/ripple/ripple.module';
 import { FivExpandableModule } from '@fivethree/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -26,7 +25,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ComponentsModule,
     FivExpandableModule,
-    FivRippleModule,
     FivCenterModule
   ],
   declarations: [ExpandablePage]

@@ -30,8 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'searchbar',
-    loadChildren:
-      './pages/toolbar-search/toolbar-search.module#ToolbarSearchPageModule'
+    loadChildren: './pages/searchbar/searchbar.module#SearchbarPageModule'
   },
   {
     path: 'app-bar',
@@ -87,11 +86,7 @@ const routes: Routes = [
     path: '**',
     loadChildren:
       './pages/page-not-found/page-not-found.module#PageNotFoundPageModule'
-  },
-  { path: 'one', loadChildren: './pages/app-bar/tabs/one/one.module#OnePageModule' },
-  { path: 'two', loadChildren: './pages/app-bar/tabs/two/two.module#TwoPageModule' },
-  { path: 'three', loadChildren: './pages/app-bar/tabs/three/three.module#ThreePageModule' },
-  { path: 'four', loadChildren: './pages/app-bar/tabs/four/four.module#FourPageModule' }
+  }
 ];
 
 @NgModule({

@@ -19,6 +19,7 @@ export class FivAppBarTabContent implements OnInit {
   @Input() icon: string;
   @Input() tab: string;
   @Input() href: string;
+  @Input() type: 'bounded' | 'unbounded' = 'unbounded';
   @Input() active = false;
   @Input() titleLayout: AppBarTitleLayout = 'hide';
 

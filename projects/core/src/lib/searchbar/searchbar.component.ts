@@ -45,7 +45,6 @@ export class FivSearchbar implements OnInit {
   closeButtonVisible = false;
   @Input() title: string;
   @Input() placeholder: string;
-  @Input() color: string;
   @Input() smallWidth = 120;
   _small = false;
   @Input() set small(s: boolean) {

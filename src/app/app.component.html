@@ -16,12 +16,16 @@
         <fiv-router-item [text]="'Overview'" [matchChildUrl]="true" [shape]="'rounded'" [pageUrl]="'/components'">
         </fiv-router-item>
         <fiv-expandable #ex [isOpen]="false">
-          <fiv-ripple header [hover]="true" (fivClick)="ex.toggle()">
+          <div style="position: relative;" header class="ion-activatable" (click)="ex.toggle()">
             <ion-item lines="none">
               <ion-label>Documentation</ion-label>
               <fiv-expandable-indicator icon="ios-arrow-down"></fiv-expandable-indicator>
+
             </ion-item>
-          </fiv-ripple>
+            <ion-ripple-effect type="bounded"></ion-ripple-effect>
+
+          </div>
+
           <div content>
             <fiv-router-item #exps [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'" [position]="'left'"
               [pageUrl]="p.url" *ngFor="let p of docs">

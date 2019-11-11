@@ -7,12 +7,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ToolbarSearchPage } from './toolbar-search.page';
+import { SearchbarPage } from './searchbar.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ToolbarSearchPage
+    component: SearchbarPage
   }
 ];
 
@@ -25,6 +25,6 @@ const routes: Routes = [
     FivSearchbarModule,
     ComponentsModule
   ],
-  declarations: [ToolbarSearchPage]
+  declarations: [SearchbarPage]
 })
-export class ToolbarSearchPageModule {}
+export class SearchbarPageModule {}

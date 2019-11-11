@@ -1,5 +1,6 @@
 :host {
   --fiv-spin-color: var(--ion-color-primary);
+  --fiv-hint-color: var(--fiv-spin-color, var(--ion-color-primary));
   --fiv-spin-background: var(--ion-color-light);
 }
 
@@ -7,12 +8,16 @@
   height: 20px;
   width: 20px;
   background: transparent;
-  color: var(--ion-color-dark);
+  color: var(--fiv-hint-color);
 }
 
 .text {
   font-size: 1em;
-  color: var(--ion-color-dark);
+  color: var(--fiv-hint-color);
+}
+
+.text.hidden {
+  opacity: 0;
 }
 
 .gg-hint-wrapper {

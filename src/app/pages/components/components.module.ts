@@ -1,4 +1,3 @@
-import { FivRippleModule } from './../../../../projects/core/src/lib/ripple/ripple.module';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -22,8 +21,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    ComponentsModule,
-    FivRippleModule
+    ComponentsModule
   ],
   declarations: [ComponentsPage]
 })

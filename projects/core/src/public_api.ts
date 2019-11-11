@@ -30,7 +30,6 @@ export * from './lib/network-status/network-status.module';
 export * from './lib/overlay/overlay.module';
 export * from './lib/password-input/password-input.module';
 export * from './lib/popover/popover.module';
-export * from './lib/ripple/ripple.module';
 export * from './lib/router-item/router-item.module';
 export * from './lib/stepper/stepper.module';
 export * from './lib/searchbar/searchbar.module';
