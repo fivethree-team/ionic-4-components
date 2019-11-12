@@ -97,7 +97,6 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   @Input() horizontal?: 'center' | 'start' | 'end' | 'none' = 'none';
   @Input() mode?: 'normal' | 'edge' = 'normal';
   @Input() slot: string;
-  @Input() icon: string;
   @Input() spinColor = 'primary';
   @Input() color: string;
   @Input() disabled = false;
@@ -111,7 +110,7 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   get scroll() {
     return this._scroll;
   }
-  _scroll = true;
+  _scroll = false;
   @Input() feature: TemplateRef<any>;
 
   @Output() fivComplete: EventEmitter<FivFab> = new EventEmitter<FivFab>();

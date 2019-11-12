@@ -9,7 +9,11 @@
           <app-touch-field>
             <ion-tabs #tabs>
               <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom"
-                [titleLayout]="titleLayout" #bar [position]="position" [fabVisible]="fabVisible" [icon]="icon">
+                [titleLayout]="titleLayout" #bar [icon]="icon">
+                <fiv-fab fivAppBarFab #fab [feature]="feature" [position]="'center'">
+                  <fiv-icon name="icon"></fiv-icon>
+                </fiv-fab>
+
                 <fiv-app-bar-tab left tab="tab1" href="/tab1" icon="md-home" name="App Bar">
                 </fiv-app-bar-tab>
                 <fiv-app-bar-tab left tab="tab2" href="/tab2" icon="md-images" name="Expandable">
@@ -26,3 +30,5 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ng-template #feature></ng-template>
