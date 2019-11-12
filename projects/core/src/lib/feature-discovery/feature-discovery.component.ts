@@ -1,4 +1,4 @@
-import { Platform } from '@ionic/angular';
+import { Platform, IonIcon } from '@ionic/angular';
 import {
   Component,
   OnInit,
@@ -180,7 +180,7 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
     this.animationState = 'execute';
   }
 
-  setIcon(icon: FivIcon) {
+  setIcon(icon: FivIcon | IonIcon) {
     if (icon) {
       this.icon = icon.name;
     }

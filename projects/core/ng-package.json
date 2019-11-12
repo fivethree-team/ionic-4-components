@@ -8,5 +8,8 @@
       "@ionic/angular": "ionic-angular",
       "hammerjs": "Hammer"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@fivethree/ngx-rxjs-animations"
+  ]
 }
