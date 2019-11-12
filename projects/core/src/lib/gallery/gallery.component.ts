@@ -114,7 +114,10 @@ export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
   @ViewChild('slider') slides: IonSlides;
   @ViewChildren('slideImage') slideImages: QueryList<ElementRef>;
 
-  @ContentChildren(forwardRef(() => FivGalleryImage), { descendants: true })
+  @ContentChildren(
+    forwardRef(() => FivGalleryImage),
+    { descendants: true }
+  )
   images: QueryList<FivGalleryImage>;
   @ContentChildren(FivGalleryToolbar) toolbars: QueryList<FivGalleryToolbar>;
 
