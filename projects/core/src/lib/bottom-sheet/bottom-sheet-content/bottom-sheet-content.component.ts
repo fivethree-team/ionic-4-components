@@ -29,7 +29,7 @@ export class FivBottomSheetContent implements OnInit, AfterViewInit {
   currentState: DrawerState;
   states = DrawerState;
   shouldBounce = true;
-  panning: boolean = false;
+  panning = false;
 
   @HostBinding('class.rounded') get isRounded(): boolean {
     switch (this.currentState) {

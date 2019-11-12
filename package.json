@@ -34,7 +34,8 @@
     "gh-pages": "ng build core --prod && ng build --prod --base-href 'https://fivethree-team.github.io/ionic-4-components/' && npx ngh --dir=www",
     "publish": "npm publish dist/@fivethree/core",
     "rocket": "npm run build:prod && cp README.md dist/@fivethree/core && npm run publish",
-    "version": "conventional-changelog -p angular -i ./CHANGELOG.md -s && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i ./CHANGELOG.md -s && git add CHANGELOG.md",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {

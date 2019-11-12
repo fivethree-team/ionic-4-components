@@ -477,15 +477,15 @@ export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
   }
 
   handleKeyboardEvents(event: KeyboardEvent) {
-    if (event.keyCode === Key.RightArrow) {
+    if (event.key === 'ArrowRight') {
       this.next();
       return;
     }
-    if (event.keyCode === Key.LeftArrow) {
+    if (event.key === 'ArrowLeft') {
       this.prev();
       return;
     }
-    if (event.keyCode === Key.DownArrow || event.keyCode === Key.Escape) {
+    if (event.key === 'ArrowDown' || event.key === 'Escape') {
       this.close();
       return;
     }
