@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { FivFeature } from '@fivethree/core';
 
 @Component({
   selector: 'app-app-bar',
@@ -21,6 +22,8 @@ export class AppBarPage implements OnInit {
     header: 'Fab Position',
     subHeader: 'Select a floating action button position.'
   };
+
+  @ViewChild('iconFeature') iconFeature: FivFeature;
 
   constructor(public toastController: ToastController) {}
 

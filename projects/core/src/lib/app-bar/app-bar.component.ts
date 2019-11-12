@@ -36,7 +36,6 @@ export class FivAppBar implements OnInit, AfterContentInit {
   tabsLeft: FivAppBarTab[];
 
   @ViewChild('fab') fab: FivFab;
-  @Input() icon = 'md-add';
   @Input() titleLayout: AppBarTitleLayout = 'hide';
   @Output() fivFabClick = new EventEmitter<FivAppBar>();
   @ViewChildren(FivAppBarTabContent) _tabs: QueryList<FivAppBarTabContent>;
@@ -55,8 +54,7 @@ export class FivAppBar implements OnInit, AfterContentInit {
   }
 
   private prepareTabs() {
-    const position = this.fivFab.position;
-    console.log('position', position);
+    const position = this.fivFab.fivAppBarFab;
     if (position === 'center') {
       this.tabsLeft = this.tabComponents.toArray().slice(0, 2);
       this.tabsRight = this.tabComponents.toArray().slice(2, 4);
@@ -67,8 +65,6 @@ export class FivAppBar implements OnInit, AfterContentInit {
       this.tabsLeft = [];
       this.tabsRight = this.tabComponents.toArray();
     }
-
-    console.log('tabs', this.tabsLeft, this.tabsRight);
   }
 
   fabClick() {

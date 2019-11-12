@@ -39,7 +39,6 @@ export class FivOverflowButtons implements OnInit, AfterContentInit {
   ngAfterContentInit(): void {}
 
   onMenuClicked(event) {
-    console.log('menu clicked', this.mode);
     if (this.mode === 'action-sheet') {
       return this.presentActionSheet(event);
     }

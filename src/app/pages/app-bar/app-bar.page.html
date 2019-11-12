@@ -1,34 +1,47 @@
-<app-header title="App Bar"></app-header>
+<app-header title="App Bar">
+  <ion-buttons slot="end">
+    <ion-button fill="outline" color="secondary" shape="round" slot="end" (click)="iconFeature.show()">
+      Open Feature </ion-button>
+  </ion-buttons>
+
+</app-header>
 
 <ion-content>
-  <ion-grid fixed>
+  <ion-grid *fivIf="['desktop']" fixed>
     <ion-row>
       <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
         offsetMd="0" sizeSm="12" sizeMd="12">
         <app-example docs="assets/docs/components/app-bar.md">
           <app-touch-field>
-            <ion-tabs #tabs>
-              <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom"
-                [titleLayout]="titleLayout" #bar [icon]="icon">
-                <fiv-fab fivAppBarFab #fab [feature]="feature" [position]="'center'">
-                  <fiv-icon name="icon"></fiv-icon>
-                </fiv-fab>
-
-                <fiv-app-bar-tab left tab="tab1" href="/tab1" icon="md-home" name="App Bar">
-                </fiv-app-bar-tab>
-                <fiv-app-bar-tab left tab="tab2" href="/tab2" icon="md-images" name="Expandable">
-                </fiv-app-bar-tab>
-                <fiv-app-bar-tab [badge]="1" right tab="tab3" href="/tab3" icon="md-pizza" name="Password">
-                </fiv-app-bar-tab>
-                <fiv-app-bar-tab right tab="tab4" href="/tab4" icon="md-more" name="Buttons">
-                </fiv-app-bar-tab>
-              </fiv-app-bar>
-            </ion-tabs>
+            <ng-container [ngTemplateOutlet]="demo"></ng-container>
           </app-touch-field>
         </app-example>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ng-container *fivIf="['mobile']" [ngTemplateOutlet]="demo"></ng-container>
 </ion-content>
 
-<ng-template #feature></ng-template>
+<ng-template #demo>
+  <ion-tabs #tabs>
+    <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom"
+      [titleLayout]="titleLayout" #bar>
+      <fiv-fab [fivAppBarFab]="'center'" #fab>
+        <fiv-icon #iconFeature="fivFeature" [fivFeature]="feature" name="color-wand"></fiv-icon>
+      </fiv-fab>
+
+      <fiv-app-bar-tab left tab="tab1" href="/tab1" icon="md-home" name="App Bar">
+      </fiv-app-bar-tab>
+      <fiv-app-bar-tab left tab="tab2" href="/tab2" icon="md-images" name="Expandable">
+      </fiv-app-bar-tab>
+      <fiv-app-bar-tab [badge]="1" right tab="tab3" href="/tab3" icon="md-pizza" name="Password">
+      </fiv-app-bar-tab>
+      <fiv-app-bar-tab right tab="tab4" href="/tab4" icon="md-more" name="Buttons">
+      </fiv-app-bar-tab>
+    </fiv-app-bar>
+  </ion-tabs>
+</ng-template>
+
+<ng-template #feature>
+  <ion-title>cool feature here</ion-title>
+</ng-template>

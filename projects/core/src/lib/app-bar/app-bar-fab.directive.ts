@@ -1,11 +1,9 @@
-import { Directive, Host, Input } from '@angular/core';
-import { FivFab } from '../fab/fab.component';
+import { Directive, Input } from '@angular/core';
 
 @Directive({
-  selector: '[fivAppBarFab]'
+  selector: '[fivAppBarFab]',
+  exportAs: 'fivAppBarFab'
 })
 export class FivAppBarFabDirective {
-  @Input() position: 'left' | 'center' | 'right';
-
-  constructor(@Host() public fab: FivFab) {}
+  @Input() fivAppBarFab: 'left' | 'center' | 'right';
 }

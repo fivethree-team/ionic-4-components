@@ -122,7 +122,6 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   @ViewChild('spinner') spinner: FivSpinner;
   @ViewChild('feature') featureDiscovery: FivFeatureDiscovery;
   @ViewChild('bar') bar: FivLoadingProgressBar;
-  @ContentChild(FivIcon) iconComp: FivIcon;
   @ContentChild(IonLabel) labelComp: IonLabel;
 
   loading = false;

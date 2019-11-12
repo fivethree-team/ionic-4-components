@@ -7,6 +7,7 @@ import { FivAppBarTab } from './app-bar-tab/app-bar-tab.component';
 import { IonicModule } from '@ionic/angular';
 import { FivFabModule } from '../fab/fab.module';
 import { FivAppBarFabDirective } from './app-bar-fab.directive';
+import { FivFeatureDiscoveryModule } from '../feature-discovery/feature-discovery.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,19 @@ import { FivAppBarFabDirective } from './app-bar-fab.directive';
     FivAppBarTab,
     FivAppBarFabDirective
   ],
-  imports: [CommonModule, FivIconModule, FivFabModule, IonicModule],
-  exports: [FivAppBar, FivAppBarTabContent, FivAppBarTab, FivAppBarFabDirective],
+  imports: [
+    CommonModule,
+    FivIconModule,
+    FivFabModule,
+    IonicModule,
+    FivFeatureDiscoveryModule
+  ],
+  exports: [
+    FivAppBar,
+    FivAppBarTabContent,
+    FivAppBarTab,
+    FivAppBarFabDirective
+  ],
   providers: []
 })
 export class FivAppBarModule {}

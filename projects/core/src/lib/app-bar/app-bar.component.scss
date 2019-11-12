@@ -52,7 +52,7 @@ svg {
     background: var(--fiv-color-appbar);
     border-top-left-radius: var(--fiv-border-radius);
   }
-  fiv-fab {
+  ::ng-deep fiv-fab {
     position: absolute;
     left: calc(50% - 0.5 * var(--fiv-fab-size));
     top: var(--fiv-border-radius);
@@ -100,7 +100,7 @@ svg {
   .rect-filler {
     left: var(--fiv-side-width);
   }
-  fiv-fab {
+  ::ng-deep fiv-fab {
     transform: translateX(0);
     left: calc(
       var(--fiv-side-width) + var(--fiv-radius) / 2 - var(--fiv-appbar-fab-size) /
@@ -123,7 +123,7 @@ svg {
   .rect-filler {
     left: calc(100% - var(--fiv-radius) - var(--fiv-side-width));
   }
-  fiv-fab {
+  ::ng-deep fiv-fab {
     transform: translateX(0);
     left: calc(
       100% - var(--fiv-side-width) - var(--fiv-radius) / 2 -

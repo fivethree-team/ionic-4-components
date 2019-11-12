@@ -1,5 +1,5 @@
-<fiv-fab class="appbar"
-  [ngClass]="{'cutout': cutoutVisible, 'left': fivFab.fab.position === 'left', 'right': fivFab.fab.position === 'right'}">
+<div class="appbar"
+  [ngClass]="{'cutout': cutoutVisible, 'left': fivFab.fivAppBarFab === 'left', 'right': fivFab.fivAppBarFab === 'right'}">
   <div class="appbar-rect left">
     <div class="tabs">
       <fiv-app-bar-tab-content [type]="tab.type" (ionTabButtonClick)="ionTabButtonClick($event)"
@@ -7,21 +7,23 @@
         [badge]="tab.badge" [titleLayout]="titleLayout" *ngFor="let tab of tabsLeft"></fiv-app-bar-tab-content>
     </div>
   </div>
-  <fiv-fab [scroll]="fivFab.fab.scroll" [visible]="fivFab" #fab (click)="fabClick()">
-    <fiv-icon [name]="icon"></fiv-icon>
-  </fiv-fab>
-  <svg width="100" height="50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <ng-content select="fiv-fab"></ng-content>
+  <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
-      <path d="M0 0c0 28 22 50 50 50s50-22 50-50l1 50H0" id="a" />
+      <path d="M0,0 C0,28 22,50 50,50 C78,50 100,28 100,0 L101,50 L0,50" id="path-1">
+      </path>
     </defs>
-    <g fill="none" fill-rule="evenodd">
-      <mask id="b" fill="#fff">
-        <use xlink:href="#a" />
-      </mask>
-      <path mask="url(#b)" d="M0 0h100v50H0z" />
+    <g id="Page-1" stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd">
+      <g id="cutout">
+        <mask id="mask-2" fill="white">
+          <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Path"></g>
+        <polygon id="Path" fill-rule="nonzero" mask="url(#mask-2)" points="0 0 100 0 100 50 0 50">
+        </polygon>
+      </g>
     </g>
   </svg>
-  <!--  <div class="rect"></div>  -->
   <div class="rect-filler"></div>
   <div class="appbar-rect right">
     <div class="tabs">
@@ -30,4 +32,4 @@
         [badge]="tab.badge" [titleLayout]="titleLayout" *ngFor="let tab of tabsRight"></fiv-app-bar-tab-content>
     </div>
   </div>
-</fiv-fab>
+</div>

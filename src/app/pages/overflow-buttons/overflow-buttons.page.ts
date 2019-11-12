@@ -23,7 +23,6 @@ export class ButtonsPage implements OnInit {
   }
 
   change(event: CustomEvent) {
-    console.log(event);
     this.mode = event.detail.value;
   }
 }

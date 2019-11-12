@@ -332,7 +332,6 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   close() {
-    console.log('close');
     this.state = DrawerState.Bottom;
     this._setDrawerState(this.state);
     this.updateContent(this.state);

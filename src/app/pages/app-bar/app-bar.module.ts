@@ -11,7 +11,9 @@ import {
   FivAppBarModule,
   FivCenterModule,
   FivFabModule,
-  FivIconModule
+  FivIconModule,
+  FivFeatureDiscoveryModule,
+  FivIfModule
 } from '@fivethree/core';
 
 @NgModule({
@@ -23,8 +25,10 @@ import {
     ComponentsModule,
     FivAppBarModule,
     FivCenterModule,
+    FivIfModule,
     FivFabModule,
-    FivIconModule
+    FivIconModule,
+    FivFeatureDiscoveryModule
   ],
   declarations: [AppBarPage]
 })

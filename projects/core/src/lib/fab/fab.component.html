@@ -7,10 +7,8 @@
   <ion-button [ngClass]="{'pulse': pulse, 'small':!labelComp || !extended}" [color]="color" [disabled]="disabled">
     <fiv-loading-progress-bar *ngIf="extended" [loading]="loading" (fivComplete)="fillAnimationDone()" #bar>
     </fiv-loading-progress-bar>
-    <fiv-icon [ngClass]="{'ios': platform.is('ios')}" #feature="fivFeature" slot="start" [fivFeature]="feature"
-      *ngIf="iconComp" [color]="iconComp.color" [name]="iconComp.name" [dotVisible]="iconComp.dotVisible"
-      [indicatorValue]="iconComp.indicatorValue">
-    </fiv-icon>
+    <ng-content select="fiv-icon"></ng-content>
+    <ng-content select="ion-icon"></ng-content>
     <div [@labelAnim] *ngIf="labelComp && extended">
       <ng-content select="ion-label"></ng-content>
     </div>
