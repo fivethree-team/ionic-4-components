@@ -14,6 +14,9 @@
     "webapp",
     "pwa"
   ],
+  "dependencies": {
+    "@fivethree/ngx-rxjs-animations": "0.0.2"
+  },
   "peerDependencies": {
     "@angular/animations": ">=7.2.1 <9.0.0",
     "@angular/common": ">=7.2.1 <9.0.0",
@@ -43,8 +46,5 @@
   "bugs": {
     "url": "https://github.com/fivethree-team/fivethree/issues"
   },
-  "homepage": "https://github.com/fivethree-team/fivethree#readme",
-  "dependencies": {
-    "@fivethree/ngx-rxjs-animations": "0.0.2"
-  }
+  "homepage": "https://github.com/fivethree-team/fivethree#readme"
 }

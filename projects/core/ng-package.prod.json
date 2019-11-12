@@ -6,6 +6,7 @@
     "flatModuleFile": "fivethree-core",
     "entryFile": "src/public_api.ts",
     "umdModuleIds": {
+      "@fivethree/ngx-rxjs-animations": "ngx-rxjs-animations",
       "@ionic/angular": "ionic-angular",
       "hammerjs": "Hammer"
     }
