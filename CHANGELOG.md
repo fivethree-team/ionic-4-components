@@ -1,3 +1,118 @@
+<a name="0.9.6"></a>
+## [0.9.6](https://github.com/fivethree-team/component-library/compare/v0.9.5...v0.9.6) (2019-10-09)
+
+
+### Bug Fixes
+
+* **bottom-sheet:** fix border-radius not visible because of missing padding ([7353d20](https://github.com/fivethree-team/component-library/commit/7353d20))
+* **overlay:** fix missing context when creating embeddedView ([e5ecc62](https://github.com/fivethree-team/component-library/commit/e5ecc62))
+
+
+
+## [0.9.5](https://github.com/fivethree-team/fivethree/compare/v0.9.4...v0.9.5) (2019-08-29)
+
+
+### Bug Fixes
+
+* **routing-state:** get previous url for two history items ([d3c09f2](https://github.com/fivethree-team/fivethree/commit/d3c09f2))
+
+
+
+## [0.9.4](https://github.com/fivethree-team/fivethree/compare/v0.9.1...v0.9.4) (2019-08-22)
+
+
+### Bug Fixes
+
+* **icon:** color default ([4139a4d](https://github.com/fivethree-team/fivethree/commit/4139a4d))
+* **icon:** fix default height, width and color ([1951f2c](https://github.com/fivethree-team/fivethree/commit/1951f2c))
+* **password-input:** align icon center ([4623520](https://github.com/fivethree-team/fivethree/commit/4623520))
+
+
+
+<a name="0.9.3"></a>
+## [0.9.3](https://github.com/fivethree-team/component-library/compare/v0.9.1...v0.9.3) (2019-08-05)
+
+
+### Bug Fixes
+
+* **icon:** color default ([4139a4d](https://github.com/fivethree-team/component-library/commit/4139a4d))
+* **icon:** fix default height, width and color ([1951f2c](https://github.com/fivethree-team/component-library/commit/1951f2c))
+
+
+
+<a name="0.9.2"></a>
+## [0.9.2](https://github.com/fivethree-team/component-library/compare/v0.9.1...v0.9.2) (2019-08-05)
+
+
+### Bug Fixes
+
+* **icon:** fix default height, width and color ([1951f2c](https://github.com/fivethree-team/component-library/commit/1951f2c))
+
+
+
+<a name="0.9.1"></a>
+## [0.9.1](https://github.com/fivethree-team/component-library/compare/v0.9.0...v0.9.1) (2019-08-05)
+
+
+### Features
+
+* **FAB:** added ios safe areas ([3d4efba](https://github.com/fivethree-team/component-library/commit/3d4efba))
+
+
+
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/fivethree-team/component-library/compare/v0.8.25...v0.9.0) (2019-07-27)
+
+
+### Bug Fixes
+
+* **FAB:** Fix center leave and enter animations ([63594da](https://github.com/fivethree-team/component-library/commit/63594da))
+* **gallery:** replace anuglar morph animations with own implementation to make everything work on ios ([95a6887](https://github.com/fivethree-team/component-library/commit/95a6887))
+* **spinner:** fix spin color ([1f57b56](https://github.com/fivethree-team/component-library/commit/1f57b56))
+
+
+
+<a name="0.8.25"></a>
+## [0.8.25](https://github.com/fivethree-team/component-library/compare/v0.8.23...v0.8.25) (2019-07-25)
+
+
+### Bug Fixes
+
+* **app-bar:** fix with new fab ([46d419e](https://github.com/fivethree-team/component-library/commit/46d419e))
+* **fab:** default align to none ([dea6469](https://github.com/fivethree-team/component-library/commit/dea6469))
+
+
+
+<a name="0.8.24"></a>
+## [0.8.24](https://github.com/fivethree-team/component-library/compare/v0.8.23...v0.8.24) (2019-07-25)
+
+
+### Bug Fixes
+
+* **app-bar:** fix with new fab ([46d419e](https://github.com/fivethree-team/component-library/commit/46d419e))
+
+
+
+<a name="0.8.23"></a>
+## [0.8.23](https://github.com/fivethree-team/component-library/compare/v0.8.22...v0.8.23) (2019-07-25)
+
+
+### Features
+
+* **FAB:** add missing icon parameters and project label to fix prod build ([5b30751](https://github.com/fivethree-team/component-library/commit/5b30751))
+* **FAB:** Rebuild FAB Component ([18cd3b5](https://github.com/fivethree-team/component-library/commit/18cd3b5))
+
+
+<a name="0.8.22"></a>
+## [0.8.22](https://github.com/fivethree-team/component-library/compare/v0.8.21...v0.8.22) (2019-07-22)
+
+
+### Features
+
+* **bottom-sheet:** remove hammer js dependency from library ([d68bc78](https://github.com/fivethree-team/component-library/commit/d68bc78))
+
+
+
 <a name="0.8.21"></a>
 ## [0.8.21](https://github.com/fivethree-team/component-library/compare/v0.8.20...v0.8.21) (2019-07-20)
 

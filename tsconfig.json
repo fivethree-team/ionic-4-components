@@ -18,9 +18,7 @@
       "@services/*": ["src/app/services/*"],
       "@pipes/*": ["src/app/pipes/*"],
       "@components/*": ["src/app/components/*"],
-      "@fivethree/core": ["projects/core/src/public_api"],
-      "@fivethree/google-maps": ["dist/@fivethree/google-maps"],
-      "shared": ["projects/core/src/public_api"]
+      "@fivethree/core": ["projects/core/src/public_api"]
     }
   }
 }

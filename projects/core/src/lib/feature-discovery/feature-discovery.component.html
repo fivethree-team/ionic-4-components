@@ -1,7 +1,7 @@
 <div class="backdrop" (click)="fivBackdropClick.emit()"></div>
 <div [@scale]="animationState" (@scale.done)="handleCircleAnimation($event)" #circle class="circle"
   [style.height]="height + 'px'" [style.width]="width + 'px'" [style.top]="top + 'px'" [style.left]="left + 'px'">
-  <div #pOuter class="feature center" [@pulseFade]="pulse" [style.height]="(innerDiameter + featurePadding) + 'px'"
+  <div #pOuter class="feature center pulse" [style.height]="(innerDiameter + featurePadding) + 'px'"
     [style.width]="(innerDiameter + featurePadding) + 'px'">
   </div>
   <fiv-ripple #pInner class="feature center" (fivClick)="fivClick.emit()" [@pulse]="pulse"
@@ -10,6 +10,7 @@
     <fiv-icon class="center" *ngIf="icon" [name]="icon"></fiv-icon>
   </fiv-ripple>
 </div>
-<div class="content" *ngIf="animationState === 'visible'" [@contentAnim] [style.width]="contentWidth + 'px'" [style.height]="contentHeight + 'px'" [style.top]="contentTop + 'px'" [style.left]="contentLeft + 'px'">
-    <ng-content></ng-content>
-  </div>
+<div class="content" *ngIf="animationState === 'visible'" [@contentAnim] [style.width]="contentWidth + 'px'"
+  [style.height]="contentHeight + 'px'" [style.top]="contentTop + 'px'" [style.left]="contentLeft + 'px'">
+  <ng-content></ng-content>
+</div>

@@ -3,9 +3,9 @@
 <ion-content>
   <ion-grid class="page-content" fixed>
     <ion-row>
-      <ion-col size="12">
-        <app-example [typescript]="'assets/docs/snippets/stepper/ts.md'" [css]="'assets/docs/snippets/stepper/css.md'" [api]="'assets/docs/snippets/stepper/api.md'" [html]="'assets/docs/snippets/stepper/html.md'" [title]="'Stepper'" [subtitle]="'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
-          labore et dolore magna aliqua.'">
+      <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
+        offsetMd="0" sizeSm="12" sizeMd="12">
+        <app-example docs="assets/docs/components/stepper">
           <ion-item-divider>
             <ion-label>Vertical Stepper</ion-label>
           </ion-item-divider>
@@ -108,7 +108,7 @@
                 </ion-card>
               </fiv-step>
               <fiv-step [title]="'Address'" [subtitle]="'Please enter your adress'">
-                <ion-card>
+                <ion-card class="card-horizontal">
                   <ion-card-header>
                     <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
                     <ion-card-title>Awesome Title</ion-card-title>
@@ -129,7 +129,7 @@
                 </ion-card>
               </fiv-step>
               <fiv-step [title]="'Awesome Title'" [subtitle]="'Awesome Subtitle'">
-                <ion-card>
+                <ion-card class="card-horizontal">
                   <ion-card-header>
                     <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
                     <ion-card-title>Awesome Title</ion-card-title>

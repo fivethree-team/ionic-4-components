@@ -1,15 +1,15 @@
 // Animation config
-$mat-progress-spinner-stroke-rotate-fallback-duration: 10 * 1000ms !default;
-$mat-progress-spinner-stroke-rotate-fallback-ease: cubic-bezier(
+$fiv-progress-spinner-stroke-rotate-fallback-duration: 10 * 1000ms !default;
+$fiv-progress-spinner-stroke-rotate-fallback-ease: cubic-bezier(
   0.87,
   0.03,
   0.33,
   1
 ) !default;
 $pi: 3.14159265359;
-$_mat-progress-spinner-default-radius: 45px;
-$_mat-progress-spinner-default-circumference: $pi *
-  $_mat-progress-spinner-default-radius * 2;
+$_fiv-progress-spinner-default-radius: 45px;
+$_fiv-progress-spinner-default-circumference: $pi *
+  $_fiv-progress-spinner-default-radius * 2;
 fiv-loading-spinner {
   display: block;
   position: relative;
@@ -27,10 +27,8 @@ fiv-loading-spinner {
     transition: stroke-dashoffset 225ms linear;
   }
 
-  &.mat-progress-spinner-indeterminate-animation.determinate {
+  &.fiv-progress-spinner-indeterminate-animation.determinate {
     $swift-ease-in-out-duration: 0.5s !default;
-    $colorDur: 1.4s;
-    animation: colors ($colorDur * 4) ease-in-out infinite;
     circle {
       transition-property: stroke;
       animation-duration: $swift-ease-in-out-duration * 8;
@@ -38,11 +36,11 @@ fiv-loading-spinner {
       animation-iteration-count: infinite;
     }
   }
-  &.mat-progress-spinner-indeterminate-animation.indeterminate {
+  &.fiv-progress-spinner-indeterminate-animation.indeterminate {
     $swift-ease-in-out-duration: 0.5s !default;
     $colorDur: 1.4s;
-    animation: colors ($colorDur * 4) ease-in-out infinite,
-      mat-progress-spinner-linear-rotate $swift-ease-in-out-duration * 4 linear
+    animation:
+      fiv-progress-spinner-linear-rotate $swift-ease-in-out-duration * 4 linear
         infinite;
     circle {
       transition-property: stroke; // Note: we multiply the duration by 8, because the animation is spread out in 8 stages.
@@ -51,7 +49,7 @@ fiv-loading-spinner {
       animation-iteration-count: infinite;
     }
   } // Animations for indeterminate mode
-  @keyframes mat-progress-spinner-linear-rotate {
+  @keyframes fiv-progress-spinner-linear-rotate {
     0% {
       transform: rotate(0deg);
     }
@@ -60,10 +58,10 @@ fiv-loading-spinner {
     }
   }
   @at-root {
-    $start: (1 - 0.05) * $_mat-progress-spinner-default-circumference; // start the animation at 5%
-    $end: (1 - 0.8) * $_mat-progress-spinner-default-circumference; // end the animation at 80%
+    $start: (1 - 0.05) * $_fiv-progress-spinner-default-circumference; // start the animation at 5%
+    $end: (1 - 0.8) * $_fiv-progress-spinner-default-circumference; // end the animation at 80%
     $fallback-iterations: 4;
-    @keyframes mat-progress-spinner-stroke-rotate-100 {
+    @keyframes fiv-progress-spinner-stroke-rotate-100 {
       /*
       stylelint-disable declaration-block-single-line-max-declarations,
         declaration-block-semicolon-space-after
@@ -138,23 +136,6 @@ fiv-loading-spinner {
         stroke-dashoffset: $start;
         transform: rotateX(180deg) rotate(341.5deg);
       } // stylelint-enable
-    }
-  }
-  @keyframes colors {
-    0% {
-      stroke: #4285f4;
-    }
-    25% {
-      stroke: #de3e35;
-    }
-    50% {
-      stroke: #f7c223;
-    }
-    75% {
-      stroke: #1b9a59;
-    }
-    100% {
-      stroke: #4285f4;
     }
   }
 }

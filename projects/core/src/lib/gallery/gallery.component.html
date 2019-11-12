@@ -1,45 +1,53 @@
 <ng-content></ng-content>
 <fiv-overlay #overlay>
+  <div [style.background]="backdropColor" [@fade] class="backdrop" *ngIf="overlay.open && backdrop"></div>
 
-  <div [@slideDown] *ngIf="controlsVisible && topToolbar" class="gallery-toolbar header" color="transparent">
-    <ng-container [ngTemplateOutlet]="topToolbar">
+  <div [style.visibility]="!morphing ? 'visible' : 'hidden'">
+    <div [@slideDown] *ngIf="controlsVisible && topToolbar" class="gallery-toolbar header" color="transparent">
+      <ng-container [ngTemplateOutlet]="topToolbar">
+      </ng-container>
+    </div>
+
+    <ng-container *fivIf="['desktop']">
+      <ion-fab [@scale] *ngIf="controlsVisible && images?.length > 0 && pagerVisible" vertical="center"
+        horizontal="start" slot="fixed">
+        <ion-fab-button color="light" (click)="prev()" [disabled]="activeIndex === 0">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
     </ng-container>
-  </div>
 
-  <ng-container *fivIf="['desktop']">
-    <ion-fab [@scale] *ngIf="controlsVisible && images?.length > 0 && pagerVisible" vertical="center" horizontal="start"
-      slot="fixed">
-      <ion-fab-button color="light" (click)="prev()" [disabled]="activeIndex === 0">
-        <ion-icon name="arrow-back"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-  </ng-container>
+    <div #viewer class="viewer" fivPull [maxPullHeight]="160" [minPullHeight]="120" (fivPull)="transformSlides($event)"
+      (fivRefresh)="close()" (fivCancel)="resetSlides($event)" [enableScroll]="true">
+      <ion-slides #slider *ngIf="overlay.open" (ionSlideDidChange)="slideDidChange()"
+        (ionSlideNextStart)="ionSlideNextStart()" (ionSlidePrevStart)="ionSlidePrevStart()"
+        (ionSlidesDidLoad)="onSlidesLoad()" [options]="{ zoom: true, initialSlide: initialImage?.index}">
+        <ion-slide *ngFor="let image of images; let i = index">
+          <div class="swiper-zoom-container">
+            <img #slideImage [ngClass]="{'instant': activeIndex !== i}" [src]="image.src">
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
 
-  <div #viewer class="viewer" fivPull [maxPullHeight]="160" [minPullHeight]="120" (fivPull)="transformSlides($event)"
-    (fivRefresh)="closeFromPullDown($event)" (fivCancel)="resetPan($event)" [enableScroll]="true">
-    <ion-slides #slider *ngIf="overlay.open" [ngClass]="[initialImage?.viewerState]"
-      (ionSlideDidChange)="slideDidChange()" (ionSlideNextStart)="ionSlideNextStart()"
-      (ionSlidePrevStart)="ionSlidePrevStart()" (ionSlidesDidLoad)="onSlidesLoad()" [options]="options">
-      <ion-slide *ngFor="let image of images; let i = index">
-        <div class="swiper-zoom-container">
-          <img [ngClass]="{'instant': activeIndex !== i}" [src]="image.src">
-        </div>
-      </ion-slide>
-    </ion-slides>
-  </div>
-
-  <ng-container *fivIf="['desktop']">
-    <ion-fab [@scale] *ngIf="controlsVisible && pagerVisible" vertical="center" horizontal="end" slot="fixed">
-      <ion-fab-button color="light" (click)="next()" [disabled]="activeIndex === images.length - 1">
-        <ion-icon name="arrow-forward"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-  </ng-container>
-
-  <div [@slideUp] *ngIf="controlsVisible && bottomToolbar" class="gallery-toolbar footer" color="transparent">
-    <ng-container [ngTemplateOutlet]="bottomToolbar">
+    <ng-container *fivIf="['desktop']">
+      <ion-fab [@scale] *ngIf="controlsVisible && pagerVisible" vertical="center" horizontal="end" slot="fixed">
+        <ion-fab-button color="light" (click)="next()" [disabled]="activeIndex === images.length - 1">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
     </ng-container>
+
+    <div [@slideUp] *ngIf="controlsVisible && bottomToolbar" class="gallery-toolbar footer" color="transparent">
+      <ng-container [ngTemplateOutlet]="bottomToolbar">
+      </ng-container>
+    </div>
   </div>
 
 
+
+
+</fiv-overlay>
+<fiv-overlay #morphOverlay>
+  <img #morph class="morph" *ngIf="initialImage" [src]="initialImage.src">
 </fiv-overlay>

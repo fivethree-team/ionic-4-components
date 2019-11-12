@@ -45,11 +45,15 @@ export class FivLoadingSpinner implements OnInit {
   @ViewChild('determinateCircle') determinateCircle: ElementRef;
   @Input() mode: 'indeterminate' | 'determinate' = 'indeterminate';
   @Input() circleRadius = 45;
+  _color: string;
+  @Input() set color(color: string) {
+    this._color = `var(--ion-color-${color})`;
+  }
 
   @HostBinding('class') get class() {
     return (
       this.mode +
-      ' mat-spinner mat-progress-spinner mat-progress-spinner-indeterminate-animation'
+      ' fiv-spinner fiv-progress-spinner fiv-progress-spinner-indeterminate-animation'
     );
   }
 
@@ -138,7 +142,7 @@ export class FivLoadingSpinner implements OnInit {
   /** Generates animation styles adjusted for the spinner's diameter. */
   private _getAnimationText(): string {
     const INDETERMINATE_ANIMATION_TEMPLATE = `
-    @keyframes mat-progress-spinner-stroke-rotate-DIAMETER {
+    @keyframes fiv-progress-spinner-stroke-rotate-DIAMETER {
        0%      { stroke-dashoffset: START_VALUE;  transform: rotate(0); }
        12.5%   { stroke-dashoffset: END_VALUE;    transform: rotate(0); }
        12.5001%  { stroke-dashoffset: END_VALUE;    transform: rotateX(180deg) rotate(72.5deg); }

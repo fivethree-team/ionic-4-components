@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="515px" height="339px" viewBox="0 0 515 339" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>bottom-sheet</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M95,129 L420,129 C426.627417,129 432,134.372583 432,141 L432,339 L432,339 L83,339 L83,141 C83,134.372583 88.372583,129 95,129 Z" id="path-1"></path>
+        <filter x="-4.6%" y="-11.4%" width="109.2%" height="115.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="-8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.271743881 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-13.3%" y="-13.3%" width="126.7%" height="126.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="4" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-13.3%" y="-75.0%" width="126.7%" height="250.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="4" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-7.5%" y="-75.0%" width="115.0%" height="250.0%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="4" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-15.4%" y="-112.5%" width="130.8%" height="325.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Ionic-Component-Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bottom-sheet">
+            <rect id="Rectangle" fill="#7EC699" x="0" y="0" width="515" height="339"></rect>
+            <g id="Rectangle">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <rect id="Rectangle" fill="#D8D8D8" opacity="0.518484933" x="230" y="145" width="55" height="16" rx="8"></rect>
+            <rect id="Rectangle" fill="#D8D8D8" opacity="0.239234561" filter="url(#filter-3)" x="110" y="213" width="90" height="90" rx="20"></rect>
+            <rect id="Rectangle" fill="#D8D8D8" opacity="0.239234561" filter="url(#filter-4)" x="230" y="218" width="90" height="16" rx="8"></rect>
+            <rect id="Rectangle" fill="#D8D8D8" opacity="0.239234561" filter="url(#filter-5)" x="230" y="250" width="160" height="16" rx="8"></rect>
+            <rect id="Rectangle" fill="#D8D8D8" opacity="0.239234561" filter="url(#filter-6)" x="230" y="282" width="117" height="16" rx="8"></rect>
+        </g>
+    </g>
+</svg>

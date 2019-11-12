@@ -1,6 +1,6 @@
 {
   "name": "@fivethree/core",
-  "version": "0.8.21",
+  "version": "0.9.6",
   "description": "Fivethree Core Components",
   "keywords": [
     "fivethree",
@@ -15,14 +15,13 @@
     "pwa"
   ],
   "peerDependencies": {
-    "@angular/animations": ">=7.2.1",
-    "@angular/common": ">=7.2.1",
-    "@angular/core": ">=7.2.1",
-    "@angular/forms": ">=7.2.1",
-    "@angular/platform-browser": ">=7.2.1",
-    "@angular/router": ">=7.2.1",
+    "@angular/animations": ">=7.2.1 <9.0.0",
+    "@angular/common": ">=7.2.1 <9.0.0",
+    "@angular/core": ">=7.2.1 <9.0.0",
+    "@angular/forms": ">=7.2.1 <9.0.0",
+    "@angular/platform-browser": ">=7.2.1 <9.0.0",
+    "@angular/router": ">=7.2.1 <9.0.0",
     "@ionic/angular": "^4.0.0",
-    "hammerjs": "^2.0.8",
     "rxjs": ">=6.4.0"
   },
   "author": "Fivethree Team",

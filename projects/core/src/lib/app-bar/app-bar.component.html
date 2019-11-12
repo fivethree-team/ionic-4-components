@@ -1,17 +1,21 @@
 <div class="appbar" [ngClass]="{'cutout': cutoutVisible, 'left': left, 'right': right}">
   <div class="appbar-rect left">
     <div class="tabs">
-      <fiv-app-bar-tab-content (ionTabButtonClick)="ionTabButtonClick($event)"  [active]="router.url.endsWith(tab.href)" [tab]="tab.tab" [href]="tab.href" [name]="tab.name"
-        [icon]="tab.icon" [badge]="tab.badge" [titleLayout]="titleLayout" *ngFor="let tab of tabsLeft"></fiv-app-bar-tab-content>
+      <fiv-app-bar-tab-content (ionTabButtonClick)="ionTabButtonClick($event)" [active]="router.url.endsWith(tab.href)"
+        [tab]="tab.tab" [href]="tab.href" [name]="tab.name" [icon]="tab.icon" [badge]="tab.badge"
+        [titleLayout]="titleLayout" *ngFor="let tab of tabsLeft"></fiv-app-bar-tab-content>
     </div>
   </div>
-  <fiv-loading-fab (fivHidden)="onFabHidden()" [icon]="icon" [visible]="_fabVisible" #fab (click)="fabClick()"></fiv-loading-fab>
+  <fiv-fab [scroll]="false" (fivHidden)="onFabHidden()" [visible]="_fabVisible" #fab (click)="fabClick()">
+    <fiv-icon [name]="icon"></fiv-icon>
+  </fiv-fab>
   <div class="rect"></div>
   <div class="rect-filler"></div>
   <div class="appbar-rect right">
     <div class="tabs">
-      <fiv-app-bar-tab-content (ionTabButtonClick)="ionTabButtonClick($event)" [active]="router.url.endsWith(tab.href)" [tab]="tab.tab" [href]="tab.href" [name]="tab.name"
-        [icon]="tab.icon" [badge]="tab.badge"  [titleLayout]="titleLayout" *ngFor="let tab of tabsRight"></fiv-app-bar-tab-content>
+      <fiv-app-bar-tab-content (ionTabButtonClick)="ionTabButtonClick($event)" [active]="router.url.endsWith(tab.href)"
+        [tab]="tab.tab" [href]="tab.href" [name]="tab.name" [icon]="tab.icon" [badge]="tab.badge"
+        [titleLayout]="titleLayout" *ngFor="let tab of tabsRight"></fiv-app-bar-tab-content>
     </div>
   </div>
 </div>

@@ -1,61 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button>
-        <fiv-icon #back="fivFeature" [fivFeature]="backContent" [featurePadding]="fp" [contentOffset]="co"
-          slot="icon-only" [name]="'arrow-back'" (click)="navigateBack()">
-        </fiv-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button fill="outline" shape="round" color="secondary" #tour="fivFeature" [fivFeature]="tourContent"
-        [featurePadding]="fp" [contentOffset]="co" (click)="fab.show()">
-        TOUR
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Feature Discovery</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="Feature Discovery">
+</app-header>
 
 <ion-content padding>
   <ion-grid fixed>
     <ion-row>
       <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
         offsetMd="0" sizeSm="12" sizeMd="12">
-        <ion-item-divider>
-          <ion-label>Example</ion-label>
-        </ion-item-divider>
-        <ion-button shape="round" (click)="tour.show()">
-          Open Feature
-        </ion-button>
-        <ion-list>
-          <ion-item>
-            <ion-label>Feature Radius</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-range [(ngModel)]="fp" min="0" max="200" color="secondary">
-              <ion-label slot="start">small</ion-label>
-              <ion-label slot="end">big</ion-label>
-            </ion-range>
-          </ion-item>
-          <ion-item>
-            <ion-label>Content</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-range [(ngModel)]="co" min="-50" max="50" color="secondary">
-              <ion-label slot="start">narrow</ion-label>
-              <ion-label slot="end">wide</ion-label>
-            </ion-range>
-          </ion-item>
-        </ion-list>
-
-
-        <ion-item-divider>
-          <ion-label>Documentation</ion-label>
-        </ion-item-divider>
-        <markdown
-          [src]="'https://raw.githubusercontent.com/fivethree-team/ionic-4-components/master/projects/core/src/lib/feature-discovery/README.md'">
-        </markdown>
+        <app-example docs="assets/docs/components/feature-discovery.md">
+          <ion-item-divider>
+            <ion-label>Example</ion-label>
+          </ion-item-divider>
+          <ion-button shape="round" (click)="fab.show()">
+            Open Feature
+          </ion-button>
+          <ion-list>
+            <ion-item>
+              <ion-label>Feature Radius</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-range [(ngModel)]="fp" min="0" max="200" color="secondary">
+                <ion-label slot="start">small</ion-label>
+                <ion-label slot="end">big</ion-label>
+              </ion-range>
+            </ion-item>
+            <ion-item>
+              <ion-label>Content</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-range [(ngModel)]="co" min="-50" max="50" color="secondary">
+                <ion-label slot="start">narrow</ion-label>
+                <ion-label slot="end">wide</ion-label>
+              </ion-range>
+            </ion-item>
+          </ion-list>
+        </app-example>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -71,24 +49,6 @@
   </ion-fab>
 </ion-content>
 
-<ng-template #backContent>
-  <div padding>
-    <ion-text color="light">
-      <h1>Go Back</h1>
-      <p>Leave this page by clicking the back arrow.</p>
-    </ion-text>
-    <ion-buttons>
-      <ion-button (click)="back.hide(); fab.show()" color="light" shape="round" fill="outline">
-        <ion-icon slot="start" name="arrow-back"></ion-icon>
-        PREVIOUS
-      </ion-button>
-      <ion-button color="light" shape="round" fill="outline" (click)="back.hide()">
-        FINISH
-      </ion-button>
-    </ion-buttons>
-  </div>
-</ng-template>
-
 <ng-template #fabContent>
   <div padding>
     <ion-text color="light">
@@ -96,19 +56,10 @@
       <p>Click this Button to do some cool stuff.</p>
     </ion-text>
     <ion-buttons>
-      <ion-button color="light" shape="round" fill="outline" (click)="fab.hide(); back.show()">
-        <ion-icon slot="end" name="arrow-forward"></ion-icon>
-        NEXT
+      <ion-button color="light" shape="round" fill="outline" (click)="fab.hide();">
+        <ion-icon slot="end" name="close"></ion-icon>
+        Close
       </ion-button>
     </ion-buttons>
-  </div>
-</ng-template>
-
-<ng-template #tourContent>
-  <div padding>
-    <ion-text color="light">
-      <h1>Take the Tour</h1>
-      <p>You can also build a little feature tour.</p>
-    </ion-text>
   </div>
 </ng-template>

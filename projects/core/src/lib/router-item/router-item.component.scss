@@ -16,6 +16,7 @@
 
   display: block;
   position: relative;
+  --fiv-background: unset;
   width: 100%;
 }
 
@@ -24,6 +25,7 @@
 
   ion-item {
     --color: var(--color-active);
+    --background: var(--fiv-background);
   }
 }
 

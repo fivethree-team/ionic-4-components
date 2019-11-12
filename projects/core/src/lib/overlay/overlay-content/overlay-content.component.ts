@@ -1,4 +1,13 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  HostBinding,
+  AfterViewInit,
+  EventEmitter,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewChecked
+} from '@angular/core';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 
 @Component({

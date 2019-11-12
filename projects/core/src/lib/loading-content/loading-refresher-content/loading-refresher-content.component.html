@@ -1,4 +1,4 @@
 <div #background class="spinner-background">
     <fiv-loading-spinner #spinner (fivProgress)="fivProgress.emit($event)" (fivComplete)="fillAnimationDone()"
-        class="spinner" [circleRadius]="8" [diameter]="20" [strokeWidth]="2"></fiv-loading-spinner>
+        class="spinner" [color]="spinColor" [circleRadius]="8" [diameter]="20" [strokeWidth]="2"></fiv-loading-spinner>
 </div>

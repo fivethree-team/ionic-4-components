@@ -1,0 +1,121 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Generate color palette visit http://mcg.mbitson.com and enter base color which will be 500
+// use for contrast white, $white-87-opacity, black and $black-87-opacity
+
+$primary: (
+  50: #ecedfb,
+  100: #cfd2f4,
+  200: #b0b4ed,
+  300: #9095e5,
+  400: #787fe0,
+  500: #6068da,
+  600: #5860d6,
+  700: #4e55d0,
+  800: #444bcb,
+  900: #333ac2,
+  A100: #ffffff,
+  A200: #d6d8ff,
+  A400: #a3a7ff,
+  A700: #8a8eff,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity
+  )
+);
+
+$accent: (
+  50: #fdf1e9,
+  100: #fbddc8,
+  200: #f8c6a4,
+  300: #f5af80,
+  400: #f29e64,
+  500: #f08d49,
+  600: #ee8542,
+  700: #ec7a39,
+  800: #e97031,
+  900: #e55d21,
+  A100: #ffffff,
+  A200: #fff0ea,
+  A400: #ffcbb7,
+  A700: #ffb89d,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity
+  )
+);
+
+$warn: (
+  50: #fee8e8,
+  100: #fcc5c5,
+  200: #fa9e9e,
+  300: #f87777,
+  400: #f75a5a,
+  500: #f53d3d,
+  600: #f43737,
+  700: #f22f2f,
+  800: #f02727,
+  900: #ee1a1a,
+  A100: #ffffff,
+  A200: #ffeded,
+  A400: #ffbaba,
+  A700: #ffa1a1,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity
+  )
+);
+
+// mandatory stuff for theming
+$palette-primary: mat-palette($primary);
+$palette-accent: mat-palette($accent);
+$palette-warn: mat-palette($warn);
+
+// include the custom theme components into a theme object
+$light-theme: mat-light-theme($palette-primary, $palette-accent, $palette-warn);
+$dark-theme: mat-dark-theme($palette-primary, $palette-accent, $palette-warn);
+
+// include the custom theme object into the angular material theme
+@include angular-material-theme($light-theme);
+
+.dark {
+  @include angular-material-theme($dark-theme);
+}

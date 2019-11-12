@@ -1,3 +1,4 @@
+import { FivRippleModule } from './../ripple/ripple.module';
 import { FivIconModule } from './../icon/icon.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -23,7 +24,8 @@ import { FivGalleryToolbarContent } from './gallery-toolbar-content/gallery-tool
     FivIconModule,
     FivIfModule,
     FivPullModule,
-    FivOverlayModule
+    FivOverlayModule,
+    FivRippleModule
   ],
   exports: [
     FivGallery,

@@ -53,7 +53,7 @@ import { FivLoadingService } from './loading.service';
   ]
 })
 export class FivLoadingProgressBar implements OnInit, OnDestroy {
-  loading = false;
+  @Input() loading = false;
   @Input() global = false;
   @Input() isComplete = false;
   progress = 0;

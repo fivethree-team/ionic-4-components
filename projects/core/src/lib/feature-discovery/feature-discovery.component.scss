@@ -31,6 +31,21 @@ fiv-icon {
   background: var(--fiv-color-pulse);
 }
 
+.feature.center.pulse {
+  animation: 1.4s infinite shadow-pulse;
+}
+
+@keyframes shadow-pulse {
+  0% {
+    border-radius: 100%;
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    border-radius: 100%;
+    box-shadow: 0 0 0 28px rgba(0, 0, 0, 0);
+  }
+}
+
 .content {
   position: absolute;
 }

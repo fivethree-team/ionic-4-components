@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let it of items; let i = index;" #item (click)="startMorph(i,it)">
+    <fiv-ripple>
+      <img #image [src]="it.url" alt="">
+      <ion-card-header #label>
+        <ion-card-subtitle>{{it.subtitle}}</ion-card-subtitle>
+        <ion-card-title>{{it.title}}</ion-card-title>
+
+
+      </ion-card-header>
+      <ion-card-content>
+        <div #desc>Awesome content</div>
+      </ion-card-content>
+    </fiv-ripple>
+
+  </ion-card>
+
+  <ion-card *ngIf="s" class="slide-element" #sl (click)="animations()">
+    <ion-card-content>
+      Animations
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+<fiv-overlay (afterInit)="morph($event)" #overlay>
+  <div *ngIf="overlay.open" class="morph" #content>
+    <ion-content (click)="morphOut()">
+      <img #i2 [src]="currentItem?.url
+        " alt="">
+      <ion-card-header #title>
+        <ion-card-subtitle>{{currentItem?.subtitle}}</ion-card-subtitle>
+        <ion-card-title>{{currentItem?.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-button (click)="deconstruct()">
+        Delete
+      </ion-button>
+
+    </ion-content>
+  </div>
+
+</fiv-overlay>

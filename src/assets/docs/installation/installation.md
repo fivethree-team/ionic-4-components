@@ -1,15 +1,16 @@
 # 📦 Installation
-To get started, install the package from npm. The latest version supports Ionic 4 and Angular 7.
 
-## Step 1. Install the UI Library 
+To get started, install the package from npm. The latest version supports Ionic 4 and Angular >= 7.
+
+## Install the UI Library
 
 You can use either npm or yarn to install `@fivethree/core` from npm.
 
 ```bash
-npm install --save @fivethree/core @angular/animations hammerjs
+npm install --save @fivethree/core @angular/animations
 ```
 
-## Step 2. Configure your Ionic App 
+## Configure your Ionic App
 
 Once the packages are installed, import `BrowserAnimationsModule` in `app.module.ts`:
 
@@ -27,7 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class AppModule {}
 ```
 
-## Step 3. Usage Instructions 
+## Usage Instructions
 
 To use the **UI Library** import it into a Page or Component Module. You can either import the full FivethreeCoreModule or one of the feature modules (e.g. FivGalleryModule).
 
@@ -59,5 +60,4 @@ import { HomePage } from './home.page';
   declarations: [HomePage]
 })
 export class HomePageModule {}
-
 ```

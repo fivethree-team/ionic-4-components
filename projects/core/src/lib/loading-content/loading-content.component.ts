@@ -82,6 +82,7 @@ import {
 })
 export class FivLoadingContent implements OnInit {
   @Input() hintText = 'new posts';
+  @Input() spinColor = 'light';
   @Input() maxPullHeight = 168;
   @Input() minPullHeight = 112;
   @Output() fivProgressChanged: EventEmitter<number> = new EventEmitter();

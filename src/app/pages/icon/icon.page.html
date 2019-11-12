@@ -3,9 +3,9 @@
 <ion-content>
   <ion-grid class="page-content" fixed>
     <ion-row>
-      <ion-col size="12">
-        <app-example [api]="'assets/docs/snippets/icon/api.md'" [typescript]="'assets/docs/snippets/icon/ts.md'" [css]="'assets/docs/snippets/icon/css.md'"
-          [html]="'assets/docs/snippets/icon/html.md'" [title]="'Icon Component'" [subtitle]="'This is basically an ion-icon but it can also display badge notifications and has smooth icon change transitions.'">
+      <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
+        offsetMd="0" sizeSm="12" sizeMd="12">
+        <app-example docs="assets/docs/components/icon.md">
           <ion-item-divider>
             <ion-label>Basic Example</ion-label>
           </ion-item-divider>
@@ -31,7 +31,8 @@
 
           <div class="example">
             <ion-button [fivCenter] fill="clear">
-              <fiv-icon [off]="off" [dotVisible]="dot" slot="icon-only" [indicatorValue]="indicatorValue" [name]="icon"></fiv-icon>
+              <fiv-icon [off]="off" [dotVisible]="dot" slot="icon-only" [indicatorValue]="indicatorValue" [name]="icon">
+              </fiv-icon>
             </ion-button>
           </div>
 

@@ -7,7 +7,7 @@
  */
 // Core
 export * from './lib/fivethree.core.module';
-// Components
+// Modules
 export * from './lib/app-bar/app-bar.module';
 export * from './lib/back-button/back-button.module';
 export * from './lib/bottom-sheet/bottom-sheet.module';
@@ -22,7 +22,7 @@ export * from './lib/feature-discovery/feature-discovery.module';
 export * from './lib/gallery/gallery.module';
 export * from './lib/icon/icon.module';
 export * from './lib/loading-content/loading-content.module';
-export * from './lib/loading-fab/loading-fab.module';
+export * from './lib/fab/fab.module';
 export * from './lib/loading-progress-bar/loading-progress-bar.module';
 export * from './lib/loading-progress-bar/loading-progress-bar.module';
 export * from './lib/loading-spinner/loading-spinner.module';
@@ -53,8 +53,9 @@ export * from './lib/dialog/dialog.component';
 export * from './lib/editable-label/editable-label.component';
 export * from './lib/expandable/expandable.component';
 export * from './lib/expandable/expandable-indicator/expandable-indicator.component';
+export * from './lib/feature-discovery/feature-discovery.component';
 export * from './lib/loading-content/loading-content.component';
-export * from './lib/loading-fab/loading-fab.component';
+export * from './lib/fab/fab.component';
 export * from './lib/loading-progress-bar/loading-progress-bar.component';
 export * from './lib/password-input/password-input.component';
 export * from './lib/router-item/router-item.component';
@@ -72,6 +73,7 @@ export * from './lib/network-status/network-status.component';
 export * from './lib/back-button/back-button.component';
 export * from './lib/gallery/gallery.component';
 export * from './lib/gallery/gallery-image/gallery-image.component';
+export * from './lib/overlay/overlay.component';
 
 /**
  * Directives
@@ -87,3 +89,7 @@ export * from './lib/dialog/dialog.service';
 export * from './lib/back-button/routing-state.service';
 
 export * from './lib/bottom-sheet/drawer-state';
+
+export * from './lib/animations/tween';
+export * from './lib/animations/easing-functions';
+export * from './lib/animations/animations';

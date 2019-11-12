@@ -1,0 +1,80 @@
+:host {
+  --fiv-spinner-size: 68px;
+  display: contents;
+  --fiv-fab-bottom: calc(10px + env(safe-area-inset-bottom));
+  --fiv-fab-top: calc(10px + env(safe-area-inset-top));
+}
+
+:host(.button-disabled) {
+  pointer-events: none;
+}
+
+fiv-icon.ios {
+  --fiv-icon-height: 24px;
+  --fiv-icon-width: 24px;
+}
+fiv-icon:not(.ios) {
+  --fiv-icon-height: 25px;
+  --fiv-icon-width: 25px;
+}
+
+ion-button {
+  --border-radius: 28px;
+  height: 56px;
+  min-width: 56px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+ion-fab.top {
+  top: var(--fiv-fab-top);
+}
+ion-fab.top.edge {
+  top: calc(var(--fiv-fab-top) - 38px);
+}
+ion-fab.middle {
+  top: calc(50% - 28px);
+}
+ion-fab.bottom.edge {
+  bottom: calc(var(--fiv-fab-bottom) - 38px);
+}
+ion-fab.bottom {
+  bottom: var(--fiv-fab-bottom);
+}
+ion-fab.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+ion-fab.start {
+  left: 10px;
+}
+ion-fab.end {
+  right: calc(10px + var(--ion-safe-area-right, 0px));
+}
+
+.pulse {
+  animation: shadow-pulse 1.2s infinite;
+}
+
+$offset: 187;
+$duration: 1.4s;
+fiv-loading-spinner {
+  position: absolute;
+  left: calc((var(--fiv-spinner-size) - 56px) / -2);
+  top: calc((var(--fiv-spinner-size) - 56px) / -2);
+}
+
+@keyframes shadow-pulse {
+  0% {
+    border-radius: 28px;
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    border-radius: 28px;
+    box-shadow: 0 0 0 28px rgba(0, 0, 0, 0);
+  }
+}

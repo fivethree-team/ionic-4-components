@@ -2,3 +2,17 @@
   border-top: 0.5px solid #e5e5e5;
   padding: 10px;
 }
+
+.flex-scroll {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  ion-card {
+    flex: 1 0 auto;
+  }
+}
+
+fiv-bottom-sheet-content {
+  --fiv-border-radius: 12px;
+  --fiv-padding: 20px;
+}

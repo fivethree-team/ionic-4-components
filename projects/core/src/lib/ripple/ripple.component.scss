@@ -1,6 +1,7 @@
 :host {
   display: block;
   position: relative;
+  --fiv-color-ripple: rgba(0, 0, 0, 0.1);
 }
 
 :host:hover {
@@ -8,7 +9,7 @@
 }
 
 :host.hover:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--fiv-color-ripple, rgba(0, 0, 0, 0.1));
 }
 
 :host.round {
@@ -41,7 +42,7 @@
 
 .ripple {
   position: absolute;
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--fiv-color-ripple, rgba(0, 0, 0, 0.1));
   border-radius: 100%;
   transform: scale(0);
 }
