@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>popover</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="popover.openClick($event)">
+    <ion-icon slot="start" name="add"></ion-icon>
+    Click
+  </ion-button>
+
+  <ion-button (click)="popover.openCords(1274,1024)">
+    <ion-icon slot="start" name="add"></ion-icon>
+    Coords
+  </ion-button>
+
+  <fiv-popover #popover [width]="200" [height]="100">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+        <ion-card-title>Awesome Title</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Awesome content
+      </ion-card-content>
+    </ion-card>
+  </fiv-popover>
+
+</ion-content>

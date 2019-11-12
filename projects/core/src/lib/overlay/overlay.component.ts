@@ -10,8 +10,6 @@ import {
 } from '@angular/core';
 import { FivOverlayContent } from './overlay-content/overlay-content.component';
 import { FivOverlayService } from './overlay.service';
-import { tap, first } from 'rxjs/operators';
-import { zip } from 'rxjs';
 
 @Component({
   selector: 'fiv-overlay',

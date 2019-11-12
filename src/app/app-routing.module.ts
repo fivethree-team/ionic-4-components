@@ -83,6 +83,11 @@ const routes: Routes = [
   },
   { path: 'fab', loadChildren: './pages/fab/fab.module#FabPageModule' },
   {
+    path: 'popover',
+    loadChildren: () =>
+      import('./pages/popover/popover.module').then(m => m.PopoverPageModule)
+  },
+  {
     path: '**',
     loadChildren:
       './pages/page-not-found/page-not-found.module#PageNotFoundPageModule'

@@ -1,13 +1,4 @@
-.popover-item {
-  --border-style: none;
-}
-
-.popover-item:hover {
-  ion-label {
-    --color: var(--ion-color-primary);
-  }
-  ion-icon {
-    color: var(--ion-color-primary);
-  }
-  cursor: pointer;
+.popover-container {
+  position: absolute;
+  display: block;
 }

@@ -50,6 +50,10 @@ export class AppComponent {
       url: '/password'
     },
     {
+      title: 'Popover',
+      url: '/popover'
+    },
+    {
       title: 'Refresher',
       url: '/refresher'
     },

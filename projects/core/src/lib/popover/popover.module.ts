@@ -1,13 +1,11 @@
-import { FivButtonModule } from './../button/button.module';
-import { FivPopover } from './popover.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { FivPopover } from './popover.component';
+import { FivOverlayModule } from '../overlay/overlay.module';
 
 @NgModule({
   declarations: [FivPopover],
-  imports: [CommonModule, FivButtonModule, IonicModule],
   exports: [FivPopover],
-  entryComponents: [FivPopover]
+  imports: [CommonModule, FivOverlayModule]
 })
 export class FivPopoverModule {}
