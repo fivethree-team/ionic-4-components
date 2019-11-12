@@ -15,6 +15,8 @@ interface Position {
 export class FivPopover implements OnInit {
   @Input() width: number;
   @Input() height: number;
+  @Input() overlaysTarget = true;
+  @Input() backdrop = true;
   top = 0;
   left = 0;
 
@@ -24,19 +26,32 @@ export class FivPopover implements OnInit {
 
   ngOnInit() {}
 
+  close() {
+    this.overlay.hide();
+  }
+
   openClick(event: MouseEvent) {
     const {
       top,
       left,
       bottom,
-      right
+      right,
+      height,
+      width
     } = (event.target as HTMLElement).getBoundingClientRect();
-    const position = this.calculcatePosition(top, left, bottom, right);
+    const position = this.calculcatePosition(
+      top,
+      left,
+      bottom,
+      right,
+      height,
+      width
+    );
     this.openAtPosition(position);
   }
 
   openCords(top: number, left: number) {
-    const position = this.calculcatePosition(top, left, top, left);
+    const position = this.calculcatePosition(top, left, top, left, 0, 0);
     this.openAtPosition(position);
   }
 
@@ -50,13 +65,14 @@ export class FivPopover implements OnInit {
     top: number,
     left: number,
     bottom: number,
-    right: number
+    right: number,
+    targetHeight: number,
+    targetWidth: number
   ): Position {
     const width = this.platform.width();
     const height = this.platform.height();
     if (width / 2 > left && height / 2 > top) {
       // top left
-
       (left = Math.max(0, left)), (top = Math.max(0, top));
     } else if (width / 2 < left && height / 2 < top) {
       // bottom right
@@ -70,6 +86,11 @@ export class FivPopover implements OnInit {
       // bottom left
       left = Math.max(0, left);
       top = Math.min(height - this.height, bottom - this.height);
+    }
+
+    // alter position when not overlaying click target
+    if (!this.overlaysTarget) {
+      height / 2 > top ? (top += targetHeight) : (top -= targetHeight);
     }
 
     return { top, left };

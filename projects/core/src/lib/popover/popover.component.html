@@ -1,4 +1,6 @@
 <fiv-overlay>
+  <div *ngIf="backdrop" class="popover-backdrop" (click)="close()">
+  </div>
   <div class="popover-container" [style.left]="left + 'px'" [style.top]="top + 'px'" [style.height]="height + 'px'"
     [style.width]="width + 'px'">
     <ng-content>
