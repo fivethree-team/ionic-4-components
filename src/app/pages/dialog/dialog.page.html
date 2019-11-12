@@ -61,9 +61,18 @@
 
 
 </ion-content>
-<fiv-dialog (fivClose)="close()" [pullEnabled]="pull" (fivDurationOver)="dialog.close()" [inDuration]="inDuration"
-  [outDuration]="outDuration" #dialog [duration]="duration" [shape]="shape" [horizontalAlign]="horizontalAlign"
-  [verticalAlign]="verticalAlign" [backdrop]="backdrop">
+<fiv-dialog 
+(fivClose)="close()" 
+[pullEnabled]="pull" 
+(fivDurationOver)="dialog.close()" 
+[inDuration]="inDuration"
+[outDuration]="outDuration" 
+#dialog 
+[duration]="duration" 
+[shape]="shape" 
+[horizontalAlign]="horizontalAlign"
+[verticalAlign]="verticalAlign" 
+[backdrop]="backdrop">
 
   <ion-card-header>
     <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
