@@ -21,7 +21,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./router-item.component.scss']
 })
 export class FivRouterItem implements OnInit, AfterViewInit {
-  @ViewChild('fivIcon') fivIcon: FivIcon;
+  @ViewChild('fivIcon', { static: false }) fivIcon: FivIcon;
 
   @Input() active = false;
 

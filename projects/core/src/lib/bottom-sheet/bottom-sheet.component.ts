@@ -73,7 +73,8 @@ export class FivBottomSheet implements AfterViewInit, OnChanges, OnDestroy {
   >();
   @Output() fivProgress: EventEmitter<number> = new EventEmitter<number>();
 
-  @ContentChild(FivBottomSheetContent) content: FivBottomSheetContent;
+  @ContentChild(FivBottomSheetContent, { static: true })
+  content: FivBottomSheetContent;
 
   private _startPositionTop: number;
   _startPositionOffset: number;

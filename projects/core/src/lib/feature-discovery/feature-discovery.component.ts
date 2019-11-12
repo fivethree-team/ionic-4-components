@@ -66,10 +66,11 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
   contentOffset = 0;
   bounds: FeaturePosition;
   icon: string;
-  @ViewChild('circle') circle: ElementRef;
-  @ViewChild('rect') rect: ElementRef;
-  @ViewChild('pInner', { read: ElementRef }) innerPulse: ElementRef;
-  @ViewChild('pOuter') outerPulse: ElementRef;
+  @ViewChild('circle', { static: false }) circle: ElementRef;
+  @ViewChild('rect', { static: false }) rect: ElementRef;
+  @ViewChild('pInner', { static: false, read: ElementRef })
+  innerPulse: ElementRef;
+  @ViewChild('pOuter', { static: false }) outerPulse: ElementRef;
 
   animationState = 'hidden';
   pulse = 'small';

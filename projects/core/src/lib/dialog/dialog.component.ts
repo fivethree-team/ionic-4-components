@@ -124,9 +124,10 @@ export class FivDialog implements OnInit {
   @Output() fivClose: EventEmitter<FivDialog> = new EventEmitter();
   @Output() fivDurationOver: EventEmitter<FivDialog> = new EventEmitter();
   @Output() fivOpen: EventEmitter<FivDialog> = new EventEmitter();
-  @ViewChild(FivOverlay) overlay: FivOverlay;
-  @ViewChild(FivLoadingProgressBar) bar: FivLoadingProgressBar;
-  @ViewChild('dialog') dialogRef: ElementRef;
+  @ViewChild(FivOverlay, { static: false }) overlay: FivOverlay;
+  @ViewChild(FivLoadingProgressBar, { static: false })
+  bar: FivLoadingProgressBar;
+  @ViewChild('dialog', { static: false }) dialogRef: ElementRef;
 
   dialogState: 'top' | 'center' | 'bottom' | 'out' = 'out';
   currentPullProgress: number;

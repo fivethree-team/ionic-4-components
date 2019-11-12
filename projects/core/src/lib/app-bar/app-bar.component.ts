@@ -31,10 +31,11 @@ export class FivAppBar implements OnInit, AfterContentInit, OnDestroy {
   _position: AppBarFabPosition;
   transitioning = false;
 
-  @ViewChild('fab') fab: FivFab;
+  @ViewChild('fab', { static: false }) fab: FivFab;
   @Input() titleLayout: AppBarTitleLayout = 'hide';
   @Output() fivFabClick = new EventEmitter<FivAppBar>();
-  @ContentChild(FivAppBarFabDirective) fivFab: FivAppBarFabDirective;
+  @ContentChild(FivAppBarFabDirective, { static: false })
+  fivFab: FivAppBarFabDirective;
 
   onDestroy$ = new Subject();
 

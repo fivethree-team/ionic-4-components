@@ -42,7 +42,8 @@ export class FivSpinner implements OnInit {
 
   @Output() fivProgress = new EventEmitter<number>();
   @Output() fivComplete = new EventEmitter<FivSpinner>();
-  @ViewChild('determinateCircle') determinateCircle: ElementRef;
+  @ViewChild('determinateCircle', { static: false })
+  determinateCircle: ElementRef;
   @Input() mode: 'indeterminate' | 'determinate' = 'indeterminate';
   @Input() circleRadius = 45;
   _color = 'var(--fiv-spin-color)';

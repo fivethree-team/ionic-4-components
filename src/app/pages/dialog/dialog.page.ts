@@ -7,7 +7,7 @@ import { FivDialog } from '@fivethree/core';
   styleUrls: ['./dialog.page.scss']
 })
 export class DialogPage implements OnInit {
-  @ViewChild('dialog') dialog: FivDialog;
+  @ViewChild('dialog', { static: false }) dialog: FivDialog;
 
   backdrop = true;
   pull = true;

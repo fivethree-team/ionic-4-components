@@ -106,12 +106,12 @@ import { ImageService } from './image.service';
   ]
 })
 export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
-  @ViewChild('overlay') overlay: FivOverlay;
-  @ViewChild('morphOverlay') morphOverlay: FivOverlay;
-  @ViewChild('viewer') viewer: ElementRef;
-  @ViewChild('morph') morphImage: ElementRef;
-  @ViewChild('slider', { read: ElementRef }) swiper: ElementRef;
-  @ViewChild('slider') slides: IonSlides;
+  @ViewChild('overlay', { static: false }) overlay: FivOverlay;
+  @ViewChild('morphOverlay', { static: false }) morphOverlay: FivOverlay;
+  @ViewChild('viewer', { static: false }) viewer: ElementRef;
+  @ViewChild('morph', { static: false }) morphImage: ElementRef;
+  @ViewChild('slider', { static: false, read: ElementRef }) swiper: ElementRef;
+  @ViewChild('slider', { static: false }) slides: IonSlides;
   @ViewChildren('slideImage') slideImages: QueryList<ElementRef>;
 
   @ContentChildren(

@@ -119,10 +119,11 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   @Output() fivShow: EventEmitter<FivFab> = new EventEmitter<FivFab>();
   @Output() fivTransition: EventEmitter<FivFab> = new EventEmitter<FivFab>();
 
-  @ViewChild('spinner') spinner: FivSpinner;
-  @ViewChild('feature') featureDiscovery: FivFeatureDiscovery;
-  @ViewChild('bar') bar: FivLoadingProgressBar;
-  @ContentChild(IonLabel) labelComp: IonLabel;
+  @ViewChild('spinner', { static: false }) spinner: FivSpinner;
+  @ViewChild('feature', { static: false })
+  featureDiscovery: FivFeatureDiscovery;
+  @ViewChild('bar', { static: false }) bar: FivLoadingProgressBar;
+  @ContentChild(IonLabel, { static: false }) labelComp: IonLabel;
 
   loading = false;
   extended = false;
