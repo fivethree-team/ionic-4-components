@@ -12,7 +12,7 @@ import {
   styleUrls: ['./gallery-toolbar.component.scss']
 })
 export class FivGalleryToolbar implements OnInit {
-  @ViewChild(TemplateRef) content: TemplateRef<any>;
+  @ViewChild(TemplateRef, { static: false }) content: TemplateRef<any>;
   @Input() position: 'top' | 'bottom' = 'top';
 
   constructor() {}

@@ -24,7 +24,7 @@ export class FivBottomSheetContent implements OnInit, AfterViewInit {
 
   @Output() fivClick: EventEmitter<any> = new EventEmitter();
 
-  @ViewChild(IonContent) content: IonContent;
+  @ViewChild(IonContent, { static: true }) content: IonContent;
 
   currentState: DrawerState;
   states = DrawerState;

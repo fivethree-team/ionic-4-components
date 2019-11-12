@@ -47,9 +47,10 @@ export class FivRefresherContent implements OnInit {
   >();
   @Output() fivProgress: EventEmitter<number> = new EventEmitter<number>();
 
-  @ViewChild('spinner') spinner: FivSpinner;
-  @ViewChild('spinner', { read: ElementRef }) spinnerRef: ElementRef;
-  @ViewChild('background') background: ElementRef;
+  @ViewChild('spinner', { static: false }) spinner: FivSpinner;
+  @ViewChild('spinner', { static: true, read: ElementRef })
+  spinnerRef: ElementRef;
+  @ViewChild('background', { static: false }) background: ElementRef;
 
   visible = false;
 

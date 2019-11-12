@@ -54,7 +54,7 @@ export class FivEditableLabel
 
   @Output() blur = new EventEmitter();
 
-  @ViewChild('input') input: IonInput;
+  @ViewChild('input', { static: false }) input: IonInput;
 
   private _editing: boolean;
   private _value: string;

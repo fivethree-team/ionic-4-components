@@ -44,7 +44,7 @@ import {
 })
 export class FivStepperHorizontal implements OnInit {
   @Input() contents: QueryList<FivStep>;
-  @ViewChild('slides') slides: IonSlides;
+  @ViewChild('slides', { static: true }) slides: IonSlides;
   @Output() fivSelect = new EventEmitter<number>();
 
   constructor() {}

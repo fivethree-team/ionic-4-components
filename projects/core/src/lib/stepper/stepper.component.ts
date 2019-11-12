@@ -21,7 +21,8 @@ import { FivStepperHorizontal } from './stepper-horizontal/stepper-horizontal.co
 export class FivStepper implements OnInit {
   @ContentChildren(FivStep) contents: QueryList<FivStep>;
   @ViewChildren(FivStepContent) steps: QueryList<FivStepContent>;
-  @ViewChild(FivStepperHorizontal) horizontal: FivStepperHorizontal;
+  @ViewChild(FivStepperHorizontal, { static: false })
+  horizontal: FivStepperHorizontal;
   @Input() mode: 'horizontal' | 'vertical' = 'vertical';
   @Output() fivClick = new EventEmitter<number>();
   @Output() fivClose = new EventEmitter<{ index: number; param: any }>();

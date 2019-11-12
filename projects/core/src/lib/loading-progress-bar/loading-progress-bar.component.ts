@@ -66,8 +66,8 @@ export class FivLoadingProgressBar implements OnInit, OnDestroy {
     FivLoadingProgressBar
   >();
 
-  @ViewChild('bar') bar: ElementRef;
-  @ViewChild('linear') linear: ElementRef;
+  @ViewChild('bar', { static: false }) bar: ElementRef;
+  @ViewChild('linear', { static: false }) linear: ElementRef;
 
   param: any;
 

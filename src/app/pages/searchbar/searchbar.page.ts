@@ -11,7 +11,7 @@ export class SearchbarPage implements OnInit {
   small = false;
   states = DrawerState;
   state: DrawerState = DrawerState.Bottom;
-  @ViewChild('search') search: FivSearchbar;
+  @ViewChild('search', { static: false }) search: FivSearchbar;
 
   constructor() {}
 

@@ -23,8 +23,8 @@ export class AppBarPage implements OnInit {
     subHeader: 'Select a floating action button position.'
   };
 
-  @ViewChild('iconFeature') iconFeature: FivFeature;
-  @ViewChild('tabFeature') tabFeature: FivFeature;
+  @ViewChild('iconFeature', { static: false }) iconFeature: FivFeature;
+  @ViewChild('tabFeature', { static: false }) tabFeature: FivFeature;
 
   constructor(public toastController: ToastController) {}
 

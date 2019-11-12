@@ -21,7 +21,7 @@ import { zip } from 'rxjs';
 export class FivOverlay {
   private componentRef: ComponentRef<FivOverlayContent>;
 
-  @ViewChild('content') ngContent: TemplateRef<any>;
+  @ViewChild('content', { static: false }) ngContent: TemplateRef<any>;
   @Input() priority;
   @Output() afterInit = new EventEmitter();
   private _open = false;
