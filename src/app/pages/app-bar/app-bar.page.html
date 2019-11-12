@@ -1,7 +1,9 @@
 <app-header title="App Bar">
   <ion-buttons slot="end">
     <ion-button fill="outline" color="secondary" shape="round" slot="end" (click)="iconFeature.show()">
-      Open Feature </ion-button>
+      Fab </ion-button>
+    <ion-button fill="outline" color="secondary" shape="round" slot="end" (click)="tabFeature.show()">
+      Tab </ion-button>
   </ion-buttons>
 
 </app-header>
@@ -26,17 +28,25 @@
   <ion-tabs #tabs>
     <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom"
       [titleLayout]="titleLayout" #bar>
-      <fiv-fab [fivAppBarFab]="'center'" #fab>
+      <fiv-fab [fivAppBarFab]="position" #fab>
         <fiv-icon #iconFeature="fivFeature" [fivFeature]="feature" name="color-wand"></fiv-icon>
       </fiv-fab>
 
-      <fiv-app-bar-tab left tab="tab1" href="/tab1" icon="md-home" name="App Bar">
+      <fiv-app-bar-tab left tab="tab1" href="/tab1" name="App Bar">
+        <fiv-icon name="md-home"></fiv-icon>
+        <ion-label>Home</ion-label>
       </fiv-app-bar-tab>
-      <fiv-app-bar-tab left tab="tab2" href="/tab2" icon="md-images" name="Expandable">
+      <fiv-app-bar-tab left tab="tab2" href="/tab2" name="Expandable">
+        <fiv-icon #tabFeature="fivFeature" [fivFeature]="feature" name="md-images"></fiv-icon>
+        <ion-label>Images</ion-label>
       </fiv-app-bar-tab>
-      <fiv-app-bar-tab [badge]="1" right tab="tab3" href="/tab3" icon="md-pizza" name="Password">
+      <fiv-app-bar-tab right tab="tab3" href="/tab3" name="Password">
+        <fiv-icon [badge]="1" name="md-pizza"></fiv-icon>
+        <ion-label>Pizza</ion-label>
       </fiv-app-bar-tab>
       <fiv-app-bar-tab right tab="tab4" href="/tab4" icon="md-more" name="Buttons">
+        <fiv-icon name="md-more"></fiv-icon>
+        <ion-label>More</ion-label>
       </fiv-app-bar-tab>
     </fiv-app-bar>
   </ion-tabs>

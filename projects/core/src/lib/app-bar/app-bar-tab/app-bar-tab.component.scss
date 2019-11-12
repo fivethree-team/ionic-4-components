@@ -4,11 +4,35 @@
   display: inline-block;
   position: relative;
 
-  fiv-icon {
-    display: block;
+  .tab {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
   }
 
   .tab.active {
     --fiv-color-icon: var(--ion-color-primary);
+    ::ng-deep ion-label {
+      color: var(--ion-color-primary);
+    }
+  }
+}
+
+:host(.label-hide) {
+  ::ng-deep ion-label {
+    display: none;
+  }
+}
+
+:host(.label-active-only) {
+  .tab:not(.active) {
+    ::ng-deep ion-label {
+      display: none;
+    }
   }
 }

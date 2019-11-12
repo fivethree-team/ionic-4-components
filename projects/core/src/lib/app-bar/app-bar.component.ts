@@ -1,4 +1,3 @@
-import { FivAppBarTabContent } from './app-bar-tab-content/app-bar-tab-content.component';
 import { FivFab } from './../fab/fab.component';
 import {
   Component,
@@ -9,62 +8,53 @@ import {
   EventEmitter,
   ContentChildren,
   QueryList,
-  AfterViewInit,
   AfterContentInit,
   Host,
-  ViewChildren,
-  ContentChild
+  ContentChild,
+  OnDestroy
 } from '@angular/core';
-import { FivAppBarTab } from './app-bar-tab/app-bar-tab.component';
 import { Router } from '@angular/router';
 import { AppBarTitleLayout, AppBarFabPosition } from '../interfaces';
 import { IonTabs } from '@ionic/angular';
-import { TabButtonClickEventDetail } from '@ionic/core';
 import { FivAppBarFabDirective } from './app-bar-fab.directive';
+import { fromEvent, merge, Subject } from 'rxjs';
+import { TabButtonClickEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'fiv-app-bar',
   templateUrl: './app-bar.component.html',
   styleUrls: ['./app-bar.component.scss']
 })
-export class FivAppBar implements OnInit, AfterContentInit {
+export class FivAppBar implements OnInit, AfterContentInit, OnDestroy {
   _fabVisible = true;
   cutoutVisible = true;
   _position: AppBarFabPosition;
   transitioning = false;
-  tabsRight: FivAppBarTab[];
-  tabsLeft: FivAppBarTab[];
 
   @ViewChild('fab') fab: FivFab;
   @Input() titleLayout: AppBarTitleLayout = 'hide';
   @Output() fivFabClick = new EventEmitter<FivAppBar>();
-  @ViewChildren(FivAppBarTabContent) _tabs: QueryList<FivAppBarTabContent>;
-
   @ContentChild(FivAppBarFabDirective) fivFab: FivAppBarFabDirective;
 
-  @ContentChildren(FivAppBarTab)
-  tabComponents: QueryList<FivAppBarTab>;
+  onDestroy$ = new Subject();
 
-  constructor(public router: Router, @Host() public tabs: IonTabs) {}
+  constructor(public router: Router, @Host() public ionTabs: IonTabs) {}
 
   ngOnInit() {}
 
-  ngAfterContentInit(): void {
-    this.prepareTabs();
+  ngOnDestroy(): void {
+    this.onDestroy$.next();
   }
 
-  private prepareTabs() {
-    const position = this.fivFab.fivAppBarFab;
-    if (position === 'center') {
-      this.tabsLeft = this.tabComponents.toArray().slice(0, 2);
-      this.tabsRight = this.tabComponents.toArray().slice(2, 4);
-    } else if (position === 'right') {
-      this.tabsLeft = this.tabComponents.toArray();
-      this.tabsRight = [];
-    } else if (position === 'left') {
-      this.tabsLeft = [];
-      this.tabsRight = this.tabComponents.toArray();
-    }
+  ngAfterContentInit(): void {
+    // merge(...this.tabs.map(tab => tab.ionTabButtonClick))
+    //   .pipe(
+    //     tap((event: TabButtonClickEventDetail) =>
+    //       this.ionTabButtonClick(event)
+    //     ),
+    //     takeUntil(this.onDestroy$)
+    //   )
+    //   .subscribe();
   }
 
   fabClick() {
@@ -72,6 +62,6 @@ export class FivAppBar implements OnInit, AfterContentInit {
   }
 
   ionTabButtonClick(event: TabButtonClickEventDetail) {
-    this.tabs.select(event.tab);
+    this.ionTabs.select(event.tab);
   }
 }

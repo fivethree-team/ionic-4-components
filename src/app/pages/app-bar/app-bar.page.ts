@@ -9,7 +9,7 @@ import { FivFeature } from '@fivethree/core';
 })
 export class AppBarPage implements OnInit {
   titleLayout = 'hide';
-  position = 'right';
+  position = 'center';
   fabVisible = true;
   icon = 'color-wand';
 
@@ -24,6 +24,7 @@ export class AppBarPage implements OnInit {
   };
 
   @ViewChild('iconFeature') iconFeature: FivFeature;
+  @ViewChild('tabFeature') tabFeature: FivFeature;
 
   constructor(public toastController: ToastController) {}
 
