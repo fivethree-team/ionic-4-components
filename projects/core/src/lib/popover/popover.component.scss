@@ -1,16 +1,20 @@
 :host {
   --fiv-popover-backdrop-color: rgba(0, 0, 0, 0.2);
 }
+
 .popover-container {
   position: absolute;
   display: block;
 }
 
-.popover-backdrop  {
+svg.arrow {
+  position: absolute;
+  fill: var(--ion-item-background);
+}
+
+.fiv-popover-backdrop {
   position: absolute;
   display: block;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
   background: var(--fiv-popover-backdrop-color);

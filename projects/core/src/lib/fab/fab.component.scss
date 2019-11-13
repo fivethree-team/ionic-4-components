@@ -16,11 +16,11 @@ fiv-loading-progress-bar {
   pointer-events: none;
 }
 
-fiv-icon.ios {
+::ng-deep ng-deep fiv-icon.ios {
   --fiv-icon-height: 24px;
   --fiv-icon-width: 24px;
 }
-fiv-icon:not(.ios) {
+::ng-deep fiv-icon:not(.ios) {
   --fiv-icon-height: 25px;
   --fiv-icon-width: 25px;
 }

@@ -1,49 +1,110 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>popover</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="Popover"></app-header>
 
-<ion-content>
-  <ion-button (click)="popover.openClick($event)">
-    <ion-icon slot="start" name="add"></ion-icon>
-    Click Overlay
-  </ion-button>
-  <ion-button (click)="popover1.openClick($event)">
-    <ion-icon slot="start" name="add"></ion-icon>
-    Click Not Overlay
-  </ion-button>
+<ion-content scrollX>
 
-  <ion-button (click)="popover.openCords(1274,1024)">
-    <ion-icon slot="start" name="add"></ion-icon>
-    Coords
-  </ion-button>
+  <app-example>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button (click)="overflow.openClick($event)">
+          <ion-icon slot="icon-only" name="more"></ion-icon>
+        </ion-button>
 
-  <a (mouseenter)="popover1.openClick($event)" (mouseleave)="popover1.close()">hover me</a>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-button (mouseenter)="hover.openClick($event)" (mouseleave)="hover.close()">hover me</ion-button>
+    <fiv-popover #hover [backdrop]="false" [arrow]="true" [overlaysTarget]="false" [width]="300" [height]="180">
+      <ion-card class="ion-no-margin">
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Awesome content
+        </ion-card-content>
+      </ion-card>
+    </fiv-popover>
+    <ion-button (click)="popover.openClick($event)">
+      Click Overlay
+    </ion-button>
+    <ion-button (click)="popover1.openClick($event)">
+      Click Not Overlay
+    </ion-button>
+    <ion-button (click)="popover.openCoords(1274,3000)">
+      Coords
+    </ion-button>
+    <fiv-popover #popover1 [overlaysTarget]="false" [width]="300" [height]="180">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Awesome content
+        </ion-card-content>
+      </ion-card>
+    </fiv-popover>
+
+    <fiv-popover #popover [width]="300" [height]="180">
+      <ion-card class="ion-no-margin">
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Awesome content
+        </ion-card-content>
+      </ion-card>
+    </fiv-popover>
+
+    <fiv-popover #overflow [width]="300">
+      <ion-card class="overflow">
+        <ion-item-divider>
+          <ion-text color="dark">
+            <ion-label>Sample Popover</ion-label>
+          </ion-text>
+        </ion-item-divider>
+        <ion-item lines="none">
+          <ion-range min="0" value="60" max="100" pin="true" step="1" ticks="true" color="primary">
+          </ion-range>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon slot="start" name="add"></ion-icon>
+          <ion-label>Action 1</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon slot="start" name="person"></ion-icon>
+          <ion-label>Action 2</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon slot="start" name="create"></ion-icon>
+          <ion-label>Action 3</ion-label>
+        </ion-item>
+      </ion-card>
+    </fiv-popover>
+    <div class="spacer"></div>
+    <ion-button (click)="popover.openCoords(1274,3000)">
+      Coords
+    </ion-button>
+
+
+  </app-example>
+
+  <fiv-popover #popover2 [backdrop]="false" [arrow]="true" [overlaysTarget]="false" [width]="300" [height]="180">
+    <ion-card class="ion-no-margin">
+      <ion-card-header>
+        <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+        <ion-card-title>Awesome Title</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Awesome content
+      </ion-card-content>
+    </ion-card>
+  </fiv-popover>
+
+  <ion-fab [fivPopover]="popover2" [fivPopover.show]="true" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [disabled]="true">
+      <ion-icon name="color-wand"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
-
-
-<fiv-popover #popover [width]="300" [height]="180">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-      <ion-card-title>Awesome Title</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Awesome content
-    </ion-card-content>
-  </ion-card>
-</fiv-popover>
-
-<fiv-popover #popover1 [overlaysTarget]="false" [width]="300" [height]="180">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-      <ion-card-title>Awesome Title</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Awesome content
-    </ion-card-content>
-  </ion-card>
-</fiv-popover>
