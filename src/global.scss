@@ -88,3 +88,10 @@ fiv-router-item {
     --background: var(--ion-background-color);
   }
 }
+
+fiv-overlay-content {
+  .chip .arrow {
+    fill: var(--ion-color-tertiary);
+    opacity: 0.1;
+  }
+}

@@ -7,6 +7,11 @@
   display: block;
 }
 
+.animation-container {
+  height: 100%;
+  position: relative;
+}
+
 svg.arrow {
   position: absolute;
   fill: var(--ion-item-background);

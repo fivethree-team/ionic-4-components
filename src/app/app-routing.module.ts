@@ -47,7 +47,7 @@ const routes: Routes = [
   },
   {
     path: 'gallery',
-    loadChildren: './pages/image/image.module#ImagePageModule'
+    loadChildren: './pages/gallery/gallery.module#GalleryPageModule'
   },
   {
     path: 'refresher',

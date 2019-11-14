@@ -12,12 +12,13 @@ export class PopoverElementDirective implements AfterViewInit {
 
   @Input('fivPopover.show') set show(visible: boolean) {
     this._show = visible;
-
-    if (this.show) {
-      this.fivPopover.openElementRef(this.el);
-    } else if (this.fivPopover.overlay && this.fivPopover.overlay.open) {
-      this.fivPopover.close();
-    }
+    setTimeout(() => {
+      if (this.show) {
+        this.fivPopover.open(this.el);
+      } else if (this.fivPopover.overlay && this.fivPopover.overlay.open) {
+        this.fivPopover.close();
+      }
+    }, 0);
   }
   get show() {
     return this._show;
@@ -28,7 +29,7 @@ export class PopoverElementDirective implements AfterViewInit {
   open() {
     this.show = true;
   }
-  hide() {
+  close() {
     this.show = false;
   }
 

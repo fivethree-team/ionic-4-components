@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ImagePage } from './image.page';
+import { GalleryPage } from './gallery.page';
 import {
   FivGalleryModule,
   FivSpinnerModule,
@@ -16,7 +16,7 @@ import {
 const routes: Routes = [
   {
     path: '',
-    component: ImagePage
+    component: GalleryPage
   }
 ];
 
@@ -31,6 +31,6 @@ const routes: Routes = [
     FivSpinnerModule,
     FivCenterModule
   ],
-  declarations: [ImagePage]
+  declarations: [GalleryPage]
 })
-export class ImagePageModule {}
+export class GalleryPageModule {}

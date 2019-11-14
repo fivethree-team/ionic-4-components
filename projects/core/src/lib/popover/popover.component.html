@@ -1,12 +1,15 @@
 <fiv-overlay>
-  <div *ngIf="backdrop" class="fiv-popover-backdrop" (click)="close()">
+  <div *ngIf="backdrop && !hidden" [ngClass]="classes" class="fiv-popover-backdrop" (click)="close()">
   </div>
-  <div class="popover-container" [style]="containerStyles">
-    <ng-content>
-    </ng-content>
-    <svg *ngIf="arrow && !overlaysTarget" class="arrow" [style]="svgStyles">
-      <polygon [attr.points]="triangle" />
-    </svg>
+  <div *ngIf="!hidden" [ngClass]="classes" class="popover-container" [style]="containerStyles">
+    <div #animation *ngIf="overlay?.open" class="animation-container" anim [anim.in]="animationIn">
+      <ng-content>
+      </ng-content>
+      <svg *ngIf="arrow && !overlaysTarget" class="arrow" [style]="svgStyles">
+        <polygon [attr.points]="triangle" />
+      </svg>
+    </div>
+
   </div>
 
 </fiv-overlay>

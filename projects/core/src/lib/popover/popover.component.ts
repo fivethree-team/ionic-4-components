@@ -1,3 +1,4 @@
+import { animIn, animOut } from './popover.animations';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
   Component,
@@ -8,28 +9,27 @@ import {
   Host,
   Optional,
   AfterViewInit,
-  Output,
-  EventEmitter,
   ElementRef
 } from '@angular/core';
 import { FivOverlay } from '../overlay/overlay.component';
 import { Platform, IonContent } from '@ionic/angular';
-import { ReplaySubject } from 'rxjs';
-
-interface PopoverPosition {
-  top: number;
-  left: number;
-  bottom: number;
-  right: number;
-  targetWidth: number;
-  targetHeight: number;
-  vertical: PopoverVerticalAlign;
-  horizontal: PopoverHorizontalAlign;
-}
-
-export type PopoverHorizontalAlign = 'left' | 'right';
-export type PopoverVerticalAlign = 'top' | 'bottom';
-export type PopoverPositioning = 'auto' | 'above' | 'below' | 'left' | 'right';
+import { fromEvent, Subject, merge, from } from 'rxjs';
+import {
+  tap,
+  takeUntil,
+  map,
+  throttleTime,
+  filter,
+  flatMap
+} from 'rxjs/operators';
+import { NavigationStart, Router } from '@angular/router';
+import {
+  PopoverPositioning,
+  PopoverPosition,
+  PopoverHorizontalAlign,
+  PopoverVerticalAlign
+} from './popover.types';
+import { after } from '@fivethree/ngx-rxjs-animations';
 
 @Component({
   selector: 'fiv-popover',
@@ -39,21 +39,31 @@ export type PopoverPositioning = 'auto' | 'above' | 'below' | 'left' | 'right';
 })
 export class FivPopover implements OnInit, AfterViewInit {
   @ViewChild(FivOverlay, { static: false }) overlay: FivOverlay;
+  @ViewChild('animation', { static: false }) animationContainer: ElementRef;
 
   @Input() width: number;
   @Input() height: number;
+  @Input() arrow = false;
   @Input() arrowWidth = 24;
   @Input() arrowHeight: number = this.arrowWidth / 1.6;
-  @Input() overlaysTarget = true;
-  @Input() scroll = true;
-  @Input() scrollSpeed = 100;
   @Input() backdrop = true;
-  @Input() arrow = false;
+  @Input() overlaysTarget = true;
+  @Input() closeOnNavigation = true;
+  @Input() scrollToTarget = false;
+  @Input() scrollSpeed = 100;
   @Input() position: PopoverPositioning = 'auto';
+  @Input() classes: string[] = [];
 
-  @Output() afterInit = new ReplaySubject();
+  @Input() inDuration = 200;
+  @Input() outDuration = 80;
+  @Input() animationIn = (element: ElementRef) =>
+    animIn(element, this._position, this.inDuration);
+  @Input() animationOut = (element: ElementRef) =>
+    animOut(element, this.outDuration);
 
   _position: PopoverPosition;
+  hidden: boolean = false;
+  onDestroy$ = new Subject();
 
   get containerStyles() {
     if (!this._position) {
@@ -87,47 +97,54 @@ export class FivPopover implements OnInit, AfterViewInit {
     );
   }
 
+  get animationStyles() {
+    if (!this._position) {
+      return;
+    }
+    return this.dom.bypassSecurityTrustStyle(
+      `height: ${this.arrowHeight}px; 
+      width: ${this.arrowWidth}px; 
+      top: ${this.getArrowTop()}px; 
+      left: ${this.getArrowLeft()}px;
+      transform: rotateZ(${this._position.vertical === 'top' ? 180 : 0}deg);`
+    );
+  }
+
   constructor(
     private platform: Platform,
     @Host() @Optional() private content: IonContent,
-    private dom: DomSanitizer
+    private dom: DomSanitizer,
+    private router: Router
   ) {}
 
-  ngOnInit() {}
-
-  ngAfterViewInit(): void {
-    this.afterInit.next(true);
+  ngOnInit() {
+    this.router.events
+      .pipe(
+        filter<NavigationStart>(event => event instanceof NavigationStart),
+        filter(() => this.closeOnNavigation && this.overlay.open),
+        tap(() => this.close()),
+        takeUntil(this.onDestroy$)
+      )
+      .subscribe();
   }
+
+  ngAfterViewInit(): void {}
 
   close() {
-    this.overlay.hide();
+    this.animationOut(this.animationContainer)
+      .pipe(
+        after(() => {
+          this.overlay.hide();
+          this.onDestroy$.next();
+        })
+      )
+      .subscribe();
   }
 
-  openClick(event: MouseEvent) {
-    const target = event.target as HTMLElement;
-    const {
-      top,
-      left,
-      bottom,
-      right,
-      height,
-      width
-    } = target.getBoundingClientRect();
-    const position = this.calculcatePosition(
-      top,
-      left,
-      bottom,
-      right,
-      height,
-      width
-    );
-    this.openAtPosition(position);
-  }
-
-  openElementRef(element: ElementRef) {
-    const target = element.nativeElement as HTMLElement;
+  private getPositionOfTarget(target: HTMLElement) {
     const rect = target.getBoundingClientRect();
-    const position = this.calculcatePosition(
+    console.log(rect);
+    return this.calculcatePositioning(
       rect.top,
       rect.left,
       rect.bottom,
@@ -135,22 +152,75 @@ export class FivPopover implements OnInit, AfterViewInit {
       rect.height,
       rect.width
     );
-    this.openAtPosition(position);
   }
 
-  openCoords(top: number, left: number) {
-    const position = this.calculcatePosition(top, left, top, left, 0, 0);
+  open(target: MouseEvent | ElementRef) {
+    let element;
+    if (target instanceof MouseEvent) {
+      element = event.target as HTMLElement;
+    } else if (target instanceof ElementRef) {
+      element = target.nativeElement as HTMLElement;
+    } else {
+      return;
+    }
+    this.openTarget(element);
+  }
+
+  openTarget(target: HTMLElement) {
+    const position = this.getPositionOfTarget(target);
     this.openAtPosition(position);
+    this.watchResize(target);
+    this.watchScroll(target);
+  }
+
+  private watchResize(target: HTMLElement) {
+    fromEvent(window, 'resize')
+      .pipe(
+        flatMap(() => this.filterInViewport(target)),
+        throttleTime(50),
+        map(() => this.getPositionOfTarget(target)),
+        tap(pos => (this._position = pos)),
+        takeUntil(this.onDestroy$)
+      )
+      .subscribe();
+  }
+
+  private watchScroll(target: HTMLElement) {
+    if (this.content) {
+      this.content.scrollEvents = true;
+      merge(
+        fromEvent(window, 'mousewheel'),
+        fromEvent(window, 'touchmove'),
+        this.content.ionScroll
+      )
+        .pipe(
+          flatMap(() => this.filterInViewport(target)),
+          map(() => this.getPositionOfTarget(target)),
+          tap(pos => (this._position = pos)),
+          takeUntil(this.onDestroy$)
+        )
+        .subscribe();
+    }
+  }
+
+  private filterInViewport(target: HTMLElement) {
+    return from(this.inViewport(this.getPositionOfTarget(target))).pipe(
+      tap(inViewport =>
+        !inViewport ? (this.hidden = true) : (this.hidden = false)
+      ),
+      filter(inViewPort => this.overlay.open && inViewPort)
+    );
   }
 
   private async openAtPosition(position: PopoverPosition) {
+    console.log('open at position', position);
     await this.scrollToPosition(position);
     this._position = position;
     this.overlay.show();
   }
 
   private async scrollToPosition(position: PopoverPosition) {
-    if (this.content && this.scroll) {
+    if (this.content && this.scrollToTarget) {
       const isInViewport = await this.inViewport(position);
       if (isInViewport) {
         return;
@@ -165,19 +235,16 @@ export class FivPopover implements OnInit, AfterViewInit {
   async inViewport(position: PopoverPosition) {
     const height = this.platform.height();
     const width = this.platform.width();
-    const scroll = await this.content.getScrollElement();
-    const docViewBottom = scroll.scrollTop + height;
-    const docViewEnd = scroll.scrollLeft + width;
 
     return (
-      position.bottom <= docViewBottom &&
-      position.top >= scroll.scrollTop &&
-      position.right < docViewEnd &&
-      position.left > scroll.scrollLeft
+      position.top <= height &&
+      position.bottom >= 0 &&
+      position.left < width &&
+      position.right > 0
     );
   }
 
-  private calculcatePosition(
+  private calculcatePositioning(
     top: number,
     left: number,
     bottom: number,
@@ -198,25 +265,23 @@ export class FivPopover implements OnInit, AfterViewInit {
 
     if (_left && _top) {
       // top left
-      (left = Math.max(0, left)), (top = Math.max(0, top));
       horizontal = 'right';
       vertical = 'bottom';
     } else if (_right && _bottom) {
       // bottom right
-      left = Math.min(width - this.width, right - this.width);
-      top = Math.min(height - this.height, bottom - this.height);
+      left = right - this.width;
+      top = bottom - this.height;
       horizontal = 'left';
       vertical = 'top';
     } else if (_right && _top) {
       // top right
-      left = Math.min(width - this.width, right - this.width);
-      top = Math.max(0, top);
+      left = right - this.width;
       horizontal = 'left';
       vertical = 'bottom';
     } else if (_left && _bottom) {
       // bottom left
-      left = Math.max(0, left);
-      top = Math.min(height - this.height, bottom - this.height);
+      console.log('bottom left', bottom, this.height, bottom - this.height);
+      top = bottom - this.height;
       horizontal = 'right';
       vertical = 'top';
     }
@@ -250,7 +315,7 @@ export class FivPopover implements OnInit, AfterViewInit {
       : this.width - this.arrowWidth / 2 - this._position.targetWidth / 2;
   }
 
-  getContainerMargin() {
+  private getContainerMargin() {
     return this.arrow &&
       !this.overlaysTarget &&
       this._position.vertical === 'bottom'
@@ -258,7 +323,7 @@ export class FivPopover implements OnInit, AfterViewInit {
       : 0;
   }
 
-  getContainerTop() {
+  private getContainerTop() {
     return this.arrow &&
       !this.overlaysTarget &&
       this._position.vertical === 'top'

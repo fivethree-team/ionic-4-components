@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
 
 @Component({
-  selector: 'app-image',
-  templateUrl: './image.page.html',
-  styleUrls: ['./image.page.scss']
+  selector: 'app-gallery',
+  templateUrl: './gallery.page.html',
+  styleUrls: ['./gallery.page.scss']
 })
-export class ImagePage implements OnInit {
+export class GalleryPage implements OnInit {
   picsum: string[] = Array.from(
     new Array(12),
     (x, i) => `https://picsum.photos/1080/720/?${i}`
