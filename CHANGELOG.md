@@ -1,3 +1,21 @@
+# [1.0.0-alpha.0](https://github.com/fivethree-team/fivethree/compare/v0.9.6...v1.0.0-alpha.0) (2019-11-13)
+
+
+### Bug Fixes
+
+* **feature-discovery:** export feature discovery component ([a8cf21b](https://github.com/fivethree-team/fivethree/commit/a8cf21b))
+
+
+### Features
+
+* **angular:** bump angular support to atleast 8.0.0 ([43d3ec7](https://github.com/fivethree-team/fivethree/commit/43d3ec7))
+* **feature-discovery:** support ion-icon ([ea38118](https://github.com/fivethree-team/fivethree/commit/ea38118))
+* **popover:** new popover ([e11c7b0](https://github.com/fivethree-team/fivethree/commit/e11c7b0))
+* **popover:** new popover feature ([ad0cf96](https://github.com/fivethree-team/fivethree/commit/ad0cf96))
+* **popover:** popover target and backdrop ([bcc62cb](https://github.com/fivethree-team/fivethree/commit/bcc62cb))
+
+
+
 <a name="0.9.6"></a>
 
 ## [0.9.6](https://github.com/fivethree-team/component-library/compare/v0.9.5...v0.9.6) (2019-10-09)
