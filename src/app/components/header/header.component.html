@@ -9,9 +9,8 @@
         <ion-menu-button></ion-menu-button>
       </ng-container>
     </ion-buttons>
-    <ion-title (click)="onTitleClicked()">{{title}}</ion-title>
-    <ion-buttons slot="end">
-      <ng-content></ng-content>
-    </ion-buttons>
+    <ion-title>{{title}} <ng-content select="[title]"></ng-content>
+    </ion-title>
+    <ng-content></ng-content>
   </ion-toolbar>
 </ion-header>

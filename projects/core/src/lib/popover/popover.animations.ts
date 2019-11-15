@@ -26,9 +26,7 @@ export const animIn = (
       beforeStyle(
         element,
         'transform-origin',
-        `${position.vertical === 'top' ? 'bottom' : 'top'} ${
-          position.horizontal === 'left' ? 'right' : 'left'
-        }`
+        `${position.vertical} ${position.horizontal}`
       )
     )
   );

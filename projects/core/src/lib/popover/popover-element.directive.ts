@@ -1,6 +1,6 @@
 import { FivPopover } from './popover.component';
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { tap, delay } from 'rxjs/operators';
 
 @Directive({
   selector: '[fivPopover]',
@@ -8,6 +8,7 @@ import { tap } from 'rxjs/operators';
 })
 export class PopoverElementDirective implements AfterViewInit {
   _show: boolean;
+  @Input('fivPopover.delay') delay = 50;
   @Input() fivPopover: FivPopover;
 
   @Input('fivPopover.show') set show(visible: boolean) {
@@ -29,13 +30,14 @@ export class PopoverElementDirective implements AfterViewInit {
   open() {
     this.show = true;
   }
-  close() {
+  hide() {
     this.show = false;
   }
 
   ngAfterViewInit(): void {
     this.fivPopover.overlay.afterInit
       .pipe(
+        delay(this.delay),
         tap(() => {
           this.show = this._show;
         })

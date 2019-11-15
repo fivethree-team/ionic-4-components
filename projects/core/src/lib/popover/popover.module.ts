@@ -7,7 +7,7 @@ import { AnimationsModule } from '@fivethree/ngx-rxjs-animations';
 
 @NgModule({
   declarations: [FivPopover, PopoverElementDirective],
-  imports: [CommonModule, AnimationsModule, FivOverlayModule, AnimationsModule],
+  imports: [CommonModule, AnimationsModule, FivOverlayModule],
   exports: [FivPopover, PopoverElementDirective]
 })
 export class FivPopoverModule {}

@@ -9,4 +9,14 @@ export class PopoverPage implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  actionClicked(n: number) {
+    console.log('Action Clicked', n);
+  }
+
+  open(url) {
+    window.open(
+      'https://www.npmjs.com/package/@fivethree/core/v/1.0.0-alpha.0'
+    );
+  }
 }
