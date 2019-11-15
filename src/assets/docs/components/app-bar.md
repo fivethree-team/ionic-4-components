@@ -1,17 +1,34 @@
+# fiv-app-bar
+
+### Motivation
+
+Material style [App Bar](https://material.io/components/app-bars-bottom/#anatomy) component for Ionic.
+
+## Import the module
+
+Import `FivAppBarModule` into the page or component:
+
+```typescript
+import { NgModule } from '@angular/core';
+import { FivAppBarModule } from '@fivethree/core';
+
+@NgModule({
+  imports: [
+    ...
+    FivAppBarModule,
+    ...
+  ]
+})
+export class TabsModule {}
+```
+
+## Usage
+
 ```html
 <ion-tabs #tabs>
-  <fiv-app-bar
-    (fivFabClick)="presentToast('Floating action button clicked')"
-    slot="bottom"
-    [titleMode]="titleMode"
-    #bar
-  >
+  <fiv-app-bar slot="bottom" [titleMode]="titleMode" #bar>
     <fiv-fab [fivAppBarFab]="position" #fab>
-      <fiv-icon
-        #iconFeature="fivFeature"
-        [fivFeature]="feature"
-        name="color-wand"
-      ></fiv-icon>
+      <fiv-icon name="color-wand"></fiv-icon>
     </fiv-fab>
 
     <fiv-app-bar-tab left tab="tab1" href="/tab1">
@@ -19,11 +36,7 @@
       <ion-label>Home</ion-label>
     </fiv-app-bar-tab>
     <fiv-app-bar-tab left tab="tab2" href="/tab2">
-      <fiv-icon
-        #tabFeature="fivFeature"
-        [fivFeature]="feature"
-        name="md-images"
-      ></fiv-icon>
+      <fiv-icon name="md-images"></fiv-icon>
       <ion-label>Images</ion-label>
     </fiv-app-bar-tab>
     <fiv-app-bar-tab right tab="tab3" href="/tab3">
@@ -52,9 +65,17 @@ export class AppBarPage implements OnInit {
 }
 ```
 
-```scss
-:host {
-  --fiv-color-appbar: var(--ion-color-light);
-  --fiv-color-icon: rgba(50, 50, 50, 0.78);
-}
-```
+## Properties
+
+| `titleMode` |                                     |
+| ----------- | ----------------------------------- |
+| Description |  The title mode of the app bar      |
+| Type        |  `hide` \| `show` \| `active-only`  |
+| Default     |  `hide`                             |
+
+## CSS Variables
+
+| Name               | Description               |
+| ------------------ | ------------------------- |
+| --fiv-color-appbar | Background of the app bar |
+| --fiv-color-icon   | Icon color of the tabs    |

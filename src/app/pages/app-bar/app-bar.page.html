@@ -26,8 +26,7 @@
 
 <ng-template #demo>
   <ion-tabs #tabs>
-    <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom" [titleMode]="titleMode"
-      #bar>
+    <fiv-app-bar slot="bottom" [titleMode]="titleMode" #bar>
       <fiv-fab [fivAppBarFab]="position" #fab>
         <fiv-icon #iconFeature="fivFeature" [fivFeature]="feature" name="color-wand"></fiv-icon>
       </fiv-fab>
