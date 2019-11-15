@@ -1,3 +1,14 @@
+<a name="1.0.0-alpha.1"></a>
+# [1.0.0-alpha.1](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.0...v1.0.0-alpha.1) (2019-11-15)
+
+
+### Features
+
+* **popover:** animations, scroll and resize handling ([21a1102](https://github.com/fivethree-team/component-library/commit/21a1102))
+* **popover:** force positioning ([10ae219](https://github.com/fivethree-team/component-library/commit/10ae219))
+
+
+
 # [1.0.0-alpha.0](https://github.com/fivethree-team/fivethree/compare/v0.9.6...v1.0.0-alpha.0) (2019-11-13)
 
 

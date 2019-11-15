@@ -30,7 +30,7 @@ export class PopoverElementDirective implements AfterViewInit {
   open() {
     this.show = true;
   }
-  hide() {
+  close() {
     this.show = false;
   }
 
