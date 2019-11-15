@@ -1,6 +1,6 @@
 {
   "name": "@fivethree/core",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "author": "Fivethree Team",
   "homepage": "https://fivethree.io/",
   "description": "Fivethree Web Components",
@@ -32,7 +32,7 @@
     "format:lib": "prettier --write \"projects/**/*{.ts,.scss}\"",
     "format:docs": "prettier --write \"src/**/*{.ts,.scss}\"",
     "gh-pages": "ng build core --prod && ng build --prod --base-href 'https://fivethree-team.github.io/ionic-4-components/' && npx ngh --dir=www",
-    "publish": "npm publish dist/@fivethree/core",
+    "publish": "npm publish dist/@fivethree/core --tag alpha",
     "rocket": "npm run build:prod && cp README.md dist/@fivethree/core && npm run publish",
     "version": "conventional-changelog -p angular -i ./CHANGELOG.md -s && git add CHANGELOG.md",
     "lint": "ng lint"

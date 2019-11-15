@@ -1,3 +1,8 @@
+<a name="1.0.0-alpha.4"></a>
+# [1.0.0-alpha.4](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.2...v1.0.0-alpha.4) (2019-11-15)
+
+
+
 <a name="1.0.0-alpha.2"></a>
 # [1.0.0-alpha.2](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2019-11-15)
 
