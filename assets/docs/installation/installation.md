@@ -30,7 +30,7 @@ export class AppModule {}
 
 ## Usage Instructions
 
-To use the **UI Library** import it into a Page or Component Module. You can either import the full FivethreeCoreModule or one of the feature modules (e.g. FivGalleryModule).
+To use the **UI Library** import one of the feature modules (e.g. FivGalleryModule) into a Page or Component Module.
 
 For example:
 
@@ -40,7 +40,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { FivethreeCoreModule } from '@fivethree/core';
+import { FivGalleryModule } from '@fivethree/core';
 
 import { HomePage } from './home.page';
 
@@ -55,9 +55,16 @@ import { HomePage } from './home.page';
         component: HomePage
       }
     ]),
-    FivethreeCoreModule
+    FivGalleryModule
   ],
   declarations: [HomePage]
 })
 export class HomePageModule {}
 ```
+
+## 🔨 Development
+
+This package is under active construction.
+
+- Run `ng build core` to rebuild the component library.
+- Run `ionic s` to serve the project site.
