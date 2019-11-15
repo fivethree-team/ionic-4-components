@@ -8,7 +8,7 @@ import { tap, delay } from 'rxjs/operators';
 })
 export class PopoverElementDirective implements AfterViewInit {
   _show: boolean;
-  @Input('fivPopover.delay') delay = 50;
+  @Input('fivPopover.delay') delay = 150;
   @Input() fivPopover: FivPopover;
 
   @Input('fivPopover.show') set show(visible: boolean) {

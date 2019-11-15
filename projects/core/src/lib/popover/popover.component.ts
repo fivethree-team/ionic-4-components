@@ -40,7 +40,7 @@ import { after } from '@fivethree/ngx-rxjs-animations';
   encapsulation: ViewEncapsulation.None
 })
 export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild(FivOverlay, { static: false }) overlay: FivOverlay;
+  @ViewChild(FivOverlay, { static: true }) overlay: FivOverlay;
   @ViewChild('animation', { static: false }) animationContainer: ElementRef;
 
   @Input() width: number;
