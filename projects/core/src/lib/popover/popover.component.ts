@@ -28,7 +28,8 @@ import {
   PopoverPositioning,
   PopoverPosition,
   PopoverHorizontalAlign,
-  PopoverVerticalAlign
+  PopoverVerticalAlign,
+  PopoverArrowPositioning
 } from './popover.types';
 import { after } from '@fivethree/ngx-rxjs-animations';
 
@@ -47,6 +48,7 @@ export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
   @Input() arrow = false;
   @Input() arrowWidth = 24;
   @Input() arrowHeight: number = this.arrowWidth / 1.6;
+  @Input() arrowPosition: PopoverArrowPositioning = 'auto';
   @Input() backdrop = true;
   @Input() overlaysTarget = true;
   @Input() closeOnNavigation = true;
@@ -55,17 +57,17 @@ export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
   @Input() position: PopoverPositioning = 'auto';
   @Input() classes: string[] = [];
 
+  _position: PopoverPosition;
+  hidden = false;
+  onDestroy$ = new Subject();
+  onClose$ = new Subject();
+
   @Input() inDuration = 200;
   @Input() outDuration = 80;
   @Input() animationIn = (element: ElementRef) =>
     animIn(element, this._position, this.inDuration);
   @Input() animationOut = (element: ElementRef) =>
     animOut(element, this.outDuration);
-
-  _position: PopoverPosition;
-  hidden: boolean = false;
-  onDestroy$ = new Subject();
-  onClose$ = new Subject();
 
   get styles() {
     if (!this._position) {
@@ -171,7 +173,7 @@ export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
   open(target: MouseEvent | ElementRef) {
     let element;
     if (target instanceof MouseEvent) {
-      element = event.target as HTMLElement;
+      element = target.target as HTMLElement;
     } else if (target instanceof ElementRef) {
       element = target.nativeElement as HTMLElement;
     } else {
@@ -332,6 +334,9 @@ export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
         ? -1 * this.arrowHeight
         : this.height;
     }
+    if (this.arrowPosition === 'center') {
+      return this.height / 2 - this.arrowWidth / 2;
+    }
     return this._position.vertical === 'top'
       ? this._position.targetHeight / 2 - this.arrowHeight / 2
       : this.height - this.arrowHeight / 2 - this._position.targetHeight / 2;
@@ -344,6 +349,9 @@ export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
         ? -1 * this.arrowHeight
         : this.width;
     }
+    if (this.arrowPosition === 'center') {
+      return this.width / 2 - this.arrowHeight / 2;
+    }
     return this._position.horizontal === 'left'
       ? this._position.targetWidth / 2 - this.arrowWidth / 2
       : this.width - this.arrowWidth / 2 - this._position.targetWidth / 2;
@@ -353,11 +361,15 @@ export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
     const isVert = ['auto', 'below', 'above'].some(s => s === this.position);
     const isTop = this._position.vertical === 'top';
 
-    if (!isVert) {
-      return this._position.top;
-    }
-
     let offset = 0;
+    if (this.arrow && isTop) {
+      offset -= this.getVerticalArrowOffset();
+    } else if (this.arrow && !isTop) {
+      offset += this.getVerticalArrowOffset();
+    }
+    if (!isVert) {
+      return this._position.top + offset;
+    }
     if (!this.overlaysTarget && isTop) {
       offset += this._position.targetHeight;
     } else if (!this.overlaysTarget && !isTop) {
@@ -372,15 +384,39 @@ export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
     return this._position.top + offset;
   }
 
+  private getVerticalArrowOffset() {
+    let offset = 0;
+    const isHorizontal = ['left', 'right'].some(s => s === this.position);
+    if (this.arrowPosition === 'center' && isHorizontal) {
+      offset += this.height / 2 - this._position.targetHeight / 2;
+    }
+    return offset;
+  }
+  private getHorizontalArrowOffset() {
+    let offset = 0;
+    const isVertical = ['above', 'auto', 'below'].some(
+      s => s === this.position
+    );
+    if (this.arrowPosition === 'center' && isVertical) {
+      offset += this.width / 2 - this._position.targetWidth / 2;
+    }
+    return offset;
+  }
+
   private getContainerLeft() {
     const isHorizontal = ['left', 'right'].some(s => s === this.position);
     const isLeft = this._position.horizontal === 'left';
 
-    if (!isHorizontal) {
-      return this._position.left;
+    let offset = 0;
+    if (this.arrow && isLeft) {
+      offset -= this.getHorizontalArrowOffset();
+    } else if (this.arrow && !isLeft) {
+      offset += this.getHorizontalArrowOffset();
     }
 
-    let offset = 0;
+    if (!isHorizontal) {
+      return this._position.left + offset;
+    }
     if (!this.overlaysTarget && isLeft) {
       offset += this._position.targetWidth;
     } else if (!this.overlaysTarget && !isLeft) {

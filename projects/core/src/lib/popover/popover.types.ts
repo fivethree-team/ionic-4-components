@@ -12,3 +12,4 @@ export interface PopoverPosition {
 export type PopoverHorizontalAlign = 'left' | 'right';
 export type PopoverVerticalAlign = 'top' | 'bottom';
 export type PopoverPositioning = 'auto' | 'above' | 'below' | 'left' | 'right';
+export type PopoverArrowPositioning = 'auto' | 'center';

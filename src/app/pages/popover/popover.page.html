@@ -87,7 +87,7 @@
     </ion-card>
   </fiv-popover>
 
-  <fiv-popover [scrollToTarget]="true" [classes]="['chip']" #chip2 [backdrop]="false" [arrow]="true"
+  <fiv-popover [arrowPosition]="'center'" [scrollToTarget]="true" [classes]="['chip']" #chip2 [backdrop]="false" [arrow]="true"
     [overlaysTarget]="false" [width]="240" [height]="32">
     <ion-chip class="ion-no-margin" color="tertiary">
       <ion-icon name="arrow-up"></ion-icon>
@@ -95,7 +95,7 @@
     </ion-chip>
   </fiv-popover>
 
-  <fiv-popover [position]="'below'" [classes]="['chip']" [scrollToTarget]="true" #chip [backdrop]="false" [arrow]="true"
+  <fiv-popover [arrowPosition]="'center'" [position]="'below'" [classes]="['chip']" [scrollToTarget]="true" #chip [backdrop]="false" [arrow]="true"
     [overlaysTarget]="false" [width]="208" [height]="32">
     <ion-chip class="ion-no-margin" color="tertiary">
       <ion-icon name="arrow-down"></ion-icon>
