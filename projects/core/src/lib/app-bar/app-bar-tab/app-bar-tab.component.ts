@@ -16,11 +16,9 @@ import { FivAppBar } from '../app-bar.component';
   styleUrls: ['./app-bar-tab.component.scss']
 })
 export class FivAppBarTab implements OnInit {
-  @Input() name: string;
   @Input() tab: string;
   @Input() href: string;
   @Input() type: 'bounded' | 'unbounded' = 'unbounded';
-  @Input() badge = -1;
 
   get active() {
     return this.router.url.endsWith(this.href);
