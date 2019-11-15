@@ -1,3 +1,13 @@
+<a name="1.0.0-alpha.5"></a>
+# [1.0.0-alpha.5](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.2...v1.0.0-alpha.5) (2019-11-15)
+
+
+### Features
+
+* **app-bar-tab:** remove unused imports ([e1790b2](https://github.com/fivethree-team/component-library/commit/e1790b2))
+
+
+
 <a name="1.0.0-alpha.4"></a>
 # [1.0.0-alpha.4](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.2...v1.0.0-alpha.4) (2019-11-15)
 
