@@ -7,11 +7,6 @@ const routes: Routes = [
     loadChildren: './pages/home/home.module#HomePageModule'
   },
   {
-    path: 'overflow-buttons',
-    loadChildren:
-      './pages/overflow-buttons/overflow-buttons.module#ButtonsPageModule'
-  },
-  {
     path: 'components',
     loadChildren: './pages/components/components.module#ComponentsPageModule'
   },

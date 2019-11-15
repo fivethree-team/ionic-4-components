@@ -42,10 +42,6 @@ export class AppComponent {
       url: '/icon'
     },
     {
-      title: 'Overflow Buttons',
-      url: '/overflow-buttons'
-    },
-    {
       title: 'Password Input',
       url: '/password'
     },

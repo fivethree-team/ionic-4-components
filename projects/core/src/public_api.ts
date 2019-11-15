@@ -8,8 +8,6 @@
 export * from './lib/app-bar/app-bar.module';
 export * from './lib/back-button/back-button.module';
 export * from './lib/bottom-sheet/bottom-sheet.module';
-export * from './lib/button/button.module';
-export * from './lib/overflow-buttons/overflow-buttons.module';
 export * from './lib/center/center.module';
 export * from './lib/collapsable-menu/collapsable-menu.module';
 export * from './lib/dialog/dialog.module';
@@ -62,8 +60,6 @@ export * from './lib/stepper/stepper.component';
 export * from './lib/stepper/stepper-horizontal/stepper-horizontal.component';
 export * from './lib/searchbar/searchbar.component';
 export * from './lib/app-bar/app-bar-tab/app-bar-tab.component';
-export * from './lib/overflow-buttons/overflow-buttons.component';
-export * from './lib/button/button.component';
 export * from './lib/network-status/network-status.component';
 export * from './lib/back-button/back-button.component';
 export * from './lib/gallery/gallery.component';
