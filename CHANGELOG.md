@@ -1,3 +1,13 @@
+<a name="1.0.0-alpha.2"></a>
+# [1.0.0-alpha.2](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2019-11-15)
+
+
+### Features
+
+* **popover:** optional arrow centering ([9ab4fed](https://github.com/fivethree-team/component-library/commit/9ab4fed))
+
+
+
 <a name="1.0.0-alpha.1"></a>
 # [1.0.0-alpha.1](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.0...v1.0.0-alpha.1) (2019-11-15)
 
