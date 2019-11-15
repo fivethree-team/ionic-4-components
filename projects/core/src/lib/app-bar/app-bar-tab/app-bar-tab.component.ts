@@ -7,6 +7,7 @@ import {
   ElementRef
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { IonTabs } from '@ionic/angular';
 import { FivAppBar } from '../app-bar.component';
 
 @Component({
@@ -26,11 +27,12 @@ export class FivAppBarTab implements OnInit {
   }
 
   @HostBinding('class') get classes(): string {
-    return `label-${this.appBar.titleLayout}`;
+    return `label-${this.appBar.titleMode}`;
   }
 
   constructor(
     @Host() public appBar: FivAppBar,
+    @Host() public ionTabs: IonTabs,
     public router: Router,
     public el: ElementRef
   ) {}
@@ -38,10 +40,6 @@ export class FivAppBarTab implements OnInit {
   ngOnInit() {}
 
   onClick() {
-    this.appBar.ionTabButtonClick({
-      tab: this.tab,
-      href: this.href,
-      selected: true
-    });
+    this.ionTabs.select(this.tab);
   }
 }

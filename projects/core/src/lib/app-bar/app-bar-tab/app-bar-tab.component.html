@@ -4,7 +4,7 @@
 
 <div (click)="onClick()" class="tab ion-activatable" [ngClass]="{'active': active}">
   <ng-content select="fiv-icon"></ng-content>
-  <ng-content *ngIf="appBar.titleLayout === 'show' || (active && appBar.titleLayout === 'active-only')"
-    select="ion-label"></ng-content>
+  <ng-content *ngIf="appBar.titleMode === 'show' || (active && appBar.titleMode === 'active-only')" select="ion-label">
+  </ng-content>
   <ion-ripple-effect [type]="type"></ion-ripple-effect>
 </div>

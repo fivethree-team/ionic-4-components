@@ -8,9 +8,8 @@ import { FivFeature } from '@fivethree/core';
   styleUrls: ['./app-bar.page.scss']
 })
 export class AppBarPage implements OnInit {
-  titleLayout = 'hide';
+  titleMode = 'hide';
   position = 'center';
-  fabVisible = true;
   icon = 'color-wand';
 
   customTitleLayoutOptions: any = {
