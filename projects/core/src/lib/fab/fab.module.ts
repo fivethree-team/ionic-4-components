@@ -1,4 +1,3 @@
-import { FivFeatureDiscoveryModule } from './../feature-discovery/feature-discovery.module';
 import { FivLoadingProgressBarModule } from './../loading-progress-bar/loading-progress-bar.module';
 import { FivCenterModule } from '../center/center.module';
 import { FivIconModule } from './../icon/icon.module';
@@ -14,10 +13,8 @@ import { FivSpinnerModule } from '../spinner/spinner.module';
     CommonModule,
     FivCenterModule,
     FivIconModule,
-    FivFeatureDiscoveryModule,
     FivSpinnerModule,
     IonicModule,
-
     FivLoadingProgressBarModule
   ],
   exports: [FivFab],

@@ -1,6 +1,4 @@
-import { FivFeatureDiscovery } from './../feature-discovery/feature-discovery.component';
 import { FivLoadingProgressBar } from './../loading-progress-bar/loading-progress-bar.component';
-import { FivIcon } from './../icon/icon.component';
 import {
   Component,
   OnInit,
@@ -9,7 +7,6 @@ import {
   Output,
   EventEmitter,
   Renderer2,
-  HostBinding,
   OnDestroy,
   ContentChild,
   AfterContentInit,
@@ -120,8 +117,6 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   @Output() fivTransition: EventEmitter<FivFab> = new EventEmitter<FivFab>();
 
   @ViewChild('spinner', { static: false }) spinner: FivSpinner;
-  @ViewChild('feature', { static: false })
-  featureDiscovery: FivFeatureDiscovery;
   @ViewChild('bar', { static: false }) bar: FivLoadingProgressBar;
   @ContentChild(IonLabel, { static: false }) labelComp: IonLabel;
 
