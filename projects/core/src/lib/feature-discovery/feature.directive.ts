@@ -106,12 +106,12 @@ export class FivFeature {
     }
   }
 
-  didOpen() {
+  private didOpen() {
     this.fivOpen.emit();
     this.isOpen = true;
   }
 
-  featureClick() {
+  private featureClick() {
     if (this.overlayRef) {
       this.fivFeatureClick.emit();
       this.fivWillClose.emit();
