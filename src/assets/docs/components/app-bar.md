@@ -19,7 +19,7 @@ import { FivAppBarModule } from '@fivethree/core';
     ...
   ]
 })
-export class TabsModule {}
+export class TabsPageModule {}
 ```
 
 ## Usage
