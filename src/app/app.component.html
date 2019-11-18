@@ -1,6 +1,7 @@
 <ion-app>
-  <ion-split-pane>
-    <ion-menu menuId="menuId" [fivCollapseMenu]="false" [minWidth]="200" [maxWidth]="200" #menu=menuCollapse>
+  <ion-split-pane contentId="menu-content">
+    <ion-menu contentId="menu-content" menuId="menuId" [fivCollapseMenu]="false" [minWidth]="200" [maxWidth]="200"
+      #menu=menuCollapse>
       <ion-header no-border>
         <ion-toolbar>
           <a style="text-decoration: none;" [routerLink]="['/']">
@@ -69,6 +70,6 @@
         </ion-toolbar>
       </ion-footer>
     </ion-menu>
-    <ion-router-outlet main></ion-router-outlet>
+    <ion-router-outlet id="menu-content"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>
