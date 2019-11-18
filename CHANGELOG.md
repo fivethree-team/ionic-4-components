@@ -1,3 +1,17 @@
+# [1.0.0-alpha.6](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.2...v1.0.0-alpha.6) (2019-11-18)
+
+
+### Bug Fixes
+
+* **gallery-toolbar:** content must be static ([59f0d46](https://github.com/fivethree-team/fivethree/commit/59f0d46))
+
+
+### Features
+
+* **app-bar-tab:** remove unused imports ([e1790b2](https://github.com/fivethree-team/fivethree/commit/e1790b2))
+
+
+
 <a name="1.0.0-alpha.5"></a>
 # [1.0.0-alpha.5](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.2...v1.0.0-alpha.5) (2019-11-15)
 
