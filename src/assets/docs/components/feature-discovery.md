@@ -143,4 +143,4 @@ export class HomePage {
 | ------------------- | ------------------------------------------------ |
 | --fiv-color-feature | Background of the feature discovery content area |
 | --fiv-color-pulse   | Color for the pulse color                        |
-| --fiv-color-icon    | Icon color of the icon inside the pulse circle   |
+| --fiv-icon-color    | Icon color of the icon inside the pulse circle   |

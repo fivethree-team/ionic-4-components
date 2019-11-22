@@ -5,7 +5,7 @@
   position: absolute;
   --fiv-color-feature: rgba(56, 128, 255, 0.97);
   --fiv-color-pulse: var(--ion-color-light);
-  --fiv-color-icon: var(--fiv-color-feature, var(--ion-color-primary));
+  --fiv-icon-color: var(--fiv-color-feature, var(--ion-color-primary));
 }
 
 .backdrop {

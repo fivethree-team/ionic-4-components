@@ -1,48 +1,59 @@
 :host {
   --fiv-padding-end: 0;
   --fiv-padding-start: 0;
-  --fiv-dot-right: -6px;
-  --fiv-dot-top: -2px;
-  --fiv-color-icon: inherit;
-  --fiv-icon-height: inherit;
-  --fiv-icon-width: inherit;
+
+  --fiv-position-top: -2px;
+  --fiv-position-right: -6px;
+
+  --fiv-icon-color: var(--ion-color-dark);
+  --fiv-icon-height: 28px;
+  --fiv-icon-width: 28px;
+
+  --fiv-small-icon-height: 18px;
+  --fiv-small-icon-width: 18px;
+  --fiv-small-icon-background-color: var(--ion-color-primary);
+  --fiv-small-icon-color: var(--ion-color-light);
+  --fiv-small-icon-font-size: 0.8em;
+
+  --fiv-badge-height: 18px;
+  --fiv-badge-width: 18px;
+  --fiv-badge-background-color: var(--ion-color-primary);
+  --fiv-badge-color: var(--ion-color-light);
+  --fiv-badge-font-size: 0.6em;
+
+  --fiv-dot-height: 18px;
+  --fiv-dot-width: 18px;
+  --fiv-dot-color: var(--ion-color-primary);
+
+  --fiv-off-color: var(--fiv-icon-color);
+  --fiv-off-background-color: var(--ion-color-light);
+
   position: relative;
   display: inline-block;
 }
 
-ion-icon {
+.icon {
   margin: 0;
   font-size: 1.8em;
-  color: var(--fiv-color-icon);
+  color: var(--fiv-icon-color);
   padding-right: var(--fiv-padding-end);
   padding-left: var(--fiv-padding-start);
-  height: var(--fiv-icon-height, 28px);
-  width: var(--fiv-icon-width, 28px);
+  height: var(--fiv-icon-height);
+  width: var(--fiv-icon-width);
 }
 
-.indicator {
+.indicator-badge {
   position: absolute;
-  width: var(--fiv-dot-width, 8px);
-  height: var(--fiv-dot-height, 8px);
-  background-color: var(
-    --fiv-dot-color,
-    var(--fiv-color-indicator, --ion-color-primary)
-  );
-  top: calc(var(--fiv-dot-top, 0px) + 3px);
-  border-radius: 100%;
-  right: calc(var(--fiv-dot-right, 4px) + 3px);
-  z-index: 12;
-}
+  top: var(--fiv-position-top);
+  right: var(--fiv-position-right);
 
-.indicator-value {
-  position: absolute;
-  min-width: var(--fiv-dot-width, 14px);
-  height: var(--fiv-dot-height, 14px);
-  background-color: var(--fiv-dot-color, var(--ion-color-primary));
-  color: var(--fiv-dot-color-background, var(--ion-color-light));
-  top: var(--fiv-dot-top, 0);
+  height: var(--fiv-badge-height);
+  width: var(--fiv-badge-width);
+
+  background-color: var(--fiv-badge-background-color);
+  color: var(--fiv-badge-color);
+
   border-radius: 14px;
-  right: var(--fiv-dot-right, 4px);
   z-index: 13;
 
   * {
@@ -50,44 +61,51 @@ ion-icon {
     transform: translateX(-50%) translateY(-50%);
     left: 50%;
     top: 50%;
-    font-size: 0.6em;
+    font-size: var(--fiv-badge-font-size);
   }
 }
 
-.indicator-icon {
+.indicator-dot {
   position: absolute;
-  min-width: var(--fiv-dot-width, 14px);
-  height: var(--fiv-dot-height, 14px);
-  background-color: var(--fiv-dot-color-background, #fff);
-  top: 0;
-  border-radius: 14px;
-  right: 0;
-  z-index: 13;
+  top: var(--fiv-position-top);
+  right: var(--fiv-position-right);
 
-  * {
-    position: absolute;
-    transform: translateX(-50%) translateY(-50%);
-    left: 50%;
-    top: 50%;
-    font-size: 1em;
-  }
-}
+  height: var(--fiv-dot-height);
+  width: var(--fiv-dot-width);
 
-.indicator-background {
-  position: absolute;
-  width: var(--fiv-dot-width, 18px);
-  height: var(--fiv-dot-height, 18px);
-  background-color: var(--fiv-dot-color-background, var(--ion-color-light));
-  top: calc(var(--fiv-dot-top, 0px) - 2px);
+  background-color: var(--fiv-dot-color, var(--ion-color-light));
+
   border-radius: 100%;
-  right: calc(var(--fiv-dot-right, 4px) - 2px);
   z-index: 11;
+}
+
+.indicator-small-icon {
+  position: absolute;
+  top: var(--fiv-position-top);
+  right: var(--fiv-position-right);
+
+  height: var(--fiv-small-icon-height);
+  width: var(--fiv-small-icon-width);
+
+  background-color: var(--fiv-small-icon-background-color);
+  color: var(--fiv-small-icon-color);
+
+  border-radius: 14px;
+  z-index: 13;
+
+  * {
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
+    font-size: var(--fiv-small-icon-font-size);
+  }
 }
 
 .off {
   width: 120%;
   height: 2px;
-  background: var(--fiv-color-icon);
+  background: var(--fiv-off-color);
   position: absolute;
   left: 0;
   transform: rotateZ(45deg) translateY(10px) translateX(6px);
@@ -98,7 +116,7 @@ ion-icon {
   height: 2px;
   background: #000;
   position: absolute;
-  background-color: var(--fiv-dot-color-background, var(--ion-color-light));
+  background-color: var(--fiv-off-background-color);
   left: 2px;
   transform: rotateZ(45deg) translateY(10px) translateX(6px);
 }

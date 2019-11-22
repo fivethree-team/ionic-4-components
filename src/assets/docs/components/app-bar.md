@@ -75,7 +75,7 @@ export class AppBarPage implements OnInit {
 
 ## CSS Variables
 
-| Name               | Description               |
-| ------------------ | ------------------------- |
-| --fiv-color-appbar | Background of the app bar |
-| --fiv-color-icon   | Icon color of the tabs    |
+| Name                          | Description               |
+| ----------------------------- | ------------------------- |
+| --fiv-appbar-background-color | Background of the app bar |
+| --fiv-icon-color              | Icon color of the tabs    |

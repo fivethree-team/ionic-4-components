@@ -50,6 +50,7 @@ import {
 export class FivIcon implements OnInit {
   _name: string;
   _badge = 0;
+  _dot: boolean;
   tempValue: number;
   state: 'normal' | 'rotate' = 'normal';
   temp: string;
@@ -84,18 +85,16 @@ export class FivIcon implements OnInit {
   }
 
   @Input()
-  set dotVisible(dotVisible: boolean) {
-    this._dotVisible = dotVisible;
-    if (dotVisible) {
+  set dot(dot: boolean) {
+    console.log(dot);
+    this._dot = dot;
+    if (dot) {
       this.indicatorState = 'normal';
     }
   }
-
-  get dotVisible(): boolean {
-    return this._dotVisible;
+  get dot(): boolean {
+    return this._dot;
   }
-
-  _dotVisible: boolean;
 
   constructor() {}
 
@@ -107,16 +106,14 @@ export class FivIcon implements OnInit {
   }
 
   transformIndicator(value: number) {
-    if (this.dotVisible) {
+    if (this.dot) {
       this._badge = value;
       return;
     }
     if (value === 0) {
       this._badge = value;
-      this.indicatorState = 'normal';
       this.badgeState = 'scale';
     } else {
-      this.indicatorState = 'scale';
       if (this.badgeState === 'scale') {
         this.badgeState = 'normal';
         this._badge = value;
