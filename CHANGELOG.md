@@ -1,3 +1,18 @@
+# [1.0.0-alpha.8](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.6...v1.0.0-alpha.8) (2019-11-22)
+
+
+### Bug Fixes
+
+* **app-bar:** update app-bar hight ([51d3603](https://github.com/fivethree-team/fivethree/commit/51d3603))
+
+
+### Features
+
+* **app-bar:** new svg for the cutout ([203541b](https://github.com/fivethree-team/fivethree/commit/203541b))
+* **icon:** clean up inputs ([fb460b5](https://github.com/fivethree-team/fivethree/commit/fb460b5))
+
+
+
 # [1.0.0-alpha.7](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2019-11-22)
 
 
