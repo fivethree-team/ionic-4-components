@@ -16,7 +16,6 @@ import { LottieAnimationViewModule } from 'ng-lottie';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DocsFooterComponent } from './docs-footer/docs-footer.component';
-import { ModalPage } from './modal/modal.page';
 import { TouchFieldComponent } from './touch-field/touch-field.component';
 
 const components = [
@@ -24,7 +23,6 @@ const components = [
   HeaderComponent,
   FooterComponent,
   DocsFooterComponent,
-  ModalPage,
   TouchFieldComponent
 ];
 @NgModule({
@@ -44,6 +42,6 @@ const components = [
     FivIfModule
   ],
   exports: [...components, LottieAnimationViewModule, MarkdownModule],
-  entryComponents: [ModalPage]
+  entryComponents: []
 })
 export class ComponentsModule {}
