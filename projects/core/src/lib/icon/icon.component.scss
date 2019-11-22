@@ -5,28 +5,19 @@
   --fiv-position-top: -2px;
   --fiv-position-right: -6px;
 
-  --fiv-icon-color: var(--ion-color-dark);
   --fiv-icon-height: 28px;
   --fiv-icon-width: 28px;
 
   --fiv-small-icon-height: 18px;
   --fiv-small-icon-width: 18px;
-  --fiv-small-icon-background-color: var(--ion-color-primary);
-  --fiv-small-icon-color: var(--ion-color-light);
   --fiv-small-icon-font-size: 0.8em;
 
   --fiv-badge-height: 18px;
   --fiv-badge-width: 18px;
-  --fiv-badge-background-color: var(--ion-color-primary);
-  --fiv-badge-color: var(--ion-color-light);
   --fiv-badge-font-size: 0.6em;
 
   --fiv-dot-height: 18px;
   --fiv-dot-width: 18px;
-  --fiv-dot-color: var(--ion-color-primary);
-
-  --fiv-off-color: var(--fiv-icon-color);
-  --fiv-off-background-color: var(--ion-color-light);
 
   position: relative;
   display: inline-block;
@@ -35,7 +26,7 @@
 .icon {
   margin: 0;
   font-size: 1.8em;
-  color: var(--fiv-icon-color);
+  color: var(--fiv-icon-color, var(--ion-color-dark));
   padding-right: var(--fiv-padding-end);
   padding-left: var(--fiv-padding-start);
   height: var(--fiv-icon-height);
@@ -50,8 +41,8 @@
   height: var(--fiv-badge-height);
   width: var(--fiv-badge-width);
 
-  background-color: var(--fiv-badge-background-color);
-  color: var(--fiv-badge-color);
+  background-color: var(--fiv-badge-background-color, var(--ion-color-primary));
+  color: var(--fiv-badge-color, var(--ion-color-light));
 
   border-radius: 14px;
   z-index: 13;
@@ -73,7 +64,7 @@
   height: var(--fiv-dot-height);
   width: var(--fiv-dot-width);
 
-  background-color: var(--fiv-dot-color, var(--ion-color-light));
+  background-color: var(--fiv-dot-background-color, var(--ion-color-primary));
 
   border-radius: 100%;
   z-index: 11;
@@ -87,8 +78,11 @@
   height: var(--fiv-small-icon-height);
   width: var(--fiv-small-icon-width);
 
-  background-color: var(--fiv-small-icon-background-color);
-  color: var(--fiv-small-icon-color);
+  background-color: var(
+    --fiv-small-icon-background-color,
+    var(--ion-color-primary)
+  );
+  color: var(--fiv-small-icon-color, var(--ion-color-light));
 
   border-radius: 14px;
   z-index: 13;
@@ -105,7 +99,10 @@
 .off {
   width: 120%;
   height: 2px;
-  background: var(--fiv-off-color);
+  background: var(
+    --fiv-off-color,
+    var(--fiv-icon-color, var(--ion-color-dark))
+  );
   position: absolute;
   left: 0;
   transform: rotateZ(45deg) translateY(10px) translateX(6px);
@@ -116,7 +113,7 @@
   height: 2px;
   background: #000;
   position: absolute;
-  background-color: var(--fiv-off-background-color);
+  background-color: var(--fiv-off-background-color, var(--ion-color-light));
   left: 2px;
   transform: rotateZ(45deg) translateY(10px) translateX(6px);
 }

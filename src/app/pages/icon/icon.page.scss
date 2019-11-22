@@ -1,10 +1,8 @@
 :host {
-  --fiv-dot-color-background: var(--ion-background-color);
-  --fiv-dot-color: var(--ion-color-primary);
+  --fiv-dot-background-color: var(--ion-color-danger);
 }
 
 .example {
-  --fiv-icon-color: var(--ion-color-dark);
   position: relative;
   height: 120px;
 }

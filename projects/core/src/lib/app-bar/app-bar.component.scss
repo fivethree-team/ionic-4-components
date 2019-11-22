@@ -13,6 +13,7 @@
   --fiv-border-radius: 6px;
   --fiv-appbar-background-color: var(--ion-color-light);
   --fiv-side-width: 12px;
+  --fiv-fab-icon-color: var(--ion-color-light);
 }
 
 svg {
@@ -63,7 +64,7 @@ svg {
     --fiv-fab-size: var(--fiv-appbar-fab-size);
     z-index: 14;
     fiv-icon {
-      --fiv-icon-color: var(--fiv-color-fab-icon);
+      --fiv-icon-color: var(--fiv-fab-icon-color);
     }
   }
 

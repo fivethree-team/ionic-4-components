@@ -16,7 +16,7 @@
   }
 
   .tab.active {
-    --fiv-icon-color: var(--ion-color-primary);
+    --fiv-icon-color: var(--fiv-icon-activ-color, var(--ion-color-primary));
     ::ng-deep ion-label {
       color: var(--ion-color-primary);
     }
