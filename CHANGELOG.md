@@ -1,3 +1,12 @@
+# [1.0.0-alpha.9](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2019-11-22)
+
+
+### Bug Fixes
+
+* **icon,app-bar:** fix color scss properties ([dee8751](https://github.com/fivethree-team/fivethree/commit/dee8751))
+
+
+
 # [1.0.0-alpha.8](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.6...v1.0.0-alpha.8) (2019-11-22)
 
 
