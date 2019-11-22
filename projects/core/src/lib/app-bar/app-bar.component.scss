@@ -9,10 +9,6 @@
   --fiv-radius: 72px;
   --fiv-appbar-fab-size: 56px;
   --fiv-appbar-height: 56px;
-  height: calc(
-    var(--fiv-appbar-height) + env(safe-area-inset-bottom) +
-      var(--fiv-appbar-fab-size) / 2
-  );
   width: 100%;
   --fiv-border-radius: 6px;
   --fiv-color-appbar: var(--ion-color-light);
@@ -24,7 +20,10 @@ svg {
   width: var(--fiv-radius);
   left: calc(50% - (var(--fiv-radius) / 2));
   position: absolute;
-  top: calc(var(--fiv-appbar-fab-size) / 2 + var(--fiv-border-radius));
+  bottom: calc(
+    env(safe-area-inset-bottom) + var(--fiv-appbar-height) - var(--fiv-radius) /
+      2 - var(--fiv-border-radius)
+  );
   polygon {
     fill: var(--fiv-color-appbar);
   }
@@ -35,7 +34,7 @@ svg {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 100%;
+  height: calc(var(--fiv-appbar-height) + env(safe-area-inset-bottom));
   background: rgba(0, 0, 0, 0);
   z-index: 5000;
   .appbar-rect {
@@ -59,7 +58,7 @@ svg {
   ::ng-deep fiv-fab {
     position: absolute;
     left: calc(50% - 0.5 * var(--fiv-fab-size));
-    top: var(--fiv-border-radius);
+    top: calc(-0.5 * var(--fiv-appbar-fab-size) + var(--fiv-border-radius));
     display: block;
     --fiv-fab-size: var(--fiv-appbar-fab-size);
     z-index: 14;
