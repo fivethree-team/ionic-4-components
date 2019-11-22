@@ -24,7 +24,7 @@ svg {
     env(safe-area-inset-bottom) + var(--fiv-appbar-height) - var(--fiv-radius) /
       2 - var(--fiv-border-radius)
   );
-  polygon {
+  path {
     fill: var(--fiv-color-appbar);
   }
 }
