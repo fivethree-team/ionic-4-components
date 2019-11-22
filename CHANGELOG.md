@@ -1,3 +1,12 @@
+# [1.0.0-alpha.7](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2019-11-22)
+
+
+### Bug Fixes
+
+* **app-bar:** update app-bar hight ([51d3603](https://github.com/fivethree-team/fivethree/commit/51d3603))
+
+
+
 # [1.0.0-alpha.6](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.2...v1.0.0-alpha.6) (2019-11-18)
 
 
