@@ -8,7 +8,6 @@
     "umdModuleIds": {
       "@fivethree/ngx-rxjs-animations": "ngx-rxjs-animations",
       "@ionic/angular": "ionic-angular",
-      "hammerjs": "Hammer"
     }
   },
   "whitelistedNonPeerDependencies": [
