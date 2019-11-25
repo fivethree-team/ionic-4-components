@@ -99,6 +99,7 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   @Input() disabled = false;
   @Input() visible = true;
   @Input() pulse = false;
+  @Input() animationDisabled = false;
   @Input() set scroll(scroll: boolean) {
     this._scroll = scroll;
     this.$onDestroy.next();

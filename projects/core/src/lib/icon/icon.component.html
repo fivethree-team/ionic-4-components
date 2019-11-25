@@ -1,13 +1,13 @@
-<ion-icon [slot]="slot" class="icon" [@rotateAnim]="state" (@rotateAnim.done)="rotateAnimDone($event)" [name]="_name"
-    [color]="color"></ion-icon>
-<span [@scaleAnim]="indicatorState" *ngIf="dot" class="indicator-dot"></span>
+<ion-icon [slot]="slot" class="icon" [@.disabled]="animationDisabled" [@rotateAnim]="state"
+    (@rotateAnim.done)="rotateAnimDone($event)" [name]="_name" [color]="color"></ion-icon>
+<span [@.disabled]="animationDisabled" [@scaleAnim]="indicatorState" *ngIf="dot" class="indicator-dot"></span>
 <span class="off-background" *ngIf="off"></span>
 <span class="off" *ngIf="off"></span>
 <span *ngIf="smallIcon && badge == 0 && !dot" class="indicator-small-icon">
     <ion-icon [color]="color" slot="icon-only" [name]="smallIcon"></ion-icon>
 </span>
-<span *ngIf="badge > 0 && !dot" [@scaleAnim]="badgeState" (@scaleAnim.done)="incrementDone($event)"
-    class="indicator-badge">
+<span *ngIf="badge > 0 && !dot" [@.disabled]="animationDisabled" [@scaleAnim]="badgeState"
+    (@scaleAnim.done)="incrementDone($event)" class="indicator-badge">
     <span *ngIf="badge <= 9">{{badge}}</span>
     <span *ngIf="badge > 9">9+</span>
 </span>
