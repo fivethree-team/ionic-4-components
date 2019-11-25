@@ -6,7 +6,7 @@
     "entryFile": "src/public_api.ts",
     "umdModuleIds": {
       "@fivethree/ngx-rxjs-animations": "ngx-rxjs-animations",
-      "@ionic/angular": "ionic-angular",
+      "@ionic/angular": "ionic-angular"
     }
   },
   "whitelistedNonPeerDependencies": [
