@@ -4,7 +4,8 @@ import {
   Input,
   ChangeDetectionStrategy,
   Output,
-  EventEmitter
+  EventEmitter,
+  HostBinding
 } from '@angular/core';
 import {
   trigger,
@@ -59,7 +60,11 @@ export class FivIcon implements OnInit {
   @Input() slot: string;
   @Input() smallIcon: string;
   @Input() off = false;
-  @Input() animationDisabled = false;
+
+  @Input()
+  @HostBinding('@.disabled')
+  animationDisabled = false;
+
   @Output() transitionDone = new EventEmitter<string>();
 
   indicatorState: 'normal' | 'scale' = 'scale';
