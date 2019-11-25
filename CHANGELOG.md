@@ -1,3 +1,17 @@
+# [1.0.0-alpha.10](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2019-11-25)
+
+
+### Bug Fixes
+
+* **app-bar:** example page ([8b7ad61](https://github.com/fivethree-team/fivethree/commit/8b7ad61))
+
+
+### Features
+
+* **fab,icon:** animation can be disabled ([77c6445](https://github.com/fivethree-team/fivethree/commit/77c6445))
+
+
+
 # [1.0.0-alpha.9](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2019-11-22)
 
 
