@@ -1,3 +1,12 @@
+# [1.0.0-alpha.11](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2019-11-25)
+
+
+### Features
+
+* **icon:** disable animation for the component ([2d45f85](https://github.com/fivethree-team/fivethree/commit/2d45f85))
+
+
+
 # [1.0.0-alpha.10](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2019-11-25)
 
 
