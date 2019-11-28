@@ -7,7 +7,8 @@ import {
   ElementRef,
   Renderer2,
   Output,
-  EventEmitter
+  EventEmitter,
+  HostBinding
 } from '@angular/core';
 import {
   AnimationEvent,
@@ -66,6 +67,7 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
   contentOffset = 0;
   bounds: FeaturePosition;
   icon: string;
+  classes: string[];
   @ViewChild('circle', { static: true }) circle: ElementRef;
   @ViewChild('rect', { static: true }) rect: ElementRef;
   @ViewChild('pInner', { static: true, read: ElementRef })
@@ -80,6 +82,10 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
   @Output() fivClose = new EventEmitter<any>();
   @Output() fivOpen = new EventEmitter<any>();
   @Output() fivAnimation = new EventEmitter<AnimationEvent>();
+
+  @HostBinding('class') get _classes() {
+    return this.classes.join(' ');
+  }
 
   constructor(private renderer: Renderer2, private platform: Platform) {}
 

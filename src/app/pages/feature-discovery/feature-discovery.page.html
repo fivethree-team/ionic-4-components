@@ -40,7 +40,7 @@
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="primary" (click)="log('FAB Clicked')">
       <!-- use the fiv-icon for cool icon effect -->
-      <fiv-icon #fab="fivFeature" [fivFeature]="fabContent" [featurePadding]="fp" [contentOffset]="co" name="add"
+      <fiv-icon [classes]="['cool','classes']" #fab="fivFeature" [fivFeature]="fabContent" [featurePadding]="fp" [contentOffset]="co" name="add"
         (fivFeatureClick)="log('feature click')" (fivWillOpen)="log('fiv will open')" (fivOpen)="log('fiv open')"
         (fivWillClose)="log('fiv will close')" (fivClose)="log('fiv close')">
       </fiv-icon>

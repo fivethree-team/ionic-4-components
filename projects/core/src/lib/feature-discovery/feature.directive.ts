@@ -27,6 +27,7 @@ export class FivFeature {
   @Input() contentOffset = 20;
   @Input() featurePadding = 20;
   @Input() clickEnabled = true;
+  @Input() classes: string[] = [];
   @Input() fivFeature: TemplateRef<any>;
   overlayRef: ComponentRef<FivFeatureDiscovery>;
 
@@ -73,6 +74,7 @@ export class FivFeature {
     featureOverlay.width = this.diameter;
     featureOverlay.featurePadding = this.featurePadding;
     featureOverlay.contentOffset = this.contentOffset;
+    featureOverlay.classes = this.classes;
     featureOverlay.setIcon(icon);
     featureOverlay.setBounds(bounds);
     featureOverlay.show();
