@@ -65,6 +65,7 @@ export * from './lib/back-button/back-button.component';
 export * from './lib/gallery/gallery.component';
 export * from './lib/gallery/gallery-image/gallery-image.component';
 export * from './lib/overlay/overlay.component';
+export * from './lib/popover/popover.component';
 
 /**
  * Directives
