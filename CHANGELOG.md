@@ -1,3 +1,14 @@
+<a name="1.0.0-alpha.13"></a>
+# [1.0.0-alpha.13](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.10...v1.0.0-alpha.13) (2019-11-28)
+
+
+### Features
+
+* **feature-discovery:** add classes input to feature directive ([2fe1209](https://github.com/fivethree-team/component-library/commit/2fe1209))
+* **icon:** disable animation for the component ([2d45f85](https://github.com/fivethree-team/component-library/commit/2d45f85))
+
+
+
 # [1.0.0-alpha.11](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2019-11-25)
 
 
