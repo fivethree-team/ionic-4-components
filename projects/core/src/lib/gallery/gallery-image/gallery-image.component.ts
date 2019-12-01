@@ -19,7 +19,7 @@ export class FivGalleryImage implements OnInit {
   originalSrc: string | SafeResourceUrl;
   index: number;
 
-  @ViewChild('thumbnail', { static: false }) thumbnail: ElementRef;
+  @ViewChild('thumbnail', { static: true }) thumbnail: ElementRef;
   @Output() click = new EventEmitter<FivGalleryImage>();
 
   open() {
