@@ -87,8 +87,8 @@ export class FivFeature {
       .subscribe(() => {
         this.didOpen();
       });
-    featureOverlay.fivClick.pipe(first()).subscribe(() => {
-      this.featureClick();
+    featureOverlay.fivClick.pipe(first()).subscribe(ev => {
+      this.featureClick(ev);
     });
     featureOverlay.fivBackdropClick.pipe(first()).subscribe(() => {
       this.hide();
@@ -113,9 +113,9 @@ export class FivFeature {
     this.isOpen = true;
   }
 
-  private featureClick() {
+  private featureClick(ev) {
     if (this.overlayRef) {
-      this.fivFeatureClick.emit();
+      this.fivFeatureClick.emit(ev);
       this.fivWillClose.emit();
       this.overlayRef.instance.featureClick();
       this.overlayRef.instance.fivClose.pipe(first()).subscribe(() => {

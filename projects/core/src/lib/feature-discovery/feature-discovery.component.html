@@ -4,7 +4,7 @@
   <div #pOuter class="feature center pulse" [style.height]="(innerDiameter + featurePadding) + 'px'"
     [style.width]="(innerDiameter + featurePadding) + 'px'">
   </div>
-  <div #pInner class="feature center inner  ion-activatable" (click)="fivClick.emit()"
+  <div #pInner class="feature center inner  ion-activatable" (click)="fivClick.emit($event)"
     [style.height]="(innerDiameter + (icon ? featurePadding : 0)) + 'px'"
     [style.width]="(innerDiameter + (icon ? featurePadding : 0)) + 'px'">
     <fiv-icon class="center" *ngIf="icon" [name]="icon"></fiv-icon>
