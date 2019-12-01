@@ -1,3 +1,21 @@
+<a name="1.0.0-alpha.17"></a>
+# [1.0.0-alpha.17](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.10...v1.0.0-alpha.17) (2019-12-01)
+
+
+### Bug Fixes
+
+* **gallery-image:** make thumbnail static ([4ce59b6](https://github.com/fivethree-team/component-library/commit/4ce59b6))
+
+
+### Features
+
+* **feature-discovery:** add classes input to feature directive ([2fe1209](https://github.com/fivethree-team/component-library/commit/2fe1209))
+* **feature-discovery:** propagate click event ([2707ab6](https://github.com/fivethree-team/component-library/commit/2707ab6))
+* **icon:** disable animation for the component ([2d45f85](https://github.com/fivethree-team/component-library/commit/2d45f85))
+* **popover:** export popover component ([854bf07](https://github.com/fivethree-team/component-library/commit/854bf07))
+
+
+
 <a name="1.0.0-alpha.16"></a>
 # [1.0.0-alpha.16](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.10...v1.0.0-alpha.16) (2019-12-01)
 
