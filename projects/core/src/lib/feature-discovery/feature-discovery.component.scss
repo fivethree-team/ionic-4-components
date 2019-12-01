@@ -29,10 +29,10 @@
 }
 
 .feature.center.pulse {
-  animation: 1.4s infinite shadow-pulse;
+  animation: 1.4s infinite feature-pulse;
 }
 
-@keyframes shadow-pulse {
+@keyframes feature-pulse {
   0% {
     transform: scale(1) translate(-50%, -50%);
     border-radius: 100%;
