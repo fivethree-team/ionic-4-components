@@ -1,3 +1,13 @@
+<a name="1.0.0-alpha.19"></a>
+# [1.0.0-alpha.19](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) (2019-12-02)
+
+
+### Features
+
+* **popover:** add optional viewportOnly input ([7d6bd41](https://github.com/fivethree-team/component-library/commit/7d6bd41))
+
+
+
 # [1.0.0-alpha.18](https://github.com/fivethree-team/fivethree/compare/v1.0.0-alpha.10...v1.0.0-alpha.18) (2019-12-02)
 
 
