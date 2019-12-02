@@ -19,7 +19,7 @@ import { FivOverlayService } from './overlay.service';
 export class FivOverlay {
   private componentRef: ComponentRef<FivOverlayContent>;
 
-  @ViewChild('content', { static: false }) ngContent: TemplateRef<any>;
+  @ViewChild('content', { static: true }) ngContent: TemplateRef<any>;
   @Input() priority;
   @Output() afterInit = new EventEmitter();
   private _open = false;
