@@ -56,6 +56,7 @@ export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
   @Input() scrollSpeed = 100;
   @Input() position: PopoverPositioning = 'auto';
   @Input() classes: string[] = [];
+  @Input() viewportOnly = true;
 
   _position: PopoverPosition;
   hidden = false;
@@ -190,6 +191,9 @@ export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private watchResize(target: HTMLElement) {
+    if (!this.viewportOnly) {
+      return;
+    }
     fromEvent(window, 'resize')
       .pipe(
         flatMap(() => this.filterInViewport(target)),
@@ -202,6 +206,9 @@ export class FivPopover implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private watchScroll(target: HTMLElement) {
+    if (!this.viewportOnly) {
+      return;
+    }
     if (this.content && !this.backdrop) {
       this.content.scrollEvents = true;
       merge(
