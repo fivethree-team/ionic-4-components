@@ -16,8 +16,6 @@
 
   display: block;
   position: relative;
-  --fiv-background: var(--ion-color-light);
-  --fiv-background-shade: var(--ion-color-light-shade);
   width: 100%;
 }
 
@@ -26,7 +24,7 @@
 
   ion-item {
     --color: var(--color-active);
-    --background: var(--fiv-background);
+    --background: var(--fiv-background, var(--ion-color-light));
   }
 }
 
