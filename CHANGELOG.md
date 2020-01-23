@@ -1,3 +1,18 @@
+# [1.0.0-alpha.20](https://github.com/fivethree-team/ionic-4-components/compare/v1.0.0-alpha.18...v1.0.0-alpha.20) (2020-01-23)
+
+
+### Bug Fixes
+
+* **router-item:** set fallback for fiv-background ([711c001](https://github.com/fivethree-team/ionic-4-components/commit/711c0011cd4381f1b9fa49100c1c2ee10167f62a))
+
+
+### Features
+
+* **collapsable-menu-button:** set icon color ([df34a54](https://github.com/fivethree-team/ionic-4-components/commit/df34a545f751dfb29f7b2d7b370958288d399211))
+* **popover:** add optional viewportOnly input ([7d6bd41](https://github.com/fivethree-team/ionic-4-components/commit/7d6bd41c7d4a18ff551d9966b4ee9a562fdb31c3))
+
+
+
 <a name="1.0.0-alpha.19"></a>
 # [1.0.0-alpha.19](https://github.com/fivethree-team/component-library/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) (2019-12-02)
 
