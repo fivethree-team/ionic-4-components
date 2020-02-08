@@ -65,7 +65,7 @@
     "core-js": "2.6.5",
     "intersection-observer": "0.5.1",
     "ng-lottie": "0.3.2",
-    "ngx-markdown": "7.1.5",
+    "ngx-markdown": "8.2.2",
     "rxjs": "6.5.2",
     "rxjs-compat": "6.5.2",
     "zone.js": "0.8.29"
