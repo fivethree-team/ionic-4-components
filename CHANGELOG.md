@@ -1,3 +1,22 @@
+# [1.0.0-alpha.21](https://github.com/fivethree-team/ionic-4-components/compare/v1.0.0-alpha.18...v1.0.0-alpha.21) (2020-02-13)
+
+
+### Bug Fixes
+
+* **api:** export all components and directives ([2334363](https://github.com/fivethree-team/ionic-4-components/commit/23343634e2448ef4ac3cff954925e645ad7bfc22))
+* **api:** remove duplicate export ([2664eb7](https://github.com/fivethree-team/ionic-4-components/commit/2664eb752d51e7c5457859c7847a473915f08e2f))
+* **router-item:** set fallback for fiv-background ([711c001](https://github.com/fivethree-team/ionic-4-components/commit/711c0011cd4381f1b9fa49100c1c2ee10167f62a))
+
+
+### Features
+
+* **collapsable-menu-button:** set icon color ([df34a54](https://github.com/fivethree-team/ionic-4-components/commit/df34a545f751dfb29f7b2d7b370958288d399211))
+* **ionic:** update to v5 ([b68a73c](https://github.com/fivethree-team/ionic-4-components/commit/b68a73cd7a1cf0b96b11336cfe99322e447b2e4e))
+* **ng:** support v9 ([05e1ec5](https://github.com/fivethree-team/ionic-4-components/commit/05e1ec5b35a074cfa1221e03a475a226c9a5f21b))
+* **popover:** add optional viewportOnly input ([7d6bd41](https://github.com/fivethree-team/ionic-4-components/commit/7d6bd41c7d4a18ff551d9966b4ee9a562fdb31c3))
+
+
+
 # [1.0.0-alpha.20](https://github.com/fivethree-team/ionic-4-components/compare/v1.0.0-alpha.18...v1.0.0-alpha.20) (2020-01-23)
 
 
