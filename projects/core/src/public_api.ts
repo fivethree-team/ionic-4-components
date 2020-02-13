@@ -19,7 +19,6 @@ export * from './lib/icon/icon.module';
 export * from './lib/refresher/refresher.module';
 export * from './lib/fab/fab.module';
 export * from './lib/loading-progress-bar/loading-progress-bar.module';
-export * from './lib/loading-progress-bar/loading-progress-bar.module';
 export * from './lib/spinner/spinner.module';
 export * from './lib/network-status/network-status.module';
 export * from './lib/overlay/overlay.module';
