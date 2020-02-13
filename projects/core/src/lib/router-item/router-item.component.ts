@@ -29,7 +29,7 @@ export class FivRouterItem implements OnInit, AfterViewInit {
 
   @Input() detail?: boolean;
 
-  @Input() detailIcon = 'ios-arrow-forward';
+  @Input() detailIcon = 'chevron-forward';
 
   @Input() disabled = false;
 
