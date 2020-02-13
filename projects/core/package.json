@@ -1,6 +1,6 @@
 {
   "name": "@fivethree/core",
-  "version": "1.0.0-alpha.20",
+  "version": "1.0.0-alpha.21",
   "description": "Fivethree Core Components",
   "keywords": [
     "fivethree",
@@ -18,12 +18,12 @@
     "@fivethree/ngx-rxjs-animations": "0.0.2"
   },
   "peerDependencies": {
-    "@angular/animations": ">=8.0.0 <9.0.0",
-    "@angular/common": ">=8.0.0 <9.0.0",
-    "@angular/core": ">=8.0.0 <9.0.0",
-    "@angular/forms": ">=8.0.0 <9.0.0",
-    "@angular/platform-browser": ">=8.0.0 <9.0.0",
-    "@angular/router": ">=8.0.0 <9.0.0",
+    "@angular/animations": ">=8.0.0 <10.0.0",
+    "@angular/common": ">=8.0.0 <10.0.0",
+    "@angular/core": ">=8.0.0 <10.0.0",
+    "@angular/forms": ">=8.0.0 <10.0.0",
+    "@angular/platform-browser": ">=8.0.0 <10.0.0",
+    "@angular/router": ">=8.0.0 <10.0.0",
     "@ionic/angular": "^4.0.0 || ^5.0.0",
     "rxjs": ">=6.4.0"
   },
