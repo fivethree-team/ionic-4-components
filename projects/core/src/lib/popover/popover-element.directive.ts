@@ -5,7 +5,7 @@ import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
   selector: '[fivPopover]',
   exportAs: 'fivPopover'
 })
-export class PopoverElementDirective implements AfterViewInit {
+export class FivPopoverElementDirective implements AfterViewInit {
   _show: boolean;
   ready = false;
   @Input('fivPopover.delay') delay = 150;
