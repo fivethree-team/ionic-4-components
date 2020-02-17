@@ -10,9 +10,7 @@ export class PopoverPage implements OnInit {
 
   ngOnInit() {}
 
-  actionClicked(n: number) {
-    console.log('Action Clicked', n);
-  }
+  actionClicked(n: number) {}
 
   open(url) {
     window.open(

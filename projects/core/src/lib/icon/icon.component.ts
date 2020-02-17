@@ -92,7 +92,6 @@ export class FivIcon implements OnInit {
 
   @Input()
   set dot(dot: boolean) {
-    console.log(dot);
     this._dot = dot;
     if (dot) {
       this.indicatorState = 'normal';

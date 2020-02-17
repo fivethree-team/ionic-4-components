@@ -1000,7 +1000,7 @@ export const icons: Icons = {
       tags: ['film', 'recording', 'tape', 'voicemail']
     },
     {
-      icons: ['redo'],
+      icons: ['arrow-redo'],
       tags: ['forward', 'redo']
     },
     {
