@@ -12,267 +12,267 @@ export interface Icon {
 export const icons: Icons = {
   icons: [
     {
-      icons: ['ios-add-circle-outline', 'md-add-circle-outline'],
+      icons: ['add-circle-outline'],
       tags: ['circle']
     },
     {
-      icons: ['ios-add-circle', 'md-add-circle'],
+      icons: ['add-circle'],
       tags: ['add', 'circle']
     },
     {
-      icons: ['ios-add', 'md-add'],
+      icons: ['add'],
       tags: ['add', 'include', 'invite', 'plus']
     },
     {
-      icons: ['ios-airplane', 'md-airplane'],
+      icons: ['airplane'],
       tags: ['airplane', 'plane']
     },
     {
-      icons: ['ios-alarm', 'md-alarm'],
+      icons: ['alarm'],
       tags: ['alarm']
     },
     {
-      icons: ['ios-albums', 'md-albums'],
+      icons: ['albums'],
       tags: ['albums', 'boxes', 'slides', 'square']
     },
     {
-      icons: ['ios-alert', 'md-alert'],
+      icons: ['alert'],
       tags: ['!', 'alert', 'attention', 'exclamation', 'notice', 'warning']
     },
     {
-      icons: ['ios-american-football', 'md-american-football'],
+      icons: ['american-football'],
       tags: ['american', 'football']
     },
     {
-      icons: ['ios-analytics', 'md-analytics'],
+      icons: ['analytics'],
       tags: ['analytics', 'data', 'metrics', 'track']
     },
     {
-      icons: ['ios-aperture', 'md-aperture'],
+      icons: ['aperture'],
       tags: ['aperture', 'dark', 'images', 'levels', 'light', 'settings']
     },
     {
-      icons: ['ios-apps', 'md-apps'],
+      icons: ['apps'],
       tags: ['apps', 'applications']
     },
     {
-      icons: ['ios-appstore', 'md-appstore'],
+      icons: ['appstore'],
       tags: ['appstore', 'store']
     },
     {
-      icons: ['ios-archive', 'md-archive'],
+      icons: ['archive'],
       tags: ['archive', 'email']
     },
     {
-      icons: ['ios-arrow-back', 'md-arrow-back'],
+      icons: ['arrow-back'],
       tags: ['arrow', 'back', 'chevron', 'navigation']
     },
     {
-      icons: ['ios-arrow-down', 'md-arrow-down'],
+      icons: ['arrow-down'],
       tags: ['arrow', 'chevron', 'down']
     },
     {
-      icons: ['ios-arrow-dropdown-circle', 'md-arrow-dropdown-circle'],
+      icons: ['arrow-dropdown-circle'],
       tags: ['arrow', 'circle', 'dropdown']
     },
     {
-      icons: ['ios-arrow-dropdown', 'md-arrow-dropdown'],
+      icons: ['arrow-dropdown'],
       tags: ['arrow', 'dropdown']
     },
     {
-      icons: ['ios-arrow-dropleft-circle', 'md-arrow-dropleft-circle'],
+      icons: ['arrow-dropleft-circle'],
       tags: ['arrow', 'circle', 'dropleft']
     },
     {
-      icons: ['ios-arrow-dropleft', 'md-arrow-dropleft'],
+      icons: ['arrow-dropleft'],
       tags: ['arrow', 'dropleft']
     },
     {
-      icons: ['ios-arrow-dropright-circle', 'md-arrow-dropright-circle'],
+      icons: ['arrow-dropright-circle'],
       tags: ['arrow', 'circle', 'dropright']
     },
     {
-      icons: ['ios-arrow-dropright', 'md-arrow-dropright'],
+      icons: ['arrow-dropright'],
       tags: ['arrow', 'dropright']
     },
     {
-      icons: ['ios-arrow-dropup-circle', 'md-arrow-dropup-circle'],
+      icons: ['arrow-dropup-circle'],
       tags: ['arrow', 'circle', 'dropup']
     },
     {
-      icons: ['ios-arrow-dropup', 'md-arrow-dropup'],
+      icons: ['arrow-dropup'],
       tags: ['arrow', 'dropup']
     },
     {
-      icons: ['ios-arrow-forward', 'md-arrow-forward'],
+      icons: ['arrow-forward'],
       tags: ['arrow', 'chevron', 'forward', 'navigation']
     },
     {
-      icons: ['ios-arrow-round-back', 'md-arrow-round-back'],
+      icons: ['arrow-round-back'],
       tags: ['arrow', 'back', 'round']
     },
     {
-      icons: ['ios-arrow-round-down', 'md-arrow-round-down'],
+      icons: ['arrow-round-down'],
       tags: ['arrow', 'down', 'round']
     },
     {
-      icons: ['ios-arrow-round-forward', 'md-arrow-round-forward'],
+      icons: ['arrow-round-forward'],
       tags: ['arrow', 'forward', 'round']
     },
     {
-      icons: ['ios-arrow-round-up', 'md-arrow-round-up'],
+      icons: ['arrow-round-up'],
       tags: ['arrow', 'round', 'up']
     },
     {
-      icons: ['ios-arrow-up', 'md-arrow-up'],
+      icons: ['arrow-up'],
       tags: ['arrow', 'chevron', 'up']
     },
     {
-      icons: ['ios-at', 'md-at'],
+      icons: ['at'],
       tags: ['@', 'at']
     },
     {
-      icons: ['ios-attach', 'md-attach'],
+      icons: ['attach'],
       tags: ['attach']
     },
     {
-      icons: ['ios-backspace', 'md-backspace'],
+      icons: ['backspace'],
       tags: ['backspace']
     },
     {
-      icons: ['ios-barcode', 'md-barcode'],
+      icons: ['barcode'],
       tags: ['barcode', 'camera', 'reader']
     },
     {
-      icons: ['ios-baseball', 'md-baseball'],
+      icons: ['baseball'],
       tags: ['baseball']
     },
     {
-      icons: ['ios-basket', 'md-basket'],
+      icons: ['basket'],
       tags: ['basket']
     },
     {
-      icons: ['ios-basketball', 'md-basketball'],
+      icons: ['basketball'],
       tags: ['basketball']
     },
     {
-      icons: ['ios-battery-charging', 'md-battery-charging'],
+      icons: ['battery-charging'],
       tags: ['battery', 'charging']
     },
     {
-      icons: ['ios-battery-dead', 'md-battery-dead'],
+      icons: ['battery-dead'],
       tags: ['battery', 'dead']
     },
     {
-      icons: ['ios-battery-full', 'md-battery-full'],
+      icons: ['battery-full'],
       tags: ['battery', 'full']
     },
     {
-      icons: ['ios-beaker', 'md-beaker'],
+      icons: ['beaker'],
       tags: ['beaker', 'flask', 'mixture', 'potion']
     },
     {
-      icons: ['ios-bed', 'md-bed'],
+      icons: ['bed'],
       tags: ['bed', 'sleep']
     },
     {
-      icons: ['ios-beer', 'md-beer'],
+      icons: ['beer'],
       tags: ['beer', 'drink', 'eat', 'food']
     },
     {
-      icons: ['ios-bicycle', 'md-bicycle'],
+      icons: ['bicycle'],
       tags: ['bicycle']
     },
     {
-      icons: ['ios-bluetooth', 'md-bluetooth'],
+      icons: ['bluetooth'],
       tags: ['bluetooth', 'cloud', 'connection']
     },
     {
-      icons: ['ios-boat', 'md-boat'],
+      icons: ['boat'],
       tags: ['boat']
     },
     {
-      icons: ['ios-body', 'md-body'],
+      icons: ['body'],
       tags: ['body']
     },
     {
-      icons: ['ios-bonfire', 'md-bonfire'],
+      icons: ['bonfire'],
       tags: ['bonfire', 'heat', 'hot']
     },
     {
-      icons: ['ios-book', 'md-book'],
+      icons: ['book'],
       tags: ['book', 'read']
     },
     {
-      icons: ['ios-bookmark', 'md-bookmark'],
+      icons: ['bookmark'],
       tags: ['bookmark', 'favorite', 'save', 'tag']
     },
     {
-      icons: ['ios-bookmarks', 'md-bookmarks'],
+      icons: ['bookmarks'],
       tags: ['bookmarks', 'favorite']
     },
     {
-      icons: ['ios-bowtie', 'md-bowtie'],
+      icons: ['bowtie'],
       tags: ['bowtie']
     },
     {
-      icons: ['ios-briefcase', 'md-briefcase'],
+      icons: ['briefcase'],
       tags: ['briefcase', 'folder', 'organize']
     },
     {
-      icons: ['ios-browsers', 'md-browsers'],
+      icons: ['browsers'],
       tags: ['browsers', 'square']
     },
     {
-      icons: ['ios-brush', 'md-brush'],
+      icons: ['brush'],
       tags: ['brush']
     },
     {
-      icons: ['ios-bug', 'md-bug'],
+      icons: ['bug'],
       tags: ['bug', 'develop', 'error', 'hacker', 'program']
     },
     {
-      icons: ['ios-build', 'md-build'],
+      icons: ['build'],
       tags: ['build']
     },
     {
-      icons: ['ios-bulb', 'md-bulb'],
+      icons: ['bulb'],
       tags: ['bulb']
     },
     {
-      icons: ['ios-bus', 'md-bus'],
+      icons: ['bus'],
       tags: ['bus']
     },
     {
-      icons: ['ios-business', 'md-business'],
+      icons: ['business'],
       tags: ['business']
     },
     {
-      icons: ['ios-cafe', 'md-cafe'],
+      icons: ['cafe'],
       tags: ['cafe']
     },
     {
-      icons: ['ios-calculator', 'md-calculator'],
+      icons: ['calculator'],
       tags: ['arithmatic', 'calculator', 'math']
     },
     {
-      icons: ['ios-calendar', 'md-calendar'],
+      icons: ['calendar'],
       tags: ['calendar', 'date', 'month', 'week']
     },
     {
-      icons: ['ios-call', 'md-call'],
+      icons: ['call'],
       tags: ['call', 'telephone']
     },
     {
-      icons: ['ios-camera', 'md-camera'],
+      icons: ['camera'],
       tags: ['camera', 'image', 'photo']
     },
     {
-      icons: ['ios-car', 'md-car'],
+      icons: ['car'],
       tags: ['car']
     },
     {
-      icons: ['ios-card', 'md-card'],
+      icons: ['card'],
       tags: [
         '$',
         'card',
@@ -286,11 +286,11 @@ export const icons: Icons = {
       ]
     },
     {
-      icons: ['ios-cart', 'md-cart'],
+      icons: ['cart'],
       tags: ['cart']
     },
     {
-      icons: ['ios-cash', 'md-cash'],
+      icons: ['cash'],
       tags: [
         '$',
         'cash',
@@ -303,598 +303,595 @@ export const icons: Icons = {
       ]
     },
     {
-      icons: ['ios-cellular', 'md-cellular'],
+      icons: ['cellular'],
       tags: ['cellular']
     },
     {
-      icons: ['ios-chatboxes', 'md-chatboxes'],
+      icons: ['chatboxes'],
       tags: ['chatboxes', 'talk']
     },
     {
-      icons: ['ios-chatbubbles', 'md-chatbubbles'],
+      icons: ['chatbubbles'],
       tags: ['chatbubbles', 'talk']
     },
     {
-      icons: ['ios-checkbox-outline', 'md-checkbox-outline'],
+      icons: ['checkbox-outline'],
       tags: ['checkbox']
     },
     {
-      icons: ['ios-checkbox', 'md-checkbox'],
+      icons: ['checkbox'],
       tags: ['checkbox']
     },
     {
-      icons: ['ios-checkmark-circle-outline', 'md-checkmark-circle-outline'],
+      icons: ['checkmark-circle-outline'],
       tags: ['checkmark']
     },
     {
-      icons: ['ios-checkmark-circle', 'md-checkmark-circle'],
+      icons: ['checkmark-circle'],
       tags: ['checkmark', 'circle']
     },
     {
-      icons: ['ios-checkmark', 'md-checkmark'],
+      icons: ['checkmark'],
       tags: ['checkmark']
     },
     {
-      icons: ['ios-clipboard', 'md-clipboard'],
+      icons: ['clipboard'],
       tags: ['clipboard', 'write']
     },
     {
-      icons: ['ios-clock', 'md-clock'],
+      icons: ['clock'],
       tags: ['clock', 'time']
     },
     {
-      icons: ['ios-close-circle-outline', 'md-close-circle-outline'],
+      icons: ['close-circle-outline'],
       tags: ['close', 'cicle']
     },
     {
-      icons: ['ios-close-circle', 'md-close-circle'],
+      icons: ['close-circle'],
       tags: ['circle', 'close']
     },
     {
-      icons: ['ios-close', 'md-close'],
+      icons: ['close'],
       tags: ['close', 'delete', 'remove']
     },
     {
-      icons: ['ios-cloud-circle', 'md-cloud-circle'],
+      icons: ['cloud-circle'],
       tags: ['circle', 'cloud']
     },
     {
-      icons: ['ios-cloud-done', 'md-cloud-done'],
+      icons: ['cloud-done'],
       tags: ['cloud', 'done']
     },
     {
-      icons: ['ios-cloud-download', 'md-cloud-download'],
+      icons: ['cloud-download'],
       tags: ['cloud', 'download', 'storage']
     },
     {
-      icons: ['ios-cloud-outline', 'md-cloud-outline'],
+      icons: ['cloud-outline'],
       tags: ['cloud']
     },
     {
-      icons: ['ios-cloud-upload', 'md-cloud-upload'],
+      icons: ['cloud-upload'],
       tags: ['cloud', 'storage', 'upload']
     },
     {
-      icons: ['ios-cloud', 'md-cloud'],
+      icons: ['cloud'],
       tags: ['cloud', 'storage', 'weather', 'whether']
     },
     {
-      icons: ['ios-cloudy-night', 'md-cloudy-night'],
+      icons: ['cloudy-night'],
       tags: ['cloudy', 'night', 'overcast', 'weather', 'whether']
     },
     {
-      icons: ['ios-cloudy', 'md-cloudy'],
+      icons: ['cloudy'],
       tags: ['cloudy', 'overcast', 'weather', 'whether']
     },
     {
-      icons: ['ios-code-download', 'md-code-download'],
+      icons: ['code-download'],
       tags: ['code', 'develop', 'download', 'hacker', 'program']
     },
     {
-      icons: ['ios-code-working', 'md-code-working'],
+      icons: ['code-working'],
       tags: ['code', 'develop', 'hacker', 'program', 'working']
     },
     {
-      icons: ['ios-code', 'md-code'],
+      icons: ['code'],
       tags: ['code', 'develop', 'hacker', 'program']
     },
     {
-      icons: ['ios-cog', 'md-cog'],
+      icons: ['cog'],
       tags: ['cog', 'gear', 'options', 'settings']
     },
     {
-      icons: ['ios-color-fill', 'md-color-fill'],
+      icons: ['color-fill'],
       tags: ['color', 'fill']
     },
     {
-      icons: ['ios-color-filter', 'md-color-filter'],
+      icons: ['color-filter'],
       tags: ['color', 'filter']
     },
     {
-      icons: ['ios-color-palette', 'md-color-palette'],
+      icons: ['color-palette'],
       tags: ['color', 'palette']
     },
     {
-      icons: ['ios-color-wand', 'md-color-wand'],
+      icons: ['color-wand'],
       tags: ['color', 'wand']
     },
     {
-      icons: ['ios-compass', 'md-compass'],
+      icons: ['compass'],
       tags: ['compass', 'directions', 'location', 'navigation']
     },
     {
-      icons: ['ios-construct', 'md-construct'],
+      icons: ['construct'],
       tags: ['construct']
     },
     {
-      icons: ['ios-contact', 'md-contact'],
+      icons: ['contact'],
       tags: ['contact', 'people', 'users']
     },
     {
-      icons: ['ios-contacts', 'md-contacts'],
+      icons: ['contacts'],
       tags: ['contacts', 'people', 'users']
     },
     {
-      icons: ['ios-contract', 'md-contract'],
+      icons: ['contract'],
       tags: ['contract']
     },
     {
-      icons: ['ios-contrast', 'md-contrast'],
+      icons: ['contrast'],
       tags: ['contrast', 'dark', 'images', 'levels', 'light', 'settings']
     },
     {
-      icons: ['ios-copy', 'md-copy'],
+      icons: ['copy'],
       tags: ['copy', 'duplicate', 'paper']
     },
     {
-      icons: ['ios-create', 'md-create'],
+      icons: ['create'],
       tags: ['create']
     },
     {
-      icons: ['ios-crop', 'md-crop'],
+      icons: ['crop'],
       tags: ['crop']
     },
     {
-      icons: ['ios-cube', 'md-cube'],
+      icons: ['cube'],
       tags: ['box', 'container', 'cube', 'square']
     },
     {
-      icons: ['ios-cut', 'md-cut'],
+      icons: ['cut'],
       tags: ['cut']
     },
     {
-      icons: ['ios-desktop', 'md-desktop'],
+      icons: ['desktop'],
       tags: ['desktop']
     },
     {
-      icons: ['ios-disc', 'md-disc'],
+      icons: ['disc'],
       tags: ['cd', 'disc', 'vinyl']
     },
     {
-      icons: ['ios-document', 'md-document'],
+      icons: ['document'],
       tags: ['document', 'file', 'paper']
     },
     {
-      icons: ['ios-done-all', 'md-done-all'],
+      icons: ['done-all'],
       tags: ['all', 'done']
     },
     {
-      icons: ['ios-download', 'md-download'],
+      icons: ['download'],
       tags: ['download', 'export']
     },
     {
-      icons: ['ios-easel', 'md-easel'],
+      icons: ['easel'],
       tags: ['easel']
     },
     {
-      icons: ['ios-egg', 'md-egg'],
+      icons: ['egg'],
       tags: ['baby', 'bird', 'birth', 'egg', 'twitter']
     },
     {
-      icons: ['ios-exit', 'md-exit'],
+      icons: ['exit'],
       tags: ['exit']
     },
     {
-      icons: ['ios-expand', 'md-expand'],
+      icons: ['expand'],
       tags: ['expand']
     },
     {
-      icons: ['ios-eye-off', 'md-eye-off'],
+      icons: ['eye-off'],
       tags: ['eye', 'off']
     },
     {
-      icons: ['ios-eye', 'md-eye'],
+      icons: ['eye'],
       tags: ['exposed', 'eye', 'look', 'see', 'view']
     },
     {
-      icons: ['ios-fastforward', 'md-fastforward'],
+      icons: ['fastforward'],
       tags: ['fastforward', 'jump', 'next', 'skip']
     },
     {
-      icons: ['ios-female', 'md-female'],
+      icons: ['female'],
       tags: ['dudette', 'female', 'girl', 'lady']
     },
     {
-      icons: ['ios-filing', 'md-filing'],
+      icons: ['filing'],
       tags: ['archive', 'filing']
     },
     {
-      icons: ['ios-film', 'md-film'],
+      icons: ['film'],
       tags: ['film']
     },
     {
-      icons: ['ios-finger-print', 'md-finger-print'],
+      icons: ['finger-print'],
       tags: ['finger', 'print']
     },
     {
-      icons: ['ios-fitness', 'md-fitness'],
+      icons: ['fitness'],
       tags: ['fitness']
     },
     {
-      icons: ['ios-flag', 'md-flag'],
+      icons: ['flag'],
       tags: ['favorite', 'flag', 'marker']
     },
     {
-      icons: ['ios-flame', 'md-flame'],
+      icons: ['flame'],
       tags: ['fire', 'flame', 'heat', 'hot']
     },
     {
-      icons: ['ios-flash-off', 'md-flash-off'],
+      icons: ['flash-off'],
       tags: ['flash']
     },
     {
-      icons: ['ios-flash', 'md-flash'],
+      icons: ['flash'],
       tags: ['flash', 'lightning', 'weather', 'whether']
     },
     {
-      icons: ['ios-flashlight', 'md-flashlight'],
+      icons: ['flashlight'],
       tags: ['flashlight']
     },
     {
-      icons: ['ios-flask', 'md-flask'],
+      icons: ['flask'],
       tags: ['bubbles', 'flask', 'mixture', 'potion']
     },
     {
-      icons: ['ios-flower', 'md-flower'],
+      icons: ['flower'],
       tags: ['flower']
     },
     {
-      icons: ['ios-folder-open', 'md-folder-open'],
+      icons: ['folder-open'],
       tags: ['folder', 'open']
     },
     {
-      icons: ['ios-folder', 'md-folder'],
+      icons: ['folder'],
       tags: ['file', 'folder']
     },
     {
-      icons: ['ios-football', 'md-football'],
+      icons: ['football'],
       tags: ['football', 'soccer']
     },
     {
-      icons: ['ios-funnel', 'md-funnel'],
+      icons: ['funnel'],
       tags: ['funnel', 'sort']
     },
     {
-      icons: ['ios-gift', 'md-gift'],
+      icons: ['gift'],
       tags: ['gift']
     },
     {
-      icons: ['ios-git-branch', 'md-git-branch'],
+      icons: ['git-branch'],
       tags: ['branch', 'git']
     },
     {
-      icons: ['ios-git-commit', 'md-git-commit'],
+      icons: ['git-commit'],
       tags: ['commit', 'git']
     },
     {
-      icons: ['ios-git-compare', 'md-git-compare'],
+      icons: ['git-compare'],
       tags: ['compare', 'git']
     },
     {
-      icons: ['ios-git-merge', 'md-git-merge'],
+      icons: ['git-merge'],
       tags: ['git', 'merge']
     },
     {
-      icons: ['ios-git-network', 'md-git-network'],
+      icons: ['git-network'],
       tags: ['git', 'network']
     },
     {
-      icons: ['ios-git-pull-request', 'md-git-pull-request'],
+      icons: ['git-pull-request'],
       tags: ['git', 'pull', 'request']
     },
     {
-      icons: ['ios-glasses', 'md-glasses'],
+      icons: ['glasses'],
       tags: ['glasses', 'look', 'reading', 'see', 'steve']
     },
     {
-      icons: ['ios-globe', 'md-globe'],
+      icons: ['globe'],
       tags: ['globe']
     },
     {
-      icons: ['ios-grid', 'md-grid'],
+      icons: ['grid'],
       tags: ['grid', 'menu']
     },
     {
-      icons: ['ios-hammer', 'md-hammer'],
+      icons: ['hammer'],
       tags: ['hammer', 'options', 'settings', 'tools']
     },
     {
-      icons: ['ios-hand', 'md-hand'],
+      icons: ['hand'],
       tags: ['hand', 'stop']
     },
     {
-      icons: ['ios-happy', 'md-happy'],
+      icons: ['happy'],
       tags: ['fun', 'good', 'happy', 'like', 'yes']
     },
     {
-      icons: ['ios-headset', 'md-headset'],
+      icons: ['headset'],
       tags: ['headset']
     },
     {
-      icons: ['ios-heart', 'md-heart'],
+      icons: ['heart'],
       tags: ['heart', 'love']
     },
     {
-      icons: ['ios-heart-dislike', 'md-heart-dislike'],
+      icons: ['heart-dislike'],
       tags: ['dislike', 'heart', 'love']
     },
     {
-      icons: ['ios-heart-empty', 'md-heart-empty'],
+      icons: ['heart-empty'],
       tags: ['empty', 'heart', 'love']
     },
     {
-      icons: ['ios-heart-half', 'md-heart-half'],
+      icons: ['heart-half'],
       tags: ['half', 'heart', 'love']
     },
     {
-      icons: ['ios-help-buoy', 'md-help-buoy'],
+      icons: ['help-buoy'],
       tags: ['?', 'buoy', 'help', 'question']
     },
     {
-      icons: ['ios-help-circle-outline', 'md-help-circle-outline'],
+      icons: ['help-circle-outline'],
       tags: ['help']
     },
     {
-      icons: ['ios-help-circle', 'md-help-circle'],
+      icons: ['help-circle'],
       tags: ['circle', 'help']
     },
     {
-      icons: ['ios-help', 'md-help'],
+      icons: ['help'],
       tags: ['?', 'help', 'information', 'question']
     },
     {
-      icons: ['ios-home', 'md-home'],
+      icons: ['home'],
       tags: ['home', 'house']
     },
     {
-      icons: ['ios-hourglass', 'md-hourglass'],
+      icons: ['hourglass'],
       tags: ['hourglass']
     },
     {
-      icons: ['ios-ice-cream', 'md-ice-cream'],
+      icons: ['ice-cream'],
       tags: ['cream', 'ice']
     },
     {
-      icons: ['ios-image', 'md-image'],
+      icons: ['image'],
       tags: ['camera', 'image', 'photo']
     },
     {
-      icons: ['ios-images', 'md-images'],
+      icons: ['images'],
       tags: ['images', 'photo']
     },
     {
-      icons: ['ios-infinite', 'md-infinite'],
+      icons: ['infinite'],
       tags: ['forever', 'infinite', 'loop']
     },
     {
-      icons: [
-        'ios-information-circle-outline',
-        'md-information-circle-outline'
-      ],
+      icons: ['information-circle-outline'],
       tags: ['information']
     },
     {
-      icons: ['ios-information-circle', 'md-information-circle'],
+      icons: ['information-circle'],
       tags: ['circle', 'information']
     },
     {
-      icons: ['ios-information', 'md-information'],
+      icons: ['information'],
       tags: ['help', 'information', 'knowledge']
     },
     {
-      icons: ['ios-jet', 'md-jet'],
+      icons: ['jet'],
       tags: ['fly', 'jet', 'plane']
     },
     {
-      icons: ['ios-journal', 'md-journal'],
+      icons: ['journal'],
       tags: ['journal']
     },
     {
-      icons: ['ios-key', 'md-key'],
+      icons: ['key'],
       tags: ['access', 'key']
     },
     {
-      icons: ['ios-keypad', 'md-keypad'],
+      icons: ['keypad'],
       tags: ['keypad', 'type']
     },
     {
-      icons: ['ios-laptop', 'md-laptop'],
+      icons: ['laptop'],
       tags: ['apple', 'laptop', 'macbook', 'osx']
     },
     {
-      icons: ['ios-leaf', 'md-leaf'],
+      icons: ['leaf'],
       tags: ['green', 'leaf', 'nature', 'plant', 'recycle']
     },
     {
-      icons: ['ios-link', 'md-link'],
+      icons: ['link'],
       tags: ['anchor', 'attach', 'chain', 'href', 'link']
     },
     {
-      icons: ['ios-list-box', 'md-list-box'],
+      icons: ['list-box'],
       tags: ['box', 'list']
     },
     {
-      icons: ['ios-list', 'md-list'],
+      icons: ['list'],
       tags: ['list']
     },
     {
-      icons: ['ios-locate', 'md-locate'],
+      icons: ['locate'],
       tags: ['gps', 'locate', 'maps', 'navigate']
     },
     {
-      icons: ['ios-lock', 'md-lock'],
+      icons: ['lock'],
       tags: ['lock']
     },
     {
-      icons: ['ios-log-in', 'md-log-in'],
+      icons: ['log-in'],
       tags: ['in', 'log', 'signin']
     },
     {
-      icons: ['ios-log-out', 'md-log-out'],
+      icons: ['log-out'],
       tags: ['log', 'out', 'signout']
     },
     {
-      icons: ['ios-magnet', 'md-magnet'],
+      icons: ['magnet'],
       tags: ['attraction', 'magnet', 'sticky']
     },
     {
-      icons: ['ios-mail-open', 'md-mail-open'],
+      icons: ['mail-open'],
       tags: ['mail', 'open']
     },
     {
-      icons: ['ios-mail-unread', 'md-mail-unread'],
+      icons: ['mail-unread'],
       tags: ['mail', 'unread']
     },
     {
-      icons: ['ios-mail', 'md-mail'],
+      icons: ['mail'],
       tags: ['email', 'mail']
     },
     {
-      icons: ['ios-male', 'md-male'],
+      icons: ['male'],
       tags: ['boy', 'dude', 'guy', 'male', 'male']
     },
     {
-      icons: ['ios-man', 'md-man'],
+      icons: ['man'],
       tags: ['boy', 'dude', 'guy', 'male', 'man']
     },
     {
-      icons: ['ios-map', 'md-map'],
+      icons: ['map'],
       tags: ['gps', 'map', 'navigation', 'pin']
     },
     {
-      icons: ['ios-medal', 'md-medal'],
+      icons: ['medal'],
       tags: ['medal']
     },
     {
-      icons: ['ios-medical', 'md-medical'],
+      icons: ['medical'],
       tags: ['medical']
     },
     {
-      icons: ['ios-medkit', 'md-medkit'],
+      icons: ['medkit'],
       tags: ['case', 'disease', 'firstaid', 'health', 'medkit', 'sick']
     },
     {
-      icons: ['ios-megaphone', 'md-megaphone'],
+      icons: ['megaphone'],
       tags: ['megaphone']
     },
     {
-      icons: ['ios-menu', 'md-menu'],
+      icons: ['menu'],
       tags: ['menu']
     },
     {
-      icons: ['ios-mic-off', 'md-mic-off'],
+      icons: ['mic-off'],
       tags: ['mic', 'noise', 'off', 'sound', 'speaker', 'talk']
     },
     {
-      icons: ['ios-mic', 'md-mic'],
+      icons: ['mic'],
       tags: ['mic', 'noise', 'sound', 'speaker', 'talk']
     },
     {
-      icons: ['ios-microphone', 'md-microphone'],
+      icons: ['microphone'],
       tags: ['microphone', 'music', 'noise', 'recorde', 'sound', 'speak']
     },
     {
-      icons: ['ios-moon', 'md-moon'],
+      icons: ['moon'],
       tags: ['dark', 'moon', 'night', 'sky']
     },
     {
-      icons: ['ios-more', 'md-more'],
+      icons: ['more'],
       tags: ['more', 'options']
     },
     {
-      icons: ['ios-move', 'md-move'],
+      icons: ['move'],
       tags: ['move']
     },
     {
-      icons: ['ios-musical-note', 'md-musical-note'],
+      icons: ['musical-note'],
       tags: ['listening', 'musical', 'noise', 'note', 'play', 'sound']
     },
     {
-      icons: ['ios-musical-notes', 'md-musical-notes'],
+      icons: ['musical-notes'],
       tags: ['listening', 'musical', 'noise', 'notes', 'play', 'sound']
     },
     {
-      icons: ['ios-navigate', 'md-navigate'],
+      icons: ['navigate'],
       tags: ['gps', 'location', 'map', 'navigate', 'pin']
     },
     {
-      icons: ['ios-notifications-off', 'md-notifications-off'],
+      icons: ['notifications-off'],
       tags: ['notifications', 'off']
     },
     {
-      icons: ['ios-notifications-outline', 'md-notifications-outline'],
+      icons: ['notifications-outline'],
       tags: ['notifications']
     },
     {
-      icons: ['ios-notifications', 'md-notifications'],
+      icons: ['notifications'],
       tags: ['notifications']
     },
     {
-      icons: ['ios-nuclear', 'md-nuclear'],
+      icons: ['nuclear'],
       tags: ['danger', 'hazard', 'nuclear', 'warning']
     },
     {
-      icons: ['ios-nutrition', 'md-nutrition'],
+      icons: ['nutrition'],
       tags: ['nutrition']
     },
     {
-      icons: ['ios-open', 'md-open'],
+      icons: ['open'],
       tags: ['open']
     },
     {
-      icons: ['ios-options', 'md-options'],
+      icons: ['options'],
       tags: ['options']
     },
     {
-      icons: ['ios-outlet', 'md-outlet'],
+      icons: ['outlet'],
       tags: ['computer', 'digital', 'electricity', 'outlet']
     },
     {
-      icons: ['ios-paper-plane', 'md-paper-plane'],
+      icons: ['paper-plane'],
       tags: ['paper', 'plane']
     },
     {
-      icons: ['ios-paper', 'md-paper'],
+      icons: ['paper'],
       tags: ['feed', 'paper', 'paper']
     },
     {
-      icons: ['ios-partly-sunny', 'md-partly-sunny'],
+      icons: ['partly-sunny'],
       tags: ['partly', 'sunny']
     },
     {
-      icons: ['ios-pause', 'md-pause'],
+      icons: ['pause'],
       tags: ['break', 'freeze', 'hold', 'music', 'pause']
     },
     {
-      icons: ['ios-paw', 'md-paw'],
+      icons: ['paw'],
       tags: ['paw']
     },
     {
-      icons: ['ios-people', 'md-people'],
+      icons: ['people'],
       tags: ['head', 'human', 'people', 'person', 'stalker', 'users']
     },
     {
-      icons: ['ios-person-add', 'md-person-add'],
+      icons: ['person-add'],
       tags: [
         'add',
         'head',
@@ -907,303 +904,303 @@ export const icons: Icons = {
       ]
     },
     {
-      icons: ['ios-person', 'md-person'],
+      icons: ['person'],
       tags: ['head', 'human', 'person', 'staff', 'users']
     },
     {
-      icons: ['ios-phone-landscape', 'md-phone-landscape'],
+      icons: ['phone-landscape'],
       tags: ['landscape', 'phone']
     },
     {
-      icons: ['ios-phone-portrait', 'md-phone-portrait'],
+      icons: ['phone-portrait'],
       tags: ['phone', 'portrait']
     },
     {
-      icons: ['ios-photos', 'md-photos'],
+      icons: ['photos'],
       tags: ['images', 'photos', 'square', 'stills']
     },
     {
-      icons: ['ios-pie', 'md-pie'],
+      icons: ['pie'],
       tags: ['cog', 'options', 'pie', 'settings']
     },
     {
-      icons: ['ios-pin', 'md-pin'],
+      icons: ['pin'],
       tags: ['gps', 'navigation', 'pin']
     },
     {
-      icons: ['ios-pint', 'md-pint'],
+      icons: ['pint'],
       tags: ['pint']
     },
     {
-      icons: ['ios-pizza', 'md-pizza'],
+      icons: ['pizza'],
       tags: ['drink', 'eat', 'food', 'pizza']
     },
     {
-      icons: ['ios-planet', 'md-planet'],
+      icons: ['planet'],
       tags: ['globe', 'home', 'nature', 'planet', 'planet', 'space']
     },
     {
-      icons: ['ios-play-circle', 'md-play-circle'],
+      icons: ['play-circle'],
       tags: ['play']
     },
     {
-      icons: ['ios-play', 'md-play'],
+      icons: ['play'],
       tags: ['arrow', 'music', 'play', 'right', 'watch']
     },
     {
-      icons: ['ios-podium', 'md-podium'],
+      icons: ['podium'],
       tags: ['award', 'compete', 'competition', 'lose', 'podium', 'win']
     },
     {
-      icons: ['ios-power', 'md-power'],
+      icons: ['power'],
       tags: ['off', 'on', 'power']
     },
     {
-      icons: ['ios-pricetag', 'md-pricetag'],
+      icons: ['pricetag'],
       tags: ['$', 'commerce', 'items', 'money', 'pricetag', 'shopping']
     },
     {
-      icons: ['ios-pricetags', 'md-pricetags'],
+      icons: ['pricetags'],
       tags: ['$', 'commerce', 'items', 'money', 'pricetags', 'shopping']
     },
     {
-      icons: ['ios-print', 'md-print'],
+      icons: ['print'],
       tags: ['print']
     },
     {
-      icons: ['ios-pulse', 'md-pulse'],
+      icons: ['pulse'],
       tags: ['hot', 'live', 'pulse', 'rate']
     },
     {
-      icons: ['ios-qr-scanner', 'md-qr-scanner'],
+      icons: ['qr-scanner'],
       tags: ['qr', 'reader', 'scanner']
     },
     {
-      icons: ['ios-quote', 'md-quote'],
+      icons: ['quote'],
       tags: ['chat', 'quotation', 'quote']
     },
     {
-      icons: ['ios-radio-button-off', 'md-radio-button-off'],
+      icons: ['radio-button-off'],
       tags: ['button', 'off', 'radio']
     },
     {
-      icons: ['ios-radio-button-on', 'md-radio-button-on'],
+      icons: ['radio-button-on'],
       tags: ['button', 'on', 'radio']
     },
     {
-      icons: ['ios-radio', 'md-radio'],
+      icons: ['radio'],
       tags: ['radio']
     },
     {
-      icons: ['ios-rainy', 'md-rainy'],
+      icons: ['rainy'],
       tags: ['cloud', 'rainy', 'water', 'weather', 'whether']
     },
     {
-      icons: ['ios-recording', 'md-recording'],
+      icons: ['recording'],
       tags: ['film', 'recording', 'tape', 'voicemail']
     },
     {
-      icons: ['ios-redo', 'md-redo'],
+      icons: ['redo'],
       tags: ['forward', 'redo']
     },
     {
-      icons: ['ios-refresh-circle', 'md-refresh-circle'],
+      icons: ['refresh-circle'],
       tags: ['circle', 'refresh']
     },
     {
-      icons: ['ios-refresh', 'md-refresh'],
+      icons: ['refresh'],
       tags: ['refresh', 'reload', 'renew', 'reset']
     },
     {
-      icons: ['ios-remove-circle-outline', 'md-remove-circle-outline'],
+      icons: ['remove-circle-outline'],
       tags: ['remove']
     },
     {
-      icons: ['ios-remove-circle', 'md-remove-circle'],
+      icons: ['remove-circle'],
       tags: ['circle', 'remove']
     },
     {
-      icons: ['ios-remove', 'md-remove'],
+      icons: ['remove'],
       tags: ['minus', 'remove', 'subtract']
     },
     {
-      icons: ['ios-reorder', 'md-reorder'],
+      icons: ['reorder'],
       tags: ['reorder']
     },
     {
-      icons: ['ios-repeat', 'md-repeat'],
+      icons: ['repeat'],
       tags: ['repeat']
     },
     {
-      icons: ['ios-resize', 'md-resize'],
+      icons: ['resize'],
       tags: ['resize']
     },
     {
-      icons: ['ios-restaurant', 'md-restaurant'],
+      icons: ['restaurant'],
       tags: ['restaurant']
     },
     {
-      icons: ['ios-return-left', 'md-return-left'],
+      icons: ['return-left'],
       tags: ['left', 'return']
     },
     {
-      icons: ['ios-return-right', 'md-return-right'],
+      icons: ['return-right'],
       tags: ['return', 'right']
     },
     {
-      icons: ['ios-reverse-camera', 'md-reverse-camera'],
+      icons: ['reverse-camera'],
       tags: ['camera', 'picture', 'reverse']
     },
     {
-      icons: ['ios-rewind', 'md-rewind'],
+      icons: ['rewind'],
       tags: ['back', 'music', 'previous', 'rewind']
     },
     {
-      icons: ['ios-ribbon', 'md-ribbon'],
+      icons: ['ribbon'],
       tags: ['ribbon']
     },
     {
-      icons: ['ios-rocket', 'md-rocket'],
+      icons: ['rocket'],
       tags: ['rocket']
     },
     {
-      icons: ['ios-rose', 'md-rose'],
+      icons: ['rose'],
       tags: ['rose']
     },
     {
-      icons: ['ios-sad', 'md-sad'],
+      icons: ['sad'],
       tags: ['bad', 'cry', 'no', 'sad']
     },
     {
-      icons: ['ios-save', 'md-save'],
+      icons: ['save'],
       tags: ['save']
     },
     {
-      icons: ['ios-school', 'md-school'],
+      icons: ['school'],
       tags: ['school']
     },
     {
-      icons: ['ios-search', 'md-search'],
+      icons: ['search'],
       tags: ['magnifyingglass', 'search']
     },
     {
-      icons: ['ios-send', 'md-send'],
+      icons: ['send'],
       tags: ['email', 'paper', 'send']
     },
     {
-      icons: ['ios-settings', 'md-settings'],
+      icons: ['settings'],
       tags: ['options', 'settings']
     },
     {
-      icons: ['ios-share-alt', 'md-share-alt'],
+      icons: ['share-alt'],
       tags: ['alt', 'share']
     },
     {
-      icons: ['ios-share', 'md-share'],
+      icons: ['share'],
       tags: ['share']
     },
     {
-      icons: ['ios-shirt', 'md-shirt'],
+      icons: ['shirt'],
       tags: ['shirt']
     },
     {
-      icons: ['ios-shuffle', 'md-shuffle'],
+      icons: ['shuffle'],
       tags: ['random', 'shuffle']
     },
     {
-      icons: ['ios-skip-backward', 'md-skip-backward'],
+      icons: ['skip-backward'],
       tags: ['backward', 'music', 'previous', 'skip']
     },
     {
-      icons: ['ios-skip-forward', 'md-skip-forward'],
+      icons: ['skip-forward'],
       tags: ['forward', 'music', 'next', 'skip']
     },
     {
-      icons: ['ios-snow', 'md-snow'],
+      icons: ['snow'],
       tags: ['snow']
     },
     {
-      icons: ['ios-speedometer', 'md-speedometer'],
+      icons: ['speedometer'],
       tags: ['drive', 'level', 'speed', 'speedometer']
     },
     {
-      icons: ['ios-square-outline', 'md-square-outline'],
+      icons: ['square-outline'],
       tags: ['square']
     },
     {
-      icons: ['ios-square', 'md-square'],
+      icons: ['square'],
       tags: ['square']
     },
     {
-      icons: ['ios-star-half', 'md-star-half'],
+      icons: ['star-half'],
       tags: ['favorite', 'half', 'rate', 'star']
     },
     {
-      icons: ['ios-star-outline', 'md-star-outline'],
+      icons: ['star-outline'],
       tags: ['star']
     },
     {
-      icons: ['ios-star', 'md-star'],
+      icons: ['star'],
       tags: ['favorite', 'star']
     },
     {
-      icons: ['ios-stats', 'md-stats'],
+      icons: ['stats'],
       tags: ['stats']
     },
     {
-      icons: ['ios-stopwatch', 'md-stopwatch'],
+      icons: ['stopwatch'],
       tags: ['stopwatch']
     },
     {
-      icons: ['ios-subway', 'md-subway'],
+      icons: ['subway'],
       tags: ['subway']
     },
     {
-      icons: ['ios-sunny', 'md-sunny'],
+      icons: ['sunny'],
       tags: ['light', 'sky', 'sunny', 'weather', 'whether']
     },
     {
-      icons: ['ios-swap', 'md-swap'],
+      icons: ['swap'],
       tags: ['swap']
     },
     {
-      icons: ['ios-switch', 'md-switch'],
+      icons: ['switch'],
       tags: ['switch']
     },
     {
-      icons: ['ios-sync', 'md-sync'],
+      icons: ['sync'],
       tags: ['sync']
     },
     {
-      icons: ['ios-tablet-landscape', 'md-tablet-landscape'],
+      icons: ['tablet-landscape'],
       tags: ['landscape', 'tablet']
     },
     {
-      icons: ['ios-tablet-portrait', 'md-tablet-portrait'],
+      icons: ['tablet-portrait'],
       tags: ['portrait', 'tablet']
     },
     {
-      icons: ['ios-tennisball', 'md-tennisball'],
+      icons: ['tennisball'],
       tags: ['tennisball']
     },
     {
-      icons: ['ios-text', 'md-text'],
+      icons: ['text'],
       tags: ['text']
     },
     {
-      icons: ['ios-thermometer', 'md-thermometer'],
+      icons: ['thermometer'],
       tags: ['cold', 'heat', 'hot', 'mercury', 'temperature', 'thermometer']
     },
     {
-      icons: ['ios-thumbs-down', 'md-thumbs-down'],
+      icons: ['thumbs-down'],
       tags: ['down', 'thumbs']
     },
     {
-      icons: ['ios-thumbs-up', 'md-thumbs-up'],
+      icons: ['thumbs-up'],
       tags: ['thumbs', 'up']
     },
     {
-      icons: ['ios-thunderstorm', 'md-thunderstorm'],
+      icons: ['thunderstorm'],
       tags: [
         'cloudy',
         'lightning',
@@ -1217,107 +1214,107 @@ export const icons: Icons = {
       ]
     },
     {
-      icons: ['ios-time', 'md-time'],
+      icons: ['time'],
       tags: ['clock', 'hour', 'minute', 'second', 'time', 'watch']
     },
     {
-      icons: ['ios-timer', 'md-timer'],
+      icons: ['timer'],
       tags: ['clock', 'timer']
     },
     {
-      icons: ['ios-today', 'md-today'],
+      icons: ['today'],
       tags: ['today']
     },
     {
-      icons: ['ios-train', 'md-train'],
+      icons: ['train'],
       tags: ['train']
     },
     {
-      icons: ['ios-transgender', 'md-transgender'],
+      icons: ['transgender'],
       tags: ['transgender']
     },
     {
-      icons: ['ios-trash', 'md-trash'],
+      icons: ['trash'],
       tags: ['close', 'delete', 'remove', 'trash']
     },
     {
-      icons: ['ios-trending-down', 'md-trending-down'],
+      icons: ['trending-down'],
       tags: ['down', 'trending']
     },
     {
-      icons: ['ios-trending-up', 'md-trending-up'],
+      icons: ['trending-up'],
       tags: ['trending', 'up']
     },
     {
-      icons: ['ios-trophy', 'md-trophy'],
+      icons: ['trophy'],
       tags: ['award', 'compete', 'competition', 'lose', 'trophy', 'win']
     },
     {
-      icons: ['ios-tv', 'md-tv'],
+      icons: ['tv'],
       tags: ['television', 'tv']
     },
     {
-      icons: ['ios-umbrella', 'md-umbrella'],
+      icons: ['umbrella'],
       tags: ['dry', 'rain', 'shelter', 'umbrella', 'wet']
     },
     {
-      icons: ['ios-undo', 'md-undo'],
+      icons: ['undo'],
       tags: ['reply', 'undo']
     },
     {
-      icons: ['ios-unlock', 'md-unlock'],
+      icons: ['unlock'],
       tags: ['unlock']
     },
     {
-      icons: ['ios-videocam', 'md-videocam'],
+      icons: ['videocam'],
       tags: ['camera', 'film', 'movie', 'videocam']
     },
     {
-      icons: ['ios-volume-high', 'md-volume-high'],
+      icons: ['volume-high'],
       tags: ['volume']
     },
     {
-      icons: ['ios-volume-low', 'md-volume-low'],
+      icons: ['volume-low'],
       tags: ['volume']
     },
     {
-      icons: ['ios-volume-mute', 'md-volume-mute'],
+      icons: ['volume-mute'],
       tags: ['mute', 'sound', 'volume']
     },
     {
-      icons: ['ios-volume-off', 'md-volume-off'],
+      icons: ['volume-off'],
       tags: ['off', 'volume']
     },
     {
-      icons: ['ios-wallet', 'md-wallet'],
+      icons: ['wallet'],
       tags: ['cash', 'money', 'wallet']
     },
     {
-      icons: ['ios-walk', 'md-walk'],
+      icons: ['walk'],
       tags: ['walk']
     },
     {
-      icons: ['ios-warning', 'md-warning'],
+      icons: ['warning'],
       tags: ['warning']
     },
     {
-      icons: ['ios-watch', 'md-watch'],
+      icons: ['watch'],
       tags: ['watch']
     },
     {
-      icons: ['ios-water', 'md-water'],
+      icons: ['water'],
       tags: ['water']
     },
     {
-      icons: ['ios-wifi', 'md-wifi'],
+      icons: ['wifi'],
       tags: ['bars', 'connection', 'internet', 'wifi']
     },
     {
-      icons: ['ios-wine', 'md-wine'],
+      icons: ['wine'],
       tags: ['wine']
     },
     {
-      icons: ['ios-woman', 'md-woman'],
+      icons: ['woman'],
       tags: ['dudette', 'female', 'girl', 'lady', 'woman']
     },
     {

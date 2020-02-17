@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icon.page.scss']
 })
 export class IconPage implements OnInit {
-  icon = 'md-notifications';
+  icon = 'notifications';
   badge = 0;
   off = false;
   dot = false;
