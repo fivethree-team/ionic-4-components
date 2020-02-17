@@ -43,7 +43,7 @@ export class TabsPageModule {}
       <fiv-icon [badge]="1" name="pizza"></fiv-icon>
       <ion-label>Pizza</ion-label>
     </fiv-app-bar-tab>
-    <fiv-app-bar-tab right tab="tab4" href="/tab4" icon="md-more">
+    <fiv-app-bar-tab right tab="tab4" href="/tab4">
       <fiv-icon name="more"></fiv-icon>
       <ion-label>More</ion-label>
     </fiv-app-bar-tab>
