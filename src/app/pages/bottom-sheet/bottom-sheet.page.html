@@ -8,18 +8,20 @@
         offsetMd="0" sizeSm="12" sizeMd="12">
         <app-example docs="assets/docs/components/bottom-sheet.md">
           <ion-list *fivIf="['mobile']">
-            <ion-item>
-              <ion-label>Top</ion-label>
-              <ion-radio [checked]="drawerState===states.Top" (click)="drawerState = states.Top"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>Docked</ion-label>
-              <ion-radio [checked]="drawerState===states.Docked" (click)="drawerState = states.Docked"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>Bottom</ion-label>
-              <ion-radio [checked]="drawerState===states.Bottom" (click)="drawerState = states.Bottom"></ion-radio>
-            </ion-item>
+            <ion-radio-group [value]="states.Docked">
+              <ion-item>
+                <ion-label>Top</ion-label>
+                <ion-radio [value]="states.Top" (click)="drawerState = states.Top"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Docked</ion-label>
+                <ion-radio [value]="states.Docked" (click)="drawerState = states.Docked"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Bottom</ion-label>
+                <ion-radio [value]="states.Bottom" (click)="drawerState = states.Bottom"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
           </ion-list>
           <ion-list>
             <ion-item>
