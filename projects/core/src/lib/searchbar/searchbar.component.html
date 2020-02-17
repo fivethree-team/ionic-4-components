@@ -11,9 +11,8 @@
 
   <ion-buttons slot="end">
     <ion-button (click)="toggleSearchbar()">
-      <fiv-icon slot="icon-only" [name]="searching ? 'md-close' : 'md-search'"></fiv-icon>
+      <fiv-icon slot="icon-only" [name]="searching ? closeIcon : searchIcon"></fiv-icon>
     </ion-button>
     <ng-content select="[end]"></ng-content>
-
   </ion-buttons>
 </ion-toolbar>
