@@ -23,7 +23,7 @@ export class FivPasswordInput implements ControlValueAccessor {
   @Input()
   disabled = false;
 
-  @Input() hideIcon = 'eye-off';
+  @Input() hideIcon = 'eye';
 
   @Input() lines?: 'full' | 'inset' | 'none';
 
@@ -33,7 +33,7 @@ export class FivPasswordInput implements ControlValueAccessor {
 
   @Input() show: boolean;
 
-  @Input() showIcon = 'eye';
+  @Input() showIcon = 'eye-off';
 
   private _passwordValue = '';
   private onTouchedCallback: () => {};
