@@ -32,19 +32,19 @@ export class TabsPageModule {}
     </fiv-fab>
 
     <fiv-app-bar-tab left tab="tab1" href="/tab1">
-      <fiv-icon name="md-home"></fiv-icon>
+      <fiv-icon name="home"></fiv-icon>
       <ion-label>Home</ion-label>
     </fiv-app-bar-tab>
     <fiv-app-bar-tab left tab="tab2" href="/tab2">
-      <fiv-icon name="md-images"></fiv-icon>
+      <fiv-icon name="images"></fiv-icon>
       <ion-label>Images</ion-label>
     </fiv-app-bar-tab>
     <fiv-app-bar-tab right tab="tab3" href="/tab3">
-      <fiv-icon [badge]="1" name="md-pizza"></fiv-icon>
+      <fiv-icon [badge]="1" name="pizza"></fiv-icon>
       <ion-label>Pizza</ion-label>
     </fiv-app-bar-tab>
     <fiv-app-bar-tab right tab="tab4" href="/tab4" icon="md-more">
-      <fiv-icon name="md-more"></fiv-icon>
+      <fiv-icon name="more"></fiv-icon>
       <ion-label>More</ion-label>
     </fiv-app-bar-tab>
   </fiv-app-bar>
