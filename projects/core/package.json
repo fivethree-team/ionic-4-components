@@ -15,7 +15,7 @@
     "pwa"
   ],
   "dependencies": {
-    "@fivethree/ngx-rxjs-animations": "0.0.2"
+    "@fivethree/ngx-rxjs-animations": "0.1.0"
   },
   "peerDependencies": {
     "@angular/animations": ">=8.0.0 <10.0.0",
