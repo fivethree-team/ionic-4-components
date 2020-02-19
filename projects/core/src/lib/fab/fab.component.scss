@@ -5,6 +5,8 @@
   --fiv-fab-top: calc(10px + env(safe-area-inset-top));
   --background-fab-progress-bar: var(--ion-color-primary);
   --background-fab-progress: var(--ion-color-primary-shade);
+
+  position: inherit;
 }
 
 fiv-loading-progress-bar {
