@@ -112,6 +112,21 @@
   }
 }
 
+@media (any-hover: hover) {
+  :host(:hover) {
+    cursor: pointer;
+    ion-label {
+      --color: var(--ion-color-primary);
+    }
+  }
+  :host(.rounded:hover),
+  :host(.dot:hover),
+  :host(.line:hover) {
+    ion-item {
+      --background: var(--fiv-background-hover, var(--ion-color-light));
+    }
+  }
+}
 // position
 .left {
   left: 0;
@@ -127,14 +142,6 @@ ion-item {
 
 fiv-icon {
   --fiv-padding-end: 8px;
-}
-
-ion-item:hover {
-  cursor: pointer;
-  --background: var(--background-hover) !important;
-  ion-label {
-    --color: var(--ion-color-primary);
-  }
 }
 
 :host(.router-item-disabled) {
