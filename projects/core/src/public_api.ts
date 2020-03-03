@@ -7,7 +7,7 @@
  */
 // Core
 export * from './lib/fivethree.core.module';
-// Components
+// Modules
 export * from './lib/app-bar/app-bar.module';
 export * from './lib/back-button/back-button.module';
 export * from './lib/bottom-sheet/bottom-sheet.module';
@@ -53,6 +53,7 @@ export * from './lib/dialog/dialog.component';
 export * from './lib/editable-label/editable-label.component';
 export * from './lib/expandable/expandable.component';
 export * from './lib/expandable/expandable-indicator/expandable-indicator.component';
+export * from './lib/feature-discovery/feature-discovery.component';
 export * from './lib/loading-content/loading-content.component';
 export * from './lib/fab/fab.component';
 export * from './lib/loading-progress-bar/loading-progress-bar.component';
