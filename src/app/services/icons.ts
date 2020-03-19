@@ -24,10 +24,6 @@ export const icons: Icons = {
       tags: ['add', 'include', 'invite', 'plus']
     },
     {
-      icons: ['airplane'],
-      tags: ['airplane', 'plane']
-    },
-    {
       icons: ['alarm'],
       tags: ['alarm']
     },
@@ -36,7 +32,7 @@ export const icons: Icons = {
       tags: ['albums', 'boxes', 'slides', 'square']
     },
     {
-      icons: ['alert'],
+      icons: ['alert-circle'],
       tags: ['!', 'alert', 'attention', 'exclamation', 'notice', 'warning']
     },
     {
@@ -56,8 +52,13 @@ export const icons: Icons = {
       tags: ['apps', 'applications']
     },
     {
-      icons: ['appstore'],
-      tags: ['appstore', 'store']
+      icons: ['logo-apple-appstore'],
+      tags: ['appstore', 'store', 'apple']
+    },
+
+    {
+      icons: ['logo-google-playstore'],
+      tags: ['appstore', 'store', 'google']
     },
     {
       icons: ['archive'],
@@ -72,35 +73,35 @@ export const icons: Icons = {
       tags: ['arrow', 'chevron', 'down']
     },
     {
-      icons: ['arrow-dropdown-circle'],
+      icons: ['caret-down-circle'],
       tags: ['arrow', 'circle', 'dropdown']
     },
     {
-      icons: ['arrow-dropdown'],
+      icons: ['caret-down'],
       tags: ['arrow', 'dropdown']
     },
     {
-      icons: ['arrow-dropleft-circle'],
+      icons: ['caret-back-circle'],
       tags: ['arrow', 'circle', 'dropleft']
     },
     {
-      icons: ['arrow-dropleft'],
+      icons: ['caret-back'],
       tags: ['arrow', 'dropleft']
     },
     {
-      icons: ['arrow-dropright-circle'],
+      icons: ['caret-forward-circle'],
       tags: ['arrow', 'circle', 'dropright']
     },
     {
-      icons: ['arrow-dropright'],
+      icons: ['caret-forwardt'],
       tags: ['arrow', 'dropright']
     },
     {
-      icons: ['arrow-dropup-circle'],
+      icons: ['caret-up-circle'],
       tags: ['arrow', 'circle', 'dropup']
     },
     {
-      icons: ['arrow-dropup'],
+      icons: ['caret-up'],
       tags: ['arrow', 'dropup']
     },
     {
@@ -108,27 +109,11 @@ export const icons: Icons = {
       tags: ['arrow', 'chevron', 'forward', 'navigation']
     },
     {
-      icons: ['arrow-round-back'],
-      tags: ['arrow', 'back', 'round']
-    },
-    {
-      icons: ['arrow-round-down'],
-      tags: ['arrow', 'down', 'round']
-    },
-    {
-      icons: ['arrow-round-forward'],
-      tags: ['arrow', 'forward', 'round']
-    },
-    {
-      icons: ['arrow-round-up'],
-      tags: ['arrow', 'round', 'up']
-    },
-    {
       icons: ['arrow-up'],
       tags: ['arrow', 'chevron', 'up']
     },
     {
-      icons: ['at'],
+      icons: ['at-circle'],
       tags: ['@', 'at']
     },
     {
@@ -210,10 +195,6 @@ export const icons: Icons = {
     {
       icons: ['bookmarks'],
       tags: ['bookmarks', 'favorite']
-    },
-    {
-      icons: ['bowtie'],
-      tags: ['bowtie']
     },
     {
       icons: ['briefcase'],
@@ -307,8 +288,8 @@ export const icons: Icons = {
       tags: ['cellular']
     },
     {
-      icons: ['chatboxes'],
-      tags: ['chatboxes', 'talk']
+      icons: ['chatbox'],
+      tags: ['chatbox', 'talk']
     },
     {
       icons: ['chatbubbles'],
@@ -337,10 +318,6 @@ export const icons: Icons = {
     {
       icons: ['clipboard'],
       tags: ['clipboard', 'write']
-    },
-    {
-      icons: ['clock'],
-      tags: ['clock', 'time']
     },
     {
       icons: ['close-circle-outline'],
@@ -427,11 +404,7 @@ export const icons: Icons = {
       tags: ['construct']
     },
     {
-      icons: ['contact'],
-      tags: ['contact', 'people', 'users']
-    },
-    {
-      icons: ['contacts'],
+      icons: ['person-circle'],
       tags: ['contacts', 'people', 'users']
     },
     {
@@ -475,7 +448,7 @@ export const icons: Icons = {
       tags: ['document', 'file', 'paper']
     },
     {
-      icons: ['done-all'],
+      icons: ['checkmark-done'],
       tags: ['all', 'done']
     },
     {
@@ -507,7 +480,7 @@ export const icons: Icons = {
       tags: ['exposed', 'eye', 'look', 'see', 'view']
     },
     {
-      icons: ['fastforward'],
+      icons: ['play-forward'],
       tags: ['fastforward', 'jump', 'next', 'skip']
     },
     {
@@ -515,7 +488,7 @@ export const icons: Icons = {
       tags: ['dudette', 'female', 'girl', 'lady']
     },
     {
-      icons: ['filing'],
+      icons: ['file-tray'],
       tags: ['archive', 'filing']
     },
     {
@@ -619,8 +592,12 @@ export const icons: Icons = {
       tags: ['hammer', 'options', 'settings', 'tools']
     },
     {
-      icons: ['hand'],
-      tags: ['hand', 'stop']
+      icons: ['hand-left'],
+      tags: ['hand', 'stop', 'left']
+    },
+    {
+      icons: ['hand-right'],
+      tags: ['hand', 'stop', 'right']
     },
     {
       icons: ['happy'],
@@ -639,7 +616,7 @@ export const icons: Icons = {
       tags: ['dislike', 'heart', 'love']
     },
     {
-      icons: ['heart-empty'],
+      icons: ['heart-outline'],
       tags: ['empty', 'heart', 'love']
     },
     {
@@ -699,8 +676,8 @@ export const icons: Icons = {
       tags: ['help', 'information', 'knowledge']
     },
     {
-      icons: ['jet'],
-      tags: ['fly', 'jet', 'plane']
+      icons: ['airplane'],
+      tags: ['fly', 'jet', 'plane', 'airplane']
     },
     {
       icons: ['journal'],
@@ -727,10 +704,6 @@ export const icons: Icons = {
       tags: ['anchor', 'attach', 'chain', 'href', 'link']
     },
     {
-      icons: ['list-box'],
-      tags: ['box', 'list']
-    },
-    {
       icons: ['list'],
       tags: ['list']
     },
@@ -739,8 +712,8 @@ export const icons: Icons = {
       tags: ['gps', 'locate', 'maps', 'navigate']
     },
     {
-      icons: ['lock'],
-      tags: ['lock']
+      icons: ['lock-closed'],
+      tags: ['lock', 'closed']
     },
     {
       icons: ['log-in'],
@@ -807,15 +780,11 @@ export const icons: Icons = {
       tags: ['mic', 'noise', 'sound', 'speaker', 'talk']
     },
     {
-      icons: ['microphone'],
-      tags: ['microphone', 'music', 'noise', 'recorde', 'sound', 'speak']
-    },
-    {
       icons: ['moon'],
       tags: ['dark', 'moon', 'night', 'sky']
     },
     {
-      icons: ['more'],
+      icons: ['ellipsis-horizontal'],
       tags: ['more', 'options']
     },
     {
@@ -839,7 +808,7 @@ export const icons: Icons = {
       tags: ['notifications', 'off']
     },
     {
-      icons: ['notifications-outline'],
+      icons: ['notifications-circle'],
       tags: ['notifications']
     },
     {
@@ -863,15 +832,11 @@ export const icons: Icons = {
       tags: ['options']
     },
     {
-      icons: ['outlet'],
-      tags: ['computer', 'digital', 'electricity', 'outlet']
-    },
-    {
       icons: ['paper-plane'],
       tags: ['paper', 'plane']
     },
     {
-      icons: ['paper'],
+      icons: ['newspaper'],
       tags: ['feed', 'paper', 'paper']
     },
     {
@@ -916,12 +881,16 @@ export const icons: Icons = {
       tags: ['phone', 'portrait']
     },
     {
-      icons: ['photos'],
-      tags: ['images', 'photos', 'square', 'stills']
+      icons: ['image'],
+      tags: ['image', 'images', 'photos', 'square', 'stills']
     },
     {
-      icons: ['pie'],
-      tags: ['cog', 'options', 'pie', 'settings']
+      icons: ['images'],
+      tags: ['image', 'images', 'photos', 'square', 'stills']
+    },
+    {
+      icons: ['pie-chart'],
+      tags: ['cog', 'options', 'pie', 'settings', 'chart']
     },
     {
       icons: ['pin'],
@@ -972,12 +941,8 @@ export const icons: Icons = {
       tags: ['hot', 'live', 'pulse', 'rate']
     },
     {
-      icons: ['qr-scanner'],
-      tags: ['qr', 'reader', 'scanner']
-    },
-    {
-      icons: ['quote'],
-      tags: ['chat', 'quotation', 'quote']
+      icons: ['qr-code'],
+      tags: ['qr', 'reader', 'scanner', 'code']
     },
     {
       icons: ['radio-button-off'],
@@ -1001,7 +966,7 @@ export const icons: Icons = {
     },
     {
       icons: ['arrow-redo'],
-      tags: ['forward', 'redo']
+      tags: ['forward', 'redo', 'arrow']
     },
     {
       icons: ['refresh-circle'],
@@ -1024,8 +989,16 @@ export const icons: Icons = {
       tags: ['minus', 'remove', 'subtract']
     },
     {
-      icons: ['reorder'],
-      tags: ['reorder']
+      icons: ['reorder-two'],
+      tags: ['reorder', 'two']
+    },
+    {
+      icons: ['reorder-three'],
+      tags: ['reorder', 'three']
+    },
+    {
+      icons: ['reorder-four'],
+      tags: ['reorder', 'four']
     },
     {
       icons: ['repeat'],
@@ -1040,19 +1013,19 @@ export const icons: Icons = {
       tags: ['restaurant']
     },
     {
-      icons: ['return-left'],
+      icons: ['return-down-back'],
       tags: ['left', 'return']
     },
     {
-      icons: ['return-right'],
+      icons: ['return-down-forward'],
       tags: ['return', 'right']
     },
     {
-      icons: ['reverse-camera'],
+      icons: ['camera-reverse'],
       tags: ['camera', 'picture', 'reverse']
     },
     {
-      icons: ['rewind'],
+      icons: ['play-back'],
       tags: ['back', 'music', 'previous', 'rewind']
     },
     {
@@ -1092,10 +1065,6 @@ export const icons: Icons = {
       tags: ['options', 'settings']
     },
     {
-      icons: ['share-alt'],
-      tags: ['alt', 'share']
-    },
-    {
       icons: ['share'],
       tags: ['share']
     },
@@ -1108,11 +1077,11 @@ export const icons: Icons = {
       tags: ['random', 'shuffle']
     },
     {
-      icons: ['skip-backward'],
+      icons: ['play-skip-back'],
       tags: ['backward', 'music', 'previous', 'skip']
     },
     {
-      icons: ['skip-forward'],
+      icons: ['play-skip-forward'],
       tags: ['forward', 'music', 'next', 'skip']
     },
     {
@@ -1144,7 +1113,7 @@ export const icons: Icons = {
       tags: ['favorite', 'star']
     },
     {
-      icons: ['stats'],
+      icons: ['stats-chart'],
       tags: ['stats']
     },
     {
@@ -1160,11 +1129,11 @@ export const icons: Icons = {
       tags: ['light', 'sky', 'sunny', 'weather', 'whether']
     },
     {
-      icons: ['swap'],
+      icons: ['swap-horizontal'],
       tags: ['swap']
     },
     {
-      icons: ['switch'],
+      icons: ['toggle'],
       tags: ['switch']
     },
     {
@@ -1184,7 +1153,7 @@ export const icons: Icons = {
       tags: ['tennisball']
     },
     {
-      icons: ['text'],
+      icons: ['chatbox-ellipses'],
       tags: ['text']
     },
     {
@@ -1258,12 +1227,12 @@ export const icons: Icons = {
       tags: ['dry', 'rain', 'shelter', 'umbrella', 'wet']
     },
     {
-      icons: ['undo'],
+      icons: ['arrow-undo'],
       tags: ['reply', 'undo']
     },
     {
-      icons: ['unlock'],
-      tags: ['unlock']
+      icons: ['lock-open'],
+      tags: ['unlock', 'open', 'lock']
     },
     {
       icons: ['videocam'],
@@ -1386,15 +1355,7 @@ export const icons: Icons = {
       tags: ['foursquare']
     },
     {
-      icons: ['logo-freebsd-devil'],
-      tags: ['freebsd-devil']
-    },
-    {
-      icons: ['logo-game-controller-a'],
-      tags: ['controller', 'game']
-    },
-    {
-      icons: ['logo-game-controller-b'],
+      icons: ['game-controller'],
       tags: ['controller', 'game']
     },
     {
@@ -1404,10 +1365,6 @@ export const icons: Icons = {
     {
       icons: ['logo-google'],
       tags: ['google']
-    },
-    {
-      icons: ['logo-googleplus'],
-      tags: ['googleplus']
     },
     {
       icons: ['logo-hackernews'],
@@ -1442,10 +1399,6 @@ export const icons: Icons = {
       tags: ['markdown']
     },
     {
-      icons: ['logo-model-s'],
-      tags: ['model-s']
-    },
-    {
       icons: ['logo-no-smoking'],
       tags: ['no-smoking']
     },
@@ -1468,10 +1421,6 @@ export const icons: Icons = {
     {
       icons: ['logo-playstation'],
       tags: ['playstation']
-    },
-    {
-      icons: ['logo-polymer'],
-      tags: ['polymer']
     },
     {
       icons: ['logo-python'],
