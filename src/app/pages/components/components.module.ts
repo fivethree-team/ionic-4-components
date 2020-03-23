@@ -1,4 +1,3 @@
-import { FivRippleModule } from './../../../../projects/core/src/lib/ripple/ripple.module';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,7 +7,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ComponentsPage } from './components.page';
-import { FivethreeCoreModule } from '@fivethree/core';
 
 const routes: Routes = [
   {
@@ -23,8 +21,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    ComponentsModule,
-    FivRippleModule
+    ComponentsModule
   ],
   declarations: [ComponentsPage]
 })

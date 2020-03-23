@@ -8,7 +8,8 @@ import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
 })
 export class AppComponent {
   public docs = [
@@ -41,12 +42,12 @@ export class AppComponent {
       url: '/icon'
     },
     {
-      title: 'Overflow Buttons',
-      url: '/overflow-buttons'
-    },
-    {
       title: 'Password Input',
       url: '/password'
+    },
+    {
+      title: 'Popover',
+      url: '/popover'
     },
     {
       title: 'Refresher',

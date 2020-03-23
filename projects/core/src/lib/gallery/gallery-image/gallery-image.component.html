@@ -1,6 +1,7 @@
 <ng-container *ngIf="!src">
   <ng-content></ng-content>
 </ng-container>
-<fiv-ripple (fivClick)="open()">
+<div class="ion-activatable" (click)="open()">
   <img #thumbnail class="thumbnail" [src]="src">
-</fiv-ripple>
+  <ion-ripple-effect type="bounded"></ion-ripple-effect>
+</div>

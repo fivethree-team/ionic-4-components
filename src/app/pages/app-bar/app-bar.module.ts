@@ -7,7 +7,14 @@ import { IonicModule } from '@ionic/angular';
 
 import { AppBarPage } from './app-bar.page';
 import { TabsPageRoutingModule } from './tabs.router.module';
-import { FivAppBarModule, FivCenterModule } from '@fivethree/core';
+import {
+  FivAppBarModule,
+  FivCenterModule,
+  FivFabModule,
+  FivIconModule,
+  FivFeatureDiscoveryModule,
+  FivIfModule
+} from '@fivethree/core';
 
 @NgModule({
   imports: [
@@ -17,7 +24,11 @@ import { FivAppBarModule, FivCenterModule } from '@fivethree/core';
     TabsPageRoutingModule,
     ComponentsModule,
     FivAppBarModule,
-    FivCenterModule
+    FivCenterModule,
+    FivIfModule,
+    FivFabModule,
+    FivIconModule,
+    FivFeatureDiscoveryModule
   ],
   declarations: [AppBarPage]
 })

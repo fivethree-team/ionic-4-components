@@ -1,0 +1,32 @@
+<app-header title="Searchbar"></app-header>
+
+<ion-content class="ion-padding" no-bounce>
+  <ion-grid class="page-content" fixed>
+    <ion-row>
+      <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
+        offsetMd="0" sizeSm="12" sizeMd="12">
+        <app-example docs="assets/docs/components/bottom-sheet.md">
+          <fiv-searchbar [smallWidth]="120" #search title="Searchbar" placeholder="Search ...."
+            (fivInputChange)="onSearchInputChanged($event)" (fivClose)="closeSearch();" [small]="small">
+            <!-- <ion-menu-button start menu="menuId"></ion-menu-button> -->
+            <ion-back-button start defaultHref="/"></ion-back-button>
+          </fiv-searchbar>
+          <p *ngIf="searchInput">searching for {{searchInput}}</p>
+
+          <ion-item>
+            <ion-label>Small Searchbar</ion-label>
+            <ion-checkbox (ionChange)="checkChanged($event)" [checked]="small" slot="start"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Query: {{searchInput}}</ion-label>
+          </ion-item>
+        </app-example>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+</ion-content>

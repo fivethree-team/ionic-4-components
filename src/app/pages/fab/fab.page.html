@@ -56,7 +56,7 @@
   </ion-grid>
   <fiv-fab [mode]="mode" [visible]="visible" [scroll]="scroll" (fivComplete)="icon = 'checkmark'" [pulse]="pulse"
     slot="fixed" checkmark="true" #fab
-    (click)="fab.loading ? fab.complete() : icon === 'checkmark' ? icon = 'fitness' : fab.load()"
+    (click)="fab.loading ? fab.complete() : icon === 'checkmark' ? icon = 'color-wand' : fab.load()"
     [horizontal]="horizontal" [vertical]="vertical" spinColor="light" [color]="'primary'">
     <fiv-icon color="light" slot="icon-only" [name]="icon"></fiv-icon>
     <ion-label *ngIf="extended" color="light">Primary Action</ion-label>

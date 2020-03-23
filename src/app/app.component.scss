@@ -1,0 +1,7 @@
+ion-item:hover {
+  cursor: pointer;
+  --background: var(--ion-color-light);
+  ion-label {
+    --color: var(--ion-color-primary);
+  }
+}

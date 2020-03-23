@@ -3,10 +3,11 @@
 <ion-content>
 
   <div id="page-not-found-container">
-    <div [fivCenter] text-center>
-      <lottie-animation-view [options]="lottieConfig" [width]="200" [height]="200" (animCreated)="handleAnimation($event)">
+    <div [fivCenter] class="ion-text-center">
+      <lottie-animation-view [options]="lottieConfig" [width]="200" [height]="200"
+        (animCreated)="handleAnimation($event)">
       </lottie-animation-view>
-      <h3 text-center>Oops, we couldn't find the page you are looking for.</h3>
+      <h3 class="ion-text-center">Oops, we couldn't find the page you are looking for.</h3>
       <ion-button routerLink="/" shape="round">
         Go to homepage
       </ion-button>

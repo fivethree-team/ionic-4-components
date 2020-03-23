@@ -1,11 +1,13 @@
 <div *ngIf="!isLast" class="timeline"></div>
 <fiv-expandable [isOpen]="isOpen" (fivDidClose)="afterClose()" (fivDidOpen)="afterOpen()" #self>
-  <fiv-ripple header (fivClick)="click()">
+  <div header class="ion-activatable" (click)="click()">
     <fiv-step-header #header [index]="index" [icon]="icon">
       <div class="header-title">{{title}}</div>
       <div class="header-subtitle">{{subtitle}}</div>
+
+      <ion-ripple-effect type="bounded"></ion-ripple-effect>
     </fiv-step-header>
-  </fiv-ripple>
+  </div>
   <ng-container content>
     <div class="step-content">
       <ng-content></ng-content>

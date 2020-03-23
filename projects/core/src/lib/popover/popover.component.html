@@ -1,6 +1,15 @@
-<ion-content>
-  <ion-item (click)="onItemClicked(i)" class="popover-item" *ngFor="let button of buttons; let i = index">
-    <ion-icon slot="start" [name]="button.icon"></ion-icon>
-    <ion-label>{{button.text}}</ion-label>
-  </ion-item>
-</ion-content>
+<fiv-overlay>
+  <div *ngIf="backdrop && !hidden" [ngClass]="classes" class="fiv-popover-backdrop" (click)="close()">
+  </div>
+  <div *ngIf="!hidden" [ngClass]="classes" class="popover-container" [style]="styles">
+    <div #animation *ngIf="overlay?.open" class="animation-container" anim [anim.in]="animationIn">
+      <ng-content>
+      </ng-content>
+      <svg *ngIf="arrow && !overlaysTarget" class="arrow" [style]="svgStyles">
+        <polygon [attr.points]="triangle" />
+      </svg>
+    </div>
+
+  </div>
+
+</fiv-overlay>

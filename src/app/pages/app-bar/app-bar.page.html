@@ -1,53 +1,56 @@
-<app-header title="App Bar"></app-header>
+<app-header title="App Bar">
+  <ion-buttons slot="end">
+    <ion-button fill="outline" color="secondary" shape="round" slot="end" (click)="iconFeature.show()">
+      Fab </ion-button>
+    <ion-button fill="outline" color="secondary" shape="round" slot="end" (click)="tabFeature.show()">
+      Tab </ion-button>
+  </ion-buttons>
+
+</app-header>
 
 <ion-content>
-  <ion-grid fixed>
+  <ion-grid *fivIf="['desktop']" fixed>
     <ion-row>
       <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
         offsetMd="0" sizeSm="12" sizeMd="12">
         <app-example docs="assets/docs/components/app-bar.md">
-          <div class="container">
-            <ion-item>
-              <ion-label>Title Layout</ion-label>
-              <ion-select [(ngModel)]="titleLayout" [interfaceOptions]="customTitleLayoutOptions" interface="popover">
-                <ion-select-option value="hide">Hide Title</ion-select-option>
-                <ion-select-option value="show">Show Title</ion-select-option>
-                <ion-select-option value="active-only">Show Title for active only</ion-select-option>
-              </ion-select>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>Floating Action Bottom Position</ion-label>
-              <ion-select [(ngModel)]="position" [interfaceOptions]="customFabPositionOptions" interface="popover">
-                <ion-select-option value="center">Center</ion-select-option>
-                <ion-select-option value="right">Right</ion-select-option>
-                <ion-select-option value="left">Left</ion-select-option>
-              </ion-select>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>Fab Visible</ion-label>
-              <ion-checkbox [(ngModel)]="fabVisible" slot="end"></ion-checkbox>
-            </ion-item>
-
-          </div>
-          <div class="container min">
-            <ion-tabs #tabs>
-              <fiv-app-bar (fivFabClick)="presentToast('Floating action button clicked')" slot="bottom"
-                [titleLayout]="titleLayout" #bar [position]="position" [fabVisible]="fabVisible" [icon]="icon">
-                <fiv-app-bar-tab left tab="tab1" href="/tab1" icon="md-home" name="App Bar">
-                </fiv-app-bar-tab>
-                <fiv-app-bar-tab left tab="tab2" href="/tab2" icon="md-resize" name="Expandable">
-                </fiv-app-bar-tab>
-                <fiv-app-bar-tab [badge]="1" right tab="tab3" href="/tab3" icon="md-eye" name="Password">
-                </fiv-app-bar-tab>
-                <fiv-app-bar-tab right tab="tab4" href="/tab4" icon="md-more" name="Buttons">
-                </fiv-app-bar-tab>
-              </fiv-app-bar>
-            </ion-tabs>
-          </div>
+          <app-touch-field>
+            <ng-container [ngTemplateOutlet]="demo"></ng-container>
+          </app-touch-field>
         </app-example>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ng-container *fivIf="['mobile']" [ngTemplateOutlet]="demo"></ng-container>
 </ion-content>
+
+<ng-template #demo>
+  <ion-tabs #tabs>
+    <fiv-app-bar slot="bottom" [titleMode]="titleMode" #bar>
+      <fiv-fab [fivAppBarFab]="position" #fab>
+        <fiv-icon #iconFeature="fivFeature" [fivFeature]="feature" name="color-wand"></fiv-icon>
+      </fiv-fab>
+
+      <fiv-app-bar-tab left tab="tab1" href="/tab1">
+        <fiv-icon name="home"></fiv-icon>
+        <ion-label>Home</ion-label>
+      </fiv-app-bar-tab>
+      <fiv-app-bar-tab left tab="tab2" href="/tab2">
+        <fiv-icon smallIcon="add" #tabFeature="fivFeature" [fivFeature]="feature" name="pizza"></fiv-icon>
+        <ion-label>Images</ion-label>
+      </fiv-app-bar-tab>
+      <fiv-app-bar-tab right tab="tab3" href="/tab3">
+        <fiv-icon badge="1" name="basket"></fiv-icon>
+        <ion-label>Pizza</ion-label>
+      </fiv-app-bar-tab>
+      <fiv-app-bar-tab right tab="tab4" href="/tab4">
+        <fiv-icon dot="false" name="bug"></fiv-icon>
+        <ion-label>More</ion-label>
+      </fiv-app-bar-tab>
+    </fiv-app-bar>
+  </ion-tabs>
+</ng-template>
+
+<ng-template #feature>
+  <ion-title>cool feature here</ion-title>
+</ng-template>

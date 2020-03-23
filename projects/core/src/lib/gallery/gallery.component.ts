@@ -39,9 +39,10 @@ import {
   fromTo,
   getPosition,
   setPosition,
-  RectPosition
-} from '../animations/tween';
-import { easeOutSine } from '../animations/easing-functions';
+  RectPosition,
+  fromToPixels,
+  easeOutSine
+} from '@fivethree/ngx-rxjs-animations';
 import { fade } from '../animations/animations';
 import { ImageService } from './image.service';
 
@@ -105,15 +106,18 @@ import { ImageService } from './image.service';
   ]
 })
 export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
-  @ViewChild('overlay') overlay: FivOverlay;
-  @ViewChild('morphOverlay') morphOverlay: FivOverlay;
-  @ViewChild('viewer') viewer: ElementRef;
-  @ViewChild('morph') morphImage: ElementRef;
-  @ViewChild('slider', { read: ElementRef }) swiper: ElementRef;
-  @ViewChild('slider') slides: IonSlides;
+  @ViewChild('overlay', { static: false }) overlay: FivOverlay;
+  @ViewChild('morphOverlay', { static: false }) morphOverlay: FivOverlay;
+  @ViewChild('viewer', { static: false }) viewer: ElementRef;
+  @ViewChild('morph', { static: false }) morphImage: ElementRef;
+  @ViewChild('slider', { static: false, read: ElementRef }) swiper: ElementRef;
+  @ViewChild('slider', { static: false }) slides: IonSlides;
   @ViewChildren('slideImage') slideImages: QueryList<ElementRef>;
 
-  @ContentChildren(forwardRef(() => FivGalleryImage), { descendants: true })
+  @ContentChildren(
+    forwardRef(() => FivGalleryImage),
+    { descendants: true }
+  )
   images: QueryList<FivGalleryImage>;
   @ContentChildren(FivGalleryToolbar) toolbars: QueryList<FivGalleryToolbar>;
 
@@ -212,10 +216,10 @@ export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
     const tweenDone = new Subject();
     tween(easeOutSine, 320)
       .pipe(
-        fromTo(this.morphImage, 'top', f.top, t.top),
-        fromTo(this.morphImage, 'left', f.left, t.left),
-        fromTo(this.morphImage, 'height', f.height, t.height),
-        fromTo(this.morphImage, 'width', f.width, t.width)
+        fromToPixels(this.morphImage, f.top, t.top, 'top'),
+        fromToPixels(this.morphImage, f.left, t.left, 'left'),
+        fromToPixels(this.morphImage, f.height, t.height, 'height'),
+        fromToPixels(this.morphImage, f.width, t.width, 'width')
       )
       .subscribe({
         complete: () => {
@@ -268,10 +272,10 @@ export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
     this.morphOverlay.show();
     tween(easeOutSine, 240)
       .pipe(
-        fromTo(this.morphImage, 'top', f.top, t.top),
-        fromTo(this.morphImage, 'left', f.left, t.left),
-        fromTo(this.morphImage, 'height', f.height, t.height),
-        fromTo(this.morphImage, 'width', f.width, t.width)
+        fromToPixels(this.morphImage, f.top, t.top, 'top'),
+        fromToPixels(this.morphImage, f.left, t.left, 'left'),
+        fromToPixels(this.morphImage, f.height, t.height, 'height'),
+        fromToPixels(this.morphImage, f.width, t.width, 'width')
       )
       .subscribe({
         complete: () => {
@@ -473,15 +477,15 @@ export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
   }
 
   handleKeyboardEvents(event: KeyboardEvent) {
-    if (event.keyCode === Key.RightArrow) {
+    if (event.key === 'ArrowRight') {
       this.next();
       return;
     }
-    if (event.keyCode === Key.LeftArrow) {
+    if (event.key === 'ArrowLeft') {
       this.prev();
       return;
     }
-    if (event.keyCode === Key.DownArrow || event.keyCode === Key.Escape) {
+    if (event.key === 'ArrowDown' || event.key === 'Escape') {
       this.close();
       return;
     }

@@ -35,6 +35,8 @@ import {
 export class FivStepHeader implements OnInit {
   @Input() index: number;
   @Input() icon: string;
+  @Input() iconCompleted = 'checkmark';
+
   iconState = 'normal';
   tempIcon: string;
 

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./refresh.page.scss']
 })
 export class RefreshPage implements OnInit {
+  header = true;
   constructor() {}
 
   ngOnInit() {}

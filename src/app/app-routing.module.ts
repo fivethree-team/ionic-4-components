@@ -7,10 +7,6 @@ const routes: Routes = [
     loadChildren: './pages/home/home.module#HomePageModule'
   },
   {
-    path: 'overflow-buttons',
-    loadChildren: './pages/buttons/buttons.module#ButtonsPageModule'
-  },
-  {
     path: 'components',
     loadChildren: './pages/components/components.module#ComponentsPageModule'
   },
@@ -29,8 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'searchbar',
-    loadChildren:
-      './pages/toolbar-search/toolbar-search.module#ToolbarSearchPageModule'
+    loadChildren: './pages/searchbar/searchbar.module#SearchbarPageModule'
   },
   {
     path: 'app-bar',
@@ -47,7 +42,7 @@ const routes: Routes = [
   },
   {
     path: 'gallery',
-    loadChildren: './pages/image/image.module#ImagePageModule'
+    loadChildren: './pages/gallery/gallery.module#GalleryPageModule'
   },
   {
     path: 'refresher',
@@ -82,6 +77,11 @@ const routes: Routes = [
       './pages/developer-tools/developer-tools.module#DeveloperToolsPageModule'
   },
   { path: 'fab', loadChildren: './pages/fab/fab.module#FabPageModule' },
+  {
+    path: 'popover',
+    loadChildren: () =>
+      import('./pages/popover/popover.module').then(m => m.PopoverPageModule)
+  },
   {
     path: '**',
     loadChildren:

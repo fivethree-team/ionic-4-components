@@ -7,7 +7,7 @@ import { FivStepper } from '@fivethree/core';
   styleUrls: ['./stepper.page.scss']
 })
 export class StepperPage implements OnInit {
-  @ViewChild('stepperV') stepperV: FivStepper;
+  @ViewChild('stepperV', { static: false }) stepperV: FivStepper;
 
   constructor() {}
 

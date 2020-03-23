@@ -19,7 +19,7 @@ export class FivStep implements OnInit {
   @Input() title = '';
   @Input() subtitle = '';
 
-  @ViewChild(TemplateRef) content: TemplateRef<any>;
+  @ViewChild(TemplateRef, { static: false }) content: TemplateRef<any>;
 
   constructor() {}
 

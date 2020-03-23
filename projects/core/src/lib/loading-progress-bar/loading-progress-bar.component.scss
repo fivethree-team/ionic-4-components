@@ -1,10 +1,11 @@
 :host {
   --background-progress-bar: var(--ion-color-primary);
-  --color-spin-0: var(--ion-color-primary-shade);
-  --color-spin-25: var(--ion-color-primary-shade);
-  --color-spin-50: var(--ion-color-primary-shade);
-  --color-spin-75: var(--ion-color-primary-shade);
-  --color-spin-100: var(--ion-color-primary-shade);
+  --background-progress: var(--ion-color-primary-shade);
+  --color-spin-0: var(--background-progress);
+  --color-spin-25: var(--background-progress);
+  --color-spin-50: var(--background-progress);
+  --color-spin-75: var(--background-progress);
+  --color-spin-100: var(--background-progress);
 }
 
 .slider {

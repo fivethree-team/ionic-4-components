@@ -17,6 +17,7 @@
   border-radius: var(--border-radius);
 }
 
-fiv-ripple {
-  --fiv-color-ripple: rgba(0, 0, 0, 0.5);
+.ion-activatable {
+  position: relative;
+  --ripple-color: rgba(0, 0, 0, 0.5);
 }

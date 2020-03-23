@@ -178,6 +178,9 @@ body.dark {
 
   --ion-item-background: #1c1c1c;
   --ion-item-background-activated: #313131;
+
+  --fiv-background-color-shade: var(--ion-color-dark-shade);
+  --fiv-text: var(--ion-color-dark);
 }
 
 /*
@@ -215,6 +218,10 @@ body.dark {
   --ion-color-step-950: #f3f3f3;
 
   --ion-item-background: #1a1b1e;
+  --ion-item-background-activated: #313131;
+
+  --fiv-background-color-shade: var(--ion-color-light-shade);
+  --fiv-text: var(--ion-color-dark);
 }
 
 /* Optional CSS, this is added for the flashing that happens when toggling between themes */

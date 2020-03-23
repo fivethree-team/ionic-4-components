@@ -1,9 +1,9 @@
 <ion-menu-toggle auto-hide="false">
-    <fiv-ripple>
-        <ion-item [color]="color" [detail]="detail" [detailIcon]="detailIcon" [disabled]="disabled" [lines]="lines">
-            <fiv-icon #fivIcon *ngIf="icon" [name]="icon"></fiv-icon>
-            <ion-label>{{text}}</ion-label>
-        </ion-item>
-    </fiv-ripple>
+    <ion-item class="ion-activatable" [color]="color" [detail]="detail" [detailIcon]="detailIcon" [disabled]="disabled"
+        [lines]="lines">
+        <fiv-icon #fivIcon *ngIf="icon" [name]="icon"></fiv-icon>
+        <ion-label>{{text}}</ion-label>
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>
+    </ion-item>
 </ion-menu-toggle>
 <span [ngClass]="getClasses()" class="indicator"></span>

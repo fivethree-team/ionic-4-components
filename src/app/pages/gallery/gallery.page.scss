@@ -1,0 +1,25 @@
+ion-row.big {
+  fiv-gallery-image {
+    --max-height: 86px;
+  }
+}
+
+ion-row.small {
+  fiv-gallery-image {
+    --max-height: 60px;
+  }
+}
+
+ion-row.large {
+  fiv-gallery-image {
+    --max-height: 120px;
+  }
+}
+
+.loop {
+  fiv-gallery-image {
+    --max-height: 90px;
+    --width: auto;
+    display: inline-block;
+  }
+}

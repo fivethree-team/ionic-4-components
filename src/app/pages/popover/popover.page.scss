@@ -1,0 +1,18 @@
+.spacer {
+  min-height: 200vh;
+}
+ion-card {
+  height: 100%;
+}
+.overflow {
+  ion-item,
+  ion-item-divider {
+    --background: transparent;
+  }
+  ion-item:hover {
+    --background: var(--ion-color-light-shade);
+    ion-label {
+      --color: var(--ion-color-primary);
+    }
+  }
+}

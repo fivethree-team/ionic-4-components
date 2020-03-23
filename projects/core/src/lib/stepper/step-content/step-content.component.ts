@@ -26,8 +26,8 @@ export class FivStepContent implements OnInit {
   @Output() fivDidClose: EventEmitter<FivStepContent> = new EventEmitter();
   @Output() fivClick: EventEmitter<FivStepContent> = new EventEmitter();
 
-  @ViewChild('self') step: FivExpandable;
-  @ViewChild('header') header: FivStepHeader;
+  @ViewChild('self', { static: false }) step: FivExpandable;
+  @ViewChild('header', { static: false }) header: FivStepHeader;
 
   constructor(private change: ChangeDetectorRef) {}
 

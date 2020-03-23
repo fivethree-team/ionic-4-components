@@ -1,3 +1,4 @@
+import { FivIfModule } from './../../../projects/core/src/lib/if-platform/if-platform.module';
 import { ExampleComponent } from './example/example.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,14 +16,14 @@ import { LottieAnimationViewModule } from 'ng-lottie';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DocsFooterComponent } from './docs-footer/docs-footer.component';
-import { ModalPage } from './modal/modal.page';
+import { TouchFieldComponent } from './touch-field/touch-field.component';
 
 const components = [
   ExampleComponent,
   HeaderComponent,
   FooterComponent,
   DocsFooterComponent,
-  ModalPage
+  TouchFieldComponent
 ];
 @NgModule({
   declarations: components,
@@ -37,9 +38,10 @@ const components = [
     LottieAnimationViewModule,
     FivIconModule,
     FivBackButtonModule,
-    FivGalleryModule
+    FivGalleryModule,
+    FivIfModule
   ],
   exports: [...components, LottieAnimationViewModule, MarkdownModule],
-  entryComponents: [ModalPage]
+  entryComponents: []
 })
 export class ComponentsModule {}

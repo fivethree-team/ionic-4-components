@@ -2,18 +2,20 @@
   position: relative;
   display: block;
   width: 100%;
+  --fiv-toolbar-background: var(--ion-color-light);
 }
 
 ion-toolbar {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   transition: border-bottom-right-radius ease 85ms;
   margin-top: env(safe-area-inset-top);
+  --background: var(--fiv-toolbar-background);
 }
 
 ion-toolbar.small {
   border-bottom-right-radius: 12px;
 }
 
-.toolbar-searchbar {
+.searchbarbar {
   float: right;
 }
