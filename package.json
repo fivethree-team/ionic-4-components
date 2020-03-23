@@ -83,7 +83,7 @@
     "@ionic/angular-toolkit": "2.1.1",
     "@ionic/lab": "2.0.13",
     "@types/jasmine": "3.3.13",
-    "@types/jasminewd2": "2.0.6",
+    "@types/jasminewd2": "2.0.8",
     "@types/node": "10.12.18",
     "angular-cli-ghpages": "0.6.0",
     "codelyzer": "5.1.0",
