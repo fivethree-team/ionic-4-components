@@ -1,0 +1,4 @@
+<div #background class="spinner-background" [ngClass]="{'hidden': progress === 0}">
+    <fiv-spinner #spinner (fivProgress)="fivProgress.emit($event)" (fivComplete)="complete()" [circleRadius]="8"
+        [diameter]="20" [strokeWidth]="2"></fiv-spinner>
+</div>

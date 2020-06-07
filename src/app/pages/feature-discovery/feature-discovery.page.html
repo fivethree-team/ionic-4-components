@@ -1,38 +1,37 @@
 <app-header title="Feature Discovery">
 </app-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <ion-grid fixed>
     <ion-row>
       <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
         offsetMd="0" sizeSm="12" sizeMd="12">
         <app-example docs="assets/docs/components/feature-discovery.md">
-          <ion-item-divider>
-            <ion-label>Example</ion-label>
-          </ion-item-divider>
-          <ion-button shape="round" (click)="fab.show()">
-            Open Feature
-          </ion-button>
-          <ion-list>
-            <ion-item>
-              <ion-label>Feature Radius</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-range [(ngModel)]="fp" min="0" max="200" color="secondary">
-                <ion-label slot="start">small</ion-label>
-                <ion-label slot="end">big</ion-label>
-              </ion-range>
-            </ion-item>
-            <ion-item>
-              <ion-label>Content</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-range [(ngModel)]="co" min="-50" max="50" color="secondary">
-                <ion-label slot="start">narrow</ion-label>
-                <ion-label slot="end">wide</ion-label>
-              </ion-range>
-            </ion-item>
-          </ion-list>
+          <ion-item>
+            <ion-label>Feature Radius</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-range [(ngModel)]="fp" min="0" max="200" color="secondary">
+              <ion-label slot="start">small</ion-label>
+              <ion-label slot="end">big</ion-label>
+            </ion-range>
+          </ion-item>
+          <ion-item>
+            <ion-label>Content</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-range [(ngModel)]="co" min="-50" max="50" color="secondary">
+              <ion-label slot="start">narrow</ion-label>
+              <ion-label slot="end">wide</ion-label>
+            </ion-range>
+          </ion-item>
+          <ion-toolbar>
+            <ion-buttons slot="end">
+              <ion-button color="primary" shape="round" fill="outline" (click)="fab.show()">
+                Open Example Feature
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
         </app-example>
       </ion-col>
     </ion-row>
@@ -41,7 +40,7 @@
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="primary" (click)="log('FAB Clicked')">
       <!-- use the fiv-icon for cool icon effect -->
-      <fiv-icon #fab="fivFeature" [fivFeature]="fabContent" [featurePadding]="fp" [contentOffset]="co" name="add"
+      <fiv-icon [classes]="['cool','classes']" #fab="fivFeature" [fivFeature]="fabContent" [featurePadding]="fp" [contentOffset]="co" name="add"
         (fivFeatureClick)="log('feature click')" (fivWillOpen)="log('fiv will open')" (fivOpen)="log('fiv open')"
         (fivWillClose)="log('fiv will close')" (fivClose)="log('fiv close')">
       </fiv-icon>
@@ -50,7 +49,7 @@
 </ion-content>
 
 <ng-template #fabContent>
-  <div padding>
+  <div class="ion-padding">
     <ion-text color="light">
       <h1>This is a FAB</h1>
       <p>Click this Button to do some cool stuff.</p>

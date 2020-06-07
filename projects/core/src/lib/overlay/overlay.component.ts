@@ -10,8 +10,6 @@ import {
 } from '@angular/core';
 import { FivOverlayContent } from './overlay-content/overlay-content.component';
 import { FivOverlayService } from './overlay.service';
-import { tap, first } from 'rxjs/operators';
-import { zip } from 'rxjs';
 
 @Component({
   selector: 'fiv-overlay',
@@ -21,7 +19,7 @@ import { zip } from 'rxjs';
 export class FivOverlay {
   private componentRef: ComponentRef<FivOverlayContent>;
 
-  @ViewChild('content') ngContent: TemplateRef<any>;
+  @ViewChild('content', { static: true }) ngContent: TemplateRef<any>;
   @Input() priority;
   @Output() afterInit = new EventEmitter();
   private _open = false;

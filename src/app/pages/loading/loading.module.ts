@@ -1,7 +1,7 @@
 import { ComponentsModule } from './../../components/components.module';
 import {
   FivLoadingProgressBarModule,
-  FivLoadingSpinnerModule,
+  FivSpinnerModule,
   FivCenterModule
 } from '@fivethree/core';
 import { NgModule } from '@angular/core';
@@ -28,7 +28,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ComponentsModule,
     FivLoadingProgressBarModule,
-    FivLoadingSpinnerModule,
+    FivSpinnerModule,
     FivCenterModule
   ],
   declarations: [LoadingPage]

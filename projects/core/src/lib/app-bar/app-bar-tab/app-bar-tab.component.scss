@@ -4,15 +4,35 @@
   display: inline-block;
   position: relative;
 
-  fiv-ripple {
+  .tab {
     width: 100%;
     height: 100%;
-  }
-  fiv-icon {
-    display: block;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
   }
 
   .tab.active {
-    --fiv-color-icon: var(--ion-color-primary);
+    --fiv-icon-color: var(--fiv-icon-activ-color, var(--ion-color-primary));
+    ::ng-deep ion-label {
+      color: var(--ion-color-primary);
+    }
+  }
+}
+
+:host(.label-hide) {
+  ::ng-deep ion-label {
+    display: none;
+  }
+}
+
+:host(.label-active-only) {
+  .tab:not(.active) {
+    ::ng-deep ion-label {
+      display: none;
+    }
   }
 }

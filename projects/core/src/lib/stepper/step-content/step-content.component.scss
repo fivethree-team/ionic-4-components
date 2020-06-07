@@ -18,6 +18,11 @@
   top: 36px;
 }
 
+.ion-activatable {
+  position: relative;
+  overflow: hidden;
+}
+
 .header-title {
   color: var(--fiv-color-title, var(--ion-color-dark));
 }

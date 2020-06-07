@@ -18,12 +18,14 @@
           </ion-button>
 
           <fiv-expandable #ex>
-            <fiv-ripple [hover]="true" header (fivClick)="ex.toggle()">
+            <div style="position: relative;" header class="ion-activatable" (click)="ex.toggle()">
               <ion-item [lines]="'inset'">
                 <ion-label>Expandable Header</ion-label>
                 <fiv-expandable-indicator></fiv-expandable-indicator>
               </ion-item>
-            </fiv-ripple>
+
+              <ion-ripple-effect type="bounded"></ion-ripple-effect>
+            </div>
             <div content>
               <span class="content" [fivCenter]>Expandable Content (height depends on contents size)</span>
             </div>

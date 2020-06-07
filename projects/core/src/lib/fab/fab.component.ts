@@ -1,6 +1,4 @@
-import { FivFeatureDiscovery } from './../feature-discovery/feature-discovery.component';
 import { FivLoadingProgressBar } from './../loading-progress-bar/loading-progress-bar.component';
-import { FivIcon } from './../icon/icon.component';
 import {
   Component,
   OnInit,
@@ -9,7 +7,6 @@ import {
   Output,
   EventEmitter,
   Renderer2,
-  HostBinding,
   OnDestroy,
   ContentChild,
   AfterContentInit,
@@ -23,7 +20,7 @@ import {
   trigger,
   state
 } from '@angular/animations';
-import { FivLoadingSpinner } from '../loading-spinner/loading-spinner.component';
+import { FivSpinner } from '../spinner/spinner.component';
 import { IonContent, IonLabel, Platform } from '@ionic/angular';
 import { Subject } from 'rxjs';
 import {
@@ -97,12 +94,12 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   @Input() horizontal?: 'center' | 'start' | 'end' | 'none' = 'none';
   @Input() mode?: 'normal' | 'edge' = 'normal';
   @Input() slot: string;
-  @Input() icon: string;
   @Input() spinColor = 'primary';
   @Input() color: string;
   @Input() disabled = false;
   @Input() visible = true;
   @Input() pulse = false;
+  @Input() animationDisabled = false;
   @Input() set scroll(scroll: boolean) {
     this._scroll = scroll;
     this.$onDestroy.next();
@@ -111,7 +108,7 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   get scroll() {
     return this._scroll;
   }
-  _scroll = true;
+  _scroll = false;
   @Input() feature: TemplateRef<any>;
 
   @Output() fivComplete: EventEmitter<FivFab> = new EventEmitter<FivFab>();
@@ -120,11 +117,9 @@ export class FivFab implements OnInit, OnDestroy, AfterContentInit {
   @Output() fivShow: EventEmitter<FivFab> = new EventEmitter<FivFab>();
   @Output() fivTransition: EventEmitter<FivFab> = new EventEmitter<FivFab>();
 
-  @ViewChild('spinner') spinner: FivLoadingSpinner;
-  @ViewChild('feature') featureDiscovery: FivFeatureDiscovery;
-  @ViewChild('bar') bar: FivLoadingProgressBar;
-  @ContentChild(FivIcon) iconComp: FivIcon;
-  @ContentChild(IonLabel) labelComp: IonLabel;
+  @ViewChild('spinner', { static: false }) spinner: FivSpinner;
+  @ViewChild('bar', { static: false }) bar: FivLoadingProgressBar;
+  @ContentChild(IonLabel, { static: false }) labelComp: IonLabel;
 
   loading = false;
   extended = false;

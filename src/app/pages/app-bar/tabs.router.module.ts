@@ -12,8 +12,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren:
-              '../bottom-sheet/bottom-sheet.module#BottomSheetPageModule'
+            loadChildren: './tabs/one/one.module#OnePageModule'
           }
         ]
       },
@@ -22,7 +21,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../buttons/buttons.module#ButtonsPageModule'
+            loadChildren: './tabs/two/two.module#TwoPageModule'
           }
         ]
       },
@@ -31,7 +30,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../expandable/expandable.module#ExpandablePageModule'
+            loadChildren: './tabs/three/three.module#ThreePageModule'
           }
         ]
       },
@@ -40,7 +39,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../refresh/refresh.module#RefreshPageModule'
+            loadChildren: './tabs/four/four.module#FourPageModule'
           }
         ]
       },

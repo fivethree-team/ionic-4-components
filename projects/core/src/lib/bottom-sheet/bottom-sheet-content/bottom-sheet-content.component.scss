@@ -5,6 +5,9 @@
   --fiv-border-radius: 12px;
   --fiv-padding: 20px;
   padding-top: var(--fiv-padding);
+  --fiv-background: var(--ion-background-color);
+  --fiv-handle-background: var(--ion-color-light-shade);
+  background: var(--fiv-background);
 }
 
 .bsc-wrapper {
@@ -19,7 +22,7 @@
 
 .handle {
   display: block;
-  background: var(--ion-color-light);
+  background: var(--fiv-handle-background);
   border-radius: 12px;
   top: 8px;
   width: 32px;

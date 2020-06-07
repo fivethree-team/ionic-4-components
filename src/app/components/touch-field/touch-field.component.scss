@@ -1,0 +1,9 @@
+.desktop {
+  min-height: 70vh;
+  max-width: 411px;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  border: 2px solid var(--ion-color-dark);
+  cursor: url(/assets/icon/cursor.png), auto;
+}

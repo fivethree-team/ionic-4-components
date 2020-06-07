@@ -1,8 +1,26 @@
-.popover-item {
-  --border-style: none;
+:host {
+  --fiv-popover-backdrop-color: rgba(0, 0, 0, 0.2);
 }
 
-.popover-item:hover {
-  --background: rgb(240, 240, 240);
-  cursor: pointer;
+.popover-container {
+  position: absolute;
+  display: block;
+}
+
+.animation-container {
+  height: 100%;
+  position: relative;
+}
+
+svg.arrow {
+  position: absolute;
+  fill: var(--ion-item-background);
+}
+
+.fiv-popover-backdrop {
+  position: absolute;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: var(--fiv-popover-backdrop-color);
 }

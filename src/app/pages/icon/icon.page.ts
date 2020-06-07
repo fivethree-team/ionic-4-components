@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icon.page.scss']
 })
 export class IconPage implements OnInit {
-  icon = 'md-notifications';
-  indicatorValue = 0;
+  icon = 'notifications';
+  badge = 0;
   off = false;
   dot = false;
 
@@ -17,12 +17,12 @@ export class IconPage implements OnInit {
   ngOnInit() {}
 
   decrement() {
-    if (this.indicatorValue > 0) {
-      this.indicatorValue--;
+    if (this.badge > 0) {
+      this.badge--;
     }
   }
   increment() {
-    this.indicatorValue++;
+    this.badge++;
   }
 
   getNewIcon() {

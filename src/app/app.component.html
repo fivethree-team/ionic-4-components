@@ -1,6 +1,7 @@
 <ion-app>
-  <ion-split-pane>
-    <ion-menu menuId="menuId" [fivCollapseMenu]="false" [minWidth]="220" [maxWidth]="220" #menu=menuCollapse>
+  <ion-split-pane contentId="menu-content">
+    <ion-menu contentId="menu-content" menuId="menuId" [fivCollapseMenu]="false" [minWidth]="200" [maxWidth]="200"
+      #menu=menuCollapse>
       <ion-header no-border>
         <ion-toolbar>
           <a style="text-decoration: none;" [routerLink]="['/']">
@@ -9,52 +10,58 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <ion-list>
 
-          <fiv-router-item [text]="'Getting Started'" [matchChildUrl]="true" [shape]="'rounded'"
-            [pageUrl]="'/getting-started'">
-          </fiv-router-item>
-          <fiv-router-item [text]="'Overview'" [matchChildUrl]="true" [shape]="'rounded'" [pageUrl]="'/components'">
-          </fiv-router-item>
-          <fiv-expandable #ex [isOpen]="false">
-            <fiv-ripple header [hover]="true" (fivClick)="ex.toggle()">
-              <ion-item>
-                <ion-label>Documentation</ion-label>
-                <fiv-expandable-indicator icon="ios-arrow-down"></fiv-expandable-indicator>
-              </ion-item>
-            </fiv-ripple>
-            <div content>
-              <fiv-router-item #exps [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'" [position]="'left'"
-                [pageUrl]="p.url" *ngFor="let p of docs">
-              </fiv-router-item>
-            </div>
-          </fiv-expandable>
-          <fiv-router-item [pageUrl]="'/developer-tools'" [text]="'Developer Tools'" [matchChildUrl]="true"
-            [shape]="'rounded'">
-          </fiv-router-item>
-        </ion-list>
+        <fiv-router-item [text]="'Getting Started'" [matchChildUrl]="true" [shape]="'rounded'"
+          [pageUrl]="'/getting-started'">
+        </fiv-router-item>
+        <fiv-router-item [text]="'Overview'" [matchChildUrl]="true" [shape]="'rounded'" [pageUrl]="'/components'">
+        </fiv-router-item>
+        <fiv-expandable #ex [isOpen]="false">
+          <div style="position: relative;" header class="ion-activatable" (click)="ex.toggle()">
+            <ion-item lines="none">
+              <ion-label>Documentation</ion-label>
+              <fiv-expandable-indicator icon="chevron-down"></fiv-expandable-indicator>
+
+            </ion-item>
+            <ion-ripple-effect type="bounded"></ion-ripple-effect>
+
+          </div>
+
+          <div content>
+            <fiv-router-item #exps [text]="p.title" [matchChildUrl]="true" [shape]="'rounded'" [position]="'left'"
+              [pageUrl]="p.url" *ngFor="let p of docs">
+            </fiv-router-item>
+          </div>
+        </fiv-expandable>
+        <fiv-router-item [pageUrl]="'/developer-tools'" [text]="'Developer Tools'" [matchChildUrl]="true"
+          [shape]="'rounded'">
+        </fiv-router-item>
       </ion-content>
       <ion-footer no-border>
-        <ion-toolbar color="transparent">
+        <ion-toolbar color="translucent">
           <ion-buttons slot="start">
-            <a href="https://fivethree.io" target="blank">
-              <ion-button color="dark">
-                <ion-icon slot="icon-only" name="globe"></ion-icon>
+            <a target="blank" href="https://github.com/fivethree-team">
+              <ion-button shape="round" color="dark">
+                <ion-icon slot="icon-only"></ion-icon>
+                <img alt="profile avatar" class="avatar"
+                  src="https://avatars1.githubusercontent.com/u/42233945?s=60&v=4">
               </ion-button>
             </a>
-            <a target="blank" href="https://github.com/fivethree-team">
+            <a target="blank" href="https://github.com/fivethree-team/ionic-4-components">
               <ion-button color="dark">
                 <ion-icon slot="icon-only" name="logo-github"></ion-icon>
               </ion-button>
             </a>
             <a target="blank" href="https://github.com/garygrossgarten">
               <ion-button shape="round" color="dark">
+                <ion-icon slot="icon-only"></ion-icon>
                 <img alt="garys twitter profile avatar" class="avatar"
                   src="https://pbs.twimg.com/profile_images/823932144473018369/vGv7gtS__400x400.jpg">
               </ion-button>
             </a>
             <a target="blank" href="https://github.com/marcjulian">
               <ion-button shape="round" color="dark">
+                <ion-icon slot="icon-only"></ion-icon>
                 <img alt="marcs twitter profile avatar" class="avatar"
                   src="https://pbs.twimg.com/profile_images/1147082564533968896/olwHlwtr_400x400.png">
               </ion-button>
@@ -63,6 +70,6 @@
         </ion-toolbar>
       </ion-footer>
     </ion-menu>
-    <ion-router-outlet main></ion-router-outlet>
+    <ion-router-outlet id="menu-content"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>

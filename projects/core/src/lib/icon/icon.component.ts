@@ -4,7 +4,8 @@ import {
   Input,
   ChangeDetectionStrategy,
   Output,
-  EventEmitter
+  EventEmitter,
+  HostBinding
 } from '@angular/core';
 import {
   trigger,
@@ -49,7 +50,8 @@ import {
 })
 export class FivIcon implements OnInit {
   _name: string;
-  _indicatorValue = 0;
+  _badge = 0;
+  _dot: boolean;
   tempValue: number;
   state: 'normal' | 'rotate' = 'normal';
   temp: string;
@@ -58,10 +60,15 @@ export class FivIcon implements OnInit {
   @Input() slot: string;
   @Input() smallIcon: string;
   @Input() off = false;
+
+  @Input()
+  @HostBinding('@.disabled')
+  animationDisabled = false;
+
   @Output() transitionDone = new EventEmitter<string>();
 
   indicatorState: 'normal' | 'scale' = 'scale';
-  indicatorValueState: 'normal' | 'scale' = 'scale';
+  badgeState: 'normal' | 'scale' = 'scale';
 
   @Input()
   get name(): string {
@@ -76,26 +83,23 @@ export class FivIcon implements OnInit {
   }
 
   @Input()
-  get indicatorValue(): number {
-    return this._indicatorValue;
+  get badge(): number {
+    return this._badge;
   }
-  set indicatorValue(value: number) {
+  set badge(value: number) {
     this.transformIndicator(value);
   }
 
   @Input()
-  set dotVisible(dotVisible: boolean) {
-    this._dotVisible = dotVisible;
-    if (dotVisible) {
+  set dot(dot: boolean) {
+    this._dot = dot;
+    if (dot) {
       this.indicatorState = 'normal';
     }
   }
-
-  get dotVisible(): boolean {
-    return this._dotVisible;
+  get dot(): boolean {
+    return this._dot;
   }
-
-  _dotVisible: boolean;
 
   constructor() {}
 
@@ -107,22 +111,20 @@ export class FivIcon implements OnInit {
   }
 
   transformIndicator(value: number) {
-    if (this.dotVisible) {
-      this._indicatorValue = value;
+    if (this.dot) {
+      this._badge = value;
       return;
     }
     if (value === 0) {
-      this._indicatorValue = value;
-      this.indicatorState = 'normal';
-      this.indicatorValueState = 'scale';
+      this._badge = value;
+      this.badgeState = 'scale';
     } else {
-      this.indicatorState = 'scale';
-      if (this.indicatorValueState === 'scale') {
-        this.indicatorValueState = 'normal';
-        this._indicatorValue = value;
+      if (this.badgeState === 'scale') {
+        this.badgeState = 'normal';
+        this._badge = value;
       } else {
         this.tempValue = value;
-        this.indicatorValueState = 'scale';
+        this.badgeState = 'scale';
       }
     }
   }
@@ -141,10 +143,10 @@ export class FivIcon implements OnInit {
   incrementDone(event) {
     if (event.fromState === 'normal' && event.toState === 'scale') {
       if (this.tempValue > 0) {
-        this.indicatorValueState = 'normal';
-        this._indicatorValue = this.tempValue;
+        this.badgeState = 'normal';
+        this._badge = this.tempValue;
       } else {
-        this._indicatorValue = this.tempValue;
+        this._badge = this.tempValue;
       }
     }
   }

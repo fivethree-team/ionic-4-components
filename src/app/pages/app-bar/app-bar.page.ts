@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { FivFeature } from '@fivethree/core';
 
 @Component({
   selector: 'app-app-bar',
@@ -7,10 +8,9 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./app-bar.page.scss']
 })
 export class AppBarPage implements OnInit {
-  titleLayout = 'hide';
+  titleMode = 'hide';
   position = 'center';
-  fabVisible = true;
-  icon = 'checkmark';
+  icon = 'color-wand';
 
   customTitleLayoutOptions: any = {
     header: 'Title Layout',
@@ -21,6 +21,9 @@ export class AppBarPage implements OnInit {
     header: 'Fab Position',
     subHeader: 'Select a floating action button position.'
   };
+
+  @ViewChild('iconFeature', { static: false }) iconFeature: FivFeature;
+  @ViewChild('tabFeature', { static: false }) tabFeature: FivFeature;
 
   constructor(public toastController: ToastController) {}
 

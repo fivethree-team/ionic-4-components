@@ -1,25 +1,27 @@
 <app-header title="Bottom Sheet"></app-header>
 
 
-<ion-content padding no-bounce>
+<ion-content [style.filter]="filter" [style.transform]="transform" class="ion-padding" no-bounce>
   <ion-grid class="page-content" fixed>
     <ion-row>
       <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
         offsetMd="0" sizeSm="12" sizeMd="12">
         <app-example docs="assets/docs/components/bottom-sheet.md">
           <ion-list *fivIf="['mobile']">
-            <ion-item>
-              <ion-label>Top</ion-label>
-              <ion-radio [checked]="drawerState===states.Top" (click)="drawerState = states.Top"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>Docked</ion-label>
-              <ion-radio [checked]="drawerState===states.Docked" (click)="drawerState = states.Docked"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>Bottom</ion-label>
-              <ion-radio [checked]="drawerState===states.Bottom" (click)="drawerState = states.Bottom"></ion-radio>
-            </ion-item>
+            <ion-radio-group [value]="states.Docked">
+              <ion-item>
+                <ion-label>Top</ion-label>
+                <ion-radio [value]="states.Top" (click)="drawerState = states.Top"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Docked</ion-label>
+                <ion-radio [value]="states.Docked" (click)="drawerState = states.Docked"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Bottom</ion-label>
+                <ion-radio [value]="states.Bottom" (click)="drawerState = states.Bottom"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
           </ion-list>
           <ion-list>
             <ion-item>
@@ -37,6 +39,10 @@
             <ion-item-divider>
               <ion-label>Bottom Sheet Content</ion-label>
             </ion-item-divider>
+            <ion-item>
+              <ion-label>Show example content pan animation</ion-label>
+              <ion-checkbox [(ngModel)]="animation"></ion-checkbox>
+            </ion-item>
             <ion-item>
               <ion-label>Rounded</ion-label>
               <ion-checkbox [(ngModel)]="rounded"></ion-checkbox>
@@ -59,143 +65,11 @@
 
 </ion-content>
 
-<fiv-bottom-sheet #fbs *fivIf="['mobile']" [(state)]="drawerState" [dockedHeight]="dockedHeight"
-  [shouldBounce]="shouldBounce" [distanceTop]="distanceTop">
+<fiv-bottom-sheet (fivProgress)="onPan($event)" #fbs *fivIf="['mobile']" [(state)]="drawerState"
+  [dockedHeight]="dockedHeight" [shouldBounce]="shouldBounce" [distanceTop]="distanceTop">
 
   <fiv-bottom-sheet-content [float]="float" [rounded]="rounded" [handle]="handle">
-    <ion-item-divider padding sticky>
-      <ion-title color="primary">Bottom Sheet</ion-title>
-      <ion-buttons slot="end">
-        <ion-button fill="outline" shape="round" color="primary">
-          Do Action
-        </ion-button>
-      </ion-buttons>
-    </ion-item-divider>
-    <ion-item-group>
-      <div class="flex-scroll">
-        <ion-card *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
-          <ion-card-header>
-            <ion-card-subtitle>Awesome Flex</ion-card-subtitle>
-            <ion-card-title>Awesome Title</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Awesome content
-          </ion-card-content>
-        </ion-card>
-      </div>
 
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Label</ion-label>
-      </ion-item>
-    </ion-item-group>
 
   </fiv-bottom-sheet-content>
 

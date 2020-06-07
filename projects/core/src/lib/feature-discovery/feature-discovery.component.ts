@@ -1,4 +1,4 @@
-import { Platform } from '@ionic/angular';
+import { Platform, IonIcon } from '@ionic/angular';
 import {
   Component,
   OnInit,
@@ -7,7 +7,8 @@ import {
   ElementRef,
   Renderer2,
   Output,
-  EventEmitter
+  EventEmitter,
+  HostBinding
 } from '@angular/core';
 import {
   AnimationEvent,
@@ -44,35 +45,6 @@ import { FivIcon } from '../icon/icon.component';
         )
       ])
     ]),
-    trigger('pulse', [
-      transition('small => big', [
-        style({ transform: 'scale(1) translate(-50%,-50%)' }),
-        animate(
-          '1000ms',
-          style({ transform: 'scale(1.1) translate(-45%,-45%)' })
-        )
-      ]),
-      transition('big => small', [
-        style({ transform: 'scale(1.1) translate(-45%,-45%)' }),
-        animate('400ms', style({ transform: 'scale(1) translate(-50%,-50%)' }))
-      ])
-    ]),
-    trigger('pulseFade', [
-      transition('small => big', [
-        style({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0.8 }),
-        animate(
-          '1000ms',
-          style({ transform: 'scale(1.6) translate(-28%,-28%)', opacity: 0 })
-        )
-      ]),
-      transition('big => small', [
-        style({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0 }),
-        animate(
-          '400ms',
-          style({ transform: 'scale(1) translate(-50%,-50%)', opacity: 0 })
-        )
-      ])
-    ]),
     trigger('contentAnim', [
       transition('void => *', [
         style({ opacity: '0' }),
@@ -95,10 +67,12 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
   contentOffset = 0;
   bounds: FeaturePosition;
   icon: string;
-  @ViewChild('circle') circle: ElementRef;
-  @ViewChild('rect') rect: ElementRef;
-  @ViewChild('pInner', { read: ElementRef }) innerPulse: ElementRef;
-  @ViewChild('pOuter') outerPulse: ElementRef;
+  classes: string[];
+  @ViewChild('circle', { static: true }) circle: ElementRef;
+  @ViewChild('rect', { static: true }) rect: ElementRef;
+  @ViewChild('pInner', { static: true, read: ElementRef })
+  innerPulse: ElementRef;
+  @ViewChild('pOuter', { static: true }) outerPulse: ElementRef;
 
   animationState = 'hidden';
   pulse = 'small';
@@ -108,6 +82,10 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
   @Output() fivClose = new EventEmitter<any>();
   @Output() fivOpen = new EventEmitter<any>();
   @Output() fivAnimation = new EventEmitter<AnimationEvent>();
+
+  @HostBinding('class') get _classes() {
+    return this.classes.join(' ');
+  }
 
   constructor(private renderer: Renderer2, private platform: Platform) {}
 
@@ -123,12 +101,10 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
     this.left = bounds.left + bounds.width / 2 - this.width / 2;
     this.calculateContentBounds();
     if (!this.icon) {
-      // tslint:disable-next-line:max-line-length
       const gradient = `-webkit-radial-gradient(transparent ${this
         .innerDiameter /
         2 +
         5}px, var(--fiv-color-feature) ${this.innerDiameter / 2 + 5}px)`;
-      // tslint:disable-next-line:max-line-length
       const pulseGradient = `-webkit-radial-gradient(transparent ${this
         .innerDiameter /
         2 +
@@ -198,14 +174,6 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
       this.fivClose.emit();
     }
   }
-  handleFeatureAnimation(event: AnimationEvent) {
-    if (event.toState === 'big') {
-      this.pulse = 'small';
-    }
-    if (event.toState === 'small') {
-      this.pulse = 'big';
-    }
-  }
 
   show() {
     this.animationState = 'visible';
@@ -219,7 +187,7 @@ export class FivFeatureDiscovery implements OnInit, AfterContentInit {
     this.animationState = 'execute';
   }
 
-  setIcon(icon: FivIcon) {
+  setIcon(icon: FivIcon | IonIcon) {
     if (icon) {
       this.icon = icon.name;
     }

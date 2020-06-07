@@ -1,0 +1,27 @@
+:host {
+  --fiv-spinner-size: 40px;
+  position: absolute;
+  width: var(--fiv-spinner-size);
+  height: var(--fiv-spinner-size);
+  top: calc(-1 * var(--fiv-spinner-size));
+  left: calc(50% - var(--fiv-spinner-size) / 2);
+  z-index: 9;
+}
+
+.spinner-background:not(.hidden) {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.spinner-background {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: var(--fiv-spin-background);
+  border-radius: 50%;
+
+  fiv-spinner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+}

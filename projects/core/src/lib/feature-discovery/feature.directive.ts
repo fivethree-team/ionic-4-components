@@ -15,7 +15,7 @@ import {
 import { FivOverlayService } from '../overlay/overlay.service';
 import { FivFeatureDiscovery } from './feature-discovery.component';
 import { first, filter } from 'rxjs/operators';
-import { Platform } from '@ionic/angular';
+import { Platform, IonIcon } from '@ionic/angular';
 
 @Directive({
   selector: '[fivFeature]',
@@ -27,6 +27,7 @@ export class FivFeature {
   @Input() contentOffset = 20;
   @Input() featurePadding = 20;
   @Input() clickEnabled = true;
+  @Input() classes: string[] = [];
   @Input() fivFeature: TemplateRef<any>;
   overlayRef: ComponentRef<FivFeatureDiscovery>;
 
@@ -41,7 +42,8 @@ export class FivFeature {
   constructor(
     @Host() private host: ElementRef,
     private viewContainer: ViewContainerRef,
-    @Host() @Optional() private icon: FivIcon,
+    @Host() @Optional() private fivIcon: FivIcon,
+    @Host() @Optional() private ionIcon: IonIcon,
     private overlay: FivOverlayService,
     private platform: Platform
   ) {}
@@ -57,7 +59,8 @@ export class FivFeature {
   }
 
   show() {
-    const bounds = this.icon
+    const icon = this.ionIcon || this.fivIcon;
+    const bounds = icon
       ? this.getBounds(this.host.nativeElement.parentElement)
       : this.getBounds(this.host.nativeElement);
 
@@ -71,7 +74,8 @@ export class FivFeature {
     featureOverlay.width = this.diameter;
     featureOverlay.featurePadding = this.featurePadding;
     featureOverlay.contentOffset = this.contentOffset;
-    featureOverlay.setIcon(this.icon);
+    featureOverlay.classes = this.classes;
+    featureOverlay.setIcon(icon);
     featureOverlay.setBounds(bounds);
     featureOverlay.show();
     this.fivWillOpen.emit();
@@ -83,8 +87,8 @@ export class FivFeature {
       .subscribe(() => {
         this.didOpen();
       });
-    featureOverlay.fivClick.pipe(first()).subscribe(() => {
-      this.featureClick();
+    featureOverlay.fivClick.pipe(first()).subscribe(ev => {
+      this.featureClick(ev);
     });
     featureOverlay.fivBackdropClick.pipe(first()).subscribe(() => {
       this.hide();
@@ -104,14 +108,14 @@ export class FivFeature {
     }
   }
 
-  didOpen() {
+  private didOpen() {
     this.fivOpen.emit();
     this.isOpen = true;
   }
 
-  featureClick() {
+  private featureClick(ev) {
     if (this.overlayRef) {
-      this.fivFeatureClick.emit();
+      this.fivFeatureClick.emit(ev);
       this.fivWillClose.emit();
       this.overlayRef.instance.featureClick();
       this.overlayRef.instance.fivClose.pipe(first()).subscribe(() => {

@@ -1,0 +1,29 @@
+<app-header title="Image Gallery"></app-header>
+
+
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
+        offsetMd="0" sizeSm="12" sizeMd="12">
+        <app-example docs="assets/docs/components/gallery.md">
+          <fiv-gallery>
+            <fiv-gallery-toolbar position="top">
+              <fiv-gallery-toolbar-content></fiv-gallery-toolbar-content>
+            </fiv-gallery-toolbar>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col *ngFor="let pic of picsum" size="6" sizeMd="4">
+                  <fiv-gallery-image [src]="pic"></fiv-gallery-image>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </fiv-gallery>
+        </app-example>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>

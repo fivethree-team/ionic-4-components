@@ -1,13 +1,4 @@
-import {
-  Component,
-  OnInit,
-  HostBinding,
-  AfterViewInit,
-  EventEmitter,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewChecked
-} from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -15,7 +6,7 @@ import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
   templateUrl: './overlay-content.component.html',
   styleUrls: ['./overlay-content.component.scss']
 })
-export class FivOverlayContent implements OnInit {
+export class FivOverlayContent {
   @HostBinding('style')
   get myStyle(): SafeStyle {
     return this.priority
@@ -26,6 +17,4 @@ export class FivOverlayContent implements OnInit {
   priority: number;
 
   constructor(private sanitizer: DomSanitizer) {}
-
-  ngOnInit() {}
 }

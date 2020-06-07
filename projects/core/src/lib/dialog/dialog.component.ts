@@ -78,7 +78,7 @@ export type Content<T> = TemplateRef<T> | Type<T>;
           '140ms ease-in',
           style({ bottom: '0', transform: 'translateY(100%) {{translateX}}' })
         )
-      ]),
+      ])
       // state('bottom', style({ bottom: '0', transform: '*' })),
       // state('top', style({ top: '0', transform: '*' })),
       // state('center', style({ top: '50%', transform: 'translateY(-50%) {{translateX}}' }))
@@ -124,20 +124,21 @@ export class FivDialog implements OnInit {
   @Output() fivClose: EventEmitter<FivDialog> = new EventEmitter();
   @Output() fivDurationOver: EventEmitter<FivDialog> = new EventEmitter();
   @Output() fivOpen: EventEmitter<FivDialog> = new EventEmitter();
-  @ViewChild(FivOverlay) overlay: FivOverlay;
-  @ViewChild(FivLoadingProgressBar) bar: FivLoadingProgressBar;
-  @ViewChild('dialog') dialogRef: ElementRef;
+  @ViewChild(FivOverlay, { static: false }) overlay: FivOverlay;
+  @ViewChild(FivLoadingProgressBar, { static: false })
+  bar: FivLoadingProgressBar;
+  @ViewChild('dialog', { static: false }) dialogRef: ElementRef;
 
   dialogState: 'top' | 'center' | 'bottom' | 'out' = 'out';
   currentPullProgress: number;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   constructor(
     private renderer: Renderer2,
     private domCtrl: DomController,
     private animation: AnimationBuilder
-  ) { }
+  ) {}
 
   open() {
     this.overlay.show(this.priority);

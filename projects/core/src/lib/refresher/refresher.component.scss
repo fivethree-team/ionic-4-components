@@ -1,0 +1,37 @@
+:host {
+  --fiv-spin-color: var(--ion-color-primary);
+  --fiv-hint-color: var(--fiv-spin-color, var(--ion-color-primary));
+  --fiv-spin-background: var(--ion-color-light);
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  background: transparent;
+  color: var(--fiv-hint-color);
+}
+
+.text {
+  font-size: 1em;
+  color: var(--fiv-hint-color);
+}
+
+.text.hidden {
+  opacity: 0;
+}
+
+.gg-hint-wrapper {
+  position: absolute;
+  z-index: 8;
+  opacity: 1;
+  left: 50%;
+  top: -40px;
+  transform: translateY(72px) translateX(-50%);
+  height: 40px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background: var(--fiv-spin-background);
+  border-radius: 40px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}

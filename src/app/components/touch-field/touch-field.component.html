@@ -1,0 +1,11 @@
+<div class="desktop" *fivIf="['desktop']">
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</div>
+<ng-container *fivIf="['mobile']">
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</ng-container>
+
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

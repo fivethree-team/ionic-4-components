@@ -1,0 +1,9 @@
+<fiv-refresher-content [progress]="currentProgress" (fivProgress)="onSpinnerProgress($event)" (fivComplete)="onDone()"
+  (fivHidden)="onHidden()" #spinner>
+</fiv-refresher-content>
+
+<ion-chip class="gg-hint-wrapper" *ngIf="hintVisible" [@hintAnim] (@hintAnim.done)="postHint($event)"
+  (click)="onHintClicked()" #hint>
+  <ion-icon class="icon" name="arrow-up"></ion-icon>
+  <ion-label [ngClass]="{'hidden': !hintVisible}" class="text">{{hintText}}</ion-label>
+</ion-chip>

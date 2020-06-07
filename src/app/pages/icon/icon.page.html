@@ -6,19 +6,6 @@
       <ion-col sizeXl="10" offsetXl="1" sizeLg="10" offsetLg="1" sizeMd="12" sizeXs="12" offsetXs="0" offsetSm="0"
         offsetMd="0" sizeSm="12" sizeMd="12">
         <app-example docs="assets/docs/components/icon.md">
-          <ion-item-divider>
-            <ion-label>Basic Example</ion-label>
-          </ion-item-divider>
-
-          <ion-button (click)="getNewIcon()">
-            change icon
-          </ion-button>
-          <ion-button (click)="increment()">
-            <ion-icon slot="icon-only" name="add"></ion-icon>
-          </ion-button>
-          <ion-button (click)="decrement()">
-            <ion-icon slot="icon-only" name="remove"></ion-icon>
-          </ion-button>
 
           <ion-item>
             <ion-label>Icon turned off</ion-label>
@@ -28,12 +15,28 @@
             <ion-label>Icon dot</ion-label>
             <ion-checkbox [(ngModel)]="dot" slot="end"></ion-checkbox>
           </ion-item>
+          <ion-toolbar color="translucent">
+            <ion-buttons slot="end">
+              <ion-button color="primary" (click)="increment()">
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+              </ion-button>
+              <ion-button color="primary" (click)="decrement()">
+                <ion-icon slot="icon-only" name="remove"></ion-icon>
+              </ion-button>
+              <ion-button color="primary" fill="outline" shape="round" (click)="getNewIcon()">
+                change random icon
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
 
           <div class="example">
-            <ion-button [fivCenter] fill="clear">
-              <fiv-icon [off]="off" [dotVisible]="dot" slot="icon-only" [indicatorValue]="indicatorValue" [name]="icon">
-              </fiv-icon>
-            </ion-button>
+            <ion-buttons [fivCenter]>
+              <ion-button>
+                <fiv-icon [off]="off" [dot]="dot" slot="icon-only" [badge]="badge" [name]="icon">
+                </fiv-icon>
+              </ion-button>
+            </ion-buttons>
+
           </div>
 
 
