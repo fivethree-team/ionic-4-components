@@ -40,11 +40,11 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "8.2.13",
-    "@angular/cdk": "8.2.3",
+    "@angular/cdk": "10.0.1",
     "@angular/common": "8.2.13",
     "@angular/core": "8.2.13",
     "@angular/forms": "8.2.13",
-    "@angular/material": "8.2.3",
+    "@angular/material": "10.0.1",
     "@angular/platform-browser": "8.2.13",
     "@angular/platform-browser-dynamic": "8.2.13",
     "@angular/pwa": "0.803.18",
