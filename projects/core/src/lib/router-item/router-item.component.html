@@ -1,9 +1,17 @@
 <ion-menu-toggle auto-hide="false">
-    <ion-item class="ion-activatable" [color]="color" [detail]="detail" [detailIcon]="detailIcon" [disabled]="disabled"
-        [lines]="lines">
-        <fiv-icon #fivIcon *ngIf="icon" [name]="icon"></fiv-icon>
-        <ion-label>{{text}}</ion-label>
-        <ion-ripple-effect type="bounded"></ion-ripple-effect>
-    </ion-item>
+  <ion-item
+    class="ion-activatable"
+    [color]="color"
+    [detail]="detail"
+    [detailIcon]="detailIcon"
+    [disabled]="disabled"
+    [lines]="lines"
+  >
+    <!-- TODO bug in safari https://github.com/ionic-team/ionic-framework/issues/21939#issuecomment-694259307 remove when fixed -->
+    <div tabindex="0"></div>
+    <fiv-icon #fivIcon *ngIf="icon" [name]="icon"></fiv-icon>
+    <ion-label>{{ text }}</ion-label>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-item>
 </ion-menu-toggle>
 <span [ngClass]="getClasses()" class="indicator"></span>
