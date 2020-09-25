@@ -50,7 +50,7 @@
     "@angular/pwa": "0.803.18",
     "@angular/router": "8.2.13",
     "@angular/service-worker": "8.2.13",
-    "@ctrl/ngx-github-buttons": "3.2.7",
+    "@ctrl/ngx-github-buttons": "3.2.8",
     "@fivethree/ngx-rxjs-animations": "0.0.2",
     "@ionic-native/core": "5.16.0",
     "@ionic-native/splash-screen": "5.16.0",
