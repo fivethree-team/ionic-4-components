@@ -32,7 +32,7 @@ import { Key } from './keycodes.enum';
 import { DOCUMENT } from '@angular/common';
 import { Navigateable } from '../interfaces';
 import { FivGalleryImage } from './gallery-image/gallery-image.component';
-import { from, Subject, zip, of } from 'rxjs';
+import { from, Subject, zip, of, merge } from 'rxjs';
 import { mergeMap, takeUntil, tap } from 'rxjs/operators';
 import {
   tween,
@@ -145,6 +145,7 @@ export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
   @Output() backdropChange = new EventEmitter<FivGalleryImage>();
 
   $onDestroy = new Subject();
+  $onImagesChanged = new Subject<any>();
 
   constructor(
     private domCtrl: DomController,
@@ -160,6 +161,11 @@ export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
     this.updateImagesIndex();
     this.setupToolbars();
     this.subscribeToImageEvents();
+    this.images.changes.subscribe(_ => {
+      this.$onImagesChanged.next();
+      this.updateImagesIndex();
+      this.subscribeToImageEvents();
+    });
   }
 
   ngOnDestroy(): void {
@@ -170,7 +176,7 @@ export class FivGallery implements AfterContentInit, OnDestroy, Navigateable {
     from(this.images.map(image => image.click))
       .pipe(
         mergeMap((value: EventEmitter<FivGalleryImage>) => value),
-        takeUntil<FivGalleryImage>(this.$onDestroy)
+        takeUntil<FivGalleryImage>(merge(this.$onDestroy, this.$onImagesChanged))
       )
       .subscribe(image => {
         this.open(image);
