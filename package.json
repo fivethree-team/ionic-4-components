@@ -80,7 +80,7 @@
     "@angular/compiler": "8.2.13",
     "@angular/compiler-cli": "8.2.13",
     "@angular/language-service": "8.2.13",
-    "@ionic/angular-toolkit": "2.1.1",
+    "@ionic/angular-toolkit": "2.2.0",
     "@ionic/lab": "2.0.13",
     "@types/jasmine": "3.3.13",
     "@types/jasminewd2": "2.0.6",
