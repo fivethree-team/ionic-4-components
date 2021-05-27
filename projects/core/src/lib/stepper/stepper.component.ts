@@ -8,7 +8,9 @@ import {
   QueryList,
   Input,
   ViewChild,
-  Output
+  Output,
+  ChangeDetectorRef,
+  AfterViewInit
 } from '@angular/core';
 import { FivStepContent } from './step-content/step-content.component';
 import { FivStepperHorizontal } from './stepper-horizontal/stepper-horizontal.component';
@@ -18,7 +20,7 @@ import { FivStepperHorizontal } from './stepper-horizontal/stepper-horizontal.co
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss']
 })
-export class FivStepper implements OnInit {
+export class FivStepper implements OnInit, AfterViewInit {
   @ContentChildren(FivStep) contents: QueryList<FivStep>;
   @ViewChildren(FivStepContent) steps: QueryList<FivStepContent>;
   @ViewChild(FivStepperHorizontal, { static: false })
@@ -31,9 +33,13 @@ export class FivStepper implements OnInit {
 
   param: any;
 
-  constructor() {}
+  constructor(private change: ChangeDetectorRef) {}
 
   ngOnInit() {}
+
+  ngAfterViewInit(): void {
+    this.change.detectChanges();
+  }
 
   open(index: number) {
     if (this.mode === 'horizontal') {
